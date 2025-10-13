@@ -2,7 +2,8 @@ import os
 
 class Settings:
     def __init__(self):
-        self.base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        # Go up from src/config/settings.py to project root
+        self.base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         self.scripts_dir = os.path.join(self.base_dir, 'scripts')
         self.logs_dir = os.path.join(self.base_dir, 'logs')
         self.env_file = os.path.join(self.base_dir, '.env')

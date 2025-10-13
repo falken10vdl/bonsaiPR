@@ -116,8 +116,8 @@ def copy_scripts_and_config():
                 shutil.copy2(src_path, dest_path)
                 print(f"✅ Copied: {config_file}")
         
-        # Copy cron and systemd directories
-        for dir_name in ['cron', 'systemd', 'logs']:
+        # Copy cron and logs directories
+        for dir_name in ['cron', 'logs']:
             src_dir = os.path.join(SCRIPTS_SOURCE_DIR, dir_name)
             if os.path.exists(src_dir):
                 dest_dir = os.path.join(automation_dest, dir_name)
@@ -153,7 +153,6 @@ automation/
 │   ├── script_runner.py  # Script execution management
 │   └── config/        # Configuration management
 ├── cron/             # Cron job configuration
-├── systemd/          # Systemd service configuration
 ├── logs/             # Log directory
 └── requirements.txt  # Python dependencies
 ```
@@ -211,14 +210,6 @@ python scripts/03_upload_mergedPR.py
 crontab cron/weekly-automation.cron
 ```
 
-**Option B: Using Systemd**
-```bash
-# Copy service files
-sudo cp systemd/bonsaipr-automation.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable bonsaipr-automation.service
-```
-
 ## Script Details
 
 ### 00_clone_merge_and_replace.py
@@ -257,7 +248,7 @@ sudo systemctl enable bonsaipr-automation.service
 - **Source Transparency**: Complete source code available to developers
 - **Comprehensive Reporting**: Detailed logs and statistics
 - **Robust Error Handling**: Graceful handling of network issues and conflicts
-- **Scheduling Flexibility**: Supports both cron and systemd scheduling
+- **Cron Scheduling**: Automated weekly execution with comprehensive logging
 
 ## Output
 
@@ -287,16 +278,9 @@ Check logs in:
 - `logs/automation.log`: Main automation log
 - Individual script outputs during execution
 
-## Contributing
-
-This automation system is designed to be:
-- **Configurable**: Easy to adapt for different repositories
-- **Extensible**: New scripts can be added to the workflow
-- **Maintainable**: Clear separation of concerns between scripts
-
 ## License
 
-This automation system follows the same license as the BonsaiPR project.
+This automation system follows the same license as the Bonsai project.
 
 ---
 
@@ -378,7 +362,7 @@ Features:
 - GitHub release management with rich descriptions
 - Source code upload with developer access
 - Comprehensive reporting and logging
-- Flexible scheduling (cron/systemd)
+- Automated cron scheduling with timestamped logs
 
 Components:
 - 5 main automation scripts
@@ -398,7 +382,7 @@ Usage:
 1. Update configuration in scripts
 2. Install dependencies: pip install -r automation/requirements.txt
 3. Test individual scripts
-4. Set up scheduling via cron or systemd
+4. Set up weekly cron scheduling
 
 See automation/README.md for complete setup instructions.
 """
@@ -456,7 +440,7 @@ def upload_automation_scripts():
         print(f"   - 5 main automation scripts (sanitized)")
         print(f"   - Complete orchestration system")
         print(f"   - Configuration templates")
-        print(f"   - Scheduling examples (cron/systemd)")
+        print(f"   - Cron scheduling with logging")
         print(f"   - Comprehensive documentation")
         print(f"   - Setup instructions and examples")
         

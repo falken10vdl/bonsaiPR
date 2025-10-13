@@ -26,7 +26,6 @@ automation/
 │   ├── script_runner.py  # Script execution management
 │   └── config/        # Configuration management
 ├── cron/             # Cron job configuration
-├── systemd/          # Systemd service configuration
 ├── logs/             # Log directory
 └── requirements.txt  # Python dependencies
 ```
@@ -84,14 +83,6 @@ python scripts/03_upload_mergedPR.py
 crontab cron/weekly-automation.cron
 ```
 
-**Option B: Using Systemd**
-```bash
-# Copy service files
-sudo cp systemd/bonsaipr-automation.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable bonsaipr-automation.service
-```
-
 ## Script Details
 
 ### 00_clone_merge_and_replace.py
@@ -130,7 +121,7 @@ sudo systemctl enable bonsaipr-automation.service
 - **Source Transparency**: Complete source code available to developers
 - **Comprehensive Reporting**: Detailed logs and statistics
 - **Robust Error Handling**: Graceful handling of network issues and conflicts
-- **Scheduling Flexibility**: Supports both cron and systemd scheduling
+- **Cron Scheduling**: Automated weekly execution with comprehensive logging
 
 ## Output
 
@@ -160,16 +151,9 @@ Check logs in:
 - `logs/automation.log`: Main automation log
 - Individual script outputs during execution
 
-## Contributing
-
-This automation system is designed to be:
-- **Configurable**: Easy to adapt for different repositories
-- **Extensible**: New scripts can be added to the workflow
-- **Maintainable**: Clear separation of concerns between scripts
-
 ## License
 
-This automation system follows the same license as the BonsaiPR project.
+This automation system follows the same license as the Bonsai project.
 
 ---
 
