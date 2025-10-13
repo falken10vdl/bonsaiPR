@@ -13,6 +13,18 @@ This repository contains automated weekly releases of BonsaiPR, which includes:
 
 Check the [Releases](https://github.com/falken10vdl/bonsaiPR/releases) page for the latest builds.
 
+## Automation System
+
+The weekly builds are powered by a comprehensive automation system located in the [`automation/`](./automation/) folder:
+
+- **🤖 Automated PR Merging**: Automatically merges open pull requests from IfcOpenShell
+- **🏗️ Multi-Platform Builds**: Builds addons for Linux, macOS, and Windows  
+- **📦 GitHub Releases**: Creates releases with downloadable addons and detailed reports
+- **📊 Transparency**: Complete source code and automation scripts available
+- **⏰ Weekly Schedule**: Runs every Sunday at 2:00 AM UTC via cron
+
+**For developers:** See [`automation/README.md`](./automation/README.md) for complete setup and usage instructions.
+
 ## Important Notes
 
 ⚠️ These are development builds and may contain experimental features.
