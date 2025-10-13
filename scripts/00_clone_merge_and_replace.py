@@ -24,7 +24,8 @@ def get_report_filename():
     version = "0.8.4"
     pyversion = "py311"
     report_name = f"README-bonsaiPR_{pyversion}-{version}-alpha{current_date}.txt"
-    report_path = f'/home/falken10vdl/bonsaiPRDevel/{report_name}'
+    report_dir = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")  # Use env var or fallback
+    report_path = os.path.join(report_dir, report_name)
     return report_path
 
 def github_headers():
