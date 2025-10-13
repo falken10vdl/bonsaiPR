@@ -20,8 +20,9 @@ The weekly builds are powered by a comprehensive automation system located in th
 - **🤖 Automated PR Merging**: Automatically merges open pull requests from IfcOpenShell
 - **🏗️ Multi-Platform Builds**: Builds addons for Linux, macOS, and Windows  
 - **📦 GitHub Releases**: Creates releases with downloadable addons and detailed reports
-- **📊 Transparency**: Complete source code and automation scripts available
 - **⏰ Weekly Schedule**: Runs every Sunday at 2:00 AM UTC via cron
+- **📁 [`source/`](./source/)**: Contains the complete IfcOpenShell source code with all merged PRs
+- **📝 Detailed Reports**: Check the weekly reports (e.g., `README-bonsaiPR_py311-0.8.4-alphaYYMMDD.txt`) for lists of merged PRs
 
 **For developers:** See [`automation/README.md`](./automation/README.md) for complete setup and usage instructions.
 
