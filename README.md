@@ -30,3 +30,7 @@ The weekly builds are powered by a comprehensive automation system located in th
 
 ⚠️ These are development builds and may contain experimental features.
 Use at your own risk in production environments.
+
+## License
+
+This project is licensed under the same license as [bonsai](https://github.com/IfcOpenShell/IfcOpenShell) .
