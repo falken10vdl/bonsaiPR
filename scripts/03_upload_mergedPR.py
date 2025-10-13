@@ -5,6 +5,16 @@ import glob
 from datetime import datetime
 
 # Configuration
+import os
+import subprocess
+import shutil
+import tempfile
+from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")  # Set your GitHub token in environment variables
 GITHUB_OWNER = "falken10vdl"
 GITHUB_REPO = "bonsaiPR"
