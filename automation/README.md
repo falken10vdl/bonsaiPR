@@ -160,16 +160,9 @@ Check logs in:
 - `logs/automation.log`: Main automation log
 - Individual script outputs during execution
 
-## Contributing
-
-This automation system is designed to be:
-- **Configurable**: Easy to adapt for different repositories
-- **Extensible**: New scripts can be added to the workflow
-- **Maintainable**: Clear separation of concerns between scripts
-
 ## License
 
-This automation system follows the same license as the BonsaiPR project.
+This automation system follows the same license as the Bonsai project.
 
 ---
 
