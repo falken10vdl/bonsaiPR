@@ -1,0 +1,4 @@
+# This file contains the cron job configuration to schedule the execution of the automation scripts weekly.
+
+# Run the automation every Sunday at 2 AM
+0 2 * * 0 /usr/bin/python3 /home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/src/main.py >> /home/falken10vdl/bonsaiPRDevel/automation.log 2>&1
