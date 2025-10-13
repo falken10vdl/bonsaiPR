@@ -1,0 +1,80 @@
+HEAD is now at 322a2179e Merge entities, if match on name or identification attribute only.
+From https://github.com/IfcOpenShell/IfcOpenShell
+ * branch                v0.8.0     -> FETCH_HEAD
+Already up to date.
+Starting PR application process...
+Directory structure will be:
+  Base clone: /home/falken10vdl/bonsaiPRDevel/IfcOpenShell
+  Working base: /home/falken10vdl/bonsaiPRDevel/MergingPR
+  Working dir: /home/falken10vdl/bonsaiPRDevel/MergingPR/IfcOpenShell
+Report will be saved as: README-bonsaiPR_py311-0.8.4-alpha251013.txt
+Updating existing repository in /home/falken10vdl/bonsaiPRDevel/IfcOpenShell
+Repository updated successfully
+Copying /home/falken10vdl/bonsaiPRDevel/IfcOpenShell to /home/falken10vdl/bonsaiPRDevel/MergingPR/IfcOpenShell
+Removing existing working base directory: /home/falken10vdl/bonsaiPRDevel/MergingPR
+Applying PR #7224: Cmake/externalize into package config
+✅ Successfully applied PR #7224
+Applying PR #7219: Put Bonsai webui PID file in a writable location
+✅ Successfully applied PR #7219
+Applying PR #7207: Add unwrapping of UV for IfcReferenceImage
+✅ Successfully applied PR #7207
+Applying PR #7193: cmake: Simplify hdf5 linkage
+✅ Successfully applied PR #7193
+Applying PR #7128: Include direct links to tools
+✅ Successfully applied PR #7128
+Applying PR #7119: Updated documentation for IDE guide for blender  LTS 4.5.3
+✅ Successfully applied PR #7119
+Applying PR #7109: Bump vite from 6.3.5 to 6.3.6 in /src/ifctester/webapp
+✅ Successfully applied PR #7109
+Applying PR #7106: Operators to help add intelligent tags in Text literal annotations
+Traceback (most recent call last):
+  File "/home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/scripts/00_clone_merge_and_replace.py", line 313, in <module>
+    main()
+  File "/home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/scripts/00_clone_merge_and_replace.py", line 283, in main
+    applied, failed = apply_prs_locally(working_dir, repo, users)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/scripts/00_clone_merge_and_replace.py", line 181, in apply_prs_locally
+    subprocess.run(['git', 'fetch', remote_name, pr['head_ref']], 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 552, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 1211, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2123, in _communicate
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Starting weekly BonsaiPR automation at 2025-10-13 23:03:10.114365
+Logs directory: /home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/logs
+Scripts to execute: 5
+[1/5] Executing: 00_clone_merge_and_replace.py
+Starting execution of /home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/scripts/00_clone_merge_and_replace.py at 2025-10-13 23:03:10.114380
+Traceback (most recent call last):
+  File "/home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/src/main.py", line 57, in <module>
+    main()
+  File "/home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/src/main.py", line 51, in main
+    run_scripts_sequentially()
+  File "/home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/src/main.py", line 42, in run_scripts_sequentially
+    run_script(script)
+  File "/home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/src/main.py", line 11, in run_script
+    subprocess.run(['python3', script_name], check=True)
+  File "/usr/lib64/python3.12/subprocess.py", line 552, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 1203, in communicate
+    self.wait()
+  File "/usr/lib64/python3.12/subprocess.py", line 1266, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2061, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2019, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
