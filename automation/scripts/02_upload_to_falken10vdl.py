@@ -32,6 +32,26 @@ def get_branch_name():
     version = "0.8.4"
     return f"weekly-build-{version}-alpha{current_date}"
 
+def cleanup_local_tag(tag_name):
+    """Remove local tag if it exists to prevent conflicts"""
+    try:
+        # Check if the tag exists locally
+        result = subprocess.run(['git', 'tag', '-l', tag_name], 
+                              capture_output=True, text=True, cwd=os.getcwd())
+        
+        if result.stdout.strip():
+            print(f"🏷️ Removing existing local tag: {tag_name}")
+            subprocess.run(['git', 'tag', '-d', tag_name], 
+                         capture_output=True, cwd=os.getcwd())
+            print(f"✅ Local tag {tag_name} removed")
+        
+        # Also try to remove the tag from origin to clean up remote
+        subprocess.run(['git', 'push', 'origin', f':{tag_name}'], 
+                     capture_output=True, cwd=os.getcwd())
+        
+    except Exception as e:
+        print(f"ℹ️ Note: Could not clean up tag {tag_name}: {e}")
+
 def github_headers():
     return {
         "Authorization": f"token {GITHUB_TOKEN}",
@@ -358,6 +378,9 @@ def upload_to_falken10vdl():
     release_body = generate_release_body(report_file, addon_files)
     
     print(f"Creating GitHub release: {tag_name}")
+    
+    # Clean up any existing local tag to prevent conflicts
+    cleanup_local_tag(tag_name)
     
     # Create the release
     release = create_github_release(tag_name, release_name, release_body)
