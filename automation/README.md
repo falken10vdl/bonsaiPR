@@ -17,8 +17,7 @@ automation/
 ├── scripts/           # Main automation scripts
 │   ├── 00_clone_merge_and_create_branch.py  # PR merging with draft detection
 │   ├── 01_build_bonsaiPR_addons.py          # Multi-platform addon building
-│   ├── 02_upload_to_falken10vdl.py          # GitHub release management
-│   └── 03_upload_automation_scripts.py      # Automation script distribution
+│   └── 02_upload_to_falken10vdl.py          # GitHub release management
 ├── src/               # Configuration (placeholder)
 ├── cron/             # Cron job configuration
 ├── logs/             # Log directory
@@ -67,9 +66,6 @@ python scripts/01_build_bonsaiPR_addons.py
 
 # Test GitHub release creation
 python scripts/02_upload_to_falken10vdl.py
-
-# Test automation script distribution
-python scripts/03_upload_automation_scripts.py
 ```
 
 ### 5. Schedule Automation
@@ -109,10 +105,15 @@ crontab cron/weekly-automation.cron
 - Shows accurate statistics: "⚠️ Skipped PRs (6)" with detailed skip reasons
 - Handles existing releases gracefully
 
-### 03_upload_automation_scripts.py
-- Distributes automation scripts to the BonsaiPR repository
-- Keeps automation system synchronized across repositories
-- Handles script updates and version management
+## Automation System Architecture
+
+The BonsaiPR automation system consists of **3 main scripts** that work together:
+
+1. **`00_clone_merge_and_create_branch.py`** - Merges PRs and creates weekly branches
+2. **`01_build_bonsaiPR_addons.py`** - Builds addons for multiple platforms  
+3. **`02_upload_to_falken10vdl.py`** - Creates GitHub releases with enhanced PR documentation
+
+The automation scripts are **automatically synchronized** since this `weekly-bonsaipr-automation` folder is part of the `falken10vdl/bonsaiPR` repository. When changes are pushed to the repository, they're immediately available for the automation system.
 
 ## Features
 
