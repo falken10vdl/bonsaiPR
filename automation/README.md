@@ -18,9 +18,14 @@ automation/
 │   ├── 00_clone_merge_and_create_branch.py  # PR merging with draft detection
 │   ├── 01_build_bonsaiPR_addons.py          # Multi-platform addon building
 │   └── 02_upload_to_falken10vdl.py          # GitHub release management
-├── src/               # Configuration (placeholder)
+├── src/               # Main orchestration system
+│   ├── main.py        # Automation orchestrator and entry point
+│   └── config/        # Configuration management
+│       ├── __init__.py
+│       └── settings.py # Central configuration file
 ├── cron/             # Cron job configuration
-├── logs/             # Log directory
+│   └── weekly-automation.cron  # Weekly scheduling template
+├── logs/             # Log directory (auto-created)
 └── requirements.txt  # Python dependencies
 ```
 
@@ -56,7 +61,14 @@ pip install -r requirements.txt
 
 ### 4. Manual Testing
 
-Test individual scripts:
+**Option A: Using the Main Orchestrator (Recommended)**
+```bash
+# Run the complete automation system
+cd automation/src
+python main.py
+```
+
+**Option B: Individual Script Testing**
 ```bash
 # Test PR merging with draft detection
 python scripts/00_clone_merge_and_create_branch.py
@@ -70,10 +82,19 @@ python scripts/02_upload_to_falken10vdl.py
 
 ### 5. Schedule Automation
 
-**Option A: Using Cron**
+**Option A: Using Cron (Recommended)**
 ```bash
 # Install the cron job (runs weekly on Sunday at 2 AM UTC)
-crontab cron/weekly-automation.cron
+crontab automation/cron/weekly-automation.cron
+
+# Verify cron installation
+crontab -l
+```
+
+**Option B: Manual Execution**
+```bash
+# Run the complete automation system manually
+cd automation/src && python main.py
 ```
 
 ## Script Details

@@ -1,0 +1,14 @@
+# Weekly BonsaiPR Automation Cron Job
+# Runs every Sunday at 2:00 AM UTC
+# 
+# To install this cron job:
+# crontab automation/cron/weekly-automation.cron
+#
+# To view current cron jobs:
+# crontab -l
+#
+# To remove all cron jobs:
+# crontab -r
+
+# Minute Hour Day Month DayOfWeek Command
+0 2 * * 0 cd /home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/automation/src && /usr/bin/python3 main.py >> ../logs/cron_$(date +\%Y\%m\%d_\%H\%M\%S).log 2>&1

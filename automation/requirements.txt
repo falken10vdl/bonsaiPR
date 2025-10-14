@@ -1,0 +1,14 @@
+# BonsaiPR Weekly Automation System Dependencies
+
+# Core dependencies
+requests>=2.31.0        # HTTP requests for GitHub API
+python-dotenv>=1.0.0    # Environment variable management
+
+# Optional dependencies for enhanced functionality
+psutil>=5.9.0          # System monitoring (optional)
+colorama>=0.4.6        # Colored console output (optional)
+
+# Development dependencies (optional)
+pytest>=7.4.0          # Testing framework
+black>=23.7.0          # Code formatting
+flake8>=6.0.0          # Code linting
