@@ -11,7 +11,7 @@ This repository contains automated weekly releases of BonsaiPR, which includes:
 
 ## Download
 
-Check the [Releases](https://github.com/falken10vdl/bonsaiPR/releases) page for the latest builds.
+Check the [falken10vdl/bonsaiPR/releases](https://github.com/falken10vdl/bonsaiPR/releases) page for the latest builds.
 
 ## Source Code
 
@@ -36,7 +36,7 @@ The weekly builds are powered by a comprehensive automation system located in th
 ## Important Notes
 
 ⚠️ These are development builds and may contain experimental features.
-Use at your own risk in production environments.
+Use at your own risk. If something does not work and it is related to a PR, PLEASE reach to the PR author first.
 
 ## License
 
