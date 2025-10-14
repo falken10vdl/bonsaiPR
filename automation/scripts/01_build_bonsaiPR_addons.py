@@ -10,7 +10,7 @@ This script handles the build process for BonsaiPR addons:
 4. Build multi-platform addon zip files
 5. Place results in src/bonsaiPR/dist/
 
-Platform targets: linux-x64, windows-x64, macos-x64, macos-arm64
+Platform targets: linux-x64, macos-x64, macosm1-arm64, win-x64
 """
 
 import os
@@ -255,7 +255,7 @@ def build_addons(target_platforms=None):
         return
     
     # Platform mappings for make command
-    all_platforms = ['linux', 'windows', 'macos']  # macos covers both intel and arm
+    all_platforms = ['linux', 'macos', 'macosm1', 'win']
     platforms = target_platforms if target_platforms else all_platforms
     pyversion = 'py311'
     
@@ -356,7 +356,7 @@ def create_build_report():
 
 def parse_arguments():
     """Parse command line arguments"""
-    valid_platforms = ['linux', 'windows', 'macos']
+    valid_platforms = ['linux', 'macos', 'macosm1', 'win']
     
     if len(sys.argv) == 1:
         # No arguments provided, build all platforms
