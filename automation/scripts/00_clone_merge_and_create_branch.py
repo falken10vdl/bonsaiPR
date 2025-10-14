@@ -337,7 +337,7 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
-                skip_reason = pr.get('skip_reason', 'Repository no longer accessible (likely deleted fork)')
+                skip_reason = pr.get('skip_reason', 'Repository no longer accessible (deleted fork)')
                 f.write(f"  - Reason: {skip_reason}\n\n")
         
         f.write(f"## Developer Instructions\n\n")
