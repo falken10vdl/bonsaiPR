@@ -15,16 +15,11 @@ The BonsaiPR automation system performs weekly builds that:
 ```
 automation/
 ├── scripts/           # Main automation scripts
-│   ├── 00_clone_merge_and_replace.py    # PR merging and source modification
-│   ├── 01_build_bonsaiPR_addons.py      # Multi-platform addon building
-│   ├── 02_upload_to_falken10vdl.py      # GitHub release management
-│   ├── 03_upload_mergedPR.py            # Source code upload
-│   └── 04_upload_automation_scripts.py  # This script (automation upload)
-├── src/               # Main orchestration
-│   ├── main.py        # Entry point for automation
-│   ├── scheduler.py   # Scheduling utilities
-│   ├── script_runner.py  # Script execution management
-│   └── config/        # Configuration management
+│   ├── 00_clone_merge_and_create_branch.py  # PR merging with draft detection
+│   ├── 01_build_bonsaiPR_addons.py          # Multi-platform addon building
+│   ├── 02_upload_to_falken10vdl.py          # GitHub release management
+│   └── 03_upload_automation_scripts.py      # Automation script distribution
+├── src/               # Configuration (placeholder)
 ├── cron/             # Cron job configuration
 ├── logs/             # Log directory
 └── requirements.txt  # Python dependencies
@@ -64,15 +59,17 @@ pip install -r requirements.txt
 
 Test individual scripts:
 ```bash
-# Test PR merging
-python scripts/00_clone_merge_and_replace.py
+# Test PR merging with draft detection
+python scripts/00_clone_merge_and_create_branch.py
 
 # Test addon building
 python scripts/01_build_bonsaiPR_addons.py
 
-# Test GitHub uploads
+# Test GitHub release creation
 python scripts/02_upload_to_falken10vdl.py
-python scripts/03_upload_mergedPR.py
+
+# Test automation script distribution
+python scripts/03_upload_automation_scripts.py
 ```
 
 ### 5. Schedule Automation
@@ -85,12 +82,14 @@ crontab cron/weekly-automation.cron
 
 ## Script Details
 
-### 00_clone_merge_and_replace.py
+### 00_clone_merge_and_create_branch.py
 - Clones IfcOpenShell repository
 - Fetches open pull requests via GitHub API
-- Attempts to merge each PR automatically
-- Replaces "bonsai" with "bonsaiPR" throughout codebase
-- Generates detailed merge reports with statistics
+- **Enhanced draft PR detection** using `pr.get('draft', False)`
+- Attempts to merge each PR automatically with comprehensive error handling
+- **Skips draft PRs** with detailed skip reasons ('DRAFT status', 'Repository no longer accessible', 'Missing PR information')
+- Creates weekly branches with merged changes
+- Generates detailed merge reports with statistics and PR categorization
 
 ### 01_build_bonsaiPR_addons.py
 - Builds BonsaiPR addons for multiple platforms:
@@ -104,32 +103,44 @@ crontab cron/weekly-automation.cron
 ### 02_upload_to_falken10vdl.py
 - Creates GitHub releases with semantic versioning
 - Uploads addon files as release assets
-- Generates rich markdown descriptions with PR details
+- **Enhanced release notes** with proper DRAFT PR labeling
+- **Fixed parsing logic** to correctly show skipped PRs with "(DRAFT)" labels
+- Generates rich markdown descriptions with complete PR categorization
+- Shows accurate statistics: "⚠️ Skipped PRs (6)" with detailed skip reasons
 - Handles existing releases gracefully
 
-### 03_upload_mergedPR.py
-- Uploads complete IfcOpenShell source code to GitHub
-- Creates both main branch and weekly branches
-- Handles Git submodule issues
-- Makes source code browsable for developers
+### 03_upload_automation_scripts.py
+- Distributes automation scripts to the BonsaiPR repository
+- Keeps automation system synchronized across repositories
+- Handles script updates and version management
 
 ## Features
 
-- **Automated PR Integration**: Automatically discovers and merges open PRs
+- **Enhanced Draft PR Detection**: Automatically detects and skips draft PRs using `pr.get('draft', False)`
+- **Comprehensive Skip Reasons**: Detailed categorization of why PRs are skipped
+- **Professional Release Notes**: GitHub releases with proper DRAFT labels and accurate counts
 - **Multi-Platform Builds**: Supports all major operating systems
-- **Professional Releases**: Rich GitHub releases with detailed descriptions
 - **Source Transparency**: Complete source code available to developers
-- **Comprehensive Reporting**: Detailed logs and statistics
 - **Robust Error Handling**: Graceful handling of network issues and conflicts
-- **Cron Scheduling**: Automated weekly execution with comprehensive logging
+- **Detailed Reporting**: Comprehensive logs with PR statistics and skip reasons
+- **Fixed Parsing Logic**: Correctly processes and displays skipped PRs in release notes
 
 ## Output
 
 The automation produces:
-- **GitHub Releases**: Weekly releases with downloadable addons
-- **Source Code**: Complete browsable source code repository
-- **Build Reports**: Detailed merge and build statistics
-- **Log Files**: Comprehensive execution logs
+- **GitHub Releases**: Weekly releases with downloadable addons and proper DRAFT PR labeling
+- **Enhanced Release Notes**: Complete PR categorization with skip reasons and DRAFT labels
+- **Source Code**: Complete browsable source code repository  
+- **Build Reports**: Detailed merge and build statistics with draft PR handling
+- **Comprehensive Logs**: Execution logs with PR processing details
+
+## Recent Enhancements (October 2025)
+
+- ✅ **Enhanced Draft PR Detection**: Reliable detection using `pr.get('draft', False)`
+- ✅ **Fixed Release Notes Parsing**: Correct DRAFT labeling in GitHub releases
+- ✅ **Improved Skip Categorization**: Detailed reasons for skipped PRs
+- ✅ **Accurate Statistics**: Proper counting and display of skipped PRs
+- ✅ **Professional GitHub Releases**: Clean formatting with complete PR information
 
 ## Weekly Schedule
 
