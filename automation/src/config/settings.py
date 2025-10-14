@@ -11,11 +11,10 @@ class Settings:
 
     def get_scripts(self):
         return [
-            os.path.join(self.scripts_dir, '00_clone_merge_and_replace.py'),
+            os.path.join(self.scripts_dir, '00_clone_merge_and_create_branch.py'),
             os.path.join(self.scripts_dir, '01_build_bonsaiPR_addons.py'),
             os.path.join(self.scripts_dir, '02_upload_to_falken10vdl.py'),
-            os.path.join(self.scripts_dir, '03_upload_mergedPR.py'),
-            os.path.join(self.scripts_dir, '04_upload_automation_scripts.py')
+            os.path.join(self.scripts_dir, '03_upload_automation_scripts.py')
         ]
 
     def get_log_file(self):

@@ -4,13 +4,26 @@ import shutil
 import glob
 import re
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configuration
-GITHUB_TOKEN = "YOUR_GITHUB_TOKEN_HERE"
-GITHUB_OWNER = "YOUR_GITHUB_USERNAME"
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+GITHUB_OWNER = "falken10vdl"
 GITHUB_REPO = "bonsaiPR"
-SCRIPTS_SOURCE_DIR = "/path/to/your/bonsaiPRDevel/weekly-bonsaipr-automation"
-TEMP_REPO_DIR = "/tmp/bonsaiPR_scripts_upload"
+
+def get_scripts_source_dir():
+    """Get the scripts source directory"""
+    # Get the directory where this script is located
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # Go up two levels to get to the weekly-bonsaipr-automation directory
+    return os.path.dirname(os.path.dirname(current_dir))
+
+def get_temp_repo_dir():
+    """Get temporary directory for repo operations"""
+    return "/tmp/bonsaiPR_scripts_upload"
 
 def setup_git_config():
     """Configure git user for commits"""
@@ -25,16 +38,17 @@ def setup_git_config():
 
 def clone_repository():
     """Clone the bonsaiPR repository"""
-    print(f"Cloning repository to {TEMP_REPO_DIR}...")
+    temp_repo_dir = get_temp_repo_dir()
+    print(f"Cloning repository to {temp_repo_dir}...")
     
     # Clean up any existing temp directory
-    if os.path.exists(TEMP_REPO_DIR):
-        shutil.rmtree(TEMP_REPO_DIR)
+    if os.path.exists(temp_repo_dir):
+        shutil.rmtree(temp_repo_dir)
     
     try:
         # Clone the repository with authentication
         repo_url = f"https://{GITHUB_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git"
-        subprocess.run(['git', 'clone', repo_url, TEMP_REPO_DIR], 
+        subprocess.run(['git', 'clone', repo_url, temp_repo_dir], 
                       check=True, capture_output=True)
         print("✅ Repository cloned successfully")
         return True
@@ -57,15 +71,18 @@ def sanitize_script_content(content):
 
 def copy_scripts_and_config():
     """Copy scripts and configuration files, sanitizing sensitive information"""
-    print(f"Copying scripts and configuration from {SCRIPTS_SOURCE_DIR}...")
+    scripts_source_dir = get_scripts_source_dir()
+    temp_repo_dir = get_temp_repo_dir()
     
-    if not os.path.exists(SCRIPTS_SOURCE_DIR):
-        print(f"❌ Error: Scripts directory '{SCRIPTS_SOURCE_DIR}' does not exist.")
+    print(f"Copying scripts and configuration from {scripts_source_dir}...")
+    
+    if not os.path.exists(scripts_source_dir):
+        print(f"❌ Error: Scripts directory '{scripts_source_dir}' does not exist.")
         return False
     
     try:
         # Create automation directory in the repo
-        automation_dest = os.path.join(TEMP_REPO_DIR, 'automation')
+        automation_dest = os.path.join(temp_repo_dir, 'automation')
         
         # Remove existing automation directory if it exists
         if os.path.exists(automation_dest):
@@ -75,7 +92,7 @@ def copy_scripts_and_config():
         os.makedirs(automation_dest)
         
         # Copy scripts directory
-        scripts_src = os.path.join(SCRIPTS_SOURCE_DIR, 'scripts')
+        scripts_src = os.path.join(scripts_source_dir, 'scripts')
         scripts_dest = os.path.join(automation_dest, 'scripts')
         
         if os.path.exists(scripts_src):
@@ -97,7 +114,7 @@ def copy_scripts_and_config():
                     print(f"✅ Sanitized and copied: {script_file}")
         
         # Copy src directory (main orchestration)
-        src_src = os.path.join(SCRIPTS_SOURCE_DIR, 'src')
+        src_src = os.path.join(scripts_source_dir, 'src')
         src_dest = os.path.join(automation_dest, 'src')
         
         if os.path.exists(src_src):
@@ -110,7 +127,7 @@ def copy_scripts_and_config():
         # Copy configuration files
         config_files = ['requirements.txt', 'README.md']
         for config_file in config_files:
-            src_path = os.path.join(SCRIPTS_SOURCE_DIR, config_file)
+            src_path = os.path.join(scripts_source_dir, config_file)
             if os.path.exists(src_path):
                 dest_path = os.path.join(automation_dest, config_file)
                 shutil.copy2(src_path, dest_path)
@@ -118,7 +135,7 @@ def copy_scripts_and_config():
         
         # Copy cron and logs directories
         for dir_name in ['cron', 'logs']:
-            src_dir = os.path.join(SCRIPTS_SOURCE_DIR, dir_name)
+            src_dir = os.path.join(scripts_source_dir, dir_name)
             if os.path.exists(src_dir):
                 dest_dir = os.path.join(automation_dest, dir_name)
                 shutil.copytree(src_dir, dest_dir)
@@ -328,9 +345,10 @@ BONSAIPR_VERSION=0.8.4
 
 def commit_and_push_changes():
     """Commit and push the automation scripts"""
+    temp_repo_dir = get_temp_repo_dir()
     original_dir = os.getcwd()
     try:
-        os.chdir(TEMP_REPO_DIR)
+        os.chdir(temp_repo_dir)
         setup_git_config()
         
         # Add all changes
@@ -405,8 +423,9 @@ See automation/README.md for complete setup instructions.
 
 def cleanup():
     """Clean up temporary directory"""
-    if os.path.exists(TEMP_REPO_DIR):
-        shutil.rmtree(TEMP_REPO_DIR)
+    temp_repo_dir = get_temp_repo_dir()
+    if os.path.exists(temp_repo_dir):
+        shutil.rmtree(temp_repo_dir)
         print("✅ Temporary directory cleaned up")
 
 def upload_automation_scripts():
@@ -414,8 +433,9 @@ def upload_automation_scripts():
     print("Starting upload of automation scripts...")
     
     # Check if source directory exists
-    if not os.path.exists(SCRIPTS_SOURCE_DIR):
-        print(f"❌ Error: Scripts directory '{SCRIPTS_SOURCE_DIR}' does not exist.")
+    scripts_source_dir = get_scripts_source_dir()
+    if not os.path.exists(scripts_source_dir):
+        print(f"❌ Error: Scripts directory '{scripts_source_dir}' does not exist.")
         return False
     
     try:

@@ -4,13 +4,33 @@ import requests
 import json
 import glob
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configuration
-GITHUB_TOKEN = "YOUR_GITHUB_TOKEN_HERE"
-GITHUB_OWNER = "YOUR_GITHUB_USERNAME"
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")  # Set your GitHub token in environment variables
+GITHUB_OWNER = "falken10vdl"
 GITHUB_REPO = "bonsaiPR"
-BUILT_ADDONS_PATH = "/path/to/your/bonsaiPRDevel/MergingPR/IfcOpenShell/src/bonsaiPR/dist"
-REPORTS_PATH = "/path/to/your/bonsaiPRDevel"
+FORK_OWNER = "falken10vdl"
+FORK_REPO = "IfcOpenShell"
+
+def get_build_paths():
+    """Get the paths for built addons"""
+    # Updated to use the actual build directory created by 01_build script
+    build_base_dir = os.getenv("BUILD_BASE_DIR", "/home/falken10vdl/bonsaiPRDevel/bonsaiPR-build")
+    return os.path.join(build_base_dir, 'src', 'bonsaiPR', 'dist')
+
+def get_reports_path():
+    """Get the reports directory"""
+    return os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
+
+def get_branch_name():
+    """Generate branch name with current date"""
+    current_date = datetime.now().strftime('%y%m%d')
+    version = "0.8.4"
+    return f"weekly-build-{version}-alpha{current_date}"
 
 def github_headers():
     return {
@@ -29,7 +49,8 @@ def get_release_tag():
 def find_report_file():
     """Find the latest README report file"""
     current_date = datetime.now().strftime('%y%m%d')
-    pattern = f"{REPORTS_PATH}/README-bonsaiPR_py311-*-alpha{current_date}.txt"
+    reports_path = get_reports_path()
+    pattern = f"{reports_path}/README-bonsaiPR_py311-*-alpha{current_date}.txt"
     report_files = glob.glob(pattern)
     if report_files:
         return max(report_files, key=os.path.getctime)  # Return the most recent one
@@ -112,8 +133,8 @@ def upload_asset_to_release(release_id, file_path, asset_name):
             return True
         return False
 
-def generate_release_body(report_file_path):
-    """Generate release description from the report file"""
+def generate_release_body(report_file_path, addon_files):
+    """Generate release description from the report file and available addon files"""
     if not report_file_path or not os.path.exists(report_file_path):
         return "Weekly BonsaiPR build with latest PRs merged."
     
@@ -125,55 +146,122 @@ def generate_release_body(report_file_path):
         lines = content.split('\n')
         applied_prs = []
         failed_prs = []
-        in_summary = False
+        skipped_prs = []
+        total_prs = 0
+        successfully_merged = 0
+        failed_to_merge = 0
+        skipped_count = 0
+        
+        # Parse summary section
+        in_applied_section = False
+        in_failed_section = False
+        in_skipped_section = False
         
         for line in lines:
-            if "SUMMARY" in line:
-                in_summary = True
+            line = line.strip()
+            
+            # Parse summary statistics
+            if line.startswith("- Total PRs processed:"):
+                total_prs = int(line.split(":")[1].strip())
+            elif line.startswith("- Successfully merged:"):
+                successfully_merged = int(line.split(":")[1].strip())
+            elif line.startswith("- Failed to merge:"):
+                failed_to_merge = int(line.split(":")[1].strip())
+            elif line.startswith("- Skipped (repo not accessible):"):
+                skipped_count = int(line.split(":")[1].strip())
+            
+            # Parse PR sections
+            elif line.startswith("## ✅ Successfully Merged PRs"):
+                in_applied_section = True
+                in_failed_section = False
+                in_skipped_section = False
                 continue
-            elif "DETAILS GROUPED BY AUTHOR" in line:
-                in_summary = False
+            elif line.startswith("## ❌ Failed to Merge PRs"):
+                in_applied_section = False
+                in_failed_section = True
+                in_skipped_section = False
                 continue
-            elif in_summary and line.strip().startswith("✅"):
-                applied_prs.append(line.strip())
-            elif in_summary and line.strip().startswith("❌"):
-                failed_prs.append(line.strip())
+            elif line.startswith("## ⚠️ Skipped PRs"):
+                in_applied_section = False
+                in_failed_section = False
+                in_skipped_section = True
+                continue
+            elif line.startswith("## "):
+                in_applied_section = False
+                in_failed_section = False
+                in_skipped_section = False
+                continue
+            
+            # Collect PRs
+            if line.startswith("- **PR #"):
+                if in_applied_section:
+                    applied_prs.append(line)
+                elif in_failed_section:
+                    failed_prs.append(line)
+                elif in_skipped_section:
+                    skipped_prs.append(line)
+        
+        # Generate available downloads based on actual files
+        downloads_section = "## 📦 Available Downloads\n\n"
+        for addon_file in addon_files:
+            filename = os.path.basename(addon_file)
+            if "windows" in filename.lower():
+                platform = "Windows (x64)"
+            elif "linux" in filename.lower():
+                platform = "Linux (x64)"
+            elif "macosm1" in filename.lower() or "arm64" in filename.lower():
+                platform = "macOS (Apple Silicon)"
+            elif "macos" in filename.lower():
+                platform = "macOS (Intel)"
+            else:
+                platform = "Unknown Platform"
+            
+            downloads_section += f"- **{platform}**: `{filename}`\n"
+        
+        # Calculate success rate
+        success_rate = (successfully_merged / total_prs * 100) if total_prs > 0 else 0
         
         # Generate markdown description
         release_body = f"""# BonsaiPR Weekly Build - {datetime.now().strftime('%Y-%m-%d')}
 
 This is an automated weekly build of BonsaiPR with the latest pull requests merged from the IfcOpenShell repository.
 
-## 📦 Available Downloads
-- **Windows (x64)**: `bonsaiPR_py311-0.8.4-alpha{datetime.now().strftime('%y%m%d')}-windows-x64.zip`
-- **Linux (x64)**: `bonsaiPR_py311-0.8.4-alpha{datetime.now().strftime('%y%m%d')}-linux-x64.zip`
-- **macOS (Intel)**: `bonsaiPR_py311-0.8.4-alpha{datetime.now().strftime('%y%m%d')}-macos-x64.zip`
-- **macOS (Apple Silicon)**: `bonsaiPR_py311-0.8.4-alpha{datetime.now().strftime('%y%m%d')}-macosm1-arm64.zip`
-
+{downloads_section}
 ## 📋 Included Pull Requests
 
-### ✅ Successfully Merged PRs ({len(applied_prs)})
+### ✅ Successfully Merged PRs ({successfully_merged})
+
 """
         
         for pr in applied_prs:
-            # Extract PR number and title from the line
-            pr_clean = pr.replace("✅ ", "").strip()
-            release_body += f"- {pr_clean}\n"
+            release_body += f"{pr}\n"
         
         if failed_prs:
-            release_body += f"\n### ❌ Failed to Merge ({len(failed_prs)})\n"
+            release_body += f"\n### ❌ Failed to Merge ({failed_to_merge})\n\n"
             for pr in failed_prs:
-                pr_clean = pr.replace("❌ ", "").strip()
-                release_body += f"- {pr_clean}\n"
+                release_body += f"{pr}\n"
+        
+        if skipped_prs:
+            release_body += f"\n### ⚠️ Skipped PRs ({skipped_count})\n\n"
+            for pr in skipped_prs:
+                release_body += f"{pr}\n"
         
         release_body += f"""
 ## 📊 Build Statistics
-- **Total PRs Processed**: {len(applied_prs) + len(failed_prs)}
-- **Successfully Merged**: {len(applied_prs)}
-- **Failed to Merge**: {len(failed_prs)}
-- **Success Rate**: {(len(applied_prs)/(len(applied_prs) + len(failed_prs))*100):.1f}% (if any PRs were processed)
+- **Total PRs Processed**: {total_prs}
+- **Successfully Merged**: {successfully_merged}
+- **Failed to Merge**: {failed_to_merge}
+- **Skipped (repo not accessible)**: {skipped_count}
+- **Success Rate**: {success_rate:.1f}%
 
-## 📄 Full Report
+## 📄 Source Code
+The complete source code for this release is available in the IfcOpenShell fork:
+
+- **🔗 Browse Source**: [falken10vdl/IfcOpenShell:weekly-build-0.8.4-alpha{datetime.now().strftime('%y%m%d')}](https://github.com/falken10vdl/IfcOpenShell/tree/weekly-build-0.8.4-alpha{datetime.now().strftime('%y%m%d')})
+- **📥 Download ZIP**: [Source Archive](https://github.com/falken10vdl/IfcOpenShell/archive/weekly-build-0.8.4-alpha{datetime.now().strftime('%y%m%d')}.zip)
+- **👨‍💻 For PR Authors**: Checkout the branch above to test your PRs with other merged changes
+
+## 📋 Full Report
 Download the complete merge report for detailed information about each PR, including failure reasons and author statistics.
 
 ## ⚠️ Important Notes
@@ -195,15 +283,18 @@ The next automated build will be available next Sunday at 2 AM UTC.
 def upload_to_falken10vdl():
     print("Starting upload to GitHub releases...")
     
+    # Get build paths
+    built_addons_path = get_build_paths()
+    
     # Check if the built addons directory exists
-    if not os.path.exists(BUILT_ADDONS_PATH):
-        print(f"Error: The built addons directory '{BUILT_ADDONS_PATH}' does not exist.")
+    if not os.path.exists(built_addons_path):
+        print(f"Error: The built addons directory '{built_addons_path}' does not exist.")
         return False
     
     # Find addon files
-    addon_files = glob.glob(os.path.join(BUILT_ADDONS_PATH, "*.zip"))
+    addon_files = glob.glob(os.path.join(built_addons_path, "*.zip"))
     if not addon_files:
-        print(f"Error: No addon zip files found in '{BUILT_ADDONS_PATH}'")
+        print(f"Error: No addon zip files found in '{built_addons_path}'")
         return False
     
     print(f"Found {len(addon_files)} addon files to upload:")
@@ -220,7 +311,7 @@ def upload_to_falken10vdl():
     # Generate release information
     tag_name = get_release_tag()
     release_name = f"BonsaiPR v0.8.4-alpha{datetime.now().strftime('%y%m%d')} - Weekly Build"
-    release_body = generate_release_body(report_file)
+    release_body = generate_release_body(report_file, addon_files)
     
     print(f"Creating GitHub release: {tag_name}")
     

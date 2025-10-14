@@ -34,6 +34,13 @@ def run_scripts_sequentially():
     print(f"Starting weekly BonsaiPR automation at {datetime.now()}")
     print(f"Logs directory: {logs_dir}")
     print(f"Scripts to execute: {len(scripts)}")
+    print()
+    print("Script 1: Clone fork, merge PRs, create weekly branch (for PR authors)")
+    print("Script 2: Apply bonsai→bonsaiPR renaming and build user addons")
+    print("Script 3: Upload addons to falken10vdl/bonsaiPR releases")
+    print("Script 4: Upload automation scripts")
+    print("         (Source code available in falken10vdl/IfcOpenShell branches)")
+    print()
     
     for i, script in enumerate(scripts, 1):
         # Check if script exists before running
