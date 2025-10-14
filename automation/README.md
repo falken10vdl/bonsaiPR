@@ -1,138 +1,161 @@
-# Weekly BonsaiPR Automation
+# BonsaiPR Weekly Automation System
 
-This project automates the process of managing BonsaiPR development by running a series of scripts on a weekly basis. The automation includes cloning repositories, merging pull requests, building addons, creating GitHub releases, uploading source code, and maintaining the automation system itself.
+This directory contains the complete automation system for weekly BonsaiPR builds.
 
-## Project Structure
+## Overview
+
+The BonsaiPR automation system performs weekly builds that:
+1. Merge latest pull requests from IfcOpenShell repository
+2. Build BonsaiPR addons for multiple platforms (Linux, macOS, Windows)
+3. Create GitHub releases with download links
+4. Upload complete source code for developer access
+
+## Directory Structure
 
 ```
-weekly-bonsaipr-automation
-├── src
-│   ├── main.py                # Entry point that runs scripts sequentially
-│   └── config
-│       ├── __init__.py        # Empty initializer for the config module
-│       └── settings.py        # Configuration settings for the project
-├── scripts
-│   ├── 00_clone_merge_and_replace.py     # Clones repo and merges PRs
-│   ├── 01_build_bonsaiPR_addons.py       # Builds the bonsaiPR addons
-│   ├── 02_upload_to_falken10vdl.py       # Creates GitHub releases
-│   ├── 03_upload_mergedPR.py             # Uploads source code
-│   └── 04_upload_automation_scripts.py   # Uploads automation system
-├── logs
-│   └── .gitkeep                # Keeps the logs directory tracked by Git
-├── requirements.txt            # Python dependencies for the project
-├── .env.example                 # Example of environment variables needed
-├── cron
-│   └── weekly-automation.cron   # Cron job configuration for weekly execution
-└── README.md                   # Documentation for the project
+automation/
+├── scripts/           # Main automation scripts
+│   ├── 00_clone_merge_and_replace.py    # PR merging and source modification
+│   ├── 01_build_bonsaiPR_addons.py      # Multi-platform addon building
+│   ├── 02_upload_to_falken10vdl.py      # GitHub release management
+│   ├── 03_upload_mergedPR.py            # Source code upload
+│   └── 04_upload_automation_scripts.py  # This script (automation upload)
+├── src/               # Main orchestration
+│   ├── main.py        # Entry point for automation
+│   ├── scheduler.py   # Scheduling utilities
+│   ├── script_runner.py  # Script execution management
+│   └── config/        # Configuration management
+├── cron/             # Cron job configuration
+├── logs/             # Log directory
+└── requirements.txt  # Python dependencies
 ```
 
 ## Setup Instructions
 
-1. **Clone the Repository**: Clone this repository to your local machine.
-   
-   ```bash
-   git clone <repository-url>
-   cd weekly-bonsaipr-automation
+### 1. Prerequisites
+
+- Python 3.11+
+- Git
+- GitHub personal access token with repo permissions
+- Build environment for IfcOpenShell (if building locally)
+
+### 2. Configuration
+
+1. **Update Configuration**: Edit the script files to update these variables:
+   ```python
+   GITHUB_TOKEN = "YOUR_GITHUB_TOKEN_HERE"
+   GITHUB_OWNER = "YOUR_GITHUB_USERNAME"
    ```
 
-2. **Install Dependencies**: Install the required Python packages listed in `requirements.txt`.
-
-   ```bash
-   pip install -r requirements.txt
+2. **Update Paths**: Modify paths in scripts to match your system:
+   ```python
+   # Update these paths as needed
+   SOURCE_DIR = "/path/to/your/IfcOpenShell"
+   BUILT_ADDONS_PATH = "/path/to/your/bonsaiPR/dist"
    ```
 
-3. **Configure Environment Variables**: Copy the `.env.example` file to `.env` and update the necessary environment variables.
-
-4. **Set Up Cron Job**: Configure the cron job by adding the contents of `cron/weekly-automation.cron` to your crontab. Note that you can also run this manually with `crontab -e` and add the line directly.
-
-   ```bash
-   crontab -e
-   # Then add the line from cron/weekly-automation.cron
-   ```
-
-   Or to use the file directly:
-   ```bash
-   crontab cron/weekly-automation.cron
-   ```
-
-5. **Run the Automation**: You can manually run the automation by executing the `src/main.py` script.
-
-   ```bash
-   python src/main.py
-   ```
-
-## Usage
-
-The automation will run the following scripts sequentially:
-
-1. `00_clone_merge_and_replace.py`: Clones the IfcOpenShell repository, merges open pull requests, and applies bonsai→bonsaiPR replacements
-2. `01_build_bonsaiPR_addons.py`: Builds BonsaiPR addons for multiple platforms (Linux, macOS, Windows)
-3. `02_upload_to_falken10vdl.py`: Creates GitHub releases and uploads addon files with rich descriptions
-4. `03_upload_mergedPR.py`: Uploads complete source code to GitHub repository for developer access
-5. `04_upload_automation_scripts.py`: Uploads sanitized automation scripts to maintain system transparency
-
-### Manual Execution
-
-To run the automation manually:
+### 3. Install Dependencies
 
 ```bash
-cd /home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation
-python src/main.py
+pip install -r requirements.txt
 ```
 
-### Scheduled Execution
+### 4. Manual Testing
 
-The cron job runs every Sunday at 2:00 AM UTC:
-
+Test individual scripts:
 ```bash
-# View current cron jobs
-crontab -l
+# Test PR merging
+python scripts/00_clone_merge_and_replace.py
 
-# Edit cron jobs
-crontab -e
+# Test addon building
+python scripts/01_build_bonsaiPR_addons.py
+
+# Test GitHub uploads
+python scripts/02_upload_to_falken10vdl.py
+python scripts/03_upload_mergedPR.py
 ```
 
-## Logging
+### 5. Schedule Automation
 
-**Automated Logging**: When run via cron, logs are automatically written to the `logs/` directory with timestamped filenames:
-- Format: `automation-YYYYMMDD-HHMMSS.log`
-- Location: `/home/falken10vdl/bonsaiPRDevel/weekly-bonsaipr-automation/logs/`
-- Example: `logs/automation-20251013-020000.log`
-
-**Manual Logging**: When run manually, output goes to console. To log manually:
-
+**Option A: Using Cron**
 ```bash
-python src/main.py > logs/manual-$(date +%Y%m%d-%H%M%S).log 2>&1
+# Install the cron job (runs weekly on Sunday at 2 AM UTC)
+crontab cron/weekly-automation.cron
 ```
 
-**Log Monitoring**: Monitor logs for execution status:
+## Script Details
 
-```bash
-# View latest log
-ls -la logs/ | tail -1
+### 00_clone_merge_and_replace.py
+- Clones IfcOpenShell repository
+- Fetches open pull requests via GitHub API
+- Attempts to merge each PR automatically
+- Replaces "bonsai" with "bonsaiPR" throughout codebase
+- Generates detailed merge reports with statistics
 
-# Follow latest log in real-time
-tail -f logs/automation-*.log
+### 01_build_bonsaiPR_addons.py
+- Builds BonsaiPR addons for multiple platforms:
+  - Linux x64
+  - macOS Intel (x64)
+  - macOS Apple Silicon (ARM64)
+  - Windows x64
+- Uses Python 3.11 target
+- Creates distributable zip files
 
-# Check for errors in recent logs
-grep -i error logs/automation-*.log
-```
+### 02_upload_to_falken10vdl.py
+- Creates GitHub releases with semantic versioning
+- Uploads addon files as release assets
+- Generates rich markdown descriptions with PR details
+- Handles existing releases gracefully
 
-## Architecture
+### 03_upload_mergedPR.py
+- Uploads complete IfcOpenShell source code to GitHub
+- Creates both main branch and weekly branches
+- Handles Git submodule issues
+- Makes source code browsable for developers
 
-### Core Components
+## Features
 
-- **`src/main.py`**: Main orchestrator that runs scripts sequentially with proper logging
-- **`src/config/settings.py`**: Configuration management using environment variables
-- **`scripts/`**: Individual automation scripts for each workflow step
-- **`logs/`**: Timestamped execution logs for monitoring and debugging
-- **`cron/`**: Cron job configuration file
+- **Automated PR Integration**: Automatically discovers and merges open PRs
+- **Multi-Platform Builds**: Supports all major operating systems
+- **Professional Releases**: Rich GitHub releases with detailed descriptions
+- **Source Transparency**: Complete source code available to developers
+- **Comprehensive Reporting**: Detailed logs and statistics
+- **Robust Error Handling**: Graceful handling of network issues and conflicts
+- **Cron Scheduling**: Automated weekly execution with comprehensive logging
 
-### Configuration Management
+## Output
 
-The system uses a centralized configuration approach:
+The automation produces:
+- **GitHub Releases**: Weekly releases with downloadable addons
+- **Source Code**: Complete browsable source code repository
+- **Build Reports**: Detailed merge and build statistics
+- **Log Files**: Comprehensive execution logs
 
-- **Environment Variables**: Stored in `.env` file (not tracked in git)
-- **Settings Class**: `src/config/settings.py` loads and validates configuration
-- **Script Discovery**: Automatically detects numbered scripts in `scripts/` directory
-- **Dynamic Execution**: Scripts run in numerical order (00_, 01_, 02_, etc.)
+## Weekly Schedule
+
+By default, the automation runs every Sunday at 2:00 AM UTC, producing builds with the naming pattern:
+- `v0.8.4-alphaYYMMDD` (e.g., `v0.8.4-alpha251013`)
+
+## Troubleshooting
+
+### Common Issues:
+
+1. **GitHub API Rate Limits**: Ensure your token has sufficient permissions
+2. **Build Failures**: Check IfcOpenShell build dependencies
+3. **Network Issues**: Scripts include retry logic for uploads
+4. **Permission Issues**: Ensure proper file/directory permissions
+
+### Logs:
+
+Check logs in:
+- `logs/automation.log`: Main automation log
+- Individual script outputs during execution
+
+## License
+
+This automation system follows the same license as the Bonsai project.
+
+---
+
+**Last Updated**: 2025-10-14
+**System Version**: Weekly BonsaiPR Automation v1.0
