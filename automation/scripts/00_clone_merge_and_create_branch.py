@@ -125,10 +125,20 @@ def apply_prs_to_branch(branch_name, prs):
             pr_number = pr['number']
             pr_title = pr['title']
             
+            # Check if PR is in draft status
+            if pr.get('draft', False):
+                print(f"⚠️  Skipping PR #{pr_number}: PR is in DRAFT status")
+                pr_with_reason = pr.copy()
+                pr_with_reason['skip_reason'] = 'DRAFT status'
+                skipped.append(pr_with_reason)
+                continue
+            
             # Check if PR head repo is accessible
             if not pr.get('head') or not pr['head'].get('repo'):
                 print(f"⚠️  Skipping PR #{pr_number}: Repository no longer accessible (deleted fork)")
-                skipped.append(pr)
+                pr_with_reason = pr.copy()
+                pr_with_reason['skip_reason'] = 'Repository no longer accessible (deleted fork)'
+                skipped.append(pr_with_reason)
                 continue
             
             pr_head_ref = pr['head']['ref']
@@ -137,7 +147,9 @@ def apply_prs_to_branch(branch_name, prs):
             # Additional safety check for required fields
             if not pr_head_ref or not pr_head_repo:
                 print(f"⚠️  Skipping PR #{pr_number}: Missing required PR information")
-                skipped.append(pr)
+                pr_with_reason = pr.copy()
+                pr_with_reason['skip_reason'] = 'Missing required PR information'
+                skipped.append(pr_with_reason)
                 continue
             
             print(f"Applying PR #{pr_number}: {pr_title}")
@@ -187,7 +199,7 @@ def apply_prs_to_branch(branch_name, prs):
         print(f"\nPR Application Summary:")
         print(f"✅ Successfully applied: {len(applied)} PRs")
         print(f"❌ Failed to apply: {len(failed)} PRs")
-        print(f"⚠️  Skipped (repo not accessible): {len(skipped)} PRs")
+        print(f"⚠️  Skipped (draft/repo issues): {len(skipped)} PRs")
         
         return applied, failed, skipped
         
@@ -301,7 +313,7 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
         f.write(f"- Total PRs processed: {len(applied_prs) + len(failed_prs) + len(skipped_prs)}\n")
         f.write(f"- Successfully merged: {len(applied_prs)}\n")
         f.write(f"- Failed to merge: {len(failed_prs)}\n")
-        f.write(f"- Skipped (repo not accessible): {len(skipped_prs)}\n\n")
+        f.write(f"- Skipped (draft/repo issues): {len(skipped_prs)}\n\n")
         
         if applied_prs:
             f.write(f"## ✅ Successfully Merged PRs ({len(applied_prs)})\n\n")
@@ -325,7 +337,8 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
-                f.write(f"  - Reason: Repository no longer accessible (likely deleted fork)\n\n")
+                skip_reason = pr.get('skip_reason', 'Repository no longer accessible (likely deleted fork)')
+                f.write(f"  - Reason: {skip_reason}\n\n")
         
         f.write(f"## Developer Instructions\n\n")
         f.write(f"To use this branch for development:\n\n")
