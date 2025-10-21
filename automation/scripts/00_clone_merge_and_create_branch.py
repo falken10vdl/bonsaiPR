@@ -11,7 +11,9 @@ load_dotenv()
 # Configuration
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")  # Set your GitHub token in environment variables
 upstream_repo_url = 'https://github.com/IfcOpenShell/IfcOpenShell.git'
-fork_repo_url = 'https://github.com/falken10vdl/IfcOpenShell.git'
+# Use token in the fork URL for authenticated operations
+fork_repo_url = f'https://{GITHUB_TOKEN}@github.com/falken10vdl/IfcOpenShell.git'
+fork_repo_url_public = 'https://github.com/falken10vdl/IfcOpenShell.git'  # For display purposes
 work_dir = os.getenv("BASE_CLONE_DIR", "/home/falken10vdl/bonsaiPRDevel/IfcOpenShell")
 upstream_repo = 'IfcOpenShell/IfcOpenShell'
 fork_owner = 'falken10vdl'
@@ -48,6 +50,9 @@ def setup_repository():
             subprocess.run(['git', 'fetch', 'upstream'], check=True)
             subprocess.run(['git', 'reset', '--hard', 'upstream/v0.8.0'], check=True)
             
+            # Update the origin remote URL to use token for authentication
+            subprocess.run(['git', 'remote', 'set-url', 'origin', fork_repo_url], check=True)
+            
             # Push updated v0.8.0 to fork
             subprocess.run(['git', 'push', 'origin', 'v0.8.0', '--force'], check=True)
             
@@ -55,7 +60,7 @@ def setup_repository():
         finally:
             os.chdir(original_dir)
     else:
-        print(f"Cloning fork repository {fork_repo_url} into {work_dir}")
+        print(f"Cloning fork repository into {work_dir}")
         subprocess.run(['git', 'clone', fork_repo_url, work_dir], check=True)
         
         # Add upstream remote
@@ -288,12 +293,15 @@ def push_branch_to_fork(branch_name):
     try:
         os.chdir(work_dir)
         
+        # Ensure origin remote is set to use token
+        subprocess.run(['git', 'remote', 'set-url', 'origin', fork_repo_url], check=True)
+        
         # Push the new branch to origin (fork)
         subprocess.run(['git', 'push', 'origin', branch_name, '--force'], check=True)
-        print(f"✅ Pushed branch '{branch_name}' to fork: {fork_repo_url}")
+        print(f"✅ Pushed branch '{branch_name}' to fork: {fork_repo_url_public}")
         
-        # Return to v0.8.0 branch
-        subprocess.run(['git', 'checkout', 'v0.8.0'], check=True)
+        # Stay on the branch with PRs instead of returning to v0.8.0
+        print(f"📍 Repository is now on branch '{branch_name}' with applied PRs")
         
     finally:
         os.chdir(original_dir)
@@ -355,6 +363,12 @@ def main():
     print("Starting weekly BonsaiPR branch creation...")
     print("This script creates clean branches with merged PRs for PR authors to test.")
     print("No bonsai→bonsaiPR renaming is done here - that happens in the build script.")
+    
+    # Validate GitHub token
+    if not GITHUB_TOKEN:
+        print("❌ Error: GITHUB_TOKEN not found in environment variables")
+        print("Please check your .env file and ensure GITHUB_TOKEN is set")
+        return
     
     branch_name, report_path = get_branch_and_report_names()
     

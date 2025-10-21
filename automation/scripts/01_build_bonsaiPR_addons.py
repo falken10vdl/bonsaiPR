@@ -320,39 +320,96 @@ def build_addons(target_platforms=None):
     log_message("Addon build process completed")
 
 def create_build_report():
-    """Create a build report with details"""
+    """Create or update a build report with details"""
     version, pyversion, current_date = get_version_info()
     report_filename = f"README-bonsaiPR_{pyversion}-{version}-alpha{current_date}.txt"
     report_path = os.path.join(REPORT_PATH, report_filename)
     
     dist_dir = os.path.join(BUILD_BASE_DIR, 'src', 'bonsaiPR', 'dist')
     
-    with open(report_path, 'w') as f:
-        f.write(f"BonsaiPR Build Report\n")
-        f.write(f"{'=' * 50}\n\n")
-        f.write(f"Build Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write(f"Version: {version}-alpha{current_date}\n")
-        f.write(f"Python Version: {pyversion}\n\n")
+    # Check if the report file already exists
+    file_exists = os.path.exists(report_path)
+    
+    with open(report_path, 'a' if file_exists else 'w') as f:
+        if file_exists:
+            # Add separator and build information to existing file
+            f.write(f"\n\n{'=' * 80}\n")
+            f.write(f"BonsaiPR Build Information\n")
+            f.write(f"{'=' * 80}\n\n")
+        else:
+            # Create new file with header (this shouldn't happen if 00_clone script runs first)
+            f.write(f"BonsaiPR Build Report\n")
+            f.write(f"{'=' * 50}\n\n")
         
-        f.write("Built Addons:\n")
-        f.write("-" * 20 + "\n")
+        f.write(f"## 🔨 Build Details\n\n")
+        f.write(f"**Build Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
+        f.write(f"**Version**: {version}-alpha{current_date}\n")
+        f.write(f"**Python Version**: {pyversion}\n")
+        f.write(f"**Build Method**: Makefile automation with multi-platform support\n\n")
+        
+        f.write("## 📦 Built Addon Files\n\n")
         
         if os.path.exists(dist_dir):
             addon_files = glob.glob(os.path.join(dist_dir, "*.zip"))
-            for addon_file in sorted(addon_files):
-                filename = os.path.basename(addon_file)
-                filesize = os.path.getsize(addon_file)
-                f.write(f"- {filename} ({filesize:,} bytes)\n")
+            if addon_files:
+                for addon_file in sorted(addon_files):
+                    filename = os.path.basename(addon_file)
+                    filesize = os.path.getsize(addon_file)
+                    
+                    # Determine platform from filename
+                    if "windows" in filename.lower() or "win" in filename.lower():
+                        platform_icon = "🪟"
+                        platform_name = "Windows (x64)"
+                    elif "linux" in filename.lower():
+                        platform_icon = "🐧"
+                        platform_name = "Linux (x64)"
+                    elif "macosm1" in filename.lower() or "arm64" in filename.lower():
+                        platform_icon = "🍎"
+                        platform_name = "macOS (Apple Silicon)"
+                    elif "macos" in filename.lower():
+                        platform_icon = "🍎"
+                        platform_name = "macOS (Intel)"
+                    else:
+                        platform_icon = "📦"
+                        platform_name = "Unknown Platform"
+                    
+                    f.write(f"- {platform_icon} **{platform_name}**: `{filename}` ({filesize:,} bytes)\n")
+                
+                f.write(f"\n**Total Files Built**: {len(addon_files)}\n")
+            else:
+                f.write("❌ No addon files found in dist directory.\n")
         else:
-            f.write("No addon files found.\n")
+            f.write("❌ Dist directory not found.\n")
         
-        f.write("\nBuild Configuration:\n")
-        f.write("-" * 25 + "\n")
-        f.write(f"Source Directory: {SOURCE_DIR}\n")
-        f.write(f"Build Directory: {BUILD_BASE_DIR}\n")
-        f.write("Build Method: Using Makefile in bonsaiPR directory\n")
+        f.write(f"\n## 🛠️ Build Configuration\n\n")
+        f.write(f"- **Source Directory**: `{SOURCE_DIR}`\n")
+        f.write(f"- **Build Directory**: `{BUILD_BASE_DIR}`\n")
+        f.write(f"- **Target Platforms**: linux-x64, macos-x64, macosm1-arm64, win-x64\n")
+        f.write(f"- **Transformations Applied**:\n")
+        f.write(f"  - ✅ Source code copied from IfcOpenShell repository\n")
+        f.write(f"  - ✅ Text replacement: `bonsai` → `bonsaiPR` throughout codebase\n")
+        f.write(f"  - ✅ Directory rename: `src/bonsai/` → `src/bonsaiPR/`\n")
+        f.write(f"  - ✅ File and directory names updated\n")
+        f.write(f"  - ✅ Makefile paths corrected\n")
+        f.write(f"  - ✅ Multi-platform addon compilation\n")
+        
+        f.write(f"\n## 📋 Installation Instructions\n\n")
+        f.write(f"1. Download the appropriate addon file for your platform\n")
+        f.write(f"2. In Blender, go to Edit > Preferences > Add-ons\n")
+        f.write(f"3. Click 'Install...' and select the downloaded zip file\n")
+        f.write(f"4. Enable the 'BonsaiPR' addon in the list\n")
+        f.write(f"5. The addon will appear as 'BonsaiPR' in the N-panel\n\n")
+        
+        f.write(f"## ⚠️ Important Notes\n\n")
+        f.write(f"- This build includes community pull requests that may be experimental\n")
+        f.write(f"- Use at your own risk in production environments\n")
+        f.write(f"- Report issues to: https://github.com/falken10vdl/bonsaiPR\n")
+        f.write(f"- For the original IfcOpenShell project: https://github.com/IfcOpenShell/IfcOpenShell\n")
     
-    log_message(f"Build report created: {report_path}")
+    if file_exists:
+        log_message(f"Build information appended to existing report: {report_path}")
+    else:
+        log_message(f"Build report created: {report_path}")
 
 def parse_arguments():
     """Parse command line arguments"""

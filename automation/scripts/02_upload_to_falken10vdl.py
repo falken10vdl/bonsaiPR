@@ -16,6 +16,10 @@ GITHUB_REPO = "bonsaiPR"
 FORK_OWNER = "falken10vdl"
 FORK_REPO = "IfcOpenShell"
 
+# Use token in URLs for authenticated Git operations
+bonsaiPR_repo_url = f'https://{GITHUB_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git'
+bonsaiPR_repo_url_public = f'https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git'
+
 def get_build_paths():
     """Get the paths for built addons"""
     # Updated to use the actual build directory created by 01_build script
@@ -32,9 +36,47 @@ def get_branch_name():
     version = "0.8.4"
     return f"weekly-build-{version}-alpha{current_date}"
 
+def get_version_info():
+    """Get version information for naming"""
+    current_date = datetime.now().strftime('%y%m%d')
+    version = "0.8.4"
+    pyversion = "py311"
+    return version, pyversion, current_date
+
+def setup_git_authentication():
+    """Setup Git to use token for authentication"""
+    try:
+        # Set Git credentials for the bonsaiPR repository
+        subprocess.run(['git', 'config', 'user.name', 'GitHub Actions'], 
+                      capture_output=True, cwd=os.getcwd())
+        subprocess.run(['git', 'config', 'user.email', 'actions@github.com'], 
+                      capture_output=True, cwd=os.getcwd())
+        
+        # Check if we're in a git repository, if not initialize one
+        result = subprocess.run(['git', 'status'], capture_output=True, cwd=os.getcwd())
+        if result.returncode != 0:
+            print("ℹ️ Not in a git repository, initializing temporary git repo for tag operations...")
+            subprocess.run(['git', 'init'], capture_output=True, cwd=os.getcwd())
+            subprocess.run(['git', 'remote', 'add', 'origin', bonsaiPR_repo_url], 
+                          capture_output=True, cwd=os.getcwd())
+        else:
+            # Update remote URL to use token
+            subprocess.run(['git', 'remote', 'set-url', 'origin', bonsaiPR_repo_url], 
+                          capture_output=True, cwd=os.getcwd())
+        
+        print("✅ Git authentication configured")
+        return True
+        
+    except Exception as e:
+        print(f"⚠️ Warning: Could not setup Git authentication: {e}")
+        return False
+
 def cleanup_local_tag(tag_name):
     """Remove local tag if it exists to prevent conflicts"""
     try:
+        # Setup Git authentication first
+        setup_git_authentication()
+        
         # Check if the tag exists locally
         result = subprocess.run(['git', 'tag', '-l', tag_name], 
                               capture_output=True, text=True, cwd=os.getcwd())
@@ -45,9 +87,15 @@ def cleanup_local_tag(tag_name):
                          capture_output=True, cwd=os.getcwd())
             print(f"✅ Local tag {tag_name} removed")
         
-        # Also try to remove the tag from origin to clean up remote
-        subprocess.run(['git', 'push', 'origin', f':{tag_name}'], 
-                     capture_output=True, cwd=os.getcwd())
+        # Try to remove the tag from origin to clean up remote (optional, may fail if tag doesn't exist)
+        print(f"🏷️ Attempting to remove remote tag: {tag_name}")
+        result = subprocess.run(['git', 'push', 'origin', f':{tag_name}'], 
+                               capture_output=True, text=True, cwd=os.getcwd())
+        
+        if result.returncode == 0:
+            print(f"✅ Remote tag {tag_name} removed")
+        else:
+            print(f"ℹ️ Remote tag {tag_name} may not exist (this is normal)")
         
     except Exception as e:
         print(f"ℹ️ Note: Could not clean up tag {tag_name}: {e}")
@@ -152,6 +200,146 @@ def upload_asset_to_release(release_id, file_path, asset_name):
             print(f"ℹ️ Asset {asset_name} appears to have been uploaded despite error")
             return True
         return False
+
+def create_or_update_readme():
+    """Create or update a README file with upload information"""
+    version, pyversion, current_date = get_version_info()
+    readme_filename = f"README-bonsaiPR_{pyversion}-{version}-alpha{current_date}.txt"
+    readme_path = os.path.join(get_reports_path(), readme_filename)
+    
+    # Check if the README file already exists
+    file_exists = os.path.exists(readme_path)
+    
+    with open(readme_path, 'a' if file_exists else 'w') as f:
+        if file_exists:
+            # Add separator and upload information to existing file
+            f.write(f"\n\n{'=' * 80}\n")
+            f.write(f"BonsaiPR Upload & Release Information\n")
+            f.write(f"{'=' * 80}\n\n")
+        else:
+            # Create new file with header (this shouldn't happen if previous scripts run first)
+            f.write(f"BonsaiPR Release Report\n")
+            f.write(f"{'=' * 50}\n\n")
+        
+        # Get current release information
+        tag_name = get_release_tag()
+        built_addons_path = get_build_paths()
+        addon_files = glob.glob(os.path.join(built_addons_path, "*.zip")) if os.path.exists(built_addons_path) else []
+        
+        f.write(f"## 🚀 Release Details\n\n")
+        f.write(f"**Upload Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
+        f.write(f"**Release Tag**: {tag_name}\n")
+        f.write(f"**GitHub Release**: https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/tag/{tag_name}\n")
+        f.write(f"**Release Type**: Pre-release (Alpha)\n\n")
+        
+        f.write(f"## 📦 Released Assets\n\n")
+        
+        if addon_files:
+            f.write(f"**Addon Files ({len(addon_files)} platforms)**:\n\n")
+            for addon_file in sorted(addon_files):
+                filename = os.path.basename(addon_file)
+                filesize = os.path.getsize(addon_file)
+                
+                # Determine platform from filename
+                if "windows" in filename.lower() or "win" in filename.lower():
+                    platform_icon = "🪟"
+                    platform_name = "Windows (x64)"
+                elif "linux" in filename.lower():
+                    platform_icon = "🐧"
+                    platform_name = "Linux (x64)"
+                elif "macosm1" in filename.lower() or "arm64" in filename.lower():
+                    platform_icon = "🍎"
+                    platform_name = "macOS (Apple Silicon)"
+                elif "macos" in filename.lower():
+                    platform_icon = "🍎"
+                    platform_name = "macOS (Intel)"
+                else:
+                    platform_icon = "📦"
+                    platform_name = "Unknown Platform"
+                
+                f.write(f"- {platform_icon} **{platform_name}**: `{filename}` ({filesize:,} bytes)\n")
+        else:
+            f.write("❌ No addon files found for release.\n")
+        
+        # Add report file information
+        report_file = find_report_file()
+        if report_file:
+            report_filename = os.path.basename(report_file)
+            report_filesize = os.path.getsize(report_file)
+            f.write(f"\n**Documentation**:\n")
+            f.write(f"- 📄 **Detailed Report**: `{report_filename}` ({report_filesize:,} bytes)\n")
+        
+        f.write(f"\n## 🌐 Download Links\n\n")
+        f.write(f"**Direct Downloads**:\n")
+        f.write(f"- 🔗 [GitHub Releases Page](https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases)\n")
+        f.write(f"- 🔗 [Latest Release](https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/tag/{tag_name})\n")
+        f.write(f"- 🔗 [Source Code Branch](https://github.com/{FORK_OWNER}/{FORK_REPO}/tree/{get_branch_name()})\n\n")
+        
+        f.write(f"## 📊 Release Statistics\n\n")
+        
+        # Try to get some statistics from the report file
+        if report_file and os.path.exists(report_file):
+            try:
+                with open(report_file, 'r', encoding='utf-8') as rf:
+                    report_content = rf.read()
+                
+                # Extract statistics from the report
+                total_prs = 0
+                successfully_merged = 0
+                failed_to_merge = 0
+                skipped_count = 0
+                
+                for line in report_content.split('\n'):
+                    line = line.strip()
+                    if line.startswith("- Total PRs processed:"):
+                        total_prs = int(line.split(":")[1].strip())
+                    elif line.startswith("- Successfully merged:"):
+                        successfully_merged = int(line.split(":")[1].strip())
+                    elif line.startswith("- Failed to merge:"):
+                        failed_to_merge = int(line.split(":")[1].strip())
+                    elif line.startswith("- Skipped (draft/repo issues):"):
+                        skipped_count = int(line.split(":")[1].strip())
+                
+                if total_prs > 0:
+                    success_rate = (successfully_merged / total_prs * 100) if total_prs > 0 else 0
+                    f.write(f"- **Total PRs Processed**: {total_prs}\n")
+                    f.write(f"- **Successfully Merged**: {successfully_merged}\n")
+                    f.write(f"- **Failed to Merge**: {failed_to_merge}\n")
+                    f.write(f"- **Skipped**: {skipped_count}\n")
+                    f.write(f"- **Success Rate**: {success_rate:.1f}%\n")
+                else:
+                    f.write("- Statistics not available from report file\n")
+                    
+            except Exception as e:
+                f.write(f"- Could not extract statistics: {e}\n")
+        else:
+            f.write("- No report file available for statistics\n")
+        
+        f.write(f"\n## 🔧 Developer Information\n\n")
+        f.write(f"**For PR Authors and Contributors**:\n")
+        f.write(f"- Test your PRs using the branch: `{get_branch_name()}`\n")
+        f.write(f"- Download and test the appropriate addon for your platform\n")
+        f.write(f"- Report issues at: https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/issues\n")
+        f.write(f"- Contribute to IfcOpenShell: https://github.com/IfcOpenShell/IfcOpenShell\n\n")
+        
+        f.write(f"## ⚠️ Important Notices\n\n")
+        f.write(f"- **Alpha Release**: This is a development build with experimental features\n")
+        f.write(f"- **Community PRs**: Includes unreviewed community contributions\n")
+        f.write(f"- **Use Carefully**: Not recommended for production environments\n")
+        f.write(f"- **Backup First**: Always backup your Blender projects before testing\n")
+        f.write(f"- **Report Issues**: Help improve BonsaiPR by reporting bugs and issues\n\n")
+        
+        f.write(f"## 📅 Next Release\n\n")
+        f.write(f"- **Schedule**: Next automated build will be available next Sunday at 2 AM UTC\n")
+        f.write(f"- **Updates**: New PRs merged since this build will be included\n")
+        f.write(f"- **Notifications**: Watch the repository for release notifications\n")
+    
+    if file_exists:
+        print(f"📄 Upload information appended to existing README: {readme_path}")
+    else:
+        print(f"📄 README with upload information created: {readme_path}")
+    
+    return readme_path
 
 def generate_release_body(report_file_path, addon_files):
     """Generate release description from the report file and available addon files"""
@@ -347,6 +535,12 @@ The next automated build will be available next Sunday at 2 AM UTC.
 def upload_to_falken10vdl():
     print("Starting upload to GitHub releases...")
     
+    # Validate GitHub token
+    if not GITHUB_TOKEN:
+        print("❌ Error: GITHUB_TOKEN not found in environment variables")
+        print("Please check your .env file and ensure GITHUB_TOKEN is set")
+        return False
+    
     # Get build paths
     built_addons_path = get_build_paths()
     
@@ -365,10 +559,10 @@ def upload_to_falken10vdl():
     for file in addon_files:
         print(f"  - {os.path.basename(file)}")
     
-    # Find report file
+    # Find report file (only for generating release body, not for uploading)
     report_file = find_report_file()
     if report_file:
-        print(f"Found report file: {os.path.basename(report_file)}")
+        print(f"Found report file: {os.path.basename(report_file)} (will be used for release description)")
     else:
         print("Warning: No report file found")
     
@@ -399,17 +593,25 @@ def upload_to_falken10vdl():
         if upload_asset_to_release(release_id, addon_file, asset_name):
             success_count += 1
     
-    # Upload report file if it exists
-    if report_file:
-        report_asset_name = os.path.basename(report_file)
-        if upload_asset_to_release(release_id, report_file, report_asset_name):
-            success_count += 1
-            print(f"✅ Successfully uploaded report: {report_asset_name}")
+    # REMOVED: Upload of original report file (redundant)
+    # The complete README contains all the information
     
-    total_files = len(addon_files) + (1 if report_file else 0)
+    # Create or update README file with upload information
+    readme_path = create_or_update_readme()
+    
+    # Upload the complete README as an asset
+    if readme_path and os.path.exists(readme_path):
+        readme_asset_name = os.path.basename(readme_path)
+        if upload_asset_to_release(release_id, readme_path, readme_asset_name):
+            success_count += 1
+            print(f"✅ Successfully uploaded complete README: {readme_asset_name}")
+    
+    # Update total files count (addon files + README only)
+    total_files = len(addon_files) + 1  # +1 for README only
     print(f"\n🎉 Upload completed!")
     print(f"Successfully uploaded {success_count}/{total_files} files")
     print(f"Release URL: {release_url}")
+    print(f"README updated and uploaded: {readme_path}")
     
     return success_count == total_files
 
