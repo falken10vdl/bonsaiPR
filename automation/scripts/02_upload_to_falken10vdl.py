@@ -302,10 +302,31 @@ def create_or_update_readme():
                 
                 if total_prs > 0:
                     success_rate = (successfully_merged / total_prs * 100) if total_prs > 0 else 0
+                    
+                    # Calculate detailed breakdown to match the old format
+                    base_conflicts = report_content.count("Conflict with base branch")
+                    pr_conflicts = report_content.count("Conflict with other merged PRs") 
+                    merge_failures = report_content.count("Automatic merge failed") + report_content.count("Unrelated histories") + report_content.count("Git operation failed")
+                    # Note: PR conflicts are now actually skipped, not failed, so they shouldn't count towards failed_to_merge
+                    other_failures = failed_to_merge - base_conflicts - merge_failures
+                    
+                    draft_count = report_content.count("DRAFT status")
+                    deleted_count = report_content.count("Repository no longer accessible")
+                    missing_info_count = report_content.count("Missing required PR information")
+                    other_skipped = skipped_count - pr_conflicts - draft_count - deleted_count - missing_info_count
+                    
+                    # Write statistics in the old detailed format
                     f.write(f"- **Total PRs Processed**: {total_prs}\n")
                     f.write(f"- **Successfully Merged**: {successfully_merged}\n")
-                    f.write(f"- **Failed to Merge**: {failed_to_merge}\n")
-                    f.write(f"- **Skipped**: {skipped_count}\n")
+                    f.write(f"- **Failed to Merge (conflicts with base v0.8.0)**: {base_conflicts}\n")
+                    f.write(f"- **Skipped (conflicts with other PRs)**: {pr_conflicts}\n")
+                    
+                    if merge_failures > 0:
+                        f.write(f"- **Failed to Merge (other issues)**: {merge_failures}\n")
+                    if other_failures > 0:
+                        f.write(f"- **Failed to Merge (unknown)**: {other_failures}\n")
+                    
+                    f.write(f"- **Skipped (draft/repo issues)**: {draft_count + deleted_count + missing_info_count + other_skipped}\n")
                     f.write(f"- **Success Rate**: {success_rate:.1f}%\n")
                 else:
                     f.write("- Statistics not available from report file\n")
@@ -410,48 +431,92 @@ def generate_release_body(report_file_path, addon_files):
                     # For skipped PRs, we'll check the next few lines for the reason
                     skipped_prs.append(line)
         
-        # Now we need to re-read the file to add DRAFT labels to skipped PRs
-        # This is a simplified approach - we'll check the reason lines
+        # Enhanced parsing to capture failure and skip reasons
         with open(report_file_path, 'r') as f:
             lines = f.readlines()
         
-        # Process skipped PRs to add DRAFT labels
+        # Process all PR sections to add detailed reasons
+        in_failed_section = False
         in_skipped_section = False
         current_pr_line = None
-        skipped_prs_with_labels = []
+        failed_prs_with_reasons = []
+        skipped_prs_with_reasons = []
         
         for line in lines:
             line = line.strip()
             
-            if line.startswith("## ⚠️ Skipped PRs"):
+            if line.startswith("## ❌ Failed to Merge PRs"):
+                in_failed_section = True
+                in_skipped_section = False
+                continue
+            elif line.startswith("## ⚠️ Skipped PRs"):
+                in_failed_section = False
                 in_skipped_section = True
                 continue
             elif line.startswith("## "):
+                if current_pr_line and in_failed_section:
+                    failed_prs_with_reasons.append(current_pr_line)
+                elif current_pr_line and in_skipped_section:
+                    skipped_prs_with_reasons.append(current_pr_line)
+                in_failed_section = False
                 in_skipped_section = False
-                if current_pr_line:
-                    skipped_prs_with_labels.append(current_pr_line)
-                    current_pr_line = None
+                current_pr_line = None
                 continue
                 
-            if in_skipped_section:
+            if in_failed_section:
                 if line.startswith("- **PR #"):
                     if current_pr_line:
-                        skipped_prs_with_labels.append(current_pr_line)
+                        failed_prs_with_reasons.append(current_pr_line)
+                    current_pr_line = line
+                elif line.startswith("- Reason:") and current_pr_line:
+                    reason = line.replace("- Reason:", "").strip()
+                    # Add specific reason labels to PR line
+                    if "Conflict with base branch" in reason:
+                        current_pr_line = current_pr_line.replace("**: ", "** (BASE CONFLICT): ")
+                        failed_prs_with_reasons.append(current_pr_line)
+                    elif "Conflict with other merged PRs" in reason:
+                        # This should actually be in the skipped section, not failed
+                        current_pr_line = current_pr_line.replace("**: ", "** (PR CONFLICT): ")
+                        skipped_prs_with_reasons.append(current_pr_line)
+                    elif "Automatic merge failed" in reason:
+                        current_pr_line = current_pr_line.replace("**: ", "** (MERGE FAILED): ")
+                        failed_prs_with_reasons.append(current_pr_line)
+                    elif "Unrelated histories" in reason:
+                        current_pr_line = current_pr_line.replace("**: ", "** (DIVERGED): ")
+                        failed_prs_with_reasons.append(current_pr_line)
+                    else:
+                        current_pr_line = current_pr_line.replace("**: ", "** (ERROR): ")
+                        failed_prs_with_reasons.append(current_pr_line)
+                    current_pr_line = None
+            elif in_skipped_section:
+                if line.startswith("- **PR #"):
+                    if current_pr_line:
+                        skipped_prs_with_reasons.append(current_pr_line)
                     current_pr_line = line
                 elif line.startswith("- Reason:") and current_pr_line:
                     reason = line.replace("- Reason:", "").strip()
                     if "DRAFT status" in reason:
-                        # Add (DRAFT) to the PR line
                         current_pr_line = current_pr_line.replace("**: ", "** (DRAFT): ")
-                    skipped_prs_with_labels.append(current_pr_line)
+                    elif "Repository no longer accessible" in reason:
+                        current_pr_line = current_pr_line.replace("**: ", "** (DELETED FORK): ")
+                    elif "Missing required PR information" in reason:
+                        current_pr_line = current_pr_line.replace("**: ", "** (MISSING INFO): ")
+                    elif "Conflict with other merged PRs" in reason:
+                        current_pr_line = current_pr_line.replace("**: ", "** (PR CONFLICT): ")
+                    else:
+                        current_pr_line = current_pr_line.replace("**: ", "** (SKIPPED): ")
+                    skipped_prs_with_reasons.append(current_pr_line)
                     current_pr_line = None
         
-        # Add any remaining PR
-        if current_pr_line:
-            skipped_prs_with_labels.append(current_pr_line)
+        # Add any remaining PRs
+        if current_pr_line and in_failed_section:
+            failed_prs_with_reasons.append(current_pr_line)
+        elif current_pr_line and in_skipped_section:
+            skipped_prs_with_reasons.append(current_pr_line)
         
-        # Replace the original skipped_prs with the labeled version
-        skipped_prs = skipped_prs_with_labels
+        # Replace the original lists with the enhanced versions
+        failed_prs = failed_prs_with_reasons
+        skipped_prs = skipped_prs_with_reasons
         
         # Generate available downloads based on actual files
         downloads_section = "## 📦 Available Downloads\n\n"
@@ -490,20 +555,90 @@ This is an automated weekly build of BonsaiPR with the latest pull requests merg
         
         if failed_prs:
             release_body += f"\n### ❌ Failed to Merge ({failed_to_merge})\n\n"
-            for pr in failed_prs:
-                release_body += f"{pr}\n"
+            # Group failures by type for better organization
+            base_conflicts = [pr for pr in failed_prs if "(BASE CONFLICT)" in pr]
+            merge_failures = [pr for pr in failed_prs if "(MERGE FAILED)" in pr]
+            
+            other_failures = [pr for pr in failed_prs if not any(tag in pr for tag in ["(BASE CONFLICT)", "(PR CONFLICT)", "(MERGE FAILED)"])]
+            
+            if base_conflicts:
+                release_body += f"**Conflicts with base branch (v0.8.0):**\n"
+                for pr in base_conflicts:
+                    release_body += f"{pr}\n"
+                release_body += f"\n"
+                    
+
+                    
+            if merge_failures:
+                release_body += f"**Merge failures requiring manual intervention:**\n"
+                for pr in merge_failures:
+                    release_body += f"{pr}\n"
+                release_body += f"\n"
+                    
+            if other_failures:
+                release_body += f"**Other failures:**\n"
+                for pr in other_failures:
+                    release_body += f"{pr}\n"
+                release_body += f"\n"
         
         if skipped_prs:
             release_body += f"\n### ⚠️ Skipped PRs ({skipped_count})\n\n"
-            for pr in skipped_prs:
-                release_body += f"{pr}\n"
+            # Group skipped PRs by reason
+            pr_conflicts = [pr for pr in skipped_prs if "(PR CONFLICT)" in pr]
+            draft_prs = [pr for pr in skipped_prs if "(DRAFT)" in pr]
+            deleted_forks = [pr for pr in skipped_prs if "(DELETED FORK)" in pr]
+            missing_info = [pr for pr in skipped_prs if "(MISSING INFO)" in pr]
+            other_skipped = [pr for pr in skipped_prs if not any(tag in pr for tag in ["(PR CONFLICT)", "(DRAFT)", "(DELETED FORK)", "(MISSING INFO)"])]
+            
+            if pr_conflicts:
+                release_body += f"**Conflicts with other merged PRs:**\n"
+                for pr in pr_conflicts:
+                    release_body += f"{pr}\n"
+                release_body += f"\n"
+                    
+            if draft_prs:
+                release_body += f"**Draft PRs (not ready for merge):**\n"
+                for pr in draft_prs:
+                    release_body += f"{pr}\n"
+                release_body += f"\n"
+                    
+            if deleted_forks:
+                release_body += f"**Deleted/inaccessible repositories:**\n"
+                for pr in deleted_forks:
+                    release_body += f"{pr}\n"
+                release_body += f"\n"
+                    
+            if missing_info:
+                release_body += f"**Missing PR information:**\n"
+                for pr in missing_info:
+                    release_body += f"{pr}\n"
+                release_body += f"\n"
+                    
+            if other_skipped:
+                release_body += f"**Other reasons:**\n"
+                for pr in other_skipped:
+                    release_body += f"{pr}\n"
+                release_body += f"\n"
+        
+        # Calculate detailed statistics for the old format
+        base_conflicts = len([pr for pr in failed_prs if "(BASE CONFLICT)" in pr])
+        merge_failures = len([pr for pr in failed_prs if "(MERGE FAILED)" in pr or "(DIVERGED)" in pr or "(ERROR)" in pr])
+        
+        # PR conflicts are now in the skipped section (moved by updated merge logic)
+        pr_conflicts = len([pr for pr in skipped_prs if "(PR CONFLICT)" in pr])
+        draft_prs = len([pr for pr in skipped_prs if "(DRAFT)" in pr])
+        deleted_forks = len([pr for pr in skipped_prs if "(DELETED FORK)" in pr])
+        missing_info = len([pr for pr in skipped_prs if "(MISSING INFO)" in pr])
+        other_skipped = skipped_count - pr_conflicts - draft_prs - deleted_forks - missing_info
         
         release_body += f"""
 ## 📊 Build Statistics
 - **Total PRs Processed**: {total_prs}
 - **Successfully Merged**: {successfully_merged}
-- **Failed to Merge**: {failed_to_merge}
-- **Skipped (draft/repo issues)**: {skipped_count}
+- **Failed to Merge (conflicts with base v0.8.0)**: {base_conflicts}
+- **Skipped (conflicts with other PRs)**: {pr_conflicts}
+- **Failed to Merge (other issues)**: {merge_failures}
+- **Skipped (draft/repo issues)**: {draft_prs + deleted_forks + missing_info + other_skipped}
 - **Success Rate**: {success_rate:.1f}%
 
 ## 📄 Source Code

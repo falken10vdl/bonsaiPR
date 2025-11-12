@@ -11,4 +11,5 @@
 # crontab -r
 
 # Minute Hour Day Month DayOfWeek Command
-0 2 * * 0 cd /home/falken10vdl/bonsaiPRDevel/bonsaiPR/automation/src && /usr/bin/python3 main.py >> ../logs/cron_$(date +\%Y\%m\%d_\%H\%M\%S).log 2>&1
+# Note: main.py handles its own logging to automation_*.log, so no need for cron to create separate logs
+0 2 * * 0 cd /home/falken10vdl/bonsaiPRDevel/bonsaiPR/automation/src && /usr/bin/python3 main.py
