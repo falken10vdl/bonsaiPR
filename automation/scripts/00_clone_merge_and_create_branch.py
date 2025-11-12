@@ -370,6 +370,20 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
     if skipped_prs is None:
         skipped_prs = []
     print(f"Generating report at: {report_path}")
+    # --- Count failed PRs by reason ---
+    failed_conflict_with_base = 0
+    failed_conflict_with_others = 0
+    failed_unknown = 0
+    if failed_pr_test_results is not None:
+        for pr in failed_prs:
+            pr_number = pr['number']
+            test_result = failed_pr_test_results.get(pr_number, None)
+            if test_result is True:
+                failed_conflict_with_others += 1
+            elif test_result is False:
+                failed_conflict_with_base += 1
+            else:
+                failed_unknown += 1
     with open(report_path, 'w', encoding='utf-8') as f:
         f.write(f"# BonsaiPR Weekly Build Report\n")
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
@@ -380,6 +394,11 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
         f.write(f"- Successfully merged: {len(applied_prs)}\n")
         f.write(f"- Failed to merge: {len(failed_prs)}\n")
         f.write(f"- Skipped (draft/repo issues): {len(skipped_prs)}\n\n")
+        # --- Add detailed failed PR counts ---
+        f.write(f"- Failed to Merge (conflicts with base v0.8.0): {failed_conflict_with_base}\n")
+        f.write(f"- Skipped (conflicts with other PRs): {failed_conflict_with_others}\n")
+        f.write(f"- Failed to Merge (unknown): {failed_unknown}\n")
+        f.write(f"- Success Rate: {round(100 * len(applied_prs) / (len(applied_prs) + len(failed_prs) + len(skipped_prs)), 1)}%\n\n")
         if applied_prs:
             f.write(f"## ✅ Successfully Merged PRs ({len(applied_prs)})\n\n")
             for pr in applied_prs:
