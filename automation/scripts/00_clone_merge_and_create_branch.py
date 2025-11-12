@@ -185,46 +185,17 @@ def apply_prs_to_branch(branch_name, prs):
                     print(f"✅ Successfully applied PR #{pr_number}")
                     applied.append(pr)
                 else:
-                    # For now, just record the failure - we'll test individually later
-                    stderr_output = merge_result.stderr.lower()
-                    failure_reason = "Merge failure (will be tested individually)"
-                    
-                    if "conflict" in stderr_output:
-                        failure_reason = "Merge conflict (will be tested individually)"
-                    elif "automatic merge failed" in stderr_output:
-                        failure_reason = "Automatic merge failed - manual intervention required"
-                    elif "refusing to merge unrelated histories" in stderr_output:
-                        failure_reason = "Unrelated histories - branch diverged too far"
-                    else:
-                        failure_reason = f"Merge error: {merge_result.stderr[:100]}..."
-                    
-                    print(f"❌ Failed to apply PR #{pr_number}: {failure_reason}")
-                    
-                    # Abort the merge and add to failed list for later individual testing
+                    print(f"❌ Failed to apply PR #{pr_number}: {merge_result.stderr}")
                     subprocess.run(['git', 'merge', '--abort'], capture_output=True)
-                    
-                    # Add failure reason to PR object for reporting
-                    pr_with_reason = pr.copy() 
-                    pr_with_reason['failure_reason'] = failure_reason
-                    pr_with_reason['remote_name'] = remote_name  # Keep remote info for later testing
-                    pr_with_reason['head_ref'] = pr_head_ref
-                    failed.append(pr_with_reason)
+                    failed.append(pr)
                 
                 # Clean up remote
                 subprocess.run(['git', 'remote', 'remove', remote_name], capture_output=True)
                 
             except subprocess.CalledProcessError as e:
-                failure_reason = f"Git operation failed: {str(e)}"
-                print(f"❌ Error applying PR #{pr_number}: {failure_reason}")
-                
-                # Add failure reason to PR object for reporting
-                pr_with_reason = pr.copy()
-                pr_with_reason['failure_reason'] = failure_reason
-                failed.append(pr_with_reason)
-                
-                # Try to abort any ongoing merge
+                print(f"❌ Error applying PR #{pr_number}: {e}")
+                failed.append(pr)
                 subprocess.run(['git', 'merge', '--abort'], capture_output=True)
-                # Clean up remote
                 subprocess.run(['git', 'remote', 'remove', remote_name], capture_output=True)
         
         print(f"\nPR Application Summary:")
@@ -232,109 +203,77 @@ def apply_prs_to_branch(branch_name, prs):
         print(f"❌ Failed to apply: {len(failed)} PRs")
         print(f"⚠️  Skipped (draft/repo issues): {len(skipped)} PRs")
         
-        # Test failed PRs individually to categorize them properly
-        print(f"\n🔍 Testing {len(failed)} failed PRs individually against base branch...")
-        categorized_failed, categorized_skipped = test_failed_prs_individually(failed)
-        
-        # Update the lists with properly categorized results
-        failed[:] = categorized_failed  # Replace failed list contents
-        skipped.extend(categorized_skipped)  # Add PR conflicts to skipped list
-        
-        print(f"\nFinal categorization:")
-        print(f"✅ Successfully applied: {len(applied)} PRs")
-        print(f"❌ Failed to merge (base conflicts): {len(failed)} PRs")
-        print(f"⚠️  Skipped (PR conflicts): {len(categorized_skipped)} PRs")
-        print(f"⚠️  Skipped (draft/repo issues): {len(skipped) - len(categorized_skipped)} PRs")
-        
         return applied, failed, skipped
         
     finally:
         os.chdir(original_dir)
 
 def test_failed_prs_individually(failed_prs):
-    """Test each failed PR individually against base branch to categorize conflicts properly"""
-    print("Testing failed PRs individually to distinguish base conflicts from PR conflicts...")
-    
+    """Test each failed PR by merging it alone against base. Returns a dict: pr_number -> True/False"""
+    print("\nTesting failed PRs individually against base branch...")
     original_dir = os.getcwd()
-    categorized_failed = []  # PRs that truly conflict with base
-    categorized_skipped = []  # PRs that conflict with other PRs
-    
+    pr_test_results = {}
     try:
         os.chdir(work_dir)
-        
-        # Save current working branch state
-        current_branch = subprocess.run(['git', 'branch', '--show-current'], 
-                                       capture_output=True, text=True).stdout.strip()
-        
         for pr in failed_prs:
             pr_number = pr['number']
-            pr_title = pr.get('title', 'No title')
-            remote_name = pr.get('remote_name', f"pr-{pr_number}")
-            pr_head_ref = pr.get('head_ref', pr.get('head', {}).get('ref', 'main'))
-            
-            print(f"🔍 Testing PR #{pr_number} individually against base v0.8.0...")
-            
+            pr_title = pr['title']
+            pr_head_ref = pr.get('head', {}).get('ref')
+            pr_head_repo = pr.get('head', {}).get('repo', {}).get('clone_url')
+            if not pr_head_ref or not pr_head_repo:
+                pr_test_results[pr_number] = None
+                print(f"[SKIP] PR #{pr_number}: Missing head ref/repo for test merge.")
+                continue
+
+            test_branch = f"test-merge-pr-{pr_number}"
+            print(f"[TEST] PR #{pr_number}: Creating branch '{test_branch}' from v0.8.0 and testing merge...")
             try:
-                # Reset to clean base branch
-                subprocess.run(['git', 'reset', '--hard', 'v0.8.0'], capture_output=True)
-                subprocess.run(['git', 'clean', '-fd'], capture_output=True)  # Clean untracked files
-                
-                # Ensure remote exists (it might have been cleaned up)
-                if 'head' in pr and 'repo' in pr['head']:
-                    pr_head_repo = pr['head']['repo']['clone_url']
-                    subprocess.run(['git', 'remote', 'remove', remote_name], capture_output=True)
-                    subprocess.run(['git', 'remote', 'add', remote_name, pr_head_repo], capture_output=True)
-                    subprocess.run(['git', 'fetch', remote_name, pr_head_ref], capture_output=True)
-                
-                # Try to merge this PR alone against base
-                solo_merge_result = subprocess.run(['git', 'merge', '--no-ff', '--no-edit', 
-                                                  f"{remote_name}/{pr_head_ref}"], 
-                                                 capture_output=True, text=True)
-                
-                if solo_merge_result.returncode == 0:
-                    # PR can merge cleanly against base alone, so it conflicts with other PRs
-                    print(f"✅ PR #{pr_number} merges cleanly against base - conflict was with other PRs")
-                    
-                    # Update the failure reason to reflect it's a PR conflict, not base conflict
-                    pr_with_reason = pr.copy()
-                    pr_with_reason['skip_reason'] = 'Conflict with other merged PRs'
-                    categorized_skipped.append(pr_with_reason)
-                    
-                else:
-                    # PR cannot merge cleanly even against base alone - true base conflict
-                    print(f"❌ PR #{pr_number} conflicts with base branch v0.8.0")
-                    
-                    # Update the failure reason to be more specific
-                    pr_with_reason = pr.copy()
-                    pr_with_reason['failure_reason'] = 'Conflict with base branch (v0.8.0)'
-                    categorized_failed.append(pr_with_reason)
-                
-                # Clean up the merge attempt
-                subprocess.run(['git', 'reset', '--hard', 'v0.8.0'], capture_output=True)
+                # Clean up any existing test branch
+                subprocess.run(['git', 'branch', '-D', test_branch], capture_output=True)
+                subprocess.run(['git', 'checkout', 'v0.8.0'], check=True)
+                subprocess.run(['git', 'checkout', '-b', test_branch], check=True)
+
+                # Add remote for PR
+                remote_name = f"prtest-{pr_number}"
                 subprocess.run(['git', 'remote', 'remove', remote_name], capture_output=True)
-                
+                subprocess.run(['git', 'remote', 'add', remote_name, pr_head_repo], check=True)
+                fetch_result = subprocess.run(['git', 'fetch', remote_name, pr_head_ref], capture_output=True, text=True)
+                if fetch_result.returncode != 0:
+                    print(f"[FAIL] PR #{pr_number}: Could not fetch PR branch: {fetch_result.stderr}")
+                    pr_test_results[pr_number] = False
+                    subprocess.run(['git', 'remote', 'remove', remote_name], capture_output=True)
+                    subprocess.run(['git', 'checkout', 'v0.8.0'], check=True)
+                    continue
+
+                # Try to merge PR alone
+                merge_result = subprocess.run([
+                    'git', 'merge', '--no-ff', '--no-edit', f"{remote_name}/{pr_head_ref}"
+                ], capture_output=True, text=True)
+                if merge_result.returncode == 0:
+                    print(f"[PASS] PR #{pr_number}: Merges cleanly against base.")
+                    pr_test_results[pr_number] = True
+                else:
+                    print(f"[FAIL] PR #{pr_number}: Merge conflict or error: {merge_result.stderr}")
+                    subprocess.run(['git', 'merge', '--abort'], capture_output=True)
+                    pr_test_results[pr_number] = False
+
+                # Clean up remote and branch
+                subprocess.run(['git', 'remote', 'remove', remote_name], capture_output=True)
+                subprocess.run(['git', 'checkout', 'v0.8.0'], check=True)
+                subprocess.run(['git', 'branch', '-D', test_branch], capture_output=True)
             except Exception as e:
-                print(f"⚠️ Error testing PR #{pr_number}: {e}")
-                # If we can't test it, keep it as failed with original reason
-                categorized_failed.append(pr)
-        
-        # Restore the working branch
-        if current_branch:
-            subprocess.run(['git', 'checkout', current_branch], capture_output=True)
-        
-        print(f"Individual testing complete:")
-        print(f"  - True base conflicts: {len(categorized_failed)}")
-        print(f"  - PR conflicts (now skipped): {len(categorized_skipped)}")
-        
-        return categorized_failed, categorized_skipped
-        
-    except Exception as e:
-        print(f"Error during individual PR testing: {e}")
-        # If something goes wrong, return original failed list
-        return failed_prs, []
-        
+                print(f"[ERROR] PR #{pr_number}: Exception during test merge: {e}")
+                pr_test_results[pr_number] = False
+                try:
+                    subprocess.run(['git', 'merge', '--abort'], capture_output=True)
+                    subprocess.run(['git', 'remote', 'remove', remote_name], capture_output=True)
+                    subprocess.run(['git', 'checkout', 'v0.8.0'], check=True)
+                    subprocess.run(['git', 'branch', '-D', test_branch], capture_output=True)
+                except Exception:
+                    pass
     finally:
         os.chdir(original_dir)
+    return pr_test_results
 
 def apply_bonsai_replacements():
     """Apply bonsai → bonsaiPR text replacements and directory renames"""
@@ -417,37 +356,30 @@ def push_branch_to_fork(branch_name):
     original_dir = os.getcwd()
     try:
         os.chdir(work_dir)
-        
         # Ensure origin remote is set to use token
         subprocess.run(['git', 'remote', 'set-url', 'origin', fork_repo_url], check=True)
-        
         # Push the new branch to origin (fork)
         subprocess.run(['git', 'push', 'origin', branch_name, '--force'], check=True)
         print(f"✅ Pushed branch '{branch_name}' to fork: {fork_repo_url_public}")
-        
         # Stay on the branch with PRs instead of returning to v0.8.0
         print(f"📍 Repository is now on branch '{branch_name}' with applied PRs")
-        
     finally:
         os.chdir(original_dir)
 
-def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_prs=None):
+def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_prs=None, failed_pr_test_results=None):
     if skipped_prs is None:
         skipped_prs = []
-        
     print(f"Generating report at: {report_path}")
     with open(report_path, 'w', encoding='utf-8') as f:
         f.write(f"# BonsaiPR Weekly Build Report\n")
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
         f.write(f"Branch: {branch_name}\n")
         f.write(f"Fork Repository: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}\n\n")
-        
         f.write(f"## Summary\n")
         f.write(f"- Total PRs processed: {len(applied_prs) + len(failed_prs) + len(skipped_prs)}\n")
         f.write(f"- Successfully merged: {len(applied_prs)}\n")
         f.write(f"- Failed to merge: {len(failed_prs)}\n")
         f.write(f"- Skipped (draft/repo issues): {len(skipped_prs)}\n\n")
-        
         if applied_prs:
             f.write(f"## ✅ Successfully Merged PRs ({len(applied_prs)})\n\n")
             for pr in applied_prs:
@@ -455,16 +387,24 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
                 f.write(f"  - Created: {pr['created_at'][:10]}\n\n")
-        
         if failed_prs:
             f.write(f"## ❌ Failed to Merge PRs ({len(failed_prs)})\n\n")
             for pr in failed_prs:
-                f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
+                pr_number = pr['number']
+                f.write(f"- **PR #{pr_number}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
-                failure_reason = pr.get('failure_reason', 'Merge conflict or other error')
-                f.write(f"  - Reason: {failure_reason}\n\n")
-        
+                f.write(f"  - Reason: Merge conflict or other error\n")
+                if failed_pr_test_results is not None and pr_number in failed_pr_test_results:
+                    test_result = failed_pr_test_results[pr_number]
+                    if test_result is True:
+                        f.write(f"  - Individual test merge: ✅ Merges cleanly against base (conflict with other PRs)\n\n")
+                    elif test_result is False:
+                        f.write(f"  - Individual test merge: ❌ Fails to merge against base (problem with PR itself)\n\n")
+                    else:
+                        f.write(f"  - Individual test merge: ⚠️ Not tested (missing info)\n\n")
+                else:
+                    f.write(f"  - Individual test merge: Not tested\n\n")
         if skipped_prs:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped_prs)})\n\n")
             for pr in skipped_prs:
@@ -473,7 +413,6 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 f.write(f"  - URL: {pr['html_url']}\n")
                 skip_reason = pr.get('skip_reason', 'Repository no longer accessible (deleted fork)')
                 f.write(f"  - Reason: {skip_reason}\n\n")
-        
         f.write(f"## Developer Instructions\n\n")
         f.write(f"To use this branch for development:\n\n")
         f.write(f"```bash\n")
@@ -489,36 +428,38 @@ def main():
     print("Starting weekly BonsaiPR branch creation...")
     print("This script creates clean branches with merged PRs for PR authors to test.")
     print("No bonsai→bonsaiPR renaming is done here - that happens in the build script.")
-    
     # Validate GitHub token
     if not GITHUB_TOKEN:
         print("❌ Error: GITHUB_TOKEN not found in environment variables")
         print("Please check your .env file and ensure GITHUB_TOKEN is set")
         return
-    
     branch_name, report_path = get_branch_and_report_names()
-    
     print(f"Branch name: {branch_name}")
     print(f"Report will be saved as: {os.path.basename(report_path)}")
-    
     # Setup repository
     setup_repository()
-    
     # Get open PRs
     prs = get_open_prs()
     if not prs:
         print("No open PRs found, creating branch with just main branch updates")
         applied, failed, skipped = [], [], []
-    else:
-        # Apply PRs to new branch
-        applied, failed, skipped = apply_prs_to_branch(branch_name, prs)
-    
-    # Push branch to fork (without any bonsai renaming - keep original structure for PR authors)
+        failed_pr_test_results = {}
+        # Push branch to fork (even if empty)
+        push_branch_to_fork(branch_name)
+        generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results)
+        print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
+        print(f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}")
+        print(f"📊 Report saved: {report_path}")
+        print(f"📝 Summary: {len(applied)} PRs merged, {len(failed)} failed, {len(skipped)} skipped")
+        return
+    # Apply PRs to new branch
+    applied, failed, skipped = apply_prs_to_branch(branch_name, prs)
+    # Push branch to fork BEFORE running individual PR tests
     push_branch_to_fork(branch_name)
-    
+    # Test failed PRs individually
+    failed_pr_test_results = test_failed_prs_individually(failed)
     # Generate report
-    generate_report(applied, failed, report_path, branch_name, skipped)
-    
+    generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results)
     print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
     print(f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}")
     print(f"📊 Report saved: {report_path}")
