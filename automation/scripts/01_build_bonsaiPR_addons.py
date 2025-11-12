@@ -7,10 +7,22 @@ This script handles the build process for BonsaiPR addons:
 1. Copy source from IfcOpenShell to bonsaiPR-build directory
 2. Replace "bonsai" with "bonsaiPR" throughout the codebase
 3. Rename src/bonsai/ directory to src/bonsaiPR/
-4. Build multi-platform addon zip files
-5. Place results in src/bonsaiPR/dist/
+4. Fix Makefile paths and build configuration automatically:
+   - jQuery download paths (build/bonsai/ -> build/bonsaiPR/)
+   - Translations output paths ("build/bonsai" -> "build/bonsaiPR")
+   - Zip directory references (./bonsai -> ./bonsaiPR)
+   - Build artifact move commands (bonsai*.zip -> bonsaiPR*.zip)
+   - Zip filename prefixes (bonsai_ -> bonsaiPR_)
+   - Tab indentation fixes for Makefile syntax
+   - Preserve original repository URLs for external dependencies
+5. Build multi-platform addon zip files
+6. Place results in src/bonsaiPR/dist/
 
 Platform targets: linux-x64, macos-x64, macosm1-arm64, win-x64
+
+The script now automatically resolves common build failures that occur
+due to hardcoded path references in the Makefile after the bonsai->bonsaiPR
+transformation, ensuring reliable automated builds.
 """
 
 import os
@@ -204,6 +216,7 @@ def fix_makefile_paths():
             content = f.read()
         
         original_content = content
+        fixes_applied = []
         
         # Fix relative paths that still reference the old 'bonsai' directory
         # These paths should point to 'bonsaiPR' instead
@@ -214,24 +227,149 @@ def fix_makefile_paths():
         ]
         
         for old_path, new_path in path_fixes:
-            content = content.replace(old_path, new_path)
+            if old_path in content:
+                content = content.replace(old_path, new_path)
+                fixes_applied.append(f"Path fix: {old_path} -> {new_path}")
         
-        # Fix zip filename specifically - change bonsai_ to bonsaiPR_ only in zip commands
-        content = re.sub(r'(zip -r )bonsai_', r'\1bonsaiPR_', content)
+        # Fix jQuery download path - change build/bonsai/ to build/bonsaiPR/
+        if 'build/bonsai/' in content:
+            content = content.replace('build/bonsai/', 'build/bonsaiPR/')
+            fixes_applied.append("jQuery path fix: build/bonsai/ -> build/bonsaiPR/")
+        
+        # Fix translations output path - change "build/bonsai" to "build/bonsaiPR"
+        if '"build/bonsai"' in content:
+            content = content.replace('"build/bonsai"', '"build/bonsaiPR"')
+            fixes_applied.append('Translations path fix: "build/bonsai" -> "build/bonsaiPR"')
+        
+        # Fix zip directory reference - change ./bonsai to ./bonsaiPR in zip commands
+        zip_pattern = r'(zip -r [^\s]+ )(\./bonsai)(\b)'
+        if re.search(zip_pattern, content):
+            content = re.sub(zip_pattern, r'\1./bonsaiPR\3', content)
+            fixes_applied.append("Zip directory fix: ./bonsai -> ./bonsaiPR in zip commands")
+        
+        # Fix mv command for build artifacts - change bonsai*.zip to bonsaiPR*.zip
+        if 'build/bonsai*.zip' in content:
+            content = content.replace('build/bonsai*.zip', 'build/bonsaiPR*.zip')
+            fixes_applied.append("Move command fix: build/bonsai*.zip -> build/bonsaiPR*.zip")
+        
+        # Fix zip filename prefix - change bonsai_ to bonsaiPR_ only in zip commands
+        zip_filename_pattern = r'(zip -r )bonsai_'
+        if re.search(zip_filename_pattern, content):
+            content = re.sub(zip_filename_pattern, r'\1bonsaiPR_', content)
+            fixes_applied.append("Zip filename fix: bonsai_ -> bonsaiPR_ in zip commands")
         
         # Fix repository URLs - change bonsaiPR-translations.git back to bonsai-translations.git
-        content = content.replace('bonsaiPR-translations.git', 'bonsai-translations.git')
+        # (Keep original repository name for translations)
+        if 'bonsaiPR-translations.git' in content:
+            content = content.replace('bonsaiPR-translations.git', 'bonsai-translations.git')
+            fixes_applied.append("Repository URL fix: bonsaiPR-translations.git -> bonsai-translations.git")
+        
+        # Ensure proper tab indentation for Makefile conditional blocks
+        # Fix common indentation issues in ifeq/else/endif blocks
+        lines = content.split('\n')
+        for i, line in enumerate(lines):
+            # Check for lines that should be indented with tabs in conditional blocks
+            if (line.strip().startswith('cd ') or line.strip().startswith('mv ')) and not line.startswith('\t'):
+                # Look back to see if we're inside an ifeq/else block
+                in_conditional = False
+                for j in range(i-1, max(0, i-10), -1):  # Look back up to 10 lines
+                    if lines[j].strip().startswith('ifeq') or lines[j].strip().startswith('else'):
+                        in_conditional = True
+                        break
+                    elif lines[j].strip().startswith('endif'):
+                        break
+                
+                if in_conditional and line.startswith('    '):  # 4 spaces
+                    lines[i] = '\t' + line.lstrip()  # Replace leading spaces with tab
+                    fixes_applied.append(f"Indentation fix: Line {i+1} - spaces -> tab")
+        
+        content = '\n'.join(lines)
         
         # Write back if changes were made
         if content != original_content:
             with open(makefile_path, 'w', encoding='utf-8') as f:
                 f.write(content)
-            log_message("Makefile paths fixed successfully")
+            log_message(f"Makefile fixes applied successfully ({len(fixes_applied)} fixes):")
+            for fix in fixes_applied:
+                log_message(f"  - {fix}")
         else:
             log_message("No Makefile path fixes needed")
             
     except Exception as e:
         log_message(f"Error fixing Makefile paths: {e}", "ERROR")
+
+def fix_ifctester_webapp_dependencies():
+    """Fix ifctester webapp node_modules issues by reinstalling dependencies"""
+    log_message("Fixing ifctester webapp dependencies")
+    
+    ifctester_webapp_dir = os.path.join(BUILD_BASE_DIR, 'src', 'ifctester', 'webapp')
+    
+    if not os.path.exists(ifctester_webapp_dir):
+        log_message(f"Ifctester webapp directory not found: {ifctester_webapp_dir}", "WARNING")
+        return
+    
+    package_json_path = os.path.join(ifctester_webapp_dir, 'package.json')
+    if not os.path.exists(package_json_path):
+        log_message(f"Package.json not found: {package_json_path}", "WARNING")  
+        return
+    
+    original_cwd = os.getcwd()
+    
+    try:
+        os.chdir(ifctester_webapp_dir)
+        log_message(f"Changed to ifctester webapp directory: {ifctester_webapp_dir}")
+        
+        # Remove existing node_modules and package-lock.json to ensure clean install
+        node_modules_dir = os.path.join(ifctester_webapp_dir, 'node_modules')
+        package_lock_path = os.path.join(ifctester_webapp_dir, 'package-lock.json')
+        
+        if os.path.exists(node_modules_dir):
+            log_message("Removing existing node_modules directory")
+            shutil.rmtree(node_modules_dir)
+            
+        if os.path.exists(package_lock_path):
+            log_message("Removing existing package-lock.json")
+            os.remove(package_lock_path)
+        
+        # Run npm install
+        log_message("Running npm install to reinstall dependencies")
+        result = subprocess.run(['npm', 'install'], capture_output=True, text=True, check=False)
+        
+        if result.returncode == 0:
+            log_message("Successfully reinstalled ifctester webapp dependencies")
+        else:
+            log_message(f"Failed to reinstall dependencies. Return code: {result.returncode}", "ERROR")
+            if result.stderr:
+                log_message(f"npm install error: {result.stderr}", "ERROR")
+            if result.stdout:
+                log_message(f"npm install output: {result.stdout}")
+    
+    except Exception as e:
+        log_message(f"Error fixing ifctester webapp dependencies: {e}", "ERROR")
+    
+    finally:
+        os.chdir(original_cwd)
+
+def clean_old_bonsai_files():
+    """Clean up any leftover 'bonsai_' files from previous builds in the dist directory"""
+    dist_dir = os.path.join(BUILD_BASE_DIR, 'src', 'bonsaiPR', 'dist')
+    
+    if not os.path.exists(dist_dir):
+        return
+    
+    # Find and remove any files that start with 'bonsai_' (old naming)
+    old_files = glob.glob(os.path.join(dist_dir, "bonsai_*.zip"))
+    
+    if old_files:
+        log_message(f"Found {len(old_files)} old 'bonsai_' files to clean up")
+        for old_file in old_files:
+            try:
+                os.remove(old_file)
+                log_message(f"Removed old file: {os.path.basename(old_file)}")
+            except Exception as e:
+                log_message(f"Failed to remove {old_file}: {e}", "WARNING")
+    else:
+        log_message("No old 'bonsai_' files found to clean up")
 
 def build_addons(target_platforms=None):
     """Build multi-platform addon zip files using makefile
@@ -240,6 +378,9 @@ def build_addons(target_platforms=None):
         target_platforms (list): List of platforms to build. If None, builds all platforms.
     """
     log_message("Starting addon build process using makefile")
+    
+    # Clean up any old 'bonsai_' files from previous builds
+    clean_old_bonsai_files()
     
     # Navigate to the bonsaiPR source directory
     bonsaiPR_src = os.path.join(BUILD_BASE_DIR, 'src', 'bonsaiPR')
@@ -411,28 +552,69 @@ def create_build_report():
     else:
         log_message(f"Build report created: {report_path}")
 
+def test_makefile_fixes_only():
+    """Test mode: only copy source and apply Makefile fixes without building"""
+    log_message("Running in test mode: Makefile fixes only")
+    
+    try:
+        # Step 1: Copy source for bonsaiPR build
+        copy_source_for_bonsaiPR_build()
+        
+        # Step 2: Replace bonsai with bonsaiPR throughout codebase
+        replace_bonsai_with_bonsaiPR()
+        
+        # Step 3: Apply Makefile fixes
+        fix_makefile_paths()
+        
+        # Step 4: Fix ifctester webapp dependencies
+        fix_ifctester_webapp_dependencies()
+        
+        log_message("Test mode completed successfully - Makefile fixes applied")
+        
+        # Show the fixed Makefile sections for verification
+        makefile_path = os.path.join(BUILD_BASE_DIR, 'src', 'bonsaiPR', 'Makefile')
+        if os.path.exists(makefile_path):
+            log_message("Checking key Makefile sections after fixes:")
+            
+            with open(makefile_path, 'r') as f:
+                lines = f.readlines()
+            
+            # Look for lines containing our fix patterns
+            for i, line in enumerate(lines, 1):
+                if any(pattern in line for pattern in ['build/bonsaiPR/', 'bonsaiPR*.zip', './bonsaiPR']):
+                    log_message(f"  Line {i}: {line.strip()}")
+        
+    except Exception as e:
+        log_message(f"Test mode failed: {e}", "ERROR")
+        raise
+
 def parse_arguments():
     """Parse command line arguments"""
     valid_platforms = ['linux', 'macos', 'macosm1', 'win']
+    special_modes = ['test-makefile']
     
     if len(sys.argv) == 1:
         # No arguments provided, build all platforms
-        return None
+        return None, False
     elif len(sys.argv) == 2:
-        platform = sys.argv[1].lower()
-        if platform in valid_platforms:
-            return [platform]
+        arg = sys.argv[1].lower()
+        if arg in valid_platforms:
+            return [arg], False
+        elif arg in special_modes:
+            return None, True  # test mode
         else:
-            print(f"Error: Invalid platform '{platform}'. Valid platforms are: {', '.join(valid_platforms)}")
-            print(f"Usage: {sys.argv[0]} [platform]")
+            print(f"Error: Invalid argument '{arg}'.")
+            print(f"Usage: {sys.argv[0]} [platform|test-makefile]")
             print(f"  platform: One of {valid_platforms} (optional)")
-            print(f"  If no platform is specified, all platforms will be built.")
+            print(f"  test-makefile: Test Makefile fixes without building")
+            print(f"  If no argument is specified, all platforms will be built.")
             sys.exit(1)
     else:
         print(f"Error: Too many arguments.")
-        print(f"Usage: {sys.argv[0]} [platform]")
+        print(f"Usage: {sys.argv[0]} [platform|test-makefile]")
         print(f"  platform: One of {valid_platforms} (optional)")
-        print(f"  If no platform is specified, all platforms will be built.")
+        print(f"  test-makefile: Test Makefile fixes without building")
+        print(f"  If no argument is specified, all platforms will be built.")
         sys.exit(1)
 
 def main():
@@ -440,7 +622,12 @@ def main():
     log_message("Starting BonsaiPR addon build process")
     
     # Parse command line arguments
-    target_platforms = parse_arguments()
+    target_platforms, test_mode = parse_arguments()
+    
+    if test_mode:
+        # Run test mode: only apply Makefile fixes without building
+        test_makefile_fixes_only()
+        return
     
     if target_platforms:
         log_message(f"Building for specific platform(s): {', '.join(target_platforms)}")
@@ -456,6 +643,9 @@ def main():
         
         # Step 2.5: Fix Makefile paths after directory rename
         fix_makefile_paths()
+        
+        # Step 2.6: Fix ifctester webapp dependencies
+        fix_ifctester_webapp_dependencies()
         
         # Step 3: Build addons for specified platforms
         build_addons(target_platforms)
