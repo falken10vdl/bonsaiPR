@@ -465,6 +465,11 @@ def main():
         failed_pr_test_results = {}
         # Push branch to fork (even if empty)
         push_branch_to_fork(branch_name)
+        # Print current branch for verification
+        os.chdir(work_dir)
+        result = subprocess.run(['git', 'branch', '--show-current'], capture_output=True, text=True)
+        print(f"[VERIFICATION] Current branch after merge: {result.stdout.strip()}")
+        os.chdir(os.path.dirname(__file__))
         generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results)
         print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
         print(f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}")
@@ -475,6 +480,11 @@ def main():
     applied, failed, skipped = apply_prs_to_branch(branch_name, prs)
     # Push branch to fork BEFORE running individual PR tests
     push_branch_to_fork(branch_name)
+    # Print current branch for verification
+    os.chdir(work_dir)
+    result = subprocess.run(['git', 'branch', '--show-current'], capture_output=True, text=True)
+    print(f"[VERIFICATION] Current branch after merge: {result.stdout.strip()}")
+    os.chdir(os.path.dirname(__file__))
     # Test failed PRs individually
     failed_pr_test_results = test_failed_prs_individually(failed)
     # Generate report

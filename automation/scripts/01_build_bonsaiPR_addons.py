@@ -58,21 +58,36 @@ def log_message(message, level="INFO"):
     print(f"[{timestamp}] {level}: {message}")
 
 def copy_source_for_bonsaiPR_build():
-    """Copy source from IfcOpenShell to bonsaiPR-build directory"""
+    """Copy source from IfcOpenShell to bonsaiPR-build directory, ensuring correct branch is checked out"""
     log_message("Starting source copy for bonsaiPR build")
-    
     if not os.path.exists(SOURCE_DIR):
         raise FileNotFoundError(f"Source directory not found: {SOURCE_DIR}")
-    
+    # Ensure we are on the correct weekly branch
+    version, pyversion, current_date = get_version_info()
+    weekly_branch = f"weekly-build-{version}-alpha{current_date}"
+    original_cwd = os.getcwd()
+    try:
+        os.chdir(SOURCE_DIR)
+        result = subprocess.run(['git', 'branch', '--show-current'], capture_output=True, text=True)
+        current_branch = result.stdout.strip()
+        if current_branch != weekly_branch:
+            log_message(f"Not on weekly branch ({weekly_branch}), switching from {current_branch}...")
+            checkout_result = subprocess.run(['git', 'checkout', weekly_branch], capture_output=True, text=True)
+            if checkout_result.returncode == 0:
+                log_message(f"Checked out branch: {weekly_branch}")
+            else:
+                log_message(f"Failed to checkout branch {weekly_branch}: {checkout_result.stderr}", "ERROR")
+        else:
+            log_message(f"Already on weekly branch: {weekly_branch}")
+    finally:
+        os.chdir(original_cwd)
     # Remove existing build directory if it exists
     if os.path.exists(BUILD_BASE_DIR):
         log_message(f"Removing existing build directory: {BUILD_BASE_DIR}")
         shutil.rmtree(BUILD_BASE_DIR)
-    
     # Create build directory
     os.makedirs(BUILD_BASE_DIR, exist_ok=True)
     log_message(f"Created build directory: {BUILD_BASE_DIR}")
-    
     # Copy all source files without any exclusions
     log_message("Copying all source files...")
     for root, dirs, files in os.walk(SOURCE_DIR):
