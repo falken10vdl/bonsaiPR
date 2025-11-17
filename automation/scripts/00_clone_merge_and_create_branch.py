@@ -487,6 +487,10 @@ def main():
     os.chdir(os.path.dirname(__file__))
     # Test failed PRs individually
     failed_pr_test_results = test_failed_prs_individually(failed)
+    # Ensure we are on the weekly branch before generating the report
+    os.chdir(work_dir)
+    subprocess.run(['git', 'checkout', branch_name], check=True)
+    os.chdir(os.path.dirname(__file__))
     # Generate report
     generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results)
     print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
