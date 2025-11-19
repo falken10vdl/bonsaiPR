@@ -155,7 +155,7 @@ Want to run your own BonsaiPR builds or modify the automation?
 
 ## 📅 Release Schedule
 
-- **Frequency**: Every Sunday at 2:00 AM UTC
+- **Frequency**: Automated Every Sunday at 2:00 AM UTC but also "ad-hoc" if relevant changes to PRs are done between automated builds
 - **Naming Pattern**: `v0.8.4-alphaYYMMDD` (e.g., `v0.8.4-alpha251021`)
 - **What's Included**: All open, non-draft PRs from IfcOpenShell as of build time
 - **Source Branch**: `weekly-build-0.8.4-alphaYYMMDD` in fork repository
