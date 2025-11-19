@@ -2,5 +2,5 @@
 __pycache__/
 *.pyc
 automation/.env
-automation/logs/
-
+automation/logs/*
+!automation/logs/.gitkeep
