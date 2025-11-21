@@ -3,6 +3,7 @@ import subprocess
 import requests
 import json
 import glob
+import re
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -362,6 +363,16 @@ def create_or_update_readme():
     
     return readme_path
 
+def format_pr_with_link(pr_line, pr_url):
+    """Convert a PR line to markdown with hyperlinked PR number"""
+    # Extract PR number and title from line like "- **PR #123**: Title here"
+    match = re.match(r'- \*\*PR #(\d+)\*\*:\s*(.+)', pr_line)
+    if match and pr_url:
+        pr_number = match.group(1)
+        pr_title = match.group(2)
+        return f"- [**PR #{pr_number}**]({pr_url}): {pr_title}"
+    return pr_line  # Return original if can't parse or no URL
+
 def generate_release_body(report_file_path, addon_files):
     """Generate release description from the report file and available addon files"""
     if not report_file_path or not os.path.exists(report_file_path):
@@ -417,32 +428,40 @@ def generate_release_body(report_file_path, addon_files):
                 in_failed_section = False
                 in_skipped_section = False
             
-            # Collect PRs
+            # Collect PRs with URL extraction
             if line.startswith("- **PR #"):
+                pr_url = None
+                # Look ahead for URL
+                for j in range(idx+1, min(idx+5, len(lines))):
+                    next_line = lines[j].strip()
+                    if next_line.startswith("- URL:") or next_line.startswith("  - URL:"):
+                        pr_url = next_line.split("URL:", 1)[1].strip()
+                        break
+                
                 if in_applied_section:
-                    applied_prs.append(line)
+                    applied_prs.append({'line': line, 'url': pr_url})
                 elif in_failed_section:
-                    current_pr = {'line': line, 'reason': None}
+                    current_pr = {'line': line, 'url': pr_url, 'reason': None}
                     # Look ahead for reason
-                    for j in range(idx+1, min(idx+4, len(lines))):
+                    for j in range(idx+1, min(idx+5, len(lines))):
                         next_line = lines[j].strip()
-                        if next_line.startswith("- Reason:"):
-                            current_pr['reason'] = next_line.replace("- Reason:","").strip()
+                        if next_line.startswith("- Reason:") or next_line.startswith("  - Reason:"):
+                            current_pr['reason'] = next_line.replace("- Reason:","").replace("  - Reason:","").strip()
                             break
                     failed_prs.append(current_pr)
                 elif in_skipped_section:
-                    current_pr = {'line': line, 'reason': None}
+                    current_pr = {'line': line, 'url': pr_url, 'reason': None}
                     # Look ahead for reason
-                    for j in range(idx+1, min(idx+4, len(lines))):
+                    for j in range(idx+1, min(idx+5, len(lines))):
                         next_line = lines[j].strip()
-                        if next_line.startswith("- Reason:"):
-                            current_pr['reason'] = next_line.replace("- Reason:","").strip()
+                        if next_line.startswith("- Reason:") or next_line.startswith("  - Reason:"):
+                            current_pr['reason'] = next_line.replace("- Reason:","").replace("  - Reason:","").strip()
                             break
                     # Group skipped PRs
                     if current_pr['reason'] and "DRAFT status" in current_pr['reason']:
-                        skipped_draft_prs.append(current_pr['line'])
+                        skipped_draft_prs.append({'line': line, 'url': pr_url})
                     elif current_pr['reason'] and "conflict" in current_pr['reason'].lower():
-                        skipped_conflict_prs.append(current_pr['line'])
+                        skipped_conflict_prs.append({'line': line, 'url': pr_url})
                     else:
                         failed_prs.append(current_pr)
         
@@ -481,20 +500,20 @@ This is an automated weekly build of BonsaiPR with the latest pull requests merg
 
 ## ✅ Successfully Merged PRs ({len(applied_prs)})
 """
-        for pr in applied_prs:
-            release_body += f"{pr}\n"
+        for pr_dict in applied_prs:
+            release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
         
         release_body += f"\n## ⚠️ Skipped - DRAFT PRs ({len(skipped_draft_prs)})\n"
-        for pr in skipped_draft_prs:
-            release_body += f"{pr}\n"
+        for pr_dict in skipped_draft_prs:
+            release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
         
         release_body += f"\n## ⚠️ Skipped - Conflict with other PRs ({len(skipped_conflict_prs)})\n"
-        for pr in skipped_conflict_prs:
-            release_body += f"{pr}\n"
+        for pr_dict in skipped_conflict_prs:
+            release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
         
         release_body += f"\n## ❌ Failed PRs ({len(failed_prs)})\n"
         for pr in failed_prs:
-            release_body += f"{pr['line']}"
+            release_body += format_pr_with_link(pr['line'], pr['url'])
             if pr['reason']:
                 release_body += f"\n  - Reason: {pr['reason']}"
             release_body += "\n"
