@@ -19,7 +19,12 @@ work_dir = os.getenv("BASE_CLONE_DIR", "/home/falken10vdl/bonsaiPRDevel/IfcOpenS
 upstream_repo = 'IfcOpenShell/IfcOpenShell'
 fork_owner = 'falken10vdl'
 fork_repo = 'IfcOpenShell'
-users = os.getenv("USERNAMES", "").split(",") if os.getenv("USERNAMES") else ['']  # Add specific usernames or leave empty for all users
+# Parse USERNAMES and strip whitespace from each username
+raw_usernames = os.getenv("USERNAMES", "")
+if raw_usernames:
+    users = [u.strip() for u in raw_usernames.split(",") if u.strip()]
+else:
+    users = ['']  # Add specific usernames or leave empty for all users
 
 # Generate branch name and report filename with the same pattern as addons
 def get_branch_and_report_names():
@@ -391,7 +396,8 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
         f.write(f"Branch: {branch_name}\n")
         f.write(f"Fork Repository: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}\n\n")
         f.write(f"## Summary\n")
-        f.write(f"- Total PRs processed: {len(applied_prs) + len(failed_prs) + len(skipped_prs)}\n")
+        total_prs = len(applied_prs) + len(failed_prs) + len(skipped_prs)
+        f.write(f"- Total PRs processed: {total_prs}\n")
         f.write(f"- Successfully merged: {len(applied_prs)}\n")
         f.write(f"- Failed to merge: {len(failed_prs)}\n")
         f.write(f"- Skipped (draft/repo issues): {len(skipped_prs)}\n\n")
@@ -399,7 +405,11 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
         f.write(f"- Failed to Merge (conflicts with base v0.8.0): {failed_conflict_with_base}\n")
         f.write(f"- Skipped (conflicts with other PRs): {failed_conflict_with_others}\n")
         f.write(f"- Failed to Merge (unknown): {failed_unknown}\n")
-        f.write(f"- Success Rate: {round(100 * len(applied_prs) / (len(applied_prs) + len(failed_prs) + len(skipped_prs)), 1)}%\n\n")
+        if total_prs > 0:
+            success_rate = round(100 * len(applied_prs) / total_prs, 1)
+            f.write(f"- Success Rate: {success_rate}%\n\n")
+        else:
+            f.write(f"- Success Rate: N/A\n\n")
         if applied_prs:
             f.write(f"## ✅ Successfully Merged PRs ({len(applied_prs)})\n\n")
             for pr in applied_prs:
