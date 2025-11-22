@@ -2,6 +2,7 @@ import os
 import subprocess
 import requests
 import re
+import sys
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -455,10 +456,19 @@ def main():
     branch_name, report_path = get_branch_and_report_names()
     print(f"Branch name: {branch_name}")
     print(f"Report will be saved as: {os.path.basename(report_path)}")
+    # Parse --reverse argument
+    reverse_order = False
+    if '--reverse' in sys.argv:
+        reverse_order = True
+        print("Merging PRs in descending order (highest to lowest number)")
+    else:
+        print("Merging PRs in ascending order (lowest to highest number)")
     # Setup repository
     setup_repository()
     # Get open PRs
     prs = get_open_prs()
+    # Sort PRs by number
+    prs = sorted(prs, key=lambda pr: pr['number'], reverse=reverse_order)
     if not prs:
         print("No open PRs found, creating branch with just main branch updates")
         applied, failed, skipped = [], [], []
