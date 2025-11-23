@@ -12,4 +12,5 @@
 
 # Minute Hour Day Month DayOfWeek Command
 # Note: main.py handles its own logging to automation_*.log, so no need for cron to create separate logs
+PATH=/home/falken10vdl/.local/bin:/home/falken10vdl/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 0 2 * * 0 cd /home/falken10vdl/bonsaiPRDevel/bonsaiPR/automation/src && /usr/bin/python3 main.py

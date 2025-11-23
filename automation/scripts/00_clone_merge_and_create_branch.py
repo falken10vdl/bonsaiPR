@@ -26,6 +26,13 @@ if raw_usernames:
 else:
     users = ['']  # Add specific usernames or leave empty for all users
 
+# Parse EXCLUDED PR numbers from .env
+raw_excluded = os.getenv("EXCLUDED", "")
+if raw_excluded:
+    excluded_prs = set(int(x.strip()) for x in raw_excluded.split(",") if x.strip().isdigit())
+else:
+    excluded_prs = set()
+
 # Generate branch name and report filename with the same pattern as addons
 def get_branch_and_report_names():
     current_date = datetime.now().strftime('%y%m%d')
@@ -135,6 +142,14 @@ def apply_prs_to_branch(branch_name, prs):
         for pr in prs:
             pr_number = pr['number']
             pr_title = pr['title']
+
+            # Skip PRs in EXCLUDED list
+            if pr_number in excluded_prs:
+                print(f"⚠️  Skipping PR #{pr_number}: Excluded by .env EXCLUDED list")
+                pr_with_reason = pr.copy()
+                pr_with_reason['skip_reason'] = 'Excluded by .env EXCLUDED list'
+                skipped.append(pr_with_reason)
+                continue
             
             # Check if PR is in draft status
             if pr.get('draft', False):
