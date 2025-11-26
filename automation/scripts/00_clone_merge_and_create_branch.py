@@ -148,6 +148,7 @@ def apply_prs_to_branch(branch_name, prs):
                 print(f"⚠️  Skipping PR #{pr_number}: Excluded by .env EXCLUDED list")
                 pr_with_reason = pr.copy()
                 pr_with_reason['skip_reason'] = 'Excluded by .env EXCLUDED list'
+                pr_with_reason['individual_test_merge'] = None
                 skipped.append(pr_with_reason)
                 continue
             
@@ -156,6 +157,7 @@ def apply_prs_to_branch(branch_name, prs):
                 print(f"⚠️  Skipping PR #{pr_number}: PR is in DRAFT status")
                 pr_with_reason = pr.copy()
                 pr_with_reason['skip_reason'] = 'DRAFT status'
+                pr_with_reason['individual_test_merge'] = None
                 skipped.append(pr_with_reason)
                 continue
             
@@ -164,6 +166,7 @@ def apply_prs_to_branch(branch_name, prs):
                 print(f"⚠️  Skipping PR #{pr_number}: Repository no longer accessible (deleted fork)")
                 pr_with_reason = pr.copy()
                 pr_with_reason['skip_reason'] = 'Repository no longer accessible (deleted fork)'
+                pr_with_reason['individual_test_merge'] = None
                 skipped.append(pr_with_reason)
                 continue
             
@@ -175,6 +178,7 @@ def apply_prs_to_branch(branch_name, prs):
                 print(f"⚠️  Skipping PR #{pr_number}: Missing required PR information")
                 pr_with_reason = pr.copy()
                 pr_with_reason['skip_reason'] = 'Missing required PR information'
+                pr_with_reason['individual_test_merge'] = None
                 skipped.append(pr_with_reason)
                 continue
             
@@ -439,25 +443,34 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 f.write(f"- **PR #{pr_number}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
-                f.write(f"  - Reason: Merge conflict or other error\n")
+                # Use the comment from Individual test merge as Reason
                 if failed_pr_test_results is not None and pr_number in failed_pr_test_results:
                     test_result = failed_pr_test_results[pr_number]
                     if test_result is True:
-                        f.write(f"  - Individual test merge: ✅ Merges cleanly against base (conflict with other PRs)\n\n")
+                        reason = "Merges cleanly against base (conflict with other PRs)"
                     elif test_result is False:
-                        f.write(f"  - Individual test merge: ❌ Fails to merge against base (problem with PR itself)\n\n")
+                        reason = "Fails to merge against base (problem with PR itself)"
                     else:
-                        f.write(f"  - Individual test merge: ⚠️ Not tested (missing info)\n\n")
+                        reason = "Not tested (missing info)"
                 else:
-                    f.write(f"  - Individual test merge: Not tested\n\n")
+                    reason = "Not tested"
+                f.write(f"  - Reason: {reason}\n\n")
         if skipped_prs:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped_prs)})\n\n")
             for pr in skipped_prs:
                 f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
-                skip_reason = pr.get('skip_reason', 'Repository no longer accessible (deleted fork)')
-                f.write(f"  - Reason: {skip_reason}\n\n")
+                # If there is an individual test merge comment, use it as reason
+                skip_reason = pr.get('skip_reason', None)
+                test_result = pr.get('individual_test_merge', None)
+                if test_result:
+                    reason = test_result
+                elif skip_reason:
+                    reason = skip_reason
+                else:
+                    reason = "Repository no longer accessible (deleted fork)"
+                f.write(f"  - Reason: {reason}\n\n")
         f.write(f"## Developer Instructions\n\n")
         f.write(f"To use this branch for development:\n\n")
         f.write(f"```bash\n")

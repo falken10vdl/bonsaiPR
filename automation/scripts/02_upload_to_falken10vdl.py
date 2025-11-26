@@ -448,10 +448,14 @@ def generate_release_body(report_file_path, addon_files):
                         if next_line.startswith("- Reason:") or next_line.startswith("  - Reason:"):
                             current_pr['reason'] = next_line.replace("- Reason:","").replace("  - Reason:","").strip()
                             break
-                    failed_prs.append(current_pr)
+                    # If reason matches conflict with other PRs, categorize as skipped_conflict_prs
+                    if current_pr['reason'] == "Merges cleanly against base (conflict with other PRs)":
+                        skipped_conflict_prs.append({'line': line, 'url': pr_url})
+                    else:
+                        failed_prs.append(current_pr)
                 elif in_skipped_section:
                     current_pr = {'line': line, 'url': pr_url, 'reason': None}
-                    # Look ahead for reason
+                    # Look ahead for reason only
                     for j in range(idx+1, min(idx+5, len(lines))):
                         next_line = lines[j].strip()
                         if next_line.startswith("- Reason:") or next_line.startswith("  - Reason:"):
@@ -460,7 +464,7 @@ def generate_release_body(report_file_path, addon_files):
                     # Group skipped PRs
                     if current_pr['reason'] and "DRAFT status" in current_pr['reason']:
                         skipped_draft_prs.append({'line': line, 'url': pr_url})
-                    elif current_pr['reason'] and "conflict" in current_pr['reason'].lower():
+                    elif current_pr['reason'] == "Merges cleanly against base (conflict with other PRs)":
                         skipped_conflict_prs.append({'line': line, 'url': pr_url})
                     else:
                         failed_prs.append(current_pr)
@@ -507,7 +511,7 @@ This is an automated weekly build of BonsaiPR with the latest pull requests merg
         for pr_dict in skipped_draft_prs:
             release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
         
-        release_body += f"\n## ⚠️ Skipped - Conflict with other PRs ({len(skipped_conflict_prs)})\n"
+        release_body += f"\n## ⚠️ Skipped - Conflict with other PRs. Merges cleany with base  ({len(skipped_conflict_prs)})\n"
         for pr_dict in skipped_conflict_prs:
             release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
         
