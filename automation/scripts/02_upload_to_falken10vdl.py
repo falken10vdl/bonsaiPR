@@ -572,9 +572,33 @@ def upload_to_falken10vdl():
                 if line.startswith("IfcOpenShell source commit:"):
                     commit_hash = line.split(":", 1)[1].strip()
                     break
-    release_name = f"BonsaiPR v0.8.4-alpha{datetime.now().strftime('%y%m%d')} - Weekly Build (IfcOpenShell commit: {commit_hash})"
-    release_body = generate_release_body(report_file, addon_files)
-    
+
+    # Format commit hash as a short hash and link, using the short hash from the GitHub commit page if possible
+    commit_url = f"https://github.com/falken10vdl/IfcOpenShell/commit/{commit_hash}" if commit_hash != "unknown" else None
+    short_hash = commit_hash[:7] if commit_hash not in (None, "unknown") else "unknown"
+    # Try to fetch the short hash from the commit page if possible
+    try:
+        import requests
+        if commit_url and commit_hash != "unknown":
+            resp = requests.get(commit_url, timeout=10)
+            if resp.ok:
+                import re
+                m = re.search(r"Commit ([0-9a-f]{7,})", resp.text)
+                if m:
+                    short_hash = m.group(1)
+    except Exception:
+        pass
+    if commit_url and commit_hash != "unknown":
+        commit_link = f"[`{short_hash}`]({commit_url})"
+    else:
+        commit_link = short_hash
+
+    # Compose release name as plain text (not a markdown link)
+    release_name = f"BonsaiPR v0.8.4-alpha{datetime.now().strftime('%y%m%d')} - Weekly Build"
+
+    # Add a new line below with the IfcOpenShell commit short hash as a clickable link
+    release_body = f"IfcOpenShell source commit (before PR merging): {commit_link}\n\n" + generate_release_body(report_file, addon_files)
+
     print(f"Creating GitHub release: {tag_name}")
     
     # Clean up any existing local tag to prevent conflicts

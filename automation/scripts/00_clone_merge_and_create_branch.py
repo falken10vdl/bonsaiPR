@@ -399,7 +399,10 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
     failed_conflict_with_base = 0
     failed_conflict_with_others = 0
     failed_unknown = 0
-    if failed_pr_test_results is not None:
+    # Accept commit_hash as an argument (default None)
+    commit_hash = None
+    # If failed_pr_test_results is a dict, use it for test results
+    if isinstance(failed_pr_test_results, dict):
         for pr in failed_prs:
             pr_number = pr['number']
             test_result = failed_pr_test_results.get(pr_number, None)
@@ -409,12 +412,14 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 failed_conflict_with_base += 1
             else:
                 failed_unknown += 1
-    # Get the commit hash of the source repository
-    try:
-        commit_hash = subprocess.check_output([
-            'git', '-C', work_dir, 'rev-parse', 'HEAD'
-        ]).decode().strip()
-    except Exception:
+    # If failed_pr_test_results is a string, treat it as commit_hash
+    elif isinstance(failed_pr_test_results, str):
+        commit_hash = failed_pr_test_results
+    # If skipped_prs is a string and failed_pr_test_results is None, treat skipped_prs as commit_hash
+    if isinstance(skipped_prs, str) and failed_pr_test_results is None:
+        commit_hash = skipped_prs
+        skipped_prs = []
+    if not commit_hash:
         commit_hash = "unknown"
     with open(report_path, 'w', encoding='utf-8') as f:
         f.write(f"# BonsaiPR Weekly Build Report\n")
@@ -452,7 +457,8 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
                 # Use the comment from Individual test merge as Reason
-                if failed_pr_test_results is not None and pr_number in failed_pr_test_results:
+                reason = "Not tested"
+                if isinstance(failed_pr_test_results, dict) and pr_number in failed_pr_test_results:
                     test_result = failed_pr_test_results[pr_number]
                     if test_result is True:
                         reason = "Merges cleanly against base (conflict with other PRs)"
@@ -460,8 +466,6 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                         reason = "Fails to merge against base (problem with PR itself)"
                     else:
                         reason = "Not tested (missing info)"
-                else:
-                    reason = "Not tested"
                 f.write(f"  - Reason: {reason}\n\n")
         if skipped_prs:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped_prs)})\n\n")
@@ -511,6 +515,13 @@ def main():
         print("Merging PRs in ascending order (lowest to highest number)")
     # Setup repository
     setup_repository()
+    # Get the commit hash of the source repository BEFORE merging any PRs
+    try:
+        source_commit_hash = subprocess.check_output([
+            'git', '-C', work_dir, 'rev-parse', 'HEAD'
+        ]).decode().strip()
+    except Exception:
+        source_commit_hash = "unknown"
     # Get open PRs
     prs = get_open_prs()
     # Sort PRs by number
@@ -526,7 +537,7 @@ def main():
         result = subprocess.run(['git', 'branch', '--show-current'], capture_output=True, text=True)
         print(f"[VERIFICATION] Current branch after merge: {result.stdout.strip()}")
         os.chdir(os.path.dirname(__file__))
-        generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results)
+        generate_report(applied, failed, report_path, branch_name, skipped, source_commit_hash)
         print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
         print(f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}")
         print(f"📊 Report saved: {report_path}")
@@ -548,7 +559,7 @@ def main():
     subprocess.run(['git', 'checkout', branch_name], check=True)
     os.chdir(os.path.dirname(__file__))
     # Generate report
-    generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results)
+    generate_report(applied, failed, report_path, branch_name, skipped, source_commit_hash)
     print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
     print(f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}")
     print(f"📊 Report saved: {report_path}")
