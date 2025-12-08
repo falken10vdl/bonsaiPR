@@ -409,10 +409,18 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 failed_conflict_with_base += 1
             else:
                 failed_unknown += 1
+    # Get the commit hash of the source repository
+    try:
+        commit_hash = subprocess.check_output([
+            'git', '-C', work_dir, 'rev-parse', 'HEAD'
+        ]).decode().strip()
+    except Exception:
+        commit_hash = "unknown"
     with open(report_path, 'w', encoding='utf-8') as f:
         f.write(f"# BonsaiPR Weekly Build Report\n")
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
         f.write(f"Branch: {branch_name}\n")
+        f.write(f"IfcOpenShell source commit: {commit_hash}\n")
         f.write(f"Fork Repository: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}\n\n")
         f.write(f"## Summary\n")
         total_prs = len(applied_prs) + len(failed_prs) + len(skipped_prs)

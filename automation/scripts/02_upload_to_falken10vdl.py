@@ -564,7 +564,15 @@ def upload_to_falken10vdl():
     
     # Generate release information
     tag_name = get_release_tag()
-    release_name = f"BonsaiPR v0.8.4-alpha{datetime.now().strftime('%y%m%d')} - Weekly Build"
+    # Read commit hash from README report file
+    commit_hash = "unknown"
+    if report_file and os.path.exists(report_file):
+        with open(report_file, 'r', encoding='utf-8') as f:
+            for line in f:
+                if line.startswith("IfcOpenShell source commit:"):
+                    commit_hash = line.split(":", 1)[1].strip()
+                    break
+    release_name = f"BonsaiPR v0.8.4-alpha{datetime.now().strftime('%y%m%d')} - Weekly Build (IfcOpenShell commit: {commit_hash})"
     release_body = generate_release_body(report_file, addon_files)
     
     print(f"Creating GitHub release: {tag_name}")
