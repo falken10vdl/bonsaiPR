@@ -391,7 +391,7 @@ def push_branch_to_fork(branch_name):
     finally:
         os.chdir(original_dir)
 
-def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_prs=None, failed_pr_test_results=None):
+def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_prs=None, failed_pr_test_results=None, commit_hash=None):
     if skipped_prs is None:
         skipped_prs = []
     print(f"Generating report at: {report_path}")
@@ -399,8 +399,6 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
     failed_conflict_with_base = 0
     failed_conflict_with_others = 0
     failed_unknown = 0
-    # Accept commit_hash as an argument (default None)
-    commit_hash = None
     # If failed_pr_test_results is a dict, use it for test results
     if isinstance(failed_pr_test_results, dict):
         for pr in failed_prs:
@@ -412,13 +410,6 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 failed_conflict_with_base += 1
             else:
                 failed_unknown += 1
-    # If failed_pr_test_results is a string, treat it as commit_hash
-    elif isinstance(failed_pr_test_results, str):
-        commit_hash = failed_pr_test_results
-    # If skipped_prs is a string and failed_pr_test_results is None, treat skipped_prs as commit_hash
-    if isinstance(skipped_prs, str) and failed_pr_test_results is None:
-        commit_hash = skipped_prs
-        skipped_prs = []
     if not commit_hash:
         commit_hash = "unknown"
     with open(report_path, 'w', encoding='utf-8') as f:
@@ -537,7 +528,7 @@ def main():
         result = subprocess.run(['git', 'branch', '--show-current'], capture_output=True, text=True)
         print(f"[VERIFICATION] Current branch after merge: {result.stdout.strip()}")
         os.chdir(os.path.dirname(__file__))
-        generate_report(applied, failed, report_path, branch_name, skipped, source_commit_hash)
+        generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results, source_commit_hash)
         print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
         print(f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}")
         print(f"📊 Report saved: {report_path}")
@@ -559,7 +550,7 @@ def main():
     subprocess.run(['git', 'checkout', branch_name], check=True)
     os.chdir(os.path.dirname(__file__))
     # Generate report
-    generate_report(applied, failed, report_path, branch_name, skipped, source_commit_hash)
+    generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results, source_commit_hash)
     print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
     print(f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}")
     print(f"📊 Report saved: {report_path}")
