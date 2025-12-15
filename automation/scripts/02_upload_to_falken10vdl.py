@@ -4,6 +4,7 @@ import requests
 import json
 import glob
 import re
+import time
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -32,17 +33,17 @@ def get_reports_path():
     return os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
 
 def get_branch_name():
-    """Generate branch name with current date"""
-    current_date = datetime.now().strftime('%y%m%d')
+    """Generate branch name with timestamp for on-demand builds"""
+    current_datetime = datetime.now().strftime('%y%m%d%H%M')
     version = "0.8.4"
-    return f"weekly-build-{version}-alpha{current_date}"
+    return f"build-{version}-alpha{current_datetime}"
 
 def get_version_info():
-    """Get version information for naming"""
-    current_date = datetime.now().strftime('%y%m%d')
+    """Get version information for naming - includes hour+minute for on-demand builds"""
+    current_datetime = datetime.now().strftime('%y%m%d%H%M')
     version = "0.8.4"
     pyversion = "py311"
-    return version, pyversion, current_date
+    return version, pyversion, current_datetime
 
 def setup_git_authentication():
     """Setup Git to use token for authentication"""
@@ -109,21 +110,32 @@ def github_headers():
     }
 
 def get_release_tag():
-    """Generate release tag with current date"""
-    current_date = datetime.now().strftime('%y%m%d')
+    """Generate release tag with timestamp for on-demand builds"""
+    current_datetime = datetime.now().strftime('%y%m%d%H%M')
     version = "0.8.4"
     pyversion = "py311"
-    return f"v{version}-alpha{current_date}"
+    return f"v{version}-alpha{current_datetime}"
 
 def find_report_file():
-    """Find the latest README report file"""
-    current_date = datetime.now().strftime('%y%m%d')
+    """Find the latest README report file - searches for most recent file within last hour"""
     reports_path = get_reports_path()
-    pattern = f"{reports_path}/README-bonsaiPR_py311-*-alpha{current_date}.txt"
+    
+    # Search for all README files (not just exact minute match)
+    pattern = f"{reports_path}/README-bonsaiPR_py311-0.8.4-alpha*.txt"
     report_files = glob.glob(pattern)
-    if report_files:
-        return max(report_files, key=os.path.getctime)  # Return the most recent one
-    return None
+    
+    if not report_files:
+        return None
+    
+    # Find the most recent file by modification time
+    latest_report = max(report_files, key=os.path.getmtime)
+    
+    # Verify it's from within the last hour (to avoid very old files)
+    file_age = time.time() - os.path.getmtime(latest_report)
+    if file_age > 3600:  # 1 hour in seconds
+        print(f"⚠️ Latest README file is {int(file_age/60)} minutes old, might be stale")
+    
+    return latest_report
 
 def create_github_release(tag_name, release_name, release_body):
     """Create a new GitHub release or get existing one"""
@@ -202,14 +214,52 @@ def upload_asset_to_release(release_id, file_path, asset_name):
             return True
         return False
 
+def append_upload_info_to_readme(report_file, release_url, tag_name, addon_files):
+    """Append upload information to the existing README report file"""
+    if not report_file or not os.path.exists(report_file):
+        print("⚠️ No existing README file found, skipping upload info append")
+        return None
+    
+    # Append upload information to the existing report file
+    with open(report_file, 'a', encoding='utf-8') as f:
+        f.write(f"\n\n{'=' * 80}\n")
+        f.write(f"BonsaiPR Upload & Release Information\n")
+        f.write(f"{'=' * 80}\n\n")
+        f.write(f"## 🚀 Release Details\n\n")
+        f.write(f"**Upload Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
+        f.write(f"**Release Tag**: {tag_name}\n")
+        f.write(f"**GitHub Release**: {release_url}\n")
+        f.write(f"**Release Type**: Pre-release (Alpha)\n\n")
+        
+        f.write(f"## 📦 Uploaded Assets\n\n")
+        for addon_file in sorted(addon_files):
+            filename = os.path.basename(addon_file)
+            size_mb = os.path.getsize(addon_file) / (1024 * 1024)
+            f.write(f"- ✅ {filename} ({size_mb:.1f} MB)\n")
+        
+        f.write(f"\n## 🔗 Access Links\n\n")
+        f.write(f"- 📥 [Download from GitHub Releases]({release_url})\n")
+        f.write(f"- 🌐 [All Releases](https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases)\n\n")
+    
+    print(f"✅ Appended upload information to: {os.path.basename(report_file)}")
+    return report_file
+
 def create_or_update_readme():
-    """Create or update a README file with upload information"""
-    version, pyversion, current_date = get_version_info()
-    readme_filename = f"README-bonsaiPR_{pyversion}-{version}-alpha{current_date}.txt"
-    readme_path = os.path.join(get_reports_path(), readme_filename)
+    """DEPRECATED: Use append_upload_info_to_readme() instead"""
+    # Find the existing README file created by the build script (most recent one)
+    readme_path = find_report_file()
+    
+    if not readme_path:
+        print("⚠️ No existing README file found, creating new one")
+        version, pyversion, current_date = get_version_info()
+        readme_filename = f"README-bonsaiPR_{pyversion}-{version}-alpha{current_date}.txt"
+        readme_path = os.path.join(get_reports_path(), readme_filename)
+        file_exists = False
+    else:
+        file_exists = True
     
     # Check if the README file already exists
-    file_exists = os.path.exists(readme_path)
+    file_exists = os.path.exists(readme_path) if readme_path else False
     
     with open(readme_path, 'a' if file_exists else 'w') as f:
         if file_exists:
@@ -489,9 +539,7 @@ def generate_release_body(report_file_path, addon_files):
         success_rate = (successfully_merged / total_prs * 100) if total_prs > 0 else 0
         
         # Generate markdown description
-        release_body = f"""# BonsaiPR Weekly Build - {datetime.now().strftime('%Y-%m-%d')}
-
-This is an automated weekly build of BonsaiPR with the latest pull requests merged from the IfcOpenShell repository.
+        release_body = f"""This is an automated build of BonsaiPR with the latest pull requests merged from the IfcOpenShell repository.
 
 {downloads_section}
 ## 📊 Build Statistics
@@ -594,7 +642,7 @@ def upload_to_falken10vdl():
         commit_link = short_hash
 
     # Compose release name as plain text (not a markdown link)
-    release_name = f"BonsaiPR v0.8.4-alpha{datetime.now().strftime('%y%m%d')} - Weekly Build"
+    release_name = f"BonsaiPR v0.8.4-alpha{datetime.now().strftime('%y%m%d%H%M')}"
 
     # Add a new line below with the IfcOpenShell commit short hash as a clickable link
     release_body = f"IfcOpenShell source commit (before PR merging): {commit_link}\n\n" + generate_release_body(report_file, addon_files)
@@ -624,8 +672,8 @@ def upload_to_falken10vdl():
     # REMOVED: Upload of original report file (redundant)
     # The complete README contains all the information
     
-    # Create or update README file with upload information
-    readme_path = create_or_update_readme()
+    # Append upload information to the existing README file
+    readme_path = append_upload_info_to_readme(report_file, release_url, tag_name, addon_files)
     
     # Upload the complete README as an asset
     if readme_path and os.path.exists(readme_path):

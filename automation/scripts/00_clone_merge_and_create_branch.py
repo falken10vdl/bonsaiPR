@@ -33,13 +33,14 @@ if raw_excluded:
 else:
     excluded_prs = set()
 
-# Generate branch name and report filename with the same pattern as addons
+# Generate branch name and report filename with timestamp for on-demand builds
 def get_branch_and_report_names():
-    current_date = datetime.now().strftime('%y%m%d')
+    # Include hour-minute for multiple builds per day
+    current_datetime = datetime.now().strftime('%y%m%d%H%M')
     version = "0.8.4"
     pyversion = "py311"
-    branch_name = f"weekly-build-{version}-alpha{current_date}"
-    report_name = f"README-bonsaiPR_{pyversion}-{version}-alpha{current_date}.txt"
+    branch_name = f"build-{version}-alpha{current_datetime}"
+    report_name = f"README-bonsaiPR_{pyversion}-{version}-alpha{current_datetime}.txt"
     report_dir = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
     report_path = os.path.join(report_dir, report_name)
     return branch_name, report_path

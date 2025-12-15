@@ -1,0 +1,37 @@
+# BonsaiPR On-Demand Automation Cron Job
+# Checks for PR changes every hour and builds only when changes detected
+# 
+# To install this cron job:
+# crontab automation/cron/hourly-automation.cron
+#
+# To view current cron jobs:
+# crontab -l
+#
+# To remove all cron jobs:
+# crontab -r
+#
+# The check_and_build.py script will:
+# 1. Check if any PRs have changed (new, updated, closed, etc.)
+# 2. Only trigger a full build if changes are detected
+# 3. Skip build if no changes (saves resources)
+
+# Minute Hour Day Month DayOfWeek Command
+# Run every hour at minute 5 (gives GitHub API time to settle after the hour)
+PATH=/home/falken10vdl/.local/bin:/home/falken10vdl/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+
+# Hourly check - builds only when PRs change
+5 * * * * cd /home/falken10vdl/bonsaiPRDevel/bonsaiPR/automation/src && /usr/bin/python3 check_and_build.py
+
+# Alternative schedules (uncomment one if you prefer):
+
+# Every 2 hours at minute 5
+# 5 */2 * * * cd /home/falken10vdl/bonsaiPRDevel/bonsaiPR/automation/src && /usr/bin/python3 check_and_build.py
+
+# Every 4 hours at minute 5
+# 5 */4 * * * cd /home/falken10vdl/bonsaiPRDevel/bonsaiPR/automation/src && /usr/bin/python3 check_and_build.py
+
+# Every 6 hours at minute 5
+# 5 */6 * * * cd /home/falken10vdl/bonsaiPRDevel/bonsaiPR/automation/src && /usr/bin/python3 check_and_build.py
+
+# Twice daily at 6 AM and 6 PM
+# 5 6,18 * * * cd /home/falken10vdl/bonsaiPRDevel/bonsaiPR/automation/src && /usr/bin/python3 check_and_build.py

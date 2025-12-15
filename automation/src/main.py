@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-main.py - BonsaiPR Weekly Automation Orchestrator
+main.py - BonsaiPR On-Demand Automation Orchestrator
 
-This script orchestrates the complete weekly automation process for BonsaiPR builds.
+This script orchestrates the complete automation process for BonsaiPR builds.
 It coordinates all automation scripts and provides comprehensive logging.
+Designed to run on-demand when PR changes are detected.
 
 Author: BonsaiPR Automation System
-Date: 2025-10-14
+Date: 2025-12-14
 """
 
 import os
@@ -95,7 +96,7 @@ def main():
     log_file = setup_logging()
     
     logging.info("=" * 60)
-    logging.info("🤖 BonsaiPR Weekly Automation System")
+    logging.info("🤖 BonsaiPR On-Demand Automation System")
     logging.info(f"📅 Started: {start_time.strftime('%Y-%m-%d %H:%M:%S UTC')}")
     logging.info(f"📝 Log file: {log_file}")
     logging.info("=" * 60)

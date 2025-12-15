@@ -31,6 +31,7 @@ import shutil
 import re
 import glob
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
@@ -46,11 +47,11 @@ REPORT_PATH = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
 # No exclusions - copy all files and directories
 
 def get_version_info():
-    """Get version information for naming"""
-    current_date = datetime.now().strftime('%y%m%d')
+    """Get version information for naming - includes hour+minute for on-demand builds"""
+    current_datetime = datetime.now().strftime('%y%m%d%H%M')
     version = "0.8.4"
     pyversion = "py311"
-    return version, pyversion, current_date
+    return version, pyversion, current_datetime
 
 def log_message(message, level="INFO"):
     """Log messages with timestamp"""
@@ -475,16 +476,48 @@ def build_addons(target_platforms=None):
     
     log_message("Addon build process completed")
 
+def find_existing_report():
+    """Find the most recent README report file created within the last hour"""
+    # Search for README files from clone script
+    pattern = os.path.join(REPORT_PATH, "README-bonsaiPR_py311-0.8.4-alpha*.txt")
+    report_files = glob.glob(pattern)
+    
+    if not report_files:
+        return None
+    
+    # Find the most recent file by modification time
+    latest_report = max(report_files, key=os.path.getmtime)
+    
+    # Verify it's from within the last hour (to avoid very old files)
+    file_age = time.time() - os.path.getmtime(latest_report)
+    if file_age > 3600:  # 1 hour in seconds
+        log_message(f"Latest README file is {int(file_age/60)} minutes old, creating new one")
+        return None
+    
+    return latest_report
+
 def create_build_report():
     """Create or update a build report with details"""
+    # Always get version info (needed for build details section)
     version, pyversion, current_date = get_version_info()
-    report_filename = f"README-bonsaiPR_{pyversion}-{version}-alpha{current_date}.txt"
-    report_path = os.path.join(REPORT_PATH, report_filename)
+    
+    # First, try to find existing README from clone script (within last hour)
+    report_path = find_existing_report()
+    
+    if not report_path:
+        # No existing report found, create new one
+        log_message("No existing README found from clone script, creating new one")
+        report_filename = f"README-bonsaiPR_{pyversion}-{version}-alpha{current_date}.txt"
+        report_path = os.path.join(REPORT_PATH, report_filename)
+        file_exists = False
+    else:
+        log_message(f"Found existing README: {os.path.basename(report_path)}, appending build info")
+        file_exists = True
     
     dist_dir = os.path.join(BUILD_BASE_DIR, 'src', 'bonsaiPR', 'dist')
     
     # Check if the report file already exists
-    file_exists = os.path.exists(report_path)
+    file_exists = os.path.exists(report_path) if report_path else False
     
     with open(report_path, 'a' if file_exists else 'w') as f:
         if file_exists:

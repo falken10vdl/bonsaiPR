@@ -1,10 +1,14 @@
-# BonsaiPR Weekly Automation System
+# BonsaiPR Automation System
 
-This directory contains the complete automation system for weekly BonsaiPR builds.
+This directory contains the complete automation system for on-demand BonsaiPR builds.
+
+## 🆕 On-Demand Build System
+
+**NEW:** The automation now runs on-demand, building only when PRs change! See [ON_DEMAND_BUILDS.md](ON_DEMAND_BUILDS.md) for the complete guide.
 
 ## Overview
 
-The BonsaiPR automation system performs weekly builds that:
+The BonsaiPR automation system performs builds that:
 1. Merge latest pull requests from IfcOpenShell repository
 2. Build BonsaiPR addons for multiple platforms (Linux, macOS, Windows)
 3. Create GitHub releases with comprehensive documentation
