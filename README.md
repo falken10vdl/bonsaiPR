@@ -1,38 +1,42 @@
 # BonsaiPR
 
-Weekly automated builds of Bonsai with merged pull requests from the IfcOpenShell repository.
+On-demand builds of Bonsai with merged pull requests from the IfcOpenShell repository.
 
 ## About
 
-BonsaiPR provides **automated weekly releases** that include the latest community contributions from IfcOpenShell. Each build:
+BonsaiPR provides **on-demand builds** that include the latest community contributions from IfcOpenShell. Each build:
 
 - ✅ **Merges Open Pull Requests**: Automatically integrates open PRs from the community
 - 🎯 **Detects Draft PRs**: Skips draft PRs and provides detailed skip reasons
 - 🌍 **Multi-Platform Builds**: Windows, Linux, macOS (Intel + Apple Silicon)
 - 📊 **Comprehensive Reports**: Detailed documentation of merged PRs, build info, and statistics
 - 🔒 **Source Transparency**: Complete source code available in fork branches
-- 🤖 **Fully Automated**: Runs every Sunday at 2:00 AM UTC via cron
+- ⚡ **On-Demand Builds**: Create custom builds anytime with latest PRs
 
 ### What's Different from Official Bonsai?
 
 - **Testing Ground**: PR authors can test their changes before official merge
 - **Community PRs**: Includes experimental features from community contributors
-- **Weekly Updates**: Fresh builds every week with latest PRs
+- **On-Demand Builds**: Create builds anytime with the latest PRs
 - **Renamed to BonsaiPR**: To distinguish from official releases
 
 ## 📦 Download
 
 ### Latest Release
 
-Visit the [Releases](https://github.com/falken10vdl/bonsaiPR/releases) page to download the latest weekly build.
+Visit the [Releases](https://github.com/falken10vdl/bonsaiPR/releases) page to download the latest build.
+
+### Creating Builds
+
+- **⚡ On-Demand Builds**: Create builds manually with the latest PRs - see [On-Demand Builds Guide](ON_DEMAND_BUILDS.md)
 
 ### Available Platforms
 
 Each release includes builds for:
-- 🐧 **Linux (x64)**: `bonsaiPR_py311-0.8.4-alphaYYMMDD-linux-x64.zip`
-- 🍎 **macOS Intel (x64)**: `bonsaiPR_py311-0.8.4-alphaYYMMDD-macos-x64.zip`
-- 🍎 **macOS Apple Silicon (ARM64)**: `bonsaiPR_py311-0.8.4-alphaYYMMDD-macos-arm64.zip`
-- 🪟 **Windows (x64)**: `bonsaiPR_py311-0.8.4-alphaYYMMDD-windows-x64.zip`
+- 🐧 **Linux (x64)**: `bonsaiPR_py311-0.8.4-alphaYYMMDDHHMM-linux-x64.zip`
+- 🍎 **macOS Intel (x64)**: `bonsaiPR_py311-0.8.4-alphaYYMMDDHHMM-macos-x64.zip`
+- 🍎 **macOS Apple Silicon (ARM64)**: `bonsaiPR_py311-0.8.4-alphaYYMMDDHHMM-macos-arm64.zip`
+- 🪟 **Windows (x64)**: `bonsaiPR_py311-0.8.4-alphaYYMMDDHHMM-windows-x64.zip`
 
 ### Installation
 
@@ -43,7 +47,7 @@ Each release includes builds for:
 
 ### Documentation
 
-Each release includes a complete README file (`README-bonsaiPR_py311-0.8.4-alphaYYMMDD.txt`) with:
+Each release includes a complete README file (`README-bonsaiPR_py311-0.8.4-alphaYYMMDDHHMM.txt`) with:
 - List of successfully merged PRs
 - Failed merge attempts with reasons
 - Skipped PRs (drafts, inaccessible repos)
@@ -55,7 +59,7 @@ Each release includes a complete README file (`README-bonsaiPR_py311-0.8.4-alpha
 The complete source code for each release is available in the IfcOpenShell fork repository:
 
 - **🔗 Fork Repository**: [falken10vdl/IfcOpenShell](https://github.com/falken10vdl/IfcOpenShell)
-- **📂 Weekly Branches**: Look for branches named `weekly-build-0.8.4-alphaYYMMDD`
+- **📂 Build Branches**: Look for branches named `weekly-build-0.8.4-alphaYYMMDDHHMM`
 - **📥 Download Source**: Each branch can be downloaded as a ZIP archive
 - **👨‍💻 For PR Authors**: Clone and checkout these branches to test your PRs alongside other community changes
 
@@ -66,15 +70,15 @@ The complete source code for each release is available in the IfcOpenShell fork 
 git clone https://github.com/falken10vdl/IfcOpenShell.git
 cd IfcOpenShell
 
-# Checkout the latest weekly build branch
-git checkout weekly-build-0.8.4-alpha251021
+# Checkout the latest build branch
+git checkout weekly-build-0.8.4-alpha2512141830
 
 # Your PR is now merged with other community PRs - test away!
 ```
 
 ## 🤖 Automation System
 
-The weekly builds are powered by a comprehensive 3-stage automation system:
+The builds are powered by a comprehensive 3-stage automation system:
 
 ### Architecture
 
@@ -101,7 +105,7 @@ Stage 3: Release (02_upload_to_falken10vdl.py)
 - **🎯 Smart PR Detection**: Automatically skips draft PRs and inaccessible repositories
 - **📈 Progressive Documentation**: README report grows through each stage
 - **♻️ Idempotent**: Safe to re-run without duplicating assets
-- **⏰ Scheduled**: Runs every Sunday at 2:00 AM UTC via cron
+
 - **� Comprehensive Statistics**: Detailed PR merge, build, and upload statistics
 
 ### Project Structure
@@ -131,12 +135,16 @@ bonsaiPR/
 
 Want to run your own BonsaiPR builds or modify the automation?
 
+👉 **See [`ON_DEMAND_BUILDS.md`](./ON_DEMAND_BUILDS.md)** for:
+- Quick start guide for manual builds
+- Complete build process walkthrough
+- Troubleshooting common issues
+- Advanced usage and customization
+
 👉 **See [`automation/README.md`](./automation/README.md)** for:
-- Complete setup instructions
+- Complete automation system architecture
 - Environment configuration guide
-- Manual testing procedures
-- Cron installation steps
-- Troubleshooting guide
+- Development and debugging guide
 
 ## ⚠️ Important Notes
 
@@ -153,16 +161,20 @@ Want to run your own BonsaiPR builds or modify the automation?
 2. **For build/automation issues**: [Open an issue](https://github.com/falken10vdl/bonsaiPR/issues) in this repository
 3. **For IfcOpenShell/Bonsai issues**: Report to the [official repository](https://github.com/IfcOpenShell/IfcOpenShell/issues)
 
-## 📅 Release Schedule
+## 📅 Build Information
 
-- **Frequency**: Automated Every Sunday at 2:00 AM UTC but also "ad-hoc" if relevant changes to PRs are done between automated builds
-- **Naming Pattern**: `v0.8.4-alphaYYMMDD` (e.g., `v0.8.4-alpha251021`)
+### On-Demand Builds
+- **Frequency**: Anytime when needed (urgent fixes, new features, testing)
+- **Naming Pattern**: `v0.8.4-alphaYYMMDDHHMM` (includes date, hour, and minute)
+- **How to Create**: See [On-Demand Builds Guide](ON_DEMAND_BUILDS.md)
 - **What's Included**: All open, non-draft PRs from IfcOpenShell as of build time
-- **Source Branch**: `weekly-build-0.8.4-alphaYYMMDD` in fork repository
+- **Source Branch**: `build-0.8.4-alphaYYMMDDHHMM` in fork repository
+- **Use Cases**: Testing latest PRs, urgent bug fixes, custom testing scenarios
 
 ## 🔗 Links
 
 - **📦 Releases**: [github.com/falken10vdl/bonsaiPR/releases](https://github.com/falken10vdl/bonsaiPR/releases)
+- **⚡ On-Demand Builds**: [ON_DEMAND_BUILDS.md](./ON_DEMAND_BUILDS.md)
 - **💻 Source Fork**: [github.com/falken10vdl/IfcOpenShell](https://github.com/falken10vdl/IfcOpenShell)
 - **🏠 Upstream**: [github.com/IfcOpenShell/IfcOpenShell](https://github.com/IfcOpenShell/IfcOpenShell)
 - **📋 Issues**: [github.com/falken10vdl/bonsaiPR/issues](https://github.com/falken10vdl/bonsaiPR/issues)
@@ -179,4 +191,4 @@ Contributions to the automation system are welcome! See [`automation/README.md`]
 
 **Current Version**: v0.8.4-alpha (based on IfcOpenShell v0.8.0 branch)  
 **Python Target**: 3.11  
-**Last Updated**: October 21, 2025
+**Last Updated**: December 15, 2025

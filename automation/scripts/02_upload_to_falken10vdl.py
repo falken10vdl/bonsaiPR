@@ -109,12 +109,13 @@ def github_headers():
         "X-GitHub-Api-Version": "2022-11-28"
     }
 
-def get_release_tag():
+def get_release_tag(timestamp=None):
     """Generate release tag with timestamp for on-demand builds"""
-    current_datetime = datetime.now().strftime('%y%m%d%H%M')
+    if timestamp is None:
+        timestamp = datetime.now().strftime('%y%m%d%H%M')
     version = "0.8.4"
     pyversion = "py311"
-    return f"v{version}-alpha{current_datetime}"
+    return f"v{version}-alpha{timestamp}"
 
 def find_report_file():
     """Find the latest README report file - searches for most recent file within last hour"""
@@ -423,7 +424,7 @@ def format_pr_with_link(pr_line, pr_url):
         return f"- [**PR #{pr_number}**]({pr_url}): {pr_title}"
     return pr_line  # Return original if can't parse or no URL
 
-def generate_release_body(report_file_path, addon_files):
+def generate_release_body(report_file_path, addon_files, timestamp_from_readme=None, tag_name=None):
     """Generate release description from the report file and available addon files"""
     if not report_file_path or not os.path.exists(report_file_path):
         return "Weekly BonsaiPR build with latest PRs merged."
@@ -519,22 +520,35 @@ def generate_release_body(report_file_path, addon_files):
                     else:
                         failed_prs.append(current_pr)
         
-        # Generate available downloads based on actual files
+        # Generate available downloads based on actual files with HHMM timestamp
         downloads_section = "## 📦 Available Downloads\n\n"
         for addon_file in addon_files:
-            filename = os.path.basename(addon_file)
-            if "windows" in filename.lower():
+            original_filename = os.path.basename(addon_file)
+            
+            # Apply same renaming logic as upload section to get the final filename with HHMM
+            import re
+            pattern = r'(bonsaiPR_py311-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)'
+            match = re.match(pattern, original_filename)
+            
+            if match and timestamp_from_readme:
+                renamed_filename = f"{match.group(1)}{timestamp_from_readme}{match.group(3)}"
+            else:
+                renamed_filename = original_filename
+            
+            if "windows" in renamed_filename.lower():
                 platform = "Windows (x64)"
-            elif "linux" in filename.lower():
+            elif "linux" in renamed_filename.lower():
                 platform = "Linux (x64)"
-            elif "macosm1" in filename.lower() or "arm64" in filename.lower():
+            elif "macosm1" in renamed_filename.lower() or "arm64" in renamed_filename.lower():
                 platform = "macOS (Apple Silicon)"
-            elif "macos" in filename.lower():
+            elif "macos" in renamed_filename.lower():
                 platform = "macOS (Intel)"
             else:
                 platform = "Unknown Platform"
             
-            downloads_section += f"- **{platform}**: `{filename}`\n"
+            # Create download link URL (will be filled after release is created)
+            download_url = f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/download/{tag_name}/{renamed_filename}"
+            downloads_section += f"- **{platform}**: [{renamed_filename}]({download_url})\n"
         
         success_rate = (successfully_merged / total_prs * 100) if total_prs > 0 else 0
         
@@ -610,8 +624,19 @@ def upload_to_falken10vdl():
     else:
         print("Warning: No report file found")
     
-    # Generate release information
-    tag_name = get_release_tag()
+    # Extract timestamp from README filename (e.g., README-bonsaiPR_py311-0.8.4-alpha2512142235.txt)
+    timestamp_from_readme = None
+    if report_file:
+        import re
+        readme_basename = os.path.basename(report_file)
+        # Pattern: README-bonsaiPR_py311-VERSION-alphaYYMMDDHHMM.txt
+        match = re.search(r'alpha(\d{10})', readme_basename)
+        if match:
+            timestamp_from_readme = match.group(1)
+            print(f"Extracted timestamp from README: {timestamp_from_readme}")
+    
+    # Generate release information using timestamp from README
+    tag_name = get_release_tag(timestamp_from_readme)
     # Read commit hash from README report file
     commit_hash = "unknown"
     if report_file and os.path.exists(report_file):
@@ -641,11 +666,11 @@ def upload_to_falken10vdl():
     else:
         commit_link = short_hash
 
-    # Compose release name as plain text (not a markdown link)
-    release_name = f"BonsaiPR v0.8.4-alpha{datetime.now().strftime('%y%m%d%H%M')}"
+    # Compose release name as plain text (not a markdown link) using timestamp from README
+    release_name = f"BonsaiPR v0.8.4-alpha{timestamp_from_readme if timestamp_from_readme else datetime.now().strftime('%y%m%d%H%M')}"
 
     # Add a new line below with the IfcOpenShell commit short hash as a clickable link
-    release_body = f"IfcOpenShell source commit (before PR merging): {commit_link}\n\n" + generate_release_body(report_file, addon_files)
+    release_body = f"IfcOpenShell source commit (before PR merging): {commit_link}\n\n" + generate_release_body(report_file, addon_files, timestamp_from_readme, tag_name)
 
     print(f"Creating GitHub release: {tag_name}")
     
@@ -662,10 +687,30 @@ def upload_to_falken10vdl():
     release_url = release["html_url"]
     print(f"✅ Successfully created release: {release_url}")
     
-    # Upload addon files
+    # Upload addon files with updated timestamp (YYMMDD -> YYMMDDHHMM from README)
     success_count = 0
+    
     for addon_file in addon_files:
-        asset_name = os.path.basename(addon_file)
+        original_name = os.path.basename(addon_file)
+        
+        # Replace the old YYMMDD format with YYMMDDHHMM format from README
+        # Pattern: bonsaiPR_py311-0.8.5-alpha251214-linux-x64.zip -> bonsaiPR_py311-0.8.5-alpha2512142235-linux-x64.zip
+        import re
+        # Match: bonsaiPR_py311-VERSION-alphaYYMMDD-platform.zip
+        pattern = r'(bonsaiPR_py311-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)'
+        
+        match = re.match(pattern, original_name)
+        if match and timestamp_from_readme:
+            asset_name = f"{match.group(1)}{timestamp_from_readme}{match.group(3)}"
+            print(f"Renaming asset: {original_name} -> {asset_name}")
+        else:
+            # Fallback: use original name if pattern doesn't match or no timestamp found
+            asset_name = original_name
+            if not timestamp_from_readme:
+                print(f"⚠️ No timestamp from README, using original: {asset_name}")
+            else:
+                print(f"⚠️ Could not parse filename pattern, using original: {asset_name}")
+        
         if upload_asset_to_release(release_id, addon_file, asset_name):
             success_count += 1
     
