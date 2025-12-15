@@ -637,13 +637,18 @@ def upload_to_falken10vdl():
     
     # Generate release information using timestamp from README
     tag_name = get_release_tag(timestamp_from_readme)
-    # Read commit hash from README report file
+    # Read commit hash and branch name from README report file
     commit_hash = "unknown"
+    branch_name = "unknown"
     if report_file and os.path.exists(report_file):
         with open(report_file, 'r', encoding='utf-8') as f:
             for line in f:
                 if line.startswith("IfcOpenShell source commit:"):
                     commit_hash = line.split(":", 1)[1].strip()
+                elif line.startswith("Branch:"):
+                    branch_name = line.split(":", 1)[1].strip()
+                # Stop reading once we have both values
+                if commit_hash != "unknown" and branch_name != "unknown":
                     break
 
     # Format commit hash as a short hash and link, using the short hash from the GitHub commit page if possible
@@ -669,8 +674,14 @@ def upload_to_falken10vdl():
     # Compose release name as plain text (not a markdown link) using timestamp from README
     release_name = f"BonsaiPR v0.8.4-alpha{timestamp_from_readme if timestamp_from_readme else datetime.now().strftime('%y%m%d%H%M')}"
 
-    # Add a new line below with the IfcOpenShell commit short hash as a clickable link
-    release_body = f"IfcOpenShell source commit (before PR merging): {commit_link}\n\n" + generate_release_body(report_file, addon_files, timestamp_from_readme, tag_name)
+    # Build release body with source commit and branch information
+    release_body_header = f"IfcOpenShell source commit (before PR merging): {commit_link}\n"
+    
+    if branch_name != "unknown":
+        branch_url = f"https://github.com/{FORK_OWNER}/{FORK_REPO}/tree/{branch_name}"
+        release_body_header += f"Branch used to create this release: [{branch_name}]({branch_url})\n"
+    
+    release_body = release_body_header + "\n" + generate_release_body(report_file, addon_files, timestamp_from_readme, tag_name)
 
     print(f"Creating GitHub release: {tag_name}")
     
