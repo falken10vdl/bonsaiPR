@@ -109,7 +109,8 @@ def main():
             logging.warning(f"Could not remove log {old_log}: {e}")
 
     # Cleanup old README-bonsaiPR_*.txt files: keep only last 5
-    report_dir = os.getenv("REPORT_PATH", os.path.join(os.path.dirname(__file__), '..'))
+    # Use the same default as 00_clone_merge_and_create_branch.py
+    report_dir = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
     readme_files = sorted(glob.glob(os.path.join(report_dir, "README-bonsaiPR_*.txt")), key=os.path.getmtime, reverse=True)
     for old_readme in readme_files[5:]:
         try:

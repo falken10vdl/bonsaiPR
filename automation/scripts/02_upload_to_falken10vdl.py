@@ -34,14 +34,46 @@ def get_reports_path():
 
 def get_branch_name():
     """Generate branch name with timestamp for on-demand builds"""
+    import requests
+    import re
     current_datetime = datetime.now().strftime('%y%m%d%H%M')
-    version = "0.8.4"
+    version = "unknown"
+    try:
+        api_url = "https://api.github.com/repos/IfcOpenShell/IfcOpenShell/releases"
+        resp = requests.get(api_url, timeout=10)
+        if resp.ok:
+            releases = resp.json()
+            for rel in releases:
+                m = re.match(r'bonsai-([\d.]+)-alpha', rel.get('tag_name', ''))
+                if m:
+                    version = m.group(1)
+                    break
+    except Exception as e:
+        print(f"Warning: Could not fetch version from releases: {e}")
+    if version == "unknown":
+        version = "0.0.0"  # fallback default
     return f"build-{version}-alpha{current_datetime}"
 
 def get_version_info():
     """Get version information for naming - includes hour+minute for on-demand builds"""
+    import requests
+    import re
     current_datetime = datetime.now().strftime('%y%m%d%H%M')
-    version = "0.8.4"
+    version = "unknown"
+    try:
+        api_url = "https://api.github.com/repos/IfcOpenShell/IfcOpenShell/releases"
+        resp = requests.get(api_url, timeout=10)
+        if resp.ok:
+            releases = resp.json()
+            for rel in releases:
+                m = re.match(r'bonsai-([\d.]+)-alpha', rel.get('tag_name', ''))
+                if m:
+                    version = m.group(1)
+                    break
+    except Exception as e:
+        print(f"Warning: Could not fetch version from releases: {e}")
+    if version == "unknown":
+        version = "0.0.0"  # fallback default
     pyversion = "py311"
     return version, pyversion, current_datetime
 
@@ -111,18 +143,34 @@ def github_headers():
 
 def get_release_tag(timestamp=None):
     """Generate release tag with timestamp for on-demand builds"""
+    import requests
+    import re
     if timestamp is None:
         timestamp = datetime.now().strftime('%y%m%d%H%M')
-    version = "0.8.4"
+    version = "unknown"
+    try:
+        api_url = "https://api.github.com/repos/IfcOpenShell/IfcOpenShell/releases"
+        resp = requests.get(api_url, timeout=10)
+        if resp.ok:
+            releases = resp.json()
+            for rel in releases:
+                m = re.match(r'bonsai-([\d.]+)-alpha', rel.get('tag_name', ''))
+                if m:
+                    version = m.group(1)
+                    break
+    except Exception as e:
+        print(f"Warning: Could not fetch version from releases: {e}")
+    if version == "unknown":
+        version = "0.0.0"  # fallback default
     pyversion = "py311"
     return f"v{version}-alpha{timestamp}"
 
 def find_report_file():
     """Find the latest README report file - searches for most recent file within last hour"""
+    version, pyversion, _ = get_version_info()
     reports_path = get_reports_path()
-    
     # Search for all README files (not just exact minute match)
-    pattern = f"{reports_path}/README-bonsaiPR_py311-0.8.4-alpha*.txt"
+    pattern = f"{reports_path}/README-bonsaiPR_{pyversion}-{version}-alpha*.txt"
     report_files = glob.glob(pattern)
     
     if not report_files:

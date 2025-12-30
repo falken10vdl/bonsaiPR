@@ -54,7 +54,7 @@ def get_branch_and_report_names():
     except Exception as e:
         print(f"Warning: Could not fetch version from releases: {e}")
     if version == "unknown":
-        version = "0.8.4"  # fallback default
+        version = "0.0.0"  # fallback default
 
     pyversion = "py311"
     branch_name = f"build-{version}-alpha{current_datetime}"

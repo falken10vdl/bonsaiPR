@@ -48,8 +48,25 @@ REPORT_PATH = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
 
 def get_version_info():
     """Get version information for naming - includes hour+minute for on-demand builds"""
+    import requests
+    import re
     current_datetime = datetime.now().strftime('%y%m%d%H%M')
-    version = "0.8.4"
+    version = "unknown"
+    try:
+        api_url = "https://api.github.com/repos/IfcOpenShell/IfcOpenShell/releases"
+        resp = requests.get(api_url, timeout=10)
+        if resp.ok:
+            releases = resp.json()
+            for rel in releases:
+                # Look for tag_name like bonsai-0.8.5-alpha2512300458
+                m = re.match(r'bonsai-([\d.]+)-alpha', rel.get('tag_name', ''))
+                if m:
+                    version = m.group(1)
+                    break
+    except Exception as e:
+        print(f"Warning: Could not fetch version from releases: {e}")
+    if version == "unknown":
+        version = "0.0.0"  # fallback default
     pyversion = "py311"
     return version, pyversion, current_datetime
 
@@ -479,7 +496,8 @@ def build_addons(target_platforms=None):
 def find_existing_report():
     """Find the most recent README report file created within the last hour"""
     # Search for README files from clone script
-    pattern = os.path.join(REPORT_PATH, "README-bonsaiPR_py311-0.8.4-alpha*.txt")
+    version, pyversion, _ = get_version_info()
+    pattern = os.path.join(REPORT_PATH, f"README-bonsaiPR_{pyversion}-{version}-alpha*.txt")
     report_files = glob.glob(pattern)
     
     if not report_files:
