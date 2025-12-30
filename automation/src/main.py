@@ -96,6 +96,7 @@ def main():
     start_time = datetime.datetime.now()
     log_file = setup_logging()
 
+
     # Cleanup old automation logs: keep only last 5
     logs_dir = os.path.join(os.path.dirname(__file__), '..', 'logs')
     import glob
@@ -106,6 +107,16 @@ def main():
             logging.info(f"Removed old log: {old_log}")
         except Exception as e:
             logging.warning(f"Could not remove log {old_log}: {e}")
+
+    # Cleanup old README-bonsaiPR_*.txt files: keep only last 5
+    report_dir = os.getenv("REPORT_PATH", os.path.join(os.path.dirname(__file__), '..'))
+    readme_files = sorted(glob.glob(os.path.join(report_dir, "README-bonsaiPR_*.txt")), key=os.path.getmtime, reverse=True)
+    for old_readme in readme_files[5:]:
+        try:
+            os.remove(old_readme)
+            logging.info(f"Removed old README: {old_readme}")
+        except Exception as e:
+            logging.warning(f"Could not remove README {old_readme}: {e}")
 
     logging.info("=" * 60)
     logging.info("🤖 BonsaiPR On-Demand Automation System")
