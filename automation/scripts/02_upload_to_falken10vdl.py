@@ -671,8 +671,33 @@ def upload_to_falken10vdl():
     else:
         commit_link = short_hash
 
-    # Compose release name as plain text (not a markdown link) using timestamp from README
-    release_name = f"BonsaiPR v0.8.4-alpha{timestamp_from_readme if timestamp_from_readme else datetime.now().strftime('%y%m%d%H%M')}"
+
+    # Compose release name using the short hash of the latest commit on the branch used to create this release
+    ts_full = timestamp_from_readme if timestamp_from_readme else datetime.now().strftime('%y%m%d%H%M')
+    ts_short = ts_full[:6]  # YYMMDD only
+
+    # Extract version from the first addon asset filename
+    version = "unknown"
+    if addon_files:
+        first_asset = os.path.basename(addon_files[0])
+        m = re.match(r'bonsaiPR_py311-([\d.]+)', first_asset)
+        if m:
+            version = m.group(1)
+
+    # Fetch the latest commit hash from the branch using the GitHub API
+    branch_short_hash = "unknown"
+    if branch_name != "unknown":
+        api_url = f"https://api.github.com/repos/{FORK_OWNER}/{FORK_REPO}/commits/{branch_name}"
+        try:
+            resp = requests.get(api_url, headers=github_headers(), timeout=10)
+            if resp.ok:
+                data = resp.json()
+                branch_commit_hash = data.get("sha", "unknown")
+                branch_short_hash = branch_commit_hash[:7] if branch_commit_hash not in (None, "unknown") else "unknown"
+        except Exception as e:
+            print(f"Warning: Could not fetch branch commit hash: {e}")
+
+    release_name = f"BonsaiPR v{version}-alpha{ts_short}-{branch_short_hash}"
 
     # Build release body with source commit and branch information
     release_body_header = f"IfcOpenShell source commit (before PR merging): {commit_link}\n"
