@@ -95,9 +95,21 @@ def run_full_build():
 
 def main():
     """Main check-and-build orchestration"""
+
     start_time = datetime.datetime.now()
     log_file = setup_logging()
-    
+
+    # Cleanup old check_build logs: keep only last 5
+    logs_dir = os.path.join(os.path.dirname(__file__), '..', 'logs')
+    import glob
+    log_files = sorted(glob.glob(os.path.join(logs_dir, "check_build_*.log")), key=os.path.getmtime, reverse=True)
+    for old_log in log_files[5:]:
+        try:
+            os.remove(old_log)
+            logging.info(f"Removed old log: {old_log}")
+        except Exception as e:
+            logging.warning(f"Could not remove log {old_log}: {e}")
+
     logging.info("=" * 70)
     logging.info("🤖 BonsaiPR Smart Build System - Check and Build")
     logging.info(f"⏰ Started: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")

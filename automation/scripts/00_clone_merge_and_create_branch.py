@@ -577,15 +577,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    # Cleanup old logs: keep only last 5 for automation and check_build logs
-    import glob
-    log_dir = os.path.join(os.path.dirname(__file__), '../logs')
-    for pattern in ["automation_*.log", "check_build_*.log"]:
-        log_files = sorted(glob.glob(os.path.join(log_dir, pattern)), key=os.path.getmtime, reverse=True)
-        for old_log in log_files[5:]:
-            try:
-                os.remove(old_log)
-                print(f"Removed old log: {old_log}")
-            except Exception as e:
-                print(f"Warning: Could not remove log {old_log}: {e}")
