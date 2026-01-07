@@ -638,6 +638,81 @@ def generate_release_body(report_file_path, addon_files, timestamp_from_readme=N
         print(f"Error reading report file: {e}")
         return "Weekly BonsaiPR build with latest PRs merged."
 
+def cleanup_old_releases():
+    """Delete old releases from GitHub, keeping only the last 30"""
+    print("\n🧹 Checking for old releases to clean up...")
+    
+    try:
+        # Get all releases from the repository (handle pagination)
+        url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases"
+        all_releases = []
+        page = 1
+        
+        while True:
+            params = {"per_page": 100, "page": page}
+            response = requests.get(url, headers=github_headers(), params=params)
+            
+            if response.status_code != 200:
+                print(f"⚠️ Could not fetch releases: {response.status_code}")
+                return
+            
+            page_releases = response.json()
+            if not page_releases:
+                break
+            
+            all_releases.extend(page_releases)
+            page += 1
+            
+            # Safety limit: don't fetch more than 200 releases
+            if len(all_releases) >= 200:
+                break
+        
+        # Filter for versioned releases (matching pattern vX.X.X-alphaYYMMDDHHMM)
+        # Example tag: v0.8.5-alpha2601071435
+        versioned_releases = []
+        for release in all_releases:
+            tag_name = release['tag_name']
+            # Match pattern: vX.X.X-alphaYYMMDDHHMM
+            if re.match(r'^v[\d.]+-alpha\d{10}$', tag_name):
+                versioned_releases.append(release)
+        
+        if len(versioned_releases) <= 30:
+            print(f"✅ Found {len(versioned_releases)} releases (≤30), no cleanup needed")
+            return
+        
+        # Sort releases by created_at date (newest first)
+        versioned_releases.sort(key=lambda x: x['created_at'], reverse=True)
+        
+        # Keep first 30 (newest), delete the rest
+        releases_to_delete = versioned_releases[30:]
+        
+        print(f"📊 Found {len(versioned_releases)} releases, keeping last 30")
+        print(f"🗑️  Deleting {len(releases_to_delete)} old releases...")
+        
+        deleted_count = 0
+        for release in releases_to_delete:
+            release_id = release['id']
+            tag_name = release['tag_name']
+            
+            # Delete the release
+            delete_url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/{release_id}"
+            delete_response = requests.delete(delete_url, headers=github_headers())
+            
+            if delete_response.status_code == 204:
+                # Also delete the associated tag
+                tag_url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/git/refs/tags/{tag_name}"
+                tag_response = requests.delete(tag_url, headers=github_headers())
+                
+                deleted_count += 1
+                print(f"  ✓ Deleted release: {tag_name} (tag: {'✓' if tag_response.status_code == 204 else '✗'})")
+            else:
+                print(f"  ✗ Failed to delete release {tag_name}: {delete_response.status_code}")
+        
+        print(f"✅ Cleanup complete: {deleted_count}/{len(releases_to_delete)} releases deleted")
+        
+    except Exception as e:
+        print(f"⚠️ Error during release cleanup: {e}")
+
 def upload_to_falken10vdl():
     print("Starting upload to GitHub releases...")
     
@@ -817,6 +892,9 @@ def upload_to_falken10vdl():
     print(f"Successfully uploaded {success_count}/{total_files} files")
     print(f"Release URL: {release_url}")
     print(f"README updated and uploaded: {readme_path}")
+    
+    # Clean up old releases after successfully creating new one
+    cleanup_old_releases()
     
     return success_count == total_files
 

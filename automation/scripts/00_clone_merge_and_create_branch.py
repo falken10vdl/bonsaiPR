@@ -395,6 +395,58 @@ def apply_bonsai_replacements():
     finally:
         os.chdir(original_dir)
 
+def cleanup_old_branches():
+    """Delete old build branches from GitHub, keeping only the last 30"""
+    print("\n🧹 Checking for old branches to clean up...")
+    
+    try:
+        # Get all branches from the fork
+        url = f"https://api.github.com/repos/{fork_owner}/{fork_repo}/branches"
+        response = requests.get(url, headers=github_headers())
+        
+        if response.status_code != 200:
+            print(f"⚠️ Could not fetch branches: {response.status_code}")
+            return
+        
+        all_branches = response.json()
+        
+        # Filter for build branches (matching pattern build-VERSION-alphaYYMMDDHHMM)
+        build_branches = []
+        for branch in all_branches:
+            branch_name = branch['name']
+            # Match pattern: build-X.X.X-alphaYYMMDDHHMM
+            if re.match(r'^build-[\d.]+-alpha\d{10}$', branch_name):
+                build_branches.append(branch_name)
+        
+        if len(build_branches) <= 30:
+            print(f"✅ Found {len(build_branches)} build branches (≤30), no cleanup needed")
+            return
+        
+        # Sort branches by timestamp in name (alphaYYMMDDHHMM)
+        build_branches.sort(key=lambda x: re.search(r'alpha(\d{10})$', x).group(1))
+        
+        # Keep last 30, delete the rest
+        branches_to_delete = build_branches[:-30]
+        
+        print(f"📊 Found {len(build_branches)} build branches, keeping last 30")
+        print(f"🗑️  Deleting {len(branches_to_delete)} old branches...")
+        
+        deleted_count = 0
+        for branch_name in branches_to_delete:
+            delete_url = f"https://api.github.com/repos/{fork_owner}/{fork_repo}/git/refs/heads/{branch_name}"
+            delete_response = requests.delete(delete_url, headers=github_headers())
+            
+            if delete_response.status_code == 204:
+                deleted_count += 1
+                print(f"  ✓ Deleted: {branch_name}")
+            else:
+                print(f"  ✗ Failed to delete {branch_name}: {delete_response.status_code}")
+        
+        print(f"✅ Cleanup complete: {deleted_count}/{len(branches_to_delete)} branches deleted")
+        
+    except Exception as e:
+        print(f"⚠️ Error during branch cleanup: {e}")
+
 def push_branch_to_fork(branch_name):
     """Push the new branch to the fork"""
     original_dir = os.getcwd()
@@ -557,6 +609,8 @@ def main():
     applied, failed, skipped = apply_prs_to_branch(branch_name, prs)
     # Push branch to fork BEFORE running individual PR tests
     push_branch_to_fork(branch_name)
+    # Clean up old branches after successfully pushing new one
+    cleanup_old_branches()
     # Print current branch for verification
     os.chdir(work_dir)
     result = subprocess.run(['git', 'branch', '--show-current'], capture_output=True, text=True)
