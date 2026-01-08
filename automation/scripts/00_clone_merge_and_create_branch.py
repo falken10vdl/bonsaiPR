@@ -400,17 +400,34 @@ def cleanup_old_branches():
     print("\n🧹 Checking for old branches to clean up...")
     
     try:
-        # Get all branches from the fork
+        # Get all branches from the fork (handle pagination)
         url = f"https://api.github.com/repos/{fork_owner}/{fork_repo}/branches"
-        response = requests.get(url, headers=github_headers())
+        all_branches = []
+        page = 1
         
-        if response.status_code != 200:
-            print(f"⚠️ Could not fetch branches: {response.status_code}")
-            return
+        while True:
+            params = {"per_page": 100, "page": page}
+            response = requests.get(url, headers=github_headers(), params=params)
+            
+            if response.status_code != 200:
+                print(f"⚠️ Could not fetch branches: {response.status_code}")
+                return
+            
+            page_branches = response.json()
+            if not page_branches:
+                break
+            
+            all_branches.extend(page_branches)
+            page += 1
+            
+            # Safety limit: don't fetch more than 500 branches
+            if len(all_branches) >= 500:
+                break
         
-        all_branches = response.json()
+        print(f"📊 Fetched {len(all_branches)} total branches from repository")
         
         # Filter for build branches (matching pattern build-VERSION-alphaYYMMDDHHMM)
+        # Example: build-0.8.5-alpha2601071435
         build_branches = []
         for branch in all_branches:
             branch_name = branch['name']
