@@ -43,10 +43,12 @@ To enable automated updates for the bonsaiPR extension in Blender, open Blender 
 
 The repository will now appear in the list:
 <p align="center">
-<img src="https://github.com/falken10vdl/bonsaiPR/raw/main/images/blender_extensions_3.png">
+<img src="https://github.com/falken10vdl/bonsaiPR/raw/main/images/blender_extensions_repo_added.png">
 </p>
 
 Blender will automatically check for updates to the bonsaiPR extension.
+
+> ⚠️ **Warning:** You must enable either **Bonsai** or **BonsaiPR**, but **not both at the same time** in Blender. Enabling both can cause conflicts or unexpected behavior.
 
 # Download
 

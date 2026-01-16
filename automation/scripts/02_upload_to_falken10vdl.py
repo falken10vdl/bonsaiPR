@@ -911,8 +911,9 @@ def upload_to_falken10vdl():
 
     # Call update_index_json with correct asset names
     # Patch update_index_json to accept (local_path, asset_name) tuples
+
     def update_index_json_with_asset_names(index_path, release_tag, uploaded_files):
-        import json, hashlib, os
+        import json, hashlib, os, re
         if not os.path.exists(index_path):
             print(f"index.json not found at {index_path}")
             return False
@@ -929,6 +930,7 @@ def upload_to_falken10vdl():
                 return 'windows-x64'
             return None
         file_info = {}
+        version_info = {}
         for local_path, asset_name in uploaded_files:
             plat = get_platform(asset_name)
             if not plat:
@@ -936,11 +938,25 @@ def upload_to_falken10vdl():
             size = os.path.getsize(local_path)
             with open(local_path, 'rb') as f:
                 hashval = hashlib.sha256(f.read()).hexdigest()
+            # Extract version from filename: bonsaiPR_py311-0.8.5-alpha260116-platform.zip
+            # We want version_str = 0.8.5-alpha260116
+            m = re.match(r'bonsaiPR_py311-([\d.]+-alpha\d{6})', asset_name)
+            if m:
+                version_str = m.group(1)
+            else:
+                # fallback: try to extract version up to platform
+                version_str = asset_name.split('-')[1] if '-' in asset_name else 'unknown'
+                # try to include alpha+digits if possible
+                m2 = re.match(r'bonsaiPR_py311-([\d.]+-alpha\d+)', asset_name)
+                if m2:
+                    version_str = m2.group(1)
             file_info[plat] = {
                 'filename': asset_name,
                 'size': size,
-                'hash': hashval
+                'hash': hashval,
+                'version': version_str
             }
+            version_info[plat] = version_str
         # Update every platform in each entry
         for entry in index.get('data', []):
             plat_list = entry.get('platforms', [])
@@ -951,6 +967,7 @@ def upload_to_falken10vdl():
                     entry['archive_url'] = f"https://github.com/falken10vdl/bonsaiPR/releases/download/{release_tag}/{file_info[plat]['filename']}"
                     entry['archive_size'] = file_info[plat]['size']
                     entry['archive_hash'] = f"sha256:{file_info[plat]['hash']}"
+                    entry['version'] = file_info[plat]['version']
         with open(index_path, 'w', encoding='utf-8') as f:
             json.dump(index, f, indent=2)
         print(f"index.json updated for release {release_tag}")
