@@ -13,10 +13,6 @@ BonsaiPR provides **on-demand builds** that include the latest community contrib
 - 🔒 **Source Transparency**: Complete source code available in fork branches
 - ⚡ **On-Demand Builds**: Create custom builds anytime with latest PRs
 
-### What's Different from Official Bonsai?
-
-
-## 📦 Download
 # Installation with automated updates
 
 To enable automated updates for the bonsaiPR extension in Blender, open Blender and go to **Edit > Preferences**.
@@ -71,7 +67,7 @@ Restart Blender and enjoy!
 > ⚠️ **Warning:** You must enable either **Bonsai** or **BonsaiPR**, but **not both at the same time** in Blender. To change from one to another, first disable the active one and then enable the other. Enabling both can cause conflicts or unexpected behavior.
 
 
-# Download
+# Manual Download
 
 ### Latest Release
 
