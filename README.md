@@ -24,14 +24,14 @@ To enable automated updates for the bonsaiPR extension in Blender, follow these 
 
 1. Open Blender and go to **Edit > Preferences > Add-ons**.
 <p align="center">
-<img src="images/blender_extensions_1.png">
+<img src="https://github.com/falken10vdl/bonsaiPR/raw/main/images/blender_extensions_1.png">
 </p>
 
 2. Click on **Get Extensions** in the left sidebar.
 
 3. In the top right, click the **Repositories** dropdown and then the **plus (+) icon**.
 <p align="center">
-<img src="images/blender_extensions_2.png">
+<img src="https://github.com/falken10vdl/bonsaiPR/raw/main/images/blender_extensions_2.png">
 </p>
 
 4. Select **Add Remote Repository**.
@@ -42,7 +42,7 @@ To enable automated updates for the bonsaiPR extension in Blender, follow these 
 6. Click **Create**. Make sure "Check for Updates on Startup" is enabled.
 7. The repository will now appear in the list:
 <p align="center">
-<img src="images/blender_extensions_3.png">
+<img src="https://github.com/falken10vdl/bonsaiPR/raw/main/images/blender_extensions_3.png">
 </p>
 
 Blender will automatically check for updates to the bonsaiPR extension.
