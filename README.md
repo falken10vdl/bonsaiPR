@@ -19,8 +19,13 @@ BonsaiPR provides **on-demand builds** that include the latest community contrib
 ## 📦 Download
 # Installation with automated updates
 
-
 To enable automated updates for the bonsaiPR extension in Blender, open Blender and go to **Edit > Preferences**.
+<p align="center">
+<img src="https://github.com/falken10vdl/bonsaiPR/raw/main/images/blender_addons_disable_bonsai.png">
+</p>
+
+
+0. Click on **Add-ons** in the left sidebar and disable **Bonsai** if it is enabled.
 <p align="center">
 <img src="https://github.com/falken10vdl/bonsaiPR/raw/main/images/blender_extensions_1.png">
 </p>
