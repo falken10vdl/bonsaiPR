@@ -941,21 +941,39 @@ def upload_to_falken10vdl():
                 'size': size,
                 'hash': hashval
             }
+        # Update every platform in each entry
         for entry in index.get('data', []):
             plat_list = entry.get('platforms', [])
             if not plat_list:
                 continue
-            plat = plat_list[0]
-            if plat in file_info:
-                entry['archive_url'] = f"https://github.com/falken10vdl/bonsaiPR/releases/download/{tag_name}/{file_info[plat]['filename']}"
-                entry['archive_size'] = file_info[plat]['size']
-                entry['archive_hash'] = f"sha256:{file_info[plat]['hash']}"
+            for plat in plat_list:
+                if plat in file_info:
+                    entry['archive_url'] = f"https://github.com/falken10vdl/bonsaiPR/releases/download/{release_tag}/{file_info[plat]['filename']}"
+                    entry['archive_size'] = file_info[plat]['size']
+                    entry['archive_hash'] = f"sha256:{file_info[plat]['hash']}"
         with open(index_path, 'w', encoding='utf-8') as f:
             json.dump(index, f, indent=2)
-        print(f"index.json updated for release {tag_name}")
+        print(f"index.json updated for release {release_tag}")
         return True
 
+
     update_index_json_with_asset_names(index_path, tag_name, uploaded_files)
+
+    # --- Automatically commit and push updated index.json ---
+    try:
+        repo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+        index_rel_path = os.path.relpath(index_path, repo_dir)
+        # Stage index.json
+        subprocess.run(['git', 'add', index_rel_path], cwd=repo_dir, check=True)
+        # Commit with a standard message
+        subprocess.run([
+            'git', 'commit', '-m', f'Update index.json for release {tag_name}'
+        ], cwd=repo_dir, check=True)
+        # Push to the current branch (assumes main)
+        subprocess.run(['git', 'push'], cwd=repo_dir, check=True)
+        print(f"✅ index.json committed and pushed to repository.")
+    except Exception as e:
+        print(f"⚠️ Could not commit/push index.json: {e}")
 
     # Update total files count (addon files + README only)
     total_files = len(addon_files) + 1  # +1 for README only
