@@ -37,9 +37,7 @@ To enable automated updates for the bonsaiPR extension in Blender, open Blender 
 
 4. Select **Add Remote Repository**.
 
-5. Enter the following URL:
-
-   [https://github.com/falken10vdl/bonsaiPR/blob/main/index.json](https://github.com/falken10vdl/bonsaiPR/blob/main/index.json)
+5. Enter the following URL: [https://github.com/falken10vdl/bonsaiPR/blob/main/index.json](https://github.com/falken10vdl/bonsaiPR/blob/main/index.json)
 
 6. Make sure "Check for Updates on Startup" is enabled. Click **Create**
 7. The repository will now appear in the list:
