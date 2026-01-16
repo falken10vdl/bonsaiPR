@@ -15,12 +15,36 @@ BonsaiPR provides **on-demand builds** that include the latest community contrib
 
 ### What's Different from Official Bonsai?
 
-- **Testing Ground**: PR authors can test their changes before official merge
-- **Community PRs**: Includes experimental features from community contributors
-- **On-Demand Builds**: Create builds anytime with the latest PRs
-- **Renamed to BonsaiPR**: To distinguish from official releases
 
 ## 📦 Download
+# Installation with automated updates
+
+
+To enable automated updates for the bonsaiPR extension in Blender, follow these steps:
+
+1. Open Blender and go to **Edit > Preferences > Add-ons**.
+   
+  ![Step 1: Get Extensions](images/blender_extensions_1.png)
+
+2. Click on **Get Extensions** in the left sidebar.
+
+3. In the top right, click the **Repositories** dropdown and then the **plus (+) icon**.
+
+  ![Step 2: Add Remote Repository](images/blender_extensions_2.png)
+
+4. Select **Add Remote Repository**.
+5. Enter the following URL:
+
+  [https://github.com/falken10vdl/bonsaiPR/index.json](https://github.com/falken10vdl/bonsaiPR/index.json)
+
+6. Click **Create**. Make sure "Check for Updates on Startup" is enabled.
+7. The repository will now appear in the list:
+
+  ![Step 3: Repository Added](images/blender_extensions_3.png)
+
+Blender will automatically check for updates to the bonsaiPR extension.
+
+# Download
 
 ### Latest Release
 
@@ -38,7 +62,7 @@ Each release includes builds for:
 - 🍎 **macOS Apple Silicon (ARM64)**: `bonsaiPR_py311-0.8.4-alphaYYMMDDHHMM-macos-arm64.zip`
 - 🪟 **Windows (x64)**: `bonsaiPR_py311-0.8.4-alphaYYMMDDHHMM-windows-x64.zip`
 
-### Installation
+### Manual Installation
 
 1. Download the appropriate `.zip` file for your platform
 2. In Blender, go to **Edit > Preferences > Add-ons**

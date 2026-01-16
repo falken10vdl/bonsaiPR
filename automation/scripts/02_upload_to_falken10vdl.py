@@ -886,16 +886,87 @@ def upload_to_falken10vdl():
             success_count += 1
             print(f"✅ Successfully uploaded complete README: {readme_asset_name}")
     
+    # Update index.json with new release info
+    try:
+        from automation.scripts.update_index_json import update_index_json
+    except ImportError:
+        from update_index_json import update_index_json
+
+    index_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../index.json'))
+    # Use the actual asset names as uploaded to GitHub (renamed if needed)
+    # Build a list of the actual uploaded file paths (with correct names)
+    uploaded_files = []
+    for addon_file in addon_files:
+        original_name = os.path.basename(addon_file)
+        pattern = r'(bonsaiPR_py311-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)'
+        match = re.match(pattern, original_name)
+        if match and timestamp_from_readme:
+            asset_name = f"{match.group(1)}{timestamp_from_readme}{match.group(3)}"
+            # The file on disk is still addon_file, but the asset on GitHub is asset_name
+            # For hash/size, use the local file; for URL, use asset_name
+            # We'll pass a tuple (local_path, asset_name)
+            uploaded_files.append((addon_file, asset_name))
+        else:
+            uploaded_files.append((addon_file, original_name))
+
+    # Call update_index_json with correct asset names
+    # Patch update_index_json to accept (local_path, asset_name) tuples
+    def update_index_json_with_asset_names(index_path, release_tag, uploaded_files):
+        import json, hashlib, os
+        if not os.path.exists(index_path):
+            print(f"index.json not found at {index_path}")
+            return False
+        with open(index_path, 'r', encoding='utf-8') as f:
+            index = json.load(f)
+        def get_platform(filename):
+            if 'linux-x64' in filename:
+                return 'linux-x64'
+            elif 'macos-x64' in filename:
+                return 'macos-x64'
+            elif 'macos-arm64' in filename:
+                return 'macos-arm64'
+            elif 'windows-x64' in filename:
+                return 'windows-x64'
+            return None
+        file_info = {}
+        for local_path, asset_name in uploaded_files:
+            plat = get_platform(asset_name)
+            if not plat:
+                continue
+            size = os.path.getsize(local_path)
+            with open(local_path, 'rb') as f:
+                hashval = hashlib.sha256(f.read()).hexdigest()
+            file_info[plat] = {
+                'filename': asset_name,
+                'size': size,
+                'hash': hashval
+            }
+        for entry in index.get('data', []):
+            plat_list = entry.get('platforms', [])
+            if not plat_list:
+                continue
+            plat = plat_list[0]
+            if plat in file_info:
+                entry['archive_url'] = f"https://github.com/falken10vdl/bonsaiPR/releases/download/{tag_name}/{file_info[plat]['filename']}"
+                entry['archive_size'] = file_info[plat]['size']
+                entry['archive_hash'] = f"sha256:{file_info[plat]['hash']}"
+        with open(index_path, 'w', encoding='utf-8') as f:
+            json.dump(index, f, indent=2)
+        print(f"index.json updated for release {tag_name}")
+        return True
+
+    update_index_json_with_asset_names(index_path, tag_name, uploaded_files)
+
     # Update total files count (addon files + README only)
     total_files = len(addon_files) + 1  # +1 for README only
     print(f"\n🎉 Upload completed!")
     print(f"Successfully uploaded {success_count}/{total_files} files")
     print(f"Release URL: {release_url}")
     print(f"README updated and uploaded: {readme_path}")
-    
+
     # Clean up old releases after successfully creating new one
     cleanup_old_releases()
-    
+
     return success_count == total_files
 
 if __name__ == '__main__':

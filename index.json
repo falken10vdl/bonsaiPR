@@ -1,0 +1,130 @@
+{
+  "version": "v1",
+  "blocklist": [],
+  "data": [
+    {
+      "schema_version": "1.0.0",
+      "id": "bonsaiPR",
+      "name": "BonsaiPR",
+      "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
+      "version": "0.8.5-alpha",
+      "type": "add-on",
+      "maintainer": "falken10vdl <falken10vdl@gmail.com>",
+      "license": [
+        "SPDX:GPL-3.0-or-later"
+      ],
+      "blender_version_min": "4.2.0",
+      "website": "https://github.com/falken10vdl/bonsaiPR",
+      "permissions": {
+        "network": "For update checks and remote asset downloads",
+        "files": "Load and save IFCs, BCF, and other project files from disk",
+        "clipboard": "Copy and paste error logs"
+      },
+      "tags": [
+        "3D View", "Add Mesh", "Animation", "Camera", "Development", "Import-Export", "Lighting", "Material", "Modeling", "Mesh", "Node", "Object", "Pipeline", "Render", "Scene", "System", "User Interface", "UV"
+      ],
+      "platforms": [
+        "linux-x64", "macos-x64", "macos-arm64", "windows-x64"
+      ],
+      "python_versions": [
+        "3.11"
+      ],
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.5-alpha2601161635/bonsaiPR_py311-0.8.5-alpha2601161635-linux-x64.zip",
+      "archive_size": 0,
+      "archive_hash": "sha256:"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "bonsaiPR",
+      "name": "BonsaiPR",
+      "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
+      "version": "0.8.5-alpha",
+      "type": "add-on",
+      "maintainer": "falken10vdl <falken10vdl@gmail.com>",
+      "license": [
+        "SPDX:GPL-3.0-or-later"
+      ],
+      "blender_version_min": "4.2.0",
+      "website": "https://github.com/falken10vdl/bonsaiPR",
+      "permissions": {
+        "network": "For update checks and remote asset downloads",
+        "files": "Load and save IFCs, BCF, and other project files from disk",
+        "clipboard": "Copy and paste error logs"
+      },
+      "tags": [
+        "3D View", "Add Mesh", "Animation", "Camera", "Development", "Import-Export", "Lighting", "Material", "Modeling", "Mesh", "Node", "Object", "Pipeline", "Render", "Scene", "System", "User Interface", "UV"
+      ],
+      "platforms": [
+        "macos-x64"
+      ],
+      "python_versions": [
+        "3.11"
+      ],
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.5-alpha2601161635/bonsaiPR_py311-0.8.5-alpha2601161635-macos-x64.zip",
+      "archive_size": 0,
+      "archive_hash": "sha256:"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "bonsaiPR",
+      "name": "BonsaiPR",
+      "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
+      "version": "0.8.5-alpha",
+      "type": "add-on",
+      "maintainer": "falken10vdl <falken10vdl@gmail.com>",
+      "license": [
+        "SPDX:GPL-3.0-or-later"
+      ],
+      "blender_version_min": "4.2.0",
+      "website": "https://github.com/falken10vdl/bonsaiPR",
+      "permissions": {
+        "network": "For update checks and remote asset downloads",
+        "files": "Load and save IFCs, BCF, and other project files from disk",
+        "clipboard": "Copy and paste error logs"
+      },
+      "tags": [
+        "3D View", "Add Mesh", "Animation", "Camera", "Development", "Import-Export", "Lighting", "Material", "Modeling", "Mesh", "Node", "Object", "Pipeline", "Render", "Scene", "System", "User Interface", "UV"
+      ],
+      "platforms": [
+        "macos-arm64"
+      ],
+      "python_versions": [
+        "3.11"
+      ],
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.5-alpha2601161635/bonsaiPR_py311-0.8.5-alpha2601161635-macos-arm64.zip",
+      "archive_size": 0,
+      "archive_hash": "sha256:"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "bonsaiPR",
+      "name": "BonsaiPR",
+      "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
+      "version": "0.8.5-alpha",
+      "type": "add-on",
+      "maintainer": "falken10vdl <falken10vdl@gmail.com>",
+      "license": [
+        "SPDX:GPL-3.0-or-later"
+      ],
+      "blender_version_min": "4.2.0",
+      "website": "https://github.com/falken10vdl/bonsaiPR",
+      "permissions": {
+        "network": "For update checks and remote asset downloads",
+        "files": "Load and save IFCs, BCF, and other project files from disk",
+        "clipboard": "Copy and paste error logs"
+      },
+      "tags": [
+        "3D View", "Add Mesh", "Animation", "Camera", "Development", "Import-Export", "Lighting", "Material", "Modeling", "Mesh", "Node", "Object", "Pipeline", "Render", "Scene", "System", "User Interface", "UV"
+      ],
+      "platforms": [
+        "windows-x64"
+      ],
+      "python_versions": [
+        "3.11"
+      ],
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.5-alpha2601161635/bonsaiPR_py311-0.8.5-alpha2601161635-windows-x64.zip",
+      "archive_size": 0,
+      "archive_hash": "sha256:"
+    }
+  ]
+}
