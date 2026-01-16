@@ -51,9 +51,20 @@ The repository will now appear in the list:
 <img src="https://github.com/falken10vdl/bonsaiPR/raw/main/images/blender_extensions_repo_added.png">
 </p>
 
+7. Under **Get Extensions**, type `bonsai` in the search panel and look for **BonsaiPR**. Click **Install**.
+<p align="center">
+<img src="https://github.com/falken10vdl/bonsaiPR/raw/main/images/blender_extensions_install_bonsaipr.png">
+</p>
+
 Blender will automatically check for updates to the bonsaiPR extension.
 
 > ⚠️ **Warning:** You must enable either **Bonsai** or **BonsaiPR**, but **not both at the same time** in Blender. Enabling both can cause conflicts or unexpected behavior.
+
+8. Now go to **Add-ons**. You should see **BonsaiPR** enabled and **Bonsai** disabled.
+<p align="center">
+<img src="https://github.com/falken10vdl/bonsaiPR/raw/main/images/blender_addons_bonsaipr_enabled.png">
+</p>
+Restart Blender and enjoy!
 
 # Download
 
