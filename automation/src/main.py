@@ -48,7 +48,96 @@ def setup_logging():
     
     return log_file
 
-def run_script(script_name, description):
+def check_for_skipped_conflict_prs(report_path):
+    """Check if the report contains PRs skipped due to conflicts with other PRs"""
+    if not os.path.exists(report_path):
+        logging.warning(f"⚠️ Report file not found: {report_path}")
+        return False
+    
+    try:
+        with open(report_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Check for the count line indicating conflicts with other PRs
+        # Format: "- Skipped (conflicts with other PRs): X"
+        import re
+        match = re.search(r'- Skipped \(conflicts with other PRs\):\s+(\d+)', content)
+        if match:
+            count = int(match.group(1))
+            if count > 0:
+                logging.info(f"📊 Found {count} PR(s) skipped due to conflicts with other PRs")
+                return True
+        
+        return False
+    except Exception as e:
+        logging.error(f"❌ Error checking report: {e}")
+        return False
+
+def get_latest_report_path():
+    """Get the path to the most recently generated report file"""
+    report_dir = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
+    import glob
+    report_files = sorted(glob.glob(os.path.join(report_dir, "README-bonsaiPR_*.txt")), 
+                         key=os.path.getmtime, reverse=True)
+    if report_files:
+        return report_files[0]
+    return None
+
+def extract_pr_numbers_from_section(report_path, section_title):
+    """Extract PR numbers from a specific section of the report
+    
+    Args:
+        report_path: Path to the report file
+        section_title: Title of the section (e.g., '## ❌ Failed to Merge PRs')
+    
+    Returns:
+        Set of PR numbers found in that section
+    """
+    if not os.path.exists(report_path):
+        return set()
+    
+    try:
+        with open(report_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        import re
+        pr_numbers = set()
+        
+        # Find the section
+        lines = content.split('\n')
+        in_section = False
+        
+        for line in lines:
+            # Check if we've entered the target section
+            if section_title in line:
+                in_section = True
+                continue
+            
+            # Check if we've entered a new section (stop reading)
+            if in_section and line.startswith('##'):
+                break
+            
+            # Extract PR numbers from lines in the section
+            if in_section:
+                # Match patterns like "- **PR #123**:" or "**PR #123**:"
+                match = re.search(r'\*\*PR #(\d+)\*\*', line)
+                if match:
+                    pr_numbers.add(int(match.group(1)))
+        
+        return pr_numbers
+    except Exception as e:
+        logging.error(f"❌ Error extracting PR numbers: {e}")
+        return set()
+
+def get_skipped_conflict_prs(report_path):
+    """Get the list of PR numbers that were skipped due to conflicts with other PRs"""
+    return extract_pr_numbers_from_section(report_path, '## ❌ Failed to Merge PRs')
+
+def get_successfully_merged_prs(report_path):
+    """Get the list of PR numbers that were successfully merged"""
+    return extract_pr_numbers_from_section(report_path, '## ✅ Successfully Merged PRs')
+
+def run_script(script_name, description, args=None):
     """Run an automation script with error handling"""
     scripts_dir = os.path.join(os.path.dirname(__file__), '..', 'scripts')
     script_path = os.path.join(scripts_dir, script_name)
@@ -61,8 +150,11 @@ def run_script(script_name, description):
     logging.info(f"📄 Script: {script_name}")
     
     try:
+        cmd = [sys.executable, script_path]
+        if args:
+            cmd.extend(args)
         result = subprocess.run(
-            [sys.executable, script_path],
+            cmd,
             cwd=scripts_dir,
             capture_output=True,
             text=True,
@@ -158,6 +250,82 @@ def main():
             break
         else:
             logging.warning(f"⚠️ Optional step failed, continuing")
+    
+    # Check if we should retry with reversed PR order
+    if success_count == total_steps:
+        report_path = get_latest_report_path()
+        if report_path and check_for_skipped_conflict_prs(report_path):
+            logging.info("\n" + "=" * 60)
+            logging.info("🔄 RETRY WITH REVERSED PR ORDER")
+            logging.info("Found PRs skipped due to conflicts with other PRs.")
+            logging.info("Retrying with newer PRs first to maximize inclusion.")
+            logging.info("=" * 60)
+            
+            # Get the PRs that were skipped in the first build
+            skipped_prs_first_build = get_skipped_conflict_prs(report_path)
+            logging.info(f"📋 First build had {len(skipped_prs_first_build)} PR(s) skipped due to conflicts: {sorted(skipped_prs_first_build)}")
+            
+            # Step 1: Run merge with reversed order
+            logging.info(f"\n📋 Retry Step 1/3: Clone repository and merge PRs (REVERSED ORDER)")
+            if run_script('00_clone_merge_and_create_branch.py', 
+                         'Clone repository and merge PRs (REVERSED ORDER)', 
+                         ['--reverse']):
+                
+                # Get the new report and check if any previously skipped PRs are now merged
+                retry_report_path = get_latest_report_path()
+                if retry_report_path:
+                    merged_prs_retry = get_successfully_merged_prs(retry_report_path)
+                    
+                    # Find PRs that were skipped in first build but merged in retry
+                    newly_merged_prs = skipped_prs_first_build.intersection(merged_prs_retry)
+                    
+                    if newly_merged_prs:
+                        logging.info(f"\n✨ SUCCESS! Retry merged {len(newly_merged_prs)} PR(s) that were previously skipped:")
+                        for pr_num in sorted(newly_merged_prs):
+                            logging.info(f"   • PR #{pr_num}")
+                        logging.info("\n🚀 Continuing with build and release for retry...")
+                        
+                        # Continue with build and upload since we have newly merged PRs
+                        retry_success_count = 1  # Already completed step 1
+                        retry_steps = [
+                            {
+                                'script': '01_build_bonsaiPR_addons.py',
+                                'description': 'Build BonsaiPR addons for multiple platforms (RETRY)',
+                                'args': None,
+                                'required': True
+                            },
+                            {
+                                'script': '02_upload_to_falken10vdl.py',
+                                'description': 'Create GitHub release (RETRY)',
+                                'args': None,
+                                'required': True
+                            }
+                        ]
+                        
+                        for i, step in enumerate(retry_steps, 2):  # Start at 2 since step 1 is done
+                            logging.info(f"\n📋 Retry Step {i}/3: {step['description']}")
+                            
+                            if run_script(step['script'], step['description'], step.get('args')):
+                                retry_success_count += 1
+                            elif step['required']:
+                                logging.error(f"💔 Required retry step failed, stopping retry")
+                                break
+                            else:
+                                logging.warning(f"⚠️ Optional retry step failed, continuing")
+                        
+                        if retry_success_count == 3:
+                            logging.info("\n🎉 Retry completed successfully! Generated additional release.")
+                            logging.info(f"   New PRs included: {sorted(newly_merged_prs)}")
+                        else:
+                            logging.warning("\n⚠️ Retry partially completed")
+                    else:
+                        logging.info(f"\n⏭️  RETRY SKIPPED: No previously skipped PRs were merged in retry.")
+                        logging.info("   The reversed order didn't help include more PRs.")
+                        logging.info("   Second release not needed - would be identical or worse.")
+                else:
+                    logging.error("❌ Could not find retry report path")
+            else:
+                logging.error("❌ Retry merge step failed")
     
     # Final summary
     end_time = datetime.datetime.now()

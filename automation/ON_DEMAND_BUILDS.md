@@ -32,6 +32,18 @@ When changes are detected, runs the complete pipeline:
 2. `01_build_bonsaiPR_addons.py` - Build addons for all platforms
 3. `02_upload_to_falken10vdl.py` - Create GitHub release
 
+### 4. Automatic Retry with Reversed PR Order
+
+**New Feature**: After completing a build, the system automatically checks if any PRs were skipped due to conflicts with other PRs. If found:
+
+1. **Automatically retries** the merge step with reversed PR order
+2. **Verifies improvement**: Checks if any previously skipped PRs are now merged
+3. **Smart decision**: Only generates a second release if the retry actually helped
+   - ✅ Creates release if newly merged PRs are found
+   - ⏭️ Skips release if no improvement (saves resources)
+
+This ensures PR authors only get a new release when their previously skipped PR is actually included, giving them a chance to test their changes.
+
 ## New Naming Convention
 
 Builds now include **hour and minute** in their names to support multiple builds per day:
@@ -41,7 +53,7 @@ Format: build-0.8.4-alpha{YYMMDDHHmm}
 Example: build-0.8.4-alpha2512141430  (Dec 14, 2025 at 14:30)
 ```
 
-This allows tracking exactly when each build was created.
+This allows tracking exactly when each build was created and supports multiple releases per day (original + retry).
 
 ## Installation & Setup
 

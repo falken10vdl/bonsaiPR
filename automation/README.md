@@ -13,6 +13,16 @@ The BonsaiPR automation system performs builds that:
 2. Build BonsaiPR addons for multiple platforms (Linux, macOS, Windows)
 3. Create GitHub releases with comprehensive documentation
 4. Upload complete source code for developer access
+5. **Automatically retry with reversed PR order** if conflicts are detected
+
+### 🔄 Intelligent Retry System
+
+After each successful build, the system checks if any PRs were skipped due to conflicts with other PRs. When detected:
+- Automatically runs the merge step again with reversed PR order (newest first)
+- **Verifies that previously skipped PRs are now merged**
+- **Only generates a second release if the retry actually includes new PRs**
+- Skips redundant releases when retry doesn't improve results
+- Ensures PR authors can test their contributions when they become available
 
 ## Directory Structure
 
@@ -160,6 +170,7 @@ tail -f automation/logs/cron_*.log
   - 'DRAFT status' - PR marked as draft
   - 'Repository no longer accessible (deleted fork)' - Fork deleted
   - 'Missing required PR information' - Incomplete PR data
+- **Supports reversed PR order** with `--reverse` flag (newest first)
 - Creates weekly branches: `weekly-build-0.8.4-alphaYYMMDD`
 - Generates initial report: `README-bonsaiPR_py311-0.8.4-alphaYYMMDD.txt`
 - **Uses GitHub token from .env for authentication** (no password prompts)
