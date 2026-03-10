@@ -3,6 +3,7 @@ import subprocess
 import requests
 import re
 import sys
+import json
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -253,10 +254,15 @@ def apply_prs_to_branch(branch_name, prs):
         os.chdir(original_dir)
 
 def test_failed_prs_individually(failed_prs):
-    """Test each failed PR by merging it alone against base. Returns a dict: pr_number -> True/False"""
+    """Test each failed PR by merging it alone against base.
+    Returns:
+        pr_test_results  : dict pr_number -> True/False/None
+        pr_conflict_data : dict pr_number -> {"files": [...], "breaking_commits": [...]}
+    """
     print("\nTesting failed PRs individually against base branch...")
     original_dir = os.getcwd()
     pr_test_results = {}
+    pr_conflict_data = {}
     try:
         os.chdir(work_dir)
         for pr in failed_prs:
@@ -298,6 +304,19 @@ def test_failed_prs_individually(failed_prs):
                     pr_test_results[pr_number] = True
                 else:
                     print(f"[FAIL] PR #{pr_number}: Merge conflict or error: {merge_result.stderr}")
+                    # Capture conflicting files before aborting
+                    conflict_result = subprocess.run(
+                        ['git', 'diff', '--name-only', '--diff-filter=U'],
+                        capture_output=True, text=True,
+                    )
+                    conflicting_files = [
+                        f.strip() for f in conflict_result.stdout.strip().split('\n') if f.strip()
+                    ]
+                    breaking_hints = find_breaking_commit_hints(conflicting_files)
+                    pr_conflict_data[pr_number] = {
+                        "files": conflicting_files,
+                        "breaking_commits": breaking_hints,
+                    }
                     subprocess.run(['git', 'merge', '--abort'], capture_output=True)
                     pr_test_results[pr_number] = False
 
@@ -317,7 +336,7 @@ def test_failed_prs_individually(failed_prs):
                     pass
     finally:
         os.chdir(original_dir)
-    return pr_test_results
+    return pr_test_results, pr_conflict_data
 
 def apply_bonsai_replacements():
     """Apply bonsai → bonsaiPR text replacements and directory renames"""
@@ -479,9 +498,69 @@ def push_branch_to_fork(branch_name):
     finally:
         os.chdir(original_dir)
 
-def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_prs=None, failed_pr_test_results=None, commit_hash=None):
+def load_failure_tracking(tracking_path):
+    """Load persistent PR failure tracking data (date + commit when first seen failing)."""
+    if os.path.exists(tracking_path):
+        try:
+            with open(tracking_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Warning: Could not load failure tracking file: {e}")
+    return {}
+
+def save_failure_tracking(tracking_path, data):
+    """Persist PR failure tracking data to disk."""
+    try:
+        os.makedirs(os.path.dirname(tracking_path), exist_ok=True)
+        with open(tracking_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2)
+    except Exception as e:
+        print(f"Warning: Could not save failure tracking file: {e}")
+
+def update_failure_tracking(tracking_data, currently_failing_pr_numbers, current_date, source_commit_hash):
+    """Update tracking: add first-seen entries for new failures, remove resolved ones."""
+    updated = {}
+    for pr_number in currently_failing_pr_numbers:
+        key = str(pr_number)
+        if key in tracking_data:
+            updated[key] = tracking_data[key]  # preserve first-seen data
+        else:
+            updated[key] = {
+                "first_detected": current_date,
+                "base_commit": source_commit_hash,
+            }
+    # PRs no longer in the failing list are silently dropped (they succeeded)
+    return updated
+
+def find_breaking_commit_hints(conflicting_files, max_commits=5):
+    """Return recent upstream commits that touched the conflicting files."""
+    if not conflicting_files:
+        return []
+    seen = {}
+    try:
+        for file_path in conflicting_files[:5]:  # cap at 5 files for speed
+            result = subprocess.run(
+                ['git', 'log', '--oneline', f'-{max_commits}', 'v0.8.0', '--', file_path],
+                capture_output=True, text=True,
+                cwd=work_dir,
+            )
+            for line in result.stdout.strip().split('\n'):
+                line = line.strip()
+                if line:
+                    commit_hash = line.split()[0]
+                    if commit_hash not in seen:
+                        seen[commit_hash] = line
+    except Exception as e:
+        print(f"Warning: could not retrieve breaking commit hints: {e}")
+    return list(seen.values())[:max_commits]
+
+def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_prs=None, failed_pr_test_results=None, commit_hash=None, failure_tracking=None, pr_conflict_data=None):
     if skipped_prs is None:
         skipped_prs = []
+    if failure_tracking is None:
+        failure_tracking = {}
+    if pr_conflict_data is None:
+        pr_conflict_data = {}
     print(f"Generating report at: {report_path}")
     # --- Count failed PRs by reason ---
     failed_conflict_with_base = 0
@@ -535,7 +614,7 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 f.write(f"- **PR #{pr_number}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
-                # Use the comment from Individual test merge as Reason
+                # Reason derived from individual test merge
                 reason = "Not tested"
                 if isinstance(failed_pr_test_results, dict) and pr_number in failed_pr_test_results:
                     test_result = failed_pr_test_results[pr_number]
@@ -545,7 +624,26 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                         reason = "Fails to merge against base (problem with PR itself)"
                     else:
                         reason = "Not tested (missing info)"
-                f.write(f"  - Reason: {reason}\n\n")
+                f.write(f"  - Reason: {reason}\n")
+                # First-detected date and base commit from tracking
+                tracking_key = str(pr_number)
+                if tracking_key in failure_tracking:
+                    entry = failure_tracking[tracking_key]
+                    f.write(f"  - First detected failing: {entry.get('first_detected', 'unknown')}\n")
+                    f.write(f"  - Base commit at first detection: {entry.get('base_commit', 'unknown')}\n")
+                # Conflicting files and breaking-commit hints (only for base-conflict PRs)
+                conflict_info = pr_conflict_data.get(pr_number, {})
+                conflicting_files = conflict_info.get("files", [])
+                breaking_commits = conflict_info.get("breaking_commits", [])
+                if conflicting_files:
+                    f.write(f"  - Conflicting files:\n")
+                    for cf in conflicting_files:
+                        f.write(f"    - `{cf}`\n")
+                if breaking_commits:
+                    f.write(f"  - Recent upstream commits to those files (possible culprits):\n")
+                    for bc in breaking_commits:
+                        f.write(f"    - `{bc}`\n")
+                f.write("\n")
         if skipped_prs:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped_prs)})\n\n")
             for pr in skipped_prs:
@@ -585,6 +683,13 @@ def main():
     branch_name, report_path = get_branch_and_report_names()
     print(f"Branch name: {branch_name}")
     print(f"Report will be saved as: {os.path.basename(report_path)}")
+
+    # Load persistent PR failure tracking
+    report_dir = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
+    tracking_path = os.path.join(report_dir, "pr_failure_tracking.json")
+    failure_tracking = load_failure_tracking(tracking_path)
+    print(f"📋 Loaded failure tracking for {len(failure_tracking)} PR(s) from {tracking_path}")
+
     # Parse --reverse argument
     reverse_order = False
     if '--reverse' in sys.argv:
@@ -609,6 +714,7 @@ def main():
         print("No open PRs found, creating branch with just main branch updates")
         applied, failed, skipped = [], [], []
         failed_pr_test_results = {}
+        pr_conflict_data = {}
         # Push branch to fork (even if empty)
         push_branch_to_fork(branch_name)
         # Print current branch for verification
@@ -616,7 +722,9 @@ def main():
         result = subprocess.run(['git', 'branch', '--show-current'], capture_output=True, text=True)
         print(f"[VERIFICATION] Current branch after merge: {result.stdout.strip()}")
         os.chdir(os.path.dirname(__file__))
-        generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results, source_commit_hash)
+        failure_tracking = update_failure_tracking(failure_tracking, set(), datetime.now().strftime('%Y-%m-%d'), source_commit_hash)
+        save_failure_tracking(tracking_path, failure_tracking)
+        generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results, source_commit_hash, failure_tracking, pr_conflict_data)
         print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
         print(f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}")
         print(f"📊 Report saved: {report_path}")
@@ -633,14 +741,22 @@ def main():
     result = subprocess.run(['git', 'branch', '--show-current'], capture_output=True, text=True)
     print(f"[VERIFICATION] Current branch after merge: {result.stdout.strip()}")
     os.chdir(os.path.dirname(__file__))
-    # Test failed PRs individually
-    failed_pr_test_results = test_failed_prs_individually(failed)
+    # Test failed PRs individually; also get conflicting-file / breaking-commit hints
+    failed_pr_test_results, pr_conflict_data = test_failed_prs_individually(failed)
+    # Update and persist failure tracking
+    currently_failing = {pr['number'] for pr in failed if failed_pr_test_results.get(pr['number']) is False}
+    failure_tracking = update_failure_tracking(
+        failure_tracking, currently_failing,
+        datetime.now().strftime('%Y-%m-%d'), source_commit_hash,
+    )
+    save_failure_tracking(tracking_path, failure_tracking)
+    print(f"💾 Failure tracking saved: {len(failure_tracking)} PR(s) tracked")
     # Ensure we are on the weekly branch before generating the report
     os.chdir(work_dir)
     subprocess.run(['git', 'checkout', branch_name], check=True)
     os.chdir(os.path.dirname(__file__))
     # Generate report
-    generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results, source_commit_hash)
+    generate_report(applied, failed, report_path, branch_name, skipped, failed_pr_test_results, source_commit_hash, failure_tracking, pr_conflict_data)
     print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
     print(f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}")
     print(f"📊 Report saved: {report_path}")
