@@ -602,7 +602,7 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
             f.write(f"- Success Rate: N/A\n\n")
         if applied_prs:
             f.write(f"## ✅ Successfully Merged PRs ({len(applied_prs)})\n\n")
-            for pr in applied_prs:
+            for pr in sorted(applied_prs, key=lambda p: p.get('updated_at', ''), reverse=True):
                 f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
