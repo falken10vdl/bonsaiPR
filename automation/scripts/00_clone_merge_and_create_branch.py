@@ -642,7 +642,13 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 if breaking_commits:
                     f.write(f"  - Recent upstream commits to those files (possible culprits):\n")
                     for bc in breaking_commits:
-                        f.write(f"    - `{bc}`\n")
+                        parts = bc.split(None, 1)
+                        if len(parts) == 2:
+                            commit_hash, commit_msg = parts
+                            commit_url = f"https://github.com/{upstream_repo}/commit/{commit_hash}"
+                            f.write(f"    - [`{commit_hash}`]({commit_url}) {commit_msg}\n")
+                        else:
+                            f.write(f"    - `{bc}`\n")
                 f.write("\n")
         if skipped_prs:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped_prs)})\n\n")
