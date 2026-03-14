@@ -602,14 +602,14 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
             f.write(f"- Success Rate: N/A\n\n")
         if applied_prs:
             f.write(f"## ✅ Successfully Merged PRs ({len(applied_prs)})\n\n")
-            for pr in applied_prs:
+            for pr in sorted(applied_prs, key=lambda p: p.get('updated_at', ''), reverse=True):
                 f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
                 f.write(f"  - Created: {pr['created_at'][:10]}\n\n")
         if failed_prs:
             f.write(f"## ❌ Failed to Merge PRs ({len(failed_prs)})\n\n")
-            for pr in failed_prs:
+            for pr in sorted(failed_prs, key=lambda p: p.get('updated_at', ''), reverse=True):
                 pr_number = pr['number']
                 f.write(f"- **PR #{pr_number}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
@@ -630,7 +630,12 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 if tracking_key in failure_tracking:
                     entry = failure_tracking[tracking_key]
                     f.write(f"  - First detected failing: {entry.get('first_detected', 'unknown')}\n")
-                    f.write(f"  - Base commit at first detection: {entry.get('base_commit', 'unknown')}\n")
+                    base_commit = entry.get('base_commit', 'unknown')
+                    if base_commit and base_commit != 'unknown':
+                        base_commit_url = f"https://github.com/{upstream_repo}/commit/{base_commit}"
+                        f.write(f"  - Base commit at first detection: [`{base_commit}`]({base_commit_url})\n")
+                    else:
+                        f.write(f"  - Base commit at first detection: {base_commit}\n")
                 # Conflicting files and breaking-commit hints (only for base-conflict PRs)
                 conflict_info = pr_conflict_data.get(pr_number, {})
                 conflicting_files = conflict_info.get("files", [])
@@ -638,15 +643,22 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 if conflicting_files:
                     f.write(f"  - Conflicting files:\n")
                     for cf in conflicting_files:
-                        f.write(f"    - `{cf}`\n")
+                        file_url = f"https://github.com/{upstream_repo}/blob/v0.8.0/{cf}"
+                        f.write(f"    - [`{cf}`]({file_url})\n")
                 if breaking_commits:
                     f.write(f"  - Recent upstream commits to those files (possible culprits):\n")
                     for bc in breaking_commits:
-                        f.write(f"    - `{bc}`\n")
+                        parts = bc.split(None, 1)
+                        if len(parts) == 2:
+                            commit_hash, commit_msg = parts
+                            commit_url = f"https://github.com/{upstream_repo}/commit/{commit_hash}"
+                            f.write(f"    - [`{commit_hash}`]({commit_url}) {commit_msg}\n")
+                        else:
+                            f.write(f"    - `{bc}`\n")
                 f.write("\n")
         if skipped_prs:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped_prs)})\n\n")
-            for pr in skipped_prs:
+            for pr in sorted(skipped_prs, key=lambda p: p.get('updated_at', ''), reverse=True):
                 f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
