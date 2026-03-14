@@ -638,7 +638,8 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 if conflicting_files:
                     f.write(f"  - Conflicting files:\n")
                     for cf in conflicting_files:
-                        f.write(f"    - `{cf}`\n")
+                        file_url = f"https://github.com/{upstream_repo}/blob/v0.8.0/{cf}"
+                        f.write(f"    - [`{cf}`]({file_url})\n")
                 if breaking_commits:
                     f.write(f"  - Recent upstream commits to those files (possible culprits):\n")
                     for bc in breaking_commits:
