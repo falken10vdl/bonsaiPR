@@ -630,7 +630,12 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 if tracking_key in failure_tracking:
                     entry = failure_tracking[tracking_key]
                     f.write(f"  - First detected failing: {entry.get('first_detected', 'unknown')}\n")
-                    f.write(f"  - Base commit at first detection: {entry.get('base_commit', 'unknown')}\n")
+                    base_commit = entry.get('base_commit', 'unknown')
+                    if base_commit and base_commit != 'unknown':
+                        base_commit_url = f"https://github.com/{upstream_repo}/commit/{base_commit}"
+                        f.write(f"  - Base commit at first detection: [`{base_commit}`]({base_commit_url})\n")
+                    else:
+                        f.write(f"  - Base commit at first detection: {base_commit}\n")
                 # Conflicting files and breaking-commit hints (only for base-conflict PRs)
                 conflict_info = pr_conflict_data.get(pr_number, {})
                 conflicting_files = conflict_info.get("files", [])
