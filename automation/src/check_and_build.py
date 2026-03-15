@@ -93,10 +93,32 @@ def run_full_build():
         logging.error(f"💥 Error during build: {e}")
         return False
 
+MIN_FREE_GB = 1.5  # Require at least 1.5 GB free before starting a build
+
+def check_disk_space(path='/'):
+    """Return (free_gb, ok) – ok is False when free space is below MIN_FREE_GB."""
+    stat = os.statvfs(path)
+    free_gb = (stat.f_bavail * stat.f_frsize) / (1024 ** 3)
+    return free_gb, free_gb >= MIN_FREE_GB
+
 def main():
     """Main check-and-build orchestration"""
 
     start_time = datetime.datetime.now()
+
+    # --- Disk space pre-flight check (before we even try to write a log) ---
+    check_path = os.path.expanduser('~')
+    free_gb, space_ok = check_disk_space(check_path)
+    if not space_ok:
+        msg = (
+            f"FATAL: Only {free_gb:.2f} GB free on {check_path}. "
+            f"At least {MIN_FREE_GB:.1f} GB is required for a build.\n"
+            "Free up space (old bonsaiPR-build dir, stale logs, README reports) "
+            "then retry."
+        )
+        print(msg, file=sys.stderr)
+        sys.exit(1)
+
     log_file = setup_logging()
 
     # Cleanup old check_build logs: keep only last 5

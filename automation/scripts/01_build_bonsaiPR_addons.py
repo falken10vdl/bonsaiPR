@@ -80,23 +80,24 @@ def copy_source_for_bonsaiPR_build():
     log_message("Starting source copy for bonsaiPR build")
     if not os.path.exists(SOURCE_DIR):
         raise FileNotFoundError(f"Source directory not found: {SOURCE_DIR}")
-    # Ensure we are on the correct weekly branch
-    version, pyversion, current_date = get_version_info()
-    weekly_branch = f"weekly-build-{version}-alpha{current_date}"
+    # Verify the source repo is on a valid build branch (build-*-alpha* pattern).
+    # Do NOT reconstruct the branch name from a fresh timestamp – the branch was
+    # already created by 00_clone_merge_and_create_branch.py and the clock may
+    # have ticked past the original minute boundary.
     original_cwd = os.getcwd()
     try:
         os.chdir(SOURCE_DIR)
         result = subprocess.run(['git', 'branch', '--show-current'], capture_output=True, text=True)
         current_branch = result.stdout.strip()
-        if current_branch != weekly_branch:
-            log_message(f"Not on weekly branch ({weekly_branch}), switching from {current_branch}...")
-            checkout_result = subprocess.run(['git', 'checkout', weekly_branch], capture_output=True, text=True)
-            if checkout_result.returncode == 0:
-                log_message(f"Checked out branch: {weekly_branch}")
-            else:
-                log_message(f"Failed to checkout branch {weekly_branch}: {checkout_result.stderr}", "ERROR")
+        if re.match(r'^build-[\d.]+-alpha\d{10}$', current_branch):
+            log_message(f"Source repository is on build branch: {current_branch}")
         else:
-            log_message(f"Already on weekly branch: {weekly_branch}")
+            log_message(
+                f"Source repository is on branch '{current_branch}' which does not match "
+                f"the expected 'build-VERSION-alphaDATETIME' pattern. "
+                f"Proceeding with current branch – verify this is intentional.",
+                "WARNING",
+            )
     finally:
         os.chdir(original_cwd)
     # Remove existing build directory if it exists
@@ -478,6 +479,7 @@ def build_addons(target_platforms=None):
     
     # Check if dist directory was created with files
     dist_dir = os.path.join(bonsaiPR_src, 'dist')
+    addon_files = []
     if os.path.exists(dist_dir):
         addon_files = glob.glob(os.path.join(dist_dir, "*.zip"))
         if addon_files:
@@ -487,11 +489,12 @@ def build_addons(target_platforms=None):
                 filesize = os.path.getsize(addon_file)
                 log_message(f"  - {filename} ({filesize:,} bytes)")
         else:
-            log_message("No zip files found in dist directory after build", "WARNING")
+            log_message("No zip files found in dist directory after build", "ERROR")
     else:
-        log_message("Dist directory not created after build", "WARNING")
-    
+        log_message("Dist directory not created after build", "ERROR")
+
     log_message("Addon build process completed")
+    return len(addon_files) > 0
 
 def find_existing_report():
     """Find the most recent README report file created within the last hour"""
@@ -703,24 +706,28 @@ def main():
     try:
         # Step 1: Copy source for bonsaiPR build
         copy_source_for_bonsaiPR_build()
-        
+
         # Step 2: Replace bonsai with bonsaiPR throughout codebase (files, filenames, directories)
         replace_bonsai_with_bonsaiPR()
-        
+
         # Step 2.5: Fix Makefile paths after directory rename
         fix_makefile_paths()
-        
+
         # Step 2.6: Fix ifctester webapp dependencies
         fix_ifctester_webapp_dependencies()
-        
+
         # Step 3: Build addons for specified platforms
-        build_addons(target_platforms)
-        
+        build_ok = build_addons(target_platforms)
+
         # Step 4: Create build report
         create_build_report()
-        
-        log_message("BonsaiPR addon build process completed successfully")
-        
+
+        if build_ok:
+            log_message("BonsaiPR addon build process completed successfully")
+        else:
+            log_message("BonsaiPR addon build process finished but NO zip files were produced", "ERROR")
+            sys.exit(1)
+
     except Exception as e:
         log_message(f"Build process failed: {e}", "ERROR")
         raise

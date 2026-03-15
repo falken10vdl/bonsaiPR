@@ -1,4 +1,5 @@
 import os
+import sys
 import subprocess
 import requests
 import json
@@ -186,16 +187,28 @@ def find_report_file():
     
     return latest_report
 
+def update_release_body(release_id, release_name, release_body):
+    """Patch the body (and name) of an existing GitHub release."""
+    url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/{release_id}"
+    response = requests.patch(url, headers=github_headers(), json={"name": release_name, "body": release_body})
+    if response.status_code == 200:
+        print(f"✅ Release body updated: {response.json()['html_url']}")
+        return response.json()
+    else:
+        print(f"❌ Failed to update release body: {response.status_code} {response.text}")
+        return None
+
 def create_github_release(tag_name, release_name, release_body):
-    """Create a new GitHub release or get existing one"""
+    """Create a new GitHub release, or update the body if it already exists."""
     # First check if release already exists
     existing_url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/tags/{tag_name}"
     existing_response = requests.get(existing_url, headers=github_headers())
-    
+
     if existing_response.status_code == 200:
         release_data = existing_response.json()
-        print(f"ℹ️ GitHub release already exists: {release_data['html_url']}")
-        return release_data
+        print(f"ℹ️ GitHub release already exists: {release_data['html_url']} — updating body...")
+        updated = update_release_body(release_data['id'], release_name, release_body)
+        return updated if updated else release_data
     
     # Create new release if it doesn't exist
     url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases"
@@ -530,23 +543,49 @@ def generate_release_body(report_file_path, addon_files, timestamp_from_readme=N
             # Collect PRs with URL extraction
             if line.startswith("- **PR #"):
                 pr_url = None
-                # Look ahead for URL
-                for j in range(idx+1, min(idx+5, len(lines))):
-                    next_line = lines[j].strip()
-                    if next_line.startswith("- URL:") or next_line.startswith("  - URL:"):
-                        pr_url = next_line.split("URL:", 1)[1].strip()
+                # Scan ahead to end of this PR's block (until next PR entry or section header)
+                block_lines = []
+                for j in range(idx+1, len(lines)):
+                    nl = lines[j].strip()
+                    if nl.startswith("- **PR #") or nl.startswith("## "):
                         break
-                
+                    block_lines.append(nl)
+
+                # Extract fields from block
+                for bl in block_lines:
+                    if bl.startswith("- URL:") or bl.startswith("  - URL:"):
+                        pr_url = bl.split("URL:", 1)[1].strip()
+                        break
+
                 if in_applied_section:
                     applied_prs.append({'line': line, 'url': pr_url})
                 elif in_failed_section:
-                    current_pr = {'line': line, 'url': pr_url, 'reason': None}
-                    # Look ahead for reason
-                    for j in range(idx+1, min(idx+5, len(lines))):
-                        next_line = lines[j].strip()
-                        if next_line.startswith("- Reason:") or next_line.startswith("  - Reason:"):
-                            current_pr['reason'] = next_line.replace("- Reason:","").replace("  - Reason:","").strip()
-                            break
+                    current_pr = {
+                        'line': line, 'url': pr_url,
+                        'reason': None, 'first_detected': None,
+                        'base_commit': None, 'conflicting_files': [],
+                        'breaking_commits': [],
+                    }
+                    in_conflicts = False
+                    in_breaking = False
+                    for bl in block_lines:
+                        if bl.startswith("- Reason:") or bl.startswith("  - Reason:"):
+                            current_pr['reason'] = bl.split("Reason:", 1)[1].strip()
+                            in_conflicts = False; in_breaking = False
+                        elif bl.startswith("- First detected failing:") or bl.startswith("  - First detected failing:"):
+                            current_pr['first_detected'] = bl.split(":", 1)[1].strip()
+                            in_conflicts = False; in_breaking = False
+                        elif bl.startswith("- Base commit at first detection:") or bl.startswith("  - Base commit at first detection:"):
+                            current_pr['base_commit'] = bl.split(":", 1)[1].strip()
+                            in_conflicts = False; in_breaking = False
+                        elif bl.startswith("- Conflicting files:") or bl.startswith("  - Conflicting files:"):
+                            in_conflicts = True; in_breaking = False
+                        elif bl.startswith("- Recent upstream commits") or bl.startswith("  - Recent upstream commits"):
+                            in_conflicts = False; in_breaking = True
+                        elif in_conflicts and (bl.startswith("- `") or bl.startswith("  - `")):
+                            current_pr['conflicting_files'].append(bl.lstrip("- ").strip())
+                        elif in_breaking and (bl.startswith("- `") or bl.startswith("  - `")):
+                            current_pr['breaking_commits'].append(bl.lstrip("- ").strip())
                     # If reason matches conflict with other PRs, categorize as skipped_conflict_prs
                     if current_pr['reason'] == "Merges cleanly against base (conflict with other PRs)":
                         skipped_conflict_prs.append({'line': line, 'url': pr_url})
@@ -554,11 +593,9 @@ def generate_release_body(report_file_path, addon_files, timestamp_from_readme=N
                         failed_prs.append(current_pr)
                 elif in_skipped_section:
                     current_pr = {'line': line, 'url': pr_url, 'reason': None}
-                    # Look ahead for reason only
-                    for j in range(idx+1, min(idx+5, len(lines))):
-                        next_line = lines[j].strip()
-                        if next_line.startswith("- Reason:") or next_line.startswith("  - Reason:"):
-                            current_pr['reason'] = next_line.replace("- Reason:","").replace("  - Reason:","").strip()
+                    for bl in block_lines:
+                        if bl.startswith("- Reason:") or bl.startswith("  - Reason:"):
+                            current_pr['reason'] = bl.split("Reason:", 1)[1].strip()
                             break
                     # Group skipped PRs
                     if current_pr['reason'] and "DRAFT status" in current_pr['reason']:
@@ -628,8 +665,16 @@ def generate_release_body(report_file_path, addon_files, timestamp_from_readme=N
         release_body += f"\n## ❌ Failed PRs ({len(failed_prs)})\n"
         for pr in failed_prs:
             release_body += format_pr_with_link(pr['line'], pr['url'])
-            if pr['reason']:
+            if pr.get('reason'):
                 release_body += f"\n  - Reason: {pr['reason']}"
+            if pr.get('first_detected'):
+                release_body += f"\n  - First detected failing: {pr['first_detected']}"
+            if pr.get('base_commit'):
+                release_body += f"\n  - Base commit at first detection: `{pr['base_commit']}`"
+            if pr.get('conflicting_files'):
+                release_body += "\n  - Conflicting files: " + ", ".join(f"`{f}`" for f in pr['conflicting_files'])
+            if pr.get('breaking_commits'):
+                release_body += "\n  - Possible breaking commits: " + ", ".join(f"`{c}`" for c in pr['breaking_commits'])
             release_body += "\n"
         
         release_body += "\n"
@@ -1002,8 +1047,84 @@ def upload_to_falken10vdl():
     # Clean up old releases after successfully creating new one
     cleanup_old_releases()
 
+    # Remove the local build directory to reclaim disk space now that
+    # all artifacts have been uploaded to GitHub.
+    build_base_dir = os.getenv("BUILD_BASE_DIR", "/home/falken10vdl/bonsaiPRDevel/bonsaiPR-build")
+    if os.path.exists(build_base_dir):
+        try:
+            import shutil
+            shutil.rmtree(build_base_dir)
+            print(f"🧹 Removed build directory to free disk space: {build_base_dir}")
+        except Exception as e:
+            print(f"⚠️ Could not remove build directory {build_base_dir}: {e}")
+
     return success_count == total_files
 
+def patch_existing_release(tag_name):
+    """Regenerate and patch the body of an already-published release.
+
+    Finds the matching README report, regenerates the release body with the
+    current generate_release_body() logic, then PATCHes the release on GitHub.
+    """
+    print(f"🔧 Patching release body for tag: {tag_name}")
+
+    # Locate the matching report file
+    report_dir = get_reports_path()
+    # Extract the timestamp portion from the tag  (e.g. v0.8.5-alpha2603101648 -> 2603101648)
+    import re
+    m = re.search(r'alpha(\d+)', tag_name)
+    timestamp = m.group(1) if m else None
+
+    report_file = None
+    if timestamp:
+        pattern = os.path.join(report_dir, f"README-bonsaiPR_*{timestamp}*.txt")
+        matches = glob.glob(pattern)
+        if matches:
+            report_file = max(matches, key=os.path.getmtime)
+
+    if not report_file:
+        # Fall back: use the most recent report
+        all_reports = sorted(glob.glob(os.path.join(report_dir, "README-bonsaiPR_*.txt")),
+                             key=os.path.getmtime, reverse=True)
+        if all_reports:
+            report_file = all_reports[0]
+            print(f"⚠️  No report matched tag timestamp, using most recent: {os.path.basename(report_file)}")
+
+    if not report_file:
+        print("❌ No report file found. Cannot patch release.")
+        return False
+
+    print(f"📄 Using report: {os.path.basename(report_file)}")
+
+    # Get existing release
+    url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/tags/{tag_name}"
+    resp = requests.get(url, headers=github_headers())
+    if resp.status_code != 200:
+        print(f"❌ Release not found for tag '{tag_name}': {resp.status_code}")
+        return False
+
+    release_data = resp.json()
+    release_id   = release_data['id']
+    release_name = release_data['name']
+
+    # Collect addon files from the release assets for the downloads section
+    assets_url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/{release_id}/assets"
+    assets_resp = requests.get(assets_url, headers=github_headers())
+    addon_files = []
+    if assets_resp.status_code == 200:
+        addon_files = [a['name'] for a in assets_resp.json() if a['name'].endswith('.zip')]
+
+    new_body = generate_release_body(report_file, addon_files,
+                                     timestamp_from_readme=timestamp, tag_name=tag_name)
+    result = update_release_body(release_id, release_name, new_body)
+    return result is not None
+
+
 if __name__ == '__main__':
+    # Support:  python3 02_upload_to_falken10vdl.py --patch-release v0.8.5-alpha2603101648
+    if len(sys.argv) == 3 and sys.argv[1] == '--patch-release':
+        tag = sys.argv[2]
+        ok = patch_existing_release(tag)
+        exit(0 if ok else 1)
     success = upload_to_falken10vdl()
     exit(0 if success else 1)

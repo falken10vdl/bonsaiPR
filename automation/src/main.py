@@ -193,7 +193,7 @@ def main():
     logs_dir = os.path.join(os.path.dirname(__file__), '..', 'logs')
     import glob
     log_files = sorted(glob.glob(os.path.join(logs_dir, "automation_*.log")), key=os.path.getmtime, reverse=True)
-    for old_log in log_files[5:]:
+    for old_log in log_files[3:]:
         try:
             os.remove(old_log)
             logging.info(f"Removed old log: {old_log}")
