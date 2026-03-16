@@ -34,6 +34,20 @@ if raw_excluded:
 else:
     excluded_prs = set()
 
+# Known per-file conflict resolutions for specific PRs.
+# Add an entry when a PR conflicts only because of another PR already merged,
+# and the incoming PR's version of that file is the correct superset.
+# Remove the entry once the upstream PR is rebased to resolve it natively.
+# strategy: 'theirs' = take the incoming PR's version, 'ours' = keep current HEAD.
+KNOWN_CONFLICT_RESOLUTIONS = {
+    # PR #7003 (general-mirroring) conflicts with PR #7802 in tool/root.py.
+    # PR #7003's version is a superset — it contains PR #7802's MappedRepresentation
+    # preservation logic plus HasShapeAspects/StyledByItem handling.
+    7003: [
+        ('src/bonsai/bonsai/tool/root.py', 'theirs'),
+    ],
+}
+
 # Generate branch name and report filename with timestamp for on-demand builds
 def get_branch_and_report_names():
     # Include hour-minute for multiple builds per day
@@ -66,6 +80,46 @@ def get_branch_and_report_names():
 
 def github_headers():
     return {"Authorization": f"token {GITHUB_TOKEN}"}
+
+def try_resolve_known_conflict(pr_number):
+    """Attempt to resolve a known per-file conflict for a specific PR.
+    Must be called while a conflicted merge is in progress (before --abort).
+    Returns True if all conflicts were resolved and the merge committed."""
+    if pr_number not in KNOWN_CONFLICT_RESOLUTIONS:
+        return False
+
+    print(f"  🔧 Attempting known conflict resolution for PR #{pr_number}...")
+    try:
+        for file_path, strategy in KNOWN_CONFLICT_RESOLUTIONS[pr_number]:
+            result = subprocess.run(
+                ['git', 'checkout', f'--{strategy}', file_path],
+                capture_output=True, text=True
+            )
+            if result.returncode != 0:
+                print(f"  ⚠️  Could not resolve {file_path}: {result.stderr.strip()}")
+                subprocess.run(['git', 'merge', '--abort'], capture_output=True)
+                return False
+            subprocess.run(['git', 'add', file_path], check=True)
+            print(f"  ✅ Resolved {file_path} using '{strategy}' strategy")
+
+        env = os.environ.copy()
+        env['GIT_EDITOR'] = 'true'
+        continue_result = subprocess.run(
+            ['git', 'merge', '--continue'],
+            capture_output=True, text=True, env=env
+        )
+        if continue_result.returncode == 0:
+            print(f"  ✅ Merge committed for PR #{pr_number} via known resolution")
+            return True
+        else:
+            print(f"  ⚠️  merge --continue failed: {continue_result.stderr.strip()}")
+            subprocess.run(['git', 'merge', '--abort'], capture_output=True)
+            return False
+
+    except Exception as e:
+        print(f"  ⚠️  Exception during conflict resolution for PR #{pr_number}: {e}")
+        subprocess.run(['git', 'merge', '--abort'], capture_output=True)
+        return False
 
 def setup_repository():
     """Clone or update the fork repository with upstream remote"""
@@ -228,6 +282,9 @@ def apply_prs_to_branch(branch_name, prs):
                 
                 if merge_result.returncode == 0:
                     print(f"✅ Successfully applied PR #{pr_number}")
+                    applied.append(pr)
+                elif try_resolve_known_conflict(pr_number):
+                    print(f"✅ Successfully applied PR #{pr_number} (resolved known conflict)")
                     applied.append(pr)
                 else:
                     print(f"❌ Failed to apply PR #{pr_number}: {merge_result.stderr}")
