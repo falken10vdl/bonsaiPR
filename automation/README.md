@@ -79,6 +79,25 @@ If a collaborator wants to run the same automation from their own Linux machine 
      - `BUILD_BASE_DIR=/home/theoryshaw/bonsaiPRDevel/bonsaiPR-build`
      - `REPORT_PATH=/home/theoryshaw/bonsaiPRDevel`
      - `WORKING_DIR=/home/theoryshaw/bonsaiPRDevel/MergingPR`
+    - Example `.env` for theoryshaw publishing to falken10vdl production targets:
+       ```dotenv
+       GITHUB_TOKEN=ghp_your_actual_token_here
+       GITHUB_OWNER=falken10vdl
+       GITHUB_REPO=bonsaiPR
+       FORK_OWNER=falken10vdl
+       FORK_REPO=IfcOpenShell
+       SOURCE_REPO_OWNER=IfcOpenShell
+       SOURCE_REPO_NAME=IfcOpenShell
+       SOURCE_BASE_BRANCH=v0.8.0
+
+       BASE_CLONE_DIR=/home/theoryshaw/bonsaiPRDevel/IfcOpenShell
+       WORKING_DIR=/home/theoryshaw/bonsaiPRDevel/MergingPR
+       REPORT_PATH=/home/theoryshaw/bonsaiPRDevel
+       BUILD_BASE_DIR=/home/theoryshaw/bonsaiPRDevel/bonsaiPR-build
+
+       USERNAMES=""
+       EXCLUDED=""
+       ```
 4. Run a manual forced validation once:
    ```bash
    cd /home/theoryshaw/bonsaiPR/automation/src
@@ -129,15 +148,23 @@ High-availability operation note:
    ```bash
    # GitHub Configuration
    GITHUB_TOKEN=ghp_your_actual_token_here
+   GITHUB_OWNER=falken10vdl
+   GITHUB_REPO=bonsaiPR
+   FORK_OWNER=falken10vdl
+   FORK_REPO=IfcOpenShell
+   SOURCE_REPO_OWNER=IfcOpenShell
+   SOURCE_REPO_NAME=IfcOpenShell
+   SOURCE_BASE_BRANCH=v0.8.0
    
    # Local Paths (example values shown)
-   BASE_CLONE_DIR=/home/falken10vdl/bonsaiPRDevel/IfcOpenShell
-   WORKING_DIR=/home/falken10vdl/bonsaiPRDevel/MergingPR
-   REPORT_PATH=/home/falken10vdl/bonsaiPRDevel
-   BUILD_BASE_DIR=/home/falken10vdl/bonsaiPRDevel/bonsaiPR-build
+   BASE_CLONE_DIR=/home/theoryshaw/bonsaiPRDevel/IfcOpenShell
+   WORKING_DIR=/home/theoryshaw/bonsaiPRDevel/MergingPR
+   REPORT_PATH=/home/theoryshaw/bonsaiPRDevel
+   BUILD_BASE_DIR=/home/theoryshaw/bonsaiPRDevel/bonsaiPR-build
    
    # Optional: Filter by specific usernames (leave empty for all)
    USERNAMES=""
+   EXCLUDED=""
    ```
 
 3. **Important**: The `.env` file contains your GitHub token - keep it secure and never commit it to git
