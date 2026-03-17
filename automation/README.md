@@ -51,15 +51,22 @@ automation/
 
 ### Collaborator Quick Setup (Independent Machine)
 
-If a collaborator wants to test the same automation flow on their own Linux machine:
+If a collaborator wants to run the same automation from their own Linux machine and publish to the same GitHub targets:
 
-1. Copy and edit the collaborator env template:
+1. Clone and install dependencies:
    ```bash
-   cd automation
+   git clone https://github.com/theoryshaw/bonsaiPR.git
+   cd bonsaiPR/automation
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   ```
+2. Create `.env` from collaborator template:
+   ```bash
    cp .env.collaborator.example .env
    ```
-2. Set machine-local paths and token values in `.env`.
-   - To publish to the shared GitHub target from either machine, set:
+3. Edit `.env` with local machine paths and token.
+   - Keep these shared target values to publish to the same repos:
      - `GITHUB_OWNER=falken10vdl`
      - `GITHUB_REPO=bonsaiPR`
      - `FORK_OWNER=falken10vdl`
@@ -67,23 +74,39 @@ If a collaborator wants to test the same automation flow on their own Linux mach
      - `SOURCE_REPO_OWNER=IfcOpenShell`
      - `SOURCE_REPO_NAME=IfcOpenShell`
      - `SOURCE_BASE_BRANCH=v0.8.0`
-3. Install the collaborator cron template (after replacing `/home/theoryshaw/...` paths):
+   - Set local filesystem paths for that machine:
+     - `BASE_CLONE_DIR=/home/theoryshaw/bonsaiPRDevel/IfcOpenShell`
+     - `BUILD_BASE_DIR=/home/theoryshaw/bonsaiPRDevel/bonsaiPR-build`
+     - `REPORT_PATH=/home/theoryshaw/bonsaiPRDevel`
+     - `WORKING_DIR=/home/theoryshaw/bonsaiPRDevel/MergingPR`
+4. Run a manual forced validation once:
    ```bash
+   cd /home/theoryshaw/bonsaiPR/automation/src
+   python3 check_and_build.py --force
+   ```
+5. Install cron on collaborator machine:
+   ```bash
+   cd /home/theoryshaw/bonsaiPR/automation
    crontab cron/hourly-automation.collaborator.cron
+   crontab -l
    ```
-4. Validate manually once:
+6. Monitor activity:
    ```bash
-   cd src
-   /usr/bin/python3 check_and_build.py --force
+   ls -lht /home/theoryshaw/bonsaiPR/automation/logs | head
+   tail -f /home/theoryshaw/bonsaiPR/automation/logs/check_build_*.log
    ```
+7. Verify release output on GitHub:
+   - https://github.com/falken10vdl/bonsaiPR/releases
+   - If testing on own fork, example: https://github.com/theoryshaw/bonsaiPR/releases
 
 Templates:
 - `.env.collaborator.example`
 - `cron/hourly-automation.collaborator.cron`
 
-High-availability note:
-- You can run cron on more than one machine, but both machines will attempt to publish to the same repos.
-- To avoid duplicate or racing releases, use a single active cron runner at a time, or add an external lock/coordinator.
+High-availability operation note:
+- Two machines can run the same setup, but concurrent publishers can race and produce overlapping runs.
+- Recommended: use primary/standby operation (only one active cron publisher at a time).
+- Optional risk-reduction (not a lock): stagger schedules by 30 minutes (for example minute 5 and minute 35).
 
 
 ### 1. Prerequisites
