@@ -59,7 +59,15 @@ If a collaborator wants to test the same automation flow on their own Linux mach
    cp .env.collaborator.example .env
    ```
 2. Set machine-local paths and token values in `.env`.
-3. Install the collaborator cron template (after replacing `/home/youruser/...` paths):
+   - To publish to the shared GitHub target from either machine, set:
+     - `GITHUB_OWNER=falken10vdl`
+     - `GITHUB_REPO=bonsaiPR`
+     - `FORK_OWNER=falken10vdl`
+     - `FORK_REPO=IfcOpenShell`
+     - `SOURCE_REPO_OWNER=IfcOpenShell`
+     - `SOURCE_REPO_NAME=IfcOpenShell`
+     - `SOURCE_BASE_BRANCH=v0.8.0`
+3. Install the collaborator cron template (after replacing `/home/theoryshaw/...` paths):
    ```bash
    crontab cron/hourly-automation.collaborator.cron
    ```
@@ -72,6 +80,10 @@ If a collaborator wants to test the same automation flow on their own Linux mach
 Templates:
 - `.env.collaborator.example`
 - `cron/hourly-automation.collaborator.cron`
+
+High-availability note:
+- You can run cron on more than one machine, but both machines will attempt to publish to the same repos.
+- To avoid duplicate or racing releases, use a single active cron runner at a time, or add an external lock/coordinator.
 
 
 ### 1. Prerequisites

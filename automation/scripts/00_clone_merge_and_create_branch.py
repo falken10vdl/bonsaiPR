@@ -12,14 +12,18 @@ load_dotenv()
 
 # Configuration
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")  # Set your GitHub token in environment variables
-upstream_repo_url = 'https://github.com/IfcOpenShell/IfcOpenShell.git'
+SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
+SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
+SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.8.0")
+
+upstream_repo_url = f'https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}.git'
 # Use token in the fork URL for authenticated operations
-fork_repo_url = f'https://{GITHUB_TOKEN}@github.com/falken10vdl/IfcOpenShell.git'
-fork_repo_url_public = 'https://github.com/falken10vdl/IfcOpenShell.git'  # For display purposes
+fork_owner = os.getenv("FORK_OWNER", os.getenv("GITHUB_OWNER", "falken10vdl"))
+fork_repo = os.getenv("FORK_REPO", "IfcOpenShell")
+fork_repo_url = f'https://{GITHUB_TOKEN}@github.com/{fork_owner}/{fork_repo}.git'
+fork_repo_url_public = f'https://github.com/{fork_owner}/{fork_repo}.git'  # For display purposes
 work_dir = os.getenv("BASE_CLONE_DIR", "/home/falken10vdl/bonsaiPRDevel/IfcOpenShell")
-upstream_repo = 'IfcOpenShell/IfcOpenShell'
-fork_owner = 'falken10vdl'
-fork_repo = 'IfcOpenShell'
+upstream_repo = f'{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}'
 # Parse USERNAMES and strip whitespace from each username
 raw_usernames = os.getenv("USERNAMES", "")
 if raw_usernames:
@@ -56,7 +60,7 @@ def get_branch_and_report_names():
     # Fetch latest version from IfcOpenShell GitHub releases
     version = "unknown"
     try:
-        api_url = "https://api.github.com/repos/IfcOpenShell/IfcOpenShell/releases"
+        api_url = f"https://api.github.com/repos/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/releases"
         resp = requests.get(api_url, timeout=10)
         if resp.ok:
             releases = resp.json()
@@ -131,17 +135,17 @@ def setup_repository():
             # Reset to clean state
             subprocess.run(['git', 'reset', '--hard', 'HEAD'], check=True)
             subprocess.run(['git', 'clean', '-fd'], check=True)
-            subprocess.run(['git', 'checkout', 'v0.8.0'], check=True)
+            subprocess.run(['git', 'checkout', SOURCE_BASE_BRANCH], check=True)
             
             # Update from upstream
             subprocess.run(['git', 'fetch', 'upstream'], check=True)
-            subprocess.run(['git', 'reset', '--hard', 'upstream/v0.8.0'], check=True)
+            subprocess.run(['git', 'reset', '--hard', f'upstream/{SOURCE_BASE_BRANCH}'], check=True)
             
             # Update the origin remote URL to use token for authentication
             subprocess.run(['git', 'remote', 'set-url', 'origin', fork_repo_url], check=True)
             
-            # Push updated v0.8.0 to fork
-            subprocess.run(['git', 'push', 'origin', 'v0.8.0', '--force'], check=True)
+            # Push updated base branch to fork
+            subprocess.run(['git', 'push', 'origin', SOURCE_BASE_BRANCH, '--force'], check=True)
             
             print(f"Repository updated successfully")
         finally:
@@ -333,11 +337,11 @@ def test_failed_prs_individually(failed_prs):
                 continue
 
             test_branch = f"test-merge-pr-{pr_number}"
-            print(f"[TEST] PR #{pr_number}: Creating branch '{test_branch}' from v0.8.0 and testing merge...")
+            print(f"[TEST] PR #{pr_number}: Creating branch '{test_branch}' from {SOURCE_BASE_BRANCH} and testing merge...")
             try:
                 # Clean up any existing test branch
                 subprocess.run(['git', 'branch', '-D', test_branch], capture_output=True)
-                subprocess.run(['git', 'checkout', 'v0.8.0'], check=True)
+                subprocess.run(['git', 'checkout', SOURCE_BASE_BRANCH], check=True)
                 subprocess.run(['git', 'checkout', '-b', test_branch], check=True)
 
                 # Add remote for PR
@@ -349,7 +353,7 @@ def test_failed_prs_individually(failed_prs):
                     print(f"[FAIL] PR #{pr_number}: Could not fetch PR branch: {fetch_result.stderr}")
                     pr_test_results[pr_number] = False
                     subprocess.run(['git', 'remote', 'remove', remote_name], capture_output=True)
-                    subprocess.run(['git', 'checkout', 'v0.8.0'], check=True)
+                    subprocess.run(['git', 'checkout', SOURCE_BASE_BRANCH], check=True)
                     continue
 
                 # Try to merge PR alone
@@ -379,7 +383,7 @@ def test_failed_prs_individually(failed_prs):
 
                 # Clean up remote and branch
                 subprocess.run(['git', 'remote', 'remove', remote_name], capture_output=True)
-                subprocess.run(['git', 'checkout', 'v0.8.0'], check=True)
+                subprocess.run(['git', 'checkout', SOURCE_BASE_BRANCH], check=True)
                 subprocess.run(['git', 'branch', '-D', test_branch], capture_output=True)
             except Exception as e:
                 print(f"[ERROR] PR #{pr_number}: Exception during test merge: {e}")
@@ -387,7 +391,7 @@ def test_failed_prs_individually(failed_prs):
                 try:
                     subprocess.run(['git', 'merge', '--abort'], capture_output=True)
                     subprocess.run(['git', 'remote', 'remove', remote_name], capture_output=True)
-                    subprocess.run(['git', 'checkout', 'v0.8.0'], check=True)
+                    subprocess.run(['git', 'checkout', SOURCE_BASE_BRANCH], check=True)
                     subprocess.run(['git', 'branch', '-D', test_branch], capture_output=True)
                 except Exception:
                     pass
@@ -550,7 +554,7 @@ def push_branch_to_fork(branch_name):
         # Push the new branch to origin (fork)
         subprocess.run(['git', 'push', 'origin', branch_name, '--force'], check=True)
         print(f"✅ Pushed branch '{branch_name}' to fork: {fork_repo_url_public}")
-        # Stay on the branch with PRs instead of returning to v0.8.0
+        # Stay on the branch with PRs instead of returning to SOURCE_BASE_BRANCH
         print(f"📍 Repository is now on branch '{branch_name}' with applied PRs")
     finally:
         os.chdir(original_dir)
@@ -597,7 +601,7 @@ def find_breaking_commit_hints(conflicting_files, max_commits=5):
     try:
         for file_path in conflicting_files[:5]:  # cap at 5 files for speed
             result = subprocess.run(
-                ['git', 'log', '--oneline', f'-{max_commits}', 'v0.8.0', '--', file_path],
+                ['git', 'log', '--oneline', f'-{max_commits}', SOURCE_BASE_BRANCH, '--', file_path],
                 capture_output=True, text=True,
                 cwd=work_dir,
             )
@@ -649,7 +653,7 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
         f.write(f"- Failed to merge: {len(failed_prs)}\n")
         f.write(f"- Skipped (draft/repo issues): {len(skipped_prs)}\n\n")
         # --- Add detailed failed PR counts ---
-        f.write(f"- Failed to Merge (conflicts with base v0.8.0): {failed_conflict_with_base}\n")
+        f.write(f"- Failed to Merge (conflicts with base {SOURCE_BASE_BRANCH}): {failed_conflict_with_base}\n")
         f.write(f"- Skipped (conflicts with other PRs): {failed_conflict_with_others}\n")
         f.write(f"- Failed to Merge (unknown): {failed_unknown}\n")
         if total_prs > 0:
@@ -700,7 +704,7 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                 if conflicting_files:
                     f.write(f"  - Conflicting files:\n")
                     for cf in conflicting_files:
-                        file_url = f"https://github.com/{upstream_repo}/blob/v0.8.0/{cf}"
+                        file_url = f"https://github.com/{upstream_repo}/blob/{SOURCE_BASE_BRANCH}/{cf}"
                         f.write(f"    - [`{cf}`]({file_url})\n")
                 if breaking_commits:
                     f.write(f"  - Recent upstream commits to those files (possible culprits):\n")
@@ -736,7 +740,7 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
         f.write(f"cd {fork_repo}\n")
         f.write(f"git checkout {branch_name}\n")
         f.write(f"```\n\n")
-        f.write(f"This branch contains the latest IfcOpenShell v0.8.0 branch with ")
+        f.write(f"This branch contains the latest IfcOpenShell {SOURCE_BASE_BRANCH} branch with ")
         f.write(f"{len(applied_prs)} merged community pull requests. ")
         f.write(f"PR authors can use this branch to test their changes and make adjustments.\n")
 

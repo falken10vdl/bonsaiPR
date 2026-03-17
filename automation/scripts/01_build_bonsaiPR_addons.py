@@ -43,6 +43,10 @@ load_dotenv()
 SOURCE_DIR = os.getenv("BASE_CLONE_DIR", "/home/falken10vdl/bonsaiPRDevel/IfcOpenShell")
 BUILD_BASE_DIR = os.getenv("BUILD_BASE_DIR", "/home/falken10vdl/bonsaiPRDevel/bonsaiPR-build")
 REPORT_PATH = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
+GITHUB_OWNER = os.getenv("GITHUB_OWNER", "falken10vdl")
+GITHUB_REPO = os.getenv("GITHUB_REPO", "bonsaiPR")
+SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
+SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
 
 # No exclusions - copy all files and directories
 
@@ -53,7 +57,7 @@ def get_version_info():
     current_datetime = datetime.now().strftime('%y%m%d%H%M')
     version = "unknown"
     try:
-        api_url = "https://api.github.com/repos/IfcOpenShell/IfcOpenShell/releases"
+        api_url = f"https://api.github.com/repos/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/releases"
         resp = requests.get(api_url, timeout=10)
         if resp.ok:
             releases = resp.json()
@@ -613,8 +617,8 @@ def create_build_report():
         f.write(f"## ⚠️ Important Notes\n\n")
         f.write(f"- This build includes community pull requests that may be experimental\n")
         f.write(f"- Use at your own risk in production environments\n")
-        f.write(f"- Report issues to: https://github.com/falken10vdl/bonsaiPR\n")
-        f.write(f"- For the original IfcOpenShell project: https://github.com/IfcOpenShell/IfcOpenShell\n")
+        f.write(f"- Report issues to: https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}\n")
+        f.write(f"- For the original IfcOpenShell project: https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}\n")
     
     if file_exists:
         log_message(f"Build information appended to existing report: {report_path}")

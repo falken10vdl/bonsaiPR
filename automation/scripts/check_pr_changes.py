@@ -24,7 +24,9 @@ load_dotenv()
 
 # Configuration
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-upstream_repo = 'IfcOpenShell/IfcOpenShell'
+SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
+SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
+upstream_repo = f'{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}'
 state_file = os.path.join(os.path.dirname(__file__), '..', 'logs', 'pr_state.json')
 
 # Parse excluded PRs

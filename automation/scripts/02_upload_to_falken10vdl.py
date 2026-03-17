@@ -14,10 +14,12 @@ load_dotenv()
 
 # Configuration
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")  # Set your GitHub token in environment variables
-GITHUB_OWNER = "falken10vdl"
-GITHUB_REPO = "bonsaiPR"
-FORK_OWNER = "falken10vdl"
-FORK_REPO = "IfcOpenShell"
+GITHUB_OWNER = os.getenv("GITHUB_OWNER", "falken10vdl")
+GITHUB_REPO = os.getenv("GITHUB_REPO", "bonsaiPR")
+FORK_OWNER = os.getenv("FORK_OWNER", GITHUB_OWNER)
+FORK_REPO = os.getenv("FORK_REPO", "IfcOpenShell")
+SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
+SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
 
 # Use token in URLs for authenticated Git operations
 bonsaiPR_repo_url = f'https://{GITHUB_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git'
@@ -40,7 +42,7 @@ def get_branch_name():
     current_datetime = datetime.now().strftime('%y%m%d%H%M')
     version = "unknown"
     try:
-        api_url = "https://api.github.com/repos/IfcOpenShell/IfcOpenShell/releases"
+        api_url = f"https://api.github.com/repos/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/releases"
         resp = requests.get(api_url, timeout=10)
         if resp.ok:
             releases = resp.json()
@@ -62,7 +64,7 @@ def get_version_info():
     current_datetime = datetime.now().strftime('%y%m%d%H%M')
     version = "unknown"
     try:
-        api_url = "https://api.github.com/repos/IfcOpenShell/IfcOpenShell/releases"
+        api_url = f"https://api.github.com/repos/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/releases"
         resp = requests.get(api_url, timeout=10)
         if resp.ok:
             releases = resp.json()
@@ -150,7 +152,7 @@ def get_release_tag(timestamp=None):
         timestamp = datetime.now().strftime('%y%m%d%H%M')
     version = "unknown"
     try:
-        api_url = "https://api.github.com/repos/IfcOpenShell/IfcOpenShell/releases"
+        api_url = f"https://api.github.com/repos/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/releases"
         resp = requests.get(api_url, timeout=10)
         if resp.ok:
             releases = resp.json()
@@ -454,7 +456,7 @@ def create_or_update_readme():
         f.write(f"- Test your PRs using the branch: `{get_branch_name()}`\n")
         f.write(f"- Download and test the appropriate addon for your platform\n")
         f.write(f"- Report issues at: https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/issues\n")
-        f.write(f"- Contribute to IfcOpenShell: https://github.com/IfcOpenShell/IfcOpenShell\n\n")
+        f.write(f"- Contribute to IfcOpenShell: https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}\n\n")
         
         f.write(f"## ⚠️ Important Notices\n\n")
         f.write(f"- **Alpha Release**: This is a development build with experimental features\n")
@@ -820,7 +822,7 @@ def upload_to_falken10vdl():
                     break
 
     # Format commit hash as a short hash and link, using the short hash from the GitHub commit page if possible
-    commit_url = f"https://github.com/falken10vdl/IfcOpenShell/commit/{commit_hash}" if commit_hash != "unknown" else None
+    commit_url = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{commit_hash}" if commit_hash != "unknown" else None
     short_hash = commit_hash[:7] if commit_hash not in (None, "unknown") else "unknown"
     # Try to fetch the short hash from the commit page if possible
     try:
@@ -1009,7 +1011,7 @@ def upload_to_falken10vdl():
                 continue
             for plat in plat_list:
                 if plat in file_info:
-                    entry['archive_url'] = f"https://github.com/falken10vdl/bonsaiPR/releases/download/{release_tag}/{file_info[plat]['filename']}"
+                    entry['archive_url'] = f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/download/{release_tag}/{file_info[plat]['filename']}"
                     entry['archive_size'] = file_info[plat]['size']
                     entry['archive_hash'] = f"sha256:{file_info[plat]['hash']}"
                     entry['version'] = file_info[plat]['version']
