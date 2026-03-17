@@ -49,6 +49,31 @@ automation/
 
 ## Setup Instructions
 
+### Collaborator Quick Setup (Independent Machine)
+
+If a collaborator wants to test the same automation flow on their own Linux machine:
+
+1. Copy and edit the collaborator env template:
+   ```bash
+   cd automation
+   cp .env.collaborator.example .env
+   ```
+2. Set machine-local paths and token values in `.env`.
+3. Install the collaborator cron template (after replacing `/home/youruser/...` paths):
+   ```bash
+   crontab cron/hourly-automation.collaborator.cron
+   ```
+4. Validate manually once:
+   ```bash
+   cd src
+   /usr/bin/python3 check_and_build.py --force
+   ```
+
+Templates:
+- `.env.collaborator.example`
+- `cron/hourly-automation.collaborator.cron`
+
+
 ### 1. Prerequisites
 
 - Python 3.11+
