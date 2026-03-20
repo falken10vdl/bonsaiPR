@@ -694,7 +694,7 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                     base_commit = entry.get('base_commit', 'unknown')
                     if base_commit and base_commit != 'unknown':
                         base_commit_url = f"https://github.com/{upstream_repo}/commit/{base_commit}"
-                        f.write(f"  - Base commit at first detection: [`{base_commit}`]({base_commit_url})\n")
+                        f.write(f"  - Base commit at first detection: [{base_commit}]({base_commit_url})\n")
                     else:
                         f.write(f"  - Base commit at first detection: {base_commit}\n")
                 # Conflicting files and breaking-commit hints (only for base-conflict PRs)
@@ -705,7 +705,7 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                     f.write(f"  - Conflicting files:\n")
                     for cf in conflicting_files:
                         file_url = f"https://github.com/{upstream_repo}/blob/{SOURCE_BASE_BRANCH}/{cf}"
-                        f.write(f"    - [`{cf}`]({file_url})\n")
+                        f.write(f"    - [{cf}]({file_url})\n")
                 if breaking_commits:
                     f.write(f"  - Recent upstream commits to those files (possible culprits):\n")
                     for bc in breaking_commits:
@@ -713,7 +713,7 @@ def generate_report(applied_prs, failed_prs, report_path, branch_name, skipped_p
                         if len(parts) == 2:
                             commit_hash, commit_msg = parts
                             commit_url = f"https://github.com/{upstream_repo}/commit/{commit_hash}"
-                            f.write(f"    - [`{commit_hash}`]({commit_url}) {commit_msg}\n")
+                            f.write(f"    - [{commit_hash}]({commit_url}) {commit_msg}\n")
                         else:
                             f.write(f"    - `{bc}`\n")
                 f.write("\n")
