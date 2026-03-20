@@ -651,20 +651,8 @@ def generate_release_body(report_file_path, addon_files, timestamp_from_readme=N
 - **Failed PRs**: {len(failed_prs)}
 - **Success Rate**: {success_rate:.1f}%
 
-## ✅ Successfully Merged PRs ({len(applied_prs)})
+## ❌ Failed PRs ({len(failed_prs)})
 """
-        for pr_dict in applied_prs:
-            release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
-        
-        release_body += f"\n## ⚠️ Skipped - DRAFT PRs ({len(skipped_draft_prs)})\n"
-        for pr_dict in skipped_draft_prs:
-            release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
-        
-        release_body += f"\n## ⚠️ Skipped - Conflict with other PRs. Merges cleany with base  ({len(skipped_conflict_prs)})\n"
-        for pr_dict in skipped_conflict_prs:
-            release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
-        
-        release_body += f"\n## ❌ Failed PRs ({len(failed_prs)})\n"
         for pr in failed_prs:
             release_body += format_pr_with_link(pr['line'], pr['url'])
             if pr.get('reason'):
@@ -678,7 +666,19 @@ def generate_release_body(report_file_path, addon_files, timestamp_from_readme=N
             if pr.get('breaking_commits'):
                 release_body += "\n  - Possible breaking commits: " + ", ".join(f"`{c}`" for c in pr['breaking_commits'])
             release_body += "\n"
-        
+
+        release_body += f"\n## ⚠️ Skipped - Conflict with other PRs. Merges cleany with base  ({len(skipped_conflict_prs)})\n"
+        for pr_dict in skipped_conflict_prs:
+            release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
+
+        release_body += f"\n## ⚠️ Skipped - DRAFT PRs ({len(skipped_draft_prs)})\n"
+        for pr_dict in skipped_draft_prs:
+            release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
+
+        release_body += f"\n## ✅ Successfully Merged PRs ({len(applied_prs)})\n"
+        for pr_dict in applied_prs:
+            release_body += format_pr_with_link(pr_dict['line'], pr_dict['url']) + "\n"
+
         release_body += "\n"
         return release_body
     except Exception as e:
