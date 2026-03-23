@@ -220,6 +220,11 @@ def main():
     # Define automation steps
     automation_steps = [
         {
+            'script': 'check_bonsaiPR_in_git.py',
+            'description': 'Pull latest bonsaiPR code from GitHub',
+            'required': True
+        },
+        {
             'script': '00_clone_merge_and_create_branch.py',
             'description': 'Clone repository and merge PRs with draft detection',
             'required': True
