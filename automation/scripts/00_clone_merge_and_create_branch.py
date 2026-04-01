@@ -168,7 +168,7 @@ def get_open_prs():
     """Get open pull requests from IfcOpenShell repository"""
     print("Fetching open pull requests...")
     url = f"https://api.github.com/repos/{upstream_repo}/pulls"
-    params = {"state": "open", "per_page": 100}
+    params = {"state": "open", "per_page": 100, "sort": "created", "direction": "desc"}
     
     all_prs = []
     page = 1
