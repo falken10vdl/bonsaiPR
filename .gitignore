@@ -4,3 +4,4 @@ __pycache__/
 automation/.env
 automation/logs/*
 !automation/logs/.gitkeep
+*.py.tmp.*
