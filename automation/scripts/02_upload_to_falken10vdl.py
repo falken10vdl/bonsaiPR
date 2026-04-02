@@ -578,16 +578,19 @@ def generate_release_body(report_file_path, addon_files, timestamp_from_readme=N
                             current_pr['first_detected'] = bl.split(":", 1)[1].strip()
                             in_conflicts = False; in_breaking = False
                         elif bl.startswith("- Base commit at first detection:") or bl.startswith("  - Base commit at first detection:"):
-                            current_pr['base_commit'] = bl.split(":", 1)[1].strip()
+                            raw = bl.split("Base commit at first detection:", 1)[1].strip()
+                            # Report stores this as a markdown link [hash](url) — extract just the hash
+                            m = re.match(r'\[([^\]]+)\]', raw)
+                            current_pr['base_commit'] = m.group(1) if m else raw
                             in_conflicts = False; in_breaking = False
                         elif bl.startswith("- Conflicting files:") or bl.startswith("  - Conflicting files:"):
                             in_conflicts = True; in_breaking = False
                         elif bl.startswith("- Recent upstream commits") or bl.startswith("  - Recent upstream commits"):
                             in_conflicts = False; in_breaking = True
-                        elif in_conflicts and bl.startswith("    - "):
-                            current_pr['conflicting_files'].append(bl[6:].strip())
-                        elif in_breaking and bl.startswith("    - "):
-                            current_pr['breaking_commits'].append(bl[6:].strip())
+                        elif in_conflicts and bl.startswith("- ") and not any(bl.startswith(f"- {k}") for k in ("Reason:", "First detected", "Base commit", "Conflicting", "Recent upstream", "URL:", "Author:")):
+                            current_pr['conflicting_files'].append(bl[2:].strip())
+                        elif in_breaking and bl.startswith("- ") and not any(bl.startswith(f"- {k}") for k in ("Reason:", "First detected", "Base commit", "Conflicting", "Recent upstream", "URL:", "Author:")):
+                            current_pr['breaking_commits'].append(bl[2:].strip())
                     # If reason matches conflict with other PRs, categorize as skipped_conflict_prs
                     if current_pr['reason'] == "Merges cleanly against base (conflict with other PRs)":
                         skipped_conflict_prs.append({'line': line, 'url': pr_url})
