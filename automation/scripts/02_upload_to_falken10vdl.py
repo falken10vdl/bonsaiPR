@@ -584,10 +584,10 @@ def generate_release_body(report_file_path, addon_files, timestamp_from_readme=N
                             in_conflicts = True; in_breaking = False
                         elif bl.startswith("- Recent upstream commits") or bl.startswith("  - Recent upstream commits"):
                             in_conflicts = False; in_breaking = True
-                        elif in_conflicts and (bl.startswith("- `") or bl.startswith("  - `")):
-                            current_pr['conflicting_files'].append(bl.lstrip("- ").strip())
-                        elif in_breaking and (bl.startswith("- `") or bl.startswith("  - `")):
-                            current_pr['breaking_commits'].append(bl.lstrip("- ").strip())
+                        elif in_conflicts and bl.startswith("    - "):
+                            current_pr['conflicting_files'].append(bl[6:].strip())
+                        elif in_breaking and bl.startswith("    - "):
+                            current_pr['breaking_commits'].append(bl[6:].strip())
                     # If reason matches conflict with other PRs, categorize as skipped_conflict_prs
                     if current_pr['reason'] == "Merges cleanly against base (conflict with other PRs)":
                         skipped_conflict_prs.append({'line': line, 'url': pr_url})
@@ -660,11 +660,11 @@ def generate_release_body(report_file_path, addon_files, timestamp_from_readme=N
             if pr.get('first_detected'):
                 release_body += f"\n  - First detected failing: {pr['first_detected']}"
             if pr.get('base_commit'):
-                release_body += f"\n  - Base commit at first detection: `{pr['base_commit']}`"
+                release_body += f"\n  - Base commit at first detection: [{pr['base_commit']}](https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{pr['base_commit']})"
             if pr.get('conflicting_files'):
-                release_body += "\n  - Conflicting files: " + ", ".join(f"`{f}`" for f in pr['conflicting_files'])
+                release_body += "\n  - Conflicting files:\n" + "\n".join(f"    - {f}" for f in pr['conflicting_files'])
             if pr.get('breaking_commits'):
-                release_body += "\n  - Possible breaking commits: " + ", ".join(f"`{c}`" for c in pr['breaking_commits'])
+                release_body += "\n  - Possible breaking commits:\n" + "\n".join(f"    - {c}" for c in pr['breaking_commits'])
             release_body += "\n"
 
         release_body += f"\n## ⚠️ Skipped - Conflict with other PRs. Merges cleany with base  ({len(skipped_conflict_prs)})\n"
