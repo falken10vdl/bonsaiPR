@@ -806,18 +806,24 @@ def generate_release_body(
         success_rate = (successfully_merged / total_prs * 100) if total_prs > 0 else 0
 
         # Build the merge-order banner
-        order_emoji = "\u2b06\ufe0f" if merge_order == "ascending" else "\u2b07\ufe0f"
-        order_label = (
-            "ascending \u2014 lowest PR# merged first"
-            if merge_order == "ascending"
-            else "descending \u2014 highest PR# merged first"
-        )
-        companion_order = "descending" if merge_order == "ascending" else "ascending"
+        if merge_order == "ascending":
+            order_emoji = "⬆️"
+            order_label = "ascending — lowest PR# merged first"
+            companion_order = "descending or by-updated"
+        elif merge_order == "descending":
+            order_emoji = "⬇️"
+            order_label = "descending — highest PR# merged first"
+            companion_order = "ascending or by-updated"
+        else:  # by-updated
+            order_emoji = "🕒"
+            order_label = "by last update — most recently updated PR merged first"
+            companion_order = "ascending or descending"
+        order_title = merge_order.replace("-", " ").title()
         merge_order_banner = (
-            f"## {order_emoji} Merge Order: {merge_order.capitalize()}\n\n"
+            f"## {order_emoji} Merge Order: {order_title}\n\n"
             f"PRs were merged in **{order_label}**. "
-            f"BonsaiPR produces **two releases per automation run** \u2014 one in ascending order "
-            f"(lowest PR# first) and one in descending order (highest PR# first) \u2014 to maximise "
+            f"BonsaiPR produces **up to three releases per automation run** — ascending (lowest PR# first), "
+            f"descending (highest PR# first), and by-updated (most recently updated PR first) — to maximise "
             f"the number of PRs that can be included. When two PRs conflict with each other "
             f"(but not with the base branch), only one order can include both; the other is "
             f"skipped and may appear in the companion **{companion_order}** release. "
