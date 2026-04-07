@@ -385,78 +385,89 @@ def main():
             else:
                 logging.error("❌ Retry merge step failed")
 
-        # --- Third build: by-updated order ---
-        # Run whenever conflict PRs existed, since by-updated prioritises recently-touched
-        # PRs that authors may have fixed specifically to resolve conflicts.
-        logging.info("\n" + "=" * 60)
-        logging.info("🕒 THIRD BUILD: BY-UPDATED ORDER")
-        logging.info("Merging PRs most-recently-updated first.")
-        logging.info(
-            "Rationale: recently updated PRs are more likely to be conflict-free."
-        )
-        logging.info("=" * 60)
+            # --- Third build: by-updated order ---
+            # Only runs when conflict-skipped PRs existed in the first build AND
+            # the descending build did not already capture all of them.
+            still_skipped = skipped_prs_first_build - (
+                newly_merged_prs if newly_merged_prs else set()
+            )
+            if still_skipped:
+                logging.info("\n" + "=" * 60)
+                logging.info("🕒 THIRD BUILD: BY-UPDATED ORDER")
+                logging.info(
+                    f"Descending build left {len(still_skipped)} PR(s) still unresolved: {sorted(still_skipped)}"
+                )
+                logging.info("Retrying with most-recently-updated PRs first.")
+                logging.info("=" * 60)
 
-        logging.info(
-            f"\n📋 By-Updated Step 1/3: Clone repository and merge PRs (BY-UPDATED ORDER)"
-        )
-        if run_script(
-            "00_clone_merge_and_create_branch.py",
-            "Clone repository and merge PRs (BY-UPDATED ORDER)",
-            ["--by-updated"],
-        ):
+                logging.info(
+                    f"\n📋 By-Updated Step 1/3: Clone repository and merge PRs (BY-UPDATED ORDER)"
+                )
+                if run_script(
+                    "00_clone_merge_and_create_branch.py",
+                    "Clone repository and merge PRs (BY-UPDATED ORDER)",
+                    ["--by-updated"],
+                ):
+                    upd_report_path = get_latest_report_path()
+                    if upd_report_path:
+                        merged_prs_upd = get_successfully_merged_prs(upd_report_path)
+                        newly_merged_upd = still_skipped.intersection(merged_prs_upd)
 
-            upd_report_path = get_latest_report_path()
-            if upd_report_path:
-                merged_prs_upd = get_successfully_merged_prs(upd_report_path)
-                newly_merged_upd = skipped_prs_first_build.intersection(merged_prs_upd)
+                        if newly_merged_upd:
+                            logging.info(
+                                f"\n✨ By-updated build merged {len(newly_merged_upd)} PR(s) that were still skipped:"
+                            )
+                            for pr_num in sorted(newly_merged_upd):
+                                logging.info(f"   • PR #{pr_num}")
+                            logging.info(
+                                "\n🚀 Continuing with build and release for by-updated..."
+                            )
 
-                if newly_merged_upd:
-                    logging.info(
-                        f"\n✨ By-updated build merged {len(newly_merged_upd)} PR(s) that were skipped in the first build:"
-                    )
-                    for pr_num in sorted(newly_merged_upd):
-                        logging.info(f"   • PR #{pr_num}")
-                    logging.info(
-                        "\n🚀 Continuing with build and release for by-updated..."
-                    )
+                            upd_success_count = 1
+                            for i, step_desc, script in [
+                                (
+                                    2,
+                                    "Build BonsaiPR addons (BY-UPDATED)",
+                                    "01_build_bonsaiPR_addons.py",
+                                ),
+                                (
+                                    3,
+                                    "Create GitHub release (BY-UPDATED)",
+                                    "02_upload_to_falken10vdl.py",
+                                ),
+                            ]:
+                                logging.info(f"\n📋 By-Updated Step {i}/3: {step_desc}")
+                                if run_script(script, step_desc):
+                                    upd_success_count += 1
+                                else:
+                                    logging.error(
+                                        f"💔 By-updated step {i} failed, stopping"
+                                    )
+                                    break
 
-                    upd_success_count = 1
-                    for i, step_desc, script in [
-                        (
-                            2,
-                            "Build BonsaiPR addons (BY-UPDATED)",
-                            "01_build_bonsaiPR_addons.py",
-                        ),
-                        (
-                            3,
-                            "Create GitHub release (BY-UPDATED)",
-                            "02_upload_to_falken10vdl.py",
-                        ),
-                    ]:
-                        logging.info(f"\n📋 By-Updated Step {i}/3: {step_desc}")
-                        if run_script(script, step_desc):
-                            upd_success_count += 1
+                            if upd_success_count == 3:
+                                logging.info(
+                                    "\n🎉 By-updated build completed! Generated additional release."
+                                )
+                            else:
+                                logging.warning(
+                                    "\n⚠️ By-updated build partially completed"
+                                )
                         else:
-                            logging.error(f"💔 By-updated step {i} failed, stopping")
-                            break
-
-                    if upd_success_count == 3:
-                        logging.info(
-                            "\n🎉 By-updated build completed! Generated additional release."
-                        )
+                            logging.info(
+                                f"\n⏭️  BY-UPDATED SKIPPED: No remaining skipped PRs were merged."
+                            )
+                            logging.info(
+                                "   The by-updated order didn't help include more PRs."
+                            )
                     else:
-                        logging.warning("\n⚠️ By-updated build partially completed")
+                        logging.error("❌ Could not find by-updated report path")
                 else:
-                    logging.info(
-                        f"\n⏭️  BY-UPDATED SKIPPED: No previously skipped PRs were merged."
-                    )
-                    logging.info(
-                        "   The by-updated order didn't help include more PRs."
-                    )
+                    logging.error("❌ By-updated merge step failed")
             else:
-                logging.error("❌ Could not find by-updated report path")
-        else:
-            logging.error("❌ By-updated merge step failed")
+                logging.info(
+                    "\n⏭️  BY-UPDATED BUILD SKIPPED: Descending build already resolved all skipped PRs."
+                )
 
     # Final summary
     end_time = datetime.datetime.now()
