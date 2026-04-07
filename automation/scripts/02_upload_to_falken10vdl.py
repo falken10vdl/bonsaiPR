@@ -736,10 +736,10 @@ def generate_release_body(
                         ) or bl.startswith("  - Recent upstream commits"):
                             in_conflicts = False
                             in_breaking = True
-                        elif in_conflicts and bl.startswith("    - "):
-                            current_pr["conflicting_files"].append(bl[6:].strip())
-                        elif in_breaking and bl.startswith("    - "):
-                            current_pr["breaking_commits"].append(bl[6:].strip())
+                        elif in_conflicts and bl.startswith("- "):
+                            current_pr["conflicting_files"].append(bl[2:].strip())
+                        elif in_breaking and bl.startswith("- "):
+                            current_pr["breaking_commits"].append(bl[2:].strip())
                     # If reason matches conflict with other PRs, categorize as skipped_conflict_prs
                     if (
                         current_pr["reason"]
