@@ -18,137 +18,149 @@ import logging
 from pathlib import Path
 
 # Add the config directory to the Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'config'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "config"))
 
 try:
     from settings import *
 except ImportError:
     print("⚠️ Warning: settings.py not found, using default configuration")
     # Default settings
-    GITHUB_TOKEN = os.getenv('GITHUB_TOKEN', '')
-    GITHUB_OWNER = os.getenv('GITHUB_OWNER', 'falken10vdl')
-    GITHUB_REPO = os.getenv('GITHUB_REPO', 'BonsaiPR')
+    GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")
+    GITHUB_OWNER = os.getenv("GITHUB_OWNER", "falken10vdl")
+    GITHUB_REPO = os.getenv("GITHUB_REPO", "BonsaiPR")
+
 
 def setup_logging():
     """Set up comprehensive logging for automation"""
-    logs_dir = os.path.join(os.path.dirname(__file__), '..', 'logs')
+    logs_dir = os.path.join(os.path.dirname(__file__), "..", "logs")
     os.makedirs(logs_dir, exist_ok=True)
-    
-    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    log_file = os.path.join(logs_dir, f'automation_{timestamp}.log')
-    
+
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_file = os.path.join(logs_dir, f"automation_{timestamp}.log")
+
     logging.basicConfig(
         level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.FileHandler(log_file),
-            logging.StreamHandler(sys.stdout)
-        ]
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        handlers=[logging.FileHandler(log_file), logging.StreamHandler(sys.stdout)],
     )
-    
+
     return log_file
+
 
 def check_for_skipped_conflict_prs(report_path):
     """Check if the report contains PRs skipped due to conflicts with other PRs"""
     if not os.path.exists(report_path):
         logging.warning(f"⚠️ Report file not found: {report_path}")
         return False
-    
+
     try:
-        with open(report_path, 'r', encoding='utf-8') as f:
+        with open(report_path, "r", encoding="utf-8") as f:
             content = f.read()
-        
+
         # Check for the count line indicating conflicts with other PRs
         # Format: "- Skipped (conflicts with other PRs): X"
         import re
-        match = re.search(r'- Skipped \(conflicts with other PRs\):\s+(\d+)', content)
+
+        match = re.search(r"- Skipped \(conflicts with other PRs\):\s+(\d+)", content)
         if match:
             count = int(match.group(1))
             if count > 0:
-                logging.info(f"📊 Found {count} PR(s) skipped due to conflicts with other PRs")
+                logging.info(
+                    f"📊 Found {count} PR(s) skipped due to conflicts with other PRs"
+                )
                 return True
-        
+
         return False
     except Exception as e:
         logging.error(f"❌ Error checking report: {e}")
         return False
 
+
 def get_latest_report_path():
     """Get the path to the most recently generated report file"""
     report_dir = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
     import glob
-    report_files = sorted(glob.glob(os.path.join(report_dir, "README-bonsaiPR_*.txt")), 
-                         key=os.path.getmtime, reverse=True)
+
+    report_files = sorted(
+        glob.glob(os.path.join(report_dir, "README-bonsaiPR_*.txt")),
+        key=os.path.getmtime,
+        reverse=True,
+    )
     if report_files:
         return report_files[0]
     return None
 
+
 def extract_pr_numbers_from_section(report_path, section_title):
     """Extract PR numbers from a specific section of the report
-    
+
     Args:
         report_path: Path to the report file
         section_title: Title of the section (e.g., '## ❌ Failed to Merge PRs')
-    
+
     Returns:
         Set of PR numbers found in that section
     """
     if not os.path.exists(report_path):
         return set()
-    
+
     try:
-        with open(report_path, 'r', encoding='utf-8') as f:
+        with open(report_path, "r", encoding="utf-8") as f:
             content = f.read()
-        
+
         import re
+
         pr_numbers = set()
-        
+
         # Find the section
-        lines = content.split('\n')
+        lines = content.split("\n")
         in_section = False
-        
+
         for line in lines:
             # Check if we've entered the target section
             if section_title in line:
                 in_section = True
                 continue
-            
+
             # Check if we've entered a new section (stop reading)
-            if in_section and line.startswith('##'):
+            if in_section and line.startswith("##"):
                 break
-            
+
             # Extract PR numbers from lines in the section
             if in_section:
                 # Match patterns like "- **PR #123**:" or "**PR #123**:"
-                match = re.search(r'\*\*PR #(\d+)\*\*', line)
+                match = re.search(r"\*\*PR #(\d+)\*\*", line)
                 if match:
                     pr_numbers.add(int(match.group(1)))
-        
+
         return pr_numbers
     except Exception as e:
         logging.error(f"❌ Error extracting PR numbers: {e}")
         return set()
 
+
 def get_skipped_conflict_prs(report_path):
     """Get the list of PR numbers that were skipped due to conflicts with other PRs"""
-    return extract_pr_numbers_from_section(report_path, '## ❌ Failed to Merge PRs')
+    return extract_pr_numbers_from_section(report_path, "## ❌ Failed to Merge PRs")
+
 
 def get_successfully_merged_prs(report_path):
     """Get the list of PR numbers that were successfully merged"""
-    return extract_pr_numbers_from_section(report_path, '## ✅ Successfully Merged PRs')
+    return extract_pr_numbers_from_section(report_path, "## ✅ Successfully Merged PRs")
+
 
 def run_script(script_name, description, args=None):
     """Run an automation script with error handling"""
-    scripts_dir = os.path.join(os.path.dirname(__file__), '..', 'scripts')
+    scripts_dir = os.path.join(os.path.dirname(__file__), "..", "scripts")
     script_path = os.path.join(scripts_dir, script_name)
-    
+
     if not os.path.exists(script_path):
         logging.error(f"❌ Script not found: {script_path}")
         return False
-    
+
     logging.info(f"🚀 Starting: {description}")
     logging.info(f"📄 Script: {script_name}")
-    
+
     try:
         cmd = [sys.executable, script_path]
         if args:
@@ -158,9 +170,9 @@ def run_script(script_name, description, args=None):
             cwd=scripts_dir,
             capture_output=True,
             text=True,
-            timeout=3600  # 1 hour timeout
+            timeout=3600,  # 1 hour timeout
         )
-        
+
         if result.returncode == 0:
             logging.info(f"✅ Completed successfully: {description}")
             if result.stdout:
@@ -174,7 +186,7 @@ def run_script(script_name, description, args=None):
             if result.stdout:
                 logging.info(f"Output: {result.stdout}")
             return False
-            
+
     except subprocess.TimeoutExpired:
         logging.error(f"⏰ Timeout: {description} exceeded 1 hour")
         return False
@@ -182,17 +194,22 @@ def run_script(script_name, description, args=None):
         logging.error(f"💥 Exception in {description}: {e}")
         return False
 
+
 def main():
     """Main automation orchestration"""
 
     start_time = datetime.datetime.now()
     log_file = setup_logging()
 
-
     # Cleanup old automation logs: keep only last 5
-    logs_dir = os.path.join(os.path.dirname(__file__), '..', 'logs')
+    logs_dir = os.path.join(os.path.dirname(__file__), "..", "logs")
     import glob
-    log_files = sorted(glob.glob(os.path.join(logs_dir, "automation_*.log")), key=os.path.getmtime, reverse=True)
+
+    log_files = sorted(
+        glob.glob(os.path.join(logs_dir, "automation_*.log")),
+        key=os.path.getmtime,
+        reverse=True,
+    )
     for old_log in log_files[3:]:
         try:
             os.remove(old_log)
@@ -203,7 +220,11 @@ def main():
     # Cleanup old README-bonsaiPR_*.txt files: keep only last 5
     # Use the same default as 00_clone_merge_and_create_branch.py
     report_dir = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
-    readme_files = sorted(glob.glob(os.path.join(report_dir, "README-bonsaiPR_*.txt")), key=os.path.getmtime, reverse=True)
+    readme_files = sorted(
+        glob.glob(os.path.join(report_dir, "README-bonsaiPR_*.txt")),
+        key=os.path.getmtime,
+        reverse=True,
+    )
     for old_readme in readme_files[5:]:
         try:
             os.remove(old_readme)
@@ -216,46 +237,46 @@ def main():
     logging.info(f"📅 Started: {start_time.strftime('%Y-%m-%d %H:%M:%S UTC')}")
     logging.info(f"📝 Log file: {log_file}")
     logging.info("=" * 60)
-    
+
     # Define automation steps
     automation_steps = [
         {
-            'script': 'check_bonsaiPR_in_git.py',
-            'description': 'Pull latest bonsaiPR code from GitHub',
-            'required': True
+            "script": "check_bonsaiPR_in_git.py",
+            "description": "Pull latest bonsaiPR code from GitHub",
+            "required": True,
         },
         {
-            'script': '00_clone_merge_and_create_branch.py',
-            'description': 'Clone repository and merge PRs with draft detection',
-            'required': True
+            "script": "00_clone_merge_and_create_branch.py",
+            "description": "Clone repository and merge PRs with draft detection",
+            "required": True,
         },
         {
-            'script': '01_build_bonsaiPR_addons.py',
-            'description': 'Build BonsaiPR addons for multiple platforms',
-            'required': True
+            "script": "01_build_bonsaiPR_addons.py",
+            "description": "Build BonsaiPR addons for multiple platforms",
+            "required": True,
         },
         {
-            'script': '02_upload_to_falken10vdl.py',
-            'description': 'Create GitHub release with enhanced PR documentation',
-            'required': True
-        }
+            "script": "02_upload_to_falken10vdl.py",
+            "description": "Create GitHub release with enhanced PR documentation",
+            "required": True,
+        },
     ]
-    
+
     # Execute automation steps
     success_count = 0
     total_steps = len(automation_steps)
-    
+
     for i, step in enumerate(automation_steps, 1):
         logging.info(f"\n📋 Step {i}/{total_steps}: {step['description']}")
-        
-        if run_script(step['script'], step['description']):
+
+        if run_script(step["script"], step["description"]):
             success_count += 1
-        elif step['required']:
+        elif step["required"]:
             logging.error(f"💔 Required step failed, stopping automation")
             break
         else:
             logging.warning(f"⚠️ Optional step failed, continuing")
-    
+
     # Check if we should retry with reversed PR order
     if success_count == total_steps:
         report_path = get_latest_report_path()
@@ -265,89 +286,195 @@ def main():
             logging.info("Found PRs skipped due to conflicts with other PRs.")
             logging.info("Retrying with newer PRs first to maximize inclusion.")
             logging.info("=" * 60)
-            
+
             # Get the PRs that were skipped in the first build
             skipped_prs_first_build = get_skipped_conflict_prs(report_path)
-            logging.info(f"📋 First build had {len(skipped_prs_first_build)} PR(s) skipped due to conflicts: {sorted(skipped_prs_first_build)}")
-            
+            logging.info(
+                f"📋 First build had {len(skipped_prs_first_build)} PR(s) skipped due to conflicts: {sorted(skipped_prs_first_build)}"
+            )
+
             # Step 1: Run merge with reversed order
-            logging.info(f"\n📋 Retry Step 1/3: Clone repository and merge PRs (REVERSED ORDER)")
-            if run_script('00_clone_merge_and_create_branch.py', 
-                         'Clone repository and merge PRs (REVERSED ORDER)', 
-                         ['--reverse']):
-                
+            logging.info(
+                f"\n📋 Retry Step 1/3: Clone repository and merge PRs (REVERSED ORDER)"
+            )
+            if run_script(
+                "00_clone_merge_and_create_branch.py",
+                "Clone repository and merge PRs (REVERSED ORDER)",
+                ["--reverse"],
+            ):
+
                 # Get the new report and check if any previously skipped PRs are now merged
                 retry_report_path = get_latest_report_path()
                 if retry_report_path:
                     merged_prs_retry = get_successfully_merged_prs(retry_report_path)
-                    
+
                     # Find PRs that were skipped in first build but merged in retry
-                    newly_merged_prs = skipped_prs_first_build.intersection(merged_prs_retry)
-                    
+                    newly_merged_prs = skipped_prs_first_build.intersection(
+                        merged_prs_retry
+                    )
+
                     if newly_merged_prs:
-                        logging.info(f"\n✨ SUCCESS! Retry merged {len(newly_merged_prs)} PR(s) that were previously skipped:")
+                        logging.info(
+                            f"\n✨ SUCCESS! Retry merged {len(newly_merged_prs)} PR(s) that were previously skipped:"
+                        )
                         for pr_num in sorted(newly_merged_prs):
                             logging.info(f"   • PR #{pr_num}")
-                        logging.info("\n🚀 Continuing with build and release for retry...")
-                        
+                        logging.info(
+                            "\n🚀 Continuing with build and release for retry..."
+                        )
+
                         # Continue with build and upload since we have newly merged PRs
                         retry_success_count = 1  # Already completed step 1
                         retry_steps = [
                             {
-                                'script': '01_build_bonsaiPR_addons.py',
-                                'description': 'Build BonsaiPR addons for multiple platforms (RETRY)',
-                                'args': None,
-                                'required': True
+                                "script": "01_build_bonsaiPR_addons.py",
+                                "description": "Build BonsaiPR addons for multiple platforms (RETRY)",
+                                "args": None,
+                                "required": True,
                             },
                             {
-                                'script': '02_upload_to_falken10vdl.py',
-                                'description': 'Create GitHub release (RETRY)',
-                                'args': None,
-                                'required': True
-                            }
+                                "script": "02_upload_to_falken10vdl.py",
+                                "description": "Create GitHub release (RETRY)",
+                                "args": None,
+                                "required": True,
+                            },
                         ]
-                        
-                        for i, step in enumerate(retry_steps, 2):  # Start at 2 since step 1 is done
-                            logging.info(f"\n📋 Retry Step {i}/3: {step['description']}")
-                            
-                            if run_script(step['script'], step['description'], step.get('args')):
+
+                        for i, step in enumerate(
+                            retry_steps, 2
+                        ):  # Start at 2 since step 1 is done
+                            logging.info(
+                                f"\n📋 Retry Step {i}/3: {step['description']}"
+                            )
+
+                            if run_script(
+                                step["script"], step["description"], step.get("args")
+                            ):
                                 retry_success_count += 1
-                            elif step['required']:
-                                logging.error(f"💔 Required retry step failed, stopping retry")
+                            elif step["required"]:
+                                logging.error(
+                                    f"💔 Required retry step failed, stopping retry"
+                                )
                                 break
                             else:
-                                logging.warning(f"⚠️ Optional retry step failed, continuing")
-                        
+                                logging.warning(
+                                    f"⚠️ Optional retry step failed, continuing"
+                                )
+
                         if retry_success_count == 3:
-                            logging.info("\n🎉 Retry completed successfully! Generated additional release.")
-                            logging.info(f"   New PRs included: {sorted(newly_merged_prs)}")
+                            logging.info(
+                                "\n🎉 Retry completed successfully! Generated additional release."
+                            )
+                            logging.info(
+                                f"   New PRs included: {sorted(newly_merged_prs)}"
+                            )
                         else:
                             logging.warning("\n⚠️ Retry partially completed")
                     else:
-                        logging.info(f"\n⏭️  RETRY SKIPPED: No previously skipped PRs were merged in retry.")
-                        logging.info("   The reversed order didn't help include more PRs.")
-                        logging.info("   Second release not needed - would be identical or worse.")
+                        logging.info(
+                            f"\n⏭️  RETRY SKIPPED: No previously skipped PRs were merged in retry."
+                        )
+                        logging.info(
+                            "   The reversed order didn't help include more PRs."
+                        )
+                        logging.info(
+                            "   Second release not needed - would be identical or worse."
+                        )
                 else:
                     logging.error("❌ Could not find retry report path")
             else:
                 logging.error("❌ Retry merge step failed")
-    
+
+        # --- Third build: by-updated order ---
+        # Run whenever conflict PRs existed, since by-updated prioritises recently-touched
+        # PRs that authors may have fixed specifically to resolve conflicts.
+        logging.info("\n" + "=" * 60)
+        logging.info("🕒 THIRD BUILD: BY-UPDATED ORDER")
+        logging.info("Merging PRs most-recently-updated first.")
+        logging.info(
+            "Rationale: recently updated PRs are more likely to be conflict-free."
+        )
+        logging.info("=" * 60)
+
+        logging.info(
+            f"\n📋 By-Updated Step 1/3: Clone repository and merge PRs (BY-UPDATED ORDER)"
+        )
+        if run_script(
+            "00_clone_merge_and_create_branch.py",
+            "Clone repository and merge PRs (BY-UPDATED ORDER)",
+            ["--by-updated"],
+        ):
+
+            upd_report_path = get_latest_report_path()
+            if upd_report_path:
+                merged_prs_upd = get_successfully_merged_prs(upd_report_path)
+                newly_merged_upd = skipped_prs_first_build.intersection(merged_prs_upd)
+
+                if newly_merged_upd:
+                    logging.info(
+                        f"\n✨ By-updated build merged {len(newly_merged_upd)} PR(s) that were skipped in the first build:"
+                    )
+                    for pr_num in sorted(newly_merged_upd):
+                        logging.info(f"   • PR #{pr_num}")
+                    logging.info(
+                        "\n🚀 Continuing with build and release for by-updated..."
+                    )
+
+                    upd_success_count = 1
+                    for i, step_desc, script in [
+                        (
+                            2,
+                            "Build BonsaiPR addons (BY-UPDATED)",
+                            "01_build_bonsaiPR_addons.py",
+                        ),
+                        (
+                            3,
+                            "Create GitHub release (BY-UPDATED)",
+                            "02_upload_to_falken10vdl.py",
+                        ),
+                    ]:
+                        logging.info(f"\n📋 By-Updated Step {i}/3: {step_desc}")
+                        if run_script(script, step_desc):
+                            upd_success_count += 1
+                        else:
+                            logging.error(f"💔 By-updated step {i} failed, stopping")
+                            break
+
+                    if upd_success_count == 3:
+                        logging.info(
+                            "\n🎉 By-updated build completed! Generated additional release."
+                        )
+                    else:
+                        logging.warning("\n⚠️ By-updated build partially completed")
+                else:
+                    logging.info(
+                        f"\n⏭️  BY-UPDATED SKIPPED: No previously skipped PRs were merged."
+                    )
+                    logging.info(
+                        "   The by-updated order didn't help include more PRs."
+                    )
+            else:
+                logging.error("❌ Could not find by-updated report path")
+        else:
+            logging.error("❌ By-updated merge step failed")
+
     # Final summary
     end_time = datetime.datetime.now()
     duration = end_time - start_time
-    
+
     logging.info("\n" + "=" * 60)
     logging.info("📊 AUTOMATION SUMMARY")
     logging.info(f"⏱️  Duration: {duration}")
     logging.info(f"✅ Successful steps: {success_count}/{total_steps}")
     logging.info(f"📅 Completed: {end_time.strftime('%Y-%m-%d %H:%M:%S UTC')}")
-    
+
     if success_count == total_steps:
         logging.info("🎉 All automation steps completed successfully!")
         return 0
     else:
         logging.error("❌ Some automation steps failed")
         return 1
+
 
 if __name__ == "__main__":
     try:

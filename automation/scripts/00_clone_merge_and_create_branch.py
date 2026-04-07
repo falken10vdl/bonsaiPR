@@ -803,11 +803,12 @@ def generate_report(
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
         f.write(f"Branch: {branch_name}\n")
         f.write(f"IfcOpenShell source commit: {commit_hash}\n")
-        order_desc = (
-            "lowest → highest PR#"
-            if merge_order == "ascending"
-            else "highest → lowest PR#"
-        )
+        if merge_order == "ascending":
+            order_desc = "lowest → highest PR#"
+        elif merge_order == "descending":
+            order_desc = "highest → lowest PR#"
+        else:
+            order_desc = "most recently updated PR first"
         f.write(f"Merge Order: {merge_order} ({order_desc})\n")
         f.write(
             f"Fork Repository: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}\n\n"
@@ -831,21 +832,36 @@ def generate_report(
             f.write(f"- Success Rate: {success_rate}%\n\n")
         else:
             f.write(f"- Success Rate: N/A\n\n")
-        companion_order = "descending" if merge_order == "ascending" else "ascending"
+        if merge_order == "ascending":
+            companion_order = "descending or by-updated"
+        elif merge_order == "descending":
+            companion_order = "ascending or by-updated"
+        else:
+            companion_order = "ascending or descending"
         f.write(
-            f"Note: PRs were merged in {merge_order} order ({order_desc}). BonsaiPR builds two releases\n"
+            f"Note: PRs were merged in {merge_order} order ({order_desc}). BonsaiPR builds up to three releases\n"
         )
         f.write(
-            f"      per run — one ascending, one descending — to maximise inclusion. PRs listed as\n"
+            f"      per run — ascending, descending, and by-updated — to maximise inclusion. PRs listed as\n"
         )
         f.write(
             f"      'conflict with other PRs' may appear in the companion {companion_order} release.\n\n"
         )
+        if merge_order == "by-updated":
+
+            def _sort_key(p):
+                return p.get("updated_at", "")
+
+            reverse_sort = True
+        else:
+
+            def _sort_key(p):
+                return p["number"]
+
+            reverse_sort = merge_order == "descending"
         if failed_prs:
             f.write(f"## ❌ Failed to Merge PRs ({len(failed_prs)})\n\n")
-            for pr in sorted(
-                failed_prs, key=lambda p: p.get("updated_at", ""), reverse=True
-            ):
+            for pr in sorted(failed_prs, key=_sort_key, reverse=reverse_sort):
                 pr_number = pr["number"]
                 f.write(f"- **PR #{pr_number}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
@@ -907,9 +923,7 @@ def generate_report(
                 f.write("\n")
         if skipped_prs:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped_prs)})\n\n")
-            for pr in sorted(
-                skipped_prs, key=lambda p: p.get("updated_at", ""), reverse=True
-            ):
+            for pr in sorted(skipped_prs, key=_sort_key, reverse=reverse_sort):
                 f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
@@ -925,9 +939,7 @@ def generate_report(
                 f.write(f"  - Reason: {reason}\n\n")
         if applied_prs:
             f.write(f"## ✅ Successfully Merged PRs ({len(applied_prs)})\n\n")
-            for pr in sorted(
-                applied_prs, key=lambda p: p.get("updated_at", ""), reverse=True
-            ):
+            for pr in sorted(applied_prs, key=_sort_key, reverse=reverse_sort):
                 f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
@@ -971,12 +983,19 @@ def main():
         f"📋 Loaded failure tracking for {len(failure_tracking)} PR(s) from {tracking_path}"
     )
 
-    # Parse --reverse argument
-    reverse_order = False
-    if "--reverse" in sys.argv:
-        reverse_order = True
+    # Parse order flags
+    reverse_order = "--reverse" in sys.argv
+    by_updated_order = "--by-updated" in sys.argv
+    if by_updated_order:
+        merge_order_str = "by-updated"
+        print(
+            "Merging PRs in descending order of last update (most recently updated first)"
+        )
+    elif reverse_order:
+        merge_order_str = "descending"
         print("Merging PRs in descending order (highest to lowest number)")
     else:
+        merge_order_str = "ascending"
         print("Merging PRs in ascending order (lowest to highest number)")
     # Setup repository
     setup_repository()
@@ -991,8 +1010,11 @@ def main():
         source_commit_hash = "unknown"
     # Get open PRs
     prs = get_open_prs()
-    # Sort PRs by number
-    prs = sorted(prs, key=lambda pr: pr["number"], reverse=reverse_order)
+    # Sort PRs
+    if by_updated_order:
+        prs = sorted(prs, key=lambda pr: pr.get("updated_at", ""), reverse=True)
+    else:
+        prs = sorted(prs, key=lambda pr: pr["number"], reverse=reverse_order)
     if not prs:
         print("No open PRs found, creating branch with just main branch updates")
         applied, failed, skipped = [], [], []
@@ -1024,7 +1046,7 @@ def main():
             source_commit_hash,
             failure_tracking,
             pr_conflict_data,
-            merge_order="descending" if reverse_order else "ascending",
+            merge_order=merge_order_str,
         )
         print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
         print(
@@ -1079,7 +1101,7 @@ def main():
         source_commit_hash,
         failure_tracking,
         pr_conflict_data,
-        merge_order="descending" if reverse_order else "ascending",
+        merge_order=merge_order_str,
     )
     print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
     print(

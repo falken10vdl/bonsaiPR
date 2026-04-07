@@ -1089,17 +1089,23 @@ def upload_to_falken10vdl():
         except Exception as e:
             print(f"Warning: Could not fetch branch commit hash: {e}")
 
-    order_suffix = "asc" if merge_order == "ascending" else "desc"
+    if merge_order == "ascending":
+        order_suffix = "asc"
+    elif merge_order == "descending":
+        order_suffix = "desc"
+    else:
+        order_suffix = "upd"
     release_name = (
         f"BonsaiPR v{version}-alpha{ts_short}-{branch_short_hash} [{order_suffix}]"
     )
 
     # Build release body with source commit and branch information
-    order_label_header = (
-        "ascending (lowest → highest PR#)"
-        if merge_order == "ascending"
-        else "descending (highest → lowest PR#)"
-    )
+    if merge_order == "ascending":
+        order_label_header = "ascending (lowest → highest PR#)"
+    elif merge_order == "descending":
+        order_label_header = "descending (highest → lowest PR#)"
+    else:
+        order_label_header = "by-updated (most recently updated PR first)"
     release_body_header = (
         f"IfcOpenShell source commit (before PR merging): {commit_link}\n"
     )
