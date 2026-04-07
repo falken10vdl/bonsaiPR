@@ -716,7 +716,14 @@ def generate_release_body(
                         elif bl.startswith(
                             "- Base commit at first detection:"
                         ) or bl.startswith("  - Base commit at first detection:"):
-                            current_pr["base_commit"] = bl.split(":", 1)[1].strip()
+                            raw = bl.split("Base commit at first detection:", 1)[
+                                1
+                            ].strip()
+                            # Strip markdown link syntax [text](url) → extract bare hash
+                            import re as _re
+
+                            _m = _re.match(r"\[([0-9a-f]+)\]", raw)
+                            current_pr["base_commit"] = _m.group(1) if _m else raw
                             in_conflicts = False
                             in_breaking = False
                         elif bl.startswith("- Conflicting files:") or bl.startswith(
@@ -839,7 +846,8 @@ def generate_release_body(
             if pr.get("first_detected"):
                 release_body += f"\n  - First detected failing: {pr['first_detected']}"
             if pr.get("base_commit"):
-                release_body += f"\n  - Base commit at first detection: [{pr['base_commit']}](https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{pr['base_commit']})"
+                _bc = pr["base_commit"]
+                release_body += f"\n  - Base commit at first detection: [`{_bc[:7]}`](https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{_bc})"
             if pr.get("conflicting_files"):
                 release_body += "\n  - Conflicting files:\n" + "\n".join(
                     f"    - {f}" for f in pr["conflicting_files"]
