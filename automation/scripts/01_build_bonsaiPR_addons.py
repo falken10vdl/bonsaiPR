@@ -433,45 +433,68 @@ def build_addons(target_platforms=None):
         log_message(f"Makefile not found at: {makefile_path}", "ERROR")
         return
     
-    # Platform mappings for make command
-    all_platforms = ['linux', 'macos', 'macosm1', 'win']
-    platforms = target_platforms if target_platforms else all_platforms
-    pyversion = 'py311'
-    
-    log_message(f"Building for platforms: {', '.join(platforms)}")
-    
+    # Python version configurations:
+    # py311 = Blender 4.x, all 4 platforms
+    # py313 = Blender 5.1, no Intel macOS (unsupported by Blender 5.1)
+    py_configs = [
+        {
+            'pyversion': 'py311',
+            'all_platforms': ['linux', 'macos', 'macosm1', 'win'],
+            'extra_make_vars': [],
+        },
+        {
+            'pyversion': 'py313',
+            'all_platforms': ['linux', 'macosm1', 'win'],
+            'extra_make_vars': ['PYTHON=python3.13', 'PIP=pip3.13'],
+        },
+    ]
+
     # Change to the bonsaiPR directory and run make for each platform
     original_cwd = os.getcwd()
     successful_builds = 0
-    
+
     try:
         os.chdir(bonsaiPR_src)
         log_message(f"Changed to directory: {bonsaiPR_src}")
-        
-        for platform in platforms:
-            log_message(f"Building addon for platform: {platform}")
-            
-            # Run make dist with platform and pyversion parameters
-            make_cmd = ['make', 'dist', f'PLATFORM={platform}', f'PYVERSION={pyversion}']
-            log_message(f"Running command: {' '.join(make_cmd)}")
-            
-            try:
-                result = subprocess.run(make_cmd, capture_output=True, text=True, check=False)
-                
-                if result.returncode == 0:
-                    log_message(f"Successfully built addon for {platform}")
-                    successful_builds += 1
-                    if result.stdout:
-                        log_message(f"Make output for {platform}: {result.stdout}")
-                else:
-                    log_message(f"Build failed for {platform} with return code: {result.returncode}", "ERROR")
-                    if result.stderr:
-                        log_message(f"Make error for {platform}: {result.stderr}", "ERROR")
-                    if result.stdout:
-                        log_message(f"Make output for {platform}: {result.stdout}")
-            
-            except Exception as e:
-                log_message(f"Error building {platform}: {e}", "ERROR")
+
+        for py_config in py_configs:
+            pyversion = py_config['pyversion']
+            if target_platforms:
+                # Filter requested platforms against what this pyversion supports
+                platforms = [p for p in target_platforms if p in py_config['all_platforms']]
+            else:
+                platforms = py_config['all_platforms']
+
+            if not platforms:
+                log_message(f"No applicable platforms for {pyversion}, skipping")
+                continue
+
+            log_message(f"Building {pyversion} for platforms: {', '.join(platforms)}")
+
+            for platform in platforms:
+                log_message(f"Building addon for platform: {platform} ({pyversion})")
+
+                # Run make dist with platform, pyversion, and optional python binary overrides
+                make_cmd = ['make', 'dist', f'PLATFORM={platform}', f'PYVERSION={pyversion}'] + py_config['extra_make_vars']
+                log_message(f"Running command: {' '.join(make_cmd)}")
+
+                try:
+                    result = subprocess.run(make_cmd, capture_output=True, text=True, check=False)
+
+                    if result.returncode == 0:
+                        log_message(f"Successfully built addon for {platform} ({pyversion})")
+                        successful_builds += 1
+                        if result.stdout:
+                            log_message(f"Make output for {platform} ({pyversion}): {result.stdout}")
+                    else:
+                        log_message(f"Build failed for {platform} ({pyversion}) with return code: {result.returncode}", "ERROR")
+                        if result.stderr:
+                            log_message(f"Make error for {platform} ({pyversion}): {result.stderr}", "ERROR")
+                        if result.stdout:
+                            log_message(f"Make output for {platform} ({pyversion}): {result.stdout}")
+
+                except Exception as e:
+                    log_message(f"Error building {platform} ({pyversion}): {e}", "ERROR")
     
     except Exception as e:
         log_message(f"Unexpected error during build: {e}", "ERROR")
@@ -558,7 +581,7 @@ def create_build_report():
         f.write(f"## 🔨 Build Details\n\n")
         f.write(f"**Build Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
         f.write(f"**Version**: {version}-alpha{current_date}\n")
-        f.write(f"**Python Version**: {pyversion}\n")
+        f.write(f"**Python Versions**: py311 (Blender 4.x), py313 (Blender 5.1)\n")
         f.write(f"**Build Method**: Makefile automation with multi-platform support\n\n")
         
         f.write("## 📦 Built Addon Files\n\n")
@@ -598,7 +621,7 @@ def create_build_report():
         f.write(f"\n## 🛠️ Build Configuration\n\n")
         f.write(f"- **Source Directory**: `{SOURCE_DIR}`\n")
         f.write(f"- **Build Directory**: `{BUILD_BASE_DIR}`\n")
-        f.write(f"- **Target Platforms**: linux-x64, macos-x64, macosm1-arm64, win-x64\n")
+        f.write(f"- **Target Platforms**: py311: linux-x64, macos-x64, macosm1-arm64, win-x64 | py313: linux-x64, macosm1-arm64, win-x64\n")
         f.write(f"- **Transformations Applied**:\n")
         f.write(f"  - ✅ Source code copied from IfcOpenShell repository\n")
         f.write(f"  - ✅ Text replacement: `bonsai` → `bonsaiPR` throughout codebase\n")
