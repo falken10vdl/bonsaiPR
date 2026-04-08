@@ -773,7 +773,7 @@ def generate_release_body(
             # Apply same renaming logic as upload section to get the final filename with HHMM
             import re
 
-            pattern = r"(bonsaiPR_py311-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)"
+            pattern = r"(bonsaiPR_py\d+-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)"
             match = re.match(pattern, original_filename)
 
             if match and timestamp_from_readme:
@@ -1070,11 +1070,11 @@ def upload_to_falken10vdl():
     )
     ts_short = ts_full[:6]  # YYMMDD only
 
-    # Extract version from the first addon asset filename
+    # Extract version from the first addon asset filename (handles py311, py313, etc.)
     version = "unknown"
     if addon_files:
         first_asset = os.path.basename(addon_files[0])
-        m = re.match(r"bonsaiPR_py311-([\d.]+)", first_asset)
+        m = re.match(r"bonsaiPR_py\d+-([\d.]+)", first_asset)
         if m:
             version = m.group(1)
 
@@ -1153,11 +1153,11 @@ def upload_to_falken10vdl():
         original_name = os.path.basename(addon_file)
 
         # Replace the old YYMMDD format with YYMMDDHHMM format from README
-        # Pattern: bonsaiPR_py311-0.8.5-alpha251214-linux-x64.zip -> bonsaiPR_py311-0.8.5-alpha2512142235-linux-x64.zip
+        # Pattern: bonsaiPR_pyXXX-0.8.5-alpha251214-linux-x64.zip -> bonsaiPR_pyXXX-0.8.5-alpha2512142235-linux-x64.zip
         import re
 
-        # Match: bonsaiPR_py311-VERSION-alphaYYMMDD-platform.zip
-        pattern = r"(bonsaiPR_py311-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)"
+        # Match: bonsaiPR_pyXXX-VERSION-alphaYYMMDD-platform.zip (handles py311, py313, etc.)
+        pattern = r"(bonsaiPR_py\d+-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)"
 
         match = re.match(pattern, original_name)
         if match and timestamp_from_readme:
@@ -1205,7 +1205,7 @@ def upload_to_falken10vdl():
     uploaded_files = []
     for addon_file in addon_files:
         original_name = os.path.basename(addon_file)
-        pattern = r"(bonsaiPR_py311-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)"
+        pattern = r"(bonsaiPR_py\d+-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)"
         match = re.match(pattern, original_name)
         if match and timestamp_from_readme:
             asset_name = f"{match.group(1)}{timestamp_from_readme}{match.group(3)}"
@@ -1239,18 +1239,22 @@ def upload_to_falken10vdl():
                 return "windows-x64"
             return None
 
+        def get_pyversion(filename):
+            m = re.search(r'_(py\d+)-', filename)
+            return m.group(1) if m else "py311"
+
+        # key: (platform, pyversion) -> file metadata
         file_info = {}
-        version_info = {}
         for local_path, asset_name in uploaded_files:
             plat = get_platform(asset_name)
+            pyver = get_pyversion(asset_name)
             if not plat:
                 continue
             size = os.path.getsize(local_path)
             with open(local_path, "rb") as f:
                 hashval = hashlib.sha256(f.read()).hexdigest()
-            # Extract version from filename: bonsaiPR_py311-0.8.5-alpha260116-platform.zip
-            # We want version_str = 0.8.5-alpha260116
-            m = re.match(r"bonsaiPR_py311-([\d.]+-alpha\d{6})", asset_name)
+            # Extract version from filename: bonsaiPR_pyXXX-0.8.5-alpha260116-platform.zip
+            m = re.match(r"bonsaiPR_py\d+-([\d.]+-alpha\d{6})", asset_name)
             if m:
                 version_str = m.group(1)
             else:
@@ -1259,29 +1263,32 @@ def upload_to_falken10vdl():
                     asset_name.split("-")[1] if "-" in asset_name else "unknown"
                 )
                 # try to include alpha+digits if possible
-                m2 = re.match(r"bonsaiPR_py311-([\d.]+-alpha\d+)", asset_name)
+                m2 = re.match(r"bonsaiPR_py\d+-([\d.]+-alpha\d+)", asset_name)
                 if m2:
                     version_str = m2.group(1)
-            file_info[plat] = {
+            file_info[(plat, pyver)] = {
                 "filename": asset_name,
                 "size": size,
                 "hash": hashval,
                 "version": version_str,
             }
-            version_info[plat] = version_str
-        # Update every platform in each entry
+        # Update every platform in each entry, matched by (platform, python_version)
         for entry in index.get("data", []):
             plat_list = entry.get("platforms", [])
             if not plat_list:
                 continue
+            # Convert python_versions field (e.g. ["3.11"]) to pyversion key (e.g. "py311")
+            py_versions = entry.get("python_versions", ["3.11"])
+            entry_pyver = "py" + py_versions[0].replace(".", "") if py_versions else "py311"
             for plat in plat_list:
-                if plat in file_info:
+                key = (plat, entry_pyver)
+                if key in file_info:
                     entry["archive_url"] = (
-                        f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/download/{release_tag}/{file_info[plat]['filename']}"
+                        f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/download/{release_tag}/{file_info[key]['filename']}"
                     )
-                    entry["archive_size"] = file_info[plat]["size"]
-                    entry["archive_hash"] = f"sha256:{file_info[plat]['hash']}"
-                    entry["version"] = file_info[plat]["version"]
+                    entry["archive_size"] = file_info[key]["size"]
+                    entry["archive_hash"] = f"sha256:{file_info[key]['hash']}"
+                    entry["version"] = file_info[key]["version"]
         with open(index_path, "w", encoding="utf-8") as f:
             json.dump(index, f, indent=2)
         print(f"index.json updated for release {release_tag}")
