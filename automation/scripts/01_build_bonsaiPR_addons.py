@@ -388,6 +388,41 @@ def fix_ifctester_webapp_dependencies():
     finally:
         os.chdir(original_cwd)
 
+def fix_ifctester_setuptools():
+    """Fix ifctester Makefile to include setuptools in the venv build step.
+
+    Python 3.12+ no longer includes setuptools in new venvs, so
+    'setuptools.build_meta' is unavailable unless explicitly installed.
+    py311 works because --system-site-packages picks it up from the system
+    python3.11 installation; py313 lacks it and fails with:
+        ERROR Backend 'setuptools.build_meta' is not available.
+    """
+    makefile_path = os.path.join(BUILD_BASE_DIR, 'src', 'ifctester', 'Makefile')
+
+    if not os.path.exists(makefile_path):
+        log_message(f"ifctester Makefile not found at: {makefile_path}", "WARNING")
+        return
+
+    try:
+        with open(makefile_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        old_cmd = 'python -m pip install build && python -m build --wheel --no-isolation'
+        new_cmd = 'python -m pip install build setuptools && python -m build --wheel --no-isolation'
+
+        if old_cmd in content:
+            content = content.replace(old_cmd, new_cmd)
+            with open(makefile_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            log_message("ifctester Makefile fix applied: added setuptools to pip install in webapp-stage-ifctester-wheel")
+        elif new_cmd in content:
+            log_message("ifctester Makefile already has setuptools in pip install - no fix needed")
+        else:
+            log_message("ifctester Makefile: expected pip install pattern not found - manual check needed", "WARNING")
+
+    except Exception as e:
+        log_message(f"Error fixing ifctester Makefile setuptools: {e}", "ERROR")
+
 def clean_old_bonsai_files():
     """Clean up any leftover 'bonsai_' files from previous builds in the dist directory"""
     dist_dir = os.path.join(BUILD_BASE_DIR, 'src', 'bonsaiPR', 'dist')
@@ -664,6 +699,9 @@ def test_makefile_fixes_only():
         
         # Step 4: Fix ifctester webapp dependencies
         fix_ifctester_webapp_dependencies()
+
+        # Step 5: Fix ifctester Makefile for Python 3.12+ (missing setuptools in venv)
+        fix_ifctester_setuptools()
         
         log_message("Test mode completed successfully - Makefile fixes applied")
         
@@ -742,6 +780,9 @@ def main():
 
         # Step 2.6: Fix ifctester webapp dependencies
         fix_ifctester_webapp_dependencies()
+
+        # Step 2.7: Fix ifctester Makefile for Python 3.12+ (missing setuptools in venv)
+        fix_ifctester_setuptools()
 
         # Step 3: Build addons for specified platforms
         build_ok = build_addons(target_platforms)
