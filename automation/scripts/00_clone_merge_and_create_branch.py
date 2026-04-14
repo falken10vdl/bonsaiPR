@@ -863,9 +863,8 @@ def generate_report(
             f.write(f"## ❌ Failed to Merge PRs ({len(failed_prs)})\n\n")
             for pr in sorted(failed_prs, key=_sort_key, reverse=reverse_sort):
                 pr_number = pr["number"]
-                f.write(f"- **PR #{pr_number}**: {pr['title']}\n")
-                f.write(f"  - Author: {pr['user']['login']}\n")
-                f.write(f"  - URL: {pr['html_url']}\n")
+                pr_url = pr["html_url"]
+                pr_title = pr["title"]
                 # Reason derived from individual test merge
                 reason = "Not tested"
                 if (
@@ -891,8 +890,10 @@ def generate_report(
                 conflict_info = pr_conflict_data.get(pr_number, {})
                 conflicting_files = conflict_info.get("files", [])
                 breaking_commits = conflict_info.get("breaking_commits", [])
-                # Write collapsible details block
-                f.write(f"  <details><summary>Details</summary>\n\n")
+                # Write collapsible entry with PR title as summary
+                f.write(
+                    f"-   <details><summary>[**PR #{pr_number}**]({pr_url}): {pr_title}</summary>\n\n"
+                )
                 f.write(f"  - Reason: {reason}\n")
                 if first_detected is not None:
                     f.write(f"  - First detected failing: {first_detected}\n")
@@ -912,9 +913,7 @@ def generate_report(
                         file_url = f"https://github.com/{upstream_repo}/blob/{SOURCE_BASE_BRANCH}/{cf}"
                         f.write(f"    - [{cf}]({file_url})\n")
                 if breaking_commits:
-                    f.write(
-                        f"  - Recent upstream commits to those files (possible culprits):\n"
-                    )
+                    f.write(f"  - Possible breaking commits:\n")
                     for bc in breaking_commits:
                         parts = bc.split(None, 1)
                         if len(parts) == 2:
