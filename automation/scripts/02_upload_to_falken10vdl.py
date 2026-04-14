@@ -847,6 +847,7 @@ def generate_release_body(
 """
         for pr in failed_prs:
             release_body += format_pr_with_link(pr["line"], pr["url"])
+            release_body += "\n  <details><summary>Details</summary>\n"
             if pr.get("reason"):
                 release_body += f"\n  - Reason: {pr['reason']}"
             if pr.get("first_detected"):
@@ -862,7 +863,7 @@ def generate_release_body(
                 release_body += "\n  - Possible breaking commits:\n" + "\n".join(
                     f"    - {c}" for c in pr["breaking_commits"]
                 )
-            release_body += "\n"
+            release_body += "\n\n  </details>\n"
 
         release_body += f"\n## ⚠️ Skipped - Conflict with other PRs. Merges cleany with base  ({len(skipped_conflict_prs)})\n"
         for pr_dict in skipped_conflict_prs:

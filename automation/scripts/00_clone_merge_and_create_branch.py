@@ -879,15 +879,24 @@ def generate_report(
                         reason = "Fails to merge against base (problem with PR itself)"
                     else:
                         reason = "Not tested (missing info)"
-                f.write(f"  - Reason: {reason}\n")
                 # First-detected date and base commit from tracking
                 tracking_key = str(pr_number)
+                first_detected = None
+                base_commit = None
                 if tracking_key in failure_tracking:
                     entry = failure_tracking[tracking_key]
-                    f.write(
-                        f"  - First detected failing: {entry.get('first_detected', 'unknown')}\n"
-                    )
+                    first_detected = entry.get("first_detected", "unknown")
                     base_commit = entry.get("base_commit", "unknown")
+                # Conflicting files and breaking-commit hints (only for base-conflict PRs)
+                conflict_info = pr_conflict_data.get(pr_number, {})
+                conflicting_files = conflict_info.get("files", [])
+                breaking_commits = conflict_info.get("breaking_commits", [])
+                # Write collapsible details block
+                f.write(f"  <details><summary>Details</summary>\n\n")
+                f.write(f"  - Reason: {reason}\n")
+                if first_detected is not None:
+                    f.write(f"  - First detected failing: {first_detected}\n")
+                if base_commit is not None:
                     if base_commit and base_commit != "unknown":
                         base_commit_url = (
                             f"https://github.com/{upstream_repo}/commit/{base_commit}"
@@ -897,10 +906,6 @@ def generate_report(
                         )
                     else:
                         f.write(f"  - Base commit at first detection: {base_commit}\n")
-                # Conflicting files and breaking-commit hints (only for base-conflict PRs)
-                conflict_info = pr_conflict_data.get(pr_number, {})
-                conflicting_files = conflict_info.get("files", [])
-                breaking_commits = conflict_info.get("breaking_commits", [])
                 if conflicting_files:
                     f.write(f"  - Conflicting files:\n")
                     for cf in conflicting_files:
@@ -920,7 +925,7 @@ def generate_report(
                             )
                         else:
                             f.write(f"    - `{bc}`\n")
-                f.write("\n")
+                f.write(f"\n  </details>\n\n")
         if skipped_prs:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped_prs)})\n\n")
             for pr in sorted(skipped_prs, key=_sort_key, reverse=reverse_sort):
