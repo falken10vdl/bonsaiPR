@@ -846,10 +846,8 @@ def generate_release_body(
 ## ❌ Failed PRs ({len(failed_prs)})
 """
         for pr in failed_prs:
-            pr_link = format_pr_with_link(pr["line"], pr["url"])
-            # Strip leading "- " to use as <summary> content
-            pr_link_inner = pr_link[2:] if pr_link.startswith("- ") else pr_link
-            release_body += f"-   <details><summary>{pr_link_inner}</summary>\n"
+            release_body += format_pr_with_link(pr["line"], pr["url"])
+            release_body += "\n  <details><summary>Details</summary>\n"
             if pr.get("reason"):
                 release_body += f"\n  - Reason: {pr['reason']}"
             if pr.get("first_detected"):
