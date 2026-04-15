@@ -733,7 +733,9 @@ def generate_release_body(
                             in_breaking = False
                         elif bl.startswith(
                             "- Recent upstream commits"
-                        ) or bl.startswith("  - Recent upstream commits"):
+                        ) or bl.startswith("  - Recent upstream commits") or bl.startswith(
+                            "- Possible breaking commits"
+                        ) or bl.startswith("  - Possible breaking commits"):
                             in_conflicts = False
                             in_breaking = True
                         elif in_conflicts and bl.startswith("- "):
@@ -846,24 +848,45 @@ def generate_release_body(
 ## ❌ Failed PRs ({len(failed_prs)})
 """
         for pr in failed_prs:
-            release_body += format_pr_with_link(pr["line"], pr["url"])
-            release_body += "\n  <details><summary>Details</summary>\n"
+            _num_m = re.match(r"- \*\*PR #(\d+)\*\*", pr["line"])
+            _pr_num = _num_m.group(1) if _num_m else "?"
+            _title_m = re.match(r"- \*\*PR #\d+\*\*:\s*(.+)", pr["line"])
+            _pr_title = _title_m.group(1) if _title_m else pr["line"]
+            _pr_url = pr.get("url") or ""
+            release_body += (
+                f"<details>\n"
+                f"  <summary>\n"
+                f"    <a href=\"{_pr_url}\"><strong>PR #{_pr_num}</strong></a>: {_pr_title}\n"
+                f"  </summary>\n\n"
+            )
             if pr.get("reason"):
-                release_body += f"\n  - Reason: {pr['reason']}"
+                release_body += f"  - Reason: {pr['reason']}\n"
             if pr.get("first_detected"):
-                release_body += f"\n  - First detected failing: {pr['first_detected']}"
+                release_body += f"  - First detected failing: {pr['first_detected']}\n"
             if pr.get("base_commit"):
                 _bc = pr["base_commit"]
-                release_body += f"\n  - Base commit at first detection: [`{_bc[:7]}`](https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{_bc})"
+                _bc_url = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{_bc}"
+                release_body += f"  - Base commit at first detection: <a href=\"{_bc_url}\"><code>{_bc[:7]}</code></a>\n"
             if pr.get("conflicting_files"):
-                release_body += "\n  - Conflicting files:\n" + "\n".join(
-                    f"    - {f}" for f in pr["conflicting_files"]
-                )
+                release_body += "  - Conflicting files:\n"
+                for _f in pr["conflicting_files"]:
+                    _fm = re.match(r"\[(.+?)\]\((.+?)\)", _f)
+                    if _fm:
+                        _flabel, _furl = _fm.group(1), _fm.group(2)
+                    else:
+                        _flabel = _f
+                        _furl = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/blob/v0.8.0/{_f}"
+                    release_body += f"    - <a href=\"{_furl}\">{_flabel}</a>\n"
             if pr.get("breaking_commits"):
-                release_body += "\n  - Possible breaking commits:\n" + "\n".join(
-                    f"    - {c}" for c in pr["breaking_commits"]
-                )
-            release_body += "\n\n  </details>\n"
+                release_body += "  - Possible breaking commits:\n"
+                for _c in pr["breaking_commits"]:
+                    _cm = re.match(r"\[([0-9a-f]+)\]\((.+?)\)\s*(.*)", _c)
+                    if _cm:
+                        _chash, _curl, _cmsg = _cm.group(1), _cm.group(2), _cm.group(3)
+                        release_body += f"    - <a href=\"{_curl}\">{_chash}</a> {_cmsg}\n"
+                    else:
+                        release_body += f"    - {_c}\n"
+            release_body += "\n</details>\n"
 
         release_body += f"\n## ⚠️ Skipped - Conflict with other PRs. Merges cleany with base  ({len(skipped_conflict_prs)})\n"
         for pr_dict in skipped_conflict_prs:
