@@ -866,6 +866,7 @@ def generate_report(
                 f.write(f"- **PR #{pr_number}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
+                f.write(f"  - Branch: {pr.get('head', {}).get('ref', 'unknown')}\n")
                 # Reason derived from individual test merge
                 reason = "Not tested"
                 if (
@@ -925,6 +926,7 @@ def generate_report(
                 f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
+                f.write(f"  - Branch: {pr.get('head', {}).get('ref', 'unknown')}\n")
                 # If there is an individual test merge comment, use it as reason
                 skip_reason = pr.get("skip_reason", None)
                 test_result = pr.get("individual_test_merge", None)
@@ -941,6 +943,7 @@ def generate_report(
                 f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
+                f.write(f"  - Branch: {pr.get('head', {}).get('ref', 'unknown')}\n")
                 f.write(f"  - Created: {pr['created_at'][:10]}\n\n")
         f.write(f"## Developer Instructions\n\n")
         f.write(f"To use this branch for development:\n\n")

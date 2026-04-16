@@ -597,14 +597,15 @@ def create_or_update_readme():
     return readme_path
 
 
-def format_pr_with_link(pr_line, pr_url):
+def format_pr_with_link(pr_line, pr_url, pr_branch=None):
     """Convert a PR line to markdown with hyperlinked PR number"""
     # Extract PR number and title from line like "- **PR #123**: Title here"
     match = re.match(r"- \*\*PR #(\d+)\*\*:\s*(.+)", pr_line)
     if match and pr_url:
         pr_number = match.group(1)
         pr_title = match.group(2)
-        return f"- [**PR #{pr_number}**]({pr_url}): {pr_title}"
+        branch_suffix = f" ({pr_branch})" if pr_branch else ""
+        return f"- [**PR #{pr_number}**{branch_suffix}]({pr_url}): {pr_title}"
     return pr_line  # Return original if can't parse or no URL
 
 
@@ -683,17 +684,20 @@ def generate_release_body(
                     block_lines.append(nl)
 
                 # Extract fields from block
+                pr_branch = None
                 for bl in block_lines:
                     if bl.startswith("- URL:") or bl.startswith("  - URL:"):
                         pr_url = bl.split("URL:", 1)[1].strip()
-                        break
+                    elif bl.startswith("- Branch:") or bl.startswith("  - Branch:"):
+                        pr_branch = bl.split("Branch:", 1)[1].strip()
 
                 if in_applied_section:
-                    applied_prs.append({"line": line, "url": pr_url})
+                    applied_prs.append({"line": line, "url": pr_url, "branch": pr_branch})
                 elif in_failed_section:
                     current_pr = {
                         "line": line,
                         "url": pr_url,
+                        "branch": pr_branch,
                         "reason": None,
                         "first_detected": None,
                         "base_commit": None,
@@ -747,23 +751,23 @@ def generate_release_body(
                         current_pr["reason"]
                         == "Merges cleanly against base (conflict with other PRs)"
                     ):
-                        skipped_conflict_prs.append({"line": line, "url": pr_url})
+                        skipped_conflict_prs.append({"line": line, "url": pr_url, "branch": pr_branch})
                     else:
                         failed_prs.append(current_pr)
                 elif in_skipped_section:
-                    current_pr = {"line": line, "url": pr_url, "reason": None}
+                    current_pr = {"line": line, "url": pr_url, "branch": pr_branch, "reason": None}
                     for bl in block_lines:
                         if bl.startswith("- Reason:") or bl.startswith("  - Reason:"):
                             current_pr["reason"] = bl.split("Reason:", 1)[1].strip()
                             break
                     # Group skipped PRs
                     if current_pr["reason"] and "DRAFT status" in current_pr["reason"]:
-                        skipped_draft_prs.append({"line": line, "url": pr_url})
+                        skipped_draft_prs.append({"line": line, "url": pr_url, "branch": pr_branch})
                     elif (
                         current_pr["reason"]
                         == "Merges cleanly against base (conflict with other PRs)"
                     ):
-                        skipped_conflict_prs.append({"line": line, "url": pr_url})
+                        skipped_conflict_prs.append({"line": line, "url": pr_url, "branch": pr_branch})
                     else:
                         failed_prs.append(current_pr)
 
@@ -890,15 +894,15 @@ def generate_release_body(
 
         release_body += f"\n## ⚠️ Skipped - Conflict with other PRs. Merges cleany with base  ({len(skipped_conflict_prs)})\n"
         for pr_dict in skipped_conflict_prs:
-            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"]) + "\n"
+            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch")) + "\n"
 
         release_body += f"\n## ⚠️ Skipped - DRAFT PRs ({len(skipped_draft_prs)})\n"
         for pr_dict in skipped_draft_prs:
-            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"]) + "\n"
+            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch")) + "\n"
 
         release_body += f"\n## ✅ Successfully Merged PRs ({len(applied_prs)})\n"
         for pr_dict in applied_prs:
-            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"]) + "\n"
+            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch")) + "\n"
 
         release_body += "\n"
         return release_body
