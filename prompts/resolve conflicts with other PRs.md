@@ -146,9 +146,15 @@ columns (do not rewrite the file — append only, adding a new table row):
 
 ## Step 10 — Summary document
 
-Provide a detailed markdown document covering:
+Write a detailed markdown summary to:
+`{{BONSAI_PR_REPO}}/logs/summaries/YYYY-MM-DD-PR-XXXX.md`
+
+The document should cover:
 - Which PR(s) conflict and why (with links)
 - The specific commit(s) that cause the conflict
 - Why the chosen fix strategy works in terms of git 3-way merge mechanics
 - Exactly what files were changed and how conflicts were resolved
 - The push target and the resulting commit hash
+
+Then add a `Summary` column entry to the log row added in Step 9, linking to this file
+using a relative path (e.g., `[PR #XXXX vs #YYYY](summaries/YYYY-MM-DD-PR-XXXX.md)`).
