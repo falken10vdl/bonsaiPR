@@ -143,7 +143,6 @@ columns (do not rewrite the file — append only, adding a new table row):
 | `push_remote` | Remote name pushed to |
 | `result_commit` | Short commit hash — linked to the GitHub commit |
 | `outcome` | `fixed` / `skipped-companion-had-it` / `failed` |
-| `notes` | One sentence explaining the nature of the conflict and why the fix works |
 
 ## Step 10 — Summary document
 
