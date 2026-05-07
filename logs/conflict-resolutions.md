@@ -1,0 +1,5 @@
+# Conflict Resolution Log
+
+| Date | Build Branch | Build Order | Target PR | Conflicting PRs | Conflict Files | Key Commit | Fix Strategy | Push Remote | Result Commit | Outcome | Notes |
+|------|-------------|-------------|-----------|-----------------|----------------|------------|--------------|-------------|---------------|---------|-------|
+| 2026-05-07 | [v0.8.6-alpha260507-2dcf753](https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2605071648) | descending | [#7802](https://github.com/IfcOpenShell/IfcOpenShell/pull/7802) | [#7924](https://github.com/IfcOpenShell/IfcOpenShell/pull/7924) | [`src/bonsai/bonsai/core/root.py`](https://github.com/IfcOpenShell/IfcOpenShell/blob/bcb94d79bd/src/bonsai/bonsai/core/root.py) | [aa3e38aca8](https://github.com/IfcOpenShell/IfcOpenShell/commit/aa3e38aca8) | ancestry-merge | origin | [bcb94d79bd](https://github.com/IfcOpenShell/IfcOpenShell/commit/bcb94d79bd) | fixed | PR#7924 refactored `_has_material_styles(ifc, new)` into `tool.Root.has_material_styles()`. PR#7802 removed the call entirely. Merged `aa3e38aca8` into branch to shift LCA so 3-way merge no longer contests those lines. |

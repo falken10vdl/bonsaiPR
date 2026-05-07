@@ -125,7 +125,27 @@ the same branch name the PR uses:
 git push <remote> <local-branch>:<pr-branch-name> --force-with-lease
 ```
 
-## Step 9 — Summary document
+## Step 9 — Append to conflict resolution log
+
+Append one row to `{{BONSAI_PR_REPO}}/logs/conflict-resolutions.md` with the following
+columns (do not rewrite the file — append only, adding a new table row):
+
+| Column | Value |
+|--------|-------|
+| `date` | Today's date (YYYY-MM-DD) |
+| `build_branch` | `{{BUILD_BRANCH}}` — link to the GitHub release |
+| `build_order` | ascending / descending / by-updated |
+| `target_pr` | PR number — link to the GitHub PR |
+| `conflicting_prs` | Comma-separated PR numbers — each linked to its GitHub PR |
+| `conflict_files` | Comma-separated file paths — each linked to the file at the result commit |
+| `key_commit` | Short commit hash — linked to the GitHub commit |
+| `fix_strategy` | `ancestry-merge` / `rebase` / `none` (companion release had it) |
+| `push_remote` | Remote name pushed to |
+| `result_commit` | Short commit hash — linked to the GitHub commit |
+| `outcome` | `fixed` / `skipped-companion-had-it` / `failed` |
+| `notes` | One sentence explaining the nature of the conflict and why the fix works |
+
+## Step 10 — Summary document
 
 Provide a detailed markdown document covering:
 - Which PR(s) conflict and why (with links)
