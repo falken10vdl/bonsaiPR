@@ -1,4 +1,4 @@
-Summary: It finds which PR(s) conflict with a skipped PR in the BonsaiPR build, decides which one to rebase onto the other based on merge readiness, executes the fix, and pushes the result.
+Summary: It finds which PR(s) conflict with a skipped PR in a BonsaiPR build (ascending, descending, or by-updated), decides on the correct fix strategy, executes it, and pushes the result. Note: BonsaiPR produces up to three builds per run — if a PR is skipped in one ordering due to a conflict, check the companion releases first, as they may already include it.
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
@@ -22,10 +22,17 @@ Please work through the following steps:
 
 ## Step 1 — Determine build merge order
 
+BonsaiPR produces up to three builds per automation run, each merging PRs in a different
+order:
+- **Ascending** — lowest PR number first
+- **Descending** — highest PR number first
+- **By-updated** — most recently updated PR first
+
 Read the build script at `{{BONSAI_PR_REPO}}/automation/scripts/00_clone_merge_and_create_branch.py`
-and inspect the build branch's first-parent log to determine whether PRs are merged in
-**ascending** or **descending** numeric order. State the order explicitly before proceeding —
-getting this wrong will cause you to test against the wrong build state.
+and inspect the build branch's first-parent log to determine which of these three orderings
+applies to `{{BUILD_BRANCH}}`. State the order explicitly before proceeding — getting this
+wrong will cause you to test against the wrong build state and misidentify which PR was
+merged before `{{TARGET_PR}}`.
 
 ## Step 2 — Identify the conflicting PR(s)
 
