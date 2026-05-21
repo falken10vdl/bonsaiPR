@@ -72,8 +72,8 @@ Confirm all expected commits are present and the branch tip is clean.
 
 ## Step 7 — Append to rebase log
 
-Append one row to `D:\Dropbox\GitHub\bonsaiPR\logs\rebase-resolutions.md` with the
-following columns (do not rewrite the file — append only, adding a new table row):
+Insert one row at the top of the data in `D:\Dropbox\GitHub\bonsaiPR\logs\rebase-resolutions.md`
+(immediately after the header and separator rows — newest entries go first):
 
 | Column | Value |
 |--------|-------|

@@ -127,8 +127,8 @@ git push <remote> <local-branch>:<pr-branch-name> --force-with-lease
 
 ## Step 9 — Append to conflict resolution log
 
-Append one row to `{{BONSAI_PR_REPO}}/logs/conflict-resolutions.md` with the following
-columns (do not rewrite the file — append only, adding a new table row):
+Insert one row at the top of the data in `{{BONSAI_PR_REPO}}/logs/conflict-resolutions.md`
+(immediately after the header and separator rows — newest entries go first):
 
 | Column | Value |
 |--------|-------|
