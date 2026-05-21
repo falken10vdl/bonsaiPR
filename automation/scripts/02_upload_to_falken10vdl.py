@@ -597,7 +597,7 @@ def create_or_update_readme():
     return readme_path
 
 
-def format_pr_with_link(pr_line, pr_url, pr_branch=None):
+def format_pr_with_link(pr_line, pr_url, pr_branch=None, last_commit=None):
     """Convert a PR line to markdown with hyperlinked PR number"""
     # Extract PR number and title from line like "- **PR #123**: Title here"
     match = re.match(r"- \*\*PR #(\d+)\*\*:\s*(.+)", pr_line)
@@ -605,7 +605,8 @@ def format_pr_with_link(pr_line, pr_url, pr_branch=None):
         pr_number = match.group(1)
         pr_title = match.group(2)
         branch_suffix = f" ({pr_branch})" if pr_branch else ""
-        return f"- [**PR #{pr_number}**{branch_suffix}]({pr_url}): {pr_title}"
+        commit_suffix = f" [{last_commit['sha']}]({last_commit['url']})" if last_commit else ""
+        return f"- [**PR #{pr_number}**{branch_suffix}]({pr_url}): {pr_title}{commit_suffix}"
     return pr_line  # Return original if can't parse or no URL
 
 
@@ -685,14 +686,27 @@ def generate_release_body(
 
                 # Extract fields from block
                 pr_branch = None
+                last_commit_sha = None
+                last_commit_url_parsed = None
                 for bl in block_lines:
                     if bl.startswith("- URL:") or bl.startswith("  - URL:"):
                         pr_url = bl.split("URL:", 1)[1].strip()
                     elif bl.startswith("- Branch:") or bl.startswith("  - Branch:"):
                         pr_branch = bl.split("Branch:", 1)[1].strip()
+                    elif bl.startswith("- Last commit:") or bl.startswith("  - Last commit:"):
+                        raw = bl.split("Last commit:", 1)[1].strip()
+                        _m = re.match(r"\[([0-9a-f]+)\]\((.+?)\)", raw)
+                        if _m:
+                            last_commit_sha = _m.group(1)
+                            last_commit_url_parsed = _m.group(2)
 
                 if in_applied_section:
-                    applied_prs.append({"line": line, "url": pr_url, "branch": pr_branch})
+                    last_commit = (
+                        {"sha": last_commit_sha, "url": last_commit_url_parsed}
+                        if last_commit_sha and last_commit_url_parsed
+                        else None
+                    )
+                    applied_prs.append({"line": line, "url": pr_url, "branch": pr_branch, "last_commit": last_commit})
                 elif in_failed_section:
                     current_pr = {
                         "line": line,
@@ -902,7 +916,7 @@ def generate_release_body(
 
         release_body += f"\n## ✅ Successfully Merged PRs ({len(applied_prs)})\n"
         for pr_dict in applied_prs:
-            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch")) + "\n"
+            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch"), pr_dict.get("last_commit")) + "\n"
 
         release_body += "\n"
         return release_body

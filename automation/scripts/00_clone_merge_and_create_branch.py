@@ -944,7 +944,12 @@ def generate_report(
                 f.write(f"  - Author: {pr['user']['login']}\n")
                 f.write(f"  - URL: {pr['html_url']}\n")
                 f.write(f"  - Branch: {pr.get('head', {}).get('ref', 'unknown')}\n")
-                f.write(f"  - Created: {pr['created_at'][:10]}\n\n")
+                f.write(f"  - Created: {pr['created_at'][:10]}\n")
+                last_sha = pr.get('head', {}).get('sha', '')
+                if last_sha:
+                    last_commit_url = f"https://github.com/{upstream_repo}/commit/{last_sha}"
+                    f.write(f"  - Last commit: [{last_sha[:7]}]({last_commit_url})\n")
+                f.write("\n")
         f.write(f"## Developer Instructions\n\n")
         f.write(f"To use this branch for development:\n\n")
         f.write(f"```bash\n")
