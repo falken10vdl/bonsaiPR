@@ -925,8 +925,11 @@ def generate_release_body(
         release_body += "\n"
         return release_body
     except Exception as e:
+        import traceback
+        tb = traceback.format_exc()
         print(f"Error reading report file: {e}")
-        return "Weekly BonsaiPR build with latest PRs merged."
+        print(tb)
+        return f"Weekly BonsaiPR build with latest PRs merged.\n\n**Error generating release body:**\n```\n{tb}\n```"
 
 
 def cleanup_old_releases():
