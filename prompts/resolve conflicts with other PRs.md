@@ -1,13 +1,12 @@
-Summary: It finds which PR(s) conflict with a skipped PR in a BonsaiPR build (ascending, descending, or by-updated), decides on the correct fix strategy, executes it, and pushes the result. Note: BonsaiPR produces up to three builds per run — if a PR is skipped in one ordering due to a conflict, check the companion releases first, as they may already include it.
+
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 - `{{IFCOPENSHELL_REPO}}` → `C:\IfcOpenShell`
-- `{{BUILD_BRANCH}}` → `BBonsaiPR v0.8.6-alpha260522-346f424 [desc]`
-- `{{TARGET_PR}}` → `PR #7003 (general-mirroring)`
+- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260522-346f424 [desc]`
+- `{{TARGET_PR}}` → `PR #7941 (bug_extend_walls_to_underside)`
 
 
-# Prompt
 
 I'm working with the BonsaiPR build system `{{BONSAI_PR_REPO}}`, which aggregates IfcOpenShell PRs from
 https://github.com/IfcOpenShell/IfcOpenShell into installable builds. The local IfcOpenShell
