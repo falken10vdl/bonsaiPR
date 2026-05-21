@@ -2,8 +2,8 @@ Summary: It finds which PR(s) conflict with a skipped PR in a BonsaiPR build (as
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
-- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260507-2dcf753`
-- `{{TARGET_PR}}` → `PR #7802 (duplicate_opening_on_type_duplication)`
+- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260521-cf24a40 [desc]`
+- `{{TARGET_PR}}` → `PR #7798 (ManualDrawingReference)`
 
 
 # Prompt
@@ -20,19 +20,13 @@ Do NOT modify the BonsaiPR build script (`KNOWN_CONFLICT_RESOLUTIONS` or similar
 
 Please work through the following steps:
 
-## Step 1 — Determine build merge order
+## Step 1 — Build merge order
 
-BonsaiPR produces up to three builds per automation run, each merging PRs in a different
-order:
-- **Ascending** — lowest PR number first
-- **Descending** — highest PR number first
-- **By-updated** — most recently updated PR first
-
-Read the build script at `{{BONSAI_PR_REPO}}/automation/scripts/00_clone_merge_and_create_branch.py`
-and inspect the build branch's first-parent log to determine which of these three orderings
-applies to `{{BUILD_BRANCH}}`. State the order explicitly before proceeding — getting this
-wrong will cause you to test against the wrong build state and misidentify which PR was
-merged before `{{TARGET_PR}}`.
+Parse the suffix of `{{BUILD_BRANCH}}`: `[asc]` = ascending (lowest PR number first),
+`[desc]` = descending (highest PR number first), `[upd]` = by-updated (most recently
+updated PR first). State the order explicitly before proceeding — getting this wrong will
+cause you to test against the wrong build state and misidentify which PR was merged before
+`{{TARGET_PR}}`.
 
 ## Step 2 — Identify the conflicting PR(s)
 
