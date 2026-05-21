@@ -793,8 +793,6 @@ def generate_release_body(
             original_filename = os.path.basename(addon_file)
 
             # Apply same renaming logic as upload section to get the final filename with HHMM
-            import re
-
             pattern = r"(bonsaiPR_py\d+-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)"
             match = re.match(pattern, original_filename)
 
