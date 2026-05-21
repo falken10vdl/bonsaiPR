@@ -717,6 +717,7 @@ def generate_release_body(
                         "base_commit": None,
                         "conflicting_files": [],
                         "breaking_commits": [],
+                        "last_commit": {"sha": last_commit_sha, "url": last_commit_url_parsed} if last_commit_sha and last_commit_url_parsed else None,
                     }
                     in_conflicts = False
                     in_breaking = False
@@ -765,23 +766,24 @@ def generate_release_body(
                         current_pr["reason"]
                         == "Merges cleanly against base (conflict with other PRs)"
                     ):
-                        skipped_conflict_prs.append({"line": line, "url": pr_url, "branch": pr_branch})
+                        skipped_conflict_prs.append({"line": line, "url": pr_url, "branch": pr_branch, "last_commit": current_pr["last_commit"]})
                     else:
                         failed_prs.append(current_pr)
                 elif in_skipped_section:
-                    current_pr = {"line": line, "url": pr_url, "branch": pr_branch, "reason": None}
+                    _lc = {"sha": last_commit_sha, "url": last_commit_url_parsed} if last_commit_sha and last_commit_url_parsed else None
+                    current_pr = {"line": line, "url": pr_url, "branch": pr_branch, "reason": None, "last_commit": _lc}
                     for bl in block_lines:
                         if bl.startswith("- Reason:") or bl.startswith("  - Reason:"):
                             current_pr["reason"] = bl.split("Reason:", 1)[1].strip()
                             break
                     # Group skipped PRs
                     if current_pr["reason"] and "DRAFT status" in current_pr["reason"]:
-                        skipped_draft_prs.append({"line": line, "url": pr_url, "branch": pr_branch})
+                        skipped_draft_prs.append({"line": line, "url": pr_url, "branch": pr_branch, "last_commit": _lc})
                     elif (
                         current_pr["reason"]
                         == "Merges cleanly against base (conflict with other PRs)"
                     ):
-                        skipped_conflict_prs.append({"line": line, "url": pr_url, "branch": pr_branch})
+                        skipped_conflict_prs.append({"line": line, "url": pr_url, "branch": pr_branch, "last_commit": _lc})
                     else:
                         failed_prs.append(current_pr)
 
@@ -871,10 +873,12 @@ def generate_release_body(
             _title_m = re.match(r"- \*\*PR #\d+\*\*:\s*(.+)", pr["line"])
             _pr_title = _title_m.group(1) if _title_m else pr["line"]
             _pr_url = pr.get("url") or ""
+            _lc = pr.get("last_commit")
+            _commit_suffix = f" <a href=\"{_lc['url']}\">{_lc['sha']}</a>" if _lc else ""
             release_body += (
                 f"<details>\n"
                 f"  <summary>\n"
-                f"    <a href=\"{_pr_url}\"><strong>PR #{_pr_num}</strong></a>: {_pr_title}\n"
+                f"    <a href=\"{_pr_url}\"><strong>PR #{_pr_num}</strong></a>: {_pr_title}{_commit_suffix}\n"
                 f"  </summary>\n\n"
             )
             if pr.get("reason"):
@@ -908,11 +912,11 @@ def generate_release_body(
 
         release_body += f"\n## ⚠️ Skipped - Conflict with other PRs. Merges cleany with base  ({len(skipped_conflict_prs)})\n"
         for pr_dict in skipped_conflict_prs:
-            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch")) + "\n"
+            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch"), pr_dict.get("last_commit")) + "\n"
 
         release_body += f"\n## ⚠️ Skipped - DRAFT PRs ({len(skipped_draft_prs)})\n"
         for pr_dict in skipped_draft_prs:
-            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch")) + "\n"
+            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch"), pr_dict.get("last_commit")) + "\n"
 
         release_body += f"\n## ✅ Successfully Merged PRs ({len(applied_prs)})\n"
         for pr_dict in applied_prs:
