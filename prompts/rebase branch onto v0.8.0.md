@@ -3,7 +3,7 @@ understanding what each side changed relative to the merge-base, then logs the r
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{REPO}}` → `c:\IfcOpenShell`
-- `{{BRANCH}}` → `regenerate_wall_to_underside`
+- `{{BRANCH}}` → `general-mirroring`
 - `{{BASE}}` → `v0.8.0`
 
 
@@ -90,6 +90,10 @@ following columns (do not rewrite the file — append only, adding a new table r
 
 Write a detailed markdown summary to:
 `D:\Dropbox\GitHub\bonsaiPR\logs\summaries\YYYY-MM-DD-rebase-{{BRANCH}}.md`
+
+The document header must include a **Branch** line that hyperlinks `{{BRANCH}}` to its
+GitHub PR (if one exists) or to the branch on GitHub
+(`https://github.com/IfcOpenShell/IfcOpenShell/tree/{{BRANCH}}`).
 
 The document should cover:
 - What commits were on `{{BRANCH}}` that are not in `{{BASE}}`

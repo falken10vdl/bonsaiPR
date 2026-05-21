@@ -1,7 +1,7 @@
 # Rebase Summary: general-mirroring onto v0.8.0
 
 **Date:** 2026-05-21
-**Branch:** `general-mirroring`
+**Branch:** [`general-mirroring`](https://github.com/IfcOpenShell/IfcOpenShell/tree/general-mirroring)
 **Rebased onto:** `v0.8.0` ([7e96692764](https://github.com/IfcOpenShell/IfcOpenShell/commit/7e96692764))
 **Result tip:** [2ab8d7d499](https://github.com/IfcOpenShell/IfcOpenShell/commit/2ab8d7d499)
 **Outcome:** conflicts-resolved
