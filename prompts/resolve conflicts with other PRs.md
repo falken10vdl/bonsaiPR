@@ -3,8 +3,8 @@ Summary: It finds which PR(s) conflict with a skipped PR in a BonsaiPR build (as
 Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 - `{{IFCOPENSHELL_REPO}}` → `C:\IfcOpenShell`
-- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260521-cf24a40 [desc]`
-- `{{TARGET_PR}}` → `PR #7798 (ManualDrawingReference)`
+- `{{BUILD_BRANCH}}` → `BBonsaiPR v0.8.6-alpha260522-346f424 [desc]`
+- `{{TARGET_PR}}` → `PR #7003 (general-mirroring)`
 
 
 # Prompt
@@ -128,7 +128,7 @@ Insert one row at the top of the data in `{{BONSAI_PR_REPO}}/logs/conflict-resol
 
 | Column | Value |
 |--------|-------|
-| `date` | Current date and time (YYYY-MM-DD HH:MM) |
+| `date` | Current date and time (YYYY-MM-DD HH:MM:SS) |
 | `build_branch` | `{{BUILD_BRANCH}}` — link to the GitHub release |
 | `build_order` | ascending / descending / by-updated |
 | `target_pr` | PR number — link to the GitHub PR |
