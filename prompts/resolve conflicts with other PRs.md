@@ -2,6 +2,7 @@ Summary: It finds which PR(s) conflict with a skipped PR in a BonsaiPR build (as
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
+- `{{IFCOPENSHELL_REPO}}` → `C:\IfcOpenShell`
 - `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260521-cf24a40 [desc]`
 - `{{TARGET_PR}}` → `PR #7798 (ManualDrawingReference)`
 
@@ -9,8 +10,8 @@ Variables (update these, then copy the Prompt section below as-is):
 # Prompt
 
 I'm working with the BonsaiPR build system `{{BONSAI_PR_REPO}}`, which aggregates IfcOpenShell PRs from
-https://github.com/IfcOpenShell/IfcOpenShell into installable builds. The build branch
-is `{{BUILD_BRANCH}}`. The base branch is `v0.8.0`.
+https://github.com/IfcOpenShell/IfcOpenShell into installable builds. The local IfcOpenShell
+clone is at `{{IFCOPENSHELL_REPO}}`. The build branch is `{{BUILD_BRANCH}}`. The base branch is `v0.8.0`.
 
 `{{TARGET_PR}}` is being skipped in the build with:
   "⚠️ Skipped - Conflict with other PRs. Merges cleanly with base"
@@ -98,12 +99,13 @@ Before pushing, determine where `{{TARGET_PR}}`'s head branch actually lives:
 
 ## Step 6 — Execute the fix
 
-Apply the fix on a local branch tracking `{{TARGET_PR}}`'s head. Resolve any conflicts
-that arise during the fix itself, preserving the functional intent of `{{TARGET_PR}}`.
+Working in `{{IFCOPENSHELL_REPO}}`, apply the fix on a local branch tracking `{{TARGET_PR}}`'s
+head. Resolve any conflicts that arise during the fix itself, preserving the functional
+intent of `{{TARGET_PR}}`.
 
 ## Step 7 — Verify with a test merge
 
-Before pushing, verify the fix works:
+Before pushing, verify the fix works in `{{IFCOPENSHELL_REPO}}`:
 
 1. Check out the build state **immediately before `{{TARGET_PR}}` would be attempted**
    (i.e., the merge commit of the last PR processed before `{{TARGET_PR}}` in build order).
