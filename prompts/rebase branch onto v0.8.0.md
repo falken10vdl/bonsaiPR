@@ -77,7 +77,7 @@ Insert one row at the top of the data in `D:\Dropbox\GitHub\bonsaiPR\logs\rebase
 
 | Column | Value |
 |--------|-------|
-| `date` | Today's date (YYYY-MM-DD) |
+| `date` | Current date and time (YYYY-MM-DD HH:MM) |
 | `branch` | `{{BRANCH}}` — link to the GitHub PR if one exists |
 | `base_commit` | Short hash of `{{BASE}}` tip at time of rebase — linked to GitHub commit |
 | `conflict_files` | Comma-separated file paths — each linked to the file at the result commit |

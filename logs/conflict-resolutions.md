@@ -1,5 +1,5 @@
 # Conflict Resolution Log
 
-| Date | Build Branch | Build Order | Target PR | Conflicting PRs | Conflict Files | Key Commit | Fix Strategy | Push Remote | Result Commit | Outcome | Summary |
-|------|-------------|-------------|-----------|-----------------|----------------|------------|--------------|-------------|---------------|---------|---------|
+| Date / Time | Build Branch | Build Order | Target PR | Conflicting PRs | Conflict Files | Key Commit | Fix Strategy | Push Remote | Result Commit | Outcome | Summary |
+|-------------|-------------|-------------|-----------|-----------------|----------------|------------|--------------|-------------|---------------|---------|---------|
 | 2026-05-07 | [v0.8.6-alpha260507-2dcf753](https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2605071648) | descending | [#7802](https://github.com/IfcOpenShell/IfcOpenShell/pull/7802) | [#7924](https://github.com/IfcOpenShell/IfcOpenShell/pull/7924) | [`src/bonsai/bonsai/core/root.py`](https://github.com/IfcOpenShell/IfcOpenShell/blob/bcb94d79bd/src/bonsai/bonsai/core/root.py) | [aa3e38aca8](https://github.com/IfcOpenShell/IfcOpenShell/commit/aa3e38aca8) | ancestry-merge | origin | [bcb94d79bd](https://github.com/IfcOpenShell/IfcOpenShell/commit/bcb94d79bd) | fixed | [PR #7802 vs #7924](summaries/2026-05-07-PR-7802.md) |

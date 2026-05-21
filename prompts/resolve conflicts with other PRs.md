@@ -132,7 +132,7 @@ Insert one row at the top of the data in `{{BONSAI_PR_REPO}}/logs/conflict-resol
 
 | Column | Value |
 |--------|-------|
-| `date` | Today's date (YYYY-MM-DD) |
+| `date` | Current date and time (YYYY-MM-DD HH:MM) |
 | `build_branch` | `{{BUILD_BRANCH}}` — link to the GitHub release |
 | `build_order` | ascending / descending / by-updated |
 | `target_pr` | PR number — link to the GitHub PR |
