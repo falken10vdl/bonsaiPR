@@ -289,6 +289,7 @@ def main():
 
             # Get the PRs that were skipped in the first build
             skipped_prs_first_build = get_skipped_conflict_prs(report_path)
+            newly_merged_prs = set()
             logging.info(
                 f"📋 First build had {len(skipped_prs_first_build)} PR(s) skipped due to conflicts: {sorted(skipped_prs_first_build)}"
             )
