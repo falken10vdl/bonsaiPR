@@ -4,7 +4,7 @@ Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 - `{{IFCOPENSHELL_REPO}}` → `C:\IfcOpenShell`
 - `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260522-346f424 [desc]`
-- `{{TARGET_PR}}` → `PR #7941 (bug_extend_walls_to_underside)`
+- `{{TARGET_PR}}` → `PR #7965 (inset_section_endpoints)`
 
 
 
@@ -130,7 +130,7 @@ Insert one row at the top of the data in `{{BONSAI_PR_REPO}}/logs/conflict-resol
 | `date` | Current date and time (YYYY-MM-DD HH:MM:SS) |
 | `build_branch` | `{{BUILD_BRANCH}}` — link to the GitHub release |
 | `build_order` | ascending / descending / by-updated |
-| `target_pr` | PR number — link to the GitHub PR |
+| `target_pr` | PR number — link to the GitHub PR; branch name |
 | `conflicting_prs` | Comma-separated PR numbers — each linked to its GitHub PR |
 | `conflict_files` | Comma-separated file paths — each linked to the file at the result commit |
 | `key_commit` | Short commit hash — linked to the GitHub commit |
