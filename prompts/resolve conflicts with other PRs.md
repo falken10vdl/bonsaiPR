@@ -131,7 +131,7 @@ Insert one row at the top of the data in `{{BONSAI_PR_REPO}}/logs/conflict-resol
 | `build_branch` | `{{BUILD_BRANCH}}` — link to the GitHub release |
 | `build_order` | ascending / descending / by-updated |
 | `target_pr` | PR number — link to the GitHub PR; branch name |
-| `conflicting_prs` | Comma-separated PR numbers — each linked to its GitHub PR |
+| `conflicting_prs` | Comma-separated PR numbers — each linked to its GitHub PR; branch name |
 | `conflict_files` | Comma-separated file paths — each linked to the file at the result commit |
 | `key_commit` | Short commit hash — linked to the GitHub commit |
 | `fix_strategy` | `ancestry-merge` / `rebase` / `none` (companion release had it) |
