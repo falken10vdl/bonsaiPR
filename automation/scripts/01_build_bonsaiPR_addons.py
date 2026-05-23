@@ -393,8 +393,15 @@ def fix_ifctester_setuptools():
 
     Python 3.12+ no longer includes setuptools in new venvs, so
     'setuptools.build_meta' is unavailable unless explicitly installed.
-    py311 works because --system-site-packages picks it up from the system
-    python3.11 installation; py313 lacks it and fails with:
+    The webapp wheel stage also needs the 'wheel' package available in the
+    venv before running 'python -m build --wheel --no-isolation'.
+    Without that, builds fail with:
+        ERROR Missing dependencies:
+            wheel
+    Older py311 runs and newer py313 runs can differ depending on what is
+    already present in the environment, so install both explicitly.
+
+    py313 originally failed with:
         ERROR Backend 'setuptools.build_meta' is not available.
     """
     makefile_path = os.path.join(BUILD_BASE_DIR, 'src', 'ifctester', 'Makefile')
@@ -408,20 +415,59 @@ def fix_ifctester_setuptools():
             content = f.read()
 
         old_cmd = 'python -m pip install build && python -m build --wheel --no-isolation'
-        new_cmd = 'python -m pip install build setuptools && python -m build --wheel --no-isolation'
+        setuptools_only_cmd = 'python -m pip install build setuptools && python -m build --wheel --no-isolation'
+        new_cmd = 'python -m pip install build setuptools wheel && python -m build --wheel --no-isolation'
 
         if old_cmd in content:
             content = content.replace(old_cmd, new_cmd)
             with open(makefile_path, 'w', encoding='utf-8') as f:
                 f.write(content)
-            log_message("ifctester Makefile fix applied: added setuptools to pip install in webapp-stage-ifctester-wheel")
+            log_message("ifctester Makefile fix applied: added setuptools and wheel to pip install in webapp-stage-ifctester-wheel")
+        elif setuptools_only_cmd in content:
+            content = content.replace(setuptools_only_cmd, new_cmd)
+            with open(makefile_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            log_message("ifctester Makefile fix updated: added wheel to existing setuptools patch in webapp-stage-ifctester-wheel")
         elif new_cmd in content:
-            log_message("ifctester Makefile already has setuptools in pip install - no fix needed")
+            log_message("ifctester Makefile already has setuptools and wheel in pip install - no fix needed")
         else:
             log_message("ifctester Makefile: expected pip install pattern not found - manual check needed", "WARNING")
 
     except Exception as e:
         log_message(f"Error fixing ifctester Makefile setuptools: {e}", "ERROR")
+
+def fix_platform_specific_dependency_downloads():
+    """Fix BonsaiPR Makefile dependency downloads that leak host Linux wheels.
+
+    Some downloads run on a Linux host without target platform flags, so pip can
+    resolve transitive binary wheels for Linux even when we are packaging macOS
+    or Windows builds. deepdiff is one such case via cachebox.
+    """
+    makefile_path = os.path.join(BUILD_BASE_DIR, 'src', 'bonsaiPR', 'Makefile')
+
+    if not os.path.exists(makefile_path):
+        log_message(f"BonsaiPR Makefile not found at: {makefile_path}", "WARNING")
+        return
+
+    try:
+        with open(makefile_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        old_cmd = 'cd build && . env/$(VENV_ACTIVATE) && $(PIP) download deepdiff --dest=./wheels'
+        new_cmd = 'cd build && . env/$(VENV_ACTIVATE) && $(PIP) download deepdiff $(PYPI_PLATFORM) --python-version $(PYPI_VERSION) --implementation $(PYPI_IMP) --only-binary=:all: --dest=./wheels'
+
+        if old_cmd in content:
+            content = content.replace(old_cmd, new_cmd)
+            with open(makefile_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            log_message("BonsaiPR Makefile fix applied: made deepdiff download platform-aware to avoid host Linux wheels in non-Linux builds")
+        elif new_cmd in content:
+            log_message("BonsaiPR Makefile already has a platform-aware deepdiff download - no fix needed")
+        else:
+            log_message("BonsaiPR Makefile: expected deepdiff download pattern not found - manual check needed", "WARNING")
+
+    except Exception as e:
+        log_message(f"Error fixing platform-specific dependency downloads: {e}", "ERROR")
 
 def clean_old_bonsai_files():
     """Clean up any leftover 'bonsai_' files from previous builds in the dist directory"""
@@ -702,6 +748,9 @@ def test_makefile_fixes_only():
 
         # Step 5: Fix ifctester Makefile for Python 3.12+ (missing setuptools in venv)
         fix_ifctester_setuptools()
+
+        # Step 6: Fix host-platform leakage for non-Linux dependency downloads
+        fix_platform_specific_dependency_downloads()
         
         log_message("Test mode completed successfully - Makefile fixes applied")
         
@@ -783,6 +832,9 @@ def main():
 
         # Step 2.7: Fix ifctester Makefile for Python 3.12+ (missing setuptools in venv)
         fix_ifctester_setuptools()
+
+        # Step 2.8: Fix host-platform leakage for non-Linux dependency downloads
+        fix_platform_specific_dependency_downloads()
 
         # Step 3: Build addons for specified platforms
         build_ok = build_addons(target_platforms)
