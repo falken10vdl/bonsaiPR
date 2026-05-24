@@ -530,6 +530,13 @@ def build_addons(target_platforms=None):
         },
     ]
 
+    # Lock in the build date NOW so all make invocations (even those crossing
+    # midnight) stamp the same VERSION_DATE into blender_manifest.toml, keeping
+    # it consistent with the date portion that update_index_json extracts from
+    # the asset filename's 10-digit timestamp (first 6 digits = YYMMDD).
+    build_version_date = datetime.now().strftime('%y%m%d')
+    log_message(f"Locked build VERSION_DATE to: {build_version_date}")
+
     # Change to the bonsaiPR directory and run make for each platform
     original_cwd = os.getcwd()
     successful_builds = 0
@@ -555,8 +562,11 @@ def build_addons(target_platforms=None):
             for platform in platforms:
                 log_message(f"Building addon for platform: {platform} ({pyversion})")
 
-                # Run make dist with platform, pyversion, and optional python binary overrides
-                make_cmd = ['make', 'dist', f'PLATFORM={platform}', f'PYVERSION={pyversion}'] + py_config['extra_make_vars']
+                # Run make dist with platform, pyversion, and optional python binary overrides.
+                # Pass VERSION_DATE explicitly so the zip's blender_manifest.toml is stamped
+                # with the same date used in the asset filename (prevents midnight-crossing
+                # version mismatches like "remote: 0.8.6-alpha260523, archive: 0.8.6-alpha260524").
+                make_cmd = ['make', 'dist', f'PLATFORM={platform}', f'PYVERSION={pyversion}', f'VERSION_DATE={build_version_date}'] + py_config['extra_make_vars']
                 log_message(f"Running command: {' '.join(make_cmd)}")
 
                 try:
