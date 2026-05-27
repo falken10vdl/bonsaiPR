@@ -3,8 +3,8 @@
 Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 - `{{IFCOPENSHELL_REPO}}` → `C:\IfcOpenShell`
-- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260522-346f424 [desc]`
-- `{{TARGET_PR}}` → `PR #7965 (inset_section_endpoints)`
+- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260525-e1608ab [desc]`
+- `{{TARGET_PR}}` → `PR #7798 (ManualDrawingReference)`
 
 
 

@@ -363,7 +363,7 @@ def apply_prs_to_branch(branch_name, prs):
         os.chdir(original_dir)
 
 
-def test_failed_prs_individually(failed_prs):
+def test_failed_prs_individually(failed_prs, failure_tracking=None):
     """Test each failed PR by merging it alone against base.
     Returns:
         pr_test_results  : dict pr_number -> True/False/None
@@ -451,7 +451,13 @@ def test_failed_prs_individually(failed_prs):
                         for f in conflict_result.stdout.strip().split("\n")
                         if f.strip()
                     ]
-                    breaking_hints = find_breaking_commit_hints(conflicting_files)
+                    since_commit = None
+                    if failure_tracking:
+                        entry = failure_tracking.get(str(pr_number), {})
+                        since_commit = entry.get("base_commit") or None
+                    breaking_hints = find_breaking_commit_hints(
+                        conflicting_files, since_commit=since_commit
+                    )
                     pr_conflict_data[pr_number] = {
                         "files": conflicting_files,
                         "breaking_commits": breaking_hints,
@@ -730,10 +736,18 @@ def update_failure_tracking(
     return updated
 
 
-def find_breaking_commit_hints(conflicting_files, max_commits=5):
-    """Return recent upstream commits that touched the conflicting files."""
+def find_breaking_commit_hints(conflicting_files, max_commits=5, since_commit=None):
+    """Return upstream commits that touched the conflicting files.
+
+    If since_commit is provided (the base branch HEAD at first-detected failure),
+    the search is anchored to that revision so we don't return commits that landed
+    after the PR was already broken.
+    """
     if not conflicting_files:
         return []
+    # Anchor to the commit where the PR first broke, so later unrelated commits
+    # on the base branch don't pollute the results.
+    revision = since_commit if since_commit else SOURCE_BASE_BRANCH
     seen = {}
     try:
         for file_path in conflicting_files[:5]:  # cap at 5 files for speed
@@ -744,7 +758,7 @@ def find_breaking_commit_hints(conflicting_files, max_commits=5):
                     "--format=%h %s (%ad, %an)",
                     "--date=short",
                     f"-{max_commits}",
-                    SOURCE_BASE_BRANCH,
+                    revision,
                     "--",
                     file_path,
                 ],
@@ -903,17 +917,13 @@ def generate_report(
                         )
                     else:
                         f.write(f"  - Base commit at first detection: {base_commit}\n")
-                # Conflicting files and breaking-commit hints (only for base-conflict PRs)
+                # Broken-by and conflicting-files detail (only for base-conflict PRs)
                 conflict_info = pr_conflict_data.get(pr_number, {})
                 conflicting_files = conflict_info.get("files", [])
                 breaking_commits = conflict_info.get("breaking_commits", [])
-                if conflicting_files:
-                    f.write(f"  - Conflicting files:\n")
-                    for cf in conflicting_files:
-                        file_url = f"https://github.com/{upstream_repo}/blob/{SOURCE_BASE_BRANCH}/{cf}"
-                        f.write(f"    - [{cf}]({file_url})\n")
-                if breaking_commits:
-                    f.write(f"  - Possible breaking commits:\n")
+                test_result = failed_pr_test_results.get(pr_number) if isinstance(failed_pr_test_results, dict) else None
+                if breaking_commits and test_result is False:
+                    f.write(f"  - Broken by:\n")
                     for bc in breaking_commits:
                         parts = bc.split(None, 1)
                         if len(parts) == 2:
@@ -924,6 +934,11 @@ def generate_report(
                             )
                         else:
                             f.write(f"    - `{bc}`\n")
+                if conflicting_files:
+                    f.write(f"  - Conflicting files:\n")
+                    for cf in conflicting_files:
+                        file_url = f"https://github.com/{upstream_repo}/blob/{SOURCE_BASE_BRANCH}/{cf}"
+                        f.write(f"    - [{cf}]({file_url})\n")
                 f.write("\n")
         if skipped_prs:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped_prs)})\n\n")
@@ -1086,7 +1101,7 @@ def main():
     print(f"[VERIFICATION] Current branch after merge: {result.stdout.strip()}")
     os.chdir(os.path.dirname(__file__))
     # Test failed PRs individually; also get conflicting-file / breaking-commit hints
-    failed_pr_test_results, pr_conflict_data = test_failed_prs_individually(failed)
+    failed_pr_test_results, pr_conflict_data = test_failed_prs_individually(failed, failure_tracking=failure_tracking)
     # Update and persist failure tracking
     currently_failing = {
         pr["number"]
