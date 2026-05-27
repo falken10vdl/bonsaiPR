@@ -741,7 +741,8 @@ def find_breaking_commit_hints(conflicting_files, max_commits=5):
                 [
                     "git",
                     "log",
-                    "--oneline",
+                    "--format=%h %s (%ad, %an)",
+                    "--date=short",
                     f"-{max_commits}",
                     SOURCE_BASE_BRANCH,
                     "--",
