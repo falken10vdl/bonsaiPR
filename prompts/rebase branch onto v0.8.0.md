@@ -3,7 +3,7 @@ understanding what each side changed relative to the merge-base, then logs the r
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{REPO}}` → `c:\IfcOpenShell`
-- `{{BRANCH}}` → `general-mirroring`
+- `{{BRANCH}}` → `regenerate_wall_to_underside`
 - `{{BASE}}` → `v0.8.0`
 
 
@@ -13,9 +13,24 @@ I need to rebase `{{BRANCH}}` onto the latest `{{BASE}}` in the repo at `{{REPO}
 
 Please work through the following steps:
 
-## Step 1 — Fetch and inspect divergence
+## Step 1 — Fetch, update the local base ref, and inspect divergence
 
-From `{{REPO}}`, fetch the latest `{{BASE}}` and identify:
+From `{{REPO}}`, fetch the latest `{{BASE}}`:
+```
+git fetch origin {{BASE}}
+```
+
+**Important:** `git fetch` only moves `origin/{{BASE}}` — it does NOT update your local
+`{{BASE}}` branch ref, and `git rebase {{BASE}}` (Step 3) rebases onto the *local* ref.
+Before doing anything else, fast-forward the local ref so you don't rebase onto a stale
+base. Since you are not on `{{BASE}}`, update it in place:
+```
+git branch -f {{BASE}} origin/{{BASE}}
+```
+Confirm `git rev-parse {{BASE}}` now equals `git rev-parse origin/{{BASE}}`.
+(Alternatively, rebase onto `origin/{{BASE}}` directly in Step 3.)
+
+Then identify, against the now-current `{{BASE}}`:
 - How many commits `{{BRANCH}}` is ahead of its current merge-base with `{{BASE}}`
 - Which files are touched by commits on `{{BRANCH}}` that are also touched by commits
   that landed in `{{BASE}}` since the current merge-base
@@ -25,7 +40,13 @@ List any overlap files explicitly — these are candidates for conflicts.
 ## Step 2 — Stash uncommitted changes
 
 If there are uncommitted changes in tracked files, stash them with a descriptive message
-before starting the rebase. Note the stash ref so it can be restored afterward.
+before starting the rebase.
+
+**Important:** other, unrelated stashes may already exist (possibly from other branches).
+Do not assume your stash is `stash@{0}`. Run `git stash list` first, then after
+`git stash push` capture the exact ref it reports (e.g. `stash@{0}` at that moment) or,
+more robustly, record the stash *commit hash* (`git rev-parse stash@{0}`) so you can pop
+exactly that stash in Step 5 and never touch a pre-existing one.
 
 ## Step 3 — Attempt the rebase
 
@@ -54,9 +75,11 @@ what the resolution was, and why.
 
 ## Step 5 — Restore stash (if applicable)
 
-If a stash was created in Step 2, pop it now:
+If a stash was created in Step 2, pop **the specific stash you created** — never a bare
+`git stash pop`, which would pop whatever is at the top of the stack (possibly an unrelated
+pre-existing stash). Apply by the ref/hash you recorded in Step 2:
 ```
-git stash pop
+git stash pop <recorded-ref-or-hash>
 ```
 
 Confirm no new conflicts with the restored changes.
@@ -68,7 +91,16 @@ Run:
 git log --oneline {{BASE}}..HEAD
 ```
 
-Confirm all expected commits are present and the branch tip is clean.
+Confirm all expected commits are present and the branch tip is clean. As a sanity check
+beyond git state, run a quick syntax/build check on the resolved files (e.g.
+`python -m py_compile <file>` for Python) — valid git state does not guarantee a valid
+resolution.
+
+> **Note on the PR link (used in Steps 7 & 8):** a commit message like `Closes #N` references
+> an *issue*, not necessarily the PR — don't assume `#N` is the PR number. Find the real PR
+> by its head branch (`{{BRANCH}}`); e.g. `gh pr list --head {{BRANCH}} --state all`, or open
+> the issue and follow its linked PR. If no PR exists, link the branch tree instead
+> (`https://github.com/IfcOpenShell/IfcOpenShell/tree/{{BRANCH}}`).
 
 ## Step 7 — Append to rebase log
 
@@ -104,3 +136,12 @@ The document should cover:
 
 Then add a `Summary` column entry to the log row added in Step 7, linking to this file
 using a relative path (e.g., `[{{BRANCH}}](summaries/YYYY-MM-DD-rebase-{{BRANCH}}.md)`).
+
+## Step 9 — Publish the rebased branch (only if asked)
+
+A rebase rewrites history, so `{{BRANCH}}` will have diverged from
+`origin/{{BRANCH}}` and updating the remote requires a force-push. Do **not** push
+automatically — confirm first, then use a lease to avoid clobbering remote work:
+```
+git push --force-with-lease origin {{BRANCH}}
+```
