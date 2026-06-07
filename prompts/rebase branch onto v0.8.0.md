@@ -3,8 +3,9 @@ understanding what each side changed relative to the merge-base, then logs the r
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{REPO}}` → `c:\IfcOpenShell`
-- `{{BRANCH}}` → `regenerate_wall_to_underside`
+- `{{BRANCH}}` → `parametric_dimensions`
 - `{{BASE}}` → `v0.8.0`
+- `{{LOG_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 
 
 # Prompt
@@ -55,6 +56,10 @@ Run:
 git rebase {{BASE}}
 ```
 
+> **Note:** `warning: skipped previously applied commit` messages are expected — they mean
+> those commits were already present in `{{BASE}}` (e.g. cherry-picks) and are dropped
+> automatically. This is normal and not a failure.
+
 If it completes cleanly, skip to Step 5.
 
 ## Step 4 — Resolve each conflict
@@ -92,19 +97,20 @@ git log --oneline {{BASE}}..HEAD
 ```
 
 Confirm all expected commits are present and the branch tip is clean. As a sanity check
-beyond git state, run a quick syntax/build check on the resolved files (e.g.
-`python -m py_compile <file>` for Python) — valid git state does not guarantee a valid
-resolution.
+beyond git state, run `python -m py_compile` on every file that appeared in the overlap
+list from Step 1 (files touched on both sides) — those are the only ones where a bad
+resolution could silently produce invalid syntax. Valid git state does not guarantee a
+valid resolution.
 
 > **Note on the PR link (used in Steps 7 & 8):** a commit message like `Closes #N` references
 > an *issue*, not necessarily the PR — don't assume `#N` is the PR number. Find the real PR
 > by its head branch (`{{BRANCH}}`); e.g. `gh pr list --head {{BRANCH}} --state all`, or open
-> the issue and follow its linked PR. If no PR exists, link the branch tree instead
-> (`https://github.com/IfcOpenShell/IfcOpenShell/tree/{{BRANCH}}`).
+> the issue and follow its linked PR. If `gh` is not available or no PR exists, link the
+> branch tree instead (`https://github.com/IfcOpenShell/IfcOpenShell/tree/{{BRANCH}}`).
 
 ## Step 7 — Append to rebase log
 
-Insert one row at the top of the data in `D:\Dropbox\GitHub\bonsaiPR\logs\rebase-resolutions.md`
+Insert one row at the top of the data in `{{LOG_REPO}}\logs\rebase-resolutions.md`
 (immediately after the header and separator rows — newest entries go first):
 
 | Column | Value |
@@ -112,8 +118,8 @@ Insert one row at the top of the data in `D:\Dropbox\GitHub\bonsaiPR\logs\rebase
 | `date` | Current date and time (YYYY-MM-DD HH:MM:SS) |
 | `branch` | `{{BRANCH}}` — link to the GitHub PR if one exists |
 | `base_commit` | Short hash of `{{BASE}}` tip at time of rebase — linked to GitHub commit |
-| `conflict_files` | Comma-separated file paths — each linked to the file at the result commit |
-| `key_v0.8.0_commit` | Short hash of the `{{BASE}}` commit that caused the conflict — linked to GitHub |
+| `conflict_files` | Comma-separated file paths — each linked to the file at the result commit; `none` if clean |
+| `key_v0.8.0_commit` | Short hash of the `{{BASE}}` commit that caused the conflict — linked to GitHub; `none` if clean |
 | `fix_summary` | One sentence describing how each conflict was resolved |
 | `result_commit` | Short hash of new branch tip — linked to GitHub commit |
 | `outcome` | `clean` / `conflicts-resolved` / `failed` |
@@ -121,7 +127,7 @@ Insert one row at the top of the data in `D:\Dropbox\GitHub\bonsaiPR\logs\rebase
 ## Step 8 — Write a summary document
 
 Write a detailed markdown summary to:
-`D:\Dropbox\GitHub\bonsaiPR\logs\summaries\YYYY-MM-DD-rebase-{{BRANCH}}.md`
+`{{LOG_REPO}}\logs\summaries\YYYY-MM-DD-rebase-{{BRANCH}}.md`
 
 The document header must include a **Branch** line that hyperlinks `{{BRANCH}}` to its
 GitHub PR (if one exists) or to the branch on GitHub
@@ -144,4 +150,17 @@ A rebase rewrites history, so `{{BRANCH}}` will have diverged from
 automatically — confirm first, then use a lease to avoid clobbering remote work:
 ```
 git push --force-with-lease origin {{BRANCH}}
+```
+
+## Step 10 — Commit and push the bonsaiPR log (only if asked)
+
+Stage the updated log and new summary file in `{{LOG_REPO}}`, commit, then
+pull-rebase before pushing (the remote may have diverged if another machine pushed since
+your last sync):
+```
+cd {{LOG_REPO}}
+git add logs/rebase-resolutions.md logs/summaries/YYYY-MM-DD-rebase-{{BRANCH}}.md
+git commit -m "Add rebase log entry and summary for {{BRANCH}} onto {{BASE}}"
+git pull --rebase origin main
+git push origin main
 ```
