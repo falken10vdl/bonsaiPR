@@ -3,8 +3,8 @@
 Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 - `{{IFCOPENSHELL_REPO}}` → `C:\IfcOpenShell`
-- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260525-e1608ab [desc]`
-- `{{TARGET_PR}}` → `PR #7798 (ManualDrawingReference)`
+- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260608-c65433c [asc]`
+- `{{TARGET_PR}}` → `PR #8083 (parametric_dimensions)`
 
 
 
@@ -36,6 +36,13 @@ whether any PRs already tagged "Skipped - Conflict with other PRs" conflict with
 Determine the **exact commit** from the conflicting PR that introduces the conflict — not
 just which PR, but which specific commit hash and what it changed.
 
+> **Also check whether the build already contains an old copy of `{{TARGET_PR}}` itself.**
+> This happens when the branch was previously fixed via ancestry-merge in an earlier build,
+> and has since been rebased (all hashes changed). Search `git log <build-branch>` for the
+> branch name or PR number in merge commit messages (e.g. `git log --oneline <build-branch>
+> | grep -i "8083\|parametric_dimensions"`). If found, the "conflicting commit" is that old
+> tip of `{{TARGET_PR}}` in the build — not a separate PR.
+
 ## Step 3 — Understand the nature of each conflict
 
 For each conflicting PR: is one a subset of the other? Do they solve the same problem
@@ -53,6 +60,14 @@ independently? Are they in the same region of a file or just the same file?
 > the correct position for an insertion may already be established by the first resolution,
 > and the fix is to make the lower-priority PR match it.
 
+> **Rebase-induced false conflict:** If `{{TARGET_PR}}` was previously in the build (found
+> in Step 2 above) and the branch was later rebased, ALL of `{{TARGET_PR}}`'s code will
+> conflict with the build's old copy — because git's LCA reverted to the base when the
+> hashes changed. The signal: every conflict region is in code that *only* `{{TARGET_PR}}`
+> adds, and the build simply has a slightly older version of it. No other PR touched those
+> regions. The fix is always **Option A with `-s ours`** (see below) — no content resolution
+> needed.
+
 ## Step 4 — Determine the correct fix strategy
 
 There are two fundamentally different tools. Choose based on whether `{{TARGET_PR}}`'s
@@ -69,12 +84,24 @@ ancestor. The build's LCA (merge-base) shifts from the old common ancestor to th
 so git's 3-way merge no longer sees a contest — only `{{TARGET_PR}}` makes further changes
 above that point.
 
+**Choose between plain merge and `-s ours`:**
+
+- **`git merge <commit>`** — use when the conflicting commit's content is genuinely absent
+  from `{{TARGET_PR}}` and needs to be incorporated. Git performs a normal 3-way merge;
+  resolve any conflicts that arise.
+
+- **`git merge -s ours <commit>`** — use when `{{TARGET_PR}}`'s files *already reflect*
+  the conflicting commit's intent (e.g. the branch was previously in the build under
+  different hashes due to a rebase). This records the commit as a git ancestor without
+  touching any file content — a pure LCA shift with zero merge conflicts.
+
 Think through:
 - After the conflicting PR is merged into the build, what is the LCA between the build tip
   and `{{TARGET_PR}}`'s branch?
 - What would the LCA be if the conflicting commit were an ancestor of `{{TARGET_PR}}`?
 - Does shifting the LCA eliminate the conflict without requiring any code changes in
   `{{TARGET_PR}}`?
+- Is the conflicting commit's content already present in `{{TARGET_PR}}`? If yes → `-s ours`.
 
 ### Option B — `git rebase` (content fix)
 
