@@ -157,6 +157,23 @@ automatically — confirm first, then use a lease to avoid clobbering remote wor
 git push --force-with-lease origin {{BRANCH}}
 ```
 
+> **Warning — prior build conflict fixes are invalidated by a rebase.**
+> The rebase changes all commit hashes, so git no longer recognizes old commits as
+> ancestors. Any previously established ancestry-merge fixes in the build (commits like
+> `git merge -s ours <old-tip>`) relied on those hashes — after the rebase, the effective
+> git LCA between the build and the rebased branch reverts to the base (`{{BASE}}`), and
+> all previously resolved conflicts re-emerge.
+>
+> After pushing, check `{{LOG_REPO}}/logs/conflict-resolutions.md` for any rows where
+> `{{BRANCH}}` appears as the target or conflicting PR with `fix_strategy = ancestry-merge`.
+> If any exist, re-apply the fix on the rebased branch:
+> ```
+> git merge -s ours <key_commit-from-log-row>
+> git push --force-with-lease origin {{BRANCH}}
+> ```
+> Then re-run the conflict resolution prompt for the affected build branch to verify and
+> log the re-applied fix.
+
 ## Step 10 — Commit and push the bonsaiPR log (only if asked)
 
 Stage the updated log and new summary file in `{{LOG_REPO}}`, commit, then
