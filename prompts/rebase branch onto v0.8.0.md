@@ -78,6 +78,11 @@ For every conflict that arises:
 Document each conflict: which file, which commit from `{{BASE}}` introduced the change,
 what the resolution was, and why.
 
+> **Watch for intra-branch supersession:** A later commit in `{{BRANCH}}` may undo or
+> simplify a choice you made resolving an earlier conflict. If commit N added something
+> and conflict M (a later commit) removes it, follow the later commit's intent — don't
+> carry forward work the branch itself subsequently deleted.
+
 ## Step 5 — Restore stash (if applicable)
 
 If a stash was created in Step 2, pop **the specific stash you created** — never a bare

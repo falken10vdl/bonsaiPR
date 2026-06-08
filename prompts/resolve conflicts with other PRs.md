@@ -41,6 +41,18 @@ just which PR, but which specific commit hash and what it changed.
 For each conflicting PR: is one a subset of the other? Do they solve the same problem
 independently? Are they in the same region of a file or just the same file?
 
+> **IFC pset file ID collision:** If both PRs add new entities to a `.ifc` pset file
+> (e.g. `Psets_BBIM_Annotation.ifc`) and both start numbering from the same ID (e.g. both
+> add `#34`), keep the higher-priority PR's IDs unchanged and renumber the lower-priority
+> PR's entities sequentially after the last used ID. Update any back-references (e.g. the
+> header property list `(…,#34,#35)`) to match the new IDs.
+
+> **Cascading conflicts from prior resolutions:** The conflict may not be between the
+> original PR content but between two independent *resolutions* of the same earlier
+> conflict. If a file appears in prior resolution summaries, check those summaries first —
+> the correct position for an insertion may already be established by the first resolution,
+> and the fix is to make the lower-priority PR match it.
+
 ## Step 4 — Determine the correct fix strategy
 
 There are two fundamentally different tools. Choose based on whether `{{TARGET_PR}}`'s
@@ -79,10 +91,25 @@ Rebase replays `{{TARGET_PR}}`'s commits on top of the conflicting PR's branch, 
 update the code at each step. The result is a linear history where `{{TARGET_PR}}` is
 explicitly built on top of the other PR.
 
+### Option C — Content fix (new commit)
+
+Use this when neither ancestry-merge nor rebase is right — specifically when two PRs
+independently resolved the same earlier conflict but chose different code orderings, and
+now conflict with each other over position rather than content.
+
+Neither PR's content is wrong; they're just inconsistent. The fix is a new commit on the
+lower-priority PR that repositions its additions to match the ordering the higher-priority
+PR's resolution already established. After the fix, both sides make the same change at the
+same position relative to their LCA → clean auto-merge.
+
+> **Signal:** The conflict is in a file that already has prior resolution summaries, and
+> the conflict markers show functionally identical code in different relative positions.
+
 ### Decision rule
 
 > Does `{{TARGET_PR}}`'s content need to change, or does only its ancestry need to change?
-> Content must change → **rebase**. Only ancestry → **merge the specific commit**.
+> Content must change → **rebase** (or **content-fix** if the change is only positional).
+> Only ancestry → **merge the specific commit**.
 
 State which option applies and why before executing.
 
