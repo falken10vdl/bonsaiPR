@@ -4,7 +4,7 @@ Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 - `{{IFCOPENSHELL_REPO}}` → `C:\IfcOpenShell`
 - `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260608-c65433c [asc]`
-- `{{TARGET_PR}}` → `PR #8083 (parametric_dimensions)`
+- `{{TARGET_PR}}` → `PR #7802 (duplicate_opening_on_type_duplication):`
 
 
 
@@ -90,10 +90,23 @@ above that point.
   from `{{TARGET_PR}}` and needs to be incorporated. Git performs a normal 3-way merge;
   resolve any conflicts that arise.
 
-- **`git merge -s ours <commit>`** — use when `{{TARGET_PR}}`'s files *already reflect*
-  the conflicting commit's intent (e.g. the branch was previously in the build under
-  different hashes due to a rebase). This records the commit as a git ancestor without
-  touching any file content — a pure LCA shift with zero merge conflicts.
+- **`git merge -s ours <commit>`** — use when shifting the LCA to the target commit will
+  cause all conflict regions to auto-resolve without touching any file content. This works
+  in two distinct situations:
+  - `{{TARGET_PR}}`'s files *already reflect* the conflicting commit's intent (e.g. the
+    branch was previously in the build under different hashes due to a rebase), OR
+  - The build made **no further changes to the conflicting regions** after the target commit
+    (so only `{{TARGET_PR}}`'s changes are visible from the new LCA → git auto-takes
+    `{{TARGET_PR}}`'s version with no conflict, even if the content differs from the
+    target commit's).
+
+  **Before executing, verify for each conflict file** that the build made no overlapping
+  changes above the new LCA:
+  ```
+  git diff <target-commit>..<build-tip> -- <conflict-file>
+  ```
+  If the build DID change the conflicting region above the target commit, `-s ours` alone
+  won't resolve that file — combine with a content-fix commit or use a different approach.
 
 Think through:
 - After the conflicting PR is merged into the build, what is the LCA between the build tip
@@ -101,7 +114,9 @@ Think through:
 - What would the LCA be if the conflicting commit were an ancestor of `{{TARGET_PR}}`?
 - Does shifting the LCA eliminate the conflict without requiring any code changes in
   `{{TARGET_PR}}`?
-- Is the conflicting commit's content already present in `{{TARGET_PR}}`? If yes → `-s ours`.
+- For each conflict file: does the build change the conflicting region between the target
+  commit and the build tip? (`git diff <target-commit>..<build-tip> -- <file>`) If not →
+  `-s ours` will auto-resolve it. If yes → content fix also needed.
 
 ### Option B — `git rebase` (content fix)
 
