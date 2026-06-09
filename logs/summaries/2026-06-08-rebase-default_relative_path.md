@@ -1,12 +1,12 @@
 # Rebase Summary — `default_relative_path` onto `v0.8.0`
 
-**Branch:** [`default_relative_path`](https://github.com/IfcOpenShell/IfcOpenShell/tree/default_relative_path)
+**Branch:** [`default_relative_path`](https://github.com/IfcOpenShell/IfcOpenShell/pull/7795) (PR [#7795](https://github.com/IfcOpenShell/IfcOpenShell/pull/7795))
 **Date:** 2026-06-08 20:17:54
 **Base (`v0.8.0`) tip at rebase:** [`93c6350e0f`](https://github.com/IfcOpenShell/IfcOpenShell/commit/93c6350e0f)
 **New branch tip:** [`6b9dbebccc`](https://github.com/IfcOpenShell/IfcOpenShell/commit/6b9dbebccc)
 **Outcome:** conflicts-resolved (1 file)
 
-> No GitHub PR found for this branch (`gh` CLI unavailable locally); the branch link points to the branch tree. Issue [#7765](https://github.com/IfcOpenShell/IfcOpenShell/issues/7765) is the tracked issue, not the PR.
+> PR: [#7795](https://github.com/IfcOpenShell/IfcOpenShell/pull/7795). Issue [#7765](https://github.com/IfcOpenShell/IfcOpenShell/issues/7765) is the tracked issue that the PR closes, not the PR itself.
 
 ## Commits on `default_relative_path` not in `v0.8.0`
 
