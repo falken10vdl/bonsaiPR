@@ -3,7 +3,7 @@ understanding what each side changed relative to the merge-base, then logs the r
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{REPO}}` → `c:\IfcOpenShell`
-- `{{BRANCH}}` → `parametric_dimensions`
+- `{{BRANCH}}` → `default_relative_path`
 - `{{BASE}}` → `v0.8.0`
 - `{{LOG_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 
@@ -186,3 +186,14 @@ git commit -m "Add rebase log entry and summary for {{BRANCH}} onto {{BASE}}"
 git pull --rebase origin main
 git push origin main
 ```
+
+## Step 11 — Share the summary link (only after Step 10)
+
+After the log commit is pushed in Step 10, capture the **full** hash of that pushed commit
+(`git rev-parse HEAD` in `{{LOG_REPO}}`) and share a permalink to the summary file pinned to
+that commit, so the link is stable even as `main` advances:
+```
+https://github.com/falken10vdl/bonsaiPR/blob/<full-log-commit-hash>/logs/summaries/YYYY-MM-DD-rebase-{{BRANCH}}.md
+```
+Use the **full 40-char hash** (not the short form) and the `falken10vdl/bonsaiPR` remote — that
+is where the log repo is hosted. Post this link as the final line of the response.
