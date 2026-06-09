@@ -874,18 +874,29 @@ def generate_report(
                 return p["number"]
 
             reverse_sort = merge_order == "descending"
+        # Escape a value for safe inclusion in a markdown table cell.
+        def _cell(value):
+            return str(value).replace("|", "\\|").replace("\n", " ").strip()
+
         if failed_prs:
             f.write(f"## ❌ Failed to Merge PRs ({len(failed_prs)})\n\n")
+            f.write(
+                "| PR | Title | Author | Branch | Last commit | Reason | First detected | Base commit | Broken by | Conflicting files |\n"
+            )
+            f.write(
+                "|----|-------|--------|--------|-------------|--------|----------------|-------------|-----------|--------------------|\n"
+            )
             for pr in sorted(failed_prs, key=_sort_key, reverse=reverse_sort):
                 pr_number = pr["number"]
-                f.write(f"- **PR #{pr_number}**: {pr['title']}\n")
-                f.write(f"  - Author: {pr['user']['login']}\n")
-                f.write(f"  - URL: {pr['html_url']}\n")
-                f.write(f"  - Branch: {pr.get('head', {}).get('ref', 'unknown')}\n")
+                pr_link = f"[#{pr_number}]({pr['html_url']})"
+                author = _cell(pr['user']['login'])
+                branch = _cell(pr.get('head', {}).get('ref', 'unknown'))
                 last_sha = pr.get('head', {}).get('sha', '')
                 if last_sha:
                     last_commit_url = f"https://github.com/{upstream_repo}/commit/{last_sha}"
-                    f.write(f"  - Last commit: [{last_sha[:7]}]({last_commit_url})\n")
+                    last_commit = f"[{last_sha[:7]}]({last_commit_url})"
+                else:
+                    last_commit = ""
                 # Reason derived from individual test merge
                 reason = "Not tested"
                 if (
@@ -899,58 +910,65 @@ def generate_report(
                         reason = "Fails to merge against base (problem with PR itself)"
                     else:
                         reason = "Not tested (missing info)"
-                f.write(f"  - Reason: {reason}\n")
                 # First-detected date and base commit from tracking
+                first_detected = ""
+                base_commit_cell = ""
                 tracking_key = str(pr_number)
                 if tracking_key in failure_tracking:
                     entry = failure_tracking[tracking_key]
-                    f.write(
-                        f"  - First detected failing: {entry.get('first_detected', 'unknown')}\n"
-                    )
+                    first_detected = _cell(entry.get('first_detected', 'unknown'))
                     base_commit = entry.get("base_commit", "unknown")
                     if base_commit and base_commit != "unknown":
                         base_commit_url = (
                             f"https://github.com/{upstream_repo}/commit/{base_commit}"
                         )
-                        f.write(
-                            f"  - Base commit at first detection: [{base_commit}]({base_commit_url})\n"
-                        )
+                        base_commit_cell = f"[{base_commit[:7]}]({base_commit_url})"
                     else:
-                        f.write(f"  - Base commit at first detection: {base_commit}\n")
+                        base_commit_cell = _cell(base_commit)
                 # Broken-by and conflicting-files detail (only for base-conflict PRs)
                 conflict_info = pr_conflict_data.get(pr_number, {})
                 conflicting_files = conflict_info.get("files", [])
                 breaking_commits = conflict_info.get("breaking_commits", [])
                 test_result = failed_pr_test_results.get(pr_number) if isinstance(failed_pr_test_results, dict) else None
+                broken_by_cell = ""
                 if breaking_commits and test_result is False:
-                    f.write(f"  - Broken by:\n")
+                    broken_parts = []
                     for bc in breaking_commits:
                         parts = bc.split(None, 1)
                         if len(parts) == 2:
                             commit_hash, commit_msg = parts
                             commit_url = f"https://github.com/{upstream_repo}/commit/{commit_hash}"
-                            f.write(
-                                f"    - [{commit_hash}]({commit_url}) {commit_msg}\n"
+                            broken_parts.append(
+                                f"[{commit_hash[:7]}]({commit_url}) {_cell(commit_msg)}"
                             )
                         else:
-                            f.write(f"    - `{bc}`\n")
+                            broken_parts.append(f"`{_cell(bc)}`")
+                    broken_by_cell = "<br>".join(broken_parts)
+                conflicting_cell = ""
                 if conflicting_files:
-                    f.write(f"  - Conflicting files:\n")
-                    for cf in conflicting_files:
-                        file_url = f"https://github.com/{upstream_repo}/blob/{SOURCE_BASE_BRANCH}/{cf}"
-                        f.write(f"    - [{cf}]({file_url})\n")
-                f.write("\n")
+                    conflicting_cell = "<br>".join(
+                        f"[{_cell(cf)}](https://github.com/{upstream_repo}/blob/{SOURCE_BASE_BRANCH}/{cf})"
+                        for cf in conflicting_files
+                    )
+                f.write(
+                    f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {last_commit} | "
+                    f"{_cell(reason)} | {first_detected} | {base_commit_cell} | {broken_by_cell} | {conflicting_cell} |\n"
+                )
+            f.write("\n")
         if skipped_prs:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped_prs)})\n\n")
+            f.write("| PR | Title | Author | Branch | Last commit | Reason |\n")
+            f.write("|----|-------|--------|--------|-------------|--------|\n")
             for pr in sorted(skipped_prs, key=_sort_key, reverse=reverse_sort):
-                f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
-                f.write(f"  - Author: {pr['user']['login']}\n")
-                f.write(f"  - URL: {pr['html_url']}\n")
-                f.write(f"  - Branch: {pr.get('head', {}).get('ref', 'unknown')}\n")
+                pr_link = f"[#{pr['number']}]({pr['html_url']})"
+                author = _cell(pr['user']['login'])
+                branch = _cell(pr.get('head', {}).get('ref', 'unknown'))
                 last_sha = pr.get('head', {}).get('sha', '')
                 if last_sha:
                     last_commit_url = f"https://github.com/{upstream_repo}/commit/{last_sha}"
-                    f.write(f"  - Last commit: [{last_sha[:7]}]({last_commit_url})\n")
+                    last_commit = f"[{last_sha[:7]}]({last_commit_url})"
+                else:
+                    last_commit = ""
                 # If there is an individual test merge comment, use it as reason
                 skip_reason = pr.get("skip_reason", None)
                 test_result = pr.get("individual_test_merge", None)
@@ -960,20 +978,29 @@ def generate_report(
                     reason = skip_reason
                 else:
                     reason = "Repository no longer accessible (deleted fork)"
-                f.write(f"  - Reason: {reason}\n\n")
+                f.write(
+                    f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {last_commit} | {_cell(reason)} |\n"
+                )
+            f.write("\n")
         if applied_prs:
             f.write(f"## ✅ Successfully Merged PRs ({len(applied_prs)})\n\n")
+            f.write("| PR | Title | Author | Branch | Created | Last commit |\n")
+            f.write("|----|-------|--------|--------|---------|-------------|\n")
             for pr in sorted(applied_prs, key=_sort_key, reverse=reverse_sort):
-                f.write(f"- **PR #{pr['number']}**: {pr['title']}\n")
-                f.write(f"  - Author: {pr['user']['login']}\n")
-                f.write(f"  - URL: {pr['html_url']}\n")
-                f.write(f"  - Branch: {pr.get('head', {}).get('ref', 'unknown')}\n")
-                f.write(f"  - Created: {pr['created_at'][:10]}\n")
+                pr_link = f"[#{pr['number']}]({pr['html_url']})"
+                author = _cell(pr['user']['login'])
+                branch = _cell(pr.get('head', {}).get('ref', 'unknown'))
+                created = _cell(pr['created_at'][:10])
                 last_sha = pr.get('head', {}).get('sha', '')
                 if last_sha:
                     last_commit_url = f"https://github.com/{upstream_repo}/commit/{last_sha}"
-                    f.write(f"  - Last commit: [{last_sha[:7]}]({last_commit_url})\n")
-                f.write("\n")
+                    last_commit = f"[{last_sha[:7]}]({last_commit_url})"
+                else:
+                    last_commit = ""
+                f.write(
+                    f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {created} | {last_commit} |\n"
+                )
+            f.write("\n")
         f.write(f"## Developer Instructions\n\n")
         f.write(f"To use this branch for development:\n\n")
         f.write(f"```bash\n")
