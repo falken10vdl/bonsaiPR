@@ -966,58 +966,73 @@ def generate_release_body(
 - **Skipped (conflict with other PRs)**: {len(skipped_conflict_prs)}
 - **Failed PRs**: {len(failed_prs)}
 - **Success Rate**: {success_rate:.1f}%
-
-## Failed PRs ({len(failed_prs)})
 """
-        for pr in failed_prs:
-            _num_m = re.match(r"- \*\*PR #(\d+)\*\*", pr["line"])
-            _pr_num = _num_m.group(1) if _num_m else "?"
-            _title_m = re.match(r"- \*\*PR #\d+\*\*:\s*(.+)", pr["line"])
-            _pr_title = _title_m.group(1) if _title_m else pr["line"]
-            _pr_url = pr.get("url") or ""
-            _lc = pr.get("last_commit")
-            _commit_suffix = f" ([{_lc['sha']}]({_lc['url']}))" if _lc else ""
-            release_body += f"- [PR #{_pr_num}]({_pr_url}): {_pr_title}{_commit_suffix}\n"
-            if pr.get("reason"):
-                release_body += f"  - Reason: {pr['reason']}\n"
-            if pr.get("first_detected"):
-                release_body += f"  - First detected failing: {pr['first_detected']}\n"
-            if pr.get("base_commit"):
-                _bc = pr["base_commit"]
-                _bc_url = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{_bc}"
-                release_body += f"  - Base commit at first detection: [{_bc[:7]}]({_bc_url})\n"
-            if pr.get("conflicting_files"):
-                release_body += "  - Conflicting files:\n"
-                for _f in pr["conflicting_files"]:
-                    _fm = re.match(r"\[(.+?)\]\((.+?)\)", _f)
-                    if _fm:
-                        _flabel, _furl = _fm.group(1), _fm.group(2)
-                    else:
-                        _flabel = _f
-                        _furl = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/blob/v0.8.0/{_f}"
-                    release_body += f"    - [{_flabel}]({_furl})\n"
-            if pr.get("breaking_commits"):
-                release_body += "  - Possible breaking commits:\n"
-                for _c in pr["breaking_commits"]:
-                    _cm = re.match(r"\[([0-9a-f]+)\]\((.+?)\)\s*(.*)", _c)
-                    if _cm:
-                        _chash, _curl, _cmsg = _cm.group(1), _cm.group(2), _cm.group(3)
-                        release_body += f"    - [{_chash}]({_curl}) {_cmsg}\n"
-                    else:
-                        release_body += f"    - {_c}\n"
-            release_body += "\n"
 
-        release_body += f"\n## Skipped - Conflict with other PRs. Merges cleanly with base ({len(skipped_conflict_prs)})\n"
-        for pr_dict in skipped_conflict_prs:
-            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch"), pr_dict.get("last_commit")) + "\n"
+        # --- Helpers for rendering PR sections as markdown tables ---
+        def _cell(value):
+            """Escape a value for safe inclusion in a markdown table cell."""
+            return str(value).replace("|", "\\|").replace("\n", " ").strip()
 
-        release_body += f"\n## Skipped - Draft PRs ({len(skipped_draft_prs)})\n"
-        for pr_dict in skipped_draft_prs:
-            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch"), pr_dict.get("last_commit")) + "\n"
+        def _pr_num_title(pr_line):
+            _num_m = re.match(r"- \*\*PR #(\d+)\*\*", pr_line)
+            _num = _num_m.group(1) if _num_m else "?"
+            _title_m = re.match(r"- \*\*PR #\d+\*\*:\s*(.+)", pr_line)
+            _title = _title_m.group(1) if _title_m else pr_line
+            return _num, _title
 
-        release_body += f"\n## Successfully Merged PRs ({len(applied_prs)})\n"
-        for pr_dict in applied_prs:
-            release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch"), pr_dict.get("last_commit")) + "\n"
+        def _commit_cell(last_commit):
+            if last_commit:
+                return f"[{last_commit['sha']}]({last_commit['url']})"
+            return ""
+
+        def _pr_table(pr_dicts):
+            """Render a PR | Branch | Title | Last commit table for simple sections."""
+            if not pr_dicts:
+                return "_None._\n"
+            rows = "| PR | Branch | Title | Last commit |\n"
+            rows += "|----|--------|-------|-------------|\n"
+            for pr_dict in pr_dicts:
+                _num, _title = _pr_num_title(pr_dict["line"])
+                _pr_url = pr_dict.get("url") or ""
+                _pr_link = f"[**#{_num}**]({_pr_url})" if _pr_url else f"**#{_num}**"
+                rows += (
+                    f"| {_pr_link} | {_cell(pr_dict.get('branch') or '')} | "
+                    f"{_cell(_title)} | {_commit_cell(pr_dict.get('last_commit'))} |\n"
+                )
+            return rows
+
+        # Failed PRs table
+        release_body += f"\n## Failed PRs ({len(failed_prs)})\n\n"
+        if not failed_prs:
+            release_body += "_None._\n"
+        else:
+            release_body += "| PR | Title | Last commit | Reason | First detected | Base commit |\n"
+            release_body += "|----|-------|-------------|--------|----------------|-------------|\n"
+            for pr in failed_prs:
+                _num, _title = _pr_num_title(pr["line"])
+                _pr_url = pr.get("url") or ""
+                _pr_link = f"[#{_num}]({_pr_url})" if _pr_url else f"#{_num}"
+                _base_cell = ""
+                if pr.get("base_commit"):
+                    _bc = pr["base_commit"]
+                    _bc_url = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{_bc}"
+                    _base_cell = f"[{_bc[:7]}]({_bc_url})"
+                release_body += (
+                    f"| {_pr_link} | {_cell(_title)} | {_commit_cell(pr.get('last_commit'))} | "
+                    f"{_cell(pr.get('reason') or '')} | {_cell(pr.get('first_detected') or '')} | {_base_cell} |\n"
+                )
+
+        # Skipped - Conflict with other PRs
+        release_body += f"\n## Skipped - Conflict with other PRs. Merges cleanly with base ({len(skipped_conflict_prs)})\n\n"
+        release_body += _pr_table(skipped_conflict_prs)
+
+        # Skipped - Draft PRs
+        release_body += f"\n## Skipped - Draft PRs ({len(skipped_draft_prs)})\n\n"
+        release_body += _pr_table(skipped_draft_prs)
+
+        # Successfully Merged PRs
+        release_body += f"\n## Successfully Merged PRs ({len(applied_prs)})\n\n"
+        release_body += _pr_table(applied_prs)
 
         release_body += "\n"
         return release_body
