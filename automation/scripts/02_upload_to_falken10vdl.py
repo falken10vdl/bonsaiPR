@@ -673,6 +673,110 @@ def generate_release_body(
                 in_failed_section = False
                 in_skipped_section = False
 
+            # New report format uses markdown tables. Parse table rows as PR entries.
+            # Example row:
+            # | [#7802](url) | title | author | branch | [sha](url) | reason | ...
+            if line.startswith("| [#"):
+                # Skip header separator rows if any
+                if set(line.replace("|", "").replace("-", "").replace(":", "").strip()) == set():
+                    continue
+
+                cells = [c.strip() for c in line.strip("|").split("|")]
+                if len(cells) < 2:
+                    continue
+
+                pr_match = re.match(r"\[#(\d+)\]\(([^)]+)\)", cells[0])
+                if not pr_match:
+                    continue
+
+                pr_number = pr_match.group(1)
+                pr_url = pr_match.group(2)
+                pr_title = cells[1]
+                pr_branch = cells[3] if len(cells) > 3 else None
+                parsed_line = f"- **PR #{pr_number}**: {pr_title}"
+
+                # Commit column differs by section
+                commit_cell = None
+                if in_applied_section and len(cells) > 5:
+                    commit_cell = cells[5]
+                elif (in_failed_section or in_skipped_section) and len(cells) > 4:
+                    commit_cell = cells[4]
+
+                last_commit = None
+                if commit_cell:
+                    commit_match = re.match(r"\[([0-9a-fA-F]+)\]\(([^)]+)\)", commit_cell)
+                    if commit_match:
+                        last_commit = {
+                            "sha": commit_match.group(1),
+                            "url": commit_match.group(2),
+                        }
+
+                if in_applied_section:
+                    applied_prs.append(
+                        {
+                            "line": parsed_line,
+                            "url": pr_url,
+                            "branch": pr_branch,
+                            "last_commit": last_commit,
+                        }
+                    )
+                    continue
+
+                if in_failed_section:
+                    reason = cells[5] if len(cells) > 5 else None
+                    if reason == "Merges cleanly against base (conflict with other PRs)":
+                        skipped_conflict_prs.append(
+                            {
+                                "line": parsed_line,
+                                "url": pr_url,
+                                "branch": pr_branch,
+                                "last_commit": last_commit,
+                            }
+                        )
+                    else:
+                        failed_prs.append(
+                            {
+                                "line": parsed_line,
+                                "url": pr_url,
+                                "branch": pr_branch,
+                                "reason": reason,
+                                "first_detected": cells[6] if len(cells) > 6 else None,
+                                "base_commit": None,
+                                "conflicting_files": [],
+                                "breaking_commits": [],
+                                "last_commit": last_commit,
+                            }
+                        )
+                    continue
+
+                if in_skipped_section:
+                    reason = cells[5] if len(cells) > 5 else None
+                    entry = {
+                        "line": parsed_line,
+                        "url": pr_url,
+                        "branch": pr_branch,
+                        "last_commit": last_commit,
+                    }
+                    if reason and "DRAFT status" in reason:
+                        skipped_draft_prs.append(entry)
+                    elif reason == "Merges cleanly against base (conflict with other PRs)":
+                        skipped_conflict_prs.append(entry)
+                    else:
+                        failed_prs.append(
+                            {
+                                "line": parsed_line,
+                                "url": pr_url,
+                                "branch": pr_branch,
+                                "reason": reason,
+                                "first_detected": None,
+                                "base_commit": None,
+                                "conflicting_files": [],
+                                "breaking_commits": [],
+                                "last_commit": last_commit,
+                            }
+                        )
+                    continue
+
             # Collect PRs with URL extraction
             if line.startswith("- **PR #"):
                 pr_url = None
@@ -863,7 +967,7 @@ def generate_release_body(
 - **Failed PRs**: {len(failed_prs)}
 - **Success Rate**: {success_rate:.1f}%
 
-## ❌ Failed PRs ({len(failed_prs)})
+## Failed PRs ({len(failed_prs)})
 """
         for pr in failed_prs:
             _num_m = re.match(r"- \*\*PR #(\d+)\*\*", pr["line"])
@@ -872,13 +976,8 @@ def generate_release_body(
             _pr_title = _title_m.group(1) if _title_m else pr["line"]
             _pr_url = pr.get("url") or ""
             _lc = pr.get("last_commit")
-            _commit_suffix = f" <a href=\"{_lc['url']}\">{_lc['sha']}</a>" if _lc else ""
-            release_body += (
-                f"<details>\n"
-                f"  <summary>\n"
-                f"    <a href=\"{_pr_url}\"><strong>PR #{_pr_num}</strong></a>: {_pr_title}{_commit_suffix}\n"
-                f"  </summary>\n\n"
-            )
+            _commit_suffix = f" ([{_lc['sha']}]({_lc['url']}))" if _lc else ""
+            release_body += f"- [PR #{_pr_num}]({_pr_url}): {_pr_title}{_commit_suffix}\n"
             if pr.get("reason"):
                 release_body += f"  - Reason: {pr['reason']}\n"
             if pr.get("first_detected"):
@@ -886,7 +985,7 @@ def generate_release_body(
             if pr.get("base_commit"):
                 _bc = pr["base_commit"]
                 _bc_url = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{_bc}"
-                release_body += f"  - Base commit at first detection: <a href=\"{_bc_url}\"><code>{_bc[:7]}</code></a>\n"
+                release_body += f"  - Base commit at first detection: [{_bc[:7]}]({_bc_url})\n"
             if pr.get("conflicting_files"):
                 release_body += "  - Conflicting files:\n"
                 for _f in pr["conflicting_files"]:
@@ -896,27 +995,27 @@ def generate_release_body(
                     else:
                         _flabel = _f
                         _furl = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/blob/v0.8.0/{_f}"
-                    release_body += f"    - <a href=\"{_furl}\">{_flabel}</a>\n"
+                    release_body += f"    - [{_flabel}]({_furl})\n"
             if pr.get("breaking_commits"):
                 release_body += "  - Possible breaking commits:\n"
                 for _c in pr["breaking_commits"]:
                     _cm = re.match(r"\[([0-9a-f]+)\]\((.+?)\)\s*(.*)", _c)
                     if _cm:
                         _chash, _curl, _cmsg = _cm.group(1), _cm.group(2), _cm.group(3)
-                        release_body += f"    - <a href=\"{_curl}\">{_chash}</a> {_cmsg}\n"
+                        release_body += f"    - [{_chash}]({_curl}) {_cmsg}\n"
                     else:
                         release_body += f"    - {_c}\n"
-            release_body += "\n</details>\n"
+            release_body += "\n"
 
-        release_body += f"\n## ⚠️ Skipped - Conflict with other PRs. Merges cleany with base  ({len(skipped_conflict_prs)})\n"
+        release_body += f"\n## Skipped - Conflict with other PRs. Merges cleanly with base ({len(skipped_conflict_prs)})\n"
         for pr_dict in skipped_conflict_prs:
             release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch"), pr_dict.get("last_commit")) + "\n"
 
-        release_body += f"\n## ⚠️ Skipped - DRAFT PRs ({len(skipped_draft_prs)})\n"
+        release_body += f"\n## Skipped - Draft PRs ({len(skipped_draft_prs)})\n"
         for pr_dict in skipped_draft_prs:
             release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch"), pr_dict.get("last_commit")) + "\n"
 
-        release_body += f"\n## ✅ Successfully Merged PRs ({len(applied_prs)})\n"
+        release_body += f"\n## Successfully Merged PRs ({len(applied_prs)})\n"
         for pr_dict in applied_prs:
             release_body += format_pr_with_link(pr_dict["line"], pr_dict["url"], pr_dict.get("branch"), pr_dict.get("last_commit")) + "\n"
 
