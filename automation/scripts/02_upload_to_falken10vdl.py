@@ -734,6 +734,12 @@ def generate_release_body(
                             }
                         )
                     else:
+                        # Base commit column is a markdown link [hash](url); pull
+                        # out the bare hash (the renderer rebuilds the link).
+                        base_commit = None
+                        if len(cells) > 7:
+                            _bc_m = re.match(r"\[([0-9a-fA-F]+)\]", cells[7])
+                            base_commit = _bc_m.group(1) if _bc_m else None
                         failed_prs.append(
                             {
                                 "line": parsed_line,
@@ -741,9 +747,11 @@ def generate_release_body(
                                 "branch": pr_branch,
                                 "reason": reason,
                                 "first_detected": cells[6] if len(cells) > 6 else None,
-                                "base_commit": None,
+                                "base_commit": base_commit,
                                 "conflicting_files": [],
                                 "breaking_commits": [],
+                                # "Broken by" column is pre-rendered markdown in the report
+                                "broken_by": cells[8] if len(cells) > 8 else None,
                                 "last_commit": last_commit,
                             }
                         )
@@ -858,7 +866,9 @@ def generate_release_body(
                             "- Recent upstream commits"
                         ) or bl.startswith("  - Recent upstream commits") or bl.startswith(
                             "- Possible breaking commits"
-                        ) or bl.startswith("  - Possible breaking commits"):
+                        ) or bl.startswith("  - Possible breaking commits") or bl.startswith(
+                            "- Broken by"
+                        ) or bl.startswith("  - Broken by"):
                             in_conflicts = False
                             in_breaking = True
                         elif in_conflicts and bl.startswith("- "):
@@ -985,6 +995,31 @@ def generate_release_body(
                 return f"[{last_commit['sha']}]({last_commit['url']})"
             return ""
 
+        def _broken_by_cell(pr):
+            """Render the commit(s) a failed PR most likely broke on.
+
+            The new report format already provides a pre-rendered markdown cell
+            ("Broken by" column). For older block-style reports we fall back to
+            the parsed ``breaking_commits`` list and link each hash ourselves.
+            """
+            raw = pr.get("broken_by")
+            if raw:
+                # Already a rendered, pipe-escaped markdown cell from the report.
+                return raw.strip()
+            rendered = []
+            for bc in pr.get("breaking_commits") or []:
+                parts = bc.split(None, 1)
+                if len(parts) == 2:
+                    commit_hash, rest = parts
+                    commit_url = (
+                        f"https://github.com/{SOURCE_REPO_OWNER}/"
+                        f"{SOURCE_REPO_NAME}/commit/{commit_hash}"
+                    )
+                    rendered.append(f"[{commit_hash[:7]}]({commit_url}) {_cell(rest)}")
+                else:
+                    rendered.append(f"`{_cell(bc)}`")
+            return "<br>".join(rendered)
+
         def _pr_table(pr_dicts):
             """Render a PR | Branch | Title | Last commit table for simple sections."""
             if not pr_dicts:
@@ -1006,8 +1041,8 @@ def generate_release_body(
         if not failed_prs:
             release_body += "_None._\n"
         else:
-            release_body += "| PR | Title | Last commit | Reason | First detected | Base commit |\n"
-            release_body += "|----|-------|-------------|--------|----------------|-------------|\n"
+            release_body += "| PR | Title | Last commit | Reason | First detected | Base commit | Broken by |\n"
+            release_body += "|----|-------|-------------|--------|----------------|-------------|-----------|\n"
             for pr in failed_prs:
                 _num, _title = _pr_num_title(pr["line"])
                 _pr_url = pr.get("url") or ""
@@ -1019,7 +1054,8 @@ def generate_release_body(
                     _base_cell = f"[{_bc[:7]}]({_bc_url})"
                 release_body += (
                     f"| {_pr_link} | {_cell(_title)} | {_commit_cell(pr.get('last_commit'))} | "
-                    f"{_cell(pr.get('reason') or '')} | {_cell(pr.get('first_detected') or '')} | {_base_cell} |\n"
+                    f"{_cell(pr.get('reason') or '')} | {_cell(pr.get('first_detected') or '')} | {_base_cell} | "
+                    f"{_broken_by_cell(pr)} |\n"
                 )
 
         # Skipped - Conflict with other PRs
