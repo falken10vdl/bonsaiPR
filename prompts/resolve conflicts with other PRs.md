@@ -3,8 +3,8 @@
 Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 - `{{IFCOPENSHELL_REPO}}` → `C:\IfcOpenShell`
-- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260608-c65433c [asc]`
-- `{{TARGET_PR}}` → `PR #7802 (duplicate_opening_on_type_duplication):`
+- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260611-53bd428 [asc]`
+- `{{TARGET_PR}}` → `#7648	extend-profiles-and-extrusions`
 
 
 
@@ -35,6 +35,17 @@ whether any PRs already tagged "Skipped - Conflict with other PRs" conflict with
 
 Determine the **exact commit** from the conflicting PR that introduces the conflict — not
 just which PR, but which specific commit hash and what it changed.
+
+> **Also check whether `v0.8.0` itself has advanced past the branch's fork point.**
+> The build always starts from the current `v0.8.0` tip. If that tip is newer than the
+> branch's merge-base, any `v0.8.0` commits above the merge-base that touch the same files
+> as `{{TARGET_PR}}` are conflict candidates — even if no other PR is involved. Check:
+> ```
+> git log $(git merge-base <branch> v0.8.0)..v0.8.0 --oneline -- <files-touched-by-TARGET_PR>
+> ```
+> If commits appear, the fix is a plain `git merge <v0.8.0-tip>` onto the branch (Option A
+> plain merge — not `-s ours` — because the `v0.8.0` content is genuinely absent from the
+> branch and must be incorporated).
 
 > **Also check whether the build already contains an old copy of `{{TARGET_PR}}` itself.**
 > This happens when the branch was previously fixed via ancestry-merge in an earlier build,
