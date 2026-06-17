@@ -3,9 +3,12 @@ understanding what each side changed relative to the merge-base, then logs the r
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{REPO}}` → `c:\IfcOpenShell`
-- `{{BRANCH}}` → `drawing_render_overrides`
+- `{{BRANCH}}` → `Rob2309:general-mirroring` *(the branch name on the remote — also used as the summary filename slug)*
 - `{{BASE}}` → `v0.8.0`
 - `{{LOG_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
+- `{{REMOTE}}` → `origin` *(set to the fork's remote name when the branch lives in a fork, e.g. `Rob2309`)*
+- `{{LOCAL_BRANCH}}` → `{{BRANCH}}` *(set to the local tracking branch name when it differs from `{{BRANCH}}`, e.g. `rob2309-general-mirroring`)*
+- `{{FORK}}` → *(leave blank for main-repo branches; set to author/fork identifier when `{{REMOTE}}` ≠ `origin`, e.g. `rob2309` — used to disambiguate summary filenames)*
 
 
 # Prompt
@@ -156,6 +159,10 @@ Insert one row at the top of the data in `{{LOG_REPO}}\logs\rebase-resolutions.m
 Write a detailed markdown summary to:
 `{{LOG_REPO}}\logs\summaries\YYYY-MM-DD-rebase-{{BRANCH}}.md`
 
+> **Fork disambiguation:** If `{{FORK}}` is set, append it to the filename:
+> `YYYY-MM-DD-rebase-{{BRANCH}}-{{FORK}}.md` — this avoids collisions when the same
+> branch name exists in multiple forks.
+
 The document header must include a **Branch** line that hyperlinks `{{BRANCH}}` to its
 GitHub PR (if one exists) or to the branch on GitHub
 (`https://github.com/IfcOpenShell/IfcOpenShell/tree/{{BRANCH}}`).
@@ -172,12 +179,18 @@ using a relative path (e.g., `[{{BRANCH}}](summaries/YYYY-MM-DD-rebase-{{BRANCH}
 
 ## Step 9 — Publish the rebased branch (only if asked)
 
-A rebase rewrites history, so `{{BRANCH}}` will have diverged from
-`origin/{{BRANCH}}` and updating the remote requires a force-push. Do **not** push
-automatically — confirm first, then use a lease to avoid clobbering remote work:
+A rebase rewrites history, so the remote copy of `{{BRANCH}}` will have diverged and
+requires a force-push. Do **not** push automatically — confirm first, then use a lease
+to avoid clobbering remote work:
 ```
-git push --force-with-lease origin {{BRANCH}}
+git push --force-with-lease {{REMOTE}} {{LOCAL_BRANCH}}:{{BRANCH}}
 ```
+
+> For main-repo branches where `{{REMOTE}}` = `origin` and `{{LOCAL_BRANCH}}` = `{{BRANCH}}`,
+> this reduces to the familiar `git push --force-with-lease origin {{BRANCH}}`.
+> For fork branches, `{{REMOTE}}` is the fork's remote (e.g. `Rob2309`) and
+> `{{LOCAL_BRANCH}}` may differ from `{{BRANCH}}` (e.g. `rob2309-general-mirroring`
+> pushed to `Rob2309:general-mirroring`).
 
 > **Warning — prior build conflict fixes are invalidated by a rebase.**
 > The rebase changes all commit hashes, so git no longer recognizes old commits as
@@ -191,36 +204,23 @@ git push --force-with-lease origin {{BRANCH}}
 > If any exist, re-apply the fix on the rebased branch:
 > ```
 > git merge -s ours <key_commit-from-log-row>
-> git push --force-with-lease origin {{BRANCH}}
+> git push --force-with-lease {{REMOTE}} {{LOCAL_BRANCH}}:{{BRANCH}}
 > ```
 > Then re-run the conflict resolution prompt for the affected build branch to verify and
 > log the re-applied fix.
 
 ## Step 10 — Commit and push the bonsaiPR log (only if asked)
 
-Stage the updated log and new summary file in `{{LOG_REPO}}`, commit, then
-pull-rebase before pushing (the remote may have diverged if another machine pushed since
-your last sync):
+Stage the updated log and new summary file in `{{LOG_REPO}}`, commit, and push:
 ```
 cd {{LOG_REPO}}
 git add logs/rebase-resolutions.md logs/summaries/YYYY-MM-DD-rebase-{{BRANCH}}.md
 git commit -m "Add rebase log entry and summary for {{BRANCH}} onto {{BASE}}"
-git pull --rebase origin main
 git push origin main
 ```
 
-> **If `git pull --rebase` refuses with "you are currently rebasing" / an in-progress
-> rebase** in the log repo, it's almost certainly a *stale* `.git/rebase-merge` left from
-> an interrupted run — **not** real work. Don't blindly `rm -rf` it (git warns for a
-> reason). Check whether it holds real state first:
-> ```
-> cat .git/rebase-merge/head-name .git/rebase-merge/onto .git/rebase-merge/orig-head
-> ```
-> If those files are absent / the directory is empty, it's a stale flag: clear it with
-> `rmdir .git/rebase-merge` (which **refuses if non-empty**, so it can't destroy real
-> state), then re-run the pull-rebase. A "diverged — 1 and N commits" message here is
-> normal: your one log commit vs. N upstream release commits; the pull-rebase just replays
-> your commit on top.
+> **Note on the summary filename:** if `{{FORK}}` is set, use
+> `logs/summaries/YYYY-MM-DD-rebase-{{BRANCH}}-{{FORK}}.md` in the `git add` command.
 
 ## Step 11 — Share the summary link (only after Step 10)
 
