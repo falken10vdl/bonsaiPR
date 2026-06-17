@@ -3,7 +3,7 @@ understanding what each side changed relative to the merge-base, then logs the r
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{REPO}}` → `c:\IfcOpenShell`
-- `{{BRANCH}}` → `default_relative_path`
+- `{{BRANCH}}` → `drawing_render_overrides`
 - `{{BASE}}` → `v0.8.0`
 - `{{LOG_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 
@@ -13,6 +13,16 @@ Variables (update these, then copy the Prompt section below as-is):
 I need to rebase `{{BRANCH}}` onto the latest `{{BASE}}` in the repo at `{{REPO}}`.
 
 Please work through the following steps:
+
+## Step 0 — Check out the feature branch
+
+`git rebase {{BASE}}` (Step 3) rebases whatever branch is **currently checked out** —
+nothing else guarantees it's the right one. Before doing anything, switch to `{{BRANCH}}`:
+```
+git checkout {{BRANCH}}
+```
+Confirm with `git rev-parse --abbrev-ref HEAD`. (If the tree is dirty or you're mid-detached-
+HEAD, sort that out first — see Step 2 — but never start the rebase from the wrong branch.)
 
 ## Step 1 — Fetch, update the local base ref, and inspect divergence
 
@@ -49,6 +59,10 @@ Do not assume your stash is `stash@{0}`. Run `git stash list` first, then after
 more robustly, record the stash *commit hash* (`git rev-parse stash@{0}`) so you can pop
 exactly that stash in Step 5 and never touch a pre-existing one.
 
+> **Untracked files don't matter here.** Generated/runtime files that git isn't tracking
+> don't block a rebase and aren't captured by a plain `git stash push` — leave them alone.
+> This step is only about *tracked* modifications.
+
 ## Step 3 — Attempt the rebase
 
 Run:
@@ -73,7 +87,10 @@ For every conflict that arises:
 3. **Resolve by combining intent**: keep both sets of changes where they are independent.
    If one side's change supersedes the other, keep the more complete version and ensure
    the discarded side's intent is still met.
-4. Stage the resolved file and run `git rebase --continue`.
+4. Stage the resolved file and run `git rebase --continue`. **In a non-interactive shell,
+   prefix it: `GIT_EDITOR=true git rebase --continue`** — otherwise git opens `$EDITOR` for
+   the commit message and the command hangs forever. (`GIT_EDITOR=true` reuses the existing
+   message; the same applies to any history command that would open an editor.)
 
 Document each conflict: which file, which commit from `{{BASE}}` introduced the change,
 what the resolution was, and why.
@@ -128,6 +145,11 @@ Insert one row at the top of the data in `{{LOG_REPO}}\logs\rebase-resolutions.m
 | `fix_summary` | One sentence describing how each conflict was resolved |
 | `result_commit` | Short hash of new branch tip — linked to GitHub commit |
 | `outcome` | `clean` / `conflicts-resolved` / `failed` |
+
+> **These links go live only after Step 9.** `base_commit` resolves immediately, but
+> `conflict_files` and `result_commit` point at the *rebased* commit, which doesn't exist
+> on GitHub until the force-push in Step 9. If you stop before pushing (Steps 9–11 are
+> "only if asked"), say so — those links are pending until the branch is published.
 
 ## Step 8 — Write a summary document
 
@@ -186,6 +208,19 @@ git commit -m "Add rebase log entry and summary for {{BRANCH}} onto {{BASE}}"
 git pull --rebase origin main
 git push origin main
 ```
+
+> **If `git pull --rebase` refuses with "you are currently rebasing" / an in-progress
+> rebase** in the log repo, it's almost certainly a *stale* `.git/rebase-merge` left from
+> an interrupted run — **not** real work. Don't blindly `rm -rf` it (git warns for a
+> reason). Check whether it holds real state first:
+> ```
+> cat .git/rebase-merge/head-name .git/rebase-merge/onto .git/rebase-merge/orig-head
+> ```
+> If those files are absent / the directory is empty, it's a stale flag: clear it with
+> `rmdir .git/rebase-merge` (which **refuses if non-empty**, so it can't destroy real
+> state), then re-run the pull-rebase. A "diverged — 1 and N commits" message here is
+> normal: your one log commit vs. N upstream release commits; the pull-rebase just replays
+> your commit on top.
 
 ## Step 11 — Share the summary link (only after Step 10)
 
