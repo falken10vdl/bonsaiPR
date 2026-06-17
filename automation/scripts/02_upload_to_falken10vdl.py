@@ -1041,8 +1041,8 @@ def generate_release_body(
         if not failed_prs:
             release_body += "_None._\n"
         else:
-            release_body += "| PR | Title | Last commit | First detected | Base commit | Broken by |\n"
-            release_body += "|----|-------|-------------|----------------|-------------|-----------|\n"
+            release_body += "| PR | Branch | Title | Last commit | First detected | Base commit | Broken by |\n"
+            release_body += "|----|--------|-------|-------------|----------------|-------------|-----------|\n"
             for pr in failed_prs:
                 _num, _title = _pr_num_title(pr["line"])
                 _pr_url = pr.get("url") or ""
@@ -1053,7 +1053,7 @@ def generate_release_body(
                     _bc_url = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{_bc}"
                     _base_cell = f"[{_bc[:7]}]({_bc_url})"
                 release_body += (
-                    f"| {_pr_link} | {_cell(_title)} | {_commit_cell(pr.get('last_commit'))} | "
+                    f"| {_pr_link} | {_cell(pr.get('branch') or '')} | {_cell(_title)} | {_commit_cell(pr.get('last_commit'))} | "
                     f"{_cell(pr.get('first_detected') or '')} | {_base_cell} | "
                     f"{_broken_by_cell(pr)} |\n"
                 )
