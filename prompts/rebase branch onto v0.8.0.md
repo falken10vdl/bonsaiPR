@@ -200,33 +200,14 @@ git push --force-with-lease {{REMOTE}} {{LOCAL_BRANCH}}:{{BRANCH}}
 > all previously resolved conflicts re-emerge.
 >
 > After pushing, check `{{LOG_REPO}}/logs/conflict-resolutions.md` for any rows where
-> `{{BRANCH}}` appears as the **target or conflicting PR** with `fix_strategy = ancestry-merge`.
-> The re-application differs by role:
->
-> **Case A — `{{BRANCH}}` was the conflicting PR** (the fix was applied to another PR's
-> branch to absorb `{{BRANCH}}`'s old tip as an ancestor):
-> - Find the target PR's branch name from the log row.
-> - Check it out and absorb the **new** `{{BRANCH}}` tip (`{{RESULT_COMMIT}}`):
->   ```
->   git checkout <target-PR-branch>
->   git merge -s ours {{RESULT_COMMIT}} -m "Re-absorb {{BRANCH}} new tip after rebase"
->   ```
-> - Verify with a test merge (same pattern as the conflict resolution prompt's Step 7).
-> - Push the **target PR's** branch to its remote (not `{{REMOTE}}`).
->
-> **Case B — `{{BRANCH}}` was the target PR** (the fix was applied directly to `{{BRANCH}}`
-> to absorb some other PR's commit — that ancestry-merge commit was wiped by the rebase):
-> - The key commit from the other PR is still valid (it wasn't affected by this rebase).
-> - Re-apply on `{{BRANCH}}`:
->   ```
->   git checkout {{LOCAL_BRANCH}}
->   git merge -s ours <key_commit-from-log-row> -m "Re-apply ancestry fix after rebase"
->   git push --force-with-lease {{REMOTE}} {{LOCAL_BRANCH}}:{{BRANCH}}
->   ```
->
-> In both cases, add a new row to `conflict-resolutions.md` documenting the re-application
-> (don't edit the old row — the old row documents the original fix; the new row documents
-> the re-application with updated commit hashes).
+> `{{BRANCH}}` appears as the target or conflicting PR with `fix_strategy = ancestry-merge`.
+> If any exist, re-apply the fix on the rebased branch:
+> ```
+> git merge -s ours <key_commit-from-log-row>
+> git push --force-with-lease {{REMOTE}} {{LOCAL_BRANCH}}:{{BRANCH}}
+> ```
+> Then re-run the conflict resolution prompt for the affected build branch to verify and
+> log the re-applied fix.
 
 ## Step 10 — Commit and push the bonsaiPR log (only if asked)
 
