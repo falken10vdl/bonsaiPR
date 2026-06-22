@@ -3,7 +3,7 @@ understanding what each side changed relative to the merge-base, then logs the r
 
 Variables (update these, then copy the Prompt section below as-is):
 - `{{REPO}}` → `c:\IfcOpenShell`
-- `{{BRANCH}}` → `drawing_render_overrides`
+- `{{BRANCH}}` → `duplicate_opening_on_type_duplication`
 - `{{BASE}}` → `v0.8.0`
 - `{{LOG_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 
@@ -23,6 +23,10 @@ git checkout {{BRANCH}}
 ```
 Confirm with `git rev-parse --abbrev-ref HEAD`. (If the tree is dirty or you're mid-detached-
 HEAD, sort that out first — see Step 2 — but never start the rebase from the wrong branch.)
+
+**Capture the pre-rebase tip now** — Steps 4 and 6 need it, and the rebase will rewrite
+`{{BRANCH}}` out from under you: `ORIG=$(git rev-parse {{BRANCH}})` (or just use
+`origin/{{BRANCH}}` later, as long as the remote is in sync with your local branch).
 
 ## Step 1 — Fetch, update the local base ref, and inspect divergence
 
@@ -46,7 +50,31 @@ Then identify, against the now-current `{{BASE}}`:
 - Which files are touched by commits on `{{BRANCH}}` that are also touched by commits
   that landed in `{{BASE}}` since the current merge-base
 
-List any overlap files explicitly — these are candidates for conflicts.
+List the **overlap files** explicitly (files changed on *both* sides since the merge-base) —
+these are the only files where a conflict requires real judgment. Compute the set concretely
+and keep it; Steps 4 and 6 depend on it:
+```
+mb=$(git merge-base {{BASE}} {{BRANCH}})
+comm -12 <(git diff --name-only $mb {{BRANCH}} | sort -u) \
+         <(git diff --name-only $mb {{BASE}}   | sort -u)
+```
+
+> **The non-overlap invariant (relied on in Steps 4 & 6).** For any file `{{BASE}}` did *not*
+> change since the merge-base, the base content is identical to the merge-base, so a correct
+> rebase must reproduce the **`{{BRANCH}}` tip** version of that file *exactly*. Such files
+> can only conflict because of the branch's own internal history — never because of `{{BASE}}`.
+> This makes their resolution deterministic (see Step 4) and gives a strong end-state check
+> (see Step 6).
+
+> **Check for merge commits up front:** run `git log --merges {{BASE}}..{{BRANCH}}`. If it is
+> non-empty, the branch absorbed other work via merges (and the same logical commits may
+> appear several times). Expect this to matter: `git rebase` **flattens history and drops
+> merge commits**, replaying only the linear commits — so content that entered `{{BRANCH}}`
+> *only* through a merge's second parent will revert to `{{BASE}}`. That is normal and usually
+> desirable for a release-branch rebase (it sheds absorbed cross-feature noise), but it means
+> the final commit count will be lower than the number replayed, and you should not try to
+> "rescue" the dropped content. Confirm via `git log --merges <merge-base>..{{BRANCH}} -- <file>`
+> whether a given file's delta came from a merge before deciding what its correct end state is.
 
 ## Step 2 — Stash uncommitted changes
 
@@ -78,7 +106,28 @@ If it completes cleanly, skip to Step 5.
 
 ## Step 4 — Resolve each conflict
 
-For every conflict that arises:
+**First, triage by overlap status** (from the Step 1 set):
+
+- **Non-overlap file** (`{{BASE}}` did not touch it): do *not* hand-merge. By the non-overlap
+  invariant its correct end state is the `{{BRANCH}}`-tip version, so resolve it directly:
+  ```
+  git checkout {{BRANCH}} -- <file>   # the ORIGINAL branch tip (capture its hash before Step 3)
+  git add <file>
+  ```
+  This conflicts only because of the branch's internal/duplicated history; combining
+  intent commit-by-commit is wasted effort and error-prone. (Capture the pre-rebase tip
+  with `ORIG=$(git rev-parse {{BRANCH}})` *before* Step 3, and use `$ORIG` here, since
+  `{{BRANCH}}` itself is what's being rewritten.)
+  > **Caution — this shortcut needs an end-state reconciliation.** Checking out the tip
+  > version *mid-rebase* can be clobbered by later commits re-applying their patches on top
+  > (producing duplicated methods / lost args that still compile). It is not self-correcting
+  > per-commit; you MUST verify and re-reconcile every non-overlap file against the tip at
+  > the end (Step 6).
+
+- **Overlap file** (`{{BASE}}` also changed it): this is the only case needing real judgment.
+  Resolve by hand using the three-way reasoning below.
+
+For every **overlap** conflict:
 
 1. **Identify the three versions**: merge-base (ancestor), `{{BASE}}` (ours/HEAD), and
    `{{BRANCH}}`'s commit (theirs).
@@ -86,7 +135,9 @@ For every conflict that arises:
    markers. What problem did `{{BASE}}` solve? What did `{{BRANCH}}`'s commit intend?
 3. **Resolve by combining intent**: keep both sets of changes where they are independent.
    If one side's change supersedes the other, keep the more complete version and ensure
-   the discarded side's intent is still met.
+   the discarded side's intent is still met. When unsure of the branch's *final* intent for
+   an overlap file, consult the branch tip (`git show {{BRANCH}}:<file>`) — it shows where the
+   branch landed after all its own supersessions.
 4. Stage the resolved file and run `git rebase --continue`. **In a non-interactive shell,
    prefix it: `GIT_EDITOR=true git rebase --continue`** — otherwise git opens `$EDITOR` for
    the commit message and the command hangs forever. (`GIT_EDITOR=true` reuses the existing
@@ -118,11 +169,37 @@ Run:
 git log --oneline {{BASE}}..HEAD
 ```
 
-Confirm all expected commits are present and the branch tip is clean. As a sanity check
-beyond git state, run `python -m py_compile` on every file that appeared in the overlap
-list from Step 1 (files touched on both sides) — those are the only ones where a bad
-resolution could silently produce invalid syntax. Valid git state does not guarantee a
-valid resolution.
+Confirm all expected commits are present and the branch tip is clean (note the replayed
+count may be lower than commits-ahead if merge commits/duplicates were dropped — see Step 1).
+
+**3-way tree verification (the real correctness check).** `py_compile` is necessary but far
+too weak — a bad merge can duplicate a method or drop an argument and still compile. Instead,
+classify every file that differs between the rebased `HEAD` and the *pre-rebase* branch tip
+(`ORIG`, the original `{{BRANCH}}` tip captured before Step 3 — or `origin/{{BRANCH}}` if the
+remote is in sync). Each such file must match **exactly one** of:
+
+- the **`{{BASE}}`** version — absorbed/merge-only content correctly dropped by the rebase
+  (expected, fine); or
+- the **branch-tip (`ORIG`)** version — feature work carried through intact (expected, fine).
+
+Any file matching **neither** is a resolution artifact and must be fixed (for a non-overlap
+file, reset it to the tip: `git checkout <ORIG> -- <file>` and fold it into the result, e.g.
+`git commit --amend --no-edit`). Concretely, the only files that may legitimately match
+neither are the **overlap files** (which combine both sides) plus any non-overlap file whose
+tip delta is genuine linear feature work the rebase reproduced:
+```
+ORIG=<pre-rebase tip>            # captured before Step 3, or origin/{{BRANCH}}
+for f in $(git diff --name-only $ORIG HEAD); do
+  git diff --quiet {{BASE}} HEAD -- "$f" && continue   # == BASE: dropped absorbed content, OK
+  git diff --quiet $ORIG   HEAD -- "$f" && continue     # == tip: feature work intact, OK
+  echo "SCRUTINIZE: $f"                                  # matches neither — inspect/fix
+done
+```
+The `SCRUTINIZE` set should reduce to the overlap files (and verified linear-feature deltas);
+investigate anything else.
+
+Then run `python -m py_compile` on every changed `.py` file (`git diff --name-only {{BASE}}
+HEAD -- '*.py'`) as a final syntax gate. Valid git state does not guarantee a valid resolution.
 
 > **Note on the PR link (used in Steps 7 & 8):** a commit message like `Closes #N` references
 > an *issue*, not necessarily the PR — don't assume `#N` is the PR number. Find the real PR
