@@ -3,8 +3,8 @@
 Variables (update these, then copy the Prompt section below as-is):
 - `{{BONSAI_PR_REPO}}` → `D:\Dropbox\GitHub\bonsaiPR`
 - `{{IFCOPENSHELL_REPO}}` → `C:\IfcOpenShell`
-- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260611-53bd428 [asc]`
-- `{{TARGET_PR}}` → `#7648	extend-profiles-and-extrusions`
+- `{{BUILD_BRANCH}}` → `BonsaiPR v0.8.6-alpha260624-ea90f18 [asc]`
+- `{{TARGET_PR}}` → `#8200	opening-template-on-type`
 
 
 
@@ -233,3 +233,26 @@ The document should cover:
 
 Then add a `Summary` column entry to the log row added in Step 9, linking to this file
 using a relative path (e.g., `[PR #XXXX vs #YYYY](summaries/YYYY-MM-DD-PR-XXXX.md)`).
+
+## Step 11 — Commit, push, and offer the summary permalink
+
+**Ask the user for confirmation before committing and pushing** — do not commit or push to
+`{{BONSAI_PR_REPO}}` automatically. Summarize what will be committed (the Step 9 log row and
+the Step 10 summary file) and the target (`origin` / `main`), and wait for an explicit go-ahead.
+
+Once confirmed, commit the log row (Step 9) and summary document (Step 10) to
+`{{BONSAI_PR_REPO}}` and push to its `origin` (`falken10vdl/bonsaiPR`). The build artifacts
+(`*.tmp`) are gitignored — stage only `logs/conflict-resolutions.md` and the new
+`logs/summaries/...` file. If the push is rejected because the build system advanced
+`origin/main`, `git pull --rebase origin main` then push again.
+
+Then offer the user a GitHub **blob permalink** to the summary, pinned to the pushed commit
+SHA (so the link is stable even as `main` advances):
+
+```
+https://github.com/falken10vdl/bonsaiPR/blob/<pushed-commit-sha>/logs/summaries/YYYY-MM-DD-PR-XXXX.md
+```
+
+Use the full 40-character SHA of the commit that was actually pushed (from `git rev-parse HEAD`
+after the push), not `main`/`HEAD`. Example:
+`https://github.com/falken10vdl/bonsaiPR/blob/8d445b6c607f0d7d4256caf0723dbcaefafa29dd/logs/summaries/2026-06-24-PR-8200.md`
