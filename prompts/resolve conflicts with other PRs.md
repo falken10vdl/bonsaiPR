@@ -36,6 +36,25 @@ whether any PRs already tagged "Skipped - Conflict with other PRs" conflict with
 Determine the **exact commit** from the conflicting PR that introduces the conflict — not
 just which PR, but which specific commit hash and what it changed.
 
+> **Stale local branches give false conflict signals — diff against merge-bases, not the
+> `v0.8.0` tip.** Local PR branches are often based on an *older* `v0.8.0`, so
+> `git diff v0.8.0..<branch>` lists files the branch merely *lags* on (not files it changes),
+> and `git merge-tree <TARGET> <stale-branch>` reports conflicts in files `{{TARGET_PR}}`
+> never touches. Two rules:
+> - A branch's *actual* changes: `git diff $(git merge-base v0.8.0 <branch>)..<branch> -- <file>`.
+> - **Discovery recipe** — pairwise-scan every open PR against `{{TARGET_PR}}` and keep only
+>   conflicts in files `{{TARGET_PR}}` *itself* modifies:
+>   ```
+>   git merge-tree --write-tree --name-only <TARGET-head> <pr-head>   # non-zero exit = conflict
+>   ```
+>   A conflict in a file `{{TARGET_PR}}` does **not** touch is noise: that PR conflicts with
+>   `v0.8.0` advancement (and would itself be skipped by the build), not with `{{TARGET_PR}}`.
+
+> **Only OPEN PRs are in the build.** Before analysing a suspected conflicting PR — even one
+> in the same problem domain touching the same files — confirm it is open
+> (`gh pr view <n> --json state`). A closed PR is not in the build and cannot be the conflict;
+> it may have been superseded by `{{TARGET_PR}}` itself.
+
 > **Also check whether `v0.8.0` itself has advanced past the branch's fork point.**
 > The build always starts from the current `v0.8.0` tip. If that tip is newer than the
 > branch's merge-base, any `v0.8.0` commits above the merge-base that touch the same files
@@ -94,6 +113,13 @@ Merging the specific conflicting commit into `{{TARGET_PR}}`'s branch makes it a
 ancestor. The build's LCA (merge-base) shifts from the old common ancestor to that commit,
 so git's 3-way merge no longer sees a contest — only `{{TARGET_PR}}` makes further changes
 above that point.
+
+> **A plain `git merge <commit>` pulls the conflicting PR's content into `{{TARGET_PR}}`.**
+> `git merge <commit>` brings `<commit>` *and all its ancestors back to the merge-base* — the
+> conflicting PR's full content up to that commit. For a small/single-commit PR this is fine;
+> for a large one it bloats `{{TARGET_PR}}`. Check the conflicting PR's size first
+> (`git log --oneline $(git merge-base v0.8.0 <pr>)..<pr>`); if large, prefer `-s ours` (when it
+> auto-resolves) or a rebase/content-fix that keeps `{{TARGET_PR}}` focused.
 
 **Choose between plain merge and `-s ours`:**
 
@@ -190,6 +216,17 @@ Before pushing, verify the fix works in `{{IFCOPENSHELL_REPO}}`:
    (i.e., the merge commit of the last PR processed before `{{TARGET_PR}}` in build order).
 2. Attempt `git merge --no-ff --no-edit <fixed-branch>` from that state.
 3. Confirm it merges cleanly with zero conflicts.
+
+> **Non-destructive alternative — don't reconstruct the whole build.** When the only conflict
+> is with one PR, synthesize the minimal build state (`v0.8.0` + that PR) and test the fix
+> against it with plumbing, without touching the working tree:
+> ```
+> T=$(git merge-tree --write-tree v0.8.0 <conflicting-pr-head>)
+> C=$(git commit-tree "$T" -p v0.8.0 -p <conflicting-pr-head> -m testbase)
+> git merge-tree --write-tree --name-only "$C" <fixed-TARGET-head>   # exit 0 = clean
+> ```
+> Also confirm the fixed branch still merges clean against `v0.8.0`
+> (`git merge-tree --write-tree v0.8.0 <fixed-TARGET-head>`).
 
 ## Step 8 — Push
 
