@@ -692,6 +692,7 @@ def generate_release_body(
                 pr_number = pr_match.group(1)
                 pr_url = pr_match.group(2)
                 pr_title = cells[1]
+                pr_author = cells[2].lstrip("@") if len(cells) > 2 and cells[2] else None
                 pr_branch = cells[3] if len(cells) > 3 else None
                 parsed_line = f"- **PR #{pr_number}**: {pr_title}"
 
@@ -716,6 +717,7 @@ def generate_release_body(
                         {
                             "line": parsed_line,
                             "url": pr_url,
+                            "author": pr_author,
                             "branch": pr_branch,
                             "last_commit": last_commit,
                         }
@@ -729,6 +731,7 @@ def generate_release_body(
                             {
                                 "line": parsed_line,
                                 "url": pr_url,
+                                "author": pr_author,
                                 "branch": pr_branch,
                                 "last_commit": last_commit,
                             }
@@ -744,6 +747,7 @@ def generate_release_body(
                             {
                                 "line": parsed_line,
                                 "url": pr_url,
+                                "author": pr_author,
                                 "branch": pr_branch,
                                 "reason": reason,
                                 "first_detected": cells[6] if len(cells) > 6 else None,
@@ -762,6 +766,7 @@ def generate_release_body(
                     entry = {
                         "line": parsed_line,
                         "url": pr_url,
+                        "author": pr_author,
                         "branch": pr_branch,
                         "last_commit": last_commit,
                     }
@@ -774,6 +779,7 @@ def generate_release_body(
                             {
                                 "line": parsed_line,
                                 "url": pr_url,
+                                "author": pr_author,
                                 "branch": pr_branch,
                                 "reason": reason,
                                 "first_detected": None,
@@ -797,12 +803,15 @@ def generate_release_body(
                     block_lines.append(nl)
 
                 # Extract fields from block
+                pr_author = None
                 pr_branch = None
                 last_commit_sha = None
                 last_commit_url_parsed = None
                 for bl in block_lines:
                     if bl.startswith("- URL:") or bl.startswith("  - URL:"):
                         pr_url = bl.split("URL:", 1)[1].strip()
+                    elif bl.startswith("- Author:") or bl.startswith("  - Author:"):
+                        pr_author = bl.split("Author:", 1)[1].strip().lstrip("@")
                     elif bl.startswith("- Branch:") or bl.startswith("  - Branch:"):
                         pr_branch = bl.split("Branch:", 1)[1].strip()
                     elif bl.startswith("- Last commit:") or bl.startswith("  - Last commit:"):
@@ -818,11 +827,12 @@ def generate_release_body(
                         if last_commit_sha and last_commit_url_parsed
                         else None
                     )
-                    applied_prs.append({"line": line, "url": pr_url, "branch": pr_branch, "last_commit": last_commit})
+                    applied_prs.append({"line": line, "url": pr_url, "author": pr_author, "branch": pr_branch, "last_commit": last_commit})
                 elif in_failed_section:
                     current_pr = {
                         "line": line,
                         "url": pr_url,
+                        "author": pr_author,
                         "branch": pr_branch,
                         "reason": None,
                         "first_detected": None,
@@ -880,24 +890,24 @@ def generate_release_body(
                         current_pr["reason"]
                         == "Merges cleanly against base (conflict with other PRs)"
                     ):
-                        skipped_conflict_prs.append({"line": line, "url": pr_url, "branch": pr_branch, "last_commit": current_pr["last_commit"]})
+                        skipped_conflict_prs.append({"line": line, "url": pr_url, "author": pr_author, "branch": pr_branch, "last_commit": current_pr["last_commit"]})
                     else:
                         failed_prs.append(current_pr)
                 elif in_skipped_section:
                     _lc = {"sha": last_commit_sha, "url": last_commit_url_parsed} if last_commit_sha and last_commit_url_parsed else None
-                    current_pr = {"line": line, "url": pr_url, "branch": pr_branch, "reason": None, "last_commit": _lc}
+                    current_pr = {"line": line, "url": pr_url, "author": pr_author, "branch": pr_branch, "reason": None, "last_commit": _lc}
                     for bl in block_lines:
                         if bl.startswith("- Reason:") or bl.startswith("  - Reason:"):
                             current_pr["reason"] = bl.split("Reason:", 1)[1].strip()
                             break
                     # Group skipped PRs
                     if current_pr["reason"] and "DRAFT status" in current_pr["reason"]:
-                        skipped_draft_prs.append({"line": line, "url": pr_url, "branch": pr_branch, "last_commit": _lc})
+                        skipped_draft_prs.append({"line": line, "url": pr_url, "author": pr_author, "branch": pr_branch, "last_commit": _lc})
                     elif (
                         current_pr["reason"]
                         == "Merges cleanly against base (conflict with other PRs)"
                     ):
-                        skipped_conflict_prs.append({"line": line, "url": pr_url, "branch": pr_branch, "last_commit": _lc})
+                        skipped_conflict_prs.append({"line": line, "url": pr_url, "author": pr_author, "branch": pr_branch, "last_commit": _lc})
                     else:
                         failed_prs.append(current_pr)
 
@@ -995,6 +1005,11 @@ def generate_release_body(
                 return f"[{last_commit['sha']}]({last_commit['url']})"
             return ""
 
+        def _author_cell(pr_dict):
+            """Link the PR author to their profile without triggering a real @mention."""
+            author = pr_dict.get("author")
+            return f"[@{author}](https://github.com/{author})" if author else ""
+
         def _broken_by_cell(pr):
             """Render the commit(s) a failed PR most likely broke on.
 
@@ -1021,18 +1036,19 @@ def generate_release_body(
             return "<br>".join(rendered)
 
         def _pr_table(pr_dicts):
-            """Render a PR | Branch | Title | Last commit table for simple sections."""
+            """Render a PR | Branch | Title | Author | Last commit table for simple sections."""
             if not pr_dicts:
                 return "_None._\n"
-            rows = "| PR | Branch | Title | Last commit |\n"
-            rows += "|----|--------|-------|-------------|\n"
+            rows = "| PR | Branch | Title | Author | Last commit |\n"
+            rows += "|----|--------|-------|--------|-------------|\n"
             for pr_dict in pr_dicts:
                 _num, _title = _pr_num_title(pr_dict["line"])
                 _pr_url = pr_dict.get("url") or ""
                 _pr_link = f"[**#{_num}**]({_pr_url})" if _pr_url else f"**#{_num}**"
                 rows += (
                     f"| {_pr_link} | {_cell(pr_dict.get('branch') or '')} | "
-                    f"{_cell(_title)} | {_commit_cell(pr_dict.get('last_commit'))} |\n"
+                    f"{_cell(_title)} | {_author_cell(pr_dict)} | "
+                    f"{_commit_cell(pr_dict.get('last_commit'))} |\n"
                 )
             return rows
 
@@ -1041,8 +1057,8 @@ def generate_release_body(
         if not failed_prs:
             release_body += "_None._\n"
         else:
-            release_body += "| PR | Branch | Title | Last commit | First detected | Base commit | Broken by |\n"
-            release_body += "|----|--------|-------|-------------|----------------|-------------|-----------|\n"
+            release_body += "| PR | Branch | Title | Author | Last commit | First detected | Base commit | Broken by |\n"
+            release_body += "|----|--------|-------|--------|-------------|----------------|-------------|-----------|\n"
             for pr in failed_prs:
                 _num, _title = _pr_num_title(pr["line"])
                 _pr_url = pr.get("url") or ""
@@ -1053,7 +1069,8 @@ def generate_release_body(
                     _bc_url = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{_bc}"
                     _base_cell = f"[{_bc[:7]}]({_bc_url})"
                 release_body += (
-                    f"| {_pr_link} | {_cell(pr.get('branch') or '')} | {_cell(_title)} | {_commit_cell(pr.get('last_commit'))} | "
+                    f"| {_pr_link} | {_cell(pr.get('branch') or '')} | {_cell(_title)} | {_author_cell(pr)} | "
+                    f"{_commit_cell(pr.get('last_commit'))} | "
                     f"{_cell(pr.get('first_detected') or '')} | {_base_cell} | "
                     f"{_broken_by_cell(pr)} |\n"
                 )
