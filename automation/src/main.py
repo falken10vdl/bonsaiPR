@@ -128,10 +128,14 @@ def extract_pr_numbers_from_section(report_path, section_title):
 
             # Extract PR numbers from lines in the section
             if in_section:
-                # Match patterns like "- **PR #123**:" or "**PR #123**:"
-                match = re.search(r"\*\*PR #(\d+)\*\*", line)
+                # Support both legacy report bullets and markdown table links.
+                # Legacy examples: "- **PR #123**:" / "**PR #123**:"
+                # Current examples: "| [#123](https://...) | ... |"
+                match = re.search(r"\*\*PR #(\d+)\*\*|\[#(\d+)\]\(|\bPR #(\d+)\b", line)
                 if match:
-                    pr_numbers.add(int(match.group(1)))
+                    pr_number = next((g for g in match.groups() if g), None)
+                    if pr_number is not None:
+                        pr_numbers.add(int(pr_number))
 
         return pr_numbers
     except Exception as e:
@@ -141,7 +145,43 @@ def extract_pr_numbers_from_section(report_path, section_title):
 
 def get_skipped_conflict_prs(report_path):
     """Get the list of PR numbers that were skipped due to conflicts with other PRs"""
-    return extract_pr_numbers_from_section(report_path, "## ❌ Failed to Merge PRs")
+    if not os.path.exists(report_path):
+        return set()
+
+    try:
+        with open(report_path, "r", encoding="utf-8") as f:
+            lines = f.read().split("\n")
+
+        import re
+
+        pr_numbers = set()
+        in_failed_section = False
+
+        for line in lines:
+            if "## ❌ Failed to Merge PRs" in line:
+                in_failed_section = True
+                continue
+
+            if in_failed_section and line.startswith("##"):
+                break
+
+            if not in_failed_section:
+                continue
+
+            # Only include failed PR rows that were classified as conflict-with-other-PRs.
+            if "conflict with other PRs" not in line:
+                continue
+
+            match = re.search(r"\[#(\d+)\]\(|\*\*PR #(\d+)\*\*|\bPR #(\d+)\b", line)
+            if match:
+                pr_number = next((g for g in match.groups() if g), None)
+                if pr_number is not None:
+                    pr_numbers.add(int(pr_number))
+
+        return pr_numbers
+    except Exception as e:
+        logging.error(f"❌ Error extracting skipped conflict PR numbers: {e}")
+        return set()
 
 
 def get_successfully_merged_prs(report_path):
