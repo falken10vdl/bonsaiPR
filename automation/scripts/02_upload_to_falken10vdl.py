@@ -1114,6 +1114,26 @@ def generate_release_body(
             author = pr_dict.get("author")
             return f"[@{author}](https://github.com/{author})" if author else ""
 
+        def _extract_author_login(raw_author):
+            """Normalize author values from different report formats to a login."""
+            if not raw_author:
+                return None
+
+            author = str(raw_author).strip()
+
+            # Format: [@login](https://github.com/login)
+            m = re.match(r"\[@([^\]]+)\]\([^\)]+\)", author)
+            if m:
+                return m.group(1).strip()
+
+            # Format: @login
+            if author.startswith("@"):
+                author = author[1:]
+
+            # Keep only the login part if extra text sneaks in
+            author = author.split()[0].strip()
+            return author or None
+
         def _broken_by_cell(pr):
             """Render the commit(s) a failed PR most likely broke on.
 
@@ -1190,6 +1210,27 @@ def generate_release_body(
         # Successfully Merged PRs
         release_body += f"\n## Successfully Merged PRs ({len(applied_prs)})\n\n"
         release_body += _pr_table(applied_prs)
+
+        # Explicit contributor rollup from merged PRs.
+        # GitHub's built-in Contributors widget can be confusing when tags/releases are mixed,
+        # so keep a deterministic list in the generated release body.
+        merged_contributors = sorted(
+            {
+                login
+                for login in (
+                    _extract_author_login(pr.get("author")) for pr in applied_prs
+                )
+                if login
+            },
+            key=str.lower,
+        )
+
+        release_body += f"\n## Contributors from Merged PRs ({len(merged_contributors)})\n\n"
+        if merged_contributors:
+            for login in merged_contributors:
+                release_body += f"- [@{login}](https://github.com/{login})\n"
+        else:
+            release_body += "_None._\n"
 
         release_body += "\n"
         return release_body

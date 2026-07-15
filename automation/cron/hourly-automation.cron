@@ -16,11 +16,11 @@
 # 3. Skip build if no changes (saves resources)
 
 # Minute Hour Day Month DayOfWeek Command
-# Run every hour at minute 5 (gives GitHub API time to settle after the hour)
+# Run every hour at minute 35 with flock lock to prevent overlapping runs
 PATH=/home/falken10vdl/.local/bin:/home/falken10vdl/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 
-# Hourly check - builds only when PRs change
-5 * * * * cd /home/falken10vdl/bonsaiPRDevel/bonsaiPR/automation/src && /usr/bin/python3 check_and_build.py
+# Hourly check with lock - skips if a previous run is still active
+35 * * * * flock -n /tmp/bonsaiPR_check_and_build.lock -c 'cd /home/falken10vdl/bonsaiPRDevel/bonsaiPR/automation/src && /usr/bin/python3 check_and_build.py'
 
 # Alternative schedules (uncomment one if you prefer):
 
