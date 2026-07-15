@@ -33,7 +33,7 @@ bonsaiPR_repo_url_public = f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git
 GITHUB_RELEASE_BODY_MAX = 125000
 GITHUB_RELEASE_BODY_TARGET = 120000
 VERSIONED_TAG_PATTERN = re.compile(
-    r"^v[\d.]+-alpha\d{10}(?:-(?:asc|desc|upd|upg)|\[(?:asc|desc|upd|upg)\])?$"
+    r"^v[\d.]+-alpha\d{10}(?:-(?:asc|desc|upd)|\[(?:asc|desc|upd)\])?$"
 )
 
 
