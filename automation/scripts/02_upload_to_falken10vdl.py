@@ -7,6 +7,7 @@ import glob
 import re
 import time
 from datetime import datetime
+from urllib.parse import quote
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -28,6 +29,12 @@ bonsaiPR_repo_url = (
     f"https://{GITHUB_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git"
 )
 bonsaiPR_repo_url_public = f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git"
+
+GITHUB_RELEASE_BODY_MAX = 125000
+GITHUB_RELEASE_BODY_TARGET = 120000
+VERSIONED_TAG_PATTERN = re.compile(
+    r"^v[\d.]+-alpha\d{10}(?:-(?:asc|desc|upd|upg)|\[(?:asc|desc|upd|upg)\])?$"
+)
 
 
 def get_build_paths():
@@ -183,6 +190,100 @@ def github_headers():
     }
 
 
+def limit_release_body_length(release_body, limit=GITHUB_RELEASE_BODY_TARGET):
+    """Trim release body to stay below GitHub's body-size limit."""
+    if len(release_body) <= limit:
+        return release_body
+
+    truncation_note = (
+        "\n\n---\n"
+        "⚠️ Release notes are truncated because GitHub limits "
+        f"release body size to {GITHUB_RELEASE_BODY_MAX} characters. "
+        "Check the full information in the README file in the release assets section.\n"
+    )
+    keep_len = max(0, limit - len(truncation_note))
+    trimmed_body = release_body[:keep_len].rstrip()
+    print(
+        f"⚠️ Release body too long ({len(release_body)} chars). "
+        f"Truncating to {len(trimmed_body) + len(truncation_note)} chars."
+    )
+    return trimmed_body + truncation_note
+
+
+def delete_remote_tag_ref(tag_name):
+    """Delete a remote Git tag reference by name."""
+    encoded_tag = quote(tag_name, safe="")
+    tag_url = (
+        f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/git/refs/tags/{encoded_tag}"
+    )
+    tag_response = requests.delete(tag_url, headers=github_headers())
+    return tag_response.status_code == 204
+
+
+def extract_tag_timestamp(tag_name):
+    """Extract YYMMDDHHMM timestamp from versioned tag names."""
+    match = re.search(r"alpha(\d{10})", tag_name)
+    return match.group(1) if match else ""
+
+
+def cleanup_old_tags():
+    """Delete old version tags from GitHub, keeping only the newest 30."""
+    print("\n🧹 Checking for old tags to clean up...")
+
+    try:
+        url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/tags"
+        all_tags = []
+        page = 1
+
+        while True:
+            params = {"per_page": 100, "page": page}
+            response = requests.get(url, headers=github_headers(), params=params)
+
+            if response.status_code != 200:
+                print(f"⚠️ Could not fetch tags: {response.status_code}")
+                return
+
+            page_tags = response.json()
+            if not page_tags:
+                break
+
+            all_tags.extend(page_tags)
+            page += 1
+
+            # Safety limit
+            if len(all_tags) >= 500:
+                break
+
+        versioned_tags = [
+            tag["name"]
+            for tag in all_tags
+            if VERSIONED_TAG_PATTERN.match(tag.get("name", ""))
+        ]
+
+        if len(versioned_tags) <= 30:
+            print(f"✅ Found {len(versioned_tags)} tags (≤30), no cleanup needed")
+            return
+
+        versioned_tags.sort(key=extract_tag_timestamp, reverse=True)
+        tags_to_delete = versioned_tags[30:]
+
+        print(f"📊 Found {len(versioned_tags)} tags, keeping last 30")
+        print(f"🗑️  Deleting {len(tags_to_delete)} old tags...")
+
+        deleted_count = 0
+        for tag_name in tags_to_delete:
+            if delete_remote_tag_ref(tag_name):
+                deleted_count += 1
+                print(f"  ✓ Deleted tag: {tag_name}")
+            else:
+                print(f"  ✗ Failed to delete tag: {tag_name}")
+
+        print(f"✅ Tag cleanup complete: {deleted_count}/{len(tags_to_delete)} tags deleted")
+
+    except Exception as e:
+        print(f"⚠️ Error during tag cleanup: {e}")
+
+
 def get_release_tag(timestamp=None):
     """Generate release tag with timestamp for on-demand builds"""
     import requests
@@ -233,6 +334,7 @@ def find_report_file():
 
 def update_release_body(release_id, release_name, release_body):
     """Patch the body (and name) of an existing GitHub release."""
+    release_body = limit_release_body_length(release_body)
     url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/{release_id}"
     response = requests.patch(
         url, headers=github_headers(), json={"name": release_name, "body": release_body}
@@ -249,6 +351,8 @@ def update_release_body(release_id, release_name, release_body):
 
 def create_github_release(tag_name, release_name, release_body):
     """Create a new GitHub release, or update the body if it already exists."""
+    release_body = limit_release_body_length(release_body)
+
     # First check if release already exists
     existing_url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/tags/{tag_name}"
     existing_response = requests.get(existing_url, headers=github_headers())
@@ -259,7 +363,7 @@ def create_github_release(tag_name, release_name, release_body):
             f"ℹ️ GitHub release already exists: {release_data['html_url']} — updating body..."
         )
         updated = update_release_body(release_data["id"], release_name, release_body)
-        return updated if updated else release_data
+        return updated if updated else None
 
     # Create new release if it doesn't exist
     url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases"
@@ -1132,7 +1236,7 @@ def cleanup_old_releases():
         for release in all_releases:
             tag_name = release["tag_name"]
             # Match pattern: vX.X.X-alphaYYMMDDHHMM
-            if re.match(r"^v[\d.]+-alpha\d{10}$", tag_name):
+            if VERSIONED_TAG_PATTERN.match(tag_name):
                 versioned_releases.append(release)
 
         if len(versioned_releases) <= 30:
@@ -1161,12 +1265,11 @@ def cleanup_old_releases():
 
             if delete_response.status_code == 204:
                 # Also delete the associated tag
-                tag_url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/git/refs/tags/{tag_name}"
-                tag_response = requests.delete(tag_url, headers=github_headers())
+                tag_deleted = delete_remote_tag_ref(tag_name)
 
                 deleted_count += 1
                 print(
-                    f"  ✓ Deleted release: {tag_name} (tag: {'✓' if tag_response.status_code == 204 else '✗'})"
+                    f"  ✓ Deleted release: {tag_name} (tag: {'✓' if tag_deleted else '✗'})"
                 )
             else:
                 print(
@@ -1354,6 +1457,11 @@ def upload_to_falken10vdl():
     release = create_github_release(tag_name, release_name, release_body)
     if not release:
         print("Failed to create GitHub release")
+        # GitHub can create the tag before rejecting a release body.
+        # Remove the just-created tag so failed runs don't accumulate stale refs.
+        if delete_remote_tag_ref(tag_name):
+            print(f"🧹 Removed orphan tag created by failed release: {tag_name}")
+        cleanup_old_tags()
         return False
 
     release_id = release["id"]
@@ -1537,6 +1645,7 @@ def upload_to_falken10vdl():
 
     # Clean up old releases after successfully creating new one
     cleanup_old_releases()
+    cleanup_old_tags()
 
     # Remove the local build directory to reclaim disk space now that
     # all artifacts have been uploaded to GitHub.
