@@ -74,23 +74,51 @@ def check_for_changes():
 def run_full_build():
     """Run the complete build automation"""
     main_script = os.path.join(os.path.dirname(__file__), 'main.py')
-    
+
     logging.info("🚀 Starting full build process...")
-    
+
     try:
         result = subprocess.run(
             [sys.executable, main_script],
             cwd=os.path.dirname(__file__),
             timeout=7200  # 2 hour timeout for full build
         )
-        
+
         return result.returncode == 0
-        
+
     except subprocess.TimeoutExpired:
         logging.error("⏰ Full build timed out after 2 hours")
         return False
     except Exception as e:
         logging.error(f"💥 Error during build: {e}")
+        return False
+
+def commit_reports():
+    """Commit (and optionally push) the per-order PR state snapshots.
+
+    No-op when nothing changed. Push is opt-in via BONSAIPR_REPORTS_PUSH=1
+    (see commit_reports.py). Failures here are logged but never fail the build.
+    """
+    commit_script = os.path.join(os.path.dirname(__file__), '..', 'scripts', 'commit_reports.py')
+
+    logging.info("🗂️  Committing PR state snapshots...")
+
+    try:
+        result = subprocess.run(
+            [sys.executable, commit_script],
+            cwd=os.path.join(os.path.dirname(__file__), '..', 'scripts'),
+            capture_output=True,
+            text=True,
+            timeout=300  # 5 minute timeout
+        )
+        for stream in (result.stdout, result.stderr):
+            if stream:
+                for line in stream.split('\n'):
+                    if line.strip():
+                        logging.info(f"   {line}")
+        return result.returncode == 0
+    except Exception as e:
+        logging.warning(f"⚠️ Could not commit reports: {e}")
         return False
 
 MIN_FREE_GB = 1.5  # Require at least 1.5 GB free before starting a build
@@ -175,6 +203,9 @@ def main():
     
     if build_success:
         logging.info("🎉 Build completed successfully!")
+        # Persist the per-order state snapshots so git history becomes the
+        # run-to-run diff record. Never fails the build.
+        commit_reports()
         logging.info("=" * 70)
         return 0
     else:
