@@ -29,6 +29,18 @@ except ImportError:
     GITHUB_OWNER = os.getenv("GITHUB_OWNER", "falken10vdl")
     GITHUB_REPO = os.getenv("GITHUB_REPO", "BonsaiPR")
 
+# Make sibling automation scripts importable (pr_state lives in ../scripts).
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
+import pr_state
+
+# Committed per-order snapshots + event logs live here.
+REPORTS_DIR = os.path.join(os.path.dirname(__file__), "..", "reports")
+
+
+def _events_path(order_suffix):
+    """Path to the append-only event log for a merge order (asc/desc/upd)."""
+    return os.path.join(REPORTS_DIR, f"events.{order_suffix}.jsonl")
+
 
 def setup_logging():
     """Set up comprehensive logging for automation"""
@@ -360,6 +372,16 @@ def main():
                         )
                         for pr_num in sorted(newly_merged_prs):
                             logging.info(f"   • PR #{pr_num}")
+                        # Log these as 'rescued' events on the desc lineage: the
+                        # ascending build conflict-skipped them, descending merged them.
+                        pr_state.append_events(
+                            _events_path("desc"),
+                            pr_state.rescue_events(
+                                newly_merged_prs,
+                                rescued_by_order="desc",
+                                baseline_order="asc",
+                            ),
+                        )
                         logging.info(
                             "\n🚀 Continuing with build and release for retry..."
                         )
@@ -460,6 +482,15 @@ def main():
                             )
                             for pr_num in sorted(newly_merged_upd):
                                 logging.info(f"   • PR #{pr_num}")
+                            # Rescued by the by-updated order (still-skipped after asc+desc).
+                            pr_state.append_events(
+                                _events_path("upd"),
+                                pr_state.rescue_events(
+                                    newly_merged_upd,
+                                    rescued_by_order="upd",
+                                    baseline_order="asc",
+                                ),
+                            )
                             logging.info(
                                 "\n🚀 Continuing with build and release for by-updated..."
                             )

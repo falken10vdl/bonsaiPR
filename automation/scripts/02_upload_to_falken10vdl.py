@@ -30,11 +30,43 @@ bonsaiPR_repo_url = (
 )
 bonsaiPR_repo_url_public = f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git"
 
-GITHUB_RELEASE_BODY_MAX = 125000
-GITHUB_RELEASE_BODY_TARGET = 120000
 VERSIONED_TAG_PATTERN = re.compile(
     r"^v[\d.]+-alpha\d{10}(?:-(?:asc|desc|upd)|\[(?:asc|desc|upd)\])?$"
 )
+
+# --- Per-order PR state snapshots + run-to-run deltas ---------------------
+# pr_state lives alongside this script; runs with cwd=scripts_dir so a plain
+# import resolves.
+import pr_state
+
+BONSAI_BASE_TAG = "v0.8.0"
+# Committed snapshots/event logs live in automation/reports (this file is in
+# automation/scripts).
+REPORTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "reports")
+# Maps the parsed "Merge Order:" value to the [asc]/[desc]/[upd] tag suffix so
+# each order gets its own diff lineage (never diff ascending vs by-updated).
+_ORDER_SUFFIX = {"ascending": "asc", "descending": "desc", "by-updated": "upd"}
+
+
+def _reports_publish_branch(repo_dir):
+    """Branch the report/state files are committed to (for building blob links).
+
+    Kept consistent with commit_reports.py: BONSAIPR_REPORTS_BRANCH if set,
+    else the repo's current branch, else 'main'.
+    """
+    branch = os.getenv("BONSAIPR_REPORTS_BRANCH")
+    if branch:
+        return branch
+    try:
+        out = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            cwd=repo_dir,
+            capture_output=True,
+            text=True,
+        )
+        return out.stdout.strip() or "main"
+    except Exception:
+        return "main"
 
 
 def get_build_paths():
@@ -190,26 +222,6 @@ def github_headers():
     }
 
 
-def limit_release_body_length(release_body, limit=GITHUB_RELEASE_BODY_TARGET):
-    """Trim release body to stay below GitHub's body-size limit."""
-    if len(release_body) <= limit:
-        return release_body
-
-    truncation_note = (
-        "\n\n---\n"
-        "⚠️ Release notes are truncated because GitHub limits "
-        f"release body size to {GITHUB_RELEASE_BODY_MAX} characters. "
-        "Check the full information in the README file in the release assets section.\n"
-    )
-    keep_len = max(0, limit - len(truncation_note))
-    trimmed_body = release_body[:keep_len].rstrip()
-    print(
-        f"⚠️ Release body too long ({len(release_body)} chars). "
-        f"Truncating to {len(trimmed_body) + len(truncation_note)} chars."
-    )
-    return trimmed_body + truncation_note
-
-
 def delete_remote_tag_ref(tag_name):
     """Delete a remote Git tag reference by name."""
     encoded_tag = quote(tag_name, safe="")
@@ -334,7 +346,6 @@ def find_report_file():
 
 def update_release_body(release_id, release_name, release_body):
     """Patch the body (and name) of an existing GitHub release."""
-    release_body = limit_release_body_length(release_body)
     url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/{release_id}"
     response = requests.patch(
         url, headers=github_headers(), json={"name": release_name, "body": release_body}
@@ -351,8 +362,6 @@ def update_release_body(release_id, release_name, release_body):
 
 def create_github_release(tag_name, release_name, release_body):
     """Create a new GitHub release, or update the body if it already exists."""
-    release_body = limit_release_body_length(release_body)
-
     # First check if release already exists
     existing_url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/tags/{tag_name}"
     existing_response = requests.get(existing_url, headers=github_headers())
@@ -1079,6 +1088,48 @@ def generate_release_body(
             f"check the companion release for that PR.\n\n"
         )
 
+        # --- Per-order state snapshot + run-to-run delta --------------------
+        # Keyed by merge order so we never diff ascending against by-updated
+        # (that would be pure phantom churn). The delta summary is placed at the
+        # TOP of the body so it survives even if the tables below get truncated.
+        # See pr_state.py for the schema and diff semantics.
+        delta_summary_section = ""
+        try:
+            order_suffix = _ORDER_SUFFIX.get(merge_order, "asc")
+            state_path = os.path.join(REPORTS_DIR, f"state.{order_suffix}.json")
+            events_path = os.path.join(REPORTS_DIR, f"events.{order_suffix}.jsonl")
+
+            new_state = pr_state.build_state(
+                applied_prs=applied_prs,
+                failed_prs=failed_prs,
+                skipped_conflict_prs=skipped_conflict_prs,
+                skipped_draft_prs=skipped_draft_prs,
+                merge_order=merge_order,
+                base=BONSAI_BASE_TAG,
+                total_prs=total_prs,
+            )
+
+            # Previous run's committed snapshot for THIS order (working-tree copy;
+            # git history holds older ones). Absent on the very first run.
+            prev_state = pr_state.load_state(state_path)
+            if prev_state:
+                delta = pr_state.compute_delta(
+                    prev_state, new_state, strict_order=True
+                )
+                delta_summary_section = pr_state.render_delta_md(delta)
+                pr_state.append_events(
+                    events_path, pr_state.delta_to_events(delta)
+                )
+
+            # Overwrite the snapshot; the commit step turns git history into the
+            # durable run-to-run diff record.
+            pr_state.write_state(new_state, state_path)
+        except Exception as e:
+            import traceback
+
+            print(f"⚠️ Could not compute PR state delta: {e}")
+            print(traceback.format_exc())
+
         # Generate markdown description
         release_body = f"""This is an automated build of BonsaiPR with the latest pull requests merged from the IfcOpenShell repository.
 
@@ -1090,7 +1141,8 @@ def generate_release_body(
 - **Skipped (conflict with other PRs)**: {len(skipped_conflict_prs)}
 - **Failed PRs**: {len(failed_prs)}
 - **Success Rate**: {success_rate:.1f}%
-"""
+
+{delta_summary_section}"""
 
         # --- Helpers for rendering PR sections as markdown tables ---
         def _cell(value):
@@ -1176,40 +1228,67 @@ def generate_release_body(
                 )
             return rows
 
-        # Failed PRs table
-        release_body += f"\n## Failed PRs ({len(failed_prs)})\n\n"
-        if not failed_prs:
-            release_body += "_None._\n"
-        else:
-            release_body += "| PR | Branch | Title | Author | Last commit | First detected | Base commit | Broken by |\n"
-            release_body += "|----|--------|-------|--------|-------------|----------------|-------------|-----------|\n"
-            for pr in failed_prs:
-                _num, _title = _pr_num_title(pr["line"])
-                _pr_url = pr.get("url") or ""
-                _pr_link = f"[#{_num}]({_pr_url})" if _pr_url else f"#{_num}"
-                _base_cell = ""
-                if pr.get("base_commit"):
-                    _bc = pr["base_commit"]
-                    _bc_url = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/commit/{_bc}"
-                    _base_cell = f"[{_bc[:7]}]({_bc_url})"
-                release_body += (
-                    f"| {_pr_link} | {_cell(pr.get('branch') or '')} | {_cell(_title)} | {_author_cell(pr)} | "
-                    f"{_commit_cell(pr.get('last_commit'))} | "
-                    f"{_cell(pr.get('first_detected') or '')} | {_base_cell} | "
-                    f"{_broken_by_cell(pr)} |\n"
+        # The full per-PR tables (failed / skipped-conflict / skipped-draft /
+        # merged) are no longer inlined — with 400+ PRs they blew past GitHub's
+        # ~125k body limit. The full report is (a) committed to the repo as a
+        # rendered, diffable markdown file and (b) still attached to the release
+        # as the .txt asset. The body links the in-repo markdown as primary.
+        readme_asset_name = os.path.basename(report_file_path)
+
+        # (a) Write the report as committed markdown: reports/archive/<tag>.md.
+        #     commit_reports.py commits reports/, so this lands on the reports
+        #     branch shortly after publish. `content` is the raw report text.
+        repo_dir = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "..", "..")
+        )
+        md_repo_link = None
+        if tag_name:
+            try:
+                archive_dir = os.path.join(REPORTS_DIR, "archive")
+                os.makedirs(archive_dir, exist_ok=True)
+                md_path = os.path.join(archive_dir, f"{tag_name}.md")
+                with open(md_path, "w", encoding="utf-8") as mf:
+                    mf.write(content)
+                branch = _reports_publish_branch(repo_dir)
+                rel = os.path.relpath(md_path, repo_dir).replace(os.sep, "/")
+                md_url = (
+                    f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/"
+                    f"blob/{branch}/{rel}"
                 )
+                md_repo_link = f"[`{tag_name}.md`]({md_url})"
+            except Exception as e:
+                print(f"⚠️ Could not write markdown report archive: {e}")
 
-        # Skipped - Conflict with other PRs
-        release_body += f"\n## Skipped - Conflict with other PRs. Merges cleanly with base ({len(skipped_conflict_prs)})\n\n"
-        release_body += _pr_table(skipped_conflict_prs)
+        # (b) Direct link to the .txt asset attached to this release.
+        if tag_name:
+            asset_url = (
+                f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/"
+                f"releases/download/{tag_name}/{quote(readme_asset_name)}"
+            )
+            asset_link = f"[`{readme_asset_name}`]({asset_url})"
+        else:
+            asset_link = (
+                f"the **{readme_asset_name}** file in this release's "
+                f"**Assets** section"
+            )
 
-        # Skipped - Draft PRs
-        release_body += f"\n## Skipped - Draft PRs ({len(skipped_draft_prs)})\n\n"
-        release_body += _pr_table(skipped_draft_prs)
+        if md_repo_link:
+            report_link = (
+                f"{md_repo_link} _(rendered in-repo; also attached to this "
+                f"release as {asset_link})_"
+            )
+        else:
+            report_link = asset_link
 
-        # Successfully Merged PRs
-        release_body += f"\n## Successfully Merged PRs ({len(applied_prs)})\n\n"
-        release_body += _pr_table(applied_prs)
+        release_body += (
+            f"\n## 📄 Full per-PR breakdown\n\n"
+            f"The complete per-PR tables — "
+            f"**{len(failed_prs)}** failed, "
+            f"**{len(skipped_conflict_prs)}** skipped (conflict with other PRs), "
+            f"**{len(skipped_draft_prs)}** skipped (draft), and "
+            f"**{len(applied_prs)}** successfully merged — "
+            f"are in the full report: {report_link}.\n"
+        )
 
         # Explicit contributor rollup from merged PRs.
         # GitHub's built-in Contributors widget can be confusing when tags/releases are mixed,
