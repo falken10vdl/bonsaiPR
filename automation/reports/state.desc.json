@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 51,
-    "merged": 385,
-    "skipped_conflict": 62,
-    "skipped_draft": 46,
-    "total": 544
+    "failed": 50,
+    "merged": 384,
+    "skipped_conflict": 64,
+    "skipped_draft": 47,
+    "total": 545
   },
-  "generated_at": "2026-07-19T10:28:33Z",
+  "generated_at": "2026-07-19T12:27:33Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1076,7 +1076,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "d8799d7",
+      "head": "f23db94",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1780,7 +1780,7 @@
       "author": "BIMvoice",
       "branch": "fix-4606-mixed-repr",
       "head": "2979c2c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: import representations that mix polygons and curves (#4606)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8340"
     },
@@ -3846,7 +3846,7 @@
     "8675": {
       "author": "BIMvoice",
       "branch": "fix-8041-watch-reload",
-      "head": "7f863ae",
+      "head": "b26e612",
       "status": "skipped_draft",
       "title": "Bonsai: watch the IFC file for external changes and reload in place",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8675"
@@ -4135,7 +4135,7 @@
       "author": "BIMvoice",
       "branch": "fix-6664-status-element-visibility",
       "head": "17de480",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: compose element visibility with the Status filter instead of overwriting it",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8720"
     },
@@ -4372,15 +4372,6 @@
       "title": "ifcopenshell.api: don't cascade a reassigned occurrence's class onto its shared type and siblings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8753"
     },
-    "8754": {
-      "author": "BIMvoice",
-      "branch": "bonsai-3058-int64-wgpu",
-      "head": "9cc990a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifcparse: port int64_t attribute-value fix (#8683) to the ifcviewer-wgpu ifcparse rewrite",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8754"
-    },
     "8755": {
       "author": "BIMvoice",
       "branch": "bonsai-3302-mirror-joins",
@@ -4412,6 +4403,22 @@
       "status": "merged",
       "title": "Bonsai: wire Shift+K to split pipe/duct segments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8758"
+    },
+    "8759": {
+      "author": "BIMvoice",
+      "branch": "poc-134-vertex-kernel",
+      "head": "57162b7",
+      "status": "skipped_draft",
+      "title": "[Concept] ifcgeom: OpenCascade kernel support for point/vertex representations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8759"
+    },
+    "8760": {
+      "author": "sboddy",
+      "branch": "perf-status-filters",
+      "head": "ae9efee",
+      "status": "merged",
+      "title": "Perf: Speed up Status Filters visibility toggle",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8760"
     }
   },
   "schema": 1

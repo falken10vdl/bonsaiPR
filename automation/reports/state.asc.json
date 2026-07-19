@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 51,
-    "merged": 391,
-    "skipped_conflict": 54,
-    "skipped_draft": 46,
-    "total": 542
+    "failed": 52,
+    "merged": 392,
+    "skipped_conflict": 55,
+    "skipped_draft": 47,
+    "total": 546
   },
-  "generated_at": "2026-07-19T10:01:59Z",
+  "generated_at": "2026-07-19T12:01:03Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3846,7 +3846,7 @@
     "8675": {
       "author": "BIMvoice",
       "branch": "fix-8041-watch-reload",
-      "head": "7f863ae",
+      "head": "b26e612",
       "status": "skipped_draft",
       "title": "Bonsai: watch the IFC file for external changes and reload in place",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8675"
@@ -3862,7 +3862,7 @@
     "8677": {
       "author": "BIMvoice",
       "branch": "fix-6377-plate-3d-editing",
-      "head": "5483e18",
+      "head": "48405ae",
       "status": "skipped_draft",
       "title": "Bonsai: realign plate placement when a triangular profile is edited in 3D",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
@@ -4039,7 +4039,8 @@
       "author": "BIMvoice",
       "branch": "fix-3995-standalone-window-boundaries",
       "head": "2cc00c5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: let standalone windows bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8703"
     },
@@ -4375,7 +4376,7 @@
     "8754": {
       "author": "BIMvoice",
       "branch": "bonsai-3058-int64-wgpu",
-      "head": "d2bf935",
+      "head": "9cc990a",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "ifcparse: port int64_t attribute-value fix (#8683) to the ifcviewer-wgpu ifcparse rewrite",
@@ -4396,6 +4397,38 @@
       "status": "skipped_conflict",
       "title": "project.append_asset: reject GlobalId matches across incompatible classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8756"
+    },
+    "8757": {
+      "author": "BIMvoice",
+      "branch": "bonsai-413-name-template",
+      "head": "0d4abce",
+      "status": "merged",
+      "title": "IfcConvert: add --name-template for generic per-entity output naming",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8757"
+    },
+    "8758": {
+      "author": "BIMvoice",
+      "branch": "bonsai-3941-mep-split-hotkey",
+      "head": "ab1a215",
+      "status": "skipped_conflict",
+      "title": "Bonsai: wire Shift+K to split pipe/duct segments",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8758"
+    },
+    "8759": {
+      "author": "BIMvoice",
+      "branch": "poc-134-vertex-kernel",
+      "head": "57162b7",
+      "status": "skipped_draft",
+      "title": "[Concept] ifcgeom: OpenCascade kernel support for point/vertex representations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8759"
+    },
+    "8760": {
+      "author": "sboddy",
+      "branch": "perf-status-filters",
+      "head": "c3ec38d",
+      "status": "skipped_conflict",
+      "title": "Perf: Speed up Status Filters visibility toggle",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8760"
     }
   },
   "schema": 1
