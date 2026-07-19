@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 50,
-    "merged": 388,
+    "merged": 391,
     "skipped_conflict": 51,
     "skipped_draft": 46,
-    "total": 535
+    "total": 538
   },
-  "generated_at": "2026-07-19T06:01:25Z",
+  "generated_at": "2026-07-19T08:01:31Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4339,6 +4339,30 @@
       "status": "merged",
       "title": "Bonsai: support aligning a hosted window/door to its wall's exterior/centerline/interior face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8744"
+    },
+    "8747": {
+      "author": "brunopostle",
+      "branch": "fix/spflexer-header-leak-raii",
+      "head": "f547245",
+      "status": "merged",
+      "title": "Fix leak of IfcSpfLexer when read_from_stream returns early or throws",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8747"
+    },
+    "8748": {
+      "author": "BIMvoice",
+      "branch": "fix-6944-editmode-circle-duplicate",
+      "head": "dbb5cef",
+      "status": "merged",
+      "title": "Bonsai: fix profile/curve reconstruction after duplicating a circle or arc in Edit Mode",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8748"
+    },
+    "8749": {
+      "author": "BIMvoice",
+      "branch": "bonsai-3303-light-reload",
+      "head": "fa6a0a5",
+      "status": "merged",
+      "title": "Bonsai: reconstruct light objects when reloading an IFC file",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8749"
     }
   },
   "schema": 1
