@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 52,
-    "merged": 390,
-    "skipped_conflict": 64,
+    "merged": 393,
+    "skipped_conflict": 69,
     "skipped_draft": 48,
-    "total": 554
+    "total": 562
   },
-  "generated_at": "2026-07-19T18:28:45Z",
+  "generated_at": "2026-07-19T20:28:54Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -837,14 +837,6 @@
       "status": "failed",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
-    },
-    "7968": {
-      "author": "theoryshaw",
-      "branch": "grab-selects-array",
-      "head": "7f3cb8c",
-      "status": "merged",
-      "title": "Fix #6652: Extend grab selection to include BBIM_Array members",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7968"
     },
     "7970": {
       "author": "theoryshaw",
@@ -3910,7 +3902,7 @@
       "author": "BIMvoice",
       "branch": "fix-3058-int64-attr",
       "head": "5b9c9c2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcparse: store integer attribute values as int64_t to allow out-of-range timestamps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8683"
     },
@@ -3941,7 +3933,7 @@
     "8687": {
       "author": "BIMvoice",
       "branch": "fix-3783-track-project-assets",
-      "head": "c7550fd",
+      "head": "e4ba5e4",
       "status": "merged",
       "title": "Bonsai: commit referenced drawing assets alongside the IFC in IfcGit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8687"
@@ -4078,7 +4070,7 @@
       "author": "BIMvoice",
       "branch": "bv-2748-userdefined-task-object-type-color",
       "head": "a308a85",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: key USERDEFINED task animation colour by ObjectType",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8709"
     },
@@ -4150,7 +4142,7 @@
       "author": "BIMvoice",
       "branch": "bv-6867-mitre-halfspace-cgal-fallback",
       "head": "139e2ed",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcgeom: fall back to CGAL when OCCT boolean produces coincident faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8722"
     },
@@ -4391,7 +4383,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-413-name-template",
       "head": "0d4abce",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcConvert: add --name-template for generic per-entity output naming",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8757"
     },
@@ -4493,6 +4485,78 @@
       "status": "merged",
       "title": "validate.py: flag instantiated measures with no corresponding unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8770"
+    },
+    "8771": {
+      "author": "BIMvoice",
+      "branch": "fix-790-gltf-group-node-names",
+      "head": "9050d40",
+      "status": "merged",
+      "title": "GltfSerializer: fix hierarchy group node names, add opt-in --gltf-extras",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8771"
+    },
+    "8772": {
+      "author": "BIMvoice",
+      "branch": "fix-418-nonmanifold-opening-facesets",
+      "head": "24c789e",
+      "status": "merged",
+      "title": "ifcgeom: keep one copy of repeated faces in faceset helper duplicate removal",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8772"
+    },
+    "8773": {
+      "author": "BIMvoice",
+      "branch": "fix-2639-bbox-substitution",
+      "head": "a643bd9",
+      "status": "merged",
+      "title": "ifcgeom: add bbox-substitution-threshold to substitute overly dense geometry with bounding boxes (#2639)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8773"
+    },
+    "8774": {
+      "author": "BIMvoice",
+      "branch": "2381-parent-task-animation",
+      "head": "8418019",
+      "status": "merged",
+      "title": "Bonsai: allow 4D animation at parent task granularity",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8774"
+    },
+    "8775": {
+      "author": "BIMvoice",
+      "branch": "fix-487-boolean-sequential-fallback",
+      "head": "7823f31",
+      "status": "skipped_conflict",
+      "title": "ifcgeom: retry failed batched opening cuts sequentially (#487)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8775"
+    },
+    "8776": {
+      "author": "BIMvoice",
+      "branch": "fix-414-ownership-propagation",
+      "head": "3e32358",
+      "status": "merged",
+      "title": "IfcParse: propagate file ownership when assigning instance attributes (fixes #414)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8776"
+    },
+    "8777": {
+      "author": "BIMvoice",
+      "branch": "fix-ci-lint-black-drift",
+      "head": "cfc8bdb",
+      "status": "merged",
+      "title": "ci-lint: black-format two files that drifted on v0.8.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8777"
+    },
+    "8778": {
+      "author": "BIMvoice",
+      "branch": "2320-invalid-operand-fallback",
+      "head": "0fcf6a1",
+      "status": "merged",
+      "title": "ifcgeom: salvage subtractions when OCCT refuses invalid boolean operands (#2320)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8778"
+    },
+    "8779": {
+      "author": "BIMvoice",
+      "branch": "fix-ci-lint-ty",
+      "head": "58c2646",
+      "status": "merged",
+      "title": "Fix all remaining ty type-check failures on ci-lint",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8779"
     }
   },
   "schema": 1

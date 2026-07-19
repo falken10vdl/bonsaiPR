@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 52,
-    "merged": 397,
-    "skipped_conflict": 57,
+    "merged": 399,
+    "skipped_conflict": 61,
     "skipped_draft": 48,
-    "total": 554
+    "total": 560
   },
-  "generated_at": "2026-07-19T18:01:27Z",
+  "generated_at": "2026-07-19T20:02:12Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -837,14 +837,6 @@
       "status": "failed",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
-    },
-    "7968": {
-      "author": "theoryshaw",
-      "branch": "grab-selects-array",
-      "head": "7f3cb8c",
-      "status": "merged",
-      "title": "Fix #6652: Extend grab selection to include BBIM_Array members",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7968"
     },
     "7970": {
       "author": "theoryshaw",
@@ -4493,6 +4485,62 @@
       "status": "skipped_conflict",
       "title": "validate.py: flag instantiated measures with no corresponding unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8770"
+    },
+    "8771": {
+      "author": "BIMvoice",
+      "branch": "fix-790-gltf-group-node-names",
+      "head": "9050d40",
+      "status": "skipped_conflict",
+      "title": "GltfSerializer: fix hierarchy group node names, add opt-in --gltf-extras",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8771"
+    },
+    "8772": {
+      "author": "BIMvoice",
+      "branch": "fix-418-nonmanifold-opening-facesets",
+      "head": "24c789e",
+      "status": "merged",
+      "title": "ifcgeom: keep one copy of repeated faces in faceset helper duplicate removal",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8772"
+    },
+    "8773": {
+      "author": "BIMvoice",
+      "branch": "fix-2639-bbox-substitution",
+      "head": "a643bd9",
+      "status": "merged",
+      "title": "ifcgeom: add bbox-substitution-threshold to substitute overly dense geometry with bounding boxes (#2639)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8773"
+    },
+    "8774": {
+      "author": "BIMvoice",
+      "branch": "2381-parent-task-animation",
+      "head": "8418019",
+      "status": "skipped_conflict",
+      "title": "Bonsai: allow 4D animation at parent task granularity",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8774"
+    },
+    "8775": {
+      "author": "BIMvoice",
+      "branch": "fix-487-boolean-sequential-fallback",
+      "head": "7823f31",
+      "status": "skipped_conflict",
+      "title": "ifcgeom: retry failed batched opening cuts sequentially (#487)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8775"
+    },
+    "8776": {
+      "author": "BIMvoice",
+      "branch": "fix-414-ownership-propagation",
+      "head": "3e32358",
+      "status": "skipped_conflict",
+      "title": "IfcParse: propagate file ownership when assigning instance attributes (fixes #414)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8776"
+    },
+    "8777": {
+      "author": "BIMvoice",
+      "branch": "fix-ci-lint-black-drift",
+      "head": "cfc8bdb",
+      "status": "merged",
+      "title": "ci-lint: black-format two files that drifted on v0.8.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8777"
     }
   },
   "schema": 1
