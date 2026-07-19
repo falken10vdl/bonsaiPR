@@ -3,11 +3,11 @@
   "counts": {
     "failed": 51,
     "merged": 391,
-    "skipped_conflict": 50,
+    "skipped_conflict": 54,
     "skipped_draft": 46,
-    "total": 538
+    "total": 542
   },
-  "generated_at": "2026-07-19T09:01:01Z",
+  "generated_at": "2026-07-19T10:01:59Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1134,8 +1134,7 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/multi-cf99e4b298",
       "head": "6e1efe5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bump vite, @sveltejs/vite-plugin-svelte and @tailwindcss/vite in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8182"
     },
@@ -3855,7 +3854,7 @@
     "8676": {
       "author": "BIMvoice",
       "branch": "fix-2011-ifc-node-graph",
-      "head": "f607532",
+      "head": "c780ce9",
       "status": "skipped_draft",
       "title": "Bonsai: add IFC Graph node editor to explore entity relationships",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8676"
@@ -4364,6 +4363,39 @@
       "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
+    },
+    "8753": {
+      "author": "BIMvoice",
+      "branch": "fix-2831-combined",
+      "head": "094ef73",
+      "status": "skipped_conflict",
+      "title": "ifcopenshell.api: don't cascade a reassigned occurrence's class onto its shared type and siblings",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8753"
+    },
+    "8754": {
+      "author": "BIMvoice",
+      "branch": "bonsai-3058-int64-wgpu",
+      "head": "d2bf935",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcparse: port int64_t attribute-value fix (#8683) to the ifcviewer-wgpu ifcparse rewrite",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8754"
+    },
+    "8755": {
+      "author": "BIMvoice",
+      "branch": "bonsai-3302-mirror-joins",
+      "head": "3f8fa0a",
+      "status": "skipped_conflict",
+      "title": "Bonsai: resync mirrored walls' openings so voids follow their door/window",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
+    },
+    "8756": {
+      "author": "BIMvoice",
+      "branch": "bonsai-8666-8667-append-asset",
+      "head": "9d48eeb",
+      "status": "skipped_conflict",
+      "title": "project.append_asset: reject GlobalId matches across incompatible classes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8756"
     }
   },
   "schema": 1

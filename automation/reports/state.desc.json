@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 51,
-    "merged": 384,
-    "skipped_conflict": 60,
+    "merged": 385,
+    "skipped_conflict": 62,
     "skipped_draft": 46,
-    "total": 541
+    "total": 544
   },
-  "generated_at": "2026-07-19T09:27:27Z",
+  "generated_at": "2026-07-19T10:28:33Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -652,7 +652,7 @@
       "author": "theoryshaw",
       "branch": "split_profile_based_objects",
       "head": "f229ad5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "closes #3804: Add S_K split support for profile-based elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7871"
     },
@@ -1860,7 +1860,7 @@
       "author": "BIMvoice",
       "branch": "fix-4766-cross-schema-append",
       "head": "77d3ccb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: migrate library asset to project schema on cross-schema append (#4766)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8352"
     },
@@ -3862,7 +3862,7 @@
     "8677": {
       "author": "BIMvoice",
       "branch": "fix-6377-plate-3d-editing",
-      "head": "5483e18",
+      "head": "48405ae",
       "status": "skipped_draft",
       "title": "Bonsai: realign plate placement when a triangular profile is edited in 3D",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
@@ -4375,7 +4375,7 @@
     "8754": {
       "author": "BIMvoice",
       "branch": "bonsai-3058-int64-wgpu",
-      "head": "d2bf935",
+      "head": "9cc990a",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "ifcparse: port int64_t attribute-value fix (#8683) to the ifcviewer-wgpu ifcparse rewrite",
@@ -4388,6 +4388,30 @@
       "status": "merged",
       "title": "Bonsai: resync mirrored walls' openings so voids follow their door/window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
+    },
+    "8756": {
+      "author": "BIMvoice",
+      "branch": "bonsai-8666-8667-append-asset",
+      "head": "9d48eeb",
+      "status": "merged",
+      "title": "project.append_asset: reject GlobalId matches across incompatible classes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8756"
+    },
+    "8757": {
+      "author": "BIMvoice",
+      "branch": "bonsai-413-name-template",
+      "head": "0d4abce",
+      "status": "merged",
+      "title": "IfcConvert: add --name-template for generic per-entity output naming",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8757"
+    },
+    "8758": {
+      "author": "BIMvoice",
+      "branch": "bonsai-3941-mep-split-hotkey",
+      "head": "ab1a215",
+      "status": "merged",
+      "title": "Bonsai: wire Shift+K to split pipe/duct segments",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8758"
     }
   },
   "schema": 1
