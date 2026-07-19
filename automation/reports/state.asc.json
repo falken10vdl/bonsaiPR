@@ -1,0 +1,4345 @@
+{
+  "base": "v0.8.0",
+  "counts": {
+    "failed": 50,
+    "merged": 388,
+    "skipped_conflict": 51,
+    "skipped_draft": 46,
+    "total": 535
+  },
+  "generated_at": "2026-07-19T06:01:25Z",
+  "merge_order": "ascending",
+  "prs": {
+    "1201": {
+      "author": "Noranius",
+      "branch": "SelectionRepresentationContext",
+      "head": "8f09b96",
+      "status": "skipped_draft",
+      "title": "Selection representation context",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/1201"
+    },
+    "2093": {
+      "author": "ilkinkavi",
+      "branch": "v0.7.0",
+      "head": "be547ce",
+      "status": "skipped_draft",
+      "title": "Modification of triangulated face set creation",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/2093"
+    },
+    "2236": {
+      "author": "otsoa",
+      "branch": "topic/ignore-contexts-setting",
+      "head": "eef3372",
+      "status": "skipped_draft",
+      "title": "Topic/ignore contexts setting",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/2236"
+    },
+    "2312": {
+      "author": "skinkie",
+      "branch": "deprecated_fixes",
+      "head": "233c875",
+      "status": "skipped_draft",
+      "title": "Deprecated fixes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/2312"
+    },
+    "2476": {
+      "author": "cvillagrasa",
+      "branch": "ifc_class_icons",
+      "head": "6167d0e",
+      "status": "skipped_draft",
+      "title": "Add Thomas icons to BlenderBIM IFC classes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/2476"
+    },
+    "3851": {
+      "author": "cvillagrasa",
+      "branch": "use_schema_args",
+      "head": "fd9a666",
+      "status": "skipped_draft",
+      "title": "Allow for passing IFC Schema attributes on API methods",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/3851"
+    },
+    "3864": {
+      "author": "johltn",
+      "branch": "v0.7.0",
+      "head": "6b57a57",
+      "status": "skipped_draft",
+      "title": "Check IfcDateTime according to ISO standards",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/3864"
+    },
+    "3975": {
+      "author": "I-Sokolov",
+      "branch": "v0.7.0",
+      "head": "f1ee485",
+      "status": "skipped_draft",
+      "title": "ifcopenshell-python\\test\\fixtures: More fixes in passed IFC files",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/3975"
+    },
+    "4002": {
+      "author": "deliciousteas",
+      "branch": "v0.7.0",
+      "head": "be9cf80",
+      "status": "skipped_draft",
+      "title": "IfcOpenShell Tutorial with C++",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/4002"
+    },
+    "4480": {
+      "author": "Moult",
+      "branch": "v0.7.0",
+      "head": "d200164",
+      "status": "skipped_draft",
+      "title": "Merge work by FrogsInSpace",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/4480"
+    },
+    "4862": {
+      "author": "CKiOne",
+      "branch": "v0.8.0",
+      "head": "ea7a31e",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "more checks for 2D boolean check. Issue #4839",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/4862"
+    },
+    "5452": {
+      "author": "chiragsingh1711",
+      "branch": "light/newUI",
+      "head": "ac18195",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Radiance Rendering Changes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/5452"
+    },
+    "5698": {
+      "author": "cjmayo",
+      "branch": "includedir",
+      "head": "2619299",
+      "status": "skipped_draft",
+      "title": "Install headers under CMAKE_INSTALL_INCLUDEDIR/ifcopenshell",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/5698"
+    },
+    "643": {
+      "author": "atibaut",
+      "branch": "v0.6.0",
+      "head": "aded71c",
+      "status": "skipped_draft",
+      "title": "*nix script build-all.py improved: solves the Issues #637 (segmentation fault 11) for Mac OS X",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/643"
+    },
+    "6437": {
+      "author": "jes-r",
+      "branch": "v0.8.0",
+      "head": "b9ee64d",
+      "status": "skipped_draft",
+      "title": "Added Text sizes 1.3 & 1.5 mm (#6426 almost closed), changed a few inconsistent spacings too",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/6437"
+    },
+    "6449": {
+      "author": "Adarshgupta1127",
+      "branch": "add-ifcconvert-ci",
+      "head": "56b7072",
+      "status": "skipped_draft",
+      "title": "IfcConvert CI/CD Pipeline",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/6449"
+    },
+    "6497": {
+      "author": "chrisjesuscj",
+      "branch": "ifcsverchok-node-fix",
+      "head": "566dd21",
+      "status": "skipped_draft",
+      "title": "[IfcSverchok] Add failsafe so nodes without input don't show error when added to tree",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/6497"
+    },
+    "6933": {
+      "author": "theoryshaw",
+      "branch": "fix_6931",
+      "head": "5285df1",
+      "status": "merged",
+      "title": "proposed fix for #6931",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/6933"
+    },
+    "7003": {
+      "author": "Rob2309",
+      "branch": "general-mirroring",
+      "head": "bcd772a",
+      "status": "merged",
+      "title": "Add true object mirroring operator",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
+    },
+    "7064": {
+      "author": "BjornFidder",
+      "branch": "upstream/numbering_tool",
+      "head": "10a400a",
+      "status": "skipped_draft",
+      "title": "Addition of numbering tool into Bonsai",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7064"
+    },
+    "7119": {
+      "author": "falken10vdl",
+      "branch": "update-ide-doc-to-blender-4.5",
+      "head": "9af5c99",
+      "status": "skipped_draft",
+      "title": "Updated documentation for IDE guide for blender  LTS 4.5.3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7119"
+    },
+    "7219": {
+      "author": "brunopostle",
+      "branch": "web_running_pid",
+      "head": "219b7d0",
+      "status": "skipped_draft",
+      "title": "Put Bonsai webui PID file in a writable location",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7219"
+    },
+    "7295": {
+      "author": "falken10vdl",
+      "branch": "PR6717-6734",
+      "head": "1eaa590",
+      "status": "skipped_draft",
+      "title": "PR6717-6734:  CSV_EXPORT_MULTIPLE_FILES and Output filters to spreadsheet export",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7295"
+    },
+    "7323": {
+      "author": "falken10vdl",
+      "branch": "allow_complete_aggregate_move_in_drawing_mode",
+      "head": "3389e0d",
+      "status": "skipped_draft",
+      "title": "Allow_complete_aggregate_move_in_drawing_mode",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7323"
+    },
+    "7329": {
+      "author": "maxfb87",
+      "branch": "Ifc5d_qto_optimization",
+      "head": "1888c53",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Ifc5d qto optimization",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7329"
+    },
+    "7342": {
+      "author": "DimitriosThe",
+      "branch": "v0.8.0",
+      "head": "e56926e",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "#7331 related: Modifications to include IfcSpace entities in Cost Schedules, as elements and quantities + Project Library extended support for costing and scheduling",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7342"
+    },
+    "7407": {
+      "author": "Gorgious56",
+      "branch": "feature/display-utilities-refactor",
+      "head": "65671dd",
+      "status": "skipped_draft",
+      "title": "Feature/display utilities refactor",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7407"
+    },
+    "7417": {
+      "author": "theoryshaw",
+      "branch": "catch_assign_product_bug",
+      "head": "1ca1954",
+      "status": "merged",
+      "title": "try to catch bug in assign_product",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7417"
+    },
+    "7422": {
+      "author": "theoryshaw",
+      "branch": "after_assign_remove_from_old_collection",
+      "head": "7a60ff8",
+      "status": "merged",
+      "title": "Remove object from non-IFC collections after IFC class assignment.",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7422"
+    },
+    "7432": {
+      "author": "EstebanDugueperoux2",
+      "branch": "feature/TestConanSanitizer",
+      "head": "c94d6ac",
+      "status": "skipped_draft",
+      "title": "Feature/test conan sanitizer",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7432"
+    },
+    "7436": {
+      "author": "EstebanDugueperoux2",
+      "branch": "cmake/SpecifyMinimumOpencascadeTargetsToLinkAgainst",
+      "head": "f0e83da",
+      "status": "skipped_draft",
+      "title": "cmake: Specify minimum of opencascade targets to link against",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7436"
+    },
+    "7443": {
+      "author": "aothms",
+      "branch": "tfk-sectioned-surf",
+      "head": "f09ca65",
+      "status": "skipped_draft",
+      "title": "Initial investigation into lofting open profile with tags",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7443"
+    },
+    "7478": {
+      "author": "andy-5",
+      "branch": "fix-elementy-by-predefined-property-sets-ifc2x3",
+      "head": "b2ce4a9",
+      "status": "merged",
+      "title": "Fix getting elements by predefined property sets in IFC2X3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7478"
+    },
+    "7479": {
+      "author": "falken10vdl",
+      "branch": "makefile-more-resilient-for-wget",
+      "head": "f04d3e2",
+      "status": "skipped_draft",
+      "title": "Makefile - enhance wget for improved resilience during downloads",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7479"
+    },
+    "7517": {
+      "author": "EstebanDugueperoux2",
+      "branch": "feat/UseConan",
+      "head": "bb0b36c",
+      "status": "skipped_draft",
+      "title": "Feat/use conan",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7517"
+    },
+    "7523": {
+      "author": "ZijianWang-ZW",
+      "branch": "dev/bug/hybrid-kernel-sigsegv-fallback",
+      "head": "370eea1",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix: hybrid kernel sigsegv fallback (0.8.0)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7523"
+    },
+    "7528": {
+      "author": "EstebanDugueperoux2",
+      "branch": "debugIfcWrapLink",
+      "head": "7b290ce",
+      "status": "skipped_draft",
+      "title": "Have verbose Make logs",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7528"
+    },
+    "7534": {
+      "author": "aothms",
+      "branch": "datamodel-v1.0",
+      "head": "df59c88",
+      "status": "skipped_draft",
+      "title": "C++ datamodel v1.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7534"
+    },
+    "7570": {
+      "author": "falken10vdl",
+      "branch": "same-linked-ifc-file-enhancements",
+      "head": "acbf751",
+      "status": "skipped_draft",
+      "title": "IFC link management with UUID support. Same file can be linked multiple times",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7570"
+    },
+    "7589": {
+      "author": "Moult",
+      "branch": "saikei",
+      "head": "0b39676",
+      "status": "skipped_draft",
+      "title": "Saikei alignment editing capabilities",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7589"
+    },
+    "7637": {
+      "author": "EstebanDugueperoux2",
+      "branch": "feature/EaseConanIntegration",
+      "head": "c1ec24f",
+      "status": "skipped_draft",
+      "title": "Feature/ease conan integration",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7637"
+    },
+    "7645": {
+      "author": "louistrue",
+      "branch": "fix/facet-optionality",
+      "head": "e30748a",
+      "status": "skipped_draft",
+      "title": "Fix optional cardinality handling for Attribute and PartOf facets",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7645"
+    },
+    "7648": {
+      "author": "theoryshaw",
+      "branch": "extend-profiles-and-extrusions",
+      "head": "648c328",
+      "status": "merged",
+      "title": "closes #3565 - extend profiles and basic extrusions to 3D cursor with…",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7648"
+    },
+    "7649": {
+      "author": "danlipsa",
+      "branch": "build_vtkreader",
+      "head": "8508e22",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fixes needed to build IfcOpenShell with ParaView",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7649"
+    },
+    "7653": {
+      "author": "jaliste",
+      "branch": "fix/demo-library-materials",
+      "head": "0e3331e",
+      "status": "merged",
+      "title": "Add material associations to IFC4 Demo Library window/door types",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7653"
+    },
+    "7659": {
+      "author": "jaliste",
+      "branch": "fix/decorator-preview",
+      "head": "509cb57",
+      "status": "merged",
+      "title": "Fix window/door preview alignment regression in ProductDecorator",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7659"
+    },
+    "7669": {
+      "author": "falken10vdl",
+      "branch": "clipboard-module",
+      "head": "c509309",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "First version clipboard module. 3 modes available (RENAME, DUPLICATE, DESTINATION)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7669"
+    },
+    "7670": {
+      "author": "jaliste",
+      "branch": "fix/decoration-missing-splines-7655",
+      "head": "10a50eb",
+      "status": "merged",
+      "title": "Fix #7655: Handle missing spline data in decoration.py",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7670"
+    },
+    "7676": {
+      "author": "falken10vdl",
+      "branch": "construction-lines",
+      "head": "ee733f0",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Add construction lines tool for temporary reference geometry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7676"
+    },
+    "7701": {
+      "author": "maxfb87",
+      "branch": "Fix_failed_tests",
+      "head": "0db0518",
+      "status": "skipped_draft",
+      "title": "Fix failed tests",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7701"
+    },
+    "7709": {
+      "author": "theoryshaw",
+      "branch": "generalize_layer_set_class_and_method_names",
+      "head": "8cc9678",
+      "status": "skipped_draft",
+      "title": "refactor: generalize layer set class and method names",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7709"
+    },
+    "7715": {
+      "author": "theoryshaw",
+      "branch": "Generalize_ExcludeAnnotation_to_any_IFC_element_2",
+      "head": "8634569",
+      "status": "merged",
+      "title": "Generalize ExcludeAnnotation to any IFC element",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7715"
+    },
+    "7719": {
+      "author": "theoryshaw",
+      "branch": "Fix_FallDecorator2",
+      "head": "8e02ab5",
+      "status": "merged",
+      "title": "Fix #7718: Fix FallDecorator label calculation for all slope annotation types",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7719"
+    },
+    "7736": {
+      "author": "KarimJerbi",
+      "branch": "grids-selectability-feature",
+      "head": "9e18e81",
+      "status": "merged",
+      "title": "FIX #6187: Adds ability to toggle Grids and Grid Axes selectability",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7736"
+    },
+    "7744": {
+      "author": "theoryshaw",
+      "branch": "Fix_isolate_objects_ignoring_hide_select_hide_viewport",
+      "head": "2f5d107",
+      "status": "merged",
+      "title": "Fix #7681: Fix isolate_objects ignoring hide_select/hide_viewport (#7710)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7744"
+    },
+    "7748": {
+      "author": "KarimJerbi",
+      "branch": "annotation-decoration-toggle",
+      "head": "11ecee8",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix #7115: Add toggle for annotation decorator visibility",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7748"
+    },
+    "7766": {
+      "author": "KarimJerbi",
+      "branch": "issue-7743-clone-opening-UI",
+      "head": "ebae815",
+      "status": "merged",
+      "title": "Fix #7743 : Fix clone opening UI and selection method",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7766"
+    },
+    "7769": {
+      "author": "falken10vdl",
+      "branch": "vscode-dev-env-fix-for-linux",
+      "head": "2b8d9e9",
+      "status": "merged",
+      "title": "Fix JSON formatting in launch.json and add \"justMyCode\":false to allow for breakpoints in Linux",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7769"
+    },
+    "7777": {
+      "author": "theoryshaw",
+      "branch": "fix/select-similar-pset-spaces",
+      "head": "7460037",
+      "status": "merged",
+      "title": "Fix #7774: Fix Select Similar failing on pset names with spaces",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7777"
+    },
+    "7781": {
+      "author": "theoryshaw",
+      "branch": "Unhide_with_alt_click",
+      "head": "60ccd3a",
+      "status": "merged",
+      "title": "Closes #7780 - Add ALT+Click to unhide stuff",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7781"
+    },
+    "7785": {
+      "author": "DesertSpringsCivil",
+      "branch": "fix/vertical-segment-api-bugs",
+      "head": "4043037",
+      "status": "skipped_draft",
+      "title": "fix: Correct vertical/cant segment handling in alignment API",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7785"
+    },
+    "7795": {
+      "author": "theoryshaw",
+      "branch": "default_relative_path",
+      "head": "6b9dbeb",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Closes #7765: Default IFC file path to relative and auto-convert on blend save",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7795"
+    },
+    "7798": {
+      "author": "theoryshaw",
+      "branch": "ManualDrawingReference",
+      "head": "3409c65",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Manual drawing reference",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7798"
+    },
+    "7807": {
+      "author": "theoryshaw",
+      "branch": "fix/drawing-activation-stale-bbox",
+      "head": "3d99ff7",
+      "status": "merged",
+      "title": "Fix #7799: Fix elements hidden when activating plan drawings",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7807"
+    },
+    "7809": {
+      "author": "aothms",
+      "branch": "rickbrice-simplify-lp-axis",
+      "head": "740f0f8",
+      "status": "skipped_draft",
+      "title": "Simplifies IfxAxis2PlacementLinear, assumes default Axis = (0,0,1)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7809"
+    },
+    "7813": {
+      "author": "paragforwork",
+      "branch": "new-profiler",
+      "head": "1acce39",
+      "status": "merged",
+      "title": "Replaced the old profiler function with the ifcopenshell.util profiler",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7813"
+    },
+    "7818": {
+      "author": "theoryshaw",
+      "branch": "dont_sanitize_drawing_name",
+      "head": "45c64e1",
+      "status": "merged",
+      "title": "Fix #7784: Fix drawing names with special chars in sheets",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7818"
+    },
+    "7823": {
+      "author": "paragforwork",
+      "branch": "diagram_scale_changes",
+      "head": "1e1331f",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Patched the diagram_scale  on unit change",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7823"
+    },
+    "7833": {
+      "author": "theoryshaw",
+      "branch": "grid_issues",
+      "head": "60063ac",
+      "status": "merged",
+      "title": "Grid issues",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7833"
+    },
+    "7837": {
+      "author": "paragforwork",
+      "branch": "spatial_containers_delete",
+      "head": "8a3ef3b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Modified delete_container to delete all things inside it",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7837"
+    },
+    "7839": {
+      "author": "theoryshaw",
+      "branch": "slab_issues",
+      "head": "ae1c544",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix #7838: Fix slab layer direction and thickness offset",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7839"
+    },
+    "7850": {
+      "author": "falken10vdl",
+      "branch": "bexpeng",
+      "head": "b9d08a3",
+      "status": "skipped_draft",
+      "title": "Add BExpEng: Blender Expression Engine integration",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7850"
+    },
+    "7851": {
+      "author": "rares-radu",
+      "branch": "v0.8.0",
+      "head": "e8fa73c",
+      "status": "merged",
+      "title": "Fixed missing definition resulting in USD support not being built",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7851"
+    },
+    "7858": {
+      "author": "theoryshaw",
+      "branch": "print_ifcspaces_in_projection",
+      "head": "f5c22d9",
+      "status": "merged",
+      "title": "Fix #6602: Print IfcSpaces in projection.",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7858"
+    },
+    "7863": {
+      "author": "jazzific",
+      "branch": "documentation",
+      "head": "91ebb81",
+      "status": "merged",
+      "title": "Documentation guide for Spaces basic modelling",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7863"
+    },
+    "7868": {
+      "author": "theoryshaw",
+      "branch": "automatically_creating_contexts",
+      "head": "d71b9c9",
+      "status": "merged",
+      "title": "Fix #7840: Auto-create body context when adding drawing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7868"
+    },
+    "7869": {
+      "author": "dipayansardar73-decode",
+      "branch": "refactor-profiler-drawing-7328",
+      "head": "7d27a2b",
+      "status": "skipped_conflict",
+      "title": "Refactor: Use ifcopenshell.util.profiler.Profiler in drawing operator",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7869"
+    },
+    "7870": {
+      "author": "theoryshaw",
+      "branch": "Fix_PermissionError",
+      "head": "4664072",
+      "status": "merged",
+      "title": "Fix PermissionError deleting locked HDF5 cache on Windows",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7870"
+    },
+    "7871": {
+      "author": "theoryshaw",
+      "branch": "split_profile_based_objects",
+      "head": "f229ad5",
+      "status": "merged",
+      "title": "closes #3804: Add S_K split support for profile-based elements",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7871"
+    },
+    "7872": {
+      "author": "dipayansardar73-decode",
+      "branch": "fix-collector-none-spatial-selector-7861-7806",
+      "head": "712da05",
+      "status": "skipped_conflict",
+      "title": "feat: fix Bonsai collector crash (#7861) and add spatial_reference selector key (#7806)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7872"
+    },
+    "7873": {
+      "author": "dipayansardar73-decode",
+      "branch": "modernization-architecture-fixes-7562-7801-6436-6822-7542",
+      "head": "38654d3",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "feat: comprehensive modernization and architectural refactoring",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7873"
+    },
+    "7890": {
+      "author": "dipayansardar73-decode",
+      "branch": "fix/stability-regression-7885-7883",
+      "head": "9b11e3b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix/stability regression 7885 7883",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7890"
+    },
+    "7892": {
+      "author": "dipayansardar73-decode",
+      "branch": "fix-7827-wall-joint-regression-v2",
+      "head": "16f379f",
+      "status": "merged",
+      "title": "Fix #7827 wall joint regression on ATPATH connectionsFix",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7892"
+    },
+    "7895": {
+      "author": "dipayansardar73-decode",
+      "branch": "fix-6608-deterministic-annotation-sorting-v2",
+      "head": "5130e40",
+      "status": "merged",
+      "title": "Fix: DetermFix: Deterministic and layered SVG annotation sort order (Resolves #6608)inistic and layered SVG annotation sort order (Resolves #6…",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7895"
+    },
+    "7898": {
+      "author": "theoryshaw",
+      "branch": "fix/opening-element-body-context",
+      "head": "b0246f7",
+      "status": "merged",
+      "title": "Fix IfcOpeningElement using wrong geometry context",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7898"
+    },
+    "7899": {
+      "author": "theoryshaw",
+      "branch": "center-opening-on-cursor",
+      "head": "9d0cc5a",
+      "status": "merged",
+      "title": "Center IfcOpeningElement bbox on 3D cursor",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7899"
+    },
+    "7908": {
+      "author": "theoryshaw",
+      "branch": "fix-3742-coplanar-bonsai-projection_2",
+      "head": "5a1723f",
+      "status": "merged",
+      "title": "* Fix #3742: Remove coplanar boundary lines between adjacent same-mat…",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7908"
+    },
+    "7915": {
+      "author": "theoryshaw",
+      "branch": "bulk-switch-representation",
+      "head": "72813d3",
+      "status": "merged",
+      "title": "Helps with #7853: Switch representation in bulk on selected objects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7915"
+    },
+    "7916": {
+      "author": "theoryshaw",
+      "branch": "select-by-representation-type",
+      "head": "f59942c",
+      "status": "merged",
+      "title": "Helps with #7853: Select objects by RepresentationType from panel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7916"
+    },
+    "7917": {
+      "author": "brunopostle",
+      "branch": "bonsai-license",
+      "head": "a072c72",
+      "status": "merged",
+      "title": "Bonsai, add license tagging for IFC elements",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7917"
+    },
+    "7918": {
+      "author": "brunopostle",
+      "branch": "bonsai-drawing-revisions",
+      "head": "f105c6f",
+      "status": "merged",
+      "title": "Bonsai, drawing sheets show git tag revision history in titleblocks",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7918"
+    },
+    "7920": {
+      "author": "falken10vdl",
+      "branch": "fix/ifctester-setuptools-py312-v2",
+      "head": "8f5d499",
+      "status": "merged",
+      "title": "fix(ifctester): add setuptools to venv pip install for Python 3.12+ compatibility",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7920"
+    },
+    "7922": {
+      "author": "dipayansardar73-decode",
+      "branch": "fix-7903-nest-annotations-v2",
+      "head": "cefb8b2",
+      "status": "skipped_draft",
+      "title": "Feat: Nest ifcAnnotation inside drawing group (Fix #7903)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7922"
+    },
+    "7923": {
+      "author": "dipayansardar73-decode",
+      "branch": "fix-7902-projection-depth",
+      "head": "6312229",
+      "status": "skipped_draft",
+      "title": "Fix: SVG Depth Ordering for Projections and Material Fills (Fix #7902)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7923"
+    },
+    "7931": {
+      "author": "dipayansardar73-decode",
+      "branch": "fix/bonsai-7801-7861-spatial-nonetype",
+      "head": "4a1cda8",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "fix(bonsai): prevent NoneType assignment crash when modifying spatial structures of voided objects (Resolves #7801, Resolves #7861)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7931"
+    },
+    "7933": {
+      "author": "dipayansardar73-decode",
+      "branch": "fix/issue-7773-quick-favorites-typeerror",
+      "head": "350ca1c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "fix(bonsai): resolve TypeError when importing Quick Favorites with Enum values (Resolves #7773)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7933"
+    },
+    "7937": {
+      "author": "JocelinBirling",
+      "branch": "ifcclash_modif",
+      "head": "9338bce",
+      "status": "merged",
+      "title": "Repair IfcClash order",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7937"
+    },
+    "7940": {
+      "author": "theoryshaw",
+      "branch": "Concatenate_selections",
+      "head": "7e3a9e4",
+      "status": "merged",
+      "title": "Concatenate selections",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7940"
+    },
+    "7961": {
+      "author": "RickBrice",
+      "branch": "rab_IfcImageTexture",
+      "head": "c031a0e",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Enables images for IfcImageTexture to be loaded from remote sources via http & https",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7961"
+    },
+    "7963": {
+      "author": "theoryshaw",
+      "branch": "fix/duplicate-opening-not-applied",
+      "head": "bd934d9",
+      "status": "merged",
+      "title": "Fix #7948: Fix duplicate not applying openings to geometry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7963"
+    },
+    "7965": {
+      "author": "theoryshaw",
+      "branch": "inset_section_endpoints",
+      "head": "738110b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
+    },
+    "7968": {
+      "author": "theoryshaw",
+      "branch": "grab-selects-array",
+      "head": "7f3cb8c",
+      "status": "merged",
+      "title": "Fix #6652: Extend grab selection to include BBIM_Array members",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7968"
+    },
+    "7970": {
+      "author": "theoryshaw",
+      "branch": "preserve-local-view-aggregate-exit",
+      "head": "cc1b4a0",
+      "status": "merged",
+      "title": "Fix #7969: Preserve local view on aggregate mode exit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7970"
+    },
+    "7971": {
+      "author": "theoryshaw",
+      "branch": "update_schedule_size_on_sheet",
+      "head": "ebea19d",
+      "status": "merged",
+      "title": "closes #5382: Add update_sheet_schedule_sizes to SheetBuilder",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7971"
+    },
+    "7977": {
+      "author": "theoryshaw",
+      "branch": "AI_effort_estimate",
+      "head": "c7ff18d",
+      "status": "merged",
+      "title": "The is a proposal include an **effort estimate** in the commit messag…",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7977"
+    },
+    "7986": {
+      "author": "c-mellueh",
+      "branch": "use-get_class_properties-instead-of-get_class",
+      "head": "8b7348a",
+      "status": "merged",
+      "title": "Use get class properties instead of get class",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7986"
+    },
+    "7987": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/src/ifcopenshell-python/ifcopenshell/lxml-6.1.0",
+      "head": "182e7a4",
+      "status": "merged",
+      "title": "Bump lxml from 4.9.1 to 6.1.0 in /src/ifcopenshell-python/ifcopenshell",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7987"
+    },
+    "7993": {
+      "author": "isma3lMB",
+      "branch": "v0.8.0",
+      "head": "ef1e534",
+      "status": "merged",
+      "title": "Ensuring that Entity name is a string",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7993"
+    },
+    "8000": {
+      "author": "theoryshaw",
+      "branch": "fix/isolate-objects-select-all-context",
+      "head": "d72c400",
+      "status": "merged",
+      "title": "Fix #7999: Fix isolate_objects context for select_all op",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8000"
+    },
+    "8005": {
+      "author": "theoryshaw",
+      "branch": "sheet-drawing-resize-anchor",
+      "head": "dcb38f3",
+      "status": "merged",
+      "title": "Closes #7984: Resize sheet drawings from upper-left corner",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8005"
+    },
+    "8007": {
+      "author": "theoryshaw",
+      "branch": "reference-drawing-view-title-scale",
+      "head": "0b71ffe",
+      "status": "merged",
+      "title": "Closes #7877:Add scale to reference view-title from SVG class",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8007"
+    },
+    "8012": {
+      "author": "theoryshaw",
+      "branch": "measure_in_edit_mode",
+      "head": "565ae33",
+      "status": "merged",
+      "title": "Closes #7691: Enable bim.measure_tool in edit mode",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8012"
+    },
+    "8028": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/multi-ad47e4b907",
+      "head": "2864644",
+      "status": "merged",
+      "title": "Bump uuid and hyperid in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8028"
+    },
+    "8029": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/postcss-8.5.13",
+      "head": "7d96bc1",
+      "status": "merged",
+      "title": "Bump postcss from 8.5.4 to 8.5.13 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8029"
+    },
+    "8032": {
+      "author": "theoryshaw",
+      "branch": "fix/duplicate-assigns-to-product",
+      "head": "683b717",
+      "status": "merged",
+      "title": "Closes #6621: Fix IfcRelAssignsToProduct on duplicate",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8032"
+    },
+    "8055": {
+      "author": "theoryshaw",
+      "branch": "debug-active-drawing-improvements",
+      "head": "647a1f4",
+      "status": "merged",
+      "title": "Add export option to DebugActiveDrawing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8055"
+    },
+    "8058": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/devalue-5.8.1",
+      "head": "246ba90",
+      "status": "merged",
+      "title": "Bump devalue from 5.6.4 to 5.8.1 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8058"
+    },
+    "8061": {
+      "author": "theoryshaw",
+      "branch": "dims_with_multiple_customunits",
+      "head": "e511673",
+      "status": "merged",
+      "title": "closes #8060: add multiple customunits to the dimensions string.",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8061"
+    },
+    "8062": {
+      "author": "theoryshaw",
+      "branch": "BIM_Dimension_SuppressZeroFeet",
+      "head": "f588752",
+      "status": "merged",
+      "title": "Bim dimension suppress zero feet",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8062"
+    },
+    "8064": {
+      "author": "theoryshaw",
+      "branch": "ordinate_dimensioning",
+      "head": "bea4f2c",
+      "status": "merged",
+      "title": "Ordinate dimensioning",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8064"
+    },
+    "8065": {
+      "author": "bsmithuk",
+      "branch": "v0.8.0",
+      "head": "5cbb321",
+      "status": "merged",
+      "title": "Fix #8046 - Entity xs:restriction name crashes with AttributeError on…",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8065"
+    },
+    "8075": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/svelte-5.55.8",
+      "head": "f0b9850",
+      "status": "merged",
+      "title": "Bump svelte from 5.53.6 to 5.55.8 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8075"
+    },
+    "8076": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/src/ifcopenshell-python/lxml-6.1.0",
+      "head": "e7eee59",
+      "status": "merged",
+      "title": "Bump lxml from 4.9.1 to 6.1.0 in /src/ifcopenshell-python",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8076"
+    },
+    "8083": {
+      "author": "theoryshaw",
+      "branch": "parametric_dimensions",
+      "head": "1c9d45d",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Parametric dimensions",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
+    },
+    "8086": {
+      "author": "falken10vdl",
+      "branch": "fix/convert-curve-to-mesh-closing-edge",
+      "head": "70476b4",
+      "status": "merged",
+      "title": "Fix closing edge for IfcPolyline in convert_curve_to_mesh",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8086"
+    },
+    "8087": {
+      "author": "falken10vdl",
+      "branch": "fix/create-polyline-from-loop-schema-aware",
+      "head": "d4354ce",
+      "status": "merged",
+      "title": "Use builder.polyline that is schema-aware for create_polyline_from_loop",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8087"
+    },
+    "8094": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/black-26.5.1",
+      "head": "cf6ecc8",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bump black from 26.3.1 to 26.5.1",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8094"
+    },
+    "8098": {
+      "author": "falken10vdl",
+      "branch": "cadsketcher-integration",
+      "head": "bf8d1a8",
+      "status": "skipped_draft",
+      "title": "Integrate CAD Sketcher module",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8098"
+    },
+    "8123": {
+      "author": "theoryshaw",
+      "branch": "fix/remove-drawing-corrupted",
+      "head": "d538542",
+      "status": "merged",
+      "title": "Fix remove_drawing crash on corrupted drawing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8123"
+    },
+    "8126": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/gersemi-0.27.7",
+      "head": "908a59f",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bump gersemi from 0.26.1 to 0.27.7",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8126"
+    },
+    "8139": {
+      "author": "Moult",
+      "branch": "ifcviewer-wgpu",
+      "head": "d8799d7",
+      "status": "skipped_draft",
+      "title": "Ifcviewer wgpu",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
+    },
+    "8145": {
+      "author": "RickBrice",
+      "branch": "rab_IfcAxis2PlacementLinear_fix",
+      "head": "b75a689",
+      "status": "merged",
+      "title": "Implements default direction of IfcAxis2PlacementLinear.Axis and RefDirection",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8145"
+    },
+    "8153": {
+      "author": "theoryshaw",
+      "branch": "cross_select_integration",
+      "head": "9f5e4d3",
+      "status": "merged",
+      "title": "Add CAD-style cross selection as the default for Bonsai tools",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8153"
+    },
+    "8161": {
+      "author": "gernotluidolt",
+      "branch": "fix/ifctester-logical-unknown",
+      "head": "d22a737",
+      "status": "merged",
+      "title": "fix(ifctester): allow IFCLOGICAL properties with UNKNOWN value to pass existence check",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8161"
+    },
+    "8171": {
+      "author": "theoryshaw",
+      "branch": "drawing_render_overrides",
+      "head": "0716e50",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Add per-drawing render overrides (status_render module)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8171"
+    },
+    "8174": {
+      "author": "carlopav",
+      "branch": "fix-spatialzone-outliner-collection",
+      "head": "29b12af",
+      "status": "merged",
+      "title": "Place IfcSpatialZone in its spatial parent's collection instead of Unsorted",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8174"
+    },
+    "8181": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/multi-ba6cf36f62",
+      "head": "6d45b00",
+      "status": "merged",
+      "title": "Bump ws and engine.io-client in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8181"
+    },
+    "8182": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/multi-cf99e4b298",
+      "head": "6e1efe5",
+      "status": "skipped_conflict",
+      "title": "Bump vite, @sveltejs/vite-plugin-svelte and @tailwindcss/vite in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8182"
+    },
+    "8189": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/actions/checkout-7",
+      "head": "c76c07f",
+      "status": "merged",
+      "title": "Bump actions/checkout from 6 to 7",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8189"
+    },
+    "8200": {
+      "author": "theoryshaw",
+      "branch": "opening-template-on-type",
+      "head": "c0b7f37",
+      "status": "merged",
+      "title": "Preserve custom opening geometry via a type-level Reference template",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8200"
+    },
+    "8201": {
+      "author": "theoryshaw",
+      "branch": "dev-notes-system",
+      "head": "8ece379",
+      "status": "merged",
+      "title": "Dev notes system",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8201"
+    },
+    "8206": {
+      "author": "theoryshaw",
+      "branch": "fix-snap-stale-object-reference",
+      "head": "3248cc7",
+      "status": "merged",
+      "title": "Fix stale object reference crash in measure tool snapping",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
+    },
+    "8212": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.15.20",
+      "head": "9f8fbea",
+      "status": "merged",
+      "title": "build(deps): bump ruff from 0.15.12 to 0.15.22",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8212"
+    },
+    "8228": {
+      "author": "theoryshaw",
+      "branch": "debug-drawing-faster-failure-search",
+      "head": "9283d86",
+      "status": "merged",
+      "title": "Debug drawing faster failure search",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8228"
+    },
+    "8229": {
+      "author": "theoryshaw",
+      "branch": "layer2-agnostic-parametric-tools",
+      "head": "e7fe85c",
+      "status": "merged",
+      "title": "Make LAYER2 parametric wall tools IFC-class agnostic",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8229"
+    },
+    "8241": {
+      "author": "theoryshaw",
+      "branch": "Additional_Selection_and_Deselection_Tools",
+      "head": "03b3d3f",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Additional selection and deselection tools",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8241"
+    },
+    "8242": {
+      "author": "theoryshaw",
+      "branch": "Linked_File_Features",
+      "head": "9fd119b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Linked file features",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8242"
+    },
+    "8248": {
+      "author": "BIMvoice",
+      "branch": "fix/selector-boolean-case-insensitive-6116",
+      "head": "d7b6b27",
+      "status": "merged",
+      "title": "Selector: accept case-insensitive TRUE/FALSE in filter queries (#6116)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8248"
+    },
+    "8249": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcdiff-relationships-4110",
+      "head": "38611e3",
+      "status": "merged",
+      "title": "IfcDiff: compare container and aggregate by GlobalId (#4110)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8249"
+    },
+    "8250": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-restriction-entity-8046",
+      "head": "6552a23",
+      "status": "merged",
+      "title": "IfcTester: guard IFC2X3 entity type inference against restriction names (#8046)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8250"
+    },
+    "8251": {
+      "author": "BIMvoice",
+      "branch": "fix/edit-pset-empty-numeric-4112",
+      "head": "9f8dce0",
+      "status": "merged",
+      "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
+    },
+    "8253": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-predefinedtype-restriction-7855",
+      "head": "7abf78f",
+      "status": "merged",
+      "title": "IfcTester: fix predefinedType restrictions that include USERDEFINED (#7855, #7856)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8253"
+    },
+    "8254": {
+      "author": "BIMvoice",
+      "branch": "fix/selector-list-negation-8129",
+      "head": "80e500a",
+      "status": "merged",
+      "title": "Selector: negate list comparisons as an aggregate (#8129)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8254"
+    },
+    "8256": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-subday-durations-8245",
+      "head": "107a454",
+      "status": "merged",
+      "title": "Sequence: sub-day durations occupy their day when cascading (#8245)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8256"
+    },
+    "8257": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcclash-notrequired-keys-8224",
+      "head": "b6626db",
+      "status": "merged",
+      "title": "IfcClash: default NotRequired clash set keys instead of asserting (#8224)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8257"
+    },
+    "8258": {
+      "author": "BIMvoice",
+      "branch": "fix/reassign-class-latent-8210",
+      "head": "56a18b9",
+      "status": "merged",
+      "title": "root.reassign_class: raise a clear error when no class is applicable (#8210)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8258"
+    },
+    "8261": {
+      "author": "BIMvoice",
+      "branch": "fix/raycast-none-verts-8187",
+      "head": "c1d3523",
+      "status": "merged",
+      "title": "Bonsai: skip fully off-screen edges in 2D proximity snap (#8187)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8261"
+    },
+    "8263": {
+      "author": "BIMvoice",
+      "branch": "fix/add-reference-image-kwarg-8130",
+      "head": "537ab95",
+      "status": "merged",
+      "title": "Bonsai: drop stale kwarg when invoking add_reference_image (#8130)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
+    },
+    "8264": {
+      "author": "BIMvoice",
+      "branch": "fix/selector-material-filters-6787",
+      "head": "f971c63",
+      "status": "merged",
+      "title": "Selector: fix material != and NULL filtering (#6787)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8264"
+    },
+    "8265": {
+      "author": "BIMvoice",
+      "branch": "feat/selector-ref-structure-key-7806",
+      "head": "929fb55",
+      "status": "merged",
+      "title": "Selector: add referenced_structures value key (#7806)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8265"
+    },
+    "8266": {
+      "author": "BIMvoice",
+      "branch": "feat/cost-total-applied-value-5912",
+      "head": "1713d24",
+      "status": "merged",
+      "title": "util.cost: add calculate_total_applied_value (#5912)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8266"
+    },
+    "8268": {
+      "author": "BIMvoice",
+      "branch": "fix/format-length-non-numeric-5297",
+      "head": "9889fbc",
+      "status": "merged",
+      "title": "Selector: length formatters pass non-numeric values through (#5297)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8268"
+    },
+    "8269": {
+      "author": "BIMvoice",
+      "branch": "fix/edit-mode-enum-8066",
+      "head": "411ee5c",
+      "status": "merged",
+      "title": "Bonsai: don't crash TAB when EDIT is not in the mode enum (#8066)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8269"
+    },
+    "8270": {
+      "author": "BIMvoice",
+      "branch": "feat/polyline-comma-decimal-8262",
+      "head": "96e2f9b",
+      "status": "merged",
+      "title": "Bonsai: accept comma decimals in dimension input (#8262)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8270"
+    },
+    "8271": {
+      "author": "BIMvoice",
+      "branch": "fix/profile-walk-none-8072",
+      "head": "36a45e7",
+      "status": "merged",
+      "title": "Bonsai: fail profile detection cleanly on discontinuous loops (#8072)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8271"
+    },
+    "8273": {
+      "author": "BIMvoice",
+      "branch": "fix/mode-set-object-exec-8042",
+      "head": "f6b8788",
+      "status": "merged",
+      "title": "Bonsai: OverrideModeSetObject must survive direct execution (#8042)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8273"
+    },
+    "8274": {
+      "author": "BIMvoice",
+      "branch": "fix/aggregate-error-report-7983",
+      "head": "05d61d2",
+      "status": "merged",
+      "title": "Bonsai: report incompatible aggregates instead of crashing (#7983)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8274"
+    },
+    "8275": {
+      "author": "BIMvoice",
+      "branch": "fix/drawing-scale-integer-ratio-7957",
+      "head": "43a48f7",
+      "status": "merged",
+      "title": "Bonsai: keep an explicit denominator in custom drawing scales (#7957)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8275"
+    },
+    "8276": {
+      "author": "BIMvoice",
+      "branch": "fix/build-deps-exit-b-7884",
+      "head": "576130d",
+      "status": "merged",
+      "title": "win: use exit /b in build-deps.cmd so the console stays open (#7884)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8276"
+    },
+    "8277": {
+      "author": "BIMvoice",
+      "branch": "fix/quick-favorites-enum-int-7773",
+      "head": "801db0b",
+      "status": "merged",
+      "title": "Bonsai: coerce non-string enum values when importing quick favorites (#7773)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8277"
+    },
+    "8278": {
+      "author": "BIMvoice",
+      "branch": "fix/edit-pset-logical-bool-7475",
+      "head": "c6bb892",
+      "status": "skipped_conflict",
+      "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
+    },
+    "8280": {
+      "author": "BIMvoice",
+      "branch": "fix-cascade-milestone-duration-6834",
+      "head": "5f1e55e",
+      "status": "skipped_conflict",
+      "title": "sequence.cascade_schedule: milestones cascade with zero duration (#6834)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8280"
+    },
+    "8281": {
+      "author": "BIMvoice",
+      "branch": "feat-ifcpatch-cli-entrypoint-6436",
+      "head": "dbdc683",
+      "status": "merged",
+      "title": "ifcpatch: add console script entry point (#6436)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8281"
+    },
+    "8285": {
+      "author": "BIMvoice",
+      "branch": "fix-msp2ifc-optional-elements-5556",
+      "head": "3309598",
+      "status": "merged",
+      "title": "ifc4d: MSP2Ifc tolerates optional task elements (#5556)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8285"
+    },
+    "8286": {
+      "author": "BIMvoice",
+      "branch": "fix-swept-disk-curve-style-8194",
+      "head": "99e9412",
+      "status": "merged",
+      "title": "Bonsai: don't assert on non-surface item styles in swept disk loader (#8194)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8286"
+    },
+    "8287": {
+      "author": "BIMvoice",
+      "branch": "fix-ifc5d-export-quality-6251",
+      "head": "ec59259",
+      "status": "merged",
+      "title": "ifc5d: professional grade ODS/XLSX cost schedule export (#6251)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8287"
+    },
+    "8289": {
+      "author": "BIMvoice",
+      "branch": "fix-selector-multivalue-negation-8129",
+      "head": "22d9170",
+      "status": "skipped_conflict",
+      "title": "Selector: negated operators on list properties mean none-match (#8129)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8289"
+    },
+    "8290": {
+      "author": "BIMvoice",
+      "branch": "fix-bsdd-ratelimit-properties-endpoint-7985",
+      "head": "18e81c5",
+      "status": "skipped_conflict",
+      "title": "Bonsai: fetch bSDD class properties from the properties endpoint (#7985)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8290"
+    },
+    "8291": {
+      "author": "BIMvoice",
+      "branch": "fix-assign-container-type-product-8084",
+      "head": "2c3a027",
+      "status": "merged",
+      "title": "spatial.assign_container: clear error for non-containable products (#8084)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8291"
+    },
+    "8292": {
+      "author": "BIMvoice",
+      "branch": "fix-ifctester-restriction-entity-8046",
+      "head": "5d01d30",
+      "status": "skipped_conflict",
+      "title": "ifctester: entity requirement as xs:restriction no longer crashes on fail (#8046)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8292"
+    },
+    "8293": {
+      "author": "BIMvoice",
+      "branch": "fix-loader-guess-origin-no-context-7350",
+      "head": "714df24",
+      "status": "merged",
+      "title": "Bonsai: guess_false_origin tolerates a file without a project (#7350)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8293"
+    },
+    "8294": {
+      "author": "BIMvoice",
+      "branch": "fix-ifcdiff-container-aggregate-crossfile-4110",
+      "head": "bb1fe05",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcdiff: compare container and aggregate by GlobalId, not identity (#4110)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8294"
+    },
+    "8295": {
+      "author": "BIMvoice",
+      "branch": "fix-set-element-value-trailing-index-4687",
+      "head": "cb5b598",
+      "status": "merged",
+      "title": "util.selector: set_element_value accepts a trailing index like get_element_value (#4687)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8295"
+    },
+    "8296": {
+      "author": "BIMvoice",
+      "branch": "fix-edit-pset-empty-string-numeric-4112",
+      "head": "39bd135",
+      "status": "merged",
+      "title": "pset.edit_pset: empty string for a numeric property stores no value (#4112)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8296"
+    },
+    "8297": {
+      "author": "BIMvoice",
+      "branch": "fix-format-round-non-numeric-6776",
+      "head": "6e1eb52",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "util.selector: numeric format functions pass through non-numeric values (#6776)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8297"
+    },
+    "8298": {
+      "author": "BIMvoice",
+      "branch": "fix-edit-pset-update-list-value-5195",
+      "head": "9e2308d",
+      "status": "merged",
+      "title": "pset.edit_pset: support updating IfcPropertyListValue properties (#5195)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8298"
+    },
+    "8301": {
+      "author": "BIMvoice",
+      "branch": "fix-snap-cache-deleted-object-8207",
+      "head": "0439d26",
+      "status": "skipped_conflict",
+      "title": "Bonsai: drop deleted objects from the snap cache (#8207)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8301"
+    },
+    "8304": {
+      "author": "BIMvoice",
+      "branch": "fix-georef-drawing-camera-offset-8205",
+      "head": "b6c54fa",
+      "status": "merged",
+      "title": "Bonsai: apply georeferencing offset to imported drawing cameras (#8205)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8304"
+    },
+    "8305": {
+      "author": "BIMvoice",
+      "branch": "fix-assign-resource-typo-8203",
+      "head": "70a43a7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "resource.assign_resource: fix typo in duplicate guard (#8203)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8305"
+    },
+    "8306": {
+      "author": "BIMvoice",
+      "branch": "fix-style-assignment-none-7883",
+      "head": "ff9b3c9",
+      "status": "merged",
+      "title": "style.assign_representation_styles: fix crash on IfcPresentationStyleAssignment (#7883)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8306"
+    },
+    "8307": {
+      "author": "BIMvoice",
+      "branch": "fix-axis2placement2d-resize-6256",
+      "head": "5fa2795",
+      "status": "merged",
+      "title": "util.placement: pad 2D RefDirection without in-place resize (#6256)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8307"
+    },
+    "8308": {
+      "author": "BIMvoice",
+      "branch": "fix-ifcclassdata-partial-load-6398",
+      "head": "58516b0",
+      "status": "merged",
+      "title": "Bonsai: don't cache a half-built IfcClassData on load failure (#6398)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8308"
+    },
+    "8312": {
+      "author": "BIMvoice",
+      "branch": "fix-remove-drawing-no-document-6518",
+      "head": "c6b01d5",
+      "status": "skipped_conflict",
+      "title": "Bonsai: remove_drawing tolerates a drawing with no document (#6518)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8312"
+    },
+    "8313": {
+      "author": "BIMvoice",
+      "branch": "feat-intraday-scheduling-8245",
+      "head": "31d3240",
+      "status": "skipped_conflict",
+      "title": "sequence: give sub-day durations a real intraday finish (#8245)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8313"
+    },
+    "8314": {
+      "author": "BIMvoice",
+      "branch": "fix-linework-path-no-d-6876",
+      "head": "0a51856",
+      "status": "merged",
+      "title": "Bonsai: skip linework paths without a d attribute (#6876)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8314"
+    },
+    "8315": {
+      "author": "BIMvoice",
+      "branch": "fix-edit-non-extrusion-slab-6283",
+      "head": "65177a4",
+      "status": "merged",
+      "title": "Bonsai: don't crash editing a non-extrusion slab (#6283)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8315"
+    },
+    "8316": {
+      "author": "BIMvoice",
+      "branch": "fix-decimetre-length-unit-8074",
+      "head": "da1acae",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Handle unsupported length unit prefixes on project load (#8074)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8316"
+    },
+    "8317": {
+      "author": "BIMvoice",
+      "branch": "fix-get-part-of-product-none-repmaps-8081",
+      "head": "1fa61db",
+      "status": "merged",
+      "title": "Guard get_part_of_product against None RepresentationMaps (#8081)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8317"
+    },
+    "8318": {
+      "author": "BIMvoice",
+      "branch": "fix-shape-dimensions-empty-geometry-7147",
+      "head": "73360ab",
+      "status": "merged",
+      "title": "Skip quantity takeoff for elements with empty geometry (#7147)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8318"
+    },
+    "8319": {
+      "author": "BIMvoice",
+      "branch": "fix-8233-duplicate-linked-aggregate",
+      "head": "c3b8202",
+      "status": "merged",
+      "title": "Retain linked aggregates when duplicating an aggregate (#8233)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8319"
+    },
+    "8320": {
+      "author": "BIMvoice",
+      "branch": "perf-extractelements-defer-shared-rels",
+      "head": "4c2b175",
+      "status": "merged",
+      "title": "ifcpatch(ExtractElements): defer shared relationship members to fix O(n²) extraction",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8320"
+    },
+    "8322": {
+      "author": "BIMvoice",
+      "branch": "fix-pset-schema-reload-8236",
+      "head": "4d96bae",
+      "status": "merged",
+      "title": "bonsai(pset): bind schema module directly so pset UI survives add-on reload (#8236)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8322"
+    },
+    "8323": {
+      "author": "BIMvoice",
+      "branch": "fix-selector-boolean-property-8100",
+      "head": "f347728",
+      "status": "merged",
+      "title": "util.selector: match boolean properties by True/False spelling (#8100)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8323"
+    },
+    "8325": {
+      "author": "BIMvoice",
+      "branch": "fix-material-layer-panel-flip-order-8240",
+      "head": "54361e3",
+      "status": "merged",
+      "title": "bonsai(material): keep the layer panel in stored order so a wall flip does not reorder it (#8240)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8325"
+    },
+    "8326": {
+      "author": "BIMvoice",
+      "branch": "fix-append-asset-duplicate-classification-7150",
+      "head": "e97bef0",
+      "status": "merged",
+      "title": "project(append_asset): reuse an existing IfcClassification instead of duplicating it (#7150)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8326"
+    },
+    "8327": {
+      "author": "BIMvoice",
+      "branch": "fix-manual-classification-reference-no-classification-7506",
+      "head": "38987be",
+      "status": "merged",
+      "title": "bonsai(classification): report a clear error when adding a manual reference with no classification (#7506)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8327"
+    },
+    "8328": {
+      "author": "BIMvoice",
+      "branch": "fix-drawing-camera-bounds-on-save-8205",
+      "head": "09e314d",
+      "status": "merged",
+      "title": "bonsai(drawing): persist drawing camera zoom and crop on save (#8205)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8328"
+    },
+    "8329": {
+      "author": "BIMvoice",
+      "branch": "fix-bcf-viewpoint-georef-offset-8205",
+      "head": "e432bf1",
+      "status": "merged",
+      "title": "bonsai(bcf): store viewpoints in global coordinates on georeferenced models (#8205)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8329"
+    },
+    "8331": {
+      "author": "BIMvoice",
+      "branch": "plan-drawing-spatial-containers",
+      "head": "88290c9",
+      "status": "merged",
+      "title": "bonsai(drawing): plan drawings for spatial containers without a building storey",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8331"
+    },
+    "8332": {
+      "author": "BIMvoice",
+      "branch": "qto-segment-length-from-geometry",
+      "head": "bb616c3",
+      "status": "merged",
+      "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
+    },
+    "8333": {
+      "author": "BIMvoice",
+      "branch": "fix-8330-tab-wall-item-mode",
+      "head": "f9f14a5",
+      "status": "merged",
+      "title": "bonsai(model): TAB on a wall enters IFC Item Mode again (#8330)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8333"
+    },
+    "8334": {
+      "author": "BIMvoice",
+      "branch": "fix-3091-datetime-guard",
+      "head": "c4d63e8",
+      "status": "merged",
+      "title": "Bonsai: don't crash the task time editor on malformed IfcDuration (#3091)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8334"
+    },
+    "8335": {
+      "author": "BIMvoice",
+      "branch": "fix-3019-nested-mapped-item",
+      "head": "879e67e",
+      "status": "merged",
+      "title": "Bonsai: fix nested mapped-item transform composition order (#3019)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8335"
+    },
+    "8336": {
+      "author": "BIMvoice",
+      "branch": "fix-2851-extrusion-dedup",
+      "head": "b0d7cb5",
+      "status": "merged",
+      "title": "Bonsai: recover extrusions from OCCT-duplicated verts, tessellate only when truly not an extrusion (#2851)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8336"
+    },
+    "8337": {
+      "author": "BIMvoice",
+      "branch": "fix-3129-storey-elevation-precision",
+      "head": "3459e7e",
+      "status": "merged",
+      "title": "Bonsai: round length attributes to model precision on write (#3129)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8337"
+    },
+    "8338": {
+      "author": "BIMvoice",
+      "branch": "fix-drawing-viewport-text-size-3353",
+      "head": "5ded244",
+      "status": "merged",
+      "title": "bonsai(drawing): make viewport annotation text size resolution independent (#3353, #3683)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8338"
+    },
+    "8339": {
+      "author": "BIMvoice",
+      "branch": "fix-3932-mep-bend-crash",
+      "head": "8143f11",
+      "status": "merged",
+      "title": "Bonsai: don't crash Add Bend on parallel/collinear MEP segments (#3932)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8339"
+    },
+    "8340": {
+      "author": "BIMvoice",
+      "branch": "fix-4606-mixed-repr",
+      "head": "2979c2c",
+      "status": "merged",
+      "title": "Bonsai: import representations that mix polygons and curves (#4606)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8340"
+    },
+    "8342": {
+      "author": "falken10vdl",
+      "branch": "style-flat-pretty-toggle",
+      "head": "42de34c",
+      "status": "merged",
+      "title": "Style flat pretty toggle",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8342"
+    },
+    "8343": {
+      "author": "BIMvoice",
+      "branch": "fix-3217-auto-context",
+      "head": "1e91c58",
+      "status": "skipped_conflict",
+      "title": "Bonsai: auto-create Model/Body context on drawing creation for external IFCs (#3217)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8343"
+    },
+    "8344": {
+      "author": "BIMvoice",
+      "branch": "fix-4048-storey-elevation-sync",
+      "head": "f147d98",
+      "status": "merged",
+      "title": "Bonsai: sync storey placement on Load Spatial Structure + stop re-import resetting elevations to 0 (#4048, #8545)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8344"
+    },
+    "8345": {
+      "author": "BIMvoice",
+      "branch": "fix-4593-add-repr-loose-edges",
+      "head": "9bc7c3e",
+      "status": "merged",
+      "title": "geometry.add_representation: keep loose edges (curves) when a mesh also has faces (#4593)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8345"
+    },
+    "8346": {
+      "author": "BIMvoice",
+      "branch": "fix-4332-door-flip-2d",
+      "head": "8351f85",
+      "status": "skipped_conflict",
+      "title": "Bonsai: flip fills against the Body representation so doors don't jump out of host in 2D (#4332)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8346"
+    },
+    "8347": {
+      "author": "BIMvoice",
+      "branch": "fix-4641-clipplane-reload",
+      "head": "7038ba6",
+      "status": "merged",
+      "title": "Bonsai: relaunch the clipping-plane refresh modal after a .blend reload (#4641)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8347"
+    },
+    "8348": {
+      "author": "BIMvoice",
+      "branch": "fix-4703-dxf-transform",
+      "head": "3144234",
+      "status": "merged",
+      "title": "Bonsai: fix DXF export dropping/scrambling polylines with integer or scientific coordinates (#4703)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8348"
+    },
+    "8349": {
+      "author": "BIMvoice",
+      "branch": "fix-4694-tool-shortcut",
+      "head": "578b891",
+      "status": "merged",
+      "title": "Bonsai: give Create Element and Annotation tools stable toolbar-popup shortcuts (#4694)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8349"
+    },
+    "8351": {
+      "author": "BIMvoice",
+      "branch": "fix-4785-drawing-space-filter",
+      "head": "23f0a9c",
+      "status": "merged",
+      "title": "Bonsai: apply the drawing Include filter to IfcSpace elements (#4785)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8351"
+    },
+    "8352": {
+      "author": "BIMvoice",
+      "branch": "fix-4766-cross-schema-append",
+      "head": "77d3ccb",
+      "status": "merged",
+      "title": "project.append_asset: migrate library asset to project schema on cross-schema append (#4766)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8352"
+    },
+    "8353": {
+      "author": "BIMvoice",
+      "branch": "fix-4790-regen-style",
+      "head": "abb4309",
+      "status": "merged",
+      "title": "Bonsai: preserve IfcStyledItem when regenerating a wall body (#4790)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8353"
+    },
+    "8354": {
+      "author": "BIMvoice",
+      "branch": "fix-4822-print-graceful",
+      "head": "9ddd91d",
+      "status": "merged",
+      "title": "Bonsai: fail gracefully when the sheet PDF/DXF conversion command is missing or fails (#4822)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8354"
+    },
+    "8355": {
+      "author": "BIMvoice",
+      "branch": "fix-4813-swept-disk-polygonal",
+      "head": "ca061dc",
+      "status": "merged",
+      "title": "Bonsai: guard curve edit-mode for non-annotation curves, keep annotation curves editable (#4813, #5025)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8355"
+    },
+    "8356": {
+      "author": "BIMvoice",
+      "branch": "fix-4800-camera-context",
+      "head": "cc3e134",
+      "status": "skipped_conflict",
+      "title": "Bonsai: store the drawing camera outside the Body context so viewers don't show boxes (#4800)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8356"
+    },
+    "8357": {
+      "author": "BIMvoice",
+      "branch": "fix-8350-link-query",
+      "head": "531b0eb",
+      "status": "merged",
+      "title": "Bonsai: fix crash linking a fresh IFC with Use Cache off (#8350)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8357"
+    },
+    "8358": {
+      "author": "BIMvoice",
+      "branch": "fix-8262-numpad-decimal",
+      "head": "7ec3043",
+      "status": "merged",
+      "title": "Bonsai: numpad decimal key inserts a dot in modal inputs, matching Blender (#8262)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8358"
+    },
+    "8360": {
+      "author": "BIMvoice",
+      "branch": "fix-alignment-fallback-unit-scale",
+      "head": "e8438ff",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "util.placement: fix double unit scaling of linear placement fallback position",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8360"
+    },
+    "8361": {
+      "author": "BIMvoice",
+      "branch": "fix-5221-schedule-font-scope",
+      "head": "b22055d",
+      "status": "merged",
+      "title": "Bonsai: scope schedule/document styles on a sheet so they keep their own font (#5221)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8361"
+    },
+    "8365": {
+      "author": "BIMvoice",
+      "branch": "fix-4783-footing-qto",
+      "head": "17dea14",
+      "status": "skipped_conflict",
+      "title": "Fix IfcFooting Qto_FootingBaseQuantities axis mapping (#4783)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8365"
+    },
+    "8369": {
+      "author": "BIMvoice",
+      "branch": "fix-6568-optional-collada-msys",
+      "head": "31a39eb",
+      "status": "merged",
+      "title": "win/msys2: make the OpenCOLLADA dependency build skippable via COLLADA_SUPPORT (#6568)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8369"
+    },
+    "8370": {
+      "author": "BIMvoice",
+      "branch": "fix-8050-iterator-race",
+      "head": "6c7b33c",
+      "status": "merged",
+      "title": "ifcgeom: clone mapped items before in place mutation to fix nondeterministic multithreaded geometry (#8050)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8370"
+    },
+    "8371": {
+      "author": "BIMvoice",
+      "branch": "fix-4029-onlyvalid-terrain",
+      "head": "961c9f2",
+      "status": "merged",
+      "title": "svg: don't gate out drawable non-solid shapes (terrain) from sections in setOnlyValid mode (#4029)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8371"
+    },
+    "8372": {
+      "author": "BIMvoice",
+      "branch": "fix-4128-sklearn-graceful",
+      "head": "8781090",
+      "status": "merged",
+      "title": "ifcclash: fail gracefully when scikit-learn is missing for smart grouping (#4128)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8372"
+    },
+    "8373": {
+      "author": "BIMvoice",
+      "branch": "fix/4014-annotation-multi-product",
+      "head": "9adc8fe",
+      "status": "merged",
+      "title": "Bonsai: clear all stale annotation products on linked-aggregate refresh (#4014)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8373"
+    },
+    "8376": {
+      "author": "BIMvoice",
+      "branch": "fix-3971-svg-roof-v2",
+      "head": "1105be6",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "svg: guard HLR stages so one failing element or projection does not abort the drawing (#3971)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8376"
+    },
+    "8377": {
+      "author": "BIMvoice",
+      "branch": "fix-8106-taxonomy-sweep-approx",
+      "head": "a6ca663",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Approximate swept solids in the taxonomy layer so cgal stops dropping IfcSweptDiskSolid (#8106)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8377"
+    },
+    "8378": {
+      "author": "BIMvoice",
+      "branch": "feat-validate-crash-diagnostics",
+      "head": "61750d7",
+      "status": "merged",
+      "title": "Add ifcopenshell.diagnostics: report the entity most likely behind a crash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8378"
+    },
+    "8379": {
+      "author": "BIMvoice",
+      "branch": "fix-7102-wizard-metric-units",
+      "head": "2ef764c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "fix(bonsai): stop unusual metric length units from crashing format_distance",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8379"
+    },
+    "8380": {
+      "author": "BIMvoice",
+      "branch": "fix-8053-slab-qto-depth-width",
+      "head": "eebb3b2",
+      "status": "merged",
+      "title": "fix(ifc5d): correct swapped Width and Depth in Qto_SlabBaseQuantities",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8380"
+    },
+    "8381": {
+      "author": "BIMvoice",
+      "branch": "fix-7117-door-custom-width",
+      "head": "59de054",
+      "status": "merged",
+      "title": "fix(bonsai): add door geometry to an object with no mesh data (#7117)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8381"
+    },
+    "8382": {
+      "author": "BIMvoice",
+      "branch": "fix-5493-sheet-drawing-link",
+      "head": "830ecc3",
+      "status": "merged",
+      "title": "Bonsai: resolve sheet drawing via document Location instead of fuzzy name match",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8382"
+    },
+    "8384": {
+      "author": "BIMvoice",
+      "branch": "fix-4934-presentation-layer-stale-id",
+      "head": "bca2e6d",
+      "status": "merged",
+      "title": "Bonsai: fix \"Instance not found\" crash when removing a stale presentation layer",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8384"
+    },
+    "8385": {
+      "author": "BIMvoice",
+      "branch": "fix-7487-type-mapped-duplicate",
+      "head": "d90c6d1",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: fix wrong duplicated geometry for type mapped (ArchiCAD) elements (#7487)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8385"
+    },
+    "8386": {
+      "author": "BIMvoice",
+      "branch": "fix-5314-ifc4x3-annotation-type",
+      "head": "a746b23",
+      "status": "merged",
+      "title": "Bonsai: fix IFC4X3 IfcAnnotation PredefinedType vs ObjectType handling",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8386"
+    },
+    "8389": {
+      "author": "BIMvoice",
+      "branch": "fix-4537-door-window-attribute-qto",
+      "head": "6564879",
+      "status": "skipped_conflict",
+      "title": "Quantify doors and windows from IFC attributes on both take-off engines (supersedes #4537)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8389"
+    },
+    "8390": {
+      "author": "BIMvoice",
+      "branch": "fix-7152-bcf-viewpoint-filenames",
+      "head": "82a4117",
+      "status": "merged",
+      "title": "Fix BCF 2.1 viewpoint and snapshot file names",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
+    },
+    "8391": {
+      "author": "BIMvoice",
+      "branch": "fix-7112-save-custom-psets",
+      "head": "83c3e71",
+      "status": "merged",
+      "title": "Bonsai: fix \"Save Pset As Template\" on IFC4X3 custom psets",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8391"
+    },
+    "8392": {
+      "author": "BIMvoice",
+      "branch": "fix-6591-delete-indexed-polycurve",
+      "head": "41d7cc6",
+      "status": "merged",
+      "title": "Bonsai: fix deleting IfcIndexedPolyCurve from a GeometricSet representation",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8392"
+    },
+    "8393": {
+      "author": "BIMvoice",
+      "branch": "fix-6508-geography-element-qto",
+      "head": "e6ceeb3",
+      "status": "merged",
+      "title": "ifc5d: add base-quantity rule for IfcGeographicElement (#6508)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8393"
+    },
+    "8394": {
+      "author": "BIMvoice",
+      "branch": "fix-1410-ifcconvert-no-progress",
+      "head": "30c9065",
+      "status": "merged",
+      "title": "Fix IfcConvert --no-progress being ignored with --threads >= 2 (#1410)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8394"
+    },
+    "8395": {
+      "author": "BIMvoice",
+      "branch": "fix-7204-add-ifcspacetype",
+      "head": "a004a00",
+      "status": "merged",
+      "title": "Bonsai: fix creating IfcSpaceType from the Type Manager / Multi Object Tool",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8395"
+    },
+    "8396": {
+      "author": "BIMvoice",
+      "branch": "fix-6153-fastener-removal-save",
+      "head": "cecf404",
+      "status": "merged",
+      "title": "Clean up orphaned relationships after removing elements (IfcMechanicalFastener and others)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8396"
+    },
+    "8401": {
+      "author": "BIMvoice",
+      "branch": "fix-7737-work",
+      "head": "72ebb2d",
+      "status": "merged",
+      "title": "Bonsai: baseline half space item placements so item edits keep all cuts (#7737)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8401"
+    },
+    "8402": {
+      "author": "BIMvoice",
+      "branch": "fix-7233-work",
+      "head": "7d3276f",
+      "status": "merged",
+      "title": "Bonsai: expose 2-Point Arc resolution in redo panel (#7233)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8402"
+    },
+    "8403": {
+      "author": "BIMvoice",
+      "branch": "fix-7655-work",
+      "head": "b9fdec3",
+      "status": "merged",
+      "title": "Bonsai: draw text-only leaders instead of crashing the decoration pass (#7655)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8403"
+    },
+    "8404": {
+      "author": "BIMvoice",
+      "branch": "fix-7092-work",
+      "head": "8e5cc66",
+      "status": "merged",
+      "title": "Fix #7092: copy independent profile defs when duplicating a material profile set",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8404"
+    },
+    "8405": {
+      "author": "BIMvoice",
+      "branch": "fix-7657-work",
+      "head": "1367e01",
+      "status": "merged",
+      "title": "Bonsai: fix Freestyle drawing linework producing no lines on Blender 5.1 (#7657)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8405"
+    },
+    "8406": {
+      "author": "BIMvoice",
+      "branch": "fix-486-work",
+      "head": "0b777ca",
+      "status": "merged",
+      "title": "Fix #486: auto-add cross-file instances on attribute assignment",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8406"
+    },
+    "8407": {
+      "author": "BIMvoice",
+      "branch": "fix-7245-work",
+      "head": "8907d07",
+      "status": "merged",
+      "title": "ifctester: normalise scalar IDS values to their XML string form (#7245)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8407"
+    },
+    "8408": {
+      "author": "BIMvoice",
+      "branch": "fix-7125-work",
+      "head": "c782203",
+      "status": "merged",
+      "title": "Fix #7125: search_in_dictionary honours related_ifc_entity via Dictionary/Classes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8408"
+    },
+    "8409": {
+      "author": "BIMvoice",
+      "branch": "fix-6325-work",
+      "head": "fd7855f",
+      "status": "merged",
+      "title": "Bonsai: compute earthworks base quantities in ifc5d take-off (#6325)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8409"
+    },
+    "8410": {
+      "author": "BIMvoice",
+      "branch": "fix-7331-work",
+      "head": "919ddd2",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix #7331: derive cost item quantities from IfcSpace base quantities",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8410"
+    },
+    "8413": {
+      "author": "BIMvoice",
+      "branch": "fix-6479-annotation-context",
+      "head": "e2f061d",
+      "status": "merged",
+      "title": "Bonsai: show IfcTextLiteralWithExtent attached to the parent context (#6479)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8413"
+    },
+    "8414": {
+      "author": "BIMvoice",
+      "branch": "fix-6678-header-version",
+      "head": "c4e499f",
+      "status": "merged",
+      "title": "ifcopenshell: stamp new file headers with the current package version (#6678)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8414"
+    },
+    "8415": {
+      "author": "BIMvoice",
+      "branch": "fix-7640-profile-boolean-tracking",
+      "head": "11813e2",
+      "status": "merged",
+      "title": "Bonsai: keep half space solids when regenerating a profile element (#7640)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8415"
+    },
+    "8417": {
+      "author": "BIMvoice",
+      "branch": "fix-7533-duplicate-boolean-remap",
+      "head": "8267e94",
+      "status": "skipped_conflict",
+      "title": "Bonsai: preserve half space cuts when duplicating an element (#7533)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8417"
+    },
+    "8419": {
+      "author": "BIMvoice",
+      "branch": "fix-8070-simple-type-leak",
+      "head": "fdf25ac",
+      "status": "merged",
+      "title": "IfcParse: free simple type instances created after load (#8070)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8419"
+    },
+    "8420": {
+      "author": "BIMvoice",
+      "branch": "fix-8043-polyline-closing-edge",
+      "head": "696e295",
+      "status": "merged",
+      "title": "Bonsai: close IfcPolyline loops by appending the closing edge (#8043)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8420"
+    },
+    "8421": {
+      "author": "BIMvoice",
+      "branch": "fix-7827-wall-notch-order",
+      "head": "6530bcd",
+      "status": "merged",
+      "title": "ifcopenshell: order wall path cuts along the edge before stitching (#7827)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8421"
+    },
+    "8422": {
+      "author": "BIMvoice",
+      "branch": "fix-7978-metadata-linked-collections",
+      "head": "c405286",
+      "status": "merged",
+      "title": "Bonsai: keep user linked collections when writing the metadata blend (#7978)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8422"
+    },
+    "8423": {
+      "author": "BIMvoice",
+      "branch": "fix-7975-axis-resize-endpoint",
+      "head": "f901da0",
+      "status": "merged",
+      "title": "Bonsai: drop the connection at the moved endpoint when resizing an axis (#7975)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8423"
+    },
+    "8424": {
+      "author": "BIMvoice",
+      "branch": "fix-5357-clash-result-order",
+      "head": "5c16f93",
+      "status": "skipped_conflict",
+      "title": "IfcGeomTree: keep clash_intersection_many results in set_a, set_b order (#5357)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8424"
+    },
+    "8425": {
+      "author": "BIMvoice",
+      "branch": "fix-5881-remove-sheet-confirm",
+      "head": "f365c66",
+      "status": "merged",
+      "title": "Bonsai: confirm before removing a sheet, which deletes files from disk (#5881)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8425"
+    },
+    "8426": {
+      "author": "BIMvoice",
+      "branch": "fix-6906-mirror-merge-decouple",
+      "head": "efde9f3",
+      "status": "merged",
+      "title": "Bonsai: decouple the Merge and Mirror buttons so Mirror works on walls (#6906)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8426"
+    },
+    "8427": {
+      "author": "BIMvoice",
+      "branch": "fix-6666-append-drawing-view",
+      "head": "857ca22",
+      "status": "merged",
+      "title": "Bonsai: append a drawing view from a library as a real drawing (#6666)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8427"
+    },
+    "8429": {
+      "author": "theoryshaw",
+      "branch": "fix-layer3-slab-horizontal-profile-edit",
+      "head": "3a98019",
+      "status": "merged",
+      "title": "Fix horizontal profile editing for sloped LAYER3 slabs",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8429"
+    },
+    "8432": {
+      "author": "BIMvoice",
+      "branch": "fix-7450-section-level-auto",
+      "head": "b831175",
+      "status": "merged",
+      "title": "Bonsai: stop deleting user created Level (Section) annotations on drawing activation (#7450)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8432"
+    },
+    "8433": {
+      "author": "BIMvoice",
+      "branch": "fix-8013-surfaceoflinearextrusion-depth",
+      "head": "f7eb96a",
+      "status": "merged",
+      "title": "ifcgeom: use the real extrusion depth for IfcSurfaceOfLinearExtrusion (#8013)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8433"
+    },
+    "8434": {
+      "author": "BIMvoice",
+      "branch": "fix-8034-camera-size-persist",
+      "head": "4d643c2",
+      "status": "merged",
+      "title": "Bonsai: persist a drawing camera size edit into the IFC representation (#8034)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8434"
+    },
+    "8435": {
+      "author": "BIMvoice",
+      "branch": "fix-8011-foreign-wall-length",
+      "head": "805b91b",
+      "status": "merged",
+      "title": "util.representation: recover wall length from a rectangle profile body (#8011)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8435"
+    },
+    "8436": {
+      "author": "BIMvoice",
+      "branch": "fix-7800-gridaxis-lock-4x3",
+      "head": "52ab987",
+      "status": "merged",
+      "title": "Bonsai: unlock IfcGridAxis in IFC4X3 so gridlines are editable (#7800)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8436"
+    },
+    "8437": {
+      "author": "BIMvoice",
+      "branch": "fix-7289-sheet-unique-ids",
+      "head": "e20098f",
+      "status": "skipped_conflict",
+      "title": "Bonsai: uniquify referenced SVG ids on a sheet so text does not garble (#7289)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8437"
+    },
+    "8438": {
+      "author": "BIMvoice",
+      "branch": "fix-7786-open-curve-arc",
+      "head": "fb19f24",
+      "status": "merged",
+      "title": "Bonsai: stop emitting a trailing segment on an open arc curve (#7786)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8438"
+    },
+    "8439": {
+      "author": "BIMvoice",
+      "branch": "fix-7162-poly-hlr-deflection",
+      "head": "4bf23fb",
+      "status": "merged",
+      "title": "serializers: use mesher-linear-deflection for polygonal HLR drawings (#7162)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8439"
+    },
+    "8440": {
+      "author": "BIMvoice",
+      "branch": "fix-6613-camera-body-representation",
+      "head": "bd0e73e",
+      "status": "merged",
+      "title": "Bonsai: fail gracefully when a drawing has no camera geometry (#6613)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8440"
+    },
+    "8441": {
+      "author": "BIMvoice",
+      "branch": "fix-6249-mep-start-port",
+      "head": "e687f5d",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: bind the MEP fitting start port even when no port is at the origin (#6249)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8441"
+    },
+    "8442": {
+      "author": "BIMvoice",
+      "branch": "fix-6405-space-regen-elevation",
+      "head": "1a6c6da",
+      "status": "merged",
+      "title": "Bonsai: stop shifting an IfcSpace by the container elevation on Regen (#6405)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8442"
+    },
+    "8443": {
+      "author": "BIMvoice",
+      "branch": "fix-6681-material-ui-select-type",
+      "head": "50f49f0",
+      "status": "merged",
+      "title": "Bonsai: sync material_type when selecting a material set in the Materials UI (#6681)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8443"
+    },
+    "8444": {
+      "author": "BIMvoice",
+      "branch": "fix-reimport-multiprocessing-toggle",
+      "head": "3b06b51",
+      "status": "merged",
+      "title": "Bonsai: honour the CPU Multiprocessing toggle on representation reimport",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8444"
+    },
+    "8445": {
+      "author": "BIMvoice",
+      "branch": "fix-6315-fill-area-voids",
+      "head": "d86fa52",
+      "status": "merged",
+      "title": "Bonsai: keep holes when creating an annotation Fill Area (#6315)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8445"
+    },
+    "8446": {
+      "author": "BIMvoice",
+      "branch": "fix-5633-rename-undo",
+      "head": "23d6121",
+      "status": "merged",
+      "title": "Bonsai: make renames undoable (#5633)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8446"
+    },
+    "8447": {
+      "author": "BIMvoice",
+      "branch": "fix-3950-csv-search-attributes",
+      "head": "58e13cd",
+      "status": "merged",
+      "title": "Bonsai: persist CSV attributes when saving a spreadsheet search (#3950)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8447"
+    },
+    "8448": {
+      "author": "BIMvoice",
+      "branch": "fix-4103-section-marker-direction",
+      "head": "c2e3282",
+      "status": "merged",
+      "title": "Bonsai: orient the section marker to the view direction (#4103)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8448"
+    },
+    "8450": {
+      "author": "BIMvoice",
+      "branch": "fix-6742-csg-cylinder",
+      "head": "b8d1f3c",
+      "status": "merged",
+      "title": "ifcgeom: import IfcRightCircularCylinder CSG geometry (#6742)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8450"
+    },
+    "8452": {
+      "author": "BIMvoice",
+      "branch": "fix-gltf-zup-optional-deref",
+      "head": "770ab72",
+      "status": "merged",
+      "title": "serializers: fix empty-optional dereference in glTF finalize (separate Z-up node)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8452"
+    },
+    "8453": {
+      "author": "BIMvoice",
+      "branch": "fix-6750-truncated-step-segfault",
+      "head": "9be8ebc",
+      "status": "merged",
+      "title": "ifcparse: don't segfault on truncated / fuzzed STEP files (#6750)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8453"
+    },
+    "8454": {
+      "author": "BIMvoice",
+      "branch": "fix-6912-zero-span-conic-wire",
+      "head": "5d9a165",
+      "status": "merged",
+      "title": "ifcgeom: fix 'Failed to join curve segments' on zero-span trimmed conics (#6912)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8454"
+    },
+    "8456": {
+      "author": "BIMvoice",
+      "branch": "fix-7822-examples-occ-includes",
+      "head": "63f41d5",
+      "status": "merged",
+      "title": "examples: fix missing OpenCASCADE includes on MSVC x64 (#7822)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8456"
+    },
+    "8457": {
+      "author": "BIMvoice",
+      "branch": "fix-obj-serializer-texcoord-material",
+      "head": "24f4143",
+      "status": "merged",
+      "title": "serializers: correct OBJ texture-coordinate indices and guard material lookup",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8457"
+    },
+    "8459": {
+      "author": "BIMvoice",
+      "branch": "fix-1366-boolean-null-operand-segfault",
+      "head": "ff7211d",
+      "status": "merged",
+      "title": "ifcgeom: don't segfault on null/empty boolean operands (#1366)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8459"
+    },
+    "8460": {
+      "author": "BIMvoice",
+      "branch": "fix-8105-manifold-compound-of-faces",
+      "head": "7646063",
+      "status": "merged",
+      "title": "ifcgeom: fix is_manifold always false for a loose-face compound (#8105)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8460"
+    },
+    "8461": {
+      "author": "BIMvoice",
+      "branch": "fix-5999-wire-intersection-broadphase",
+      "head": "a71061e",
+      "status": "merged",
+      "title": "ifcgeom: bounding-box broad-phase for the wire self-intersection check (#5999)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8461"
+    },
+    "8463": {
+      "author": "BIMvoice",
+      "branch": "harden-4926-serialise-null-handles",
+      "head": "9da138f",
+      "status": "merged",
+      "title": "ifcgeom: guard IfcGeom::serialise against null OCCT handles (#4926)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8463"
+    },
+    "8465": {
+      "author": "BIMvoice",
+      "branch": "fix-622-wire-intersection-recursion",
+      "head": "a364c26",
+      "status": "merged",
+      "title": "ifcgeom: cap wire_intersections recursion to prevent a stack overflow (#622)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8465"
+    },
+    "8466": {
+      "author": "BIMvoice",
+      "branch": "fix-2509-gltf-diffuse-albedo",
+      "head": "4b03258",
+      "status": "merged",
+      "title": "serializers: glTF baseColorFactor should be the surface colour, not diffuse*factor (#2509)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8466"
+    },
+    "8467": {
+      "author": "BIMvoice",
+      "branch": "fix-4846-obj-mtllib",
+      "head": "aca6224",
+      "status": "merged",
+      "title": "ifcgeom: emit mtllib in OBJ output so materials are linked (#4846)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8467"
+    },
+    "8468": {
+      "author": "BIMvoice",
+      "branch": "fix-5109-xml-material-ids",
+      "head": "e7237b3",
+      "status": "merged",
+      "title": "serializers: emit a stable id for nested materials in XML (#5109)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8468"
+    },
+    "8469": {
+      "author": "BIMvoice",
+      "branch": "fix-806-mirrored-normals",
+      "head": "0d96909",
+      "status": "merged",
+      "title": "ifcgeom: fix inverted normals on mirrored MappedRepresentations (#806)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8469"
+    },
+    "8471": {
+      "author": "BIMvoice",
+      "branch": "bv-1231-svg-storey-global-z",
+      "head": "2bfcd89",
+      "status": "merged",
+      "title": "serializers: SVG cut plane from storey global placement, not Elevation attribute (#1231)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8471"
+    },
+    "8472": {
+      "author": "BIMvoice",
+      "branch": "bv-5067-serialise-indirect-surface",
+      "head": "d4da778",
+      "status": "merged",
+      "title": "ifcgeom: fix inverted normals for indirect curved surfaces in IfcGeom::serialise (#5067)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8472"
+    },
+    "8473": {
+      "author": "BIMvoice",
+      "branch": "bv-3460-parser-silent-fail",
+      "head": "2fa4b13",
+      "status": "merged",
+      "title": "ifcparse: report INVALID_SYNTAX on a truncated file instead of success (#3460)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8473"
+    },
+    "8474": {
+      "author": "BIMvoice",
+      "branch": "bv-2629-svg-arc-bounds",
+      "head": "e6912f8",
+      "status": "merged",
+      "title": "serializers: SVG bounding box should follow the drawn arc, not the full circle (#2629)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8474"
+    },
+    "8475": {
+      "author": "BIMvoice",
+      "branch": "bv-2638-svg-storey-section-global-z",
+      "head": "6f250e2",
+      "status": "merged",
+      "title": "serializers: section-height-from-storeys should use global placement Z (#2638)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8475"
+    },
+    "8476": {
+      "author": "BIMvoice",
+      "branch": "bv-5485-cgal-polyhedron",
+      "head": "24af0ad",
+      "status": "merged",
+      "title": "ifcgeom: honour POLYHEDRON triangulation type in the CGAL kernel (#5485)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8476"
+    },
+    "8477": {
+      "author": "BIMvoice",
+      "branch": "bv-4130-svg-hlr-guard",
+      "head": "441927f",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "serializers: don't abort the whole SVG drawing when one element's HLR fails (#4130, #3849)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8477"
+    },
+    "8478": {
+      "author": "BIMvoice",
+      "branch": "bv-7835-examples-build-convert",
+      "head": "6b84ff0",
+      "status": "merged",
+      "title": "build: decouple the OpenCascade examples from BUILD_CONVERT (#7835)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8478"
+    },
+    "8479": {
+      "author": "BIMvoice",
+      "branch": "bv-6997-cgal-vertex-normals",
+      "head": "0359a2a",
+      "status": "merged",
+      "title": "ifcgeom: CGAL kernel should emit the smoothed, unit vertex normal (#6997)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8479"
+    },
+    "8480": {
+      "author": "BIMvoice",
+      "branch": "bv-6173-cgal-original-edges",
+      "head": "0f7fe9f",
+      "status": "skipped_conflict",
+      "title": "ifcgeom: fix CgalEmitOriginalEdges for placed elements (#6173)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8480"
+    },
+    "8484": {
+      "author": "sboddy",
+      "branch": "fix-5685-squared-curves-on-open",
+      "head": "115fc09",
+      "status": "skipped_conflict",
+      "title": "Fix #5685 squared curves on open",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8484"
+    },
+    "8485": {
+      "author": "BIMvoice",
+      "branch": "bv-3540-tapered-v2",
+      "head": "ef2516a",
+      "status": "merged",
+      "title": "ifcgeom: implement IfcRevolvedAreaSolidTapered following the revolve arc (#3540)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8485"
+    },
+    "8486": {
+      "author": "BIMvoice",
+      "branch": "bv-3904-iterator-determinism",
+      "head": "c96d575",
+      "status": "merged",
+      "title": "ifcgeom: deterministic iterator output order under multithreading (#3904)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8486"
+    },
+    "8488": {
+      "author": "BIMvoice",
+      "branch": "bv-1541-swept-caps",
+      "head": "53b8a96",
+      "status": "merged",
+      "title": "ifcgeom: produce closed manifold IfcSurfaceCurveSweptAreaSolid sweeps (#1541)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8488"
+    },
+    "8489": {
+      "author": "BIMvoice",
+      "branch": "bv-619-boolean-coincident",
+      "head": "08d50da",
+      "status": "merged",
+      "title": "ifcgeom: cut openings whose clip faces coincide with the host (#619)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8489"
+    },
+    "8490": {
+      "author": "BIMvoice",
+      "branch": "bv-4118-heal-void-edges",
+      "head": "8cd1ef5",
+      "status": "skipped_conflict",
+      "title": "ifcgeom: cut openings when the wall void boundary has sub-precision edges (#4118)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8490"
+    },
+    "8491": {
+      "author": "BIMvoice",
+      "branch": "bv-5186-boolean-2d-fallback",
+      "head": "6a3efec",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcgeom: recover 2D-optimized boolean cuts dropped on retry (#5186)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8491"
+    },
+    "8492": {
+      "author": "BIMvoice",
+      "branch": "bv-2248-dual-role-representation",
+      "head": "4efdd73",
+      "status": "merged",
+      "title": "ifcgeom: stop dropping products of dual-role representations on whole-file conversion (#2248)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8492"
+    },
+    "8494": {
+      "author": "BIMvoice",
+      "branch": "fix-1015-nonmanifold-cut",
+      "head": "b2ebe8f",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Keep valid non-manifold subtraction instead of dropping the cut (#1015)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8494"
+    },
+    "8497": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.15.21",
+      "head": "cf1d83c",
+      "status": "merged",
+      "title": "build(deps): bump ruff from 0.15.12 to 0.15.22",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8497"
+    },
+    "8498": {
+      "author": "BIMvoice",
+      "branch": "fix-5618-negative-surfacestyle",
+      "head": "b1a641f",
+      "status": "merged",
+      "title": "Use NEGATIVE-side IfcSurfaceStyle as a fallback instead of dropping it (#5618)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8498"
+    },
+    "8499": {
+      "author": "BIMvoice",
+      "branch": "fix-5630-tessellated-cut",
+      "head": "6003398",
+      "status": "merged",
+      "title": "Retry boolean CUT that OCCT reports done but subtracts no volume (#5630)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8499"
+    },
+    "8500": {
+      "author": "BIMvoice",
+      "branch": "fix-4594-clash-coplanar",
+      "head": "468104b",
+      "status": "merged",
+      "title": "Detect clash for perfectly aligned coplanar-face overlaps (#4594)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8500"
+    },
+    "8501": {
+      "author": "BIMvoice",
+      "branch": "fix-5898-extrusion-edge",
+      "head": "f4dba8b",
+      "status": "merged",
+      "title": "Bonsai: pick the true sweep edge in detect_extrusion_edge (#5898)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8501"
+    },
+    "8502": {
+      "author": "BIMvoice",
+      "branch": "bv-1367-asym-ishape",
+      "head": "17926d0",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix #1367: map IfcAsymmetricIShapeProfileDef in IFC4+",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8502"
+    },
+    "8503": {
+      "author": "BIMvoice",
+      "branch": "fix-6125-nonmanifold-volume",
+      "head": "b8b787f",
+      "status": "merged",
+      "title": "Return nan for non-manifold volume and skip it in QTO (#6125)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8503"
+    },
+    "8505": {
+      "author": "BIMvoice",
+      "branch": "fix-8162-append-group",
+      "head": "eb9591e",
+      "status": "merged",
+      "title": "Support appending IfcGroup assets via project.append_asset (#8162)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8505"
+    },
+    "8506": {
+      "author": "BIMvoice",
+      "branch": "fix-4094-swept-disk-fillet",
+      "head": "173ab2a",
+      "status": "merged",
+      "title": "Fix IfcSweptDiskSolidPolygonal fillet: crash to correct rounded corners (#4094)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8506"
+    },
+    "8507": {
+      "author": "BIMvoice",
+      "branch": "fix-8045-blank-name-dedup",
+      "head": "daa5800",
+      "status": "merged",
+      "title": "Do not deduplicate appended assets by a blank name (#8045)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8507"
+    },
+    "8508": {
+      "author": "BIMvoice",
+      "branch": "fix-7658-curved-loft",
+      "head": "a1d1a2a",
+      "status": "merged",
+      "title": "Loft constant curved cross sections instead of crashing (#7658)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8508"
+    },
+    "8509": {
+      "author": "Vanuan",
+      "branch": "patch-3",
+      "head": "9b8d94a",
+      "status": "skipped_conflict",
+      "title": "Door/Opening documentation improvement",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8509"
+    },
+    "8510": {
+      "author": "sboddy",
+      "branch": "enhance-claude",
+      "head": "87c56c0",
+      "status": "merged",
+      "title": "Claude specific file, automatically read on opening the repo",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8510"
+    },
+    "8511": {
+      "author": "BIMvoice",
+      "branch": "fix-3424-ifccsv-wildcard",
+      "head": "a3db334",
+      "status": "merged",
+      "title": "Expand wildcard attributes in IfcCsv export (#3424)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8511"
+    },
+    "8512": {
+      "author": "BIMvoice",
+      "branch": "fix-8036-drawing-none-doc",
+      "head": "1eaaa43",
+      "status": "skipped_conflict",
+      "title": "Bonsai: guard drawing with no document reference in get_sheet_references (#8036, #7266)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8512"
+    },
+    "8513": {
+      "author": "BIMvoice",
+      "branch": "fix-7261-append-empty-tuple",
+      "head": "a2dd705",
+      "status": "merged",
+      "title": "Guard append_asset against an empty aggregate attribute (#7261)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8513"
+    },
+    "8514": {
+      "author": "BIMvoice",
+      "branch": "fix-7154-aggregate-cycle",
+      "head": "0d2736b",
+      "status": "merged",
+      "title": "Refuse cyclic aggregation in aggregate.assign_object (#7154)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8514"
+    },
+    "8515": {
+      "author": "BIMvoice",
+      "branch": "fix-6761-pipe-boolean-qto",
+      "head": "90554f4",
+      "status": "merged",
+      "title": "Derive pipe segment length through boolean-clipped bodies (#6761)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8515"
+    },
+    "8516": {
+      "author": "BIMvoice",
+      "branch": "fix-6996-itemmode-shear",
+      "head": "77d7d6d",
+      "status": "merged",
+      "title": "Bonsai: re-orthonormalize item placement in Item Mode (#6996)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8516"
+    },
+    "8518": {
+      "author": "BIMvoice",
+      "branch": "feat-8412-ifcdiff-signature",
+      "head": "e0dcc52",
+      "status": "merged",
+      "title": "IfcDiff: optional content-signature matching to track real changes (#8412)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8518"
+    },
+    "8519": {
+      "author": "BIMvoice",
+      "branch": "fix-4499-uniqueness-rules",
+      "head": "5d439f2",
+      "status": "merged",
+      "title": "Validate EXPRESS UNIQUE clauses via express_parser (#4499)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8519"
+    },
+    "8520": {
+      "author": "BIMvoice",
+      "branch": "fix-6904-occ-iterator-leak",
+      "head": "4a71ebd",
+      "status": "merged",
+      "title": "ifcopenshell: fix geom.iterator memory growth on the OCC path (#6904)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8520"
+    },
+    "8521": {
+      "author": "BIMvoice",
+      "branch": "fix-620-616-nonmanifold-subtraction",
+      "head": "6ba38bf",
+      "status": "skipped_conflict",
+      "title": "ifcgeom: recover BRepCheck-valid non-manifold subtractions instead of dropping them (#620, #616)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8521"
+    },
+    "8522": {
+      "author": "BIMvoice",
+      "branch": "fix-3189-tree-file-pointer",
+      "head": "dfefb53",
+      "status": "merged",
+      "title": "ifcopenshell: attach owning file to geom.tree select results (#3189)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8522"
+    },
+    "8523": {
+      "author": "BIMvoice",
+      "branch": "fix-8400-directrix-hang",
+      "head": "d053530",
+      "status": "skipped_conflict",
+      "title": "ifcgeom: collapse degenerate directrix segments to avoid a MakePipeShell hang (#8400)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8523"
+    },
+    "8524": {
+      "author": "BIMvoice",
+      "branch": "fix-6607-layerset-fallback",
+      "head": "1b57803",
+      "status": "merged",
+      "title": "ifcgeom: fall back to unsliced representation when layerset slicing fails (#6607)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8524"
+    },
+    "8527": {
+      "author": "BIMvoice",
+      "branch": "ship-4399-toposort",
+      "head": "f60292a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcpatch: use stdlib graphlib for Optimise, fixing missing toposort in Bonsai (#4399)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8527"
+    },
+    "8528": {
+      "author": "BIMvoice",
+      "branch": "ship-3187-select",
+      "head": "0279a5a",
+      "status": "merged",
+      "title": "express: include referencing SELECT types in typeof() (#3187)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8528"
+    },
+    "8529": {
+      "author": "BIMvoice",
+      "branch": "ship-6929-trimmedcurve",
+      "head": "d472703",
+      "status": "merged",
+      "title": "Bonsai: support IfcTrimmedCurve arc segments when editing a profile (#6929)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8529"
+    },
+    "8530": {
+      "author": "BIMvoice",
+      "branch": "ship-7681-hideselect",
+      "head": "2988696",
+      "status": "skipped_conflict",
+      "title": "Bonsai: keep 'disable selection' objects visible when activating a drawing (#7681)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8530"
+    },
+    "8531": {
+      "author": "BIMvoice",
+      "branch": "ship-7412-pset-override",
+      "head": "3a8facf",
+      "status": "merged",
+      "title": "Bonsai: copy-property-to-selection must not edit the inherited type pset (#7412)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8531"
+    },
+    "8532": {
+      "author": "BIMvoice",
+      "branch": "ship-5635-drawing-name",
+      "head": "8ef78c5",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: uniquify drawing name on rename so SVGs don't overwrite each other (#5635)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8532"
+    },
+    "8533": {
+      "author": "BIMvoice",
+      "branch": "ship-6393-mepbend",
+      "head": "11d5787",
+      "status": "skipped_conflict",
+      "title": "Bonsai: guard MEP Add Bend against parallel segments (#6393)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8533"
+    },
+    "8534": {
+      "author": "BIMvoice",
+      "branch": "ship-5123-schedule-newlines",
+      "head": "08dda6a",
+      "status": "merged",
+      "title": "Bonsai: keep newlines and multiple spaces in SVG schedules (#5123)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8534"
+    },
+    "8535": {
+      "author": "BIMvoice",
+      "branch": "ship-5309-hidespaces",
+      "head": "4d38c8a",
+      "status": "merged",
+      "title": "Bonsai: skip out-of-view-layer spaces in toggle_hide_spaces (#5309)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8535"
+    },
+    "8536": {
+      "author": "BIMvoice",
+      "branch": "ship-7454-extend-guard",
+      "head": "7e79f99",
+      "status": "merged",
+      "title": "Bonsai: clean error instead of a traceback for Extend To Underside on a non-wall selection (#7454)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8536"
+    },
+    "8537": {
+      "author": "BIMvoice",
+      "branch": "ship-6729-hidden-cols",
+      "head": "2dfb9cd",
+      "status": "merged",
+      "title": "Bonsai: don't render spreadsheet-hidden columns in schedules (#6729)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8537"
+    },
+    "8538": {
+      "author": "BIMvoice",
+      "branch": "ship-6676-usage-axis",
+      "head": "2817009",
+      "status": "merged",
+      "title": "Bonsai: preserve material usage direction across a type change (#6676)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8538"
+    },
+    "8539": {
+      "author": "BIMvoice",
+      "branch": "ship-2041-nested-qty",
+      "head": "b6b310b",
+      "status": "merged",
+      "title": "Resolve nested complex quantity paths in the selector (#2041)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8539"
+    },
+    "8540": {
+      "author": "BIMvoice",
+      "branch": "ship-4624-fulldocs",
+      "head": "3d15f58",
+      "status": "merged",
+      "title": "util.doc: stop truncating entity, type, pset and property descriptions at the first paragraph (#4624)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8540"
+    },
+    "8541": {
+      "author": "BIMvoice",
+      "branch": "ship-2554-derived-unit",
+      "head": "d9d5666",
+      "status": "merged",
+      "title": "Bonsai: implement Add Derived Unit in the units UI (#2554)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8541"
+    },
+    "8542": {
+      "author": "BIMvoice",
+      "branch": "ship-6807-geomset-delete",
+      "head": "58dc1f3",
+      "status": "skipped_conflict",
+      "title": "Bonsai: delete representation items nested in an IfcGeometricSet (#6807)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8542"
+    },
+    "8543": {
+      "author": "BIMvoice",
+      "branch": "ship-tester-webapp-hardening",
+      "head": "a65a301",
+      "status": "merged",
+      "title": "Bonsai: diagnose IfcTester webapp startup failures instead of a dead browser tab",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8543"
+    },
+    "8544": {
+      "author": "BIMvoice",
+      "branch": "ship-3381-circle-profile",
+      "head": "6f59d0b",
+      "status": "merged",
+      "title": "Bonsai: support circle profiles when editing an extrusion profile (#3381)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8544"
+    },
+    "8546": {
+      "author": "BIMvoice",
+      "branch": "ship-6407-curveset-edit",
+      "head": "e5f7f32",
+      "status": "merged",
+      "title": "Bonsai: support editing IfcGeometricCurveSet representation items (#6407)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8546"
+    },
+    "8548": {
+      "author": "theoryshaw",
+      "branch": "placement-storey-elevation",
+      "head": "31b6f6c",
+      "status": "merged",
+      "title": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8548"
+    },
+    "8549": {
+      "author": "BIMvoice",
+      "branch": "ship-7624-directprofile",
+      "head": "04db09f",
+      "status": "merged",
+      "title": "Bonsai: fix DirectProfileEdit crash when exiting edit mode (#7624)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8549"
+    },
+    "8550": {
+      "author": "BIMvoice",
+      "branch": "ship-5349-side-area",
+      "head": "e1edad2",
+      "status": "skipped_conflict",
+      "title": "util.shape: add opt-in winding-tolerant areas (#5349)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8550"
+    },
+    "8552": {
+      "author": "BIMvoice",
+      "branch": "ship-7061-shapely-linked",
+      "head": "2cee95e",
+      "status": "merged",
+      "title": "Bonsai: fix SHAPELY fill mode for linked projects in drawings (#7061)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8552"
+    },
+    "8553": {
+      "author": "BIMvoice",
+      "branch": "ship-6481-parametric-profile",
+      "head": "e1c0e7b",
+      "status": "merged",
+      "title": "Bonsai: preserve a parametric profile through an edit round trip (#6481)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8553"
+    },
+    "8555": {
+      "author": "BIMvoice",
+      "branch": "ship-8026-dup-context-import",
+      "head": "c6b1521",
+      "status": "merged",
+      "title": "Bonsai: don't let a non-Body representation overwrite an imported wall (#8026)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8555"
+    },
+    "8557": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bsdd-get-class-relations",
+      "head": "29fb417",
+      "status": "merged",
+      "title": "Fix ci: test_get_class_relations calls the wrong bSDD client method",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8557"
+    },
+    "8558": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-test-drawing-mocks",
+      "head": "85639e5",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix ci-bonsai-daily: update test_drawing mocks for the DRAWINGS parent group",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8558"
+    },
+    "8560": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-project-geomslice-skiphidden",
+      "head": "a197a1b",
+      "status": "merged",
+      "title": "Fix ci-bonsai-daily: get_linked_element_geom_slice hidden-face index space",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8560"
+    },
+    "8561": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-test-blender-debug-key",
+      "head": "460d57b",
+      "status": "merged",
+      "title": "Fix ci-bonsai-daily: expect bonsai_git_branch key in TestGetDebugInfo",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8561"
+    },
+    "8562": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-daily-checkout-path",
+      "head": "82b6ac9",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix ci-bonsai-daily: avoid tripled repo path breaking BDD link_ifc tests",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8562"
+    },
+    "8563": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-surveyor-dead-zrotation",
+      "head": "0ca1d80",
+      "status": "merged",
+      "title": "Fix ci-bonsai-daily: drop never-wired Surveyor z-rotation scaffolding",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8563"
+    },
+    "8565": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-bdd-operatorspy-mep",
+      "head": "9ec6534",
+      "status": "merged",
+      "title": "Fix ci-bonsai-daily BDD: OperatorSpy.bl_rna + stale MEP port name",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8565"
+    },
+    "8566": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-classification-honor-obj-arg",
+      "head": "6080409",
+      "status": "merged",
+      "title": "Fix ci-bonsai-daily: classification operators honor their obj argument",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8566"
+    },
+    "8567": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-bsdd-stub-clobber",
+      "head": "a1367c6",
+      "status": "merged",
+      "title": "Fix ci-bonsai-daily: get_dictionaries no longer clobbers injected bSDD client",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8567"
+    },
+    "8571": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-assign-class-view-layer-and-material-usage",
+      "head": "8e2cb4c",
+      "status": "merged",
+      "title": "Fix ci-bonsai-daily: assign_class drops active_object; assign_material usage type",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8571"
+    },
+    "8572": {
+      "author": "BIMvoice",
+      "branch": "fix/8570-ifc5d-ifcspace-qto",
+      "head": "b0d6134",
+      "status": "merged",
+      "title": "Fix #8570: populate ifc5d IfcOpenShell QTO formulas for IfcSpace",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8572"
+    },
+    "8573": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-projectlibrary-dedup",
+      "head": "6c9e863",
+      "status": "merged",
+      "title": "Fix ci-bonsai-daily: ProjectLibraryData duplicate parent-library enum entry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8573"
+    },
+    "8574": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-ifcgit-mergetool-mock",
+      "head": "627c24e",
+      "status": "merged",
+      "title": "Fix ci-bonsai-daily: configure unmerged_blobs mock in git_mergetool tests",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8574"
+    },
+    "8575": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-clipbox-caps-loading-guard",
+      "head": "c2c185f",
+      "status": "merged",
+      "title": "Fix ci-bonsai-daily: guard on_depsgraph_update_caps during file load",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8575"
+    },
+    "8581": {
+      "author": "BIMvoice",
+      "branch": "fix-8580-csv-missing-columns",
+      "head": "f764cb8",
+      "status": "merged",
+      "title": "Fix Csv2Ifc crash on CSV missing an optional column (#8580)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8581"
+    },
+    "8583": {
+      "author": "BIMvoice",
+      "branch": "fix-7156-chmod-permission-error",
+      "head": "a4f7787",
+      "status": "merged",
+      "title": "Bonsai: don't crash registration on read-only pyradiance installs (#7156)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8583"
+    },
+    "8584": {
+      "author": "BIMvoice",
+      "branch": "fix-6727-swept-solid-set-origin",
+      "head": "d7742db",
+      "status": "merged",
+      "title": "Bonsai: fix/report IFC Set Origin no-op on SweptSolid representations (#6727)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8584"
+    },
+    "8585": {
+      "author": "BIMvoice",
+      "branch": "fix-7275-drawing-sheet-undo",
+      "head": "1895afe",
+      "status": "merged",
+      "title": "Bonsai: restore sheet SVG on undo/redo of drawing removal (#7275)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8585"
+    },
+    "8586": {
+      "author": "sboddy",
+      "branch": "fix-axis2placement-2d-resize",
+      "head": "75b221f",
+      "status": "skipped_conflict",
+      "title": "Fix ValueError in get_axis2placement for 2D RefDirection",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8586"
+    },
+    "8587": {
+      "author": "sboddy",
+      "branch": "fix-slab-wall-generation",
+      "head": "bec3e10",
+      "status": "merged",
+      "title": "Fix #6896 wall generation from composite/arc/circle/rectangle slab profiles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8587"
+    },
+    "8588": {
+      "author": "BIMvoice",
+      "branch": "fix-2415-geom-app-select-occt-compat",
+      "head": "63f2ebb",
+      "status": "merged",
+      "title": "Fix geom.app viewer selection crash on current pythonocc-core (#2415)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8588"
+    },
+    "8589": {
+      "author": "BIMvoice",
+      "branch": "fix-2283-nest-type-objects",
+      "head": "57c45ef",
+      "status": "merged",
+      "title": "Bonsai: allow nesting element type objects together (#2283)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8589"
+    },
+    "8590": {
+      "author": "BIMvoice",
+      "branch": "fix-2621-space-boundary-origin-sync",
+      "head": "4783417",
+      "status": "merged",
+      "title": "Bonsai: lock IfcRelSpaceBoundary object transform to prevent geometry desync (#2621)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8590"
+    },
+    "8591": {
+      "author": "BIMvoice",
+      "branch": "fix-2477-datetime-format-consistency",
+      "head": "25f131a",
+      "status": "merged",
+      "title": "Bonsai: fix Timeline text date format to match sequence module convention (#2477)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8591"
+    },
+    "8592": {
+      "author": "BIMvoice",
+      "branch": "fix-2778-save-crash",
+      "head": "eb710f5",
+      "status": "merged",
+      "title": "Bonsai: don't crash save when an object's IFC entity no longer exists (#2778)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8592"
+    },
+    "8593": {
+      "author": "BIMvoice",
+      "branch": "fix-3067-structural-axis-default",
+      "head": "7ee97d0",
+      "status": "skipped_conflict",
+      "title": "Bonsai: set a default Axis on structural curve member/connection creation (#3067)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8593"
+    },
+    "8594": {
+      "author": "BIMvoice",
+      "branch": "fix-3296-external-styles-new-viewports",
+      "head": "5c3cc5c",
+      "status": "skipped_conflict",
+      "title": "Bonsai: switch to external styles on RENDERED shading for viewports created mid-session (#3296)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8594"
+    },
+    "8595": {
+      "author": "BIMvoice",
+      "branch": "fix-3496-swept-disk-authoring",
+      "head": "209e317",
+      "status": "merged",
+      "title": "Fix IfcSweptDiskSolid directrix round-trip when updating representations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8595"
+    },
+    "8596": {
+      "author": "BIMvoice",
+      "branch": "fix-3747-curtain-wall-space-bounding",
+      "head": "d3e8d3b",
+      "status": "merged",
+      "title": "Bonsai: let curtain wall members/plates close space boundaries",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8596"
+    },
+    "8598": {
+      "author": "BIMvoice",
+      "branch": "fix-4047-bounded-property-support",
+      "head": "027fae4",
+      "status": "skipped_conflict",
+      "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
+    },
+    "8599": {
+      "author": "theoryshaw",
+      "branch": "fix-decoration-zero-length-textdir",
+      "head": "62f6384",
+      "status": "merged",
+      "title": "Bonsai: don't crash decoration labels on a zero-length text direction",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8599"
+    },
+    "8600": {
+      "author": "theoryshaw",
+      "branch": "fix-decoration-no-scene-camera",
+      "head": "c87e0a9",
+      "status": "merged",
+      "title": "Bonsai: skip drawing decorations when the scene has no active camera",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8600"
+    },
+    "8601": {
+      "author": "theoryshaw",
+      "branch": "fix-5493-sheet-drawing-link-perf",
+      "head": "6578e34",
+      "status": "merged",
+      "title": "Fix 5493 sheet drawing link perf",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8601"
+    },
+    "8604": {
+      "author": "thierry-FreeBSD",
+      "branch": "v0.8.0",
+      "head": "65ade98",
+      "status": "merged",
+      "title": "cmake/CMakeLists.txt: fix for dependencies",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8604"
+    },
+    "8606": {
+      "author": "BIMvoice",
+      "branch": "fix/streaming-propset-fixture",
+      "head": "8aedda3",
+      "status": "merged",
+      "title": "Fix property set fixture schema",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8606"
+    },
+    "8607": {
+      "author": "CyrilWaechter",
+      "branch": "add-copy-boundary-attribute-to-selection",
+      "head": "c5aad9a",
+      "status": "merged",
+      "title": "Add copy attribute to selection for boundaries",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8607"
+    },
+    "8610": {
+      "author": "theoryshaw",
+      "branch": "fix-mergeduplicatetypes-null-and-crossclass",
+      "head": "684ec64",
+      "status": "merged",
+      "title": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8610"
+    },
+    "8612": {
+      "author": "BIMvoice",
+      "branch": "fix-8611-advanced-import-save-target",
+      "head": "19dbed9",
+      "status": "merged",
+      "title": "bonsai: don't rebind Save target during Advanced-mode import preview (#8611)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8612"
+    },
+    "8613": {
+      "author": "BIMvoice",
+      "branch": "fix-4050-material-select-unhide-type",
+      "head": "6eaa55d",
+      "status": "skipped_conflict",
+      "title": "bonsai: reveal hidden collections when selecting objects by material (#4050)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8613"
+    },
+    "8614": {
+      "author": "BIMvoice",
+      "branch": "fix-7525-wall-add-hang-large-curve",
+      "head": "9bac781",
+      "status": "merged",
+      "title": "bonsai: stop tessellating curves on every snap visibility check (#7525)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8614"
+    },
+    "8615": {
+      "author": "BIMvoice",
+      "branch": "fix-4067-svg-curve-hlr",
+      "head": "2357a39",
+      "status": "merged",
+      "title": "bonsai: add opt-in exact-geometry hidden line removal for smoother SVG curves (#4067)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8615"
+    },
+    "8616": {
+      "author": "BIMvoice",
+      "branch": "fix-4122-resource-calendar-hours",
+      "head": "42d8a4c",
+      "status": "merged",
+      "title": "ifcopenshell: use a resource's work calendar for day-rate cost conversion (#4122)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8616"
+    },
+    "8617": {
+      "author": "BIMvoice",
+      "branch": "fix-4395-covering-join-criteria",
+      "head": "465340b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "bonsai: allow overriding which classes join in section linework (#4395)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8617"
+    },
+    "8618": {
+      "author": "BIMvoice",
+      "branch": "fix-4360-shift-e-extend",
+      "head": "5bd9965",
+      "status": "merged",
+      "title": "bonsai: don't silently corrupt geometry on a reverse-direction profile join (#4360)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8618"
+    },
+    "8619": {
+      "author": "BIMvoice",
+      "branch": "fix-4349-join-context-menu",
+      "head": "9a9f601",
+      "status": "merged",
+      "title": "bonsai: surface IFC-aware join in the object/right-click context menu (#4349)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8619"
+    },
+    "8620": {
+      "author": "BIMvoice",
+      "branch": "fix-5268-leader-multi-arrow-reopen",
+      "head": "2b1bdf5",
+      "status": "merged",
+      "title": "ifcopenshell: don't merge distinct splines through a mesh round-trip when writing curves (#5268)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8620"
+    },
+    "8621": {
+      "author": "BIMvoice",
+      "branch": "fix-5567-svg-css-comments",
+      "head": "006c568",
+      "status": "merged",
+      "title": "bonsai: strip CSS comments before embedding into generated SVG (#5567)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8621"
+    },
+    "8622": {
+      "author": "BIMvoice",
+      "branch": "fix-5088-resource-cost-value-editor",
+      "head": "fc2d5b5",
+      "status": "merged",
+      "title": "bonsai: give resources their own fixed cost value field instead of borrowing Cost Schedules' (#5088)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8622"
+    },
+    "8623": {
+      "author": "BIMvoice",
+      "branch": "fix-6205-set-origin-not-applying",
+      "head": "23749af",
+      "status": "skipped_conflict",
+      "title": "bonsai: fix IFC Set Origin silently doing nothing for most objects (#6205)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8623"
+    },
+    "8624": {
+      "author": "BIMvoice",
+      "branch": "fix-6353-colour-by-pset-empty",
+      "head": "b55d5bc",
+      "status": "merged",
+      "title": "bonsai: populate Colour By pset dropdown from the whole file, not just selection (#6353)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8624"
+    },
+    "8626": {
+      "author": "BIMvoice",
+      "branch": "fix-mep-bend-shape-stopiteration",
+      "head": "3ecfce0",
+      "status": "merged",
+      "title": "bonsai/ifcopenshell: fix mep bend crash when the segment gap is purely axial",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8626"
+    },
+    "8627": {
+      "author": "BIMvoice",
+      "branch": "fix-6322-perspective-depth-width-height",
+      "head": "b67556b",
+      "status": "merged",
+      "title": "ifcopenshell: don't let camera Depth rescale Width/Height in perspective mode (#6322)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8627"
+    },
+    "8628": {
+      "author": "BIMvoice",
+      "branch": "fix-7228-arc-tool-error-reporting",
+      "head": "b35143c",
+      "status": "merged",
+      "title": "bonsai: report a clean error instead of crashing on invalid CAD hotkey selections (#7228)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8628"
+    },
+    "8629": {
+      "author": "BIMvoice",
+      "branch": "fix-8625-cost-value-unit-basis",
+      "head": "cf5a4de",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "bonsai: extend each cost value by its own unit basis before summing (#8625)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8629"
+    },
+    "8630": {
+      "author": "BIMvoice",
+      "branch": "fix-7167-activate-drawing-from-sheet",
+      "head": "281f404",
+      "status": "skipped_conflict",
+      "title": "Bonsai: fix Activate Drawing crash for punctuated drawing names",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8630"
+    },
+    "8632": {
+      "author": "BIMvoice",
+      "branch": "fix-5450-mep-bend-profile-error",
+      "head": "08b1cb3",
+      "status": "merged",
+      "title": "Bonsai: report a clean error instead of a traceback for unsupported bend profiles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8632"
+    },
+    "8633": {
+      "author": "BIMvoice",
+      "branch": "fix-6274-wall-join-2d",
+      "head": "99f2a0c",
+      "status": "merged",
+      "title": "bonsai(drawing): join mitred wall/slab linework by actual layer materials, not LayerSetName",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8633"
+    },
+    "8634": {
+      "author": "BIMvoice",
+      "branch": "fix-5711-coplanar-faces-dissolved",
+      "head": "403997f",
+      "status": "merged",
+      "title": "bonsai: preserve original tessellation edges from the CGAL kernel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8634"
+    },
+    "8635": {
+      "author": "BIMvoice",
+      "branch": "fix-6259-profile-curve-branch",
+      "head": "0116108",
+      "status": "merged",
+      "title": "bonsai: catch kernel RuntimeError when finishing an arbitrary profile edit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8635"
+    },
+    "8636": {
+      "author": "BIMvoice",
+      "branch": "fix-6354-colourscheme-save-load",
+      "head": "bec61d6",
+      "status": "merged",
+      "title": "Bonsai: persist colour-by-property Pset selection across save/reload",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8636"
+    },
+    "8637": {
+      "author": "BIMvoice",
+      "branch": "fix-5433-svg-fonts",
+      "head": "6546abc",
+      "status": "merged",
+      "title": "Bonsai: embed bundled fonts in exported drawing SVGs",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8637"
+    },
+    "8638": {
+      "author": "BIMvoice",
+      "branch": "fix-6663-linked-aggregate-duplicate",
+      "head": "99b2aef",
+      "status": "merged",
+      "title": "Fix #6663: keep a duplicated nested aggregate inside its parent aggregate",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8638"
+    },
+    "8639": {
+      "author": "BIMvoice",
+      "branch": "fix-6930-open-profile-loop",
+      "head": "c73409e",
+      "status": "merged",
+      "title": "Bonsai: fix missing closing edge when importing a closed IfcPolyline profile for editing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8639"
+    },
+    "8640": {
+      "author": "BIMvoice",
+      "branch": "fix-6693-import-item-none-geometry",
+      "head": "6947915",
+      "status": "merged",
+      "title": "Bonsai: guard import_item against a None geometry shape",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8640"
+    },
+    "8641": {
+      "author": "BIMvoice",
+      "branch": "fix-7029-wall-footprint-area-qto",
+      "head": "4a7a627",
+      "status": "merged",
+      "title": "ifc5d: wire up GrossFootprintArea/NetFootprintArea for IfcWall QTO",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8641"
+    },
+    "8642": {
+      "author": "BIMvoice",
+      "branch": "fix-6134-annotation-text-refresh",
+      "head": "09313ea",
+      "status": "merged",
+      "title": "Bonsai: tolerate an already-removed mesh/curve/camera data-block in delete_data",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8642"
+    },
+    "8643": {
+      "author": "BIMvoice",
+      "branch": "fix-7450-section-level-sync",
+      "head": "2c6082d",
+      "status": "skipped_conflict",
+      "title": "Bonsai: stop deleting manually-created Level (Section) annotations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8643"
+    },
+    "8644": {
+      "author": "BIMvoice",
+      "branch": "fix-7231-cad-fillet-tooltip",
+      "head": "794d6dd",
+      "status": "merged",
+      "title": "Bonsai: fix mismatched Fillet tooltip in CAD tool for plain mesh edit mode",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8644"
+    },
+    "8645": {
+      "author": "BIMvoice",
+      "branch": "fix-7318-bcf-gp-strokes",
+      "head": "bde39c1",
+      "status": "merged",
+      "title": "Bonsai: fix BCF viewpoint line markup crash on modern Grease Pencil API",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8645"
+    },
+    "8646": {
+      "author": "BIMvoice",
+      "branch": "fix-6728-covering-qto-mismatch",
+      "head": "69d57a5",
+      "status": "merged",
+      "title": "Fix IfcCovering Qto_CoveringBaseQuantities mismatch between calculators",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8646"
+    },
+    "8647": {
+      "author": "BIMvoice",
+      "branch": "fix-ci-ifc4x3-schema",
+      "head": "baddc0f",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix CI: IFC4X3 schema resolution and process-type assignment false positives",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8647"
+    },
+    "8648": {
+      "author": "BIMvoice",
+      "branch": "fix-2052-shape-aspects",
+      "head": "e29474c",
+      "status": "merged",
+      "title": "Bonsai: split multi-material profile sets into per-item shape aspects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8648"
+    },
+    "8649": {
+      "author": "BIMvoice",
+      "branch": "fix-ci-streaming-wallopening-bsdd",
+      "head": "c9d630b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ci: fix bSDD 429 rate limiting and restore ColumnPSetsOfSets.ifc schema",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8649"
+    },
+    "8651": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-choco-blenderbim-rename",
+      "head": "58e2782",
+      "status": "merged",
+      "title": "Fix ci-bonsai-choco: choco_release.py still targets the old choco/blenderbim path",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8651"
+    },
+    "8652": {
+      "author": "BIMvoice",
+      "branch": "fix-3096-git-describe-titleblock",
+      "head": "d15a0e2",
+      "status": "skipped_conflict",
+      "title": "Bonsai: expose git describe string to titleblock templates",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8652"
+    },
+    "8653": {
+      "author": "BIMvoice",
+      "branch": "fix-3995-curtain-wall-boundary",
+      "head": "0593a84",
+      "status": "skipped_conflict",
+      "title": "Bonsai: let standalone IfcCurtainWall bound spaces and boundaries",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8653"
+    },
+    "8654": {
+      "author": "BIMvoice",
+      "branch": "fix-3096-ifcgit-main-branch",
+      "head": "f1b9d50",
+      "status": "merged",
+      "title": "Bonsai: default new Git repos to a main branch",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8654"
+    },
+    "8658": {
+      "author": "theoryshaw",
+      "branch": "profile-length-per-instance",
+      "head": "44339de",
+      "status": "merged",
+      "title": "Bonsai: toggle a profile type's length between typed and per-instance",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
+    },
+    "8660": {
+      "author": "brunopostle",
+      "branch": "fix/binary-token-uncaught-exception",
+      "head": "1156a55",
+      "status": "merged",
+      "title": "IfcParse: don't let a malformed binary token abort the parser",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8660"
+    },
+    "8661": {
+      "author": "brunopostle",
+      "branch": "fix/unterminated-string-eof-abort",
+      "head": "aa1a893",
+      "status": "merged",
+      "title": "IfcParse: don't abort when a string literal runs off the end of the file",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8661"
+    },
+    "8663": {
+      "author": "theoryshaw",
+      "branch": "append-asset-material-styles",
+      "head": "6887fbb",
+      "status": "merged",
+      "title": "api.project.append_asset: preserve material styles reached via a layer set usage",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8663"
+    },
+    "8668": {
+      "author": "theoryshaw",
+      "branch": "fix-8666-saferemoval-untracked-assertion",
+      "head": "084818d",
+      "status": "merged",
+      "title": "project.append_asset: don't crash on untracked removed element (#8666)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8668"
+    },
+    "8669": {
+      "author": "theoryshaw",
+      "branch": "fix-8667-guid-collision-type-assign",
+      "head": "2f5b673",
+      "status": "merged",
+      "title": "project.append_asset: don't abort batch on GlobalId collision (#8667)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8669"
+    },
+    "8670": {
+      "author": "BIMvoice",
+      "branch": "fix-5679-truncated-attribute-storage",
+      "head": "7524692",
+      "status": "merged",
+      "title": "Size entity attribute storage to schema arity, not token count",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8670"
+    },
+    "8671": {
+      "author": "BIMvoice",
+      "branch": "fix-6557-fall-annotation-z",
+      "head": "71f761a",
+      "status": "merged",
+      "title": "Bonsai: preserve Z when editing FALL/slope annotation curves",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8671"
+    },
+    "8672": {
+      "author": "BIMvoice",
+      "branch": "fix-8108-solidwall-conversion",
+      "head": "4354a8f",
+      "status": "merged",
+      "title": "Bonsai: convert a solid IfcWall to a real parametric wall",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8672"
+    },
+    "8673": {
+      "author": "BIMvoice",
+      "branch": "fix-4309-section-plane-tab",
+      "head": "6f7927d",
+      "status": "merged",
+      "title": "Bonsai: move temporary section cutaway panels to Drawings and Documents tab",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8673"
+    },
+    "8674": {
+      "author": "BIMvoice",
+      "branch": "fix-4322-material-csv-import",
+      "head": "0bedfa9",
+      "status": "merged",
+      "title": "Fix #4322. Support importing IfcMaterial and profile attributes and psets via Spreadsheet Import/Export",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8674"
+    },
+    "8675": {
+      "author": "BIMvoice",
+      "branch": "fix-8041-watch-reload",
+      "head": "7f863ae",
+      "status": "skipped_draft",
+      "title": "Bonsai: watch the IFC file for external changes and reload in place",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8675"
+    },
+    "8676": {
+      "author": "BIMvoice",
+      "branch": "fix-2011-ifc-node-graph",
+      "head": "f607532",
+      "status": "skipped_draft",
+      "title": "Bonsai: add IFC Graph node editor to explore entity relationships",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8676"
+    },
+    "8677": {
+      "author": "BIMvoice",
+      "branch": "fix-6377-plate-3d-editing",
+      "head": "5483e18",
+      "status": "skipped_draft",
+      "title": "Bonsai: realign plate placement when a triangular profile is edited in 3D",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
+    },
+    "8678": {
+      "author": "BIMvoice",
+      "branch": "fix-7237-zone-nesting",
+      "head": "3869b82",
+      "status": "merged",
+      "title": "Bonsai: allow assigning an IfcZone to another IfcZone via the Zones UI",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8678"
+    },
+    "8679": {
+      "author": "BIMvoice",
+      "branch": "fix-6410-isolate-show-hide-docs",
+      "head": "114f4ae",
+      "status": "merged",
+      "title": "Bonsai docs: fix quickstart isolate/hide/show default claim",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8679"
+    },
+    "8680": {
+      "author": "BIMvoice",
+      "branch": "fix-7087-linked-hide-ux",
+      "head": "2bacc18",
+      "status": "merged",
+      "title": "Bonsai: label the Explore Tool query results in the Links panel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8680"
+    },
+    "8681": {
+      "author": "BIMvoice",
+      "branch": "fix-7334-linked-svg-dxf",
+      "head": "d858cf5",
+      "status": "skipped_draft",
+      "title": "Bonsai: link external SVG/DXF files as snappable reference geometry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8681"
+    },
+    "8682": {
+      "author": "BIMvoice",
+      "branch": "fix-431-text-literal-geom",
+      "head": "80d30b1",
+      "status": "merged",
+      "title": "ifcgeom: skip text literals with a warning instead of a conversion error",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8682"
+    },
+    "8683": {
+      "author": "BIMvoice",
+      "branch": "fix-3058-int64-attr",
+      "head": "5b9c9c2",
+      "status": "skipped_conflict",
+      "title": "ifcparse: store integer attribute values as int64_t to allow out-of-range timestamps",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8683"
+    },
+    "8684": {
+      "author": "BIMvoice",
+      "branch": "fix-4443-spatial-qto-shortcut",
+      "head": "98ad04a",
+      "status": "merged",
+      "title": "Bonsai: wire Shift+Q quantity take off hotkey into Spatial tool",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8684"
+    },
+    "8685": {
+      "author": "BIMvoice",
+      "branch": "fix-8631-vs2017-msbuild-detect",
+      "head": "7735de3",
+      "status": "skipped_conflict",
+      "title": "win: pre-detect VS2017 MSBuild path before building mpir dependency",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8685"
+    },
+    "8686": {
+      "author": "BIMvoice",
+      "branch": "fix-3446-update-space-boundaries",
+      "head": "4b90d96",
+      "status": "merged",
+      "title": "Bonsai: update existing space boundaries in place instead of skipping them on regeneration",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8686"
+    },
+    "8687": {
+      "author": "BIMvoice",
+      "branch": "fix-3783-track-project-assets",
+      "head": "c7550fd",
+      "status": "merged",
+      "title": "Bonsai: commit referenced drawing assets alongside the IFC in IfcGit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8687"
+    },
+    "8688": {
+      "author": "BIMvoice",
+      "branch": "fix-8232-duplicate-xlink-ns",
+      "head": "59972f8",
+      "status": "merged",
+      "title": "Bonsai: fix duplicate xmlns:xlink in drawings that use SVG patterns with <use> elements",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8688"
+    },
+    "8689": {
+      "author": "BIMvoice",
+      "branch": "fix-1037-1098-pyocc-compat",
+      "head": "dc8c360",
+      "status": "merged",
+      "title": "Fix pythonocc-core viewer compatibility in geom.occ_utils and geom.app",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8689"
+    },
+    "8690": {
+      "author": "BIMvoice",
+      "branch": "bv-2992-brep-placement",
+      "head": "b4fce1f",
+      "status": "merged",
+      "title": "Fix serialize_shape() dropping the outermost shape's placement",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8690"
+    },
+    "8691": {
+      "author": "BIMvoice",
+      "branch": "fix-1124-geometry-memory-mgmt",
+      "head": "653aad5",
+      "status": "merged",
+      "title": "ifcwrap: keep geometry's owning element alive to fix silent data corruption",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8691"
+    },
+    "8692": {
+      "author": "BIMvoice",
+      "branch": "fix-1646-tooltip-batch",
+      "head": "b9329f3",
+      "status": "merged",
+      "title": "Bonsai: add tooltips to 67 operators in classification, document, group, layer, library and unit modules",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8692"
+    },
+    "8693": {
+      "author": "BIMvoice",
+      "branch": "bv-3565-extend-nontyped-profile",
+      "head": "9e466f9",
+      "status": "skipped_conflict",
+      "title": "Bonsai: let Shift+E extend non-typed profile extrusions",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8693"
+    },
+    "8694": {
+      "author": "BIMvoice",
+      "branch": "fix-3748-sloped-space-roof",
+      "head": "677da41",
+      "status": "skipped_conflict",
+      "title": "Bonsai: opt-in space generation that follows sloping roofs and slabs",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8694"
+    },
+    "8695": {
+      "author": "BIMvoice",
+      "branch": "fix-3621-window-shapes",
+      "head": "ca10002",
+      "status": "merged",
+      "title": "Bonsai: add Round and Arch shapes to the parametric window",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8695"
+    },
+    "8696": {
+      "author": "BIMvoice",
+      "branch": "fix-3642-overlap-warning",
+      "head": "66d98de",
+      "status": "merged",
+      "title": "Bonsai: warn when overlapping solids cause shapely fill cells to merge",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8696"
+    },
+    "8697": {
+      "author": "BIMvoice",
+      "branch": "fix-2181-mep-junction",
+      "head": "8f4d48a",
+      "status": "merged",
+      "title": "Bonsai: add MEP junction fitting operator (tee, wye, cross)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8697"
+    },
+    "8698": {
+      "author": "BIMvoice",
+      "branch": "fix-3306-typed-ifc4-stubs",
+      "head": "940aebd",
+      "status": "skipped_draft",
+      "title": "[Draft/RFC] ifcopenshell-python: generated typed IFC4 stubs for schema-aware by_type()",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8698"
+    },
+    "8699": {
+      "author": "BIMvoice",
+      "branch": "fix-3754-wall-covering",
+      "head": "c4dc3f5",
+      "status": "merged",
+      "title": "Bonsai: automate wall coverings (cladding, insulation) from wall side faces",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8699"
+    },
+    "8702": {
+      "author": "BIMvoice",
+      "branch": "bv-1428-blendergis-bridge",
+      "head": "7b576be",
+      "status": "merged",
+      "title": "Bonsai: import georeferencing from BlenderGIS scene properties",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8702"
+    },
+    "8703": {
+      "author": "BIMvoice",
+      "branch": "fix-3995-standalone-window-boundaries",
+      "head": "2cc00c5",
+      "status": "skipped_conflict",
+      "title": "Bonsai: let standalone windows bound spaces and boundaries",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8703"
+    },
+    "8705": {
+      "author": "BIMvoice",
+      "branch": "bv-7032-stale-ifc-definition-id",
+      "head": "bdf4e13",
+      "status": "skipped_conflict",
+      "title": "Bonsai: stop a stale ifc_definition_id from aborting the whole project save",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8705"
+    },
+    "8706": {
+      "author": "theoryshaw",
+      "branch": "merge-duplicate-contexts",
+      "head": "bcb555c",
+      "status": "merged",
+      "title": "ifcpatch: add MergeDuplicateContexts recipe",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8706"
+    },
+    "8707": {
+      "author": "theoryshaw",
+      "branch": "fix-mergeprojects-dup-contexts",
+      "head": "82bd46d",
+      "status": "merged",
+      "title": "ifcpatch: stop MergeProjects leaving duplicate representation contexts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8707"
+    },
+    "8708": {
+      "author": "BIMvoice",
+      "branch": "bv-2438-door-panel-pset-edit",
+      "head": "b45d19d",
+      "status": "merged",
+      "title": "Bonsai: mark predefined property sets as read only in the pset editor",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8708"
+    },
+    "8709": {
+      "author": "BIMvoice",
+      "branch": "bv-2748-userdefined-task-object-type-color",
+      "head": "a308a85",
+      "status": "merged",
+      "title": "Bonsai: key USERDEFINED task animation colour by ObjectType",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8709"
+    },
+    "8710": {
+      "author": "BIMvoice",
+      "branch": "fix-2772-gantt-hour-format",
+      "head": "bd44217",
+      "status": "merged",
+      "title": "Bonsai: add Hour zoom level to the interactive Gantt chart",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8710"
+    },
+    "8711": {
+      "author": "BIMvoice",
+      "branch": "bv-6643-wall-editing-issues",
+      "head": "9d6d40c",
+      "status": "merged",
+      "title": "Bonsai: regenerate a wall's join neighbours when unjoining it",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8711"
+    },
+    "8712": {
+      "author": "BIMvoice",
+      "branch": "bv-6623-step-unit-scale",
+      "head": "ab04ce6",
+      "status": "merged",
+      "title": "IfcConvert: fix 1000x scale error in STEP export unit handling",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8712"
+    },
+    "8715": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.15.22",
+      "head": "b14b7d6",
+      "status": "merged",
+      "title": "build(deps): bump ruff from 0.15.12 to 0.15.22",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8715"
+    },
+    "8718": {
+      "author": "BIMvoice",
+      "branch": "bv-2934-multiselect-parametric",
+      "head": "2d3219b",
+      "status": "merged",
+      "title": "Bonsai: apply parametric representation edits across the whole selection",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8718"
+    },
+    "8719": {
+      "author": "BIMvoice",
+      "branch": "fix-2966-annotation-copy",
+      "head": "63c3e38",
+      "status": "merged",
+      "title": "Bonsai: add one click copy of annotations to another drawing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8719"
+    },
+    "8720": {
+      "author": "BIMvoice",
+      "branch": "fix-6664-status-element-visibility",
+      "head": "17de480",
+      "status": "merged",
+      "title": "Bonsai: compose element visibility with the Status filter instead of overwriting it",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8720"
+    },
+    "8721": {
+      "author": "BIMvoice",
+      "branch": "bv-3157-opening-thickness-sync",
+      "head": "6eb7461",
+      "status": "merged",
+      "title": "Bonsai: resync door and window openings after wall layer edits",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8721"
+    },
+    "8722": {
+      "author": "BIMvoice",
+      "branch": "bv-6867-mitre-halfspace-cgal-fallback",
+      "head": "139e2ed",
+      "status": "skipped_conflict",
+      "title": "ifcgeom: fall back to CGAL when OCCT boolean produces coincident faces",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8722"
+    },
+    "8723": {
+      "author": "BIMvoice",
+      "branch": "fix-6770-opening-multi-storey-decomposition",
+      "head": "48327b3",
+      "status": "merged",
+      "title": "ifcopenshell.util.element: a filling element's own container is authoritative over a shared opening's other hosts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8723"
+    },
+    "8724": {
+      "author": "BIMvoice",
+      "branch": "fix-8049-svg-degenerate-cross-product",
+      "head": "886f379",
+      "status": "merged",
+      "title": "ifcgeom: avoid degenerate cross product in SvgSerializer for vertical section-line curves",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8724"
+    },
+    "8725": {
+      "author": "BIMvoice",
+      "branch": "fix-7815-occt-noop-cut-cgal-fallback",
+      "head": "88536d8",
+      "status": "merged",
+      "title": "ifcgeom: detect and recover from OCCT's silent no-op boolean cut",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8725"
+    },
+    "8726": {
+      "author": "BIMvoice",
+      "branch": "fix-7614-shared-profile-edit-refresh",
+      "head": "c3b3ef4",
+      "status": "skipped_conflict",
+      "title": "Bonsai: refresh every sharing element's mesh after an extrusion profile edit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8726"
+    },
+    "8727": {
+      "author": "BIMvoice",
+      "branch": "fix-7663-item-mode-half-space-selection",
+      "head": "bcc355f",
+      "status": "merged",
+      "title": "Bonsai: confine Item Mode half-space cuts to the explicitly selected item",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8727"
+    },
+    "8728": {
+      "author": "BIMvoice",
+      "branch": "fix-7462-bulk-add-pset",
+      "head": "8a055d3",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: apply a new Pset/Qto to the whole selection, not just the active object",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8728"
+    },
+    "8729": {
+      "author": "BIMvoice",
+      "branch": "fix-7453-wall-mesh-orientation",
+      "head": "5823ef6",
+      "status": "skipped_conflict",
+      "title": "Bonsai: reorient converted-mesh walls so local X carries the length",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8729"
+    },
+    "8730": {
+      "author": "BIMvoice",
+      "branch": "bv-2918-dimension-text-annotation",
+      "head": "f2d9ff3",
+      "status": "merged",
+      "title": "Bonsai: add a real linked TEXT annotation for dimension labels",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8730"
+    },
+    "8732": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6900-natsort-import-hardening",
+      "head": "13ff38f",
+      "status": "merged",
+      "title": "Bonsai: don't let a broken natsort disable the whole addon",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8732"
+    },
+    "8733": {
+      "author": "BIMvoice",
+      "branch": "fix-6278-duct-bend-flow-direction",
+      "head": "ec6b560",
+      "status": "merged",
+      "title": "Bonsai: preserve flow direction when splicing a bend into a duct connection",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8733"
+    },
+    "8734": {
+      "author": "BIMvoice",
+      "branch": "bonsai-8049-resilient-drawing-print",
+      "head": "028cb46",
+      "status": "skipped_conflict",
+      "title": "Bonsai: don't let one bad element abort an entire drawing print",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8734"
+    },
+    "8735": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7481-wall-toolbar-void-buttons",
+      "head": "16df909",
+      "status": "merged",
+      "title": "Bonsai: draw the wall tool's void-edit confirm/cancel buttons last",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8735"
+    },
+    "8737": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7458-cpu-feature-warning",
+      "head": "3325a7b",
+      "status": "merged",
+      "title": "Bonsai: warn before a CPU without AVX2 crashes the geometry backend",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8737"
+    },
+    "8738": {
+      "author": "BIMvoice",
+      "branch": "fix-7484-stair-first-last-locks",
+      "head": "c19b3a6",
+      "status": "merged",
+      "title": "Bonsai: independent locks for the first and last stair tread",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8738"
+    },
+    "8739": {
+      "author": "BIMvoice",
+      "branch": "fix-7477-space-visibility-orphaned-object",
+      "head": "18fbcac",
+      "status": "skipped_conflict",
+      "title": "Bonsai: skip spaces with no linked Blender object when toggling visibility",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8739"
+    },
+    "8740": {
+      "author": "BIMvoice",
+      "branch": "perf-regression-harness",
+      "head": "ab0b072",
+      "status": "merged",
+      "title": "Bonsai: add a heavy-model generator and visibility benchmark harness",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8740"
+    },
+    "8741": {
+      "author": "Bartok9",
+      "branch": "sera/docs-ifc2ca-script-paths",
+      "head": "770ae69",
+      "status": "merged",
+      "title": "docs(ifc2ca): fix script paths in README",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8741"
+    },
+    "8742": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7489-units-in-context",
+      "head": "f330b2d",
+      "status": "merged",
+      "title": "ifcgeom: don't crash the iterator when IfcProject.UnitsInContext is blank on a non-conformant file",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8742"
+    },
+    "8743": {
+      "author": "BIMvoice",
+      "branch": "fix-7234-arc-preserve-face",
+      "head": "3d22a98",
+      "status": "merged",
+      "title": "Bonsai: warn instead of silently destroying faces in the 3-point arc CAD tool",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8743"
+    },
+    "8744": {
+      "author": "BIMvoice",
+      "branch": "fix-7490-fill-alignment",
+      "head": "77591bf",
+      "status": "merged",
+      "title": "Bonsai: support aligning a hosted window/door to its wall's exterior/centerline/interior face",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8744"
+    }
+  },
+  "schema": 1
+}
