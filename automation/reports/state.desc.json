@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 51,
-    "merged": 388,
+    "failed": 52,
+    "merged": 389,
     "skipped_conflict": 63,
     "skipped_draft": 48,
-    "total": 550
+    "total": 552
   },
-  "generated_at": "2026-07-19T14:28:00Z",
+  "generated_at": "2026-07-19T16:27:57Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -4326,7 +4326,7 @@
     "8748": {
       "author": "BIMvoice",
       "branch": "fix-6944-editmode-circle-duplicate",
-      "head": "dbb5cef",
+      "head": "ae6920a",
       "status": "merged",
       "title": "Bonsai: fix profile/curve reconstruction after duplicating a circle or arc in Edit Mode",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8748"
@@ -4460,6 +4460,23 @@
       "status": "skipped_draft",
       "title": "[Concept] Generic cross-schema apply_visitor for #1333",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8766"
+    },
+    "8767": {
+      "author": "BIMvoice",
+      "branch": "concept-1330-cpp-rename",
+      "head": "c8646bf",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcgeomserver, examples: finish renaming stray Ifc-prefixed internal classes (#1330)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8767"
+    },
+    "8768": {
+      "author": "BIMvoice",
+      "branch": "fix-556-xml-classification-v2",
+      "head": "1a65f20",
+      "status": "merged",
+      "title": "serializers: emit IfcClassification associations in XML output",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8768"
     }
   },
   "schema": 1

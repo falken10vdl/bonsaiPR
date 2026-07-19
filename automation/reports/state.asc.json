@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 51,
-    "merged": 395,
+    "failed": 52,
+    "merged": 396,
     "skipped_conflict": 56,
-    "skipped_draft": 47,
-    "total": 549
+    "skipped_draft": 48,
+    "total": 552
   },
-  "generated_at": "2026-07-19T14:01:17Z",
+  "generated_at": "2026-07-19T16:01:27Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2683,7 +2683,7 @@
     "8488": {
       "author": "BIMvoice",
       "branch": "bv-1541-swept-caps",
-      "head": "af8afe5",
+      "head": "955d8c1",
       "status": "merged",
       "title": "ifcgeom: produce closed manifold IfcSurfaceCurveSweptAreaSolid sweeps (#1541)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8488"
@@ -4326,7 +4326,7 @@
     "8748": {
       "author": "BIMvoice",
       "branch": "fix-6944-editmode-circle-duplicate",
-      "head": "dbb5cef",
+      "head": "ae6920a",
       "status": "merged",
       "title": "Bonsai: fix profile/curve reconstruction after duplicating a circle or arc in Edit Mode",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8748"
@@ -4452,6 +4452,31 @@
       "status": "merged",
       "title": "docs: cover reading properties/quantities from an element and its type (C++)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8765"
+    },
+    "8766": {
+      "author": "BIMvoice",
+      "branch": "concept-1333-schema-visitor",
+      "head": "58736da",
+      "status": "skipped_draft",
+      "title": "[Concept] Generic cross-schema apply_visitor for #1333",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8766"
+    },
+    "8767": {
+      "author": "BIMvoice",
+      "branch": "concept-1330-cpp-rename",
+      "head": "c8646bf",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcgeomserver, examples: finish renaming stray Ifc-prefixed internal classes (#1330)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8767"
+    },
+    "8768": {
+      "author": "BIMvoice",
+      "branch": "fix-556-xml-classification-v2",
+      "head": "1a65f20",
+      "status": "merged",
+      "title": "serializers: emit IfcClassification associations in XML output",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8768"
     }
   },
   "schema": 1
