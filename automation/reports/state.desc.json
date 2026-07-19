@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 50,
-    "merged": 384,
-    "skipped_conflict": 64,
-    "skipped_draft": 47,
-    "total": 545
+    "failed": 51,
+    "merged": 388,
+    "skipped_conflict": 63,
+    "skipped_draft": 48,
+    "total": 550
   },
-  "generated_at": "2026-07-19T12:27:33Z",
+  "generated_at": "2026-07-19T14:28:00Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1780,7 +1780,7 @@
       "author": "BIMvoice",
       "branch": "fix-4606-mixed-repr",
       "head": "2979c2c",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: import representations that mix polygons and curves (#4606)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8340"
     },
@@ -2683,7 +2683,7 @@
     "8488": {
       "author": "BIMvoice",
       "branch": "bv-1541-swept-caps",
-      "head": "af8afe5",
+      "head": "955d8c1",
       "status": "skipped_conflict",
       "title": "ifcgeom: produce closed manifold IfcSurfaceCurveSweptAreaSolid sweeps (#1541)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8488"
@@ -3725,9 +3725,8 @@
     "8649": {
       "author": "BIMvoice",
       "branch": "fix-ci-streaming-wallopening-bsdd",
-      "head": "c9d630b",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "1255edc",
+      "status": "merged",
       "title": "ci: fix bSDD 429 rate limiting and restore ColumnPSetsOfSets.ifc schema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8649"
     },
@@ -4014,7 +4013,7 @@
     "8698": {
       "author": "BIMvoice",
       "branch": "fix-3306-typed-ifc4-stubs",
-      "head": "940aebd",
+      "head": "01c4981",
       "status": "skipped_draft",
       "title": "[Draft/RFC] ifcopenshell-python: generated typed IFC4 stubs for schema-aware by_type()",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8698"
@@ -4407,7 +4406,7 @@
     "8759": {
       "author": "BIMvoice",
       "branch": "poc-134-vertex-kernel",
-      "head": "57162b7",
+      "head": "27bad70",
       "status": "skipped_draft",
       "title": "[Concept] ifcgeom: OpenCascade kernel support for point/vertex representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8759"
@@ -4419,6 +4418,48 @@
       "status": "merged",
       "title": "Perf: Speed up Status Filters visibility toggle",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8760"
+    },
+    "8762": {
+      "author": "BIMvoice",
+      "branch": "remove-qtviewer-remnants",
+      "head": "e4caf5f",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Remove QtViewer remnants",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8762"
+    },
+    "8763": {
+      "author": "BIMvoice",
+      "branch": "fix-ci-compile-test",
+      "head": "894fcd0",
+      "status": "merged",
+      "title": "ci: fix compile-and-test failures on v0.8.0 (validate_stub crash + missing Optimise test deps)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8763"
+    },
+    "8764": {
+      "author": "BIMvoice",
+      "branch": "fix-413-name-template-wgpu",
+      "head": "000fcb4",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "IfcConvert: port --name-template to ifcviewer-wgpu, convert coverage to pytest",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8764"
+    },
+    "8765": {
+      "author": "BIMvoice",
+      "branch": "docs-3910-cpp-getting-started",
+      "head": "3984bbc",
+      "status": "merged",
+      "title": "docs: cover reading properties/quantities from an element and its type (C++)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8765"
+    },
+    "8766": {
+      "author": "BIMvoice",
+      "branch": "concept-1333-schema-visitor",
+      "head": "58736da",
+      "status": "skipped_draft",
+      "title": "[Concept] Generic cross-schema apply_visitor for #1333",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8766"
     }
   },
   "schema": 1
