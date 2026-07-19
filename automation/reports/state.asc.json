@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 52,
-    "merged": 396,
-    "skipped_conflict": 56,
+    "merged": 397,
+    "skipped_conflict": 57,
     "skipped_draft": 48,
-    "total": 552
+    "total": 554
   },
-  "generated_at": "2026-07-19T16:01:27Z",
+  "generated_at": "2026-07-19T18:01:27Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4477,6 +4477,22 @@
       "status": "merged",
       "title": "serializers: emit IfcClassification associations in XML output",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8768"
+    },
+    "8769": {
+      "author": "BIMvoice",
+      "branch": "bonsai-2709-ifcconvert-threads-default",
+      "head": "1ad9100",
+      "status": "merged",
+      "title": "ifcconvert: default --threads to auto-detected CPU count (#2709)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8769"
+    },
+    "8770": {
+      "author": "BIMvoice",
+      "branch": "fix-2400-validate-measure-units",
+      "head": "3a054bf",
+      "status": "skipped_conflict",
+      "title": "validate.py: flag instantiated measures with no corresponding unit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8770"
     }
   },
   "schema": 1
