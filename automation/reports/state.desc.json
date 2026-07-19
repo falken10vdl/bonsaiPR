@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 52,
-    "merged": 393,
+    "failed": 53,
+    "merged": 403,
     "skipped_conflict": 69,
     "skipped_draft": 48,
-    "total": 562
+    "total": 573
   },
-  "generated_at": "2026-07-19T20:28:54Z",
+  "generated_at": "2026-07-19T22:30:53Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -380,7 +380,7 @@
       "author": "jaliste",
       "branch": "fix/decorator-preview",
       "head": "509cb57",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix window/door preview alignment regression in ProductDecorator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7659"
     },
@@ -1142,7 +1142,7 @@
       "author": "theoryshaw",
       "branch": "opening-template-on-type",
       "head": "c0b7f37",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Preserve custom opening geometry via a type-level Reference template",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8200"
     },
@@ -1150,7 +1150,7 @@
       "author": "theoryshaw",
       "branch": "dev-notes-system",
       "head": "8ece379",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Dev notes system",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8201"
     },
@@ -2411,7 +2411,7 @@
       "author": "BIMvoice",
       "branch": "fix-reimport-multiprocessing-toggle",
       "head": "3b06b51",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: honour the CPU Multiprocessing toggle on representation reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8444"
     },
@@ -2652,7 +2652,7 @@
       "author": "sboddy",
       "branch": "fix-5685-squared-curves-on-open",
       "head": "115fc09",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #5685 squared curves on open",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8484"
     },
@@ -4310,7 +4310,7 @@
     "8747": {
       "author": "brunopostle",
       "branch": "fix/spflexer-header-leak-raii",
-      "head": "f547245",
+      "head": "0e94c69",
       "status": "merged",
       "title": "Fix leak of IfcSpfLexer when read_from_stream returns early or throws",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8747"
@@ -4342,8 +4342,9 @@
     "8751": {
       "author": "brunopostle",
       "branch": "feat/ifcparse-fuzz-harness",
-      "head": "8be1078",
-      "status": "merged",
+      "head": "75cc63a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Add opt-in libFuzzer harness for IfcParse::IfcFile",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8751"
     },
@@ -4546,7 +4547,7 @@
       "author": "BIMvoice",
       "branch": "2320-invalid-operand-fallback",
       "head": "0fcf6a1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcgeom: salvage subtractions when OCCT refuses invalid boolean operands (#2320)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8778"
     },
@@ -4557,6 +4558,94 @@
       "status": "merged",
       "title": "Fix all remaining ty type-check failures on ci-lint",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8779"
+    },
+    "8780": {
+      "author": "BIMvoice",
+      "branch": "fix-2151-dxf2ifc-crash",
+      "head": "f6be94e",
+      "status": "merged",
+      "title": "Bonsai: make dxf2ifc.py example script skip unsupported DXF entities",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8780"
+    },
+    "8781": {
+      "author": "BIMvoice",
+      "branch": "fix-7623-blender51-docs",
+      "head": "b28dfaf",
+      "status": "merged",
+      "title": "docs: cover the Blender 5.1 / Python 3.13 transition in installation guides",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8781"
+    },
+    "8782": {
+      "author": "BIMvoice",
+      "branch": "fix-7413-builddeps-exit",
+      "head": "99350b0",
+      "status": "merged",
+      "title": "win: do not close the calling console when build-deps.cmd finishes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8782"
+    },
+    "8783": {
+      "author": "BIMvoice",
+      "branch": "fix-7461-msvc-lnk1248-docs",
+      "head": "354887b",
+      "status": "merged",
+      "title": "win: document LNK1248 causes and the USE_CCACHE escape hatch",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8783"
+    },
+    "8784": {
+      "author": "BIMvoice",
+      "branch": "fix-6102-nested-site-local-placement",
+      "head": "abb1775",
+      "status": "merged",
+      "title": "ifcgeom: fix --site-local-placement breaking relative positions with nested IfcSites",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8784"
+    },
+    "8785": {
+      "author": "BIMvoice",
+      "branch": "5927-descriptive-import-error",
+      "head": "688c030",
+      "status": "merged",
+      "title": "Preserve the real cause when the ifcopenshell wrapper fails to load",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8785"
+    },
+    "8786": {
+      "author": "BIMvoice",
+      "branch": "5779-empty-boolean-result",
+      "head": "6d8d9d6",
+      "status": "merged",
+      "title": "ifcgeom: don't silently accept implausible empty opening subtractions (#5779)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8786"
+    },
+    "8787": {
+      "author": "BIMvoice",
+      "branch": "7444-remove-relationship-validation",
+      "head": "60a7e75",
+      "status": "merged",
+      "title": "IfcConvert: remove unmaintained WITH_RELATIONSHIP_VALIDATION feature",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8787"
+    },
+    "8789": {
+      "author": "theoryshaw",
+      "branch": "occurrence-representations",
+      "head": "2be266d",
+      "status": "merged",
+      "title": "Bonsai: preserve occurrence-local representations; type/occurrence tooling",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8789"
+    },
+    "8790": {
+      "author": "BIMvoice",
+      "branch": "fix-6488-docker-latest-tag",
+      "head": "84fafd6",
+      "status": "merged",
+      "title": "ci: push the latest tag when publishing the docker image",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8790"
+    },
+    "8791": {
+      "author": "BIMvoice",
+      "branch": "6588-filling-directionsense",
+      "head": "3c3d093",
+      "status": "merged",
+      "title": "Bonsai: orient new door/window fillings by the wall's direction sense (#6588)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8791"
     }
   },
   "schema": 1
