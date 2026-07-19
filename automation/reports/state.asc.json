@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 50,
+    "failed": 51,
     "merged": 391,
-    "skipped_conflict": 51,
+    "skipped_conflict": 50,
     "skipped_draft": 46,
     "total": 538
   },
-  "generated_at": "2026-07-19T08:01:31Z",
+  "generated_at": "2026-07-19T09:01:01Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1134,7 +1134,8 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/multi-cf99e4b298",
       "head": "6e1efe5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bump vite, @sveltejs/vite-plugin-svelte and @tailwindcss/vite in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8182"
     },
@@ -2683,7 +2684,7 @@
     "8488": {
       "author": "BIMvoice",
       "branch": "bv-1541-swept-caps",
-      "head": "53b8a96",
+      "head": "af8afe5",
       "status": "merged",
       "title": "ifcgeom: produce closed manifold IfcSurfaceCurveSweptAreaSolid sweeps (#1541)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8488"
@@ -3811,14 +3812,6 @@
       "title": "project.append_asset: don't abort batch on GlobalId collision (#8667)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8669"
     },
-    "8670": {
-      "author": "BIMvoice",
-      "branch": "fix-5679-truncated-attribute-storage",
-      "head": "7524692",
-      "status": "merged",
-      "title": "Size entity attribute storage to schema arity, not token count",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8670"
-    },
     "8671": {
       "author": "BIMvoice",
       "branch": "fix-6557-fall-annotation-z",
@@ -3934,7 +3927,7 @@
     "8685": {
       "author": "BIMvoice",
       "branch": "fix-8631-vs2017-msbuild-detect",
-      "head": "7735de3",
+      "head": "12640c8",
       "status": "skipped_conflict",
       "title": "win: pre-detect VS2017 MSBuild path before building mpir dependency",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8685"
@@ -3963,14 +3956,6 @@
       "title": "Bonsai: fix duplicate xmlns:xlink in drawings that use SVG patterns with <use> elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8688"
     },
-    "8689": {
-      "author": "BIMvoice",
-      "branch": "fix-1037-1098-pyocc-compat",
-      "head": "dc8c360",
-      "status": "merged",
-      "title": "Fix pythonocc-core viewer compatibility in geom.occ_utils and geom.app",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8689"
-    },
     "8690": {
       "author": "BIMvoice",
       "branch": "bv-2992-brep-placement",
@@ -3978,14 +3963,6 @@
       "status": "merged",
       "title": "Fix serialize_shape() dropping the outermost shape's placement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8690"
-    },
-    "8691": {
-      "author": "BIMvoice",
-      "branch": "fix-1124-geometry-memory-mgmt",
-      "head": "653aad5",
-      "status": "merged",
-      "title": "ifcwrap: keep geometry's owning element alive to fix silent data corruption",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8691"
     },
     "8692": {
       "author": "BIMvoice",
@@ -4363,6 +4340,30 @@
       "status": "merged",
       "title": "Bonsai: reconstruct light objects when reloading an IFC file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8749"
+    },
+    "8750": {
+      "author": "BIMvoice",
+      "branch": "bonsai-3289-sweep-authoring",
+      "head": "960eb97",
+      "status": "merged",
+      "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
+    },
+    "8751": {
+      "author": "brunopostle",
+      "branch": "feat/ifcparse-fuzz-harness",
+      "head": "8be1078",
+      "status": "merged",
+      "title": "Add opt-in libFuzzer harness for IfcParse::IfcFile",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8751"
+    },
+    "8752": {
+      "author": "BIMvoice",
+      "branch": "bonsai-3406-convert-to-type",
+      "head": "6a0da5b",
+      "status": "merged",
+      "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     }
   },
   "schema": 1
