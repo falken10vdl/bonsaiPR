@@ -1,13 +1,13 @@
 **Summary:** This prompt runs a reusable "PR conflict radar" for a GitHub repo. Given one author ({AUTHOR}), it finds every *other* author's newer open PR that would actually merge-conflict with one of {AUTHOR}'s open PRs — verified with a real `git merge-tree` 3-way merge, not just file-name overlap (which is noise in a repo full of monolithic files). It ranks conflicts by severity, then stops and reports. Public heads-up comments are strictly opt-in and reserved for *major* overlaps only, gated behind your explicit approval.
 
-**Variables (fill these in, then paste the prompt body below as-is):**
-- `{AUTHOR}` `theoryshaw`
-- `{REPO}` `IfcOpenShell/IfcOpenShell`
-- `{BASE}` `v0.8.0`
-- `{SKIP_AUTHORS}` → *(optional)* comma-separated logins already analyzed, to skip (e.g. `BimVoice`)
-
 ---
 
+> **Variables (fill these in, then paste the prompt body below as-is):**
+> - `{AUTHOR}` → `theoryshaw`
+> - `{REPO}` → `IfcOpenShell/IfcOpenShell`
+> - `{BASE}` → `v0.8.0`
+> - `{SKIP_AUTHORS}` → *(optional)* comma-separated logins already analyzed, to skip (e.g. `BimVoice`)
+>
 > **PR conflict analysis — {REPO}**
 >
 > Find open PRs by **any author** that will merge-conflict with open PRs by **{AUTHOR}**. Constraints:
