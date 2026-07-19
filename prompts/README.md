@@ -6,6 +6,19 @@ Claude Code session.
 
 ---
 
+## find PR conflicts across authors.md
+
+**When to use:** You want a proactive "conflict radar" for a single author's open
+PRs — *which other authors' newer PRs will collide with mine?* — rather than
+reacting to a build's skip list. It sweeps every open non-draft PR, keeps only
+pairs where the other author's PR is newer, and confirms each with a real
+`git merge-tree` 3-way merge (file-name overlap alone is far too noisy in a repo
+full of monolithic files), then ranks them by severity. It reports and stops;
+posting heads-up comments is opt-in and reserved for *major* semantic overlaps
+behind explicit approval.
+
+---
+
 ## resolve conflicts with other PRs.md
 
 **When to use:** A PR appears as *"Skipped — Conflict with other PRs. Merges
