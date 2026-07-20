@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 407,
-    "skipped_conflict": 69,
+    "merged": 410,
+    "skipped_conflict": 70,
     "skipped_draft": 49,
-    "total": 579
+    "total": 583
   },
-  "generated_at": "2026-07-20T16:03:52Z",
+  "generated_at": "2026-07-20T18:02:00Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4695,6 +4695,38 @@
       "status": "merged",
       "title": "Bonsai: fail with an actionable error instead of a bare KeyError when addon preferences can't be found",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8815"
+    },
+    "8816": {
+      "author": "BIMvoice",
+      "branch": "issue-7178-clash-feet-units",
+      "head": "e6489c2",
+      "status": "merged",
+      "title": "Bonsai: fix clash pin drifting away when a false origin is active",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8816"
+    },
+    "8817": {
+      "author": "BIMvoice",
+      "branch": "repro-boolean-operand-failure",
+      "head": "be1ccbc",
+      "status": "merged",
+      "title": "ifcgeom: fail the whole boolean when CGAL's base operand can't be preprocessed",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8817"
+    },
+    "8818": {
+      "author": "BIMvoice",
+      "branch": "fix-7639-grid-annotation-visibility",
+      "head": "89b9269",
+      "status": "skipped_conflict",
+      "title": "Bonsai: fix grid axis annotations missing on imperial-units drawings",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8818"
+    },
+    "8819": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7351-foreign-repr-item-id",
+      "head": "a60e03e",
+      "status": "merged",
+      "title": "Bonsai: regression test for foreign representation-item id on cross-file duplicate (#7351)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8819"
     }
   },
   "schema": 1
