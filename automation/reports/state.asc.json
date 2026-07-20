@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 410,
-    "skipped_conflict": 70,
+    "merged": 411,
+    "skipped_conflict": 71,
     "skipped_draft": 49,
-    "total": 583
+    "total": 585
   },
-  "generated_at": "2026-07-20T18:02:00Z",
+  "generated_at": "2026-07-20T20:02:05Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4727,6 +4727,22 @@
       "status": "merged",
       "title": "Bonsai: regression test for foreign representation-item id on cross-file duplicate (#7351)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8819"
+    },
+    "8820": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6981-bcf-snapshot",
+      "head": "6c8aa1d",
+      "status": "skipped_conflict",
+      "title": "Bonsai: capture BCF snapshot from the active viewport, not the parked camera",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8820"
+    },
+    "8822": {
+      "author": "theoryshaw",
+      "branch": "fix-bbim-boolean-data-dict",
+      "head": "fce3781",
+      "status": "merged",
+      "title": "Bonsai: harden BBIM_Boolean.Data parsing against non-list payloads",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8822"
     }
   },
   "schema": 1

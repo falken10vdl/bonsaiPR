@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 403,
-    "skipped_conflict": 77,
+    "merged": 404,
+    "skipped_conflict": 78,
     "skipped_draft": 49,
-    "total": 583
+    "total": 585
   },
-  "generated_at": "2026-07-20T18:29:09Z",
+  "generated_at": "2026-07-20T20:29:18Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1686,7 +1686,7 @@
       "author": "BIMvoice",
       "branch": "fix-bcf-viewpoint-georef-offset-8205",
       "head": "e432bf1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai(bcf): store viewpoints in global coordinates on georeferenced models (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8329"
     },
@@ -4727,6 +4727,22 @@
       "status": "merged",
       "title": "Bonsai: regression test for foreign representation-item id on cross-file duplicate (#7351)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8819"
+    },
+    "8820": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6981-bcf-snapshot",
+      "head": "6c8aa1d",
+      "status": "merged",
+      "title": "Bonsai: capture BCF snapshot from the active viewport, not the parked camera",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8820"
+    },
+    "8822": {
+      "author": "theoryshaw",
+      "branch": "fix-bbim-boolean-data-dict",
+      "head": "fce3781",
+      "status": "merged",
+      "title": "Bonsai: harden BBIM_Boolean.Data parsing against non-list payloads",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8822"
     }
   },
   "schema": 1
