@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 392,
-    "skipped_conflict": 63,
+    "merged": 395,
+    "skipped_conflict": 64,
     "skipped_draft": 49,
-    "total": 558
+    "total": 562
   },
-  "generated_at": "2026-07-20T07:01:44Z",
+  "generated_at": "2026-07-20T08:12:37Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2071,14 +2071,6 @@
       "title": "Bonsai: fix \"Save Pset As Template\" on IFC4X3 custom psets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8391"
     },
-    "8392": {
-      "author": "BIMvoice",
-      "branch": "fix-6591-delete-indexed-polycurve",
-      "head": "41d7cc6",
-      "status": "merged",
-      "title": "Bonsai: fix deleting IfcIndexedPolyCurve from a GeometricSet representation",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8392"
-    },
     "8393": {
       "author": "BIMvoice",
       "branch": "fix-6508-geography-element-qto",
@@ -3036,7 +3028,7 @@
       "author": "BIMvoice",
       "branch": "ship-6807-geomset-delete",
       "head": "58dc1f3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: delete representation items nested in an IfcGeometricSet (#6807)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8542"
     },
@@ -4527,6 +4519,46 @@
       "status": "skipped_draft",
       "title": "ifcgeom: defer partial CGAL shells to the next hybrid kernel (fixes #8052)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8793"
+    },
+    "8794": {
+      "author": "BIMvoice",
+      "branch": "2077-centerline-profile",
+      "head": "76d0e6c",
+      "status": "merged",
+      "title": "IfcCenterLineProfileDef: implement profile mapping (geometry side of #2077)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8794"
+    },
+    "8795": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6400-unit-change-warning",
+      "head": "248fb3e",
+      "status": "merged",
+      "title": "Bonsai: warn before a unit change that would silently rescale the model",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8795"
+    },
+    "8796": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7453-explicit-axis",
+      "head": "c1081dc",
+      "status": "skipped_conflict",
+      "title": "Bonsai: surface + explicitly fix mesh-converted walls whose length is on local Y (#7453)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8796"
+    },
+    "8797": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6426-text-sizes",
+      "head": "aa588ce",
+      "status": "merged",
+      "title": "Bonsai: add 1.3 mm and 1.5 mm annotation text sizes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8797"
+    },
+    "8798": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6591-general-item-deletion",
+      "head": "2138b07",
+      "status": "skipped_conflict",
+      "title": "Bonsai: generalise representation item deletion to nested items",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8798"
     }
   },
   "schema": 1
