@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 61,
-    "merged": 387,
-    "skipped_conflict": 63,
+    "failed": 54,
+    "merged": 390,
+    "skipped_conflict": 67,
     "skipped_draft": 49,
     "total": 560
   },
-  "generated_at": "2026-07-20T02:29:15Z",
+  "generated_at": "2026-07-20T07:28:47Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -380,8 +380,7 @@
       "author": "jaliste",
       "branch": "fix/decorator-preview",
       "head": "509cb57",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Fix window/door preview alignment regression in ProductDecorator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7659"
     },
@@ -530,7 +529,7 @@
       "author": "theoryshaw",
       "branch": "fix/drawing-activation-stale-bbox",
       "head": "3d99ff7",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #7799: Fix elements hidden when activating plan drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7807"
     },
@@ -637,8 +636,7 @@
       "author": "dipayansardar73-decode",
       "branch": "refactor-profiler-drawing-7328",
       "head": "7d27a2b",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Refactor: Use ifcopenshell.util.profiler.Profiler in drawing operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7869"
     },
@@ -827,7 +825,7 @@
       "author": "theoryshaw",
       "branch": "fix/duplicate-opening-not-applied",
       "head": "bd934d9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #7948: Fix duplicate not applying openings to geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7963"
     },
@@ -884,8 +882,7 @@
       "author": "isma3lMB",
       "branch": "v0.8.0",
       "head": "ef1e534",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Ensuring that Entity name is a string",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7993"
     },
@@ -1769,8 +1766,7 @@
       "author": "BIMvoice",
       "branch": "fix-4606-mixed-repr",
       "head": "2979c2c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "Bonsai: import representations that mix polygons and curves (#4606)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8340"
     },
@@ -2280,8 +2276,7 @@
       "author": "BIMvoice",
       "branch": "fix-5881-remove-sheet-confirm",
       "head": "f365c66",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: confirm before removing a sheet, which deletes files from disk (#5881)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8425"
     },
@@ -3828,7 +3823,7 @@
     "8677": {
       "author": "BIMvoice",
       "branch": "fix-6377-plate-3d-editing",
-      "head": "48405ae",
+      "head": "430922d",
       "status": "skipped_draft",
       "title": "Bonsai: realign plate placement when a triangular profile is edited in 3D",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
@@ -4093,8 +4088,7 @@
       "author": "BIMvoice",
       "branch": "bv-6867-mitre-halfspace-cgal-fallback",
       "head": "139e2ed",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "ifcgeom: fall back to CGAL when OCCT boolean produces coincident faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8722"
     },
@@ -4458,18 +4452,9 @@
       "author": "BIMvoice",
       "branch": "2320-invalid-operand-fallback",
       "head": "0fcf6a1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "ifcgeom: salvage subtractions when OCCT refuses invalid boolean operands (#2320)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8778"
-    },
-    "8781": {
-      "author": "BIMvoice",
-      "branch": "fix-7623-blender51-docs",
-      "head": "b28dfaf",
-      "status": "merged",
-      "title": "docs: cover the Blender 5.1 / Python 3.13 transition in installation guides",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8781"
     },
     "8782": {
       "author": "BIMvoice",
@@ -4494,14 +4479,6 @@
       "status": "merged",
       "title": "ifcgeom: fix --site-local-placement breaking relative positions with nested IfcSites",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8784"
-    },
-    "8785": {
-      "author": "BIMvoice",
-      "branch": "5927-descriptive-import-error",
-      "head": "688c030",
-      "status": "merged",
-      "title": "Preserve the real cause when the ifcopenshell wrapper fails to load",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8785"
     },
     "8786": {
       "author": "BIMvoice",
@@ -4550,6 +4527,22 @@
       "status": "skipped_draft",
       "title": "ifcgeom: defer partial CGAL shells to the next hybrid kernel (fixes #8052)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8793"
+    },
+    "8794": {
+      "author": "BIMvoice",
+      "branch": "2077-centerline-profile",
+      "head": "76d0e6c",
+      "status": "merged",
+      "title": "IfcCenterLineProfileDef: implement profile mapping (geometry side of #2077)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8794"
+    },
+    "8795": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6400-unit-change-warning",
+      "head": "248fb3e",
+      "status": "merged",
+      "title": "Bonsai: warn before a unit change that would silently rescale the model",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8795"
     }
   },
   "schema": 1

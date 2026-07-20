@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 394,
+    "merged": 392,
     "skipped_conflict": 63,
     "skipped_draft": 49,
-    "total": 560
+    "total": 558
   },
-  "generated_at": "2026-07-20T02:01:44Z",
+  "generated_at": "2026-07-20T07:01:44Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3823,7 +3823,7 @@
     "8677": {
       "author": "BIMvoice",
       "branch": "fix-6377-plate-3d-editing",
-      "head": "48405ae",
+      "head": "430922d",
       "status": "skipped_draft",
       "title": "Bonsai: realign plate placement when a triangular profile is edited in 3D",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
@@ -4456,14 +4456,6 @@
       "title": "ifcgeom: salvage subtractions when OCCT refuses invalid boolean operands (#2320)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8778"
     },
-    "8781": {
-      "author": "BIMvoice",
-      "branch": "fix-7623-blender51-docs",
-      "head": "b28dfaf",
-      "status": "merged",
-      "title": "docs: cover the Blender 5.1 / Python 3.13 transition in installation guides",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8781"
-    },
     "8782": {
       "author": "BIMvoice",
       "branch": "fix-7413-builddeps-exit",
@@ -4487,14 +4479,6 @@
       "status": "merged",
       "title": "ifcgeom: fix --site-local-placement breaking relative positions with nested IfcSites",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8784"
-    },
-    "8785": {
-      "author": "BIMvoice",
-      "branch": "5927-descriptive-import-error",
-      "head": "688c030",
-      "status": "merged",
-      "title": "Preserve the real cause when the ifcopenshell wrapper fails to load",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8785"
     },
     "8786": {
       "author": "BIMvoice",
