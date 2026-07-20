@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 55,
-    "merged": 396,
-    "skipped_conflict": 73,
+    "failed": 54,
+    "merged": 399,
+    "skipped_conflict": 76,
     "skipped_draft": 49,
-    "total": 573
+    "total": 578
   },
-  "generated_at": "2026-07-20T11:29:49Z",
+  "generated_at": "2026-07-20T14:30:56Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -545,7 +545,7 @@
       "author": "paragforwork",
       "branch": "new-profiler",
       "head": "1acce39",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Replaced the old profiler function with the ifcopenshell.util profiler",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7813"
     },
@@ -986,8 +986,7 @@
       "author": "bsmithuk",
       "branch": "v0.8.0",
       "head": "5cbb321",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Fix #8046 - Entity xs:restriction name crashes with AttributeError on…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8065"
     },
@@ -1169,7 +1168,7 @@
       "author": "theoryshaw",
       "branch": "debug-drawing-faster-failure-search",
       "head": "9283d86",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Debug drawing faster failure search",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8228"
     },
@@ -4162,7 +4161,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8049-resilient-drawing-print",
       "head": "028cb46",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: don't let one bad element abort an entire drawing print",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8734"
     },
@@ -4589,7 +4588,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6423-axis-linework",
       "head": "d2a08d3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: draw element Axis reference lines in drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8802"
     },
@@ -4648,6 +4647,46 @@
       "status": "merged",
       "title": "Bonsai: remove the dead Gherkin runner from test/bim/bootstrap.py",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8809"
+    },
+    "8810": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6287-self-intersecting-profile",
+      "head": "493a798",
+      "status": "merged",
+      "title": "ifcgeom: detect and repair collinear self-intersections in profiles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8810"
+    },
+    "8811": {
+      "author": "BIMvoice",
+      "branch": "fix-6391-opening-exception-fallback",
+      "head": "bf5548f",
+      "status": "merged",
+      "title": "ifcgeom: keep unopened geometry when opening subtraction throws a non-std::exception",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8811"
+    },
+    "8812": {
+      "author": "BIMvoice",
+      "branch": "replace-element-set-dedup",
+      "head": "92f9dc9",
+      "status": "merged",
+      "title": "ifcopenshell.util.element: dedupe SET-typed attributes in replace_attribute",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8812"
+    },
+    "8813": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7410-selection-guard",
+      "head": "5a99e9e",
+      "status": "merged",
+      "title": "Bonsai: guard set_objects_selection against excluded or hidden collections",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8813"
+    },
+    "8814": {
+      "author": "BIMvoice",
+      "branch": "5880-hybrid-opening-fallback",
+      "head": "bd27cf3",
+      "status": "merged",
+      "title": "ifcgeom: fall back to unopened geometry when convert_openings() cleanly fails",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8814"
     }
   },
   "schema": 1

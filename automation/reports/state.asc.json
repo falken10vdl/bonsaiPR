@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 400,
-    "skipped_conflict": 68,
+    "merged": 403,
+    "skipped_conflict": 69,
     "skipped_draft": 49,
-    "total": 571
+    "total": 575
   },
-  "generated_at": "2026-07-20T11:02:12Z",
+  "generated_at": "2026-07-20T14:02:53Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -160,7 +160,7 @@
       "author": "Rob2309",
       "branch": "general-mirroring",
       "head": "bcd772a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
     },
@@ -430,7 +430,7 @@
       "author": "theoryshaw",
       "branch": "Generalize_ExcludeAnnotation_to_any_IFC_element_2",
       "head": "8634569",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Generalize ExcludeAnnotation to any IFC element",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7715"
     },
@@ -553,7 +553,7 @@
       "author": "theoryshaw",
       "branch": "dont_sanitize_drawing_name",
       "head": "45c64e1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #7784: Fix drawing names with special chars in sheets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7818"
     },
@@ -808,7 +808,7 @@
       "author": "theoryshaw",
       "branch": "Concatenate_selections",
       "head": "7e3a9e4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Concatenate selections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7940"
     },
@@ -1806,7 +1806,7 @@
       "author": "BIMvoice",
       "branch": "fix-4332-door-flip-2d",
       "head": "8351f85",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: flip fills against the Body representation so doors don't jump out of host in 2D (#4332)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8346"
     },
@@ -2212,7 +2212,7 @@
       "author": "BIMvoice",
       "branch": "fix-7533-duplicate-boolean-remap",
       "head": "8267e94",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: preserve half space cuts when duplicating an element (#7533)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8417"
     },
@@ -3879,7 +3879,7 @@
     "8685": {
       "author": "BIMvoice",
       "branch": "fix-8631-vs2017-msbuild-detect",
-      "head": "12640c8",
+      "head": "a2e0a26",
       "status": "skipped_conflict",
       "title": "win: pre-detect VS2017 MSBuild path before building mpir dependency",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8685"
@@ -4282,7 +4282,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3302-mirror-joins",
       "head": "3f8fa0a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: resync mirrored walls' openings so voids follow their door/window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
     },
@@ -4631,6 +4631,38 @@
       "status": "merged",
       "title": "Bonsai: stop merged cut linework leaking classes onto disjoint pieces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8807"
+    },
+    "8808": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6908-svg-door-arcs",
+      "head": "df365de",
+      "status": "merged",
+      "title": "SvgSerializer: only draw door swing arcs on the storey where the door is cut",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8808"
+    },
+    "8809": {
+      "author": "BIMvoice",
+      "branch": "bonsai-dead-gherkin-runner",
+      "head": "6e152d6",
+      "status": "merged",
+      "title": "Bonsai: remove the dead Gherkin runner from test/bim/bootstrap.py",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8809"
+    },
+    "8810": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6287-self-intersecting-profile",
+      "head": "493a798",
+      "status": "merged",
+      "title": "ifcgeom: detect and repair collinear self-intersections in profiles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8810"
+    },
+    "8811": {
+      "author": "BIMvoice",
+      "branch": "fix-6391-opening-exception-fallback",
+      "head": "bf5548f",
+      "status": "merged",
+      "title": "ifcgeom: keep unopened geometry when opening subtraction throws a non-std::exception",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8811"
     }
   },
   "schema": 1
