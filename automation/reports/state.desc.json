@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 399,
+    "merged": 400,
     "skipped_conflict": 76,
     "skipped_draft": 49,
-    "total": 578
+    "total": 579
   },
-  "generated_at": "2026-07-20T14:30:56Z",
+  "generated_at": "2026-07-20T16:33:29Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -4687,6 +4687,14 @@
       "status": "merged",
       "title": "ifcgeom: fall back to unopened geometry when convert_openings() cleanly fails",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8814"
+    },
+    "8815": {
+      "author": "BIMvoice",
+      "branch": "7288-addon-prefs-hardening",
+      "head": "fffcf20",
+      "status": "merged",
+      "title": "Bonsai: fail with an actionable error instead of a bare KeyError when addon preferences can't be found",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8815"
     }
   },
   "schema": 1

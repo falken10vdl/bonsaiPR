@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 403,
+    "merged": 407,
     "skipped_conflict": 69,
     "skipped_draft": 49,
-    "total": 575
+    "total": 579
   },
-  "generated_at": "2026-07-20T14:02:53Z",
+  "generated_at": "2026-07-20T16:03:52Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -160,7 +160,7 @@
       "author": "Rob2309",
       "branch": "general-mirroring",
       "head": "bcd772a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
     },
@@ -430,7 +430,7 @@
       "author": "theoryshaw",
       "branch": "Generalize_ExcludeAnnotation_to_any_IFC_element_2",
       "head": "8634569",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Generalize ExcludeAnnotation to any IFC element",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7715"
     },
@@ -553,7 +553,7 @@
       "author": "theoryshaw",
       "branch": "dont_sanitize_drawing_name",
       "head": "45c64e1",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #7784: Fix drawing names with special chars in sheets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7818"
     },
@@ -808,7 +808,7 @@
       "author": "theoryshaw",
       "branch": "Concatenate_selections",
       "head": "7e3a9e4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Concatenate selections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7940"
     },
@@ -1806,7 +1806,7 @@
       "author": "BIMvoice",
       "branch": "fix-4332-door-flip-2d",
       "head": "8351f85",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: flip fills against the Body representation so doors don't jump out of host in 2D (#4332)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8346"
     },
@@ -2212,7 +2212,7 @@
       "author": "BIMvoice",
       "branch": "fix-7533-duplicate-boolean-remap",
       "head": "8267e94",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve half space cuts when duplicating an element (#7533)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8417"
     },
@@ -4282,7 +4282,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3302-mirror-joins",
       "head": "3f8fa0a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: resync mirrored walls' openings so voids follow their door/window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
     },
@@ -4663,6 +4663,38 @@
       "status": "merged",
       "title": "ifcgeom: keep unopened geometry when opening subtraction throws a non-std::exception",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8811"
+    },
+    "8812": {
+      "author": "BIMvoice",
+      "branch": "replace-element-set-dedup",
+      "head": "92f9dc9",
+      "status": "merged",
+      "title": "ifcopenshell.util.element: dedupe SET-typed attributes in replace_attribute",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8812"
+    },
+    "8813": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7410-selection-guard",
+      "head": "5a99e9e",
+      "status": "skipped_conflict",
+      "title": "Bonsai: guard set_objects_selection against excluded or hidden collections",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8813"
+    },
+    "8814": {
+      "author": "BIMvoice",
+      "branch": "5880-hybrid-opening-fallback",
+      "head": "bd27cf3",
+      "status": "merged",
+      "title": "ifcgeom: fall back to unopened geometry when convert_openings() cleanly fails",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8814"
+    },
+    "8815": {
+      "author": "BIMvoice",
+      "branch": "7288-addon-prefs-hardening",
+      "head": "fffcf20",
+      "status": "merged",
+      "title": "Bonsai: fail with an actionable error instead of a bare KeyError when addon preferences can't be found",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8815"
     }
   },
   "schema": 1
