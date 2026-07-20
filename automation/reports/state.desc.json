@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 54,
-    "merged": 391,
-    "skipped_conflict": 70,
+    "failed": 55,
+    "merged": 396,
+    "skipped_conflict": 73,
     "skipped_draft": 49,
-    "total": 564
+    "total": 573
   },
-  "generated_at": "2026-07-20T09:29:03Z",
+  "generated_at": "2026-07-20T11:29:49Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -545,7 +545,7 @@
       "author": "paragforwork",
       "branch": "new-profiler",
       "head": "1acce39",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Replaced the old profiler function with the ifcopenshell.util profiler",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7813"
     },
@@ -850,7 +850,7 @@
       "author": "theoryshaw",
       "branch": "update_schedule_size_on_sheet",
       "head": "ebea19d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "closes #5382: Add update_sheet_schedule_sizes to SheetBuilder",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7971"
     },
@@ -986,7 +986,8 @@
       "author": "bsmithuk",
       "branch": "v0.8.0",
       "head": "5cbb321",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix #8046 - Entity xs:restriction name crashes with AttributeError on…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8065"
     },
@@ -1168,7 +1169,7 @@
       "author": "theoryshaw",
       "branch": "debug-drawing-faster-failure-search",
       "head": "9283d86",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Debug drawing faster failure search",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8228"
     },
@@ -2356,7 +2357,7 @@
       "author": "BIMvoice",
       "branch": "fix-7162-poly-hlr-deflection",
       "head": "4bf23fb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "serializers: use mesher-linear-deflection for polygonal HLR drawings (#7162)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8439"
     },
@@ -3736,7 +3737,7 @@
       "author": "brunopostle",
       "branch": "fix/unterminated-string-eof-abort",
       "head": "aa1a893",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcParse: don't abort when a string literal runs off the end of the file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8661"
     },
@@ -3879,7 +3880,7 @@
     "8685": {
       "author": "BIMvoice",
       "branch": "fix-8631-vs2017-msbuild-detect",
-      "head": "12640c8",
+      "head": "a2e0a26",
       "status": "merged",
       "title": "win: pre-detect VS2017 MSBuild path before building mpir dependency",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8685"
@@ -4161,7 +4162,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8049-resilient-drawing-print",
       "head": "028cb46",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: don't let one bad element abort an entire drawing print",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8734"
     },
@@ -4412,7 +4413,7 @@
       "author": "BIMvoice",
       "branch": "fix-2639-bbox-substitution",
       "head": "a643bd9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcgeom: add bbox-substitution-threshold to substitute overly dense geometry with bounding boxes (#2639)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8773"
     },
@@ -4508,7 +4509,7 @@
       "author": "BIMvoice",
       "branch": "fix-6409-nan-token",
       "head": "8c91b44",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcParse: read back non-finite REALs serialized with a trailing dot",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8792"
     },
@@ -4575,6 +4576,78 @@
       "status": "merged",
       "title": "Bonsai: per element drawing appearance via assignable CSS classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8800"
+    },
+    "8801": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6424-hidden-lines",
+      "head": "6c8c63e",
+      "status": "merged",
+      "title": "SvgSerializer: optionally draw occluded linework as hidden lines",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8801"
+    },
+    "8802": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6423-axis-linework",
+      "head": "d2a08d3",
+      "status": "merged",
+      "title": "Bonsai: draw element Axis reference lines in drawings",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8802"
+    },
+    "8803": {
+      "author": "Bartok9",
+      "branch": "sera/docs-linux-eigen-dep",
+      "head": "b32a200",
+      "status": "merged",
+      "title": "docs: add Eigen to Linux install deps",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
+    },
+    "8804": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6428-sheet-item-position",
+      "head": "3a0e8cc",
+      "status": "merged",
+      "title": "Bonsai: position drawings on sheets without leaving Blender",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8804"
+    },
+    "8805": {
+      "author": "BIMvoice",
+      "branch": "ifcparse-954-x2-surrogates",
+      "head": "afd7b81",
+      "status": "merged",
+      "title": "ifcparse: combine UTF-16 surrogate pairs in \\X2\\ escapes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8805"
+    },
+    "8806": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7146-vertical-axis3",
+      "head": "bd3a727",
+      "status": "merged",
+      "title": "Bonsai: don't blow up a vertical AXIS3 element when its layers change",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8806"
+    },
+    "8807": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7369-drawing-class-leak",
+      "head": "a6e2a97",
+      "status": "merged",
+      "title": "Bonsai: stop merged cut linework leaking classes onto disjoint pieces",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8807"
+    },
+    "8808": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6908-svg-door-arcs",
+      "head": "df365de",
+      "status": "merged",
+      "title": "SvgSerializer: only draw door swing arcs on the storey where the door is cut",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8808"
+    },
+    "8809": {
+      "author": "BIMvoice",
+      "branch": "bonsai-dead-gherkin-runner",
+      "head": "6e152d6",
+      "status": "merged",
+      "title": "Bonsai: remove the dead Gherkin runner from test/bim/bootstrap.py",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8809"
     }
   },
   "schema": 1

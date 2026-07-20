@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 396,
-    "skipped_conflict": 64,
+    "merged": 400,
+    "skipped_conflict": 68,
     "skipped_draft": 49,
-    "total": 563
+    "total": 571
   },
-  "generated_at": "2026-07-20T09:02:13Z",
+  "generated_at": "2026-07-20T11:02:12Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4567,6 +4567,70 @@
       "status": "merged",
       "title": "Bonsai: real multiline entry for text annotations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8799"
+    },
+    "8800": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6425-element-drawing-classes",
+      "head": "de389bd",
+      "status": "skipped_conflict",
+      "title": "Bonsai: per element drawing appearance via assignable CSS classes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8800"
+    },
+    "8801": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6424-hidden-lines",
+      "head": "6c8c63e",
+      "status": "skipped_conflict",
+      "title": "SvgSerializer: optionally draw occluded linework as hidden lines",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8801"
+    },
+    "8802": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6423-axis-linework",
+      "head": "d2a08d3",
+      "status": "skipped_conflict",
+      "title": "Bonsai: draw element Axis reference lines in drawings",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8802"
+    },
+    "8803": {
+      "author": "Bartok9",
+      "branch": "sera/docs-linux-eigen-dep",
+      "head": "b32a200",
+      "status": "merged",
+      "title": "docs: add Eigen to Linux install deps",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
+    },
+    "8804": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6428-sheet-item-position",
+      "head": "3a0e8cc",
+      "status": "merged",
+      "title": "Bonsai: position drawings on sheets without leaving Blender",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8804"
+    },
+    "8805": {
+      "author": "BIMvoice",
+      "branch": "ifcparse-954-x2-surrogates",
+      "head": "afd7b81",
+      "status": "skipped_conflict",
+      "title": "ifcparse: combine UTF-16 surrogate pairs in \\X2\\ escapes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8805"
+    },
+    "8806": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7146-vertical-axis3",
+      "head": "bd3a727",
+      "status": "merged",
+      "title": "Bonsai: don't blow up a vertical AXIS3 element when its layers change",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8806"
+    },
+    "8807": {
+      "author": "BIMvoice",
+      "branch": "bonsai-7369-drawing-class-leak",
+      "head": "a6e2a97",
+      "status": "merged",
+      "title": "Bonsai: stop merged cut linework leaking classes onto disjoint pieces",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8807"
     }
   },
   "schema": 1
