@@ -96,19 +96,25 @@ def run_full_build():
 def commit_reports():
     """Commit (and optionally push) the per-order PR state snapshots.
 
-    No-op when nothing changed. Push is opt-in via BONSAIPR_REPORTS_PUSH=1
-    (see commit_reports.py). Failures here are logged but never fail the build.
+    Automation runs should publish updated reports by default so the repo-hosted
+    markdown/archive links produced during upload resolve on GitHub. Operators
+    can still opt out by exporting BONSAIPR_REPORTS_PUSH=0.
+
+    Failures here are logged but never fail the build.
     """
     commit_script = os.path.join(os.path.dirname(__file__), '..', 'scripts', 'commit_reports.py')
 
     logging.info("🗂️  Committing PR state snapshots...")
 
     try:
+        env = os.environ.copy()
+        env.setdefault('BONSAIPR_REPORTS_PUSH', '1')
         result = subprocess.run(
             [sys.executable, commit_script],
             cwd=os.path.join(os.path.dirname(__file__), '..', 'scripts'),
             capture_output=True,
             text=True,
+            env=env,
             timeout=300  # 5 minute timeout
         )
         for stream in (result.stdout, result.stderr):

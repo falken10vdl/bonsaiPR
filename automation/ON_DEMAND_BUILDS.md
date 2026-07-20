@@ -193,6 +193,11 @@ To switch:
 
 Edit `hourly-automation.cron` to create custom schedules:
 
+By default, `check_and_build.py` also publishes updated `automation/reports`
+back to the repo after a successful build so the in-repo markdown report links
+stay current. Set `BONSAIPR_REPORTS_PUSH=0` in the cron environment only if
+you intentionally want local-only report commits.
+
 ```cron
 # Check every 30 minutes
 */30 * * * * cd /path/to/automation/src && python3 check_and_build.py

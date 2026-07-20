@@ -14,6 +14,8 @@
 # 1. Check if any PRs have changed (new, updated, closed, etc.)
 # 2. Only trigger a full build if changes are detected
 # 3. Skip build if no changes (saves resources)
+# 4. Publish updated automation/reports back to the repo by default
+#    (set BONSAIPR_REPORTS_PUSH=0 in the cron environment to opt out)
 
 # Minute Hour Day Month DayOfWeek Command
 # Run every hour at minute 35 with flock lock to prevent overlapping runs

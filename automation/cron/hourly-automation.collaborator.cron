@@ -4,6 +4,10 @@
 # 1) Replace /home/theoryshaw/... paths below with your actual local paths.
 # 2) Install with: crontab automation/cron/hourly-automation.collaborator.cron
 # 3) Verify with:  crontab -l
+#
+# Note: check_and_build.py now publishes automation/reports to the repo by
+# default after a successful build. Export BONSAIPR_REPORTS_PUSH=0 before the
+# python command only if you explicitly want local-only report commits.
 
 PATH=/home/theoryshaw/.local/bin:/home/theoryshaw/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 
