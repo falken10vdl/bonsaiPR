@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 395,
+    "merged": 396,
     "skipped_conflict": 64,
     "skipped_draft": 49,
-    "total": 562
+    "total": 563
   },
-  "generated_at": "2026-07-20T08:12:37Z",
+  "generated_at": "2026-07-20T09:02:13Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4559,6 +4559,14 @@
       "status": "skipped_conflict",
       "title": "Bonsai: generalise representation item deletion to nested items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8798"
+    },
+    "8799": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6427-multiline-text",
+      "head": "0483114",
+      "status": "merged",
+      "title": "Bonsai: real multiline entry for text annotations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8799"
     }
   },
   "schema": 1

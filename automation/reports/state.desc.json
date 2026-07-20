@@ -3,11 +3,11 @@
   "counts": {
     "failed": 54,
     "merged": 391,
-    "skipped_conflict": 68,
+    "skipped_conflict": 70,
     "skipped_draft": 49,
-    "total": 562
+    "total": 564
   },
-  "generated_at": "2026-07-20T08:39:30Z",
+  "generated_at": "2026-07-20T09:29:03Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -4137,7 +4137,7 @@
       "author": "BIMvoice",
       "branch": "bv-2918-dimension-text-annotation",
       "head": "f2d9ff3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a real linked TEXT annotation for dimension labels",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8730"
     },
@@ -4559,6 +4559,22 @@
       "status": "merged",
       "title": "Bonsai: generalise representation item deletion to nested items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8798"
+    },
+    "8799": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6427-multiline-text",
+      "head": "0483114",
+      "status": "skipped_conflict",
+      "title": "Bonsai: real multiline entry for text annotations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8799"
+    },
+    "8800": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6425-element-drawing-classes",
+      "head": "de389bd",
+      "status": "merged",
+      "title": "Bonsai: per element drawing appearance via assignable CSS classes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8800"
     }
   },
   "schema": 1
