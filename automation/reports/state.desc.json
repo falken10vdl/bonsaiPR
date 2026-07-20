@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 54,
-    "merged": 404,
+    "failed": 55,
+    "merged": 403,
     "skipped_conflict": 78,
     "skipped_draft": 49,
     "total": 585
   },
-  "generated_at": "2026-07-20T20:29:18Z",
+  "generated_at": "2026-07-20T22:31:32Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -986,7 +986,8 @@
       "author": "bsmithuk",
       "branch": "v0.8.0",
       "head": "5cbb321",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix #8046 - Entity xs:restriction name crashes with AttributeError on…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8065"
     },
@@ -4249,7 +4250,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "960eb97",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
