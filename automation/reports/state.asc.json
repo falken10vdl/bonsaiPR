@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 415,
-    "skipped_conflict": 71,
+    "merged": 419,
+    "skipped_conflict": 75,
     "skipped_draft": 49,
-    "total": 589
+    "total": 597
   },
-  "generated_at": "2026-07-21T09:02:08Z",
+  "generated_at": "2026-07-21T11:02:02Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4595,7 +4595,7 @@
     "8803": {
       "author": "Bartok9",
       "branch": "sera/docs-linux-eigen-dep",
-      "head": "b32a200",
+      "head": "5fe5384",
       "status": "merged",
       "title": "docs: add Eigen to Linux install deps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
@@ -4775,6 +4775,70 @@
       "status": "skipped_conflict",
       "title": "selector: fail loudly instead of resolving dotted pset queries against the wrong pset",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8831"
+    },
+    "8832": {
+      "author": "BIMvoice",
+      "branch": "fix-6895-shape-elevation-guard",
+      "head": "86de6c2",
+      "status": "skipped_conflict",
+      "title": "ifcopenshell.util.shape: fail loudly on non-finite elevation instead of returning the infinity sentinel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8832"
+    },
+    "8833": {
+      "author": "BIMvoice",
+      "branch": "alignment-6890-csv-spirals-cant",
+      "head": "b713c16",
+      "status": "merged",
+      "title": "alignment: support spiral transition curves and cant in the PI-method CSV import (#6890)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8833"
+    },
+    "8834": {
+      "author": "BIMvoice",
+      "branch": "ifc5d-6835-opening-qto",
+      "head": "4f92e06",
+      "status": "skipped_conflict",
+      "title": "ifc5d: fix IfcOpeningElement base quantities reported in the wrong axes (#6835)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8834"
+    },
+    "8835": {
+      "author": "BIMvoice",
+      "branch": "ifcsverchok-6809-file-socket",
+      "head": "a7889a1",
+      "status": "merged",
+      "title": "ifcsverchok: document how to work with an existing IFC file",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8835"
+    },
+    "8836": {
+      "author": "BIMvoice",
+      "branch": "bonsai-5909-append-aggregate",
+      "head": "9a02b30",
+      "status": "skipped_conflict",
+      "title": "Append aggregates with their parts, sub-aggregates and openings (#5909)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8836"
+    },
+    "8837": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6885-ifcgit-placement-conflicts",
+      "head": "117f858",
+      "status": "skipped_conflict",
+      "title": "Bonsai: surface ifcmerge auto-resolved placement conflicts after a merge (#6885)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8837"
+    },
+    "8838": {
+      "author": "BIMvoice",
+      "branch": "ifcsverchok-6741-api-drift",
+      "head": "6ec59cc",
+      "status": "merged",
+      "title": "ifcsverchok: recognize sverchok-master installs and fix stale unassign API calls (#6741)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8838"
+    },
+    "8839": {
+      "author": "BIMvoice",
+      "branch": "bonsai-mep-bend-flow-arrow",
+      "head": "07b1927",
+      "status": "merged",
+      "title": "Bonsai: draw MEP flow arrows through bend fittings along the bend, not the chord",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8839"
     }
   },
   "schema": 1

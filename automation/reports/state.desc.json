@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 408,
-    "skipped_conflict": 81,
+    "merged": 409,
+    "skipped_conflict": 85,
     "skipped_draft": 49,
-    "total": 592
+    "total": 597
   },
-  "generated_at": "2026-07-21T09:29:26Z",
+  "generated_at": "2026-07-21T11:29:18Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -742,7 +742,7 @@
       "author": "brunopostle",
       "branch": "bonsai-license",
       "head": "a072c72",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai, add license tagging for IFC elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7917"
     },
@@ -1630,7 +1630,7 @@
       "author": "BIMvoice",
       "branch": "perf-extractelements-defer-shared-rels",
       "head": "4c2b175",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch(ExtractElements): defer shared relationship members to fix O(n²) extraction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8320"
     },
@@ -2284,7 +2284,7 @@
       "author": "BIMvoice",
       "branch": "fix-6666-append-drawing-view",
       "head": "857ca22",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: append a drawing view from a library as a real drawing (#6666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8427"
     },
@@ -3206,7 +3206,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-ifcgit-mergetool-mock",
       "head": "627c24e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix ci-bonsai-daily: configure unmerged_blobs mock in git_mergetool tests",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8574"
     },
@@ -4595,7 +4595,7 @@
     "8803": {
       "author": "Bartok9",
       "branch": "sera/docs-linux-eigen-dep",
-      "head": "b32a200",
+      "head": "5fe5384",
       "status": "merged",
       "title": "docs: add Eigen to Linux install deps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
@@ -4799,6 +4799,46 @@
       "status": "merged",
       "title": "ifc5d: fix IfcOpeningElement base quantities reported in the wrong axes (#6835)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8834"
+    },
+    "8835": {
+      "author": "BIMvoice",
+      "branch": "ifcsverchok-6809-file-socket",
+      "head": "a7889a1",
+      "status": "merged",
+      "title": "ifcsverchok: document how to work with an existing IFC file",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8835"
+    },
+    "8836": {
+      "author": "BIMvoice",
+      "branch": "bonsai-5909-append-aggregate",
+      "head": "9a02b30",
+      "status": "merged",
+      "title": "Append aggregates with their parts, sub-aggregates and openings (#5909)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8836"
+    },
+    "8837": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6885-ifcgit-placement-conflicts",
+      "head": "117f858",
+      "status": "merged",
+      "title": "Bonsai: surface ifcmerge auto-resolved placement conflicts after a merge (#6885)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8837"
+    },
+    "8838": {
+      "author": "BIMvoice",
+      "branch": "ifcsverchok-6741-api-drift",
+      "head": "6ec59cc",
+      "status": "merged",
+      "title": "ifcsverchok: recognize sverchok-master installs and fix stale unassign API calls (#6741)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8838"
+    },
+    "8839": {
+      "author": "BIMvoice",
+      "branch": "bonsai-mep-bend-flow-arrow",
+      "head": "07b1927",
+      "status": "merged",
+      "title": "Bonsai: draw MEP flow arrows through bend fittings along the bend, not the chord",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8839"
     }
   },
   "schema": 1
