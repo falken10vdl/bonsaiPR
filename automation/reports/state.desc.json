@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 407,
-    "skipped_conflict": 77,
+    "merged": 408,
+    "skipped_conflict": 81,
     "skipped_draft": 49,
-    "total": 587
+    "total": 592
   },
-  "generated_at": "2026-07-21T07:29:25Z",
+  "generated_at": "2026-07-21T09:29:26Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1483,7 +1483,7 @@
       "author": "BIMvoice",
       "branch": "fix-set-element-value-trailing-index-4687",
       "head": "cb5b598",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.selector: set_element_value accepts a trailing index like get_element_value (#4687)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8295"
     },
@@ -1773,7 +1773,7 @@
     "8342": {
       "author": "falken10vdl",
       "branch": "style-flat-pretty-toggle",
-      "head": "42de34c",
+      "head": "10b0d35",
       "status": "skipped_conflict",
       "title": "Style flat pretty toggle",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8342"
@@ -3004,7 +3004,7 @@
       "author": "BIMvoice",
       "branch": "ship-2041-nested-qty",
       "head": "b6b310b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Resolve nested complex quantity paths in the selector (#2041)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8539"
     },
@@ -3076,7 +3076,7 @@
       "author": "BIMvoice",
       "branch": "ship-5349-side-area",
       "head": "e1edad2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.shape: add opt-in winding-tolerant areas (#5349)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8550"
     },
@@ -3655,7 +3655,7 @@
       "author": "BIMvoice",
       "branch": "fix-6728-covering-qto-mismatch",
       "head": "69d57a5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix IfcCovering Qto_CoveringBaseQuantities mismatch between calculators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8646"
     },
@@ -4759,6 +4759,46 @@
       "status": "merged",
       "title": "Bonsai: clear occurrence PredefinedType when a type's PredefinedType is edited to a concrete value",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8829"
+    },
+    "8830": {
+      "author": "BIMvoice",
+      "branch": "bonsai-5719-annotation-fill-bg",
+      "head": "f643c18",
+      "status": "merged",
+      "title": "Bonsai: stop rasterizing fill-bg annotation text on PDF export",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8830"
+    },
+    "8831": {
+      "author": "BIMvoice",
+      "branch": "ifccsv-6937-dotted-pset-name",
+      "head": "941a87e",
+      "status": "merged",
+      "title": "selector: fail loudly instead of resolving dotted pset queries against the wrong pset",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8831"
+    },
+    "8832": {
+      "author": "BIMvoice",
+      "branch": "fix-6895-shape-elevation-guard",
+      "head": "86de6c2",
+      "status": "merged",
+      "title": "ifcopenshell.util.shape: fail loudly on non-finite elevation instead of returning the infinity sentinel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8832"
+    },
+    "8833": {
+      "author": "BIMvoice",
+      "branch": "alignment-6890-csv-spirals-cant",
+      "head": "b713c16",
+      "status": "merged",
+      "title": "alignment: support spiral transition curves and cant in the PI-method CSV import (#6890)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8833"
+    },
+    "8834": {
+      "author": "BIMvoice",
+      "branch": "ifc5d-6835-opening-qto",
+      "head": "4f92e06",
+      "status": "merged",
+      "title": "ifc5d: fix IfcOpeningElement base quantities reported in the wrong axes (#6835)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8834"
     }
   },
   "schema": 1

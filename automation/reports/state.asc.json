@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 413,
-    "skipped_conflict": 70,
+    "merged": 415,
+    "skipped_conflict": 71,
     "skipped_draft": 49,
-    "total": 586
+    "total": 589
   },
-  "generated_at": "2026-07-21T07:02:01Z",
+  "generated_at": "2026-07-21T09:02:08Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1773,7 +1773,7 @@
     "8342": {
       "author": "falken10vdl",
       "branch": "style-flat-pretty-toggle",
-      "head": "42de34c",
+      "head": "10b0d35",
       "status": "merged",
       "title": "Style flat pretty toggle",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8342"
@@ -4751,6 +4751,30 @@
       "status": "merged",
       "title": "Bonsai: stop writing IFC4.3-deprecated IfcStairFlight attributes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8828"
+    },
+    "8829": {
+      "author": "BIMvoice",
+      "branch": "bonsai-ojt001-occurrence-predefinedtype",
+      "head": "8c7e9d5",
+      "status": "merged",
+      "title": "Bonsai: clear occurrence PredefinedType when a type's PredefinedType is edited to a concrete value",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8829"
+    },
+    "8830": {
+      "author": "BIMvoice",
+      "branch": "bonsai-5719-annotation-fill-bg",
+      "head": "f643c18",
+      "status": "merged",
+      "title": "Bonsai: stop rasterizing fill-bg annotation text on PDF export",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8830"
+    },
+    "8831": {
+      "author": "BIMvoice",
+      "branch": "ifccsv-6937-dotted-pset-name",
+      "head": "941a87e",
+      "status": "skipped_conflict",
+      "title": "selector: fail loudly instead of resolving dotted pset queries against the wrong pset",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8831"
     }
   },
   "schema": 1
