@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 55,
-    "merged": 403,
-    "skipped_conflict": 78,
+    "failed": 54,
+    "merged": 407,
+    "skipped_conflict": 77,
     "skipped_draft": 49,
-    "total": 585
+    "total": 587
   },
-  "generated_at": "2026-07-20T22:31:32Z",
+  "generated_at": "2026-07-21T07:29:25Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -570,7 +570,7 @@
       "author": "theoryshaw",
       "branch": "grid_issues",
       "head": "60063ac",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Grid issues",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7833"
     },
@@ -986,8 +986,7 @@
       "author": "bsmithuk",
       "branch": "v0.8.0",
       "head": "5cbb321",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Fix #8046 - Entity xs:restriction name crashes with AttributeError on…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8065"
     },
@@ -4250,7 +4249,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "960eb97",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -4713,14 +4712,6 @@
       "title": "ifcgeom: fail the whole boolean when CGAL's base operand can't be preprocessed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8817"
     },
-    "8818": {
-      "author": "BIMvoice",
-      "branch": "fix-7639-grid-annotation-visibility",
-      "head": "89b9269",
-      "status": "merged",
-      "title": "Bonsai: fix grid axis annotations missing on imperial-units drawings",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8818"
-    },
     "8819": {
       "author": "BIMvoice",
       "branch": "bonsai-7351-foreign-repr-item-id",
@@ -4744,6 +4735,30 @@
       "status": "merged",
       "title": "Bonsai: harden BBIM_Boolean.Data parsing against non-list payloads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8822"
+    },
+    "8827": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6980-annotation-phase-classes",
+      "head": "76d3531",
+      "status": "merged",
+      "title": "Bonsai: carry annotation status/phase classes onto text labels too",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8827"
+    },
+    "8828": {
+      "author": "BIMvoice",
+      "branch": "bonsai-stairflight-ifc43-deprecated-attrs",
+      "head": "63ac1fe",
+      "status": "merged",
+      "title": "Bonsai: stop writing IFC4.3-deprecated IfcStairFlight attributes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8828"
+    },
+    "8829": {
+      "author": "BIMvoice",
+      "branch": "bonsai-ojt001-occurrence-predefinedtype",
+      "head": "8c7e9d5",
+      "status": "merged",
+      "title": "Bonsai: clear occurrence PredefinedType when a type's PredefinedType is edited to a concrete value",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8829"
     }
   },
   "schema": 1
