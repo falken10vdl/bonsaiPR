@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 54,
-    "merged": 427,
-    "skipped_conflict": 77,
+    "failed": 58,
+    "merged": 428,
+    "skipped_conflict": 73,
     "skipped_draft": 50,
-    "total": 608
+    "total": 609
   },
-  "generated_at": "2026-07-21T19:02:33Z",
+  "generated_at": "2026-07-21T21:03:07Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1702,7 +1702,8 @@
       "author": "BIMvoice",
       "branch": "qto-segment-length-from-geometry",
       "head": "bb616c3",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
     },
@@ -1919,7 +1920,8 @@
       "author": "BIMvoice",
       "branch": "fix-4783-footing-qto",
       "head": "17dea14",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix IfcFooting Qto_FootingBaseQuantities axis mapping (#4783)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8365"
     },
@@ -2051,7 +2053,7 @@
       "author": "BIMvoice",
       "branch": "fix-4537-door-window-attribute-qto",
       "head": "6564879",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Quantify doors and windows from IFC attributes on both take-off engines (supersedes #4537)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8389"
     },
@@ -2631,7 +2633,8 @@
       "author": "BIMvoice",
       "branch": "bv-6173-cgal-original-edges",
       "head": "0f7fe9f",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcgeom: fix CgalEmitOriginalEdges for placed elements (#6173)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8480"
     },
@@ -3655,7 +3658,8 @@
       "author": "BIMvoice",
       "branch": "fix-6728-covering-qto-mismatch",
       "head": "69d57a5",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix IfcCovering Qto_CoveringBaseQuantities mismatch between calculators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8646"
     },
@@ -4792,14 +4796,6 @@
       "title": "alignment: support spiral transition curves and cant in the PI-method CSV import (#6890)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8833"
     },
-    "8834": {
-      "author": "BIMvoice",
-      "branch": "ifc5d-6835-opening-qto",
-      "head": "4f92e06",
-      "status": "skipped_conflict",
-      "title": "ifc5d: fix IfcOpeningElement base quantities reported in the wrong axes (#6835)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8834"
-    },
     "8835": {
       "author": "BIMvoice",
       "branch": "ifcsverchok-6809-file-socket",
@@ -4927,6 +4923,22 @@
       "status": "skipped_conflict",
       "title": "Add circle_segments setting to control circle approximation in geometry imports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8854"
+    },
+    "8855": {
+      "author": "BIMvoice",
+      "branch": "issue-950-bcf-report",
+      "head": "ac05ad4",
+      "status": "merged",
+      "title": "bcf: add Reporter for exporting BCF topics to CSV/XLSX/ODS (#950)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8855"
+    },
+    "8856": {
+      "author": "BIMvoice",
+      "branch": "sweep-1308-svg-data-area",
+      "head": "2c6db3d",
+      "status": "merged",
+      "title": "SvgSerializer: emit machine-readable space area attribute; fix double-escaped area label (#1308)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8856"
     }
   },
   "schema": 1
