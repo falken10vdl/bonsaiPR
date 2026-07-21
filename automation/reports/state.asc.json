@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 58,
+    "failed": 57,
     "merged": 428,
-    "skipped_conflict": 73,
+    "skipped_conflict": 75,
     "skipped_draft": 50,
-    "total": 609
+    "total": 610
   },
-  "generated_at": "2026-07-21T21:03:07Z",
+  "generated_at": "2026-07-21T23:02:27Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2633,8 +2633,7 @@
       "author": "BIMvoice",
       "branch": "bv-6173-cgal-original-edges",
       "head": "0f7fe9f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "ifcgeom: fix CgalEmitOriginalEdges for placed elements (#6173)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8480"
     },
@@ -4860,14 +4859,6 @@
       "title": "ifcpatch: FixDoubleTypedPredefinedType recipe to clean OJT001 double-typing in existing files",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8842"
     },
-    "8843": {
-      "author": "BIMvoice",
-      "branch": "bonsai-6680-material-rename",
-      "head": "7ab0628",
-      "status": "merged",
-      "title": "Bonsai: right-click Rename Material on material rows (#6680)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8843"
-    },
     "8844": {
       "author": "BIMvoice",
       "branch": "sweep-46-geom-normal-index",
@@ -4939,6 +4930,22 @@
       "status": "merged",
       "title": "SvgSerializer: emit machine-readable space area attribute; fix double-escaped area label (#1308)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8856"
+    },
+    "8857": {
+      "author": "brunopostle",
+      "branch": "fix/entity-leak-mid-parse-exception",
+      "head": "6b39666",
+      "status": "merged",
+      "title": "Fix leak of mid-parse entities when an exception escapes the scan loop",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8857"
+    },
+    "8858": {
+      "author": "brunopostle",
+      "branch": "fix/duplicate-id-instance-leak",
+      "head": "f16ba3d",
+      "status": "skipped_conflict",
+      "title": "Fix leak of entities on duplicate #id",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8858"
     }
   },
   "schema": 1

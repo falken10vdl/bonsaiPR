@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 57,
-    "merged": 418,
-    "skipped_conflict": 84,
+    "merged": 417,
+    "skipped_conflict": 86,
     "skipped_draft": 50,
-    "total": 609
+    "total": 610
   },
-  "generated_at": "2026-07-21T21:31:40Z",
+  "generated_at": "2026-07-21T23:30:23Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1751,7 +1751,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-viewport-text-size-3353",
       "head": "5ded244",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai(drawing): make viewport annotation text size resolution independent (#3353, #3683)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8338"
     },
@@ -4259,7 +4259,7 @@
     "8751": {
       "author": "brunopostle",
       "branch": "feat/ifcparse-fuzz-harness",
-      "head": "75cc63a",
+      "head": "f47e332",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add opt-in libFuzzer harness for IfcParse::IfcFile",
@@ -4859,14 +4859,6 @@
       "title": "ifcpatch: FixDoubleTypedPredefinedType recipe to clean OJT001 double-typing in existing files",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8842"
     },
-    "8843": {
-      "author": "BIMvoice",
-      "branch": "bonsai-6680-material-rename",
-      "head": "7ab0628",
-      "status": "merged",
-      "title": "Bonsai: right-click Rename Material on material rows (#6680)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8843"
-    },
     "8844": {
       "author": "BIMvoice",
       "branch": "sweep-46-geom-normal-index",
@@ -4938,6 +4930,22 @@
       "status": "merged",
       "title": "SvgSerializer: emit machine-readable space area attribute; fix double-escaped area label (#1308)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8856"
+    },
+    "8857": {
+      "author": "brunopostle",
+      "branch": "fix/entity-leak-mid-parse-exception",
+      "head": "6b39666",
+      "status": "skipped_conflict",
+      "title": "Fix leak of mid-parse entities when an exception escapes the scan loop",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8857"
+    },
+    "8858": {
+      "author": "brunopostle",
+      "branch": "fix/duplicate-id-instance-leak",
+      "head": "f16ba3d",
+      "status": "merged",
+      "title": "Fix leak of entities on duplicate #id",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8858"
     }
   },
   "schema": 1
