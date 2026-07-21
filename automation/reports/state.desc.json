@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 54,
-    "merged": 415,
-    "skipped_conflict": 86,
+    "merged": 416,
+    "skipped_conflict": 88,
     "skipped_draft": 50,
-    "total": 605
+    "total": 608
   },
-  "generated_at": "2026-07-21T17:30:05Z",
+  "generated_at": "2026-07-21T19:30:10Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1766,7 +1766,7 @@
       "author": "BIMvoice",
       "branch": "fix-4606-mixed-repr",
       "head": "2979c2c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: import representations that mix polygons and curves (#4606)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8340"
     },
@@ -3672,7 +3672,7 @@
       "author": "BIMvoice",
       "branch": "fix-2052-shape-aspects",
       "head": "e29474c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: split multi-material profile sets into per-item shape aspects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8648"
     },
@@ -4787,7 +4787,7 @@
     "8833": {
       "author": "BIMvoice",
       "branch": "alignment-6890-csv-spirals-cant",
-      "head": "b713c16",
+      "head": "c36fe0a",
       "status": "merged",
       "title": "alignment: support spiral transition curves and cant in the PI-method CSV import (#6890)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8833"
@@ -4867,7 +4867,7 @@
     "8843": {
       "author": "BIMvoice",
       "branch": "bonsai-6680-material-rename",
-      "head": "16b1b4e",
+      "head": "7ab0628",
       "status": "merged",
       "title": "Bonsai: right-click Rename Material on material rows (#6680)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8843"
@@ -4903,6 +4903,30 @@
       "status": "skipped_draft",
       "title": "cgal: make deflection-driven circle tessellation unconditional for small-radius conics",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8847"
+    },
+    "8852": {
+      "author": "BIMvoice",
+      "branch": "sweep-473-default-material-inheritance",
+      "head": "c424d1b",
+      "status": "merged",
+      "title": "ifcgeom: resolve default materials through the schema supertype chain (#473)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8852"
+    },
+    "8853": {
+      "author": "BIMvoice",
+      "branch": "fix-586-sphere-mapping",
+      "head": "56b1406",
+      "status": "merged",
+      "title": "ifcgeom: map IfcSphericalSurface so advanced-brep spheres render (#586)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8853"
+    },
+    "8854": {
+      "author": "falken10vdl",
+      "branch": "circle_segment_approx_in_OpenCascade_Engine",
+      "head": "590a741",
+      "status": "merged",
+      "title": "Add circle_segments setting to control circle approximation in geometry imports",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8854"
     }
   },
   "schema": 1
