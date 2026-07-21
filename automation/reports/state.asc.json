@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 55,
-    "merged": 423,
-    "skipped_conflict": 75,
+    "failed": 54,
+    "merged": 425,
+    "skipped_conflict": 76,
     "skipped_draft": 49,
-    "total": 602
+    "total": 604
   },
-  "generated_at": "2026-07-21T14:02:20Z",
+  "generated_at": "2026-07-21T15:02:15Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4388,8 +4388,7 @@
       "author": "BIMvoice",
       "branch": "fix-2400-validate-measure-units",
       "head": "3a054bf",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "validate.py: flag instantiated measures with no corresponding unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8770"
     },
@@ -4868,7 +4867,7 @@
     "8843": {
       "author": "BIMvoice",
       "branch": "bonsai-6680-material-rename",
-      "head": "8c667b8",
+      "head": "16b1b4e",
       "status": "merged",
       "title": "Bonsai: right-click Rename Material on material rows (#6680)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8843"
@@ -4880,6 +4879,22 @@
       "status": "skipped_conflict",
       "title": "serializers: independent position/normal index streams for OBJ and Collada (#46)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8844"
+    },
+    "8845": {
+      "author": "BIMvoice",
+      "branch": "issue-143-psr-style-aware-folding",
+      "head": "8665725",
+      "status": "merged",
+      "title": "ifcgeom: style-aware permissive-shape-reuse folding; fix PSR on single-item mapped representations (#143)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8845"
+    },
+    "8846": {
+      "author": "BIMvoice",
+      "branch": "bonsai-8731-door-arc-circle",
+      "head": "846f6e3",
+      "status": "merged",
+      "title": "geometry: author door swing arcs as IfcCircle, not a slightly eccentric IfcEllipse",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8846"
     }
   },
   "schema": 1

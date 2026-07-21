@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 61,
-    "merged": 406,
-    "skipped_conflict": 87,
-    "skipped_draft": 49,
-    "total": 603
+    "failed": 54,
+    "merged": 415,
+    "skipped_conflict": 86,
+    "skipped_draft": 50,
+    "total": 605
   },
-  "generated_at": "2026-07-21T14:30:34Z",
+  "generated_at": "2026-07-21T15:29:57Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -454,8 +454,7 @@
       "author": "theoryshaw",
       "branch": "Fix_isolate_objects_ignoring_hide_select_hide_viewport",
       "head": "2f5d107",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Fix #7681: Fix isolate_objects ignoring hide_select/hide_viewport (#7710)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7744"
     },
@@ -1078,7 +1077,7 @@
       "author": "RickBrice",
       "branch": "rab_IfcAxis2PlacementLinear_fix",
       "head": "b75a689",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Implements default direction of IfcAxis2PlacementLinear.Axis and RefDirection",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8145"
     },
@@ -1211,7 +1210,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcdiff-relationships-4110",
       "head": "38611e3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "IfcDiff: compare container and aggregate by GlobalId (#4110)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8249"
     },
@@ -1251,8 +1250,7 @@
       "author": "BIMvoice",
       "branch": "fix/sequence-subday-durations-8245",
       "head": "107a454",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Sequence: sub-day durations occupy their day when cascading (#8245)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8256"
     },
@@ -1526,7 +1524,7 @@
       "author": "BIMvoice",
       "branch": "fix-georef-drawing-camera-offset-8205",
       "head": "b6c54fa",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: apply georeferencing offset to imported drawing cameras (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8304"
     },
@@ -1680,7 +1678,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-camera-bounds-on-save-8205",
       "head": "09e314d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai(drawing): persist drawing camera zoom and crop on save (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8328"
     },
@@ -1704,8 +1702,7 @@
       "author": "BIMvoice",
       "branch": "qto-segment-length-from-geometry",
       "head": "bb616c3",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
     },
@@ -1833,7 +1830,7 @@
       "author": "BIMvoice",
       "branch": "fix-4694-tool-shortcut",
       "head": "578b891",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: give Create Element and Annotation tools stable toolbar-popup shortcuts (#4694)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8349"
     },
@@ -2150,8 +2147,7 @@
       "author": "BIMvoice",
       "branch": "fix-486-work",
       "head": "0b777ca",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Fix #486: auto-add cross-file instances on attribute assignment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8406"
     },
@@ -3178,7 +3174,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-bsdd-stub-clobber",
       "head": "a1367c6",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix ci-bonsai-daily: get_dictionaries no longer clobbers injected bSDD client",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8567"
     },
@@ -3242,8 +3238,7 @@
       "author": "BIMvoice",
       "branch": "fix-6727-swept-solid-set-origin",
       "head": "d7742db",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix/report IFC Set Origin no-op on SweptSolid representations (#6727)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8584"
     },
@@ -4077,7 +4072,7 @@
       "author": "BIMvoice",
       "branch": "bv-3157-opening-thickness-sync",
       "head": "6eb7461",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: resync door and window openings after wall layer edits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8721"
     },
@@ -4254,8 +4249,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "960eb97",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -4594,8 +4588,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6423-axis-linework",
       "head": "d2a08d3",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: draw element Axis reference lines in drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8802"
     },
@@ -4874,7 +4867,7 @@
     "8843": {
       "author": "BIMvoice",
       "branch": "bonsai-6680-material-rename",
-      "head": "8c667b8",
+      "head": "16b1b4e",
       "status": "merged",
       "title": "Bonsai: right-click Rename Material on material rows (#6680)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8843"
@@ -4894,6 +4887,22 @@
       "status": "merged",
       "title": "ifcgeom: style-aware permissive-shape-reuse folding; fix PSR on single-item mapped representations (#143)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8845"
+    },
+    "8846": {
+      "author": "BIMvoice",
+      "branch": "bonsai-8731-door-arc-circle",
+      "head": "846f6e3",
+      "status": "merged",
+      "title": "geometry: author door swing arcs as IfcCircle, not a slightly eccentric IfcEllipse",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8846"
+    },
+    "8847": {
+      "author": "sboddy",
+      "branch": "fix-5685-squared-curves-on-open",
+      "head": "2eb70c2",
+      "status": "skipped_draft",
+      "title": "cgal: make deflection-driven circle tessellation unconditional for small-radius conics",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8847"
     }
   },
   "schema": 1
