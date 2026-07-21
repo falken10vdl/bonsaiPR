@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 54,
-    "merged": 410,
-    "skipped_conflict": 72,
+    "failed": 60,
+    "merged": 401,
+    "skipped_conflict": 75,
     "skipped_draft": 49,
     "total": 585
   },
-  "generated_at": "2026-07-20T22:02:53Z",
+  "generated_at": "2026-07-21T06:02:18Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1394,7 +1394,8 @@
       "author": "BIMvoice",
       "branch": "fix-cascade-milestone-duration-6834",
       "head": "5f1e55e",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "sequence.cascade_schedule: milestones cascade with zero duration (#6834)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8280"
     },
@@ -2810,7 +2811,8 @@
       "author": "BIMvoice",
       "branch": "fix-8036-drawing-none-doc",
       "head": "1eaaa43",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: guard drawing with no document reference in get_sheet_references (#8036, #7266)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8512"
     },
@@ -2964,7 +2966,7 @@
       "author": "BIMvoice",
       "branch": "ship-5123-schedule-newlines",
       "head": "08dda6a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: keep newlines and multiple spaces in SVG schedules (#5123)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8534"
     },
@@ -3092,7 +3094,7 @@
       "author": "BIMvoice",
       "branch": "ship-6481-parametric-profile",
       "head": "e1c0e7b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve a parametric profile through an edit round trip (#6481)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8553"
     },
@@ -3222,7 +3224,7 @@
       "author": "BIMvoice",
       "branch": "fix-8580-csv-missing-columns",
       "head": "f764cb8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix Csv2Ifc crash on CSV missing an optional column (#8580)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8581"
     },
@@ -3318,7 +3320,8 @@
       "author": "BIMvoice",
       "branch": "fix-3296-external-styles-new-viewports",
       "head": "5c3cc5c",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: switch to external styles on RENDERED shading for viewports created mid-session (#3296)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8594"
     },
@@ -3382,7 +3385,7 @@
       "author": "BIMvoice",
       "branch": "fix/streaming-propset-fixture",
       "head": "8aedda3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix property set fixture schema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8606"
     },
@@ -3543,7 +3546,7 @@
       "author": "BIMvoice",
       "branch": "fix-5450-mep-bend-profile-error",
       "head": "08b1cb3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: report a clean error instead of a traceback for unsupported bend profiles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8632"
     },
@@ -3672,7 +3675,7 @@
       "author": "BIMvoice",
       "branch": "fix-2052-shape-aspects",
       "head": "e29474c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: split multi-material profile sets into per-item shape aspects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8648"
     },
@@ -3840,7 +3843,7 @@
       "author": "BIMvoice",
       "branch": "fix-7087-linked-hide-ux",
       "head": "2bacc18",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: label the Explore Tool query results in the Links panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8680"
     },
@@ -3936,7 +3939,8 @@
       "author": "BIMvoice",
       "branch": "fix-3748-sloped-space-roof",
       "head": "677da41",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: opt-in space generation that follows sloping roofs and slabs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8694"
     },
@@ -4016,7 +4020,7 @@
       "author": "theoryshaw",
       "branch": "fix-mergeprojects-dup-contexts",
       "head": "82bd46d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: stop MergeProjects leaving duplicate representation contexts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8707"
     },
@@ -4112,7 +4116,7 @@
       "author": "BIMvoice",
       "branch": "fix-7614-shared-profile-edit-refresh",
       "head": "c3b3ef4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: refresh every sharing element's mesh after an extrusion profile edit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8726"
     },
@@ -4177,7 +4181,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7458-cpu-feature-warning",
       "head": "3325a7b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: warn before a CPU without AVX2 crashes the geometry backend",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8737"
     },
@@ -4266,7 +4270,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4330,7 +4334,8 @@
       "author": "BIMvoice",
       "branch": "fix-ci-compile-test",
       "head": "894fcd0",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ci: fix compile-and-test failures on v0.8.0 (validate_stub crash + missing Optimise test deps)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8763"
     },
@@ -4500,7 +4505,8 @@
       "author": "BIMvoice",
       "branch": "6588-filling-directionsense",
       "head": "3c3d093",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: orient new door/window fillings by the wall's direction sense (#6588)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8791"
     },
@@ -4700,7 +4706,7 @@
       "author": "BIMvoice",
       "branch": "issue-7178-clash-feet-units",
       "head": "e6489c2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix clash pin drifting away when a false origin is active",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8816"
     },
