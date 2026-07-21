@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 54,
-    "merged": 419,
+    "failed": 55,
+    "merged": 423,
     "skipped_conflict": 75,
     "skipped_draft": 49,
-    "total": 597
+    "total": 602
   },
-  "generated_at": "2026-07-21T11:02:02Z",
+  "generated_at": "2026-07-21T14:02:20Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4388,7 +4388,8 @@
       "author": "BIMvoice",
       "branch": "fix-2400-validate-measure-units",
       "head": "3a054bf",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "validate.py: flag instantiated measures with no corresponding unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8770"
     },
@@ -4839,6 +4840,46 @@
       "status": "merged",
       "title": "Bonsai: draw MEP flow arrows through bend fittings along the bend, not the chord",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8839"
+    },
+    "8840": {
+      "author": "BIMvoice",
+      "branch": "perf-6712-mapped-items-parser",
+      "head": "eca82d1",
+      "status": "merged",
+      "title": "ifcgeom/ifcparse: fix PSR library-API no-op, mapping-cache hang, and parser fast paths (#6712)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8840"
+    },
+    "8841": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6702-texture-support",
+      "head": "fc82b71",
+      "status": "merged",
+      "title": "Bonsai: load texture UV maps by default so textured IFCs actually render (#6702)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8841"
+    },
+    "8842": {
+      "author": "BIMvoice",
+      "branch": "bonsai-ojt001-cleanup-recipe",
+      "head": "01bd6cb",
+      "status": "merged",
+      "title": "ifcpatch: FixDoubleTypedPredefinedType recipe to clean OJT001 double-typing in existing files",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8842"
+    },
+    "8843": {
+      "author": "BIMvoice",
+      "branch": "bonsai-6680-material-rename",
+      "head": "8c667b8",
+      "status": "merged",
+      "title": "Bonsai: right-click Rename Material on material rows (#6680)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8843"
+    },
+    "8844": {
+      "author": "BIMvoice",
+      "branch": "sweep-46-geom-normal-index",
+      "head": "71c18a9",
+      "status": "skipped_conflict",
+      "title": "serializers: independent position/normal index streams for OBJ and Collada (#46)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8844"
     }
   },
   "schema": 1
