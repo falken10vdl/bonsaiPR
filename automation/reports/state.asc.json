@@ -4,10 +4,10 @@
     "failed": 54,
     "merged": 425,
     "skipped_conflict": 76,
-    "skipped_draft": 49,
-    "total": 604
+    "skipped_draft": 50,
+    "total": 605
   },
-  "generated_at": "2026-07-21T15:02:15Z",
+  "generated_at": "2026-07-21T17:02:32Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4895,6 +4895,14 @@
       "status": "merged",
       "title": "geometry: author door swing arcs as IfcCircle, not a slightly eccentric IfcEllipse",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8846"
+    },
+    "8847": {
+      "author": "sboddy",
+      "branch": "fix-5685-squared-curves-on-open",
+      "head": "2eb70c2",
+      "status": "skipped_draft",
+      "title": "cgal: make deflection-driven circle tessellation unconditional for small-radius conics",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8847"
     }
   },
   "schema": 1
