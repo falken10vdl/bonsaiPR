@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 57,
-    "merged": 428,
-    "skipped_conflict": 75,
-    "skipped_draft": 50,
+    "failed": 59,
+    "merged": 429,
+    "skipped_conflict": 73,
+    "skipped_draft": 49,
     "total": 610
   },
-  "generated_at": "2026-07-21T23:02:27Z",
+  "generated_at": "2026-07-22T01:03:11Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2958,7 +2958,8 @@
       "author": "BIMvoice",
       "branch": "ship-6393-mepbend",
       "head": "11d5787",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: guard MEP Add Bend against parallel segments (#6393)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8533"
     },
@@ -4259,7 +4260,7 @@
     "8751": {
       "author": "brunopostle",
       "branch": "feat/ifcparse-fuzz-harness",
-      "head": "75cc63a",
+      "head": "f47e332",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add opt-in libFuzzer harness for IfcParse::IfcFile",
@@ -4391,7 +4392,8 @@
       "author": "BIMvoice",
       "branch": "fix-2400-validate-measure-units",
       "head": "3a054bf",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "validate.py: flag instantiated measures with no corresponding unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8770"
     },
@@ -4887,7 +4889,7 @@
       "author": "sboddy",
       "branch": "fix-5685-squared-curves-on-open",
       "head": "2eb70c2",
-      "status": "skipped_draft",
+      "status": "merged",
       "title": "cgal: make deflection-driven circle tessellation unconditional for small-radius conics",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8847"
     },
