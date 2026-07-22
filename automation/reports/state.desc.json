@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 57,
-    "merged": 419,
-    "skipped_conflict": 85,
-    "skipped_draft": 49,
-    "total": 610
+    "merged": 418,
+    "skipped_conflict": 86,
+    "skipped_draft": 50,
+    "total": 611
   },
-  "generated_at": "2026-07-22T07:30:17Z",
+  "generated_at": "2026-07-22T12:31:00Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -2617,7 +2617,7 @@
       "author": "BIMvoice",
       "branch": "bv-6997-cgal-vertex-normals",
       "head": "0359a2a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcgeom: CGAL kernel should emit the smoothed, unit vertex normal (#6997)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8479"
     },
@@ -2625,7 +2625,7 @@
       "author": "BIMvoice",
       "branch": "bv-6173-cgal-original-edges",
       "head": "0f7fe9f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcgeom: fix CgalEmitOriginalEdges for placed elements (#6173)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8480"
     },
@@ -3667,7 +3667,7 @@
       "author": "BIMvoice",
       "branch": "fix-2052-shape-aspects",
       "head": "e29474c",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: split multi-material profile sets into per-item shape aspects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8648"
     },
@@ -4590,7 +4590,7 @@
     "8803": {
       "author": "Bartok9",
       "branch": "sera/docs-linux-eigen-dep",
-      "head": "5fe5384",
+      "head": "3d5a394",
       "status": "merged",
       "title": "docs: add Eigen to Linux install deps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
@@ -4903,7 +4903,7 @@
       "author": "falken10vdl",
       "branch": "circle_segment_approx_in_OpenCascade_Engine",
       "head": "590a741",
-      "status": "merged",
+      "status": "skipped_draft",
       "title": "Add circle_segments setting to control circle approximation in geometry imports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8854"
     },
@@ -4946,6 +4946,14 @@
       "status": "merged",
       "title": "ifcgeom: point/vertex representation support on clean v0.8.0 base (#1409, #5218)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8859"
+    },
+    "8862": {
+      "author": "BIMvoice",
+      "branch": "fix-8861-cgal-no-normals-obj",
+      "head": "17011c7",
+      "status": "merged",
+      "title": "Fix --no-normals ignored by CGAL kernel for OBJ output (#8861)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8862"
     }
   },
   "schema": 1
