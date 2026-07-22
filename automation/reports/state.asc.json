@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 57,
+    "failed": 59,
     "merged": 429,
     "skipped_conflict": 75,
     "skipped_draft": 50,
-    "total": 611
+    "total": 613
   },
-  "generated_at": "2026-07-22T14:02:56Z",
+  "generated_at": "2026-07-22T16:03:04Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1068,7 +1068,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "248c7e2",
+      "head": "4cd9d4b",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -3376,7 +3376,8 @@
       "author": "BIMvoice",
       "branch": "fix/streaming-propset-fixture",
       "head": "8aedda3",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix property set fixture schema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8606"
     },
@@ -3675,7 +3676,8 @@
       "author": "BIMvoice",
       "branch": "fix-ci-streaming-wallopening-bsdd",
       "head": "1255edc",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ci: fix bSDD 429 rate limiting and restore ColumnPSetsOfSets.ifc schema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8649"
     },
@@ -4878,7 +4880,7 @@
     "8847": {
       "author": "sboddy",
       "branch": "fix-5685-squared-curves-on-open",
-      "head": "2eb70c2",
+      "head": "b9fbaab",
       "status": "merged",
       "title": "cgal: make deflection-driven circle tessellation unconditional for small-radius conics",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8847"
@@ -4954,6 +4956,22 @@
       "status": "skipped_conflict",
       "title": "Fix --no-normals ignored by CGAL kernel for OBJ output (#8861)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8862"
+    },
+    "8863": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/immutable-5.1.9",
+      "head": "b037777",
+      "status": "merged",
+      "title": "build(deps-dev): bump immutable from 5.1.5 to 5.1.9 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8863"
+    },
+    "8864": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/tar-7.5.21",
+      "head": "3a6d5b3",
+      "status": "merged",
+      "title": "build(deps-dev): bump tar from 7.5.16 to 7.5.21 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8864"
     }
   },
   "schema": 1

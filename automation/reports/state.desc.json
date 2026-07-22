@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 57,
+    "failed": 59,
     "merged": 418,
     "skipped_conflict": 86,
     "skipped_draft": 50,
-    "total": 611
+    "total": 613
   },
-  "generated_at": "2026-07-22T14:31:26Z",
+  "generated_at": "2026-07-22T16:31:56Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -930,7 +930,7 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/postcss-8.5.13",
       "head": "7d96bc1",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bump postcss from 8.5.4 to 8.5.13 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8029"
     },
@@ -1068,7 +1068,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "248c7e2",
+      "head": "4cd9d4b",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1126,7 +1126,7 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/multi-cf99e4b298",
       "head": "6e1efe5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bump vite, @sveltejs/vite-plugin-svelte and @tailwindcss/vite in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8182"
     },
@@ -3376,7 +3376,8 @@
       "author": "BIMvoice",
       "branch": "fix/streaming-propset-fixture",
       "head": "8aedda3",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix property set fixture schema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8606"
     },
@@ -3675,7 +3676,8 @@
       "author": "BIMvoice",
       "branch": "fix-ci-streaming-wallopening-bsdd",
       "head": "1255edc",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ci: fix bSDD 429 rate limiting and restore ColumnPSetsOfSets.ifc schema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8649"
     },
@@ -4878,7 +4880,7 @@
     "8847": {
       "author": "sboddy",
       "branch": "fix-5685-squared-curves-on-open",
-      "head": "2eb70c2",
+      "head": "b9fbaab",
       "status": "merged",
       "title": "cgal: make deflection-driven circle tessellation unconditional for small-radius conics",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8847"
@@ -4954,6 +4956,22 @@
       "status": "merged",
       "title": "Fix --no-normals ignored by CGAL kernel for OBJ output (#8861)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8862"
+    },
+    "8863": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/immutable-5.1.9",
+      "head": "b037777",
+      "status": "merged",
+      "title": "build(deps-dev): bump immutable from 5.1.5 to 5.1.9 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8863"
+    },
+    "8864": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/tar-7.5.21",
+      "head": "3a6d5b3",
+      "status": "merged",
+      "title": "build(deps-dev): bump tar from 7.5.16 to 7.5.21 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8864"
     }
   },
   "schema": 1
