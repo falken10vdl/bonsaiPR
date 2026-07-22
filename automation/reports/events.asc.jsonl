@@ -270,3 +270,5 @@
 {"ts": "2026-07-22T01:03:11Z", "order": "ascending", "pr": 8751, "event": "updated", "status": "failed", "from_head": "75cc63a", "to_head": "f47e332"}
 {"ts": "2026-07-22T01:03:11Z", "order": "ascending", "pr": 8770, "event": "status", "from": "skipped_conflict", "to": "failed"}
 {"ts": "2026-07-22T01:03:11Z", "order": "ascending", "pr": 8847, "event": "status", "from": "skipped_draft", "to": "merged"}
+{"ts": "2026-07-22T05:02:25Z", "order": "ascending", "pr": 8533, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-07-22T05:02:25Z", "order": "ascending", "pr": 8770, "event": "status", "from": "failed", "to": "skipped_conflict"}

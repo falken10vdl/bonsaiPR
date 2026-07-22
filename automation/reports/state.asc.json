@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 59,
+    "failed": 57,
     "merged": 429,
-    "skipped_conflict": 73,
+    "skipped_conflict": 75,
     "skipped_draft": 49,
     "total": 610
   },
-  "generated_at": "2026-07-22T01:03:11Z",
+  "generated_at": "2026-07-22T05:02:25Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2958,8 +2958,7 @@
       "author": "BIMvoice",
       "branch": "ship-6393-mepbend",
       "head": "11d5787",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: guard MEP Add Bend against parallel segments (#6393)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8533"
     },
@@ -4392,8 +4391,7 @@
       "author": "BIMvoice",
       "branch": "fix-2400-validate-measure-units",
       "head": "3a054bf",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "validate.py: flag instantiated measures with no corresponding unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8770"
     },

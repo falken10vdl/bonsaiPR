@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 57,
-    "merged": 403,
-    "skipped_conflict": 101,
+    "failed": 56,
+    "merged": 420,
+    "skipped_conflict": 86,
     "skipped_draft": 49,
-    "total": 610
+    "total": 611
   },
-  "generated_at": "2026-07-22T01:30:49Z",
+  "generated_at": "2026-07-22T05:30:17Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -954,7 +954,7 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/devalue-5.8.1",
       "head": "246ba90",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bump devalue from 5.6.4 to 5.8.1 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8058"
     },
@@ -1110,7 +1110,7 @@
       "author": "carlopav",
       "branch": "fix-spatialzone-outliner-collection",
       "head": "29b12af",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Place IfcSpatialZone in its spatial parent's collection instead of Unsorted",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8174"
     },
@@ -1258,7 +1258,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcclash-notrequired-keys-8224",
       "head": "b6626db",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "IfcClash: default NotRequired clash set keys instead of asserting (#8224)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8257"
     },
@@ -1426,7 +1426,7 @@
       "author": "BIMvoice",
       "branch": "fix-ifc5d-export-quality-6251",
       "head": "ec59259",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc5d: professional grade ODS/XLSX cost schedule export (#6251)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8287"
     },
@@ -1919,9 +1919,8 @@
     "8365": {
       "author": "BIMvoice",
       "branch": "fix-4783-footing-qto",
-      "head": "17dea14",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "61a1f4e",
+      "status": "skipped_conflict",
       "title": "Fix IfcFooting Qto_FootingBaseQuantities axis mapping (#4783)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8365"
     },
@@ -1937,7 +1936,7 @@
       "author": "BIMvoice",
       "branch": "fix-8050-iterator-race",
       "head": "6c7b33c",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcgeom: clone mapped items before in place mutation to fix nondeterministic multithreaded geometry (#8050)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8370"
     },
@@ -2109,7 +2108,7 @@
       "author": "BIMvoice",
       "branch": "fix-7737-work",
       "head": "72ebb2d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: baseline half space item placements so item edits keep all cuts (#7737)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8401"
     },
@@ -2424,7 +2423,7 @@
       "author": "BIMvoice",
       "branch": "fix-3950-csv-search-attributes",
       "head": "58e13cd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: persist CSV attributes when saving a spreadsheet search (#3950)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8447"
     },
@@ -2480,7 +2479,7 @@
       "author": "BIMvoice",
       "branch": "fix-obj-serializer-texcoord-material",
       "head": "24f4143",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "serializers: correct OBJ texture-coordinate indices and guard material lookup",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8457"
     },
@@ -2592,7 +2591,7 @@
       "author": "BIMvoice",
       "branch": "bv-2638-svg-storey-section-global-z",
       "head": "6f250e2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "serializers: section-height-from-storeys should use global placement Z (#2638)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8475"
     },
@@ -2884,7 +2883,7 @@
       "author": "BIMvoice",
       "branch": "fix-3189-tree-file-pointer",
       "head": "dfefb53",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell: attach owning file to geom.tree select results (#3189)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8522"
     },
@@ -3014,7 +3013,7 @@
       "author": "BIMvoice",
       "branch": "ship-4624-fulldocs",
       "head": "3d15f58",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util.doc: stop truncating entity, type, pset and property descriptions at the first paragraph (#4624)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8540"
     },
@@ -3272,7 +3271,7 @@
       "author": "BIMvoice",
       "branch": "fix-2415-geom-app-select-occt-compat",
       "head": "63f2ebb",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix geom.app viewer selection crash on current pythonocc-core (#2415)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8588"
     },
@@ -3432,7 +3431,7 @@
       "author": "BIMvoice",
       "branch": "fix-4067-svg-curve-hlr",
       "head": "2357a39",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai: add opt-in exact-geometry hidden line removal for smoother SVG curves (#4067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8615"
     },
@@ -3585,7 +3584,7 @@
       "author": "BIMvoice",
       "branch": "fix-5433-svg-fonts",
       "head": "6546abc",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: embed bundled fonts in exported drawing SVGs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8637"
     },
@@ -3715,7 +3714,7 @@
       "author": "BIMvoice",
       "branch": "fix-3096-ifcgit-main-branch",
       "head": "f1b9d50",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: default new Git repos to a main branch",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8654"
     },
@@ -3899,7 +3898,7 @@
       "author": "BIMvoice",
       "branch": "fix-3783-track-project-assets",
       "head": "e4ba5e4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: commit referenced drawing assets alongside the IFC in IfcGit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8687"
     },
@@ -4075,7 +4074,7 @@
       "author": "BIMvoice",
       "branch": "bv-3157-opening-thickness-sync",
       "head": "6eb7461",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: resync door and window openings after wall layer edits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8721"
     },
@@ -4863,7 +4862,7 @@
       "author": "BIMvoice",
       "branch": "sweep-46-geom-normal-index",
       "head": "71c18a9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "serializers: independent position/normal index streams for OBJ and Collada (#46)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8844"
     },
@@ -4946,6 +4945,14 @@
       "status": "merged",
       "title": "Fix leak of entities on duplicate #id",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8858"
+    },
+    "8859": {
+      "author": "BIMvoice",
+      "branch": "points-vertex-representations-v080",
+      "head": "df1abab",
+      "status": "merged",
+      "title": "ifcgeom: point/vertex representation support on clean v0.8.0 base (#1409, #5218)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8859"
     }
   },
   "schema": 1
