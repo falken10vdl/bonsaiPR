@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 56,
-    "merged": 420,
-    "skipped_conflict": 86,
+    "failed": 57,
+    "merged": 419,
+    "skipped_conflict": 85,
     "skipped_draft": 49,
-    "total": 611
+    "total": 610
   },
-  "generated_at": "2026-07-22T05:30:17Z",
+  "generated_at": "2026-07-22T07:30:17Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1916,14 +1916,6 @@
       "title": "Bonsai: scope schedule/document styles on a sheet so they keep their own font (#5221)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8361"
     },
-    "8365": {
-      "author": "BIMvoice",
-      "branch": "fix-4783-footing-qto",
-      "head": "61a1f4e",
-      "status": "skipped_conflict",
-      "title": "Fix IfcFooting Qto_FootingBaseQuantities axis mapping (#4783)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8365"
-    },
     "8369": {
       "author": "BIMvoice",
       "branch": "fix-6568-optional-collada-msys",
@@ -2052,7 +2044,8 @@
       "author": "BIMvoice",
       "branch": "fix-4537-door-window-attribute-qto",
       "head": "6564879",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Quantify doors and windows from IFC attributes on both take-off engines (supersedes #4537)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8389"
     },
