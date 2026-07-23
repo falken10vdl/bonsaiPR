@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 31,
-    "merged": 436,
-    "skipped_conflict": 97,
-    "skipped_draft": 49,
-    "total": 613
+    "merged": 430,
+    "skipped_conflict": 96,
+    "skipped_draft": 48,
+    "total": 605
   },
-  "generated_at": "2026-07-23T15:31:44Z",
+  "generated_at": "2026-07-23T19:31:05Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -246,22 +246,6 @@
       "title": "Remove object from non-IFC collections after IFC class assignment.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7422"
     },
-    "7432": {
-      "author": "EstebanDugueperoux2",
-      "branch": "feature/TestConanSanitizer",
-      "head": "c94d6ac",
-      "status": "skipped_draft",
-      "title": "Feature/test conan sanitizer",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7432"
-    },
-    "7436": {
-      "author": "EstebanDugueperoux2",
-      "branch": "cmake/SpecifyMinimumOpencascadeTargetsToLinkAgainst",
-      "head": "f0e83da",
-      "status": "skipped_draft",
-      "title": "cmake: Specify minimum of opencascade targets to link against",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7436"
-    },
     "7443": {
       "author": "aothms",
       "branch": "tfk-sectioned-surf",
@@ -286,14 +270,6 @@
       "title": "Makefile - enhance wget for improved resilience during downloads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7479"
     },
-    "7517": {
-      "author": "EstebanDugueperoux2",
-      "branch": "feat/UseConan",
-      "head": "bb0b36c",
-      "status": "skipped_draft",
-      "title": "Feat/use conan",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7517"
-    },
     "7523": {
       "author": "ZijianWang-ZW",
       "branch": "dev/bug/hybrid-kernel-sigsegv-fallback",
@@ -302,14 +278,6 @@
       "status": "failed",
       "title": "Fix: hybrid kernel sigsegv fallback (0.8.0)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7523"
-    },
-    "7528": {
-      "author": "EstebanDugueperoux2",
-      "branch": "debugIfcWrapLink",
-      "head": "7b290ce",
-      "status": "skipped_draft",
-      "title": "Have verbose Make logs",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7528"
     },
     "7534": {
       "author": "aothms",
@@ -334,14 +302,6 @@
       "status": "skipped_draft",
       "title": "Saikei alignment editing capabilities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7589"
-    },
-    "7637": {
-      "author": "EstebanDugueperoux2",
-      "branch": "feature/EaseConanIntegration",
-      "head": "c1ec24f",
-      "status": "skipped_draft",
-      "title": "Feature/ease conan integration",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7637"
     },
     "7645": {
       "author": "louistrue",
@@ -1722,7 +1682,7 @@
       "author": "BIMvoice",
       "branch": "fix-4606-mixed-repr",
       "head": "2979c2c",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: import representations that mix polygons and curves (#4606)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8340"
     },
@@ -2093,22 +2053,6 @@
       "status": "merged",
       "title": "Fix #7125: search_in_dictionary honours related_ifc_entity via Dictionary/Classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8408"
-    },
-    "8409": {
-      "author": "BIMvoice",
-      "branch": "fix-6325-work",
-      "head": "fd7855f",
-      "status": "merged",
-      "title": "Bonsai: compute earthworks base quantities in ifc5d take-off (#6325)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8409"
-    },
-    "8410": {
-      "author": "BIMvoice",
-      "branch": "fix-7331-work",
-      "head": "37713be",
-      "status": "merged",
-      "title": "Fix #7331: derive cost item quantities from IfcSpace base quantities",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8410"
     },
     "8413": {
       "author": "BIMvoice",
@@ -3062,14 +3006,6 @@
       "title": "Fix ci-bonsai-daily: assign_class drops active_object; assign_material usage type",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8571"
     },
-    "8572": {
-      "author": "BIMvoice",
-      "branch": "fix/8570-ifc5d-ifcspace-qto",
-      "head": "b0d6134",
-      "status": "merged",
-      "title": "Fix #8570: populate ifc5d IfcOpenShell QTO formulas for IfcSpace",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8572"
-    },
     "8573": {
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-projectlibrary-dedup",
@@ -3509,14 +3445,6 @@
       "status": "merged",
       "title": "Bonsai: fix BCF viewpoint line markup crash on modern Grease Pencil API",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8645"
-    },
-    "8646": {
-      "author": "BIMvoice",
-      "branch": "fix-6728-covering-qto-mismatch",
-      "head": "1bcd7d2",
-      "status": "merged",
-      "title": "Fix IfcCovering Qto_CoveringBaseQuantities mismatch between calculators",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8646"
     },
     "8648": {
       "author": "BIMvoice",
@@ -3994,7 +3922,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7458-cpu-feature-warning",
       "head": "3325a7b",
-      "status": "skipped_conflict",
+      "status": "skipped_draft",
       "title": "Bonsai: warn before a CPU without AVX2 crashes the geometry backend",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8737"
     },
@@ -4066,7 +3994,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "960eb97",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -4861,7 +4789,7 @@
       "author": "BIMvoice",
       "branch": "5157-subcontract-physical-quantities",
       "head": "9e40d73",
-      "status": "merged",
+      "status": "skipped_draft",
       "title": "resource: allow physical base quantities on subcontract resources",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8877"
     },
@@ -4901,7 +4829,7 @@
       "author": "BIMvoice",
       "branch": "8570-annotation-boundary",
       "head": "18a7691",
-      "status": "merged",
+      "status": "skipped_draft",
       "title": "ifc5d: annotation boundary calculator for space areas (#8570 prototype)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8883"
     },
@@ -4944,6 +4872,14 @@
       "status": "merged",
       "title": "Bonsai: guard stale relating_type_id enum assignment in set/duplicate type",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
+    },
+    "8891": {
+      "author": "sboddy",
+      "branch": "fix-3742-coplanar-bonsai-projection_2_sjb",
+      "head": "44a8451",
+      "status": "skipped_draft",
+      "title": "Fix contained-pair and multi-neighbour cases in remove_coplanar_boundary_lines",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8891"
     }
   },
   "schema": 1
