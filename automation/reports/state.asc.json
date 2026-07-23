@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 59,
-    "merged": 429,
-    "skipped_conflict": 75,
-    "skipped_draft": 50,
-    "total": 613
+    "failed": 39,
+    "merged": 437,
+    "skipped_conflict": 77,
+    "skipped_draft": 49,
+    "total": 602
   },
-  "generated_at": "2026-07-23T04:02:51Z",
+  "generated_at": "2026-07-23T06:02:27Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1470,15 +1470,6 @@
       "title": "Bonsai: guess_false_origin tolerates a file without a project (#7350)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8293"
     },
-    "8294": {
-      "author": "BIMvoice",
-      "branch": "fix-ifcdiff-container-aggregate-crossfile-4110",
-      "head": "bb1fe05",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifcdiff: compare container and aggregate by GlobalId, not identity (#4110)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8294"
-    },
     "8295": {
       "author": "BIMvoice",
       "branch": "fix-set-element-value-trailing-index-4687",
@@ -1498,9 +1489,8 @@
     "8297": {
       "author": "BIMvoice",
       "branch": "fix-format-round-non-numeric-6776",
-      "head": "6e1eb52",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "3d17eed",
+      "status": "merged",
       "title": "util.selector: numeric format functions pass through non-numeric values (#6776)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8297"
     },
@@ -1527,15 +1517,6 @@
       "status": "merged",
       "title": "Bonsai: apply georeferencing offset to imported drawing cameras (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8304"
-    },
-    "8305": {
-      "author": "BIMvoice",
-      "branch": "fix-assign-resource-typo-8203",
-      "head": "70a43a7",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "resource.assign_resource: fix typo in duplicate guard (#8203)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8305"
     },
     "8306": {
       "author": "BIMvoice",
@@ -1592,15 +1573,6 @@
       "status": "merged",
       "title": "Bonsai: don't crash editing a non-extrusion slab (#6283)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8315"
-    },
-    "8316": {
-      "author": "BIMvoice",
-      "branch": "fix-decimetre-length-unit-8074",
-      "head": "da1acae",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Handle unsupported length unit prefixes on project load (#8074)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8316"
     },
     "8317": {
       "author": "BIMvoice",
@@ -1899,15 +1871,6 @@
       "title": "Bonsai: numpad decimal key inserts a dot in modal inputs, matching Blender (#8262)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8358"
     },
-    "8360": {
-      "author": "BIMvoice",
-      "branch": "fix-alignment-fallback-unit-scale",
-      "head": "e8438ff",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "util.placement: fix double unit scaling of linear placement fallback position",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8360"
-    },
     "8361": {
       "author": "BIMvoice",
       "branch": "fix-5221-schedule-font-scope",
@@ -1982,15 +1945,6 @@
       "title": "Add ifcopenshell.diagnostics: report the entity most likely behind a crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8378"
     },
-    "8379": {
-      "author": "BIMvoice",
-      "branch": "fix-7102-wizard-metric-units",
-      "head": "2ef764c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "fix(bonsai): stop unusual metric length units from crashing format_distance",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8379"
-    },
     "8380": {
       "author": "BIMvoice",
       "branch": "fix-8053-slab-qto-depth-width",
@@ -2026,9 +1980,8 @@
     "8385": {
       "author": "BIMvoice",
       "branch": "fix-7487-type-mapped-duplicate",
-      "head": "d90c6d1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "d76b9bf",
+      "status": "merged",
       "title": "Bonsai: fix wrong duplicated geometry for type mapped (ArchiCAD) elements (#7487)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8385"
     },
@@ -2172,9 +2125,8 @@
     "8410": {
       "author": "BIMvoice",
       "branch": "fix-7331-work",
-      "head": "919ddd2",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "37713be",
+      "status": "merged",
       "title": "Fix #7331: derive cost item quantities from IfcSpace base quantities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8410"
     },
@@ -2365,9 +2317,8 @@
     "8441": {
       "author": "BIMvoice",
       "branch": "fix-6249-mep-start-port",
-      "head": "e687f5d",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "3002811",
+      "status": "merged",
       "title": "Bonsai: bind the MEP fitting start port even when no port is at the origin (#6249)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8441"
     },
@@ -2390,9 +2341,8 @@
     "8444": {
       "author": "BIMvoice",
       "branch": "fix-reimport-multiprocessing-toggle",
-      "head": "3b06b51",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "045bb39",
+      "status": "merged",
       "title": "Bonsai: honour the CPU Multiprocessing toggle on representation reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8444"
     },
@@ -2599,9 +2549,8 @@
     "8477": {
       "author": "BIMvoice",
       "branch": "bv-4130-svg-hlr-guard",
-      "head": "441927f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "26fff69",
+      "status": "skipped_conflict",
       "title": "serializers: don't abort the whole SVG drawing when one element's HLR fails (#4130, #3849)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8477"
     },
@@ -2672,9 +2621,8 @@
     "8491": {
       "author": "BIMvoice",
       "branch": "bv-5186-boolean-2d-fallback",
-      "head": "6a3efec",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "7763096",
+      "status": "merged",
       "title": "ifcgeom: recover 2D-optimized boolean cuts dropped on retry (#5186)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8491"
     },
@@ -2689,9 +2637,8 @@
     "8494": {
       "author": "BIMvoice",
       "branch": "fix-1015-nonmanifold-cut",
-      "head": "b2ebe8f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "b394b59",
+      "status": "skipped_conflict",
       "title": "Keep valid non-manifold subtraction instead of dropping the cut (#1015)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8494"
     },
@@ -2726,15 +2673,6 @@
       "status": "merged",
       "title": "Bonsai: pick the true sweep edge in detect_extrusion_edge (#5898)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8501"
-    },
-    "8502": {
-      "author": "BIMvoice",
-      "branch": "bv-1367-asym-ishape",
-      "head": "17926d0",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Fix #1367: map IfcAsymmetricIShapeProfileDef in IFC4+",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8502"
     },
     "8503": {
       "author": "BIMvoice",
@@ -2899,9 +2837,8 @@
     "8527": {
       "author": "BIMvoice",
       "branch": "ship-4399-toposort",
-      "head": "f60292a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "b665848",
+      "status": "merged",
       "title": "ifcpatch: use stdlib graphlib for Optimise, fixing missing toposort in Bonsai (#4399)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8527"
     },
@@ -2940,9 +2877,8 @@
     "8532": {
       "author": "BIMvoice",
       "branch": "ship-5635-drawing-name",
-      "head": "8ef78c5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "69d12aa",
+      "status": "merged",
       "title": "Bonsai: uniquify drawing name on rename so SVGs don't overwrite each other (#5635)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8532"
     },
@@ -3134,9 +3070,8 @@
     "8562": {
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-daily-checkout-path",
-      "head": "82b6ac9",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "e841def",
+      "status": "merged",
       "title": "Fix ci-bonsai-daily: avoid tripled repo path breaking BDD link_ifc tests",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8562"
     },
@@ -3372,15 +3307,6 @@
       "title": "cmake/CMakeLists.txt: fix for dependencies",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8604"
     },
-    "8606": {
-      "author": "BIMvoice",
-      "branch": "fix/streaming-propset-fixture",
-      "head": "8aedda3",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Fix property set fixture schema",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8606"
-    },
     "8607": {
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
@@ -3520,9 +3446,8 @@
     "8629": {
       "author": "BIMvoice",
       "branch": "fix-8625-cost-value-unit-basis",
-      "head": "cf5a4de",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "d142d92",
+      "status": "merged",
       "title": "bonsai: extend each cost value by its own unit basis before summing (#8625)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8629"
     },
@@ -3606,14 +3531,6 @@
       "title": "Bonsai: guard import_item against a None geometry shape",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8640"
     },
-    "8641": {
-      "author": "BIMvoice",
-      "branch": "fix-7029-wall-footprint-area-qto",
-      "head": "4a7a627",
-      "status": "merged",
-      "title": "ifc5d: wire up GrossFootprintArea/NetFootprintArea for IfcWall QTO",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8641"
-    },
     "8642": {
       "author": "BIMvoice",
       "branch": "fix-6134-annotation-text-refresh",
@@ -3655,15 +3572,6 @@
       "title": "Fix IfcCovering Qto_CoveringBaseQuantities mismatch between calculators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8646"
     },
-    "8647": {
-      "author": "BIMvoice",
-      "branch": "fix-ci-ifc4x3-schema",
-      "head": "baddc0f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Fix CI: IFC4X3 schema resolution and process-type assignment false positives",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8647"
-    },
     "8648": {
       "author": "BIMvoice",
       "branch": "fix-2052-shape-aspects",
@@ -3675,9 +3583,8 @@
     "8649": {
       "author": "BIMvoice",
       "branch": "fix-ci-streaming-wallopening-bsdd",
-      "head": "1255edc",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "2b5834f",
+      "status": "merged",
       "title": "ci: fix bSDD 429 rate limiting and restore ColumnPSetsOfSets.ifc schema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8649"
     },
@@ -3864,14 +3771,6 @@
       "status": "skipped_conflict",
       "title": "ifcparse: store integer attribute values as int64_t to allow out-of-range timestamps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8683"
-    },
-    "8684": {
-      "author": "BIMvoice",
-      "branch": "fix-4443-spatial-qto-shortcut",
-      "head": "98ad04a",
-      "status": "merged",
-      "title": "Bonsai: wire Shift+Q quantity take off hotkey into Spatial tool",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8684"
     },
     "8685": {
       "author": "BIMvoice",
@@ -4263,7 +4162,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4287,7 +4186,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-8666-8667-append-asset",
       "head": "9d48eeb",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "project.append_asset: reject GlobalId matches across incompatible classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8756"
     },
@@ -4306,14 +4206,6 @@
       "status": "skipped_conflict",
       "title": "Bonsai: wire Shift+K to split pipe/duct segments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8758"
-    },
-    "8759": {
-      "author": "BIMvoice",
-      "branch": "poc-134-vertex-kernel",
-      "head": "27bad70",
-      "status": "skipped_draft",
-      "title": "[Concept] ifcgeom: OpenCascade kernel support for point/vertex representations",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8759"
     },
     "8760": {
       "author": "sboddy",
