@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 31,
-    "merged": 446,
-    "skipped_conflict": 86,
-    "skipped_draft": 49,
-    "total": 612
+    "failed": 37,
+    "merged": 441,
+    "skipped_conflict": 84,
+    "skipped_draft": 52,
+    "total": 614
   },
-  "generated_at": "2026-07-23T15:02:45Z",
+  "generated_at": "2026-07-23T17:02:51Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -660,7 +660,8 @@
       "author": "dipayansardar73-decode",
       "branch": "fix-collector-none-spatial-selector-7861-7806",
       "head": "712da05",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "feat: fix Bonsai collector crash (#7861) and add spatial_reference selector key (#7806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7872"
     },
@@ -2610,7 +2611,8 @@
       "author": "BIMvoice",
       "branch": "fix-1015-nonmanifold-cut",
       "head": "b394b59",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Keep valid non-manifold subtraction instead of dropping the cut (#1015)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8494"
     },
@@ -3554,7 +3556,8 @@
       "author": "BIMvoice",
       "branch": "fix-3995-curtain-wall-boundary",
       "head": "0593a84",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: let standalone IfcCurtainWall bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8653"
     },
@@ -4083,7 +4086,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4123,7 +4126,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-3941-mep-split-hotkey",
       "head": "ab1a215",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: wire Shift+K to split pipe/duct segments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8758"
     },
@@ -4261,7 +4265,8 @@
       "author": "BIMvoice",
       "branch": "fix-7413-builddeps-exit",
       "head": "99350b0",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "win: do not close the calling console when build-deps.cmd finishes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8782"
     },
@@ -4501,7 +4506,7 @@
       "author": "BIMvoice",
       "branch": "7288-addon-prefs-hardening",
       "head": "fffcf20",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fail with an actionable error instead of a bare KeyError when addon preferences can't be found",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8815"
     },
@@ -4629,7 +4634,8 @@
       "author": "BIMvoice",
       "branch": "ifcsverchok-6741-api-drift",
       "head": "6ec59cc",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcsverchok: recognize sverchok-master installs and fix stale unassign API calls (#6741)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8838"
     },
@@ -4773,7 +4779,7 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/immutable-5.1.9",
       "head": "b037777",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "build(deps-dev): bump immutable from 5.1.5 to 5.1.9 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8863"
     },
@@ -4861,7 +4867,7 @@
       "author": "BIMvoice",
       "branch": "5157-subcontract-physical-quantities",
       "head": "9e40d73",
-      "status": "merged",
+      "status": "skipped_draft",
       "title": "resource: allow physical base quantities on subcontract resources",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8877"
     },
@@ -4901,7 +4907,7 @@
       "author": "BIMvoice",
       "branch": "8570-annotation-boundary",
       "head": "18a7691",
-      "status": "merged",
+      "status": "skipped_draft",
       "title": "ifc5d: annotation boundary calculator for space areas (#8570 prototype)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8883"
     },
@@ -4936,6 +4942,22 @@
       "status": "merged",
       "title": "Bonsai: load projects with a nameless LENGTHUNIT instead of crashing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8889"
+    },
+    "8890": {
+      "author": "BIMvoice",
+      "branch": "8850-relating-type-enum",
+      "head": "00c3e83",
+      "status": "merged",
+      "title": "Bonsai: guard stale relating_type_id enum assignment in set/duplicate type",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
+    },
+    "8891": {
+      "author": "sboddy",
+      "branch": "fix-3742-coplanar-bonsai-projection_2_sjb",
+      "head": "44a8451",
+      "status": "skipped_draft",
+      "title": "Fix contained-pair and multi-neighbour cases in remove_coplanar_boundary_lines",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8891"
     }
   },
   "schema": 1

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 32,
-    "merged": 444,
-    "skipped_conflict": 88,
-    "skipped_draft": 50,
+    "failed": 31,
+    "merged": 437,
+    "skipped_conflict": 94,
+    "skipped_draft": 52,
     "total": 614
   },
-  "generated_at": "2026-07-23T16:01:43Z",
+  "generated_at": "2026-07-23T17:31:32Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -545,8 +545,7 @@
       "author": "paragforwork",
       "branch": "new-profiler",
       "head": "1acce39",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "Replaced the old profiler function with the ifcopenshell.util profiler",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7813"
     },
@@ -637,7 +636,7 @@
       "author": "dipayansardar73-decode",
       "branch": "refactor-profiler-drawing-7328",
       "head": "7d27a2b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Refactor: Use ifcopenshell.util.profiler.Profiler in drawing operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7869"
     },
@@ -661,7 +660,7 @@
       "author": "dipayansardar73-decode",
       "branch": "fix-collector-none-spatial-selector-7861-7806",
       "head": "712da05",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "feat: fix Bonsai collector crash (#7861) and add spatial_reference selector key (#7806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7872"
     },
@@ -867,7 +866,7 @@
       "author": "c-mellueh",
       "branch": "use-get_class_properties-instead-of-get_class",
       "head": "8b7348a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Use get class properties instead of get class",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7986"
     },
@@ -1169,7 +1168,7 @@
       "author": "theoryshaw",
       "branch": "debug-drawing-faster-failure-search",
       "head": "9283d86",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Debug drawing faster failure search",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8228"
     },
@@ -1299,7 +1298,7 @@
       "author": "BIMvoice",
       "branch": "feat/cost-total-applied-value-5912",
       "head": "c06fda0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.cost: add calculate_total_applied_value (#5912)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8266"
     },
@@ -1435,7 +1434,7 @@
       "author": "BIMvoice",
       "branch": "fix-bsdd-ratelimit-properties-endpoint-7985",
       "head": "18e81c5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fetch bSDD class properties from the properties endpoint (#7985)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8290"
     },
@@ -1659,7 +1658,7 @@
       "author": "BIMvoice",
       "branch": "qto-segment-length-from-geometry",
       "head": "a1c7612",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
     },
@@ -1979,7 +1978,7 @@
       "author": "BIMvoice",
       "branch": "fix-4537-door-window-attribute-qto",
       "head": "e423d72",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Quantify doors and windows from IFC attributes on both take-off engines (supersedes #4537)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8389"
     },
@@ -2931,7 +2930,7 @@
       "author": "BIMvoice",
       "branch": "ship-6807-geomset-delete",
       "head": "58dc1f3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: delete representation items nested in an IfcGeometricSet (#6807)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8542"
     },
@@ -3915,7 +3914,7 @@
       "author": "BIMvoice",
       "branch": "fix-8049-svg-degenerate-cross-product",
       "head": "886f379",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcgeom: avoid degenerate cross product in SvgSerializer for vertical section-line curves",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8724"
     },
@@ -3995,7 +3994,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7458-cpu-feature-warning",
       "head": "3325a7b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: warn before a CPU without AVX2 crashes the geometry backend",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8737"
     },
@@ -4100,7 +4099,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3302-mirror-joins",
       "head": "3f8fa0a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: resync mirrored walls' openings so voids follow their door/window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
     },
@@ -4366,7 +4365,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6591-general-item-deletion",
       "head": "2138b07",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: generalise representation item deletion to nested items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8798"
     },
@@ -4502,7 +4501,7 @@
       "author": "BIMvoice",
       "branch": "7288-addon-prefs-hardening",
       "head": "fffcf20",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fail with an actionable error instead of a bare KeyError when addon preferences can't be found",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8815"
     },
@@ -4630,7 +4629,7 @@
       "author": "BIMvoice",
       "branch": "ifcsverchok-6741-api-drift",
       "head": "6ec59cc",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcsverchok: recognize sverchok-master installs and fix stale unassign API calls (#6741)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8838"
     },
@@ -4790,7 +4789,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8865-mixed-install-guard",
       "head": "b829fbe",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: self-repair stale bundled wheels at startup (#8865)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8867"
     },
@@ -4862,7 +4861,7 @@
       "author": "BIMvoice",
       "branch": "5157-subcontract-physical-quantities",
       "head": "9e40d73",
-      "status": "merged",
+      "status": "skipped_draft",
       "title": "resource: allow physical base quantities on subcontract resources",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8877"
     },
@@ -4902,7 +4901,7 @@
       "author": "BIMvoice",
       "branch": "8570-annotation-boundary",
       "head": "18a7691",
-      "status": "merged",
+      "status": "skipped_draft",
       "title": "ifc5d: annotation boundary calculator for space areas (#8570 prototype)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8883"
     },
