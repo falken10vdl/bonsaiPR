@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 31,
-    "merged": 443,
+    "merged": 446,
     "skipped_conflict": 86,
     "skipped_draft": 49,
-    "total": 609
+    "total": 612
   },
-  "generated_at": "2026-07-23T13:02:57Z",
+  "generated_at": "2026-07-23T15:02:45Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4912,6 +4912,30 @@
       "status": "skipped_conflict",
       "title": "Bonsai: carry diameter on distribution ports and connect two ports with a segment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8884"
+    },
+    "8886": {
+      "author": "BIMvoice",
+      "branch": "7030-backwards-fitting",
+      "head": "da91d57",
+      "status": "merged",
+      "title": "Bonsai: orient MEP bend fittings correctly between mitred run segments",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8886"
+    },
+    "8888": {
+      "author": "BIMvoice",
+      "branch": "4708-annotation-text-literal-decorator",
+      "head": "3e65c58",
+      "status": "merged",
+      "title": "Bonsai: render text decorators for foreign-authored annotations with IfcTextLiteral",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8888"
+    },
+    "8889": {
+      "author": "BIMvoice",
+      "branch": "8885-unit-name-guard",
+      "head": "da0a315",
+      "status": "merged",
+      "title": "Bonsai: load projects with a nameless LENGTHUNIT instead of crashing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8889"
     }
   },
   "schema": 1

@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 31,
-    "merged": 435,
-    "skipped_conflict": 96,
+    "merged": 436,
+    "skipped_conflict": 97,
     "skipped_draft": 49,
-    "total": 611
+    "total": 613
   },
-  "generated_at": "2026-07-23T13:31:29Z",
+  "generated_at": "2026-07-23T15:31:44Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1722,7 +1722,7 @@
       "author": "BIMvoice",
       "branch": "fix-4606-mixed-repr",
       "head": "2979c2c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: import representations that mix polygons and curves (#4606)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8340"
     },
@@ -4921,13 +4921,29 @@
       "title": "Bonsai: orient MEP bend fittings correctly between mitred run segments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8886"
     },
-    "8887": {
-      "author": "carlopav",
-      "branch": "fix/cost-copy-schedule-item-leak",
-      "head": "498c2dd",
+    "8888": {
+      "author": "BIMvoice",
+      "branch": "4708-annotation-text-literal-decorator",
+      "head": "3e65c58",
       "status": "merged",
-      "title": "cost: don't leave copied cost items in the copied schedule (#8851)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8887"
+      "title": "Bonsai: render text decorators for foreign-authored annotations with IfcTextLiteral",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8888"
+    },
+    "8889": {
+      "author": "BIMvoice",
+      "branch": "8885-unit-name-guard",
+      "head": "da0a315",
+      "status": "merged",
+      "title": "Bonsai: load projects with a nameless LENGTHUNIT instead of crashing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8889"
+    },
+    "8890": {
+      "author": "BIMvoice",
+      "branch": "8850-relating-type-enum",
+      "head": "00c3e83",
+      "status": "merged",
+      "title": "Bonsai: guard stale relating_type_id enum assignment in set/duplicate type",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
     }
   },
   "schema": 1

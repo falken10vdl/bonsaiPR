@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 31,
-    "merged": 443,
-    "skipped_conflict": 89,
-    "skipped_draft": 49,
-    "total": 612
+    "failed": 32,
+    "merged": 444,
+    "skipped_conflict": 88,
+    "skipped_draft": 50,
+    "total": 614
   },
-  "generated_at": "2026-07-23T14:00:44Z",
+  "generated_at": "2026-07-23T16:01:43Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -545,7 +545,8 @@
       "author": "paragforwork",
       "branch": "new-profiler",
       "head": "1acce39",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Replaced the old profiler function with the ifcopenshell.util profiler",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7813"
     },
@@ -636,7 +637,7 @@
       "author": "dipayansardar73-decode",
       "branch": "refactor-profiler-drawing-7328",
       "head": "7d27a2b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Refactor: Use ifcopenshell.util.profiler.Profiler in drawing operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7869"
     },
@@ -660,7 +661,7 @@
       "author": "dipayansardar73-decode",
       "branch": "fix-collector-none-spatial-selector-7861-7806",
       "head": "712da05",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "feat: fix Bonsai collector crash (#7861) and add spatial_reference selector key (#7806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7872"
     },
@@ -866,7 +867,7 @@
       "author": "c-mellueh",
       "branch": "use-get_class_properties-instead-of-get_class",
       "head": "8b7348a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Use get class properties instead of get class",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7986"
     },
@@ -1168,7 +1169,7 @@
       "author": "theoryshaw",
       "branch": "debug-drawing-faster-failure-search",
       "head": "9283d86",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Debug drawing faster failure search",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8228"
     },
@@ -1434,7 +1435,7 @@
       "author": "BIMvoice",
       "branch": "fix-bsdd-ratelimit-properties-endpoint-7985",
       "head": "18e81c5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fetch bSDD class properties from the properties endpoint (#7985)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8290"
     },
@@ -4932,10 +4933,26 @@
     "8889": {
       "author": "BIMvoice",
       "branch": "8885-unit-name-guard",
-      "head": "2d77005",
+      "head": "da0a315",
       "status": "merged",
       "title": "Bonsai: load projects with a nameless LENGTHUNIT instead of crashing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8889"
+    },
+    "8890": {
+      "author": "BIMvoice",
+      "branch": "8850-relating-type-enum",
+      "head": "00c3e83",
+      "status": "merged",
+      "title": "Bonsai: guard stale relating_type_id enum assignment in set/duplicate type",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
+    },
+    "8891": {
+      "author": "sboddy",
+      "branch": "fix-3742-coplanar-bonsai-projection_2_sjb",
+      "head": "44a8451",
+      "status": "skipped_draft",
+      "title": "Fix contained-pair and multi-neighbour cases in remove_coplanar_boundary_lines",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8891"
     }
   },
   "schema": 1
