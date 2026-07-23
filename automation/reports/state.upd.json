@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 31,
-    "merged": 440,
+    "merged": 443,
     "skipped_conflict": 89,
     "skipped_draft": 49,
-    "total": 609
+    "total": 612
   },
-  "generated_at": "2026-07-23T12:00:00Z",
+  "generated_at": "2026-07-23T14:00:44Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -2530,7 +2530,7 @@
       "author": "BIMvoice",
       "branch": "bv-7835-examples-build-convert",
       "head": "6b84ff0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "build: decouple the OpenCascade examples from BUILD_CONVERT (#7835)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8478"
     },
@@ -3022,14 +3022,6 @@
       "title": "Fix ci-bonsai-daily: get_linked_element_geom_slice hidden-face index space",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8560"
     },
-    "8561": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-test-blender-debug-key",
-      "head": "460d57b",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily: expect bonsai_git_branch key in TestGetDebugInfo",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8561"
-    },
     "8562": {
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-daily-checkout-path",
@@ -3037,14 +3029,6 @@
       "status": "merged",
       "title": "Fix ci-bonsai-daily: avoid tripled repo path breaking BDD link_ifc tests",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8562"
-    },
-    "8563": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-surveyor-dead-zrotation",
-      "head": "0ca1d80",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily: drop never-wired Surveyor z-rotation scaffolding",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8563"
     },
     "8565": {
       "author": "BIMvoice",
@@ -4653,7 +4637,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-mep-bend-flow-arrow",
       "head": "07b1927",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: draw MEP flow arrows through bend fittings along the bend, not the chord",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8839"
     },
@@ -4912,6 +4896,46 @@
       "status": "merged",
       "title": "Bonsai: add a display length unit preference (#6400)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8881"
+    },
+    "8883": {
+      "author": "BIMvoice",
+      "branch": "8570-annotation-boundary",
+      "head": "18a7691",
+      "status": "merged",
+      "title": "ifc5d: annotation boundary calculator for space areas (#8570 prototype)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8883"
+    },
+    "8884": {
+      "author": "BIMvoice",
+      "branch": "8085-mep-port-points",
+      "head": "7a48fb0",
+      "status": "merged",
+      "title": "Bonsai: carry diameter on distribution ports and connect two ports with a segment",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8884"
+    },
+    "8886": {
+      "author": "BIMvoice",
+      "branch": "7030-backwards-fitting",
+      "head": "da91d57",
+      "status": "merged",
+      "title": "Bonsai: orient MEP bend fittings correctly between mitred run segments",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8886"
+    },
+    "8888": {
+      "author": "BIMvoice",
+      "branch": "4708-annotation-text-literal-decorator",
+      "head": "3e65c58",
+      "status": "merged",
+      "title": "Bonsai: render text decorators for foreign-authored annotations with IfcTextLiteral",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8888"
+    },
+    "8889": {
+      "author": "BIMvoice",
+      "branch": "8885-unit-name-guard",
+      "head": "2d77005",
+      "status": "merged",
+      "title": "Bonsai: load projects with a nameless LENGTHUNIT instead of crashing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8889"
     }
   },
   "schema": 1

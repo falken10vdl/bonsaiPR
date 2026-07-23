@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 37,
-    "merged": 444,
-    "skipped_conflict": 79,
+    "failed": 31,
+    "merged": 443,
+    "skipped_conflict": 86,
     "skipped_draft": 49,
     "total": 609
   },
-  "generated_at": "2026-07-23T11:02:30Z",
+  "generated_at": "2026-07-23T13:02:57Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1657,9 +1657,8 @@
     "8332": {
       "author": "BIMvoice",
       "branch": "qto-segment-length-from-geometry",
-      "head": "bb616c3",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "a1c7612",
+      "status": "merged",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
     },
@@ -1906,18 +1905,16 @@
     "8376": {
       "author": "BIMvoice",
       "branch": "fix-3971-svg-roof-v2",
-      "head": "1105be6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "4de42e8",
+      "status": "merged",
       "title": "svg: guard HLR stages so one failing element or projection does not abort the drawing (#3971)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8376"
     },
     "8377": {
       "author": "BIMvoice",
       "branch": "fix-8106-taxonomy-sweep-approx",
-      "head": "a6ca663",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "9200ce0",
+      "status": "merged",
       "title": "Approximate swept solids in the taxonomy layer so cgal stops dropping IfcSweptDiskSolid (#8106)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8377"
     },
@@ -1980,9 +1977,8 @@
     "8389": {
       "author": "BIMvoice",
       "branch": "fix-4537-door-window-attribute-qto",
-      "head": "6564879",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "e423d72",
+      "status": "skipped_conflict",
       "title": "Quantify doors and windows from IFC attributes on both take-off engines (supersedes #4537)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8389"
     },
@@ -2278,7 +2274,7 @@
       "author": "BIMvoice",
       "branch": "fix-7162-poly-hlr-deflection",
       "head": "4bf23fb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "serializers: use mesher-linear-deflection for polygonal HLR drawings (#7162)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8439"
     },
@@ -3026,14 +3022,6 @@
       "title": "Fix ci-bonsai-daily: get_linked_element_geom_slice hidden-face index space",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8560"
     },
-    "8561": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-test-blender-debug-key",
-      "head": "460d57b",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily: expect bonsai_git_branch key in TestGetDebugInfo",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8561"
-    },
     "8562": {
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-daily-checkout-path",
@@ -3041,14 +3029,6 @@
       "status": "merged",
       "title": "Fix ci-bonsai-daily: avoid tripled repo path breaking BDD link_ifc tests",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8562"
-    },
-    "8563": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-surveyor-dead-zrotation",
-      "head": "0ca1d80",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily: drop never-wired Surveyor z-rotation scaffolding",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8563"
     },
     "8565": {
       "author": "BIMvoice",
@@ -3533,9 +3513,8 @@
     "8646": {
       "author": "BIMvoice",
       "branch": "fix-6728-covering-qto-mismatch",
-      "head": "69d57a5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "1bcd7d2",
+      "status": "merged",
       "title": "Fix IfcCovering Qto_CoveringBaseQuantities mismatch between calculators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8646"
     },
@@ -3723,22 +3702,6 @@
       "title": "Bonsai: link external SVG/DXF files as snappable reference geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8681"
     },
-    "8682": {
-      "author": "BIMvoice",
-      "branch": "fix-431-text-literal-geom",
-      "head": "80d30b1",
-      "status": "merged",
-      "title": "ifcgeom: skip text literals with a warning instead of a conversion error",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8682"
-    },
-    "8683": {
-      "author": "BIMvoice",
-      "branch": "fix-3058-int64-attr",
-      "head": "5b9c9c2",
-      "status": "skipped_conflict",
-      "title": "ifcparse: store integer attribute values as int64_t to allow out-of-range timestamps",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8683"
-    },
     "8685": {
       "author": "BIMvoice",
       "branch": "fix-8631-vs2017-msbuild-detect",
@@ -3770,14 +3733,6 @@
       "status": "merged",
       "title": "Bonsai: fix duplicate xmlns:xlink in drawings that use SVG patterns with <use> elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8688"
-    },
-    "8690": {
-      "author": "BIMvoice",
-      "branch": "bv-2992-brep-placement",
-      "head": "b4fce1f",
-      "status": "merged",
-      "title": "Fix serialize_shape() dropping the outermost shape's placement",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8690"
     },
     "8692": {
       "author": "BIMvoice",
@@ -3990,9 +3945,8 @@
     "8728": {
       "author": "BIMvoice",
       "branch": "fix-7462-bulk-add-pset",
-      "head": "8a055d3",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "9ef27ad",
+      "status": "skipped_conflict",
       "title": "Bonsai: apply a new Pset/Qto to the whole selection, not just the active object",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8728"
     },
@@ -4267,7 +4221,7 @@
       "author": "BIMvoice",
       "branch": "fix-2639-bbox-substitution",
       "head": "a643bd9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcgeom: add bbox-substitution-threshold to substitute overly dense geometry with bounding boxes (#2639)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8773"
     },
@@ -4918,6 +4872,46 @@
       "status": "skipped_conflict",
       "title": "Bonsai tests: make boolean.feature survive STEP id drift",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8878"
+    },
+    "8879": {
+      "author": "BIMvoice",
+      "branch": "7472-null-opening-reps",
+      "head": "22a9774",
+      "status": "skipped_conflict",
+      "title": "Bonsai: exclude status-filtered openings from boolean cuts (in-memory)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8879"
+    },
+    "8880": {
+      "author": "BIMvoice",
+      "branch": "8399-door-flip-ux",
+      "head": "9e2083d",
+      "status": "skipped_conflict",
+      "title": "Bonsai: confirm external door flips and sync type OperationType (#8399)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8880"
+    },
+    "8881": {
+      "author": "BIMvoice",
+      "branch": "6400-display-units-length",
+      "head": "c2f4fe7",
+      "status": "skipped_conflict",
+      "title": "Bonsai: add a display length unit preference (#6400)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8881"
+    },
+    "8883": {
+      "author": "BIMvoice",
+      "branch": "8570-annotation-boundary",
+      "head": "18a7691",
+      "status": "merged",
+      "title": "ifc5d: annotation boundary calculator for space areas (#8570 prototype)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8883"
+    },
+    "8884": {
+      "author": "BIMvoice",
+      "branch": "8085-mep-port-points",
+      "head": "7a48fb0",
+      "status": "skipped_conflict",
+      "title": "Bonsai: carry diameter on distribution ports and connect two ports with a segment",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8884"
     }
   },
   "schema": 1
