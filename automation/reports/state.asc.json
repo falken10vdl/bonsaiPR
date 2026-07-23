@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 115,
+    "failed": 114,
     "merged": 441,
-    "skipped_conflict": 2,
+    "skipped_conflict": 3,
     "skipped_draft": 48,
     "total": 606
   },
-  "generated_at": "2026-07-23T21:00:54Z",
+  "generated_at": "2026-07-23T23:00:52Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1086,8 +1086,7 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/multi-cf99e4b298",
       "head": "6e1efe5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bump vite, @sveltejs/vite-plugin-svelte and @tailwindcss/vite in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8182"
     },
