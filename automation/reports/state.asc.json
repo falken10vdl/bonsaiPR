@@ -3,11 +3,11 @@
   "counts": {
     "failed": 37,
     "merged": 444,
-    "skipped_conflict": 78,
+    "skipped_conflict": 79,
     "skipped_draft": 49,
-    "total": 608
+    "total": 609
   },
-  "generated_at": "2026-07-23T09:02:30Z",
+  "generated_at": "2026-07-23T11:02:30Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3077,7 +3077,7 @@
     "8571": {
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-assign-class-view-layer-and-material-usage",
-      "head": "8e2cb4c",
+      "head": "59ac885",
       "status": "merged",
       "title": "Fix ci-bonsai-daily: assign_class drops active_object; assign_material usage type",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8571"
@@ -4450,7 +4450,7 @@
     "8803": {
       "author": "Bartok9",
       "branch": "sera/docs-linux-eigen-dep",
-      "head": "3d5a394",
+      "head": "03b83f0",
       "status": "merged",
       "title": "docs: add Eigen to Linux install deps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
@@ -4910,6 +4910,14 @@
       "status": "merged",
       "title": "resource: allow physical base quantities on subcontract resources",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8877"
+    },
+    "8878": {
+      "author": "BIMvoice",
+      "branch": "ci-daily-boolean-step-ids",
+      "head": "07fa6c5",
+      "status": "skipped_conflict",
+      "title": "Bonsai tests: make boolean.feature survive STEP id drift",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8878"
     }
   },
   "schema": 1
