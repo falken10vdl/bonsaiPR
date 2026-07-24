@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 31,
-    "merged": 430,
-    "skipped_conflict": 97,
-    "skipped_draft": 48,
-    "total": 606
+    "failed": 32,
+    "merged": 421,
+    "skipped_conflict": 98,
+    "skipped_draft": 49,
+    "total": 600
   },
-  "generated_at": "2026-07-24T01:29:07Z",
+  "generated_at": "2026-07-24T05:30:26Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -442,14 +442,6 @@
       "status": "merged",
       "title": "Fix JSON formatting in launch.json and add \"justMyCode\":false to allow for breakpoints in Linux",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7769"
-    },
-    "7777": {
-      "author": "theoryshaw",
-      "branch": "fix/select-similar-pset-spaces",
-      "head": "7460037",
-      "status": "merged",
-      "title": "Fix #7774: Fix Select Similar failing on pset names with spaces",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7777"
     },
     "7781": {
       "author": "theoryshaw",
@@ -890,7 +882,7 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/postcss-8.5.13",
       "head": "7d96bc1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bump postcss from 8.5.4 to 8.5.13 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8029"
     },
@@ -2750,14 +2742,6 @@
       "title": "ifcgeom: fall back to unsliced representation when layerset slicing fails (#6607)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8524"
     },
-    "8527": {
-      "author": "BIMvoice",
-      "branch": "ship-4399-toposort",
-      "head": "b665848",
-      "status": "merged",
-      "title": "ifcpatch: use stdlib graphlib for Optimise, fixing missing toposort in Bonsai (#4399)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8527"
-    },
     "8528": {
       "author": "BIMvoice",
       "branch": "ship-3187-select",
@@ -2966,22 +2950,6 @@
       "title": "Fix ci-bonsai-daily: get_linked_element_geom_slice hidden-face index space",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8560"
     },
-    "8562": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-daily-checkout-path",
-      "head": "e841def",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily: avoid tripled repo path breaking BDD link_ifc tests",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8562"
-    },
-    "8565": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-bdd-operatorspy-mep",
-      "head": "9ec6534",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily BDD: OperatorSpy.bl_rna + stale MEP port name",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8565"
-    },
     "8566": {
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-classification-honor-obj-arg",
@@ -2989,14 +2957,6 @@
       "status": "merged",
       "title": "Fix ci-bonsai-daily: classification operators honor their obj argument",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8566"
-    },
-    "8567": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-bsdd-stub-clobber",
-      "head": "a1367c6",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily: get_dictionaries no longer clobbers injected bSDD client",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8567"
     },
     "8571": {
       "author": "BIMvoice",
@@ -3454,22 +3414,6 @@
       "title": "Bonsai: split multi-material profile sets into per-item shape aspects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8648"
     },
-    "8649": {
-      "author": "BIMvoice",
-      "branch": "fix-ci-streaming-wallopening-bsdd",
-      "head": "2b5834f",
-      "status": "merged",
-      "title": "ci: fix bSDD 429 rate limiting and restore ColumnPSetsOfSets.ifc schema",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8649"
-    },
-    "8651": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-choco-blenderbim-rename",
-      "head": "58e2782",
-      "status": "merged",
-      "title": "Fix ci-bonsai-choco: choco_release.py still targets the old choco/blenderbim path",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8651"
-    },
     "8652": {
       "author": "BIMvoice",
       "branch": "fix-3096-git-describe-titleblock",
@@ -3866,7 +3810,8 @@
       "author": "BIMvoice",
       "branch": "fix-7663-item-mode-half-space-selection",
       "head": "bcc355f",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: confine Item Mode half-space cuts to the explicitly selected item",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8727"
     },
@@ -4071,14 +4016,6 @@
       "status": "failed",
       "title": "IfcConvert: port --name-template to ifcviewer-wgpu, convert coverage to pytest",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8764"
-    },
-    "8765": {
-      "author": "BIMvoice",
-      "branch": "docs-3910-cpp-getting-started",
-      "head": "3984bbc",
-      "status": "merged",
-      "title": "docs: cover reading properties/quantities from an element and its type (C++)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8765"
     },
     "8766": {
       "author": "BIMvoice",
@@ -4392,14 +4329,6 @@
       "status": "merged",
       "title": "ifcgeom: keep unopened geometry when opening subtraction throws a non-std::exception",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8811"
-    },
-    "8812": {
-      "author": "BIMvoice",
-      "branch": "replace-element-set-dedup",
-      "head": "92f9dc9",
-      "status": "merged",
-      "title": "ifcopenshell.util.element: dedupe SET-typed attributes in replace_attribute",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8812"
     },
     "8813": {
       "author": "BIMvoice",
@@ -4741,7 +4670,7 @@
       "author": "BIMvoice",
       "branch": "6382-link-surface-features",
       "head": "026e6d1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: show IfcSurfaceFeature in linked models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8872"
     },
@@ -4784,14 +4713,6 @@
       "status": "skipped_draft",
       "title": "resource: allow physical base quantities on subcontract resources",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8877"
-    },
-    "8878": {
-      "author": "BIMvoice",
-      "branch": "ci-daily-boolean-step-ids",
-      "head": "07fa6c5",
-      "status": "merged",
-      "title": "Bonsai tests: make boolean.feature survive STEP id drift",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8878"
     },
     "8879": {
       "author": "BIMvoice",
@@ -4888,6 +4809,38 @@
       "status": "skipped_draft",
       "title": "Coplanar surface boundary lines via a real 2D planar arrangement (alt. to #7908)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8895"
+    },
+    "8896": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/postcss-8.5.22",
+      "head": "9ceea7d",
+      "status": "merged",
+      "title": "build(deps-dev): bump postcss from 8.5.4 to 8.5.22 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8896"
+    },
+    "8897": {
+      "author": "BIMvoice",
+      "branch": "8849-linked-space-visibility",
+      "head": "f234a04",
+      "status": "merged",
+      "title": "Bonsai: exclude IfcSpace from the default linked-model query",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8897"
+    },
+    "8898": {
+      "author": "BIMvoice",
+      "branch": "8893-array-missing-child-guard",
+      "head": "e3586e4",
+      "status": "merged",
+      "title": "Bonsai tests: regression coverage for stale array child GUID during project load (#8893)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8898"
+    },
+    "8899": {
+      "author": "BIMvoice",
+      "branch": "5505-instantiate-aggregated-type",
+      "head": "94a8dc7",
+      "status": "skipped_draft",
+      "title": "ifcopenshell.api.type: instantiate occurrence parts from a typed decomposition",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8899"
     }
   },
   "schema": 1
