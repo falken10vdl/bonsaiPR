@@ -744,6 +744,7 @@ def generate_release_body(
         failed_prs = []
         in_applied_section = False
         in_failed_section = False
+        in_conflict_section = False
         in_skipped_section = False
         current_skip_reason = None
         merge_order = (
@@ -772,18 +773,27 @@ def generate_release_body(
             elif line.startswith("## ✅ Successfully Merged PRs"):
                 in_applied_section = True
                 in_failed_section = False
+                in_conflict_section = False
                 in_skipped_section = False
-            elif line.startswith("## ❌ Failed to Merge PRs"):
+            elif line.startswith("## ❌ Failed to Merge Against Base"):
                 in_applied_section = False
                 in_failed_section = True
+                in_conflict_section = False
+                in_skipped_section = False
+            elif line.startswith("## 🔀 Conflict With Other PRs"):
+                in_applied_section = False
+                in_failed_section = False
+                in_conflict_section = True
                 in_skipped_section = False
             elif line.startswith("## ⚠️ Skipped PRs"):
                 in_applied_section = False
                 in_failed_section = False
+                in_conflict_section = False
                 in_skipped_section = True
             elif line.startswith("## "):
                 in_applied_section = False
                 in_failed_section = False
+                in_conflict_section = False
                 in_skipped_section = False
 
             # New report format uses markdown tables. Parse table rows as PR entries.
@@ -813,7 +823,9 @@ def generate_release_body(
                 commit_cell = None
                 if in_applied_section and len(cells) > 5:
                     commit_cell = cells[5]
-                elif (in_failed_section or in_skipped_section) and len(cells) > 4:
+                elif (
+                    in_failed_section or in_conflict_section or in_skipped_section
+                ) and len(cells) > 4:
                     commit_cell = cells[4]
 
                 last_commit = None
@@ -838,40 +850,44 @@ def generate_release_body(
                     continue
 
                 if in_failed_section:
-                    reason = cells[5] if len(cells) > 5 else None
-                    if reason == "Merges cleanly against base (conflict with other PRs)":
-                        skipped_conflict_prs.append(
-                            {
-                                "line": parsed_line,
-                                "url": pr_url,
-                                "author": pr_author,
-                                "branch": pr_branch,
-                                "last_commit": last_commit,
-                            }
-                        )
-                    else:
-                        # Base commit column is a markdown link [hash](url); pull
-                        # out the bare hash (the renderer rebuilds the link).
-                        base_commit = None
-                        if len(cells) > 7:
-                            _bc_m = re.match(r"\[([0-9a-fA-F]+)\]", cells[7])
-                            base_commit = _bc_m.group(1) if _bc_m else None
-                        failed_prs.append(
-                            {
-                                "line": parsed_line,
-                                "url": pr_url,
-                                "author": pr_author,
-                                "branch": pr_branch,
-                                "reason": reason,
-                                "first_detected": cells[6] if len(cells) > 6 else None,
-                                "base_commit": base_commit,
-                                "conflicting_files": [],
-                                "breaking_commits": [],
-                                # "Broken by" column is pre-rendered markdown in the report
-                                "broken_by": cells[8] if len(cells) > 8 else None,
-                                "last_commit": last_commit,
-                            }
-                        )
+                    # Table columns (Reason column removed; conflict-with-other-PRs
+                    # now live in their own '## 🔀 Conflict With Other PRs' section):
+                    # 0=PR 1=Title 2=Author 3=Branch 4=Last commit
+                    # 5=First detected 6=Base commit 7=Broken by 8=Conflicting files
+                    base_commit = None
+                    if len(cells) > 6:
+                        _bc_m = re.match(r"\[([0-9a-fA-F]+)\]", cells[6])
+                        base_commit = _bc_m.group(1) if _bc_m else None
+                    failed_prs.append(
+                        {
+                            "line": parsed_line,
+                            "url": pr_url,
+                            "author": pr_author,
+                            "branch": pr_branch,
+                            "reason": "Fails to merge against base (problem with PR itself)",
+                            "first_detected": cells[5] if len(cells) > 5 else None,
+                            "base_commit": base_commit,
+                            "conflicting_files": [],
+                            "breaking_commits": [],
+                            # "Broken by" column is pre-rendered markdown in the report
+                            "broken_by": cells[7] if len(cells) > 7 else None,
+                            "last_commit": last_commit,
+                        }
+                    )
+                    continue
+
+                if in_conflict_section:
+                    # Every row here is a PR that merges cleanly against base but
+                    # conflicts with another PR already merged in this release.
+                    skipped_conflict_prs.append(
+                        {
+                            "line": parsed_line,
+                            "url": pr_url,
+                            "author": pr_author,
+                            "branch": pr_branch,
+                            "last_commit": last_commit,
+                        }
+                    )
                     continue
 
                 if in_skipped_section:

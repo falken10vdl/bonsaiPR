@@ -198,8 +198,9 @@ def _pr(num, title, author, sha, reason=None):
 def scenario(n):
     """Return (merged, failed_table, skipped_table) PR lists for scenario n.
 
-    failed_table holds real failures + conflict-with-other-PRs (both live in the
-    report's '## ❌ Failed to Merge PRs' section, distinguished by reason).
+    failed_table holds real failures + conflict-with-other-PRs; write_report()
+    splits them into the report's '## ❌ Failed to Merge Against Base' and
+    '## 🔀 Conflict With Other PRs' sections (by reason).
     skipped_table holds drafts (report's '## ⚠️ Skipped PRs' section).
     """
     R_REAL = "Fails to merge against base (problem with PR itself)"
@@ -254,13 +255,27 @@ def write_report(path, version, ts10, merged, failed, skipped, order="ascending"
         rate = round(100 * len(merged) / total, 1) if total else 0
         f.write(f"- Success Rate: {rate}%\n\n")
 
-        if failed:
-            f.write(f"## ❌ Failed to Merge PRs ({len(failed)})\n\n")
-            f.write("| PR | Title | Author | Branch | Last commit | Reason | First detected | Base commit | Broken by | Conflicting files |\n")
-            f.write("|----|-------|--------|--------|-------------|--------|----------------|-------------|-----------|--------------------|\n")
-            for p in failed:
+        # The single failed table was split in two (Reason column dropped): real
+        # base failures vs PRs that merge cleanly but conflict with another PR.
+        base_failed = [p for p in failed if "conflict with other PRs" not in (p["reason"] or "")]
+        conflict_failed = [p for p in failed if "conflict with other PRs" in (p["reason"] or "")]
+        if base_failed:
+            f.write(f"## ❌ Failed to Merge Against Base ({len(base_failed)})\n\n")
+            f.write("| PR | Title | Author | Branch | Last commit | First detected | Base commit | Broken by | Conflicting files |\n")
+            f.write("|----|-------|--------|--------|-------------|----------------|-------------|-----------|--------------------|\n")
+            for p in base_failed:
                 f.write(f"| [#{p['number']}]({p['html_url']}) | {p['title']} | {p['author']} | "
-                        f"{p['branch']} | {_commit_cell(p['sha'])} | {p['reason']} |  |  |  |  |\n")
+                        f"{p['branch']} | {_commit_cell(p['sha'])} |  |  |  |  |\n")
+            f.write("\n")
+        if conflict_failed:
+            f.write(f"## 🔀 Conflict With Other PRs ({len(conflict_failed)})\n\n")
+            f.write("These PRs merge cleanly against the base on their own, but conflict with "
+                    "another PR already merged in this release.\n\n")
+            f.write("| PR | Title | Author | Branch | Last commit | First detected | Base commit |\n")
+            f.write("|----|-------|--------|--------|-------------|----------------|-------------|\n")
+            for p in conflict_failed:
+                f.write(f"| [#{p['number']}]({p['html_url']}) | {p['title']} | {p['author']} | "
+                        f"{p['branch']} | {_commit_cell(p['sha'])} |  |  |\n")
             f.write("\n")
         if skipped:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped)})\n\n")
@@ -362,7 +377,7 @@ def cmd_run(n):
 # Verify a release body via the GitHub API
 # --------------------------------------------------------------------------- #
 
-def verify_release(tag, expect_delta):
+def verify_release(tag, expect_delta, expect_failed=None, expect_conflict=None):
     print(f"● Verify release {tag}  (expect delta: {expect_delta})")
     r = _gh_api(f"/releases/tags/{tag}")
     if r.status_code != 200:
@@ -376,6 +391,15 @@ def verify_release(tag, expect_delta):
     checks = []
     checks.append(("body has '📄 Full per-PR breakdown'",
                    "📄 Full per-PR breakdown" in body))
+    # These two counts come from 02_upload parsing the split failed/conflict
+    # tables in the report — they go to 0 if the section parser breaks.
+    if expect_failed is not None:
+        checks.append((f"Build Statistics: Failed PRs = {expect_failed}",
+                       f"- **Failed PRs**: {expect_failed}\n" in body))
+    if expect_conflict is not None:
+        checks.append(
+            (f"Build Statistics: Skipped (conflict w/ other PRs) = {expect_conflict}",
+             f"- **Skipped (conflict with other PRs)**: {expect_conflict}\n" in body))
     checks.append(("body no longer contains the big merged TABLE header",
                    "| PR | Branch | Title | Author | Last commit |" not in body))
     checks.append(("README asset uploaded", readme_asset is not None))
@@ -404,9 +428,11 @@ def cmd_verify():
     st = _load_state()
     ok = True
     if "scenario1" in st:
-        ok &= verify_release(st["scenario1"]["tag"], expect_delta=False)
+        ok &= verify_release(st["scenario1"]["tag"], expect_delta=False,
+                             expect_failed=1, expect_conflict=1)
     if "scenario2" in st:
-        ok &= verify_release(st["scenario2"]["tag"], expect_delta=True)
+        ok &= verify_release(st["scenario2"]["tag"], expect_delta=True,
+                             expect_failed=0, expect_conflict=0)
     return ok
 
 
@@ -460,9 +486,11 @@ def cmd_clean():
 def cmd_all():
     cmd_setup()
     ok1 = cmd_run(1)
-    v1 = verify_release(_load_state()["scenario1"]["tag"], expect_delta=False)
+    v1 = verify_release(_load_state()["scenario1"]["tag"], expect_delta=False,
+                        expect_failed=1, expect_conflict=1)
     ok2 = cmd_run(2)
-    v2 = verify_release(_load_state()["scenario2"]["tag"], expect_delta=True)
+    v2 = verify_release(_load_state()["scenario2"]["tag"], expect_delta=True,
+                        expect_failed=0, expect_conflict=0)
     push_ok = cmd_push()
     st = _load_state()
     print("● Verify in-repo markdown reports resolve (after push)")

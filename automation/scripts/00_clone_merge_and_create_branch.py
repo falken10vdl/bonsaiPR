@@ -857,10 +857,10 @@ def generate_report(
             f"Note: PRs were merged in {merge_order} order ({order_desc}). BonsaiPR builds up to three releases\n"
         )
         f.write(
-            f"      per run — ascending, descending, and by-updated — to maximise inclusion. PRs listed as\n"
+            f"      per run — ascending, descending, and by-updated — to maximise inclusion. PRs listed\n"
         )
         f.write(
-            f"      'conflict with other PRs' may appear in the companion {companion_order} release.\n\n"
+            f"      in the 'Conflict With Other PRs' table may appear in the companion {companion_order} release.\n\n"
         )
         if merge_order == "by-updated":
 
@@ -879,14 +879,8 @@ def generate_report(
             return str(value).replace("|", "\\|").replace("\n", " ").strip()
 
         if failed_prs:
-            f.write(f"## ❌ Failed to Merge PRs ({len(failed_prs)})\n\n")
-            f.write(
-                "| PR | Title | Author | Branch | Last commit | Reason | First detected | Base commit | Broken by | Conflicting files |\n"
-            )
-            f.write(
-                "|----|-------|--------|--------|-------------|--------|----------------|-------------|-----------|--------------------|\n"
-            )
-            for pr in sorted(failed_prs, key=_sort_key, reverse=reverse_sort):
+            # Common cell builders shared by both failed-PR tables.
+            def _pr_common_cells(pr):
                 pr_number = pr["number"]
                 pr_link = f"[#{pr_number}]({pr['html_url']})"
                 author = _cell(pr['user']['login'])
@@ -897,19 +891,6 @@ def generate_report(
                     last_commit = f"[{last_sha[:7]}]({last_commit_url})"
                 else:
                     last_commit = ""
-                # Reason derived from individual test merge
-                reason = "Not tested"
-                if (
-                    isinstance(failed_pr_test_results, dict)
-                    and pr_number in failed_pr_test_results
-                ):
-                    test_result = failed_pr_test_results[pr_number]
-                    if test_result is True:
-                        reason = "Merges cleanly against base (conflict with other PRs)"
-                    elif test_result is False:
-                        reason = "Fails to merge against base (problem with PR itself)"
-                    else:
-                        reason = "Not tested (missing info)"
                 # First-detected date and base commit from tracking
                 first_detected = ""
                 base_commit_cell = ""
@@ -925,13 +906,39 @@ def generate_report(
                         base_commit_cell = f"[{base_commit[:7]}]({base_commit_url})"
                     else:
                         base_commit_cell = _cell(base_commit)
+                return pr_link, author, branch, last_commit, first_detected, base_commit_cell
+
+            # Partition failed PRs by individual test-merge result:
+            #   True  -> merges cleanly against base, only conflicts with other PRs
+            #   False/None -> fails to merge against base (problem with the PR itself)
+            def _test_result_for(pr):
+                if isinstance(failed_pr_test_results, dict):
+                    return failed_pr_test_results.get(pr["number"], None)
+                return None
+
+            sorted_failed = sorted(failed_prs, key=_sort_key, reverse=reverse_sort)
+            base_failures = [pr for pr in sorted_failed if _test_result_for(pr) is not True]
+            other_conflicts = [pr for pr in sorted_failed if _test_result_for(pr) is True]
+
+            # --- Table 1: PRs that fail to merge against the base ---
+            f.write(
+                f"## ❌ Failed to Merge Against Base ({len(base_failures)})\n\n"
+            )
+            f.write(
+                "| PR | Title | Author | Branch | Last commit | First detected | Base commit | Broken by | Conflicting files |\n"
+            )
+            f.write(
+                "|----|-------|--------|--------|-------------|----------------|-------------|-----------|--------------------|\n"
+            )
+            for pr in base_failures:
+                pr_number = pr["number"]
+                pr_link, author, branch, last_commit, first_detected, base_commit_cell = _pr_common_cells(pr)
                 # Broken-by and conflicting-files detail (only for base-conflict PRs)
                 conflict_info = pr_conflict_data.get(pr_number, {})
                 conflicting_files = conflict_info.get("files", [])
                 breaking_commits = conflict_info.get("breaking_commits", [])
-                test_result = failed_pr_test_results.get(pr_number) if isinstance(failed_pr_test_results, dict) else None
                 broken_by_cell = ""
-                if breaking_commits and test_result is False:
+                if breaking_commits:
                     broken_parts = []
                     for bc in breaking_commits:
                         parts = bc.split(None, 1)
@@ -952,7 +959,30 @@ def generate_report(
                     )
                 f.write(
                     f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {last_commit} | "
-                    f"{_cell(reason)} | {first_detected} | {base_commit_cell} | {broken_by_cell} | {conflicting_cell} |\n"
+                    f"{first_detected} | {base_commit_cell} | {broken_by_cell} | {conflicting_cell} |\n"
+                )
+            f.write("\n")
+
+            # --- Table 2: PRs that merge cleanly against base but conflict with other PRs ---
+            f.write(
+                f"## 🔀 Conflict With Other PRs ({len(other_conflicts)})\n\n"
+            )
+            f.write(
+                "These PRs merge cleanly against the base on their own, but conflict with "
+                "another PR already merged in this release. They may appear in the companion "
+                "release built in the opposite order.\n\n"
+            )
+            f.write(
+                "| PR | Title | Author | Branch | Last commit | First detected | Base commit |\n"
+            )
+            f.write(
+                "|----|-------|--------|--------|-------------|----------------|-------------|\n"
+            )
+            for pr in other_conflicts:
+                pr_link, author, branch, last_commit, first_detected, base_commit_cell = _pr_common_cells(pr)
+                f.write(
+                    f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {last_commit} | "
+                    f"{first_detected} | {base_commit_cell} |\n"
                 )
             f.write("\n")
         if skipped_prs:

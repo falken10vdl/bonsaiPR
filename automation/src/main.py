@@ -108,7 +108,7 @@ def extract_pr_numbers_from_section(report_path, section_title):
 
     Args:
         report_path: Path to the report file
-        section_title: Title of the section (e.g., '## ❌ Failed to Merge PRs')
+        section_title: Title of the section (e.g., '## ✅ Successfully Merged PRs')
 
     Returns:
         Set of PR numbers found in that section
@@ -167,21 +167,19 @@ def get_skipped_conflict_prs(report_path):
         import re
 
         pr_numbers = set()
-        in_failed_section = False
+        in_conflict_section = False
 
         for line in lines:
-            if "## ❌ Failed to Merge PRs" in line:
-                in_failed_section = True
+            # The "Conflict With Other PRs" table lists exactly the PRs that merge
+            # cleanly against the base but conflict with another PR in this release.
+            if "## 🔀 Conflict With Other PRs" in line:
+                in_conflict_section = True
                 continue
 
-            if in_failed_section and line.startswith("##"):
+            if in_conflict_section and line.startswith("##"):
                 break
 
-            if not in_failed_section:
-                continue
-
-            # Only include failed PR rows that were classified as conflict-with-other-PRs.
-            if "conflict with other PRs" not in line:
+            if not in_conflict_section:
                 continue
 
             match = re.search(r"\[#(\d+)\]\(|\*\*PR #(\d+)\*\*|\bPR #(\d+)\b", line)
