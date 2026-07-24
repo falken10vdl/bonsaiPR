@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 82,
-    "merged": 436,
-    "skipped_conflict": 37,
-    "skipped_draft": 48,
-    "total": 603
+    "failed": 102,
+    "merged": 432,
+    "skipped_conflict": 17,
+    "skipped_draft": 50,
+    "total": 601
   },
-  "generated_at": "2026-07-24T05:02:21Z",
+  "generated_at": "2026-07-24T07:00:34Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1190,14 +1190,6 @@
       "title": "IfcTester: fix predefinedType restrictions that include USERDEFINED (#7855, #7856)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8253"
     },
-    "8254": {
-      "author": "BIMvoice",
-      "branch": "fix/selector-list-negation-8129",
-      "head": "80e500a",
-      "status": "merged",
-      "title": "Selector: negate list comparisons as an aggregate (#8129)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8254"
-    },
     "8256": {
       "author": "BIMvoice",
       "branch": "fix/sequence-subday-durations-8245",
@@ -1378,7 +1370,8 @@
       "author": "BIMvoice",
       "branch": "fix-selector-multivalue-negation-8129",
       "head": "22d9170",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Selector: negated operators on list properties mean none-match (#8129)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8289"
     },
@@ -2458,7 +2451,8 @@
       "author": "BIMvoice",
       "branch": "bv-4130-svg-hlr-guard",
       "head": "26fff69",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "serializers: don't abort the whole SVG drawing when one element's HLR fails (#4130, #3849)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8477"
     },
@@ -2482,7 +2476,8 @@
       "author": "BIMvoice",
       "branch": "bv-6173-cgal-original-edges",
       "head": "0f7fe9f",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcgeom: fix CgalEmitOriginalEdges for placed elements (#6173)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8480"
     },
@@ -2522,7 +2517,8 @@
       "author": "BIMvoice",
       "branch": "bv-4118-heal-void-edges",
       "head": "8cd1ef5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcgeom: cut openings when the wall void boundary has sub-precision edges (#4118)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8490"
     },
@@ -2546,7 +2542,8 @@
       "author": "BIMvoice",
       "branch": "fix-1015-nonmanifold-cut",
       "head": "b394b59",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Keep valid non-manifold subtraction instead of dropping the cut (#1015)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8494"
     },
@@ -2626,7 +2623,8 @@
       "author": "Vanuan",
       "branch": "patch-3",
       "head": "9b8d94a",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Door/Opening documentation improvement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8509"
     },
@@ -2650,7 +2648,8 @@
       "author": "BIMvoice",
       "branch": "fix-8036-drawing-none-doc",
       "head": "1eaaa43",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: guard drawing with no document reference in get_sheet_references (#8036, #7266)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8512"
     },
@@ -2714,7 +2713,8 @@
       "author": "BIMvoice",
       "branch": "fix-620-616-nonmanifold-subtraction",
       "head": "6ba38bf",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcgeom: recover BRepCheck-valid non-manifold subtractions instead of dropping them (#620, #616)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8521"
     },
@@ -2730,7 +2730,8 @@
       "author": "BIMvoice",
       "branch": "fix-8400-directrix-hang",
       "head": "d053530",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcgeom: collapse degenerate directrix segments to avoid a MakePipeShell hang (#8400)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8523"
     },
@@ -2741,14 +2742,6 @@
       "status": "merged",
       "title": "ifcgeom: fall back to unsliced representation when layerset slicing fails (#6607)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8524"
-    },
-    "8527": {
-      "author": "BIMvoice",
-      "branch": "ship-4399-toposort",
-      "head": "b665848",
-      "status": "merged",
-      "title": "ifcpatch: use stdlib graphlib for Optimise, fixing missing toposort in Bonsai (#4399)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8527"
     },
     "8528": {
       "author": "BIMvoice",
@@ -2770,7 +2763,8 @@
       "author": "BIMvoice",
       "branch": "ship-7681-hideselect",
       "head": "2988696",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: keep 'disable selection' objects visible when activating a drawing (#7681)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8530"
     },
@@ -2794,7 +2788,8 @@
       "author": "BIMvoice",
       "branch": "ship-6393-mepbend",
       "head": "11d5787",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: guard MEP Add Bend against parallel segments (#6393)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8533"
     },
@@ -2914,7 +2909,8 @@
       "author": "BIMvoice",
       "branch": "ship-5349-side-area",
       "head": "e1edad2",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "util.shape: add opt-in winding-tolerant areas (#5349)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8550"
     },
@@ -2958,22 +2954,6 @@
       "title": "Fix ci-bonsai-daily: get_linked_element_geom_slice hidden-face index space",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8560"
     },
-    "8562": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-daily-checkout-path",
-      "head": "e841def",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily: avoid tripled repo path breaking BDD link_ifc tests",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8562"
-    },
-    "8565": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-bdd-operatorspy-mep",
-      "head": "9ec6534",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily BDD: OperatorSpy.bl_rna + stale MEP port name",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8565"
-    },
     "8566": {
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-classification-honor-obj-arg",
@@ -2993,7 +2973,7 @@
     "8573": {
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-projectlibrary-dedup",
-      "head": "6c9e863",
+      "head": "56d0e0d",
       "status": "merged",
       "title": "Fix ci-bonsai-daily: ProjectLibraryData duplicate parent-library enum entry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8573"
@@ -3050,7 +3030,8 @@
       "author": "sboddy",
       "branch": "fix-axis2placement-2d-resize",
       "head": "75b221f",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix ValueError in get_axis2placement for 2D RefDirection",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8586"
     },
@@ -3106,7 +3087,8 @@
       "author": "BIMvoice",
       "branch": "fix-3067-structural-axis-default",
       "head": "7ee97d0",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: set a default Axis on structural curve member/connection creation (#3067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8593"
     },
@@ -3114,7 +3096,8 @@
       "author": "BIMvoice",
       "branch": "fix-3296-external-styles-new-viewports",
       "head": "5c3cc5c",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: switch to external styles on RENDERED shading for viewports created mid-session (#3296)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8594"
     },
@@ -3138,7 +3121,8 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "027fae4",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -3202,7 +3186,8 @@
       "author": "BIMvoice",
       "branch": "fix-4050-material-select-unhide-type",
       "head": "6eaa55d",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "bonsai: reveal hidden collections when selecting objects by material (#4050)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8613"
     },
@@ -3274,7 +3259,8 @@
       "author": "BIMvoice",
       "branch": "fix-6205-set-origin-not-applying",
       "head": "23749af",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "bonsai: fix IFC Set Origin silently doing nothing for most objects (#6205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8623"
     },
@@ -3322,7 +3308,8 @@
       "author": "BIMvoice",
       "branch": "fix-7167-activate-drawing-from-sheet",
       "head": "281f404",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: fix Activate Drawing crash for punctuated drawing names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8630"
     },
@@ -3410,7 +3397,8 @@
       "author": "BIMvoice",
       "branch": "fix-7450-section-level-sync",
       "head": "2c6082d",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: stop deleting manually-created Level (Section) annotations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8643"
     },
@@ -3843,7 +3831,8 @@
       "author": "BIMvoice",
       "branch": "fix-7663-item-mode-half-space-selection",
       "head": "bcc355f",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: confine Item Mode half-space cuts to the explicitly selected item",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8727"
     },
@@ -4780,15 +4769,6 @@
       "title": "resource: allow physical base quantities on subcontract resources",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8877"
     },
-    "8878": {
-      "author": "BIMvoice",
-      "branch": "ci-daily-boolean-step-ids",
-      "head": "07fa6c5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bonsai tests: make boolean.feature survive STEP id drift",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8878"
-    },
     "8879": {
       "author": "BIMvoice",
       "branch": "7472-null-opening-reps",
@@ -4915,6 +4895,30 @@
       "status": "merged",
       "title": "Bonsai tests: regression coverage for stale array child GUID during project load (#8893)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8898"
+    },
+    "8899": {
+      "author": "BIMvoice",
+      "branch": "5505-instantiate-aggregated-type",
+      "head": "94a8dc7",
+      "status": "skipped_draft",
+      "title": "ifcopenshell.api.type: instantiate occurrence parts from a typed decomposition",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8899"
+    },
+    "8900": {
+      "author": "BIMvoice",
+      "branch": "8603-batch-underlay-state",
+      "head": "28119d5",
+      "status": "skipped_draft",
+      "title": "Bonsai: fix batch-printed drawings rendering the previous drawing's underlay",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8900"
+    },
+    "8901": {
+      "author": "BIMvoice",
+      "branch": "8597-polyline-angle-threshold",
+      "head": "bfdd481",
+      "status": "merged",
+      "title": "Bonsai: fix UnboundLocalError crash in polyline angle calculation (#8597)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8901"
     }
   },
   "schema": 1

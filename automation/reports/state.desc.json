@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 32,
-    "merged": 421,
-    "skipped_conflict": 98,
-    "skipped_draft": 49,
-    "total": 600
+    "merged": 419,
+    "skipped_conflict": 97,
+    "skipped_draft": 50,
+    "total": 598
   },
-  "generated_at": "2026-07-24T05:30:26Z",
+  "generated_at": "2026-07-24T07:28:49Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1190,14 +1190,6 @@
       "title": "IfcTester: fix predefinedType restrictions that include USERDEFINED (#7855, #7856)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8253"
     },
-    "8254": {
-      "author": "BIMvoice",
-      "branch": "fix/selector-list-negation-8129",
-      "head": "80e500a",
-      "status": "merged",
-      "title": "Selector: negate list comparisons as an aggregate (#8129)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8254"
-    },
     "8256": {
       "author": "BIMvoice",
       "branch": "fix/sequence-subday-durations-8245",
@@ -1374,14 +1366,6 @@
       "title": "ifc5d: professional grade ODS/XLSX cost schedule export (#6251)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8287"
     },
-    "8289": {
-      "author": "BIMvoice",
-      "branch": "fix-selector-multivalue-negation-8129",
-      "head": "22d9170",
-      "status": "skipped_conflict",
-      "title": "Selector: negated operators on list properties mean none-match (#8129)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8289"
-    },
     "8290": {
       "author": "BIMvoice",
       "branch": "fix-bsdd-ratelimit-properties-endpoint-7985",
@@ -1453,14 +1437,6 @@
       "status": "merged",
       "title": "Bonsai: apply georeferencing offset to imported drawing cameras (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8304"
-    },
-    "8306": {
-      "author": "BIMvoice",
-      "branch": "fix-style-assignment-none-7883",
-      "head": "ff9b3c9",
-      "status": "merged",
-      "title": "style.assign_representation_styles: fix crash on IfcPresentationStyleAssignment (#7883)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8306"
     },
     "8307": {
       "author": "BIMvoice",
@@ -2835,7 +2811,7 @@
       "branch": "ship-2041-nested-qty",
       "head": "b6b310b",
       "status": "skipped_conflict",
-      "title": "Resolve nested complex quantity paths in the selector (#2041)",
+      "title": "Selector: resolve nested complex quantity/property members by their natural path (#2041)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8539"
     },
     "8540": {
@@ -2969,7 +2945,7 @@
     "8573": {
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-projectlibrary-dedup",
-      "head": "6c9e863",
+      "head": "3458d55",
       "status": "merged",
       "title": "Fix ci-bonsai-daily: ProjectLibraryData duplicate parent-library enum entry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8573"
@@ -4634,14 +4610,6 @@
       "title": "build(deps-dev): bump tar from 7.5.16 to 7.5.21 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8864"
     },
-    "8867": {
-      "author": "BIMvoice",
-      "branch": "bonsai-8865-mixed-install-guard",
-      "head": "b829fbe",
-      "status": "merged",
-      "title": "Bonsai: self-repair stale bundled wheels at startup (#8865)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8867"
-    },
     "8868": {
       "author": "BIMvoice",
       "branch": "6305-footing-gross-outer-area",
@@ -4841,6 +4809,22 @@
       "status": "skipped_draft",
       "title": "ifcopenshell.api.type: instantiate occurrence parts from a typed decomposition",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8899"
+    },
+    "8900": {
+      "author": "BIMvoice",
+      "branch": "8603-batch-underlay-state",
+      "head": "28119d5",
+      "status": "skipped_draft",
+      "title": "Bonsai: fix batch-printed drawings rendering the previous drawing's underlay",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8900"
+    },
+    "8901": {
+      "author": "BIMvoice",
+      "branch": "8597-polyline-angle-threshold",
+      "head": "bfdd481",
+      "status": "merged",
+      "title": "Bonsai: fix UnboundLocalError crash in polyline angle calculation (#8597)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8901"
     }
   },
   "schema": 1
