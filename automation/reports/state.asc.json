@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 114,
+    "failed": 117,
     "merged": 441,
-    "skipped_conflict": 3,
+    "skipped_conflict": 0,
     "skipped_draft": 48,
     "total": 606
   },
-  "generated_at": "2026-07-23T23:00:52Z",
+  "generated_at": "2026-07-24T00:00:34Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -596,7 +596,8 @@
       "author": "dipayansardar73-decode",
       "branch": "refactor-profiler-drawing-7328",
       "head": "7d27a2b",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Refactor: Use ifcopenshell.util.profiler.Profiler in drawing operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7869"
     },
@@ -620,7 +621,8 @@
       "author": "dipayansardar73-decode",
       "branch": "fix-collector-none-spatial-selector-7861-7806",
       "head": "712da05",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "feat: fix Bonsai collector crash (#7861) and add spatial_reference selector key (#7806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7872"
     },
@@ -1086,7 +1088,8 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/multi-cf99e4b298",
       "head": "6e1efe5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bump vite, @sveltejs/vite-plugin-svelte and @tailwindcss/vite in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8182"
     },
@@ -3963,14 +3966,6 @@
       "title": "Bonsai: draw the wall tool's void-edit confirm/cancel buttons last",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8735"
     },
-    "8737": {
-      "author": "BIMvoice",
-      "branch": "bonsai-7458-cpu-feature-warning",
-      "head": "3325a7b",
-      "status": "skipped_draft",
-      "title": "Bonsai: warn before a CPU without AVX2 crashes the geometry backend",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8737"
-    },
     "8738": {
       "author": "BIMvoice",
       "branch": "fix-7484-stair-first-last-locks",
@@ -4971,6 +4966,14 @@
       "status": "failed",
       "title": "Bonsai: preserve world position when classifying a mesh object as IfcElement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8894"
+    },
+    "8895": {
+      "author": "sboddy",
+      "branch": "fix-3742-coplanar-svgfill-arrangement",
+      "head": "e464879",
+      "status": "skipped_draft",
+      "title": "Coplanar surface boundary lines via a real 2D planar arrangement (alt. to #7908)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8895"
     }
   },
   "schema": 1
