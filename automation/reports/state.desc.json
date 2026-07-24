@@ -3,11 +3,11 @@
   "counts": {
     "failed": 31,
     "merged": 430,
-    "skipped_conflict": 96,
+    "skipped_conflict": 97,
     "skipped_draft": 48,
-    "total": 605
+    "total": 606
   },
-  "generated_at": "2026-07-23T19:31:05Z",
+  "generated_at": "2026-07-24T01:29:07Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -242,7 +242,7 @@
       "author": "theoryshaw",
       "branch": "after_assign_remove_from_old_collection",
       "head": "7a60ff8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Remove object from non-IFC collections after IFC class assignment.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7422"
     },
@@ -3918,14 +3918,6 @@
       "title": "Bonsai: draw the wall tool's void-edit confirm/cancel buttons last",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8735"
     },
-    "8737": {
-      "author": "BIMvoice",
-      "branch": "bonsai-7458-cpu-feature-warning",
-      "head": "3325a7b",
-      "status": "skipped_draft",
-      "title": "Bonsai: warn before a CPU without AVX2 crashes the geometry backend",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8737"
-    },
     "8738": {
       "author": "BIMvoice",
       "branch": "fix-7484-stair-first-last-locks",
@@ -3994,7 +3986,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "960eb97",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -4381,7 +4373,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-dead-gherkin-runner",
       "head": "6e152d6",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: remove the dead Gherkin runner from test/bim/bootstrap.py",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8809"
     },
@@ -4880,6 +4872,22 @@
       "status": "skipped_draft",
       "title": "Fix contained-pair and multi-neighbour cases in remove_coplanar_boundary_lines",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8891"
+    },
+    "8894": {
+      "author": "BIMvoice",
+      "branch": "8848-classify-placement-reset",
+      "head": "2f3a35f",
+      "status": "merged",
+      "title": "Bonsai: preserve world position when classifying a mesh object as IfcElement",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8894"
+    },
+    "8895": {
+      "author": "sboddy",
+      "branch": "fix-3742-coplanar-svgfill-arrangement",
+      "head": "e464879",
+      "status": "skipped_draft",
+      "title": "Coplanar surface boundary lines via a real 2D planar arrangement (alt. to #7908)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8895"
     }
   },
   "schema": 1
