@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 38,
-    "merged": 459,
-    "skipped_conflict": 95,
+    "failed": 36,
+    "merged": 465,
+    "skipped_conflict": 91,
     "skipped_draft": 57,
     "total": 649
   },
-  "generated_at": "2026-07-27T06:33:21Z",
+  "generated_at": "2026-07-27T08:03:14Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -242,7 +242,7 @@
       "author": "theoryshaw",
       "branch": "after_assign_remove_from_old_collection",
       "head": "7a60ff8",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Remove object from non-IFC collections after IFC class assignment.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7422"
     },
@@ -654,7 +654,7 @@
       "author": "theoryshaw",
       "branch": "fix/opening-element-body-context",
       "head": "b0246f7",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix IfcOpeningElement using wrong geometry context",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7898"
     },
@@ -826,7 +826,7 @@
       "author": "isma3lMB",
       "branch": "v0.8.0",
       "head": "ef1e534",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Ensuring that Entity name is a string",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7993"
     },
@@ -1184,7 +1184,7 @@
       "author": "BIMvoice",
       "branch": "fix/aggregate-error-report-7983",
       "head": "05d61d2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: report incompatible aggregates instead of crashing (#7983)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8274"
     },
@@ -1368,7 +1368,7 @@
       "author": "BIMvoice",
       "branch": "fix-get-part-of-product-none-repmaps-8081",
       "head": "d971623",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix get_part_of_product crash and IFC2X3 typo (#8081)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8317"
     },
@@ -2608,7 +2608,7 @@
       "author": "BIMvoice",
       "branch": "ship-5635-drawing-name",
       "head": "69d12aa",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: uniquify drawing name on rename so SVGs don't overwrite each other (#5635)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8532"
     },
@@ -3441,7 +3441,7 @@
     "8699": {
       "author": "BIMvoice",
       "branch": "fix-3754-wall-covering",
-      "head": "9b8401d",
+      "head": "34a5dc2",
       "status": "merged",
       "title": "Bonsai: automate wall coverings (cladding, insulation) from wall side faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8699"
@@ -4817,8 +4817,7 @@
       "author": "BIMvoice",
       "branch": "feat-5872-simplify-section-markers",
       "head": "e6d6a14",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: option to hide the sheet reference on section/elevation markers",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8938"
     },
@@ -4858,8 +4857,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-ifctester-org-build-deps",
       "head": "6c733dc",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Fix ci-ifctester-org: install setuptools build dep",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8943"
     },

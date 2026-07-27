@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 37,
+    "failed": 36,
     "merged": 457,
-    "skipped_conflict": 98,
+    "skipped_conflict": 100,
     "skipped_draft": 57,
-    "total": 649
+    "total": 650
   },
-  "generated_at": "2026-07-27T07:13:34Z",
+  "generated_at": "2026-07-27T08:44:48Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -497,7 +497,7 @@
       "author": "paragforwork",
       "branch": "new-profiler",
       "head": "1acce39",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Replaced the old profiler function with the ifcopenshell.util profiler",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7813"
     },
@@ -1030,7 +1030,7 @@
       "author": "theoryshaw",
       "branch": "debug-drawing-faster-failure-search",
       "head": "9283d86",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Debug drawing faster failure search",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8228"
     },
@@ -1296,7 +1296,7 @@
       "author": "BIMvoice",
       "branch": "fix-format-round-non-numeric-6776",
       "head": "3d17eed",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.selector: numeric format functions pass through non-numeric values (#6776)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8297"
     },
@@ -2080,7 +2080,7 @@
       "author": "BIMvoice",
       "branch": "fix-reimport-multiprocessing-toggle",
       "head": "f26746f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: honour the CPU Multiprocessing toggle on representation reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8444"
     },
@@ -3441,7 +3441,7 @@
     "8699": {
       "author": "BIMvoice",
       "branch": "fix-3754-wall-covering",
-      "head": "9b8401d",
+      "head": "34a5dc2",
       "status": "merged",
       "title": "Bonsai: automate wall coverings (cladding, insulation) from wall side faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8699"
@@ -3627,7 +3627,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8049-resilient-drawing-print",
       "head": "ee5583f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: don't let one bad element abort an entire drawing print",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8734"
     },
@@ -3684,7 +3684,7 @@
       "author": "BIMvoice",
       "branch": "fix-7490-fill-alignment",
       "head": "69872ec",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: support aligning a hosted window/door to its wall's exterior/centerline/interior face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8744"
     },
@@ -3951,7 +3951,7 @@
       "author": "BIMvoice",
       "branch": "2077-centerline-profile",
       "head": "2e3d448",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcCenterLineProfileDef: implement profile mapping (geometry side of #2077)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8794"
     },
@@ -3967,7 +3967,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7453-explicit-axis",
       "head": "c1081dc",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: surface + explicitly fix mesh-converted walls whose length is on local Y (#7453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8796"
     },
@@ -4015,7 +4015,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6423-axis-linework",
       "head": "d2a08d3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: draw element Axis reference lines in drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8802"
     },
@@ -4159,7 +4159,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6980-annotation-phase-classes",
       "head": "76d3531",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: carry annotation status/phase classes onto text labels too",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8827"
     },
@@ -4417,7 +4417,7 @@
       "author": "BIMvoice",
       "branch": "feat/selector-ref-structure-key-7806",
       "head": "cde40a5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Selector: add referenced_structures value key (#7806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8874"
     },
@@ -4601,7 +4601,7 @@
       "author": "BIMvoice",
       "branch": "7909-guard-stale-byid",
       "head": "1025b97",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: guard stale ifc_definition_id lookups that abort wall split and related flows",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8906"
     },
@@ -4609,7 +4609,7 @@
       "author": "BIMvoice",
       "branch": "fix-4442-honor-calendar-work-hours",
       "head": "3a8d8b5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.api.sequence: honour the calendar's declared work hours",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8907"
     },
@@ -4705,7 +4705,7 @@
       "author": "BIMvoice",
       "branch": "fix-4774-shapely-fill-flush-edge",
       "head": "0824082",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: pool all projections for shapely fill cell formation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8923"
     },
@@ -4761,7 +4761,7 @@
       "author": "BIMvoice",
       "branch": "fix-5611-roof-skylight-cut",
       "head": "8db33cd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: cut and align skylights/windows on parametric roofs to the sloped face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8930"
     },
@@ -4785,7 +4785,7 @@
       "author": "BIMvoice",
       "branch": "feat-5729-freestyle-ifc-only",
       "head": "28d076f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add 'IFC Elements Only' preference for Freestyle linework",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8933"
     },
@@ -4817,7 +4817,7 @@
       "author": "BIMvoice",
       "branch": "feat-5872-simplify-section-markers",
       "head": "e6d6a14",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: option to hide the sheet reference on section/elevation markers",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8938"
     },
@@ -4930,7 +4930,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-append-asset-perf",
       "head": "83d41ce",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: propagate assume_asset_uniqueness_by_name to nested type append",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8956"
     },
@@ -5034,8 +5034,7 @@
       "author": "BIMvoice",
       "branch": "5696-batch-reimport-iterator",
       "head": "d194ed8",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "Bonsai: batch geometry iterator setup when reimporting many representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8971"
     },
@@ -5115,7 +5114,7 @@
       "author": "BIMvoice",
       "branch": "6964-duration-precision",
       "head": "73d64fc",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.date: preserve microsecond precision when converting IfcDuration for calculation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8985"
     },
@@ -5187,7 +5186,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-door-body-context-missing",
       "head": "a48ed52",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: create the Model/Body context when authoring a door into an imported IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8995"
     },
@@ -5227,7 +5226,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-door-recut-host-representation",
       "head": "226cb03",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: recut a voided host from the body it displays, not the first representation in its context",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9002"
     },
@@ -5238,6 +5237,14 @@
       "status": "merged",
       "title": "Bonsai: snap to the nearest solid, not the nearest object origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9004"
+    },
+    "9005": {
+      "author": "CyrilWaechter",
+      "branch": "auto-space-height",
+      "head": "0357807",
+      "status": "skipped_conflict",
+      "title": "Auto-detect space height + IFC-direct space generation",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     }
   },
   "schema": 1
