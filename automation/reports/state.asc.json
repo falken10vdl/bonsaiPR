@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 36,
-    "merged": 464,
-    "skipped_conflict": 93,
+    "failed": 124,
+    "merged": 395,
+    "skipped_conflict": 74,
     "skipped_draft": 57,
     "total": 650
   },
-  "generated_at": "2026-07-27T12:02:58Z",
+  "generated_at": "2026-07-27T16:06:58Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -94,7 +94,7 @@
       "author": "CKiOne",
       "branch": "v0.8.0",
       "head": "ea7a31e",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "more checks for 2D boolean check. Issue #4839",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/4862"
@@ -274,7 +274,7 @@
       "author": "ZijianWang-ZW",
       "branch": "dev/bug/hybrid-kernel-sigsegv-fallback",
       "head": "370eea1",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix: hybrid kernel sigsegv fallback (0.8.0)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7523"
@@ -323,7 +323,7 @@
       "author": "danlipsa",
       "branch": "build_vtkreader",
       "head": "8508e22",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fixes needed to build IfcOpenShell with ParaView",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7649"
@@ -752,7 +752,8 @@
       "author": "JocelinBirling",
       "branch": "ifcclash_modif",
       "head": "9338bce",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Repair IfcClash order",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7937"
     },
@@ -963,7 +964,8 @@
       "author": "RickBrice",
       "branch": "rab_IfcAxis2PlacementLinear_fix",
       "head": "b75a689",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Implements default direction of IfcAxis2PlacementLinear.Axis and RefDirection",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8145"
     },
@@ -1664,7 +1666,8 @@
       "author": "BIMvoice",
       "branch": "fix-8050-iterator-race",
       "head": "6c7b33c",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: clone mapped items before in place mutation to fix nondeterministic multithreaded geometry (#8050)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8370"
     },
@@ -1672,7 +1675,8 @@
       "author": "BIMvoice",
       "branch": "fix-4029-onlyvalid-terrain",
       "head": "961c9f2",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "svg: don't gate out drawable non-solid shapes (terrain) from sections in setOnlyValid mode (#4029)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8371"
     },
@@ -1696,7 +1700,8 @@
       "author": "BIMvoice",
       "branch": "fix-3971-svg-roof-v2",
       "head": "4de42e8",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "svg: guard HLR stages so one failing element or projection does not abort the drawing (#3971)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8376"
     },
@@ -1704,7 +1709,8 @@
       "author": "BIMvoice",
       "branch": "fix-8106-taxonomy-sweep-approx",
       "head": "9200ce0",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Approximate swept solids in the taxonomy layer so cgal stops dropping IfcSweptDiskSolid (#8106)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8377"
     },
@@ -1800,7 +1806,8 @@
       "author": "BIMvoice",
       "branch": "fix-1410-ifcconvert-no-progress",
       "head": "30c9065",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Fix IfcConvert --no-progress being ignored with --threads >= 2 (#1410)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8394"
     },
@@ -1912,7 +1919,8 @@
       "author": "BIMvoice",
       "branch": "fix-8070-simple-type-leak",
       "head": "fdf25ac",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcParse: free simple type instances created after load (#8070)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8419"
     },
@@ -1952,7 +1960,8 @@
       "author": "BIMvoice",
       "branch": "fix-5357-clash-result-order",
       "head": "5c16f93",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcGeomTree: keep clash_intersection_many results in set_a, set_b order (#5357)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8424"
     },
@@ -2000,7 +2009,8 @@
       "author": "BIMvoice",
       "branch": "fix-8013-surfaceoflinearextrusion-depth",
       "head": "f7eb96a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: use the real extrusion depth for IfcSurfaceOfLinearExtrusion (#8013)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8433"
     },
@@ -2040,7 +2050,8 @@
       "author": "BIMvoice",
       "branch": "fix-7162-poly-hlr-deflection",
       "head": "4bf23fb",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: use mesher-linear-deflection for polygonal HLR drawings (#7162)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8439"
     },
@@ -2120,7 +2131,8 @@
       "author": "BIMvoice",
       "branch": "fix-6742-csg-cylinder",
       "head": "b8d1f3c",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: import IfcRightCircularCylinder CSG geometry (#6742)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8450"
     },
@@ -2128,7 +2140,8 @@
       "author": "BIMvoice",
       "branch": "fix-gltf-zup-optional-deref",
       "head": "770ab72",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: fix empty-optional dereference in glTF finalize (separate Z-up node)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8452"
     },
@@ -2136,7 +2149,8 @@
       "author": "BIMvoice",
       "branch": "fix-6750-truncated-step-segfault",
       "head": "9be8ebc",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcparse: don't segfault on truncated / fuzzed STEP files (#6750)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8453"
     },
@@ -2144,7 +2158,8 @@
       "author": "BIMvoice",
       "branch": "fix-6912-zero-span-conic-wire",
       "head": "5d9a165",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fix 'Failed to join curve segments' on zero-span trimmed conics (#6912)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8454"
     },
@@ -2160,7 +2175,8 @@
       "author": "BIMvoice",
       "branch": "fix-obj-serializer-texcoord-material",
       "head": "24f4143",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: correct OBJ texture-coordinate indices and guard material lookup",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8457"
     },
@@ -2168,7 +2184,8 @@
       "author": "BIMvoice",
       "branch": "fix-1366-boolean-null-operand-segfault",
       "head": "ff7211d",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: don't segfault on null/empty boolean operands (#1366)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8459"
     },
@@ -2176,7 +2193,8 @@
       "author": "BIMvoice",
       "branch": "fix-8105-manifold-compound-of-faces",
       "head": "7646063",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fix is_manifold always false for a loose-face compound (#8105)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8460"
     },
@@ -2184,7 +2202,8 @@
       "author": "BIMvoice",
       "branch": "fix-5999-wire-intersection-broadphase",
       "head": "a71061e",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: bounding-box broad-phase for the wire self-intersection check (#5999)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8461"
     },
@@ -2192,7 +2211,8 @@
       "author": "BIMvoice",
       "branch": "harden-4926-serialise-null-handles",
       "head": "9da138f",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: guard IfcGeom::serialise against null OCCT handles (#4926)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8463"
     },
@@ -2200,7 +2220,8 @@
       "author": "BIMvoice",
       "branch": "fix-622-wire-intersection-recursion",
       "head": "a364c26",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: cap wire_intersections recursion to prevent a stack overflow (#622)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8465"
     },
@@ -2208,7 +2229,8 @@
       "author": "BIMvoice",
       "branch": "fix-2509-gltf-diffuse-albedo",
       "head": "4b03258",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: glTF baseColorFactor should be the surface colour, not diffuse*factor (#2509)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8466"
     },
@@ -2216,7 +2238,8 @@
       "author": "BIMvoice",
       "branch": "fix-4846-obj-mtllib",
       "head": "aca6224",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: emit mtllib in OBJ output so materials are linked (#4846)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8467"
     },
@@ -2224,7 +2247,8 @@
       "author": "BIMvoice",
       "branch": "fix-5109-xml-material-ids",
       "head": "e7237b3",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: emit a stable id for nested materials in XML (#5109)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8468"
     },
@@ -2232,7 +2256,8 @@
       "author": "BIMvoice",
       "branch": "fix-806-mirrored-normals",
       "head": "0d96909",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fix inverted normals on mirrored MappedRepresentations (#806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8469"
     },
@@ -2240,7 +2265,8 @@
       "author": "BIMvoice",
       "branch": "bv-1231-svg-storey-global-z",
       "head": "2bfcd89",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: SVG cut plane from storey global placement, not Elevation attribute (#1231)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8471"
     },
@@ -2248,7 +2274,8 @@
       "author": "BIMvoice",
       "branch": "bv-5067-serialise-indirect-surface",
       "head": "d4da778",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fix inverted normals for indirect curved surfaces in IfcGeom::serialise (#5067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8472"
     },
@@ -2256,7 +2283,8 @@
       "author": "BIMvoice",
       "branch": "bv-3460-parser-silent-fail",
       "head": "2fa4b13",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcparse: report INVALID_SYNTAX on a truncated file instead of success (#3460)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8473"
     },
@@ -2264,7 +2292,8 @@
       "author": "BIMvoice",
       "branch": "bv-2629-svg-arc-bounds",
       "head": "e6912f8",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: SVG bounding box should follow the drawn arc, not the full circle (#2629)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8474"
     },
@@ -2272,7 +2301,8 @@
       "author": "BIMvoice",
       "branch": "bv-2638-svg-storey-section-global-z",
       "head": "6f250e2",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: section-height-from-storeys should use global placement Z (#2638)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8475"
     },
@@ -2280,7 +2310,8 @@
       "author": "BIMvoice",
       "branch": "bv-5485-cgal-polyhedron",
       "head": "24af0ad",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: honour POLYHEDRON triangulation type in the CGAL kernel (#5485)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8476"
     },
@@ -2288,7 +2319,8 @@
       "author": "BIMvoice",
       "branch": "bv-4130-svg-hlr-guard",
       "head": "26fff69",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: don't abort the whole SVG drawing when one element's HLR fails (#4130, #3849)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8477"
     },
@@ -2304,7 +2336,8 @@
       "author": "BIMvoice",
       "branch": "bv-6997-cgal-vertex-normals",
       "head": "0359a2a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: CGAL kernel should emit the smoothed, unit vertex normal (#6997)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8479"
     },
@@ -2312,7 +2345,8 @@
       "author": "BIMvoice",
       "branch": "bv-6173-cgal-original-edges",
       "head": "0f7fe9f",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fix CgalEmitOriginalEdges for placed elements (#6173)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8480"
     },
@@ -2320,7 +2354,8 @@
       "author": "BIMvoice",
       "branch": "bv-3540-tapered-v2",
       "head": "ef2516a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: implement IfcRevolvedAreaSolidTapered following the revolve arc (#3540)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8485"
     },
@@ -2328,7 +2363,8 @@
       "author": "BIMvoice",
       "branch": "bv-3904-iterator-determinism",
       "head": "c96d575",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: deterministic iterator output order under multithreading (#3904)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8486"
     },
@@ -2336,7 +2372,8 @@
       "author": "BIMvoice",
       "branch": "bv-1541-swept-caps",
       "head": "955d8c1",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: produce closed manifold IfcSurfaceCurveSweptAreaSolid sweeps (#1541)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8488"
     },
@@ -2344,7 +2381,8 @@
       "author": "BIMvoice",
       "branch": "bv-619-boolean-coincident",
       "head": "08d50da",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: cut openings whose clip faces coincide with the host (#619)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8489"
     },
@@ -2352,7 +2390,8 @@
       "author": "BIMvoice",
       "branch": "bv-4118-heal-void-edges",
       "head": "8cd1ef5",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: cut openings when the wall void boundary has sub-precision edges (#4118)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8490"
     },
@@ -2360,7 +2399,8 @@
       "author": "BIMvoice",
       "branch": "bv-5186-boolean-2d-fallback",
       "head": "7763096",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: recover 2D-optimized boolean cuts dropped on retry (#5186)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8491"
     },
@@ -2368,7 +2408,8 @@
       "author": "BIMvoice",
       "branch": "bv-2248-dual-role-representation",
       "head": "4efdd73",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: warn when a representation is used both directly by a product and as a mapped item (#2248)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8492"
     },
@@ -2376,7 +2417,8 @@
       "author": "BIMvoice",
       "branch": "fix-1015-nonmanifold-cut",
       "head": "b394b59",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Keep valid non-manifold subtraction instead of dropping the cut (#1015)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8494"
     },
@@ -2384,7 +2426,8 @@
       "author": "BIMvoice",
       "branch": "fix-5618-negative-surfacestyle",
       "head": "b1a641f",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Use NEGATIVE-side IfcSurfaceStyle as a fallback instead of dropping it (#5618)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8498"
     },
@@ -2392,7 +2435,8 @@
       "author": "BIMvoice",
       "branch": "fix-5630-tessellated-cut",
       "head": "6003398",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Retry boolean CUT that OCCT reports done but subtracts no volume (#5630)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8499"
     },
@@ -2400,7 +2444,8 @@
       "author": "BIMvoice",
       "branch": "fix-4594-clash-coplanar",
       "head": "468104b",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Detect clash for perfectly aligned coplanar-face overlaps (#4594)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8500"
     },
@@ -2432,7 +2477,8 @@
       "author": "BIMvoice",
       "branch": "fix-4094-swept-disk-fillet",
       "head": "173ab2a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Fix IfcSweptDiskSolidPolygonal fillet: crash to correct rounded corners (#4094)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8506"
     },
@@ -2448,7 +2494,8 @@
       "author": "BIMvoice",
       "branch": "fix-7658-curved-loft",
       "head": "a1d1a2a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Loft constant curved cross sections instead of crashing (#7658)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8508"
     },
@@ -2544,7 +2591,8 @@
       "author": "BIMvoice",
       "branch": "fix-620-616-nonmanifold-subtraction",
       "head": "6ba38bf",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: recover BRepCheck-valid non-manifold subtractions instead of dropping them (#620, #616)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8521"
     },
@@ -2560,7 +2608,8 @@
       "author": "BIMvoice",
       "branch": "fix-8400-directrix-hang",
       "head": "d053530",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: collapse degenerate directrix segments to avoid a MakePipeShell hang (#8400)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8523"
     },
@@ -2568,7 +2617,8 @@
       "author": "BIMvoice",
       "branch": "fix-6607-layerset-fallback",
       "head": "1b57803",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fall back to unsliced representation when layerset slicing fails (#6607)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8524"
     },
@@ -2913,7 +2963,8 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "027fae4",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -3225,7 +3276,8 @@
       "author": "brunopostle",
       "branch": "fix/binary-token-uncaught-exception",
       "head": "1156a55",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcParse: don't let a malformed binary token abort the parser",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8660"
     },
@@ -3233,7 +3285,8 @@
       "author": "brunopostle",
       "branch": "fix/unterminated-string-eof-abort",
       "head": "aa1a893",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcParse: don't abort when a string literal runs off the end of the file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8661"
     },
@@ -3514,7 +3567,8 @@
       "author": "BIMvoice",
       "branch": "bv-6623-step-unit-scale",
       "head": "ab04ce6",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcConvert: fix 1000x scale error in STEP export unit handling",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8712"
     },
@@ -3546,7 +3600,8 @@
       "author": "BIMvoice",
       "branch": "bv-6867-mitre-halfspace-cgal-fallback",
       "head": "139e2ed",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fall back to CGAL when OCCT boolean produces coincident faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8722"
     },
@@ -3562,7 +3617,8 @@
       "author": "BIMvoice",
       "branch": "fix-8049-svg-degenerate-cross-product",
       "head": "886f379",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: avoid degenerate cross product in SvgSerializer for vertical section-line curves",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8724"
     },
@@ -3570,7 +3626,8 @@
       "author": "BIMvoice",
       "branch": "fix-7815-occt-noop-cut-cgal-fallback",
       "head": "88536d8",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: detect and recover from OCCT's silent no-op boolean cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8725"
     },
@@ -3668,7 +3725,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-7489-units-in-context",
       "head": "f330b2d",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: don't crash the iterator when IfcProject.UnitsInContext is blank on a non-conformant file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8742"
     },
@@ -3692,7 +3750,8 @@
       "author": "brunopostle",
       "branch": "fix/spflexer-header-leak-raii",
       "head": "0e94c69",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Fix leak of IfcSpfLexer when read_from_stream returns early or throws",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8747"
     },
@@ -3773,7 +3832,7 @@
       "author": "BIMvoice",
       "branch": "fix-413-name-template-wgpu",
       "head": "000fcb4",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "IfcConvert: port --name-template to ifcviewer-wgpu, convert coverage to pytest",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8764"
@@ -3790,7 +3849,7 @@
       "author": "BIMvoice",
       "branch": "concept-1330-cpp-rename",
       "head": "c8646bf",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeomserver, examples: finish renaming stray Ifc-prefixed internal classes (#1330)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8767"
@@ -3799,7 +3858,8 @@
       "author": "BIMvoice",
       "branch": "fix-556-xml-classification-v2",
       "head": "371eafb",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: emit IfcClassification associations in XML output",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8768"
     },
@@ -3823,7 +3883,8 @@
       "author": "BIMvoice",
       "branch": "fix-790-gltf-group-node-names",
       "head": "df0af3a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "GltfSerializer: fix hierarchy group node names, add opt-in --gltf-extras",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8771"
     },
@@ -3831,7 +3892,8 @@
       "author": "BIMvoice",
       "branch": "fix-418-nonmanifold-opening-facesets",
       "head": "cad1eec",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: keep one copy of repeated faces in faceset helper duplicate removal",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8772"
     },
@@ -3839,7 +3901,8 @@
       "author": "BIMvoice",
       "branch": "fix-2639-bbox-substitution",
       "head": "fb7aa40",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: add bbox-substitution-threshold to substitute overly dense geometry with bounding boxes (#2639)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8773"
     },
@@ -3855,7 +3918,8 @@
       "author": "BIMvoice",
       "branch": "fix-487-boolean-sequential-fallback",
       "head": "04310a5",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: retry failed batched opening cuts sequentially (#487)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8775"
     },
@@ -3863,7 +3927,8 @@
       "author": "BIMvoice",
       "branch": "fix-414-ownership-propagation",
       "head": "c9e8bbe",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcParse: propagate file ownership when assigning instance attributes (fixes #414)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8776"
     },
@@ -3871,7 +3936,8 @@
       "author": "BIMvoice",
       "branch": "2320-invalid-operand-fallback",
       "head": "53881c4",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: salvage subtractions when OCCT refuses invalid boolean operands (#2320)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8778"
     },
@@ -3895,7 +3961,8 @@
       "author": "BIMvoice",
       "branch": "fix-6102-nested-site-local-placement",
       "head": "d760057",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fix --site-local-placement breaking relative positions with nested IfcSites",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8784"
     },
@@ -3903,7 +3970,8 @@
       "author": "BIMvoice",
       "branch": "5779-empty-boolean-result",
       "head": "e94b359",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: don't silently accept implausible empty opening subtractions (#5779)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8786"
     },
@@ -3935,7 +4003,8 @@
       "author": "BIMvoice",
       "branch": "fix-6409-nan-token",
       "head": "8c91b44",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcParse: read back non-finite REALs serialized with a trailing dot",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8792"
     },
@@ -3951,7 +4020,8 @@
       "author": "BIMvoice",
       "branch": "2077-centerline-profile",
       "head": "2e3d448",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcCenterLineProfileDef: implement profile mapping (geometry side of #2077)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8794"
     },
@@ -4007,7 +4077,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-6424-hidden-lines",
       "head": "6c8c63e",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "SvgSerializer: optionally draw occluded linework as hidden lines",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8801"
     },
@@ -4039,7 +4110,8 @@
       "author": "BIMvoice",
       "branch": "ifcparse-954-x2-surrogates",
       "head": "afd7b81",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcparse: combine UTF-16 surrogate pairs in \\X2\\ escapes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8805"
     },
@@ -4063,7 +4135,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-6908-svg-door-arcs",
       "head": "df365de",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "SvgSerializer: only draw door swing arcs on the storey where the door is cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8808"
     },
@@ -4079,7 +4152,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-6287-self-intersecting-profile",
       "head": "493a798",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: detect and repair collinear self-intersections in profiles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8810"
     },
@@ -4087,7 +4161,8 @@
       "author": "BIMvoice",
       "branch": "fix-6391-opening-exception-fallback",
       "head": "bf5548f",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: keep unopened geometry when opening subtraction throws a non-std::exception",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8811"
     },
@@ -4103,7 +4178,8 @@
       "author": "BIMvoice",
       "branch": "5880-hybrid-opening-fallback",
       "head": "bd27cf3",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fall back to unopened geometry when convert_openings() cleanly fails",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8814"
     },
@@ -4127,7 +4203,8 @@
       "author": "BIMvoice",
       "branch": "repro-boolean-operand-failure",
       "head": "be1ccbc",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fail the whole boolean when CGAL's base operand can't be preprocessed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8817"
     },
@@ -4257,7 +4334,8 @@
       "author": "BIMvoice",
       "branch": "perf-6712-mapped-items-parser",
       "head": "eca82d1",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom/ifcparse: fix PSR library-API no-op, mapping-cache hang, and parser fast paths (#6712)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8840"
     },
@@ -4281,7 +4359,8 @@
       "author": "BIMvoice",
       "branch": "sweep-46-geom-normal-index",
       "head": "71c18a9",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: independent position/normal index streams for OBJ and Collada (#46)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8844"
     },
@@ -4289,7 +4368,8 @@
       "author": "BIMvoice",
       "branch": "issue-143-psr-style-aware-folding",
       "head": "8665725",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: style-aware permissive-shape-reuse folding; fix PSR on single-item mapped representations (#143)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8845"
     },
@@ -4305,7 +4385,8 @@
       "author": "sboddy",
       "branch": "fix-5685-squared-curves-on-open",
       "head": "b9fbaab",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "cgal: make deflection-driven circle tessellation unconditional for small-radius conics",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8847"
     },
@@ -4313,7 +4394,8 @@
       "author": "BIMvoice",
       "branch": "sweep-473-default-material-inheritance",
       "head": "c424d1b",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: resolve default materials through the schema supertype chain (#473)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8852"
     },
@@ -4321,7 +4403,8 @@
       "author": "BIMvoice",
       "branch": "fix-586-sphere-mapping",
       "head": "56b1406",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: map IfcSphericalSurface so advanced-brep spheres render (#586)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8853"
     },
@@ -4345,7 +4428,8 @@
       "author": "BIMvoice",
       "branch": "sweep-1308-svg-data-area",
       "head": "2c6db3d",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "SvgSerializer: emit machine-readable space area attribute; fix double-escaped area label (#1308)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8856"
     },
@@ -4353,7 +4437,8 @@
       "author": "brunopostle",
       "branch": "fix/entity-leak-mid-parse-exception",
       "head": "6b39666",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Fix leak of mid-parse entities when an exception escapes the scan loop",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8857"
     },
@@ -4361,7 +4446,8 @@
       "author": "brunopostle",
       "branch": "fix/duplicate-id-instance-leak",
       "head": "f16ba3d",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Fix leak of entities on duplicate #id",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8858"
     },
@@ -4369,7 +4455,8 @@
       "author": "BIMvoice",
       "branch": "points-vertex-representations-v080",
       "head": "df1abab",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: point/vertex representation support on clean v0.8.0 base (#1409, #5218)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8859"
     },
@@ -4377,7 +4464,8 @@
       "author": "BIMvoice",
       "branch": "fix-8861-cgal-no-normals-obj",
       "head": "17011c7",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Fix --no-normals ignored by CGAL kernel for OBJ output (#8861)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8862"
     },
