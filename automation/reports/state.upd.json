@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 36,
-    "merged": 457,
-    "skipped_conflict": 100,
+    "merged": 460,
+    "skipped_conflict": 97,
     "skipped_draft": 57,
     "total": 650
   },
-  "generated_at": "2026-07-27T08:44:48Z",
+  "generated_at": "2026-07-27T10:42:50Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -954,7 +954,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "f0c0312",
+      "head": "a84957f",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1296,7 +1296,7 @@
       "author": "BIMvoice",
       "branch": "fix-format-round-non-numeric-6776",
       "head": "3d17eed",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util.selector: numeric format functions pass through non-numeric values (#6776)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8297"
     },
@@ -2416,7 +2416,7 @@
       "author": "BIMvoice",
       "branch": "fix-6125-nonmanifold-volume",
       "head": "b8b787f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Return nan for non-manifold volume and skip it in QTO (#6125)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8503"
     },
@@ -3684,7 +3684,7 @@
       "author": "BIMvoice",
       "branch": "fix-7490-fill-alignment",
       "head": "69872ec",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: support aligning a hosted window/door to its wall's exterior/centerline/interior face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8744"
     },
@@ -3951,7 +3951,7 @@
       "author": "BIMvoice",
       "branch": "2077-centerline-profile",
       "head": "2e3d448",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "IfcCenterLineProfileDef: implement profile mapping (geometry side of #2077)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8794"
     },
@@ -3967,7 +3967,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7453-explicit-axis",
       "head": "c1081dc",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: surface + explicitly fix mesh-converted walls whose length is on local Y (#7453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8796"
     },
@@ -4022,7 +4022,7 @@
     "8803": {
       "author": "Bartok9",
       "branch": "sera/docs-linux-eigen-dep",
-      "head": "6a21001",
+      "head": "ba12b71",
       "status": "merged",
       "title": "docs: add Eigen to Linux install deps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
@@ -4417,7 +4417,7 @@
       "author": "BIMvoice",
       "branch": "feat/selector-ref-structure-key-7806",
       "head": "cde40a5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Selector: add referenced_structures value key (#7806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8874"
     },
@@ -4433,7 +4433,7 @@
       "author": "BIMvoice",
       "branch": "4817-space-height-box",
       "head": "0445702",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add Height setting for spaces generated from cursor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8876"
     },
@@ -4609,7 +4609,7 @@
       "author": "BIMvoice",
       "branch": "fix-4442-honor-calendar-work-hours",
       "head": "3a8d8b5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell.api.sequence: honour the calendar's declared work hours",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8907"
     },
@@ -4930,7 +4930,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-append-asset-perf",
       "head": "83d41ce",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "project.append_asset: propagate assume_asset_uniqueness_by_name to nested type append",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8956"
     },
@@ -5114,7 +5114,7 @@
       "author": "BIMvoice",
       "branch": "6964-duration-precision",
       "head": "73d64fc",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util.date: preserve microsecond precision when converting IfcDuration for calculation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8985"
     },
@@ -5242,7 +5242,7 @@
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
       "head": "0357807",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     }

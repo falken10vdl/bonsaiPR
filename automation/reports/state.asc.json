@@ -3,11 +3,11 @@
   "counts": {
     "failed": 36,
     "merged": 465,
-    "skipped_conflict": 91,
+    "skipped_conflict": 92,
     "skipped_draft": 57,
-    "total": 649
+    "total": 650
   },
-  "generated_at": "2026-07-27T08:03:14Z",
+  "generated_at": "2026-07-27T10:03:05Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -954,7 +954,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "f0c0312",
+      "head": "a84957f",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -5237,6 +5237,14 @@
       "status": "merged",
       "title": "Bonsai: snap to the nearest solid, not the nearest object origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9004"
+    },
+    "9005": {
+      "author": "CyrilWaechter",
+      "branch": "auto-space-height",
+      "head": "0357807",
+      "status": "skipped_conflict",
+      "title": "Auto-detect space height + IFC-direct space generation",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     }
   },
   "schema": 1
