@@ -44,6 +44,27 @@ if raw_excluded:
 else:
     excluded_prs = set()
 
+# Skip PRs that change C++ compiled into the ifcopenshell wheel Bonsai loads.
+# BonsaiPR ships the Python add-on against a pinned prebuilt wheel and never
+# recompiles C++, so a PR whose Python depends on new/changed C++ either crashes
+# at runtime or silently runs the old wheel behavior. Opt-in via .env
+# (SKIP_CPP_PRS=1); default off so we don't drop PRs whose Python is testable.
+SKIP_CPP_PRS = os.getenv("SKIP_CPP_PRS", "").strip().lower() in ("1", "true", "yes")
+
+# File extensions that only take effect after a C++ recompile.
+COMPILED_EXTS = {".cpp", ".cxx", ".cc", ".c", ".h", ".hpp", ".hxx", ".i", ".ipp"}
+
+# Only C++ under these roots compiles into the wheel Bonsai imports at runtime
+# (the SWIG wrapper and what it links). C++ elsewhere — ifcconvert/ (CLI),
+# qtviewer/, ifcgeomserver/, ifcjni/, tests, examples — never touches the Python
+# API, so it stays testable and must not trigger a skip.
+WHEEL_CPP_ROOTS = (
+    "src/ifcwrap/",
+    "src/ifcparse/",
+    "src/ifcgeom/",
+    "src/serializers/",
+)
+
 # Known per-file conflict resolutions for specific PRs.
 # Add an entry when a PR conflicts only because of another PR already merged,
 # and the incoming PR's version of that file is the correct superset.
@@ -92,6 +113,59 @@ def get_branch_and_report_names():
 
 def github_headers():
     return {"Authorization": f"token {GITHUB_TOKEN}"}
+
+
+def get_pr_files(pr_number):
+    """Return the list of file paths changed by a PR (paginated).
+
+    Uses the GitHub files API so we can decide to skip a PR before fetching or
+    merging it. On error, returns None so the caller can fail open (don't skip).
+    """
+    url = f"https://api.github.com/repos/{upstream_repo}/pulls/{pr_number}/files"
+    files = []
+    page = 1
+    while True:
+        try:
+            response = requests.get(
+                url,
+                headers=github_headers(),
+                params={"per_page": 100, "page": page},
+                timeout=30,
+            )
+        except requests.RequestException as e:
+            print(f"⚠️  Could not fetch files for PR #{pr_number}: {e}")
+            return None
+        if response.status_code != 200:
+            print(
+                f"⚠️  Could not fetch files for PR #{pr_number}: "
+                f"HTTP {response.status_code}"
+            )
+            return None
+        batch = response.json()
+        if not batch:
+            break
+        files.extend(f["filename"] for f in batch)
+        if len(batch) < 100:  # Last page
+            break
+        page += 1
+    return files
+
+
+def pr_needs_cpp_recompile(pr_number):
+    """True if the PR changes C++ compiled into the wheel Bonsai loads.
+
+    Fails open (returns False) when the file list can't be fetched, so an API
+    hiccup never silently drops a PR from the build.
+    """
+    files = get_pr_files(pr_number)
+    if files is None:
+        return False
+    for path in files:
+        if path.startswith(WHEEL_CPP_ROOTS) and (
+            os.path.splitext(path)[1].lower() in COMPILED_EXTS
+        ):
+            return True
+    return False
 
 
 def try_resolve_known_conflict(pr_number):
@@ -257,6 +331,22 @@ def apply_prs_to_branch(branch_name, prs):
                 print(f"⚠️  Skipping PR #{pr_number}: PR is in DRAFT status")
                 pr_with_reason = pr.copy()
                 pr_with_reason["skip_reason"] = "DRAFT status"
+                pr_with_reason["individual_test_merge"] = None
+                skipped.append(pr_with_reason)
+                continue
+
+            # Skip PRs that change C++ compiled into the wheel Bonsai loads.
+            # Their Python may depend on C++ that BonsaiPR never recompiles, so
+            # the feature won't work in the build even if the merge succeeds.
+            if SKIP_CPP_PRS and pr_needs_cpp_recompile(pr_number):
+                print(
+                    f"⚠️  Skipping PR #{pr_number}: "
+                    f"changes C++ not recompiled by BonsaiPR"
+                )
+                pr_with_reason = pr.copy()
+                pr_with_reason["skip_reason"] = (
+                    "Requires C++ recompile — not built by BonsaiPR (pinned wheel)"
+                )
                 pr_with_reason["individual_test_merge"] = None
                 skipped.append(pr_with_reason)
                 continue
