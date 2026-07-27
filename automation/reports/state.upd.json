@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 36,
-    "merged": 459,
-    "skipped_conflict": 98,
+    "failed": 38,
+    "merged": 456,
+    "skipped_conflict": 99,
     "skipped_draft": 57,
     "total": 650
   },
-  "generated_at": "2026-07-27T12:43:01Z",
+  "generated_at": "2026-07-27T14:43:41Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -497,7 +497,7 @@
       "author": "paragforwork",
       "branch": "new-profiler",
       "head": "1acce39",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Replaced the old profiler function with the ifcopenshell.util profiler",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7813"
     },
@@ -1030,7 +1030,7 @@
       "author": "theoryshaw",
       "branch": "debug-drawing-faster-failure-search",
       "head": "9283d86",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Debug drawing faster failure search",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8228"
     },
@@ -2344,7 +2344,8 @@
       "author": "BIMvoice",
       "branch": "bv-619-boolean-coincident",
       "head": "08d50da",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcgeom: cut openings whose clip faces coincide with the host (#619)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8489"
     },
@@ -2352,7 +2353,8 @@
       "author": "BIMvoice",
       "branch": "bv-4118-heal-void-edges",
       "head": "8cd1ef5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcgeom: cut openings when the wall void boundary has sub-precision edges (#4118)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8490"
     },
@@ -4015,7 +4017,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6423-axis-linework",
       "head": "d2a08d3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: draw element Axis reference lines in drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8802"
     },
@@ -4095,7 +4097,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7410-selection-guard",
       "head": "0496043",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: guard set_objects_selection against excluded or hidden collections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8813"
     },
@@ -4705,7 +4707,7 @@
       "author": "BIMvoice",
       "branch": "fix-4774-shapely-fill-flush-edge",
       "head": "0824082",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: pool all projections for shapely fill cell formation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8923"
     },
