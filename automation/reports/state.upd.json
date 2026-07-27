@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 36,
-    "merged": 460,
-    "skipped_conflict": 97,
+    "merged": 459,
+    "skipped_conflict": 98,
     "skipped_draft": 57,
     "total": 650
   },
-  "generated_at": "2026-07-27T10:42:50Z",
+  "generated_at": "2026-07-27T12:43:01Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1391,7 +1391,7 @@
     "8320": {
       "author": "BIMvoice",
       "branch": "perf-extractelements-defer-shared-rels",
-      "head": "e9c4009",
+      "head": "1c531f4",
       "status": "merged",
       "title": "ifcpatch(ExtractElements): defer shared relationship members to fix O(n²) extraction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8320"
@@ -4536,7 +4536,7 @@
     "8895": {
       "author": "sboddy",
       "branch": "fix-3742-coplanar-svgfill-arrangement",
-      "head": "f3c750d",
+      "head": "5080bfb",
       "status": "skipped_draft",
       "title": "Coplanar surface boundary lines via a real 2D planar arrangement (alt. to #7908)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8895"
@@ -5138,7 +5138,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-extractelements-progress-ui",
       "head": "8870292",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: report real progress while a patch recipe runs, instead of freezing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8988"
     },

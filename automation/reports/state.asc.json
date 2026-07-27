@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 36,
-    "merged": 465,
-    "skipped_conflict": 92,
+    "merged": 464,
+    "skipped_conflict": 93,
     "skipped_draft": 57,
     "total": 650
   },
-  "generated_at": "2026-07-27T10:03:05Z",
+  "generated_at": "2026-07-27T12:02:58Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1391,7 +1391,7 @@
     "8320": {
       "author": "BIMvoice",
       "branch": "perf-extractelements-defer-shared-rels",
-      "head": "e9c4009",
+      "head": "1c531f4",
       "status": "merged",
       "title": "ifcpatch(ExtractElements): defer shared relationship members to fix O(n²) extraction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8320"
@@ -4022,7 +4022,7 @@
     "8803": {
       "author": "Bartok9",
       "branch": "sera/docs-linux-eigen-dep",
-      "head": "6a21001",
+      "head": "ba12b71",
       "status": "merged",
       "title": "docs: add Eigen to Linux install deps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
@@ -4536,7 +4536,7 @@
     "8895": {
       "author": "sboddy",
       "branch": "fix-3742-coplanar-svgfill-arrangement",
-      "head": "f3c750d",
+      "head": "5080bfb",
       "status": "skipped_draft",
       "title": "Coplanar surface boundary lines via a real 2D planar arrangement (alt. to #7908)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8895"
@@ -5138,7 +5138,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-extractelements-progress-ui",
       "head": "8870292",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: report real progress while a patch recipe runs, instead of freezing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8988"
     },
