@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 393,
-    "skipped_conflict": 81,
+    "merged": 394,
+    "skipped_conflict": 80,
     "skipped_draft": 57,
     "total": 654
   },
-  "generated_at": "2026-07-27T16:30:38Z",
+  "generated_at": "2026-07-27T18:30:55Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -522,7 +522,7 @@
       "author": "theoryshaw",
       "branch": "grid_issues",
       "head": "60063ac",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Grid issues",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7833"
     },

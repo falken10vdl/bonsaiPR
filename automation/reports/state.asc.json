@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 124,
-    "merged": 395,
-    "skipped_conflict": 74,
+    "merged": 396,
+    "skipped_conflict": 77,
     "skipped_draft": 57,
-    "total": 650
+    "total": 654
   },
-  "generated_at": "2026-07-27T16:06:58Z",
+  "generated_at": "2026-07-27T18:07:05Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1218,7 +1218,8 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -1782,7 +1783,7 @@
       "author": "BIMvoice",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "82a4117",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix BCF 2.1 viewpoint and snapshot file names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
@@ -2963,8 +2964,7 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "027fae4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -5333,6 +5333,38 @@
       "status": "skipped_conflict",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
+    },
+    "9010": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc2x3-door-orientation-2",
+      "head": "b2bd4bd",
+      "status": "skipped_conflict",
+      "title": "Bonsai: rotate the door hover preview with the wall on IFC2X3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9010"
+    },
+    "9011": {
+      "author": "BIMvoice",
+      "branch": "fix/host-recut-active-representation",
+      "head": "b6120cd",
+      "status": "merged",
+      "title": "Bonsai: recut a voided host from its active representation, not its context",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9011"
+    },
+    "9012": {
+      "author": "BIMvoice",
+      "branch": "fix/wall-body-context-regenerate",
+      "head": "fa437cd",
+      "status": "merged",
+      "title": "geometry.regenerate_wall_representation: create the Body context when missing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9012"
+    },
+    "9013": {
+      "author": "BIMvoice",
+      "branch": "fix/opening-subtraction-context-ids",
+      "head": "d6bff7e",
+      "status": "skipped_conflict",
+      "title": "Bonsai: cut the opening when the host and the void sit on different contexts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9013"
     }
   },
   "schema": 1

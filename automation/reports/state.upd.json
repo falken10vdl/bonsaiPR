@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
+    "failed": 123,
     "merged": 391,
-    "skipped_conflict": 82,
+    "skipped_conflict": 83,
     "skipped_draft": 57,
     "total": 654
   },
-  "generated_at": "2026-07-27T16:53:56Z",
+  "generated_at": "2026-07-27T18:54:18Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -2503,8 +2503,7 @@
       "author": "Vanuan",
       "branch": "patch-3",
       "head": "9b8d94a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Door/Opening documentation improvement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8509"
     },
