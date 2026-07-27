@@ -15,6 +15,7 @@ import sys
 import subprocess
 import datetime
 import logging
+import time
 from pathlib import Path
 
 # Add the config directory to the Python path
@@ -35,6 +36,7 @@ import pr_state
 
 # Committed per-order snapshots + event logs live here.
 REPORTS_DIR = os.path.join(os.path.dirname(__file__), "..", "reports")
+CHANGE_STATE_PATH = os.path.join(os.path.dirname(__file__), "..", "logs", "pr_state.json")
 
 
 def _events_path(order_suffix):
@@ -203,6 +205,8 @@ def run_script(script_name, description, args=None):
     """Run an automation script with error handling"""
     scripts_dir = os.path.join(os.path.dirname(__file__), "..", "scripts")
     script_path = os.path.join(scripts_dir, script_name)
+    max_attempts = 3
+    retry_delay_seconds = 20
 
     if not os.path.exists(script_path):
         logging.error(f"❌ Script not found: {script_path}")
@@ -211,38 +215,58 @@ def run_script(script_name, description, args=None):
     logging.info(f"🚀 Starting: {description}")
     logging.info(f"📄 Script: {script_name}")
 
-    try:
-        cmd = [sys.executable, script_path]
-        if args:
-            cmd.extend(args)
-        result = subprocess.run(
-            cmd,
-            cwd=scripts_dir,
-            capture_output=True,
-            text=True,
-            timeout=3600,  # 1 hour timeout
-        )
+    cmd = [sys.executable, script_path]
+    if args:
+        cmd.extend(args)
 
-        if result.returncode == 0:
-            logging.info(f"✅ Completed successfully: {description}")
-            if result.stdout:
-                logging.info(f"Output: {result.stdout}")
-            return True
-        else:
+    for attempt in range(1, max_attempts + 1):
+        try:
+            result = subprocess.run(
+                cmd,
+                cwd=scripts_dir,
+                capture_output=True,
+                text=True,
+                timeout=3600,  # 1 hour timeout
+            )
+
+            if result.returncode == 0:
+                if attempt > 1:
+                    logging.info(f"✅ Completed successfully on attempt {attempt}: {description}")
+                else:
+                    logging.info(f"✅ Completed successfully: {description}")
+                if result.stdout:
+                    logging.info(f"Output: {result.stdout}")
+                return True
+
             logging.error(f"❌ Failed: {description}")
             logging.error(f"Exit code: {result.returncode}")
             if result.stderr:
                 logging.error(f"Error: {result.stderr}")
             if result.stdout:
                 logging.info(f"Output: {result.stdout}")
-            return False
+        except subprocess.TimeoutExpired:
+            logging.error(f"⏰ Timeout: {description} exceeded 1 hour")
+        except Exception as e:
+            logging.error(f"💥 Exception in {description}: {e}")
 
-    except subprocess.TimeoutExpired:
-        logging.error(f"⏰ Timeout: {description} exceeded 1 hour")
-        return False
-    except Exception as e:
-        logging.error(f"💥 Exception in {description}: {e}")
-        return False
+        if attempt < max_attempts:
+            logging.info(
+                f"🔁 Retrying step '{description}' ({attempt}/{max_attempts - 1}) "
+                f"in {retry_delay_seconds}s..."
+            )
+            time.sleep(retry_delay_seconds)
+        else:
+            if os.path.exists(CHANGE_STATE_PATH):
+                try:
+                    os.remove(CHANGE_STATE_PATH)
+                    logging.info(
+                        f"🧹 Removed change-detection state file after terminal failure: {CHANGE_STATE_PATH}"
+                    )
+                except Exception as cleanup_error:
+                    logging.warning(
+                        f"⚠️ Could not remove state file {CHANGE_STATE_PATH}: {cleanup_error}"
+                    )
+            return False
 
 
 def main():

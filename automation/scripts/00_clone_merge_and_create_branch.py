@@ -4,6 +4,7 @@ import requests
 import re
 import sys
 import json
+import time
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -137,31 +138,83 @@ def try_resolve_known_conflict(pr_number):
 
 def setup_repository():
     """Clone or update the fork repository with upstream remote"""
+    def _run_git(cmd):
+        """Run git command with bounded retries and lock cleanup."""
+        max_attempts = 3
+        retry_delay_seconds = 20
+        state_file = os.path.join(
+            os.path.dirname(__file__), "..", "logs", "pr_state.json"
+        )
+
+        for attempt in range(1, max_attempts + 1):
+            try:
+                subprocess.run(cmd, check=True, capture_output=True, text=True)
+                return
+            except subprocess.CalledProcessError as e:
+                combined = f"{e.stdout or ''}\n{e.stderr or ''}"
+                lock_match = re.search(
+                    r"Unable to create '([^']+\\.lock)': File exists", combined
+                )
+
+                is_last_attempt = attempt >= max_attempts
+                if lock_match:
+                    lock_path = lock_match.group(1)
+                    if os.path.exists(lock_path):
+                        # Stale git lock files can survive a crashed/aborted git
+                        # process. Remove the lock before retrying.
+                        print(f"⚠️  Detected stale git lock file: {lock_path}")
+                        os.remove(lock_path)
+                    else:
+                        print(
+                            f"⚠️  Lock error reported but lock file not present: {lock_path}"
+                        )
+                else:
+                    err = (e.stderr or e.stdout or str(e)).strip()
+                    print(f"⚠️  Git command failed: {' '.join(cmd)}")
+                    if err:
+                        print(f"    Reason: {err}")
+
+                if is_last_attempt:
+                    print(
+                        f"❌ Git command failed after {max_attempts} attempts: {' '.join(cmd)}"
+                    )
+                    if os.path.exists(state_file):
+                        try:
+                            os.remove(state_file)
+                            print(
+                                f"🧹 Removed change-detection state file: {state_file}"
+                            )
+                        except Exception as cleanup_error:
+                            print(
+                                f"⚠️  Could not remove state file {state_file}: {cleanup_error}"
+                            )
+                    raise
+
+                print(
+                    f"🔁 Retrying git command ({attempt}/{max_attempts - 1}) "
+                    f"in {retry_delay_seconds}s..."
+                )
+                time.sleep(retry_delay_seconds)
+
     if os.path.exists(work_dir):
         print(f"Updating existing repository in {work_dir}")
         original_dir = os.getcwd()
         try:
             os.chdir(work_dir)
             # Reset to clean state
-            subprocess.run(["git", "reset", "--hard", "HEAD"], check=True)
-            subprocess.run(["git", "clean", "-fd"], check=True)
-            subprocess.run(["git", "checkout", SOURCE_BASE_BRANCH], check=True)
+            _run_git(["git", "reset", "--hard", "HEAD"])
+            _run_git(["git", "clean", "-fd"])
+            _run_git(["git", "checkout", SOURCE_BASE_BRANCH])
 
             # Update from upstream
-            subprocess.run(["git", "fetch", "upstream"], check=True)
-            subprocess.run(
-                ["git", "reset", "--hard", f"upstream/{SOURCE_BASE_BRANCH}"], check=True
-            )
+            _run_git(["git", "fetch", "upstream"])
+            _run_git(["git", "reset", "--hard", f"upstream/{SOURCE_BASE_BRANCH}"])
 
             # Update the origin remote URL to use token for authentication
-            subprocess.run(
-                ["git", "remote", "set-url", "origin", fork_repo_url], check=True
-            )
+            _run_git(["git", "remote", "set-url", "origin", fork_repo_url])
 
             # Push updated base branch to fork
-            subprocess.run(
-                ["git", "push", "origin", SOURCE_BASE_BRANCH, "--force"], check=True
-            )
+            _run_git(["git", "push", "origin", SOURCE_BASE_BRANCH, "--force"])
 
             print(f"Repository updated successfully")
         finally:
