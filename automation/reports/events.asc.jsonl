@@ -920,3 +920,8 @@
 {"ts": "2026-07-28T02:06:35Z", "order": "ascending", "pr": 9018, "event": "added", "to": "merged"}
 {"ts": "2026-07-28T04:06:36Z", "order": "ascending", "pr": 8139, "event": "updated", "status": "skipped_draft", "from_head": "5739a24", "to_head": "ba8dc53"}
 {"ts": "2026-07-28T04:06:36Z", "order": "ascending", "pr": 9021, "event": "added", "to": "failed"}
+{"ts": "2026-07-28T07:06:33Z", "order": "ascending", "pr": 8320, "event": "updated", "status": "merged", "from_head": "1c531f4", "to_head": "64e20b8"}
+{"ts": "2026-07-28T07:06:33Z", "order": "ascending", "pr": 8752, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-07-28T07:06:33Z", "order": "ascending", "pr": 8971, "event": "updated", "status": "skipped_conflict", "from_head": "d194ed8", "to_head": "fe131cd"}
+{"ts": "2026-07-28T07:06:33Z", "order": "ascending", "pr": 8988, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-07-28T07:06:33Z", "order": "ascending", "pr": 9022, "event": "added", "to": "merged"}

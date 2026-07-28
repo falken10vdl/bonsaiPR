@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 126,
-    "merged": 396,
-    "skipped_conflict": 78,
+    "failed": 124,
+    "merged": 402,
+    "skipped_conflict": 81,
     "skipped_draft": 57,
-    "total": 657
+    "total": 664
   },
-  "generated_at": "2026-07-28T04:30:00Z",
+  "generated_at": "2026-07-28T07:30:22Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1370,8 +1370,7 @@
       "author": "BIMvoice",
       "branch": "fix-get-part-of-product-none-repmaps-8081",
       "head": "d971623",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Fix get_part_of_product crash and IFC2X3 typo (#8081)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8317"
     },
@@ -1394,9 +1393,8 @@
     "8320": {
       "author": "BIMvoice",
       "branch": "perf-extractelements-defer-shared-rels",
-      "head": "1c531f4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "64e20b8",
+      "status": "merged",
       "title": "ifcpatch(ExtractElements): defer shared relationship members to fix O(n²) extraction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8320"
     },
@@ -5122,7 +5120,7 @@
     "8971": {
       "author": "BIMvoice",
       "branch": "5696-batch-reimport-iterator",
-      "head": "d194ed8",
+      "head": "fe131cd",
       "status": "skipped_conflict",
       "title": "Bonsai: batch geometry iterator setup when reimporting many representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8971"
@@ -5299,7 +5297,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-filling-z-wall-base",
       "head": "ed2b8a0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: host a door in the wall it was picked on, and never leave an unhosted one",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8998"
     },
@@ -5339,7 +5337,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-door-orientation-2",
       "head": "b2bd4bd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: rotate the door hover preview with the wall on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9010"
     },
@@ -5391,6 +5389,62 @@
       "status": "failed",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
+    },
+    "9022": {
+      "author": "BIMvoice",
+      "branch": "fix/drawing-activation-selector-cost",
+      "head": "5cb6d49",
+      "status": "merged",
+      "title": "Bonsai: fix slow drawing activation from duplicate and uncached pset filtering",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9022"
+    },
+    "9023": {
+      "author": "BIMvoice",
+      "branch": "clean/false-origin-not-under-geometry",
+      "head": "d6d3eb4",
+      "status": "merged",
+      "title": "Bonsai: don't apply a false origin the model does not sit under",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9023"
+    },
+    "9024": {
+      "author": "BIMvoice",
+      "branch": "clean/reference-view-authored-voids",
+      "head": "8f86d43",
+      "status": "merged",
+      "title": "Bonsai: keep authored voids on reference view hosts, and stop prompting to recut them",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9024"
+    },
+    "9025": {
+      "author": "BIMvoice",
+      "branch": "fix/door-opening-blender-offset",
+      "head": "92723e7",
+      "status": "merged",
+      "title": "Bonsai: write the opening placement in IFC space, not Blender space",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9025"
+    },
+    "9026": {
+      "author": "BIMvoice",
+      "branch": "fix/door-orientation-no-reference-line",
+      "head": "82d9b10",
+      "status": "merged",
+      "title": "Bonsai: orient a filling from the clicked face when the host has no reference line",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9026"
+    },
+    "9027": {
+      "author": "BIMvoice",
+      "branch": "fix/door-host-without-faces",
+      "head": "b7bd20c",
+      "status": "merged",
+      "title": "Bonsai: fail cleanly when placing a filling into a host with no geometry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9027"
+    },
+    "9028": {
+      "author": "BIMvoice",
+      "branch": "fix/9006-door-tool-polyline-crash",
+      "head": "19eddd4",
+      "status": "merged",
+      "title": "Bonsai: stop routing non-profile types into the polyline profile tool (#9006)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9028"
     }
   },
   "schema": 1

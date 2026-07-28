@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
-    "merged": 393,
-    "skipped_conflict": 83,
+    "failed": 128,
+    "merged": 398,
+    "skipped_conflict": 81,
     "skipped_draft": 57,
-    "total": 657
+    "total": 664
   },
-  "generated_at": "2026-07-28T04:53:24Z",
+  "generated_at": "2026-07-28T07:53:55Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -439,7 +439,7 @@
       "author": "falken10vdl",
       "branch": "vscode-dev-env-fix-for-linux",
       "head": "2b8d9e9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix JSON formatting in launch.json and add \"justMyCode\":false to allow for breakpoints in Linux",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7769"
     },
@@ -827,7 +827,8 @@
       "author": "isma3lMB",
       "branch": "v0.8.0",
       "head": "ef1e534",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Ensuring that Entity name is a string",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7993"
     },
@@ -1138,7 +1139,8 @@
       "author": "BIMvoice",
       "branch": "feat/cost-total-applied-value-5912",
       "head": "c06fda0",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "util.cost: add calculate_total_applied_value (#5912)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8266"
     },
@@ -1370,7 +1372,7 @@
       "author": "BIMvoice",
       "branch": "fix-get-part-of-product-none-repmaps-8081",
       "head": "d971623",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix get_part_of_product crash and IFC2X3 typo (#8081)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8317"
     },
@@ -1393,7 +1395,7 @@
     "8320": {
       "author": "BIMvoice",
       "branch": "perf-extractelements-defer-shared-rels",
-      "head": "1c531f4",
+      "head": "64e20b8",
       "status": "merged",
       "title": "ifcpatch(ExtractElements): defer shared relationship members to fix O(n²) extraction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8320"
@@ -2091,7 +2093,7 @@
       "author": "BIMvoice",
       "branch": "fix-reimport-multiprocessing-toggle",
       "head": "f26746f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: honour the CPU Multiprocessing toggle on representation reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8444"
     },
@@ -2794,7 +2796,7 @@
       "author": "BIMvoice",
       "branch": "ship-6481-parametric-profile",
       "head": "e1c0e7b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: preserve a parametric profile through an edit round trip (#6481)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8553"
     },
@@ -2930,7 +2932,8 @@
       "author": "BIMvoice",
       "branch": "fix-3067-structural-axis-default",
       "head": "7ee97d0",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: set a default Axis on structural curve member/connection creation (#3067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8593"
     },
@@ -3634,7 +3637,7 @@
       "author": "BIMvoice",
       "branch": "fix-7614-shared-profile-edit-refresh",
       "head": "c3b3ef4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: refresh every sharing element's mesh after an extrusion profile edit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8726"
     },
@@ -4036,7 +4039,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-7453-explicit-axis",
       "head": "c1081dc",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: surface + explicitly fix mesh-converted walls whose length is on local Y (#7453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8796"
     },
@@ -5120,8 +5124,8 @@
     "8971": {
       "author": "BIMvoice",
       "branch": "5696-batch-reimport-iterator",
-      "head": "d194ed8",
-      "status": "skipped_conflict",
+      "head": "fe131cd",
+      "status": "merged",
       "title": "Bonsai: batch geometry iterator setup when reimporting many representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8971"
     },
@@ -5225,7 +5229,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-extractelements-progress-ui",
       "head": "8870292",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: report real progress while a patch recipe runs, instead of freezing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8988"
     },
@@ -5297,7 +5301,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-filling-z-wall-base",
       "head": "ed2b8a0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: host a door in the wall it was picked on, and never leave an unhosted one",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8998"
     },
@@ -5337,7 +5341,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-door-orientation-2",
       "head": "b2bd4bd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: rotate the door hover preview with the wall on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9010"
     },
@@ -5361,7 +5365,7 @@
       "author": "BIMvoice",
       "branch": "fix/opening-subtraction-context-ids",
       "head": "d6bff7e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: cut the opening when the host and the void sit on different contexts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9013"
     },
@@ -5389,6 +5393,62 @@
       "status": "failed",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
+    },
+    "9022": {
+      "author": "BIMvoice",
+      "branch": "fix/drawing-activation-selector-cost",
+      "head": "5cb6d49",
+      "status": "merged",
+      "title": "Bonsai: fix slow drawing activation from duplicate and uncached pset filtering",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9022"
+    },
+    "9023": {
+      "author": "BIMvoice",
+      "branch": "clean/false-origin-not-under-geometry",
+      "head": "d6d3eb4",
+      "status": "merged",
+      "title": "Bonsai: don't apply a false origin the model does not sit under",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9023"
+    },
+    "9024": {
+      "author": "BIMvoice",
+      "branch": "clean/reference-view-authored-voids",
+      "head": "8f86d43",
+      "status": "merged",
+      "title": "Bonsai: keep authored voids on reference view hosts, and stop prompting to recut them",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9024"
+    },
+    "9025": {
+      "author": "BIMvoice",
+      "branch": "fix/door-opening-blender-offset",
+      "head": "92723e7",
+      "status": "merged",
+      "title": "Bonsai: write the opening placement in IFC space, not Blender space",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9025"
+    },
+    "9026": {
+      "author": "BIMvoice",
+      "branch": "fix/door-orientation-no-reference-line",
+      "head": "82d9b10",
+      "status": "merged",
+      "title": "Bonsai: orient a filling from the clicked face when the host has no reference line",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9026"
+    },
+    "9027": {
+      "author": "BIMvoice",
+      "branch": "fix/door-host-without-faces",
+      "head": "b7bd20c",
+      "status": "merged",
+      "title": "Bonsai: fail cleanly when placing a filling into a host with no geometry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9027"
+    },
+    "9028": {
+      "author": "BIMvoice",
+      "branch": "fix/9006-door-tool-polyline-crash",
+      "head": "19eddd4",
+      "status": "merged",
+      "title": "Bonsai: stop routing non-profile types into the polyline profile tool (#9006)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9028"
     }
   },
   "schema": 1
