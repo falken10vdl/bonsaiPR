@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 128,
-    "merged": 398,
-    "skipped_conflict": 81,
+    "failed": 124,
+    "merged": 399,
+    "skipped_conflict": 84,
     "skipped_draft": 57,
     "total": 664
   },
-  "generated_at": "2026-07-28T07:53:55Z",
+  "generated_at": "2026-07-28T09:54:48Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -439,7 +439,7 @@
       "author": "falken10vdl",
       "branch": "vscode-dev-env-fix-for-linux",
       "head": "2b8d9e9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix JSON formatting in launch.json and add \"justMyCode\":false to allow for breakpoints in Linux",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7769"
     },
@@ -827,8 +827,7 @@
       "author": "isma3lMB",
       "branch": "v0.8.0",
       "head": "ef1e534",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Ensuring that Entity name is a string",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7993"
     },
@@ -1139,8 +1138,7 @@
       "author": "BIMvoice",
       "branch": "feat/cost-total-applied-value-5912",
       "head": "c06fda0",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "util.cost: add calculate_total_applied_value (#5912)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8266"
     },
@@ -1395,7 +1393,7 @@
     "8320": {
       "author": "BIMvoice",
       "branch": "perf-extractelements-defer-shared-rels",
-      "head": "64e20b8",
+      "head": "fe08cec",
       "status": "merged",
       "title": "ifcpatch(ExtractElements): defer shared relationship members to fix O(n²) extraction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8320"
@@ -1760,7 +1758,7 @@
       "author": "BIMvoice",
       "branch": "fix-7487-type-mapped-duplicate",
       "head": "918835a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix wrong duplicated geometry for type mapped elements (#7487, #7996)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8385"
     },
@@ -2796,7 +2794,7 @@
       "author": "BIMvoice",
       "branch": "ship-6481-parametric-profile",
       "head": "e1c0e7b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve a parametric profile through an edit round trip (#6481)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8553"
     },
@@ -2932,8 +2930,7 @@
       "author": "BIMvoice",
       "branch": "fix-3067-structural-axis-default",
       "head": "7ee97d0",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "Bonsai: set a default Axis on structural curve member/connection creation (#3067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8593"
     },
@@ -3637,7 +3634,7 @@
       "author": "BIMvoice",
       "branch": "fix-7614-shared-profile-edit-refresh",
       "head": "c3b3ef4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: refresh every sharing element's mesh after an extrusion profile edit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8726"
     },
@@ -4039,8 +4036,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7453-explicit-axis",
       "head": "c1081dc",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: surface + explicitly fix mesh-converted walls whose length is on local Y (#7453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8796"
     },
@@ -4804,7 +4800,7 @@
       "author": "BIMvoice",
       "branch": "feat-6239-viewport-list-select-sync",
       "head": "8cf8647",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: sync Representation Items list selection with the 3D viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8924"
     },
@@ -5245,7 +5241,7 @@
       "author": "BIMvoice",
       "branch": "fix-7996-mapped-transform-duplicate",
       "head": "904f90e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: keep per-occurrence mapped transforms when duplicating (#7996)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8991"
     },
