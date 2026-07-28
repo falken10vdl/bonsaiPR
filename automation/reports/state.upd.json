@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 124,
-    "merged": 399,
-    "skipped_conflict": 84,
+    "merged": 397,
+    "skipped_conflict": 83,
     "skipped_draft": 57,
-    "total": 664
+    "total": 661
   },
-  "generated_at": "2026-07-28T12:55:05Z",
+  "generated_at": "2026-07-28T15:04:02Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -160,7 +160,7 @@
       "author": "Rob2309",
       "branch": "general-mirroring",
       "head": "bcd772a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
     },
@@ -315,7 +315,7 @@
       "author": "theoryshaw",
       "branch": "extend-profiles-and-extrusions",
       "head": "648c328",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "closes #3565 - extend profiles and basic extrusions to 3D cursor with…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7648"
     },
@@ -710,7 +710,7 @@
       "author": "falken10vdl",
       "branch": "fix/ifctester-setuptools-py312-v2",
       "head": "8f5d499",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "fix(ifctester): add setuptools to venv pip install for Python 3.12+ compatibility",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7920"
     },
@@ -1562,7 +1562,7 @@
       "author": "BIMvoice",
       "branch": "fix-4332-door-flip-2d",
       "head": "8351f85",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: flip fills against the Body representation so doors don't jump out of host in 2D (#4332)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8346"
     },
@@ -1911,7 +1911,7 @@
       "author": "BIMvoice",
       "branch": "fix-7533-duplicate-boolean-remap",
       "head": "8267e94",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve half space cuts when duplicating an element (#7533)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8417"
     },
@@ -3441,14 +3441,6 @@
       "title": "Bonsai: add tooltips to 67 operators in classification, document, group, layer, library and unit modules",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8692"
     },
-    "8693": {
-      "author": "BIMvoice",
-      "branch": "bv-3565-extend-nontyped-profile",
-      "head": "9e466f9",
-      "status": "merged",
-      "title": "Bonsai: let Shift+E extend non-typed profile extrusions",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8693"
-    },
     "8694": {
       "author": "BIMvoice",
       "branch": "fix-3748-sloped-space-roof",
@@ -4940,14 +4932,6 @@
       "title": "Fix ci-bonsai-choco: subprocess calls given bare multi-word strings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8942"
     },
-    "8943": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-ifctester-org-build-deps",
-      "head": "6c733dc",
-      "status": "merged",
-      "title": "Fix ci-ifctester-org: install setuptools build dep",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8943"
-    },
     "8944": {
       "author": "BIMvoice",
       "branch": "fix/8934-spatial-panel-regex-filter",
@@ -5301,14 +5285,6 @@
       "title": "Bonsai: host a door in the wall it was picked on, and never leave an unhosted one",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8998"
     },
-    "9000": {
-      "author": "BIMvoice",
-      "branch": "fix/mirror-true-mirror",
-      "head": "15f0f48",
-      "status": "merged",
-      "title": "Bonsai: make Mirror a true mirror (#7991, #6906)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9000"
-    },
     "9002": {
       "author": "BIMvoice",
       "branch": "bonsai-door-recut-host-representation",
@@ -5337,7 +5313,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-door-orientation-2",
       "head": "b2bd4bd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: rotate the door hover preview with the wall on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9010"
     },
@@ -5426,7 +5402,7 @@
       "author": "BIMvoice",
       "branch": "fix/door-orientation-no-reference-line",
       "head": "82d9b10",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: orient a filling from the clicked face when the host has no reference line",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9026"
     },

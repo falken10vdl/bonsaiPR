@@ -3,11 +3,11 @@
   "counts": {
     "failed": 124,
     "merged": 402,
-    "skipped_conflict": 81,
+    "skipped_conflict": 79,
     "skipped_draft": 57,
-    "total": 664
+    "total": 662
   },
-  "generated_at": "2026-07-28T12:31:21Z",
+  "generated_at": "2026-07-28T14:31:22Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -315,7 +315,7 @@
       "author": "theoryshaw",
       "branch": "extend-profiles-and-extrusions",
       "head": "648c328",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "closes #3565 - extend profiles and basic extrusions to 3D cursor with…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7648"
     },
@@ -3441,14 +3441,6 @@
       "title": "Bonsai: add tooltips to 67 operators in classification, document, group, layer, library and unit modules",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8692"
     },
-    "8693": {
-      "author": "BIMvoice",
-      "branch": "bv-3565-extend-nontyped-profile",
-      "head": "9e466f9",
-      "status": "merged",
-      "title": "Bonsai: let Shift+E extend non-typed profile extrusions",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8693"
-    },
     "8694": {
       "author": "BIMvoice",
       "branch": "fix-3748-sloped-space-roof",
@@ -3799,7 +3791,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3302-mirror-joins",
       "head": "f3ed4f4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: resync mirrored walls' openings so voids follow their door/window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
     },
@@ -5300,14 +5292,6 @@
       "status": "skipped_conflict",
       "title": "Bonsai: host a door in the wall it was picked on, and never leave an unhosted one",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8998"
-    },
-    "9000": {
-      "author": "BIMvoice",
-      "branch": "fix/mirror-true-mirror",
-      "head": "15f0f48",
-      "status": "merged",
-      "title": "Bonsai: make Mirror a true mirror (#7991, #6906)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9000"
     },
     "9002": {
       "author": "BIMvoice",

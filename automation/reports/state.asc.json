@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 124,
-    "merged": 404,
-    "skipped_conflict": 79,
+    "merged": 405,
+    "skipped_conflict": 76,
     "skipped_draft": 57,
-    "total": 664
+    "total": 662
   },
-  "generated_at": "2026-07-28T12:07:14Z",
+  "generated_at": "2026-07-28T14:07:21Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1782,7 +1782,7 @@
       "author": "BIMvoice",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "82a4117",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix BCF 2.1 viewpoint and snapshot file names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
@@ -3440,14 +3440,6 @@
       "status": "merged",
       "title": "Bonsai: add tooltips to 67 operators in classification, document, group, layer, library and unit modules",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8692"
-    },
-    "8693": {
-      "author": "BIMvoice",
-      "branch": "bv-3565-extend-nontyped-profile",
-      "head": "9e466f9",
-      "status": "skipped_conflict",
-      "title": "Bonsai: let Shift+E extend non-typed profile extrusions",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8693"
     },
     "8694": {
       "author": "BIMvoice",
@@ -5300,14 +5292,6 @@
       "status": "merged",
       "title": "Bonsai: host a door in the wall it was picked on, and never leave an unhosted one",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8998"
-    },
-    "9000": {
-      "author": "BIMvoice",
-      "branch": "fix/mirror-true-mirror",
-      "head": "15f0f48",
-      "status": "skipped_conflict",
-      "title": "Bonsai: make Mirror a true mirror (#7991, #6906)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9000"
     },
     "9002": {
       "author": "BIMvoice",
