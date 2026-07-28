@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 391,
+    "merged": 392,
     "skipped_conflict": 83,
     "skipped_draft": 57,
-    "total": 654
+    "total": 655
   },
-  "generated_at": "2026-07-27T18:54:18Z",
+  "generated_at": "2026-07-28T00:54:17Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "a84957f",
+      "head": "5739a24",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -5364,6 +5364,14 @@
       "status": "merged",
       "title": "Bonsai: cut the opening when the host and the void sit on different contexts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9013"
+    },
+    "9016": {
+      "author": "theoryshaw",
+      "branch": "fix-9015-feet-decimal-dimensions",
+      "head": "4888752",
+      "status": "merged",
+      "title": "Bonsai: fix \"Feet - Decimal\" dimension unit breaking annotation decorators (#9015)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9016"
     }
   },
   "schema": 1
