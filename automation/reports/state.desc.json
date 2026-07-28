@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 381,
-    "skipped_conflict": 94,
+    "merged": 396,
+    "skipped_conflict": 80,
     "skipped_draft": 57,
-    "total": 655
+    "total": 656
   },
-  "generated_at": "2026-07-28T00:31:17Z",
+  "generated_at": "2026-07-28T02:30:08Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1562,7 +1562,7 @@
       "author": "BIMvoice",
       "branch": "fix-4332-door-flip-2d",
       "head": "8351f85",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: flip fills against the Body representation so doors don't jump out of host in 2D (#4332)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8346"
     },
@@ -1684,7 +1684,7 @@
       "author": "BIMvoice",
       "branch": "fix-4128-sklearn-graceful",
       "head": "8781090",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcclash: fail gracefully when scikit-learn is missing for smart grouping (#4128)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8372"
     },
@@ -1798,7 +1798,7 @@
       "author": "BIMvoice",
       "branch": "fix-6508-geography-element-qto",
       "head": "e6ceeb3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc5d: add base-quantity rule for IfcGeographicElement (#6508)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8393"
     },
@@ -1911,7 +1911,7 @@
       "author": "BIMvoice",
       "branch": "fix-7533-duplicate-boolean-remap",
       "head": "8267e94",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: preserve half space cuts when duplicating an element (#7533)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8417"
     },
@@ -2167,7 +2167,7 @@
       "author": "BIMvoice",
       "branch": "fix-7822-examples-occ-includes",
       "head": "63f41d5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "examples: fix missing OpenCASCADE includes on MSVC x64 (#7822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8456"
     },
@@ -2453,7 +2453,7 @@
       "author": "BIMvoice",
       "branch": "fix-5898-extrusion-edge",
       "head": "f4dba8b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: pick the true sweep edge in detect_extrusion_edge (#5898)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8501"
     },
@@ -2559,7 +2559,7 @@
       "author": "BIMvoice",
       "branch": "fix-6996-itemmode-shear",
       "head": "77d7d6d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: re-orthonormalize item placement in Item Mode (#6996)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8516"
     },
@@ -2674,7 +2674,7 @@
       "author": "BIMvoice",
       "branch": "ship-5123-schedule-newlines",
       "head": "08dda6a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: keep newlines and multiple spaces in SVG schedules (#5123)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8534"
     },
@@ -2770,7 +2770,7 @@
       "author": "BIMvoice",
       "branch": "ship-7624-directprofile",
       "head": "04db09f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix DirectProfileEdit crash when exiting edit mode (#7624)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8549"
     },
@@ -2858,7 +2858,7 @@
       "author": "BIMvoice",
       "branch": "fix-6727-swept-solid-set-origin",
       "head": "d7742db",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix/report IFC Set Origin no-op on SweptSolid representations (#6727)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8584"
     },
@@ -3067,7 +3067,7 @@
       "author": "BIMvoice",
       "branch": "fix-4349-join-context-menu",
       "head": "9a9f601",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai: surface IFC-aware join in the object/right-click context menu (#4349)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8619"
     },
@@ -3171,7 +3171,7 @@
       "author": "BIMvoice",
       "branch": "fix-6259-profile-curve-branch",
       "head": "0116108",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai: catch kernel RuntimeError when finishing an arbitrary profile edit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8635"
     },
@@ -3267,7 +3267,7 @@
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
       "head": "44339de",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
@@ -3659,7 +3659,7 @@
       "author": "BIMvoice",
       "branch": "bv-2918-dimension-text-annotation",
       "head": "26c81af",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a real linked TEXT annotation for dimension labels",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8730"
     },
@@ -5372,6 +5372,14 @@
       "status": "merged",
       "title": "Bonsai: fix \"Feet - Decimal\" dimension unit breaking annotation decorators (#9015)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9016"
+    },
+    "9018": {
+      "author": "theoryshaw",
+      "branch": "Ryan_aggregate-annotations",
+      "head": "1cd63db",
+      "status": "merged",
+      "title": "Bonsai: allow aggregating IfcAnnotation elements and moving them as a unit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9018"
     }
   },
   "schema": 1

@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 392,
+    "merged": 393,
     "skipped_conflict": 83,
     "skipped_draft": 57,
-    "total": 655
+    "total": 656
   },
-  "generated_at": "2026-07-28T00:54:17Z",
+  "generated_at": "2026-07-28T02:53:15Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "5739a24",
+      "head": "ba8dc53",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -5372,6 +5372,14 @@
       "status": "merged",
       "title": "Bonsai: fix \"Feet - Decimal\" dimension unit breaking annotation decorators (#9015)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9016"
+    },
+    "9018": {
+      "author": "theoryshaw",
+      "branch": "Ryan_aggregate-annotations",
+      "head": "1cd63db",
+      "status": "merged",
+      "title": "Bonsai: allow aggregating IfcAnnotation elements and moving them as a unit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9018"
     }
   },
   "schema": 1
