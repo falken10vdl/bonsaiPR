@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 123,
+    "failed": 124,
     "merged": 399,
     "skipped_conflict": 77,
     "skipped_draft": 57,
-    "total": 656
+    "total": 657
   },
-  "generated_at": "2026-07-28T02:06:35Z",
+  "generated_at": "2026-07-28T04:06:36Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "5739a24",
+      "head": "ba8dc53",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -5380,6 +5380,15 @@
       "status": "merged",
       "title": "Bonsai: allow aggregating IfcAnnotation elements and moving them as a unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9018"
+    },
+    "9021": {
+      "author": "theoryshaw",
+      "branch": "annotation_multi_drawing_7798",
+      "head": "5da87bf",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
     }
   },
   "schema": 1

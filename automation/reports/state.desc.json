@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 123,
+    "failed": 126,
     "merged": 396,
-    "skipped_conflict": 80,
+    "skipped_conflict": 78,
     "skipped_draft": 57,
-    "total": 656
+    "total": 657
   },
-  "generated_at": "2026-07-28T02:30:08Z",
+  "generated_at": "2026-07-28T04:30:00Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "5739a24",
+      "head": "ba8dc53",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1370,7 +1370,8 @@
       "author": "BIMvoice",
       "branch": "fix-get-part-of-product-none-repmaps-8081",
       "head": "d971623",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix get_part_of_product crash and IFC2X3 typo (#8081)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8317"
     },
@@ -1394,7 +1395,8 @@
       "author": "BIMvoice",
       "branch": "perf-extractelements-defer-shared-rels",
       "head": "1c531f4",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcpatch(ExtractElements): defer shared relationship members to fix O(n²) extraction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8320"
     },
@@ -5380,6 +5382,15 @@
       "status": "merged",
       "title": "Bonsai: allow aggregating IfcAnnotation elements and moving them as a unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9018"
+    },
+    "9021": {
+      "author": "theoryshaw",
+      "branch": "annotation_multi_drawing_7798",
+      "head": "5da87bf",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
     }
   },
   "schema": 1
