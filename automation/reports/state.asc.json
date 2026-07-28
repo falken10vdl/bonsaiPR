@@ -3,11 +3,11 @@
   "counts": {
     "failed": 124,
     "merged": 405,
-    "skipped_conflict": 76,
+    "skipped_conflict": 75,
     "skipped_draft": 57,
-    "total": 662
+    "total": 661
   },
-  "generated_at": "2026-07-28T14:07:21Z",
+  "generated_at": "2026-07-28T16:07:07Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4931,14 +4931,6 @@
       "status": "merged",
       "title": "Fix ci-bonsai-choco: subprocess calls given bare multi-word strings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8942"
-    },
-    "8943": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-ifctester-org-build-deps",
-      "head": "6c733dc",
-      "status": "skipped_conflict",
-      "title": "Fix ci-ifctester-org: install setuptools build dep",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8943"
     },
     "8944": {
       "author": "BIMvoice",

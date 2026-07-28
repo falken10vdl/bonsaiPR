@@ -3,11 +3,11 @@
   "counts": {
     "failed": 124,
     "merged": 402,
-    "skipped_conflict": 79,
+    "skipped_conflict": 78,
     "skipped_draft": 57,
-    "total": 662
+    "total": 661
   },
-  "generated_at": "2026-07-28T14:31:22Z",
+  "generated_at": "2026-07-28T16:39:57Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -710,7 +710,7 @@
       "author": "falken10vdl",
       "branch": "fix/ifctester-setuptools-py312-v2",
       "head": "8f5d499",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "fix(ifctester): add setuptools to venv pip install for Python 3.12+ compatibility",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7920"
     },
@@ -4931,14 +4931,6 @@
       "status": "merged",
       "title": "Fix ci-bonsai-choco: subprocess calls given bare multi-word strings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8942"
-    },
-    "8943": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-ifctester-org-build-deps",
-      "head": "6c733dc",
-      "status": "merged",
-      "title": "Fix ci-ifctester-org: install setuptools build dep",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8943"
     },
     "8944": {
       "author": "BIMvoice",
