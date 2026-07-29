@@ -7,7 +7,7 @@
     "skipped_draft": 57,
     "total": 672
   },
-  "generated_at": "2026-07-29T10:07:31Z",
+  "generated_at": "2026-07-29T12:06:41Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -795,7 +795,7 @@
       "author": "theoryshaw",
       "branch": "preserve-local-view-aggregate-exit",
       "head": "cc1b4a0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #7969: Preserve local view on aggregate mode exit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7970"
     },
@@ -3138,7 +3138,7 @@
       "author": "BIMvoice",
       "branch": "fix-5450-mep-bend-profile-error",
       "head": "08b1cb3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: report a clean error instead of a traceback for unsupported bend profiles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8632"
     },

@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 410,
-    "skipped_conflict": 82,
+    "merged": 411,
+    "skipped_conflict": 81,
     "skipped_draft": 57,
     "total": 672
   },
-  "generated_at": "2026-07-29T10:40:15Z",
+  "generated_at": "2026-07-29T12:39:42Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -439,7 +439,7 @@
       "author": "falken10vdl",
       "branch": "vscode-dev-env-fix-for-linux",
       "head": "2b8d9e9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix JSON formatting in launch.json and add \"justMyCode\":false to allow for breakpoints in Linux",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7769"
     },
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "ba8dc53",
+      "head": "6bcfb17",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
