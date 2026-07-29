@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 406,
-    "skipped_conflict": 75,
+    "merged": 413,
+    "skipped_conflict": 79,
     "skipped_draft": 57,
-    "total": 661
+    "total": 672
   },
-  "generated_at": "2026-07-29T06:06:43Z",
+  "generated_at": "2026-07-29T10:07:31Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -795,7 +795,7 @@
       "author": "theoryshaw",
       "branch": "preserve-local-view-aggregate-exit",
       "head": "cc1b4a0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #7969: Preserve local view on aggregate mode exit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7970"
     },
@@ -5420,6 +5420,94 @@
       "status": "merged",
       "title": "Bonsai: fix AXIS1 material layer offset applied to wrong axis in drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9035"
+    },
+    "9036": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcmcp-fastmcp-import-swallowed",
+      "head": "a0f167d",
+      "status": "merged",
+      "title": "ifcmcp: pin mcp below 2.0 to fix broken FastMCP import",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9036"
+    },
+    "9037": {
+      "author": "BIMvoice",
+      "branch": "fix/2481-json-logger-percent-crash",
+      "head": "6f99202",
+      "status": "merged",
+      "title": "validate: fix --json crashing on messages containing a percent sign",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9037"
+    },
+    "9038": {
+      "author": "BIMvoice",
+      "branch": "fix/extractelements-ifc2x3-georeferencing",
+      "head": "75346ef",
+      "status": "merged",
+      "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
+    },
+    "9039": {
+      "author": "BIMvoice",
+      "branch": "fix/7016-svgfill-multifile-wrong-entity",
+      "head": "f791e79",
+      "status": "merged",
+      "title": "Bonsai: resolve SVGFill hits against their own file, not the last linked model",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9039"
+    },
+    "9040": {
+      "author": "BIMvoice",
+      "branch": "fix-6967-add-from-perimeter-button",
+      "head": "f68c716",
+      "status": "merged",
+      "title": "Bonsai: restore the Add From Perimeter and Add From Closed Loop buttons",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9040"
+    },
+    "9041": {
+      "author": "BIMvoice",
+      "branch": "fix/covering-thumbnail-key-mismatch",
+      "head": "3d15c87",
+      "status": "merged",
+      "title": "Bonsai: fix the Covering Tool type thumbnail never appearing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9041"
+    },
+    "9042": {
+      "author": "BIMvoice",
+      "branch": "fix/9034-bsdd-referencecode-keyerror",
+      "head": "a68a376",
+      "status": "merged",
+      "title": "Bonsai: fix bSDD class search crashing on classes without a referenceCode",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9042"
+    },
+    "9043": {
+      "author": "BIMvoice",
+      "branch": "fix/msp2ifc-predecessor-lag-4185",
+      "head": "e546616",
+      "status": "skipped_conflict",
+      "title": "ifc4d: preserve MS Project task lag on import",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9043"
+    },
+    "9044": {
+      "author": "BIMvoice",
+      "branch": "fix/7000-mats-category-selector",
+      "head": "1abe07c",
+      "status": "skipped_conflict",
+      "title": "util.selector: resolve mats.Category via the material set item",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9044"
+    },
+    "9045": {
+      "author": "BIMvoice",
+      "branch": "5760-resource-csv-task-allocation",
+      "head": "2dfcd61",
+      "status": "skipped_conflict",
+      "title": "ifc4d: export and reimport resource-to-task allocation via CSV",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9045"
+    },
+    "9046": {
+      "author": "BIMvoice",
+      "branch": "fix/7118-web-export-hide-topcalc",
+      "head": "c1312bb",
+      "status": "merged",
+      "title": "Bonsai: add a way to hide the web export calculation row per column",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9046"
     }
   },
   "schema": 1
