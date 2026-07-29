@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 128,
-    "merged": 413,
-    "skipped_conflict": 81,
+    "failed": 123,
+    "merged": 417,
+    "skipped_conflict": 82,
     "skipped_draft": 57,
     "total": 679
   },
-  "generated_at": "2026-07-29T16:07:51Z",
+  "generated_at": "2026-07-29T18:07:00Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1338,8 +1338,7 @@
       "author": "BIMvoice",
       "branch": "fix-remove-drawing-no-document-6518",
       "head": "c6b01d5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: remove_drawing tolerates a drawing with no document (#6518)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8312"
     },
@@ -1783,7 +1782,7 @@
       "author": "BIMvoice",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "82a4117",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix BCF 2.1 viewpoint and snapshot file names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
@@ -2850,7 +2849,7 @@
       "author": "BIMvoice",
       "branch": "fix-6727-swept-solid-set-origin",
       "head": "d7742db",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix/report IFC Set Origin no-op on SweptSolid representations (#6727)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8584"
     },
@@ -3397,8 +3396,7 @@
       "author": "BIMvoice",
       "branch": "fix-8631-vs2017-msbuild-detect",
       "head": "a2e0a26",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "win: pre-detect VS2017 MSBuild path before building mpir dependency",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8685"
     },
@@ -3768,7 +3766,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4037,8 +4035,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6591-general-item-deletion",
       "head": "2138b07",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: generalise representation item deletion to nested items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8798"
     },
@@ -4626,7 +4623,7 @@
       "author": "BIMvoice",
       "branch": "8893-array-missing-child-guard",
       "head": "e3586e4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai tests: regression coverage for stale array child GUID during project load (#8893)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8898"
     },
@@ -5003,8 +5000,7 @@
       "author": "BIMvoice",
       "branch": "fix/7889-toggle-hide-spaces-missing-obj",
       "head": "050fea6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix crash toggling hide on spaces not loaded into the scene",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8958"
     },
@@ -5076,7 +5072,7 @@
       "author": "BIMvoice",
       "branch": "fix/6301-material-constituent-rename",
       "head": "c04a115",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: keep shape aspect names in sync when renaming a material constituent",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8968"
     },
@@ -5355,7 +5351,7 @@
     "9021": {
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
-      "head": "5da87bf",
+      "head": "d911f18",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
@@ -5541,8 +5537,7 @@
       "author": "BIMvoice",
       "branch": "feat-9033-drawing-status-classes",
       "head": "0241a87",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a Status Classes toggle to drawings (#9033)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9051"
     },
@@ -5566,7 +5561,7 @@
       "author": "theoryshaw",
       "branch": "fix_copy_class_assigns_to_product_9049",
       "head": "d0c5bb9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "copy_class: don't share the original's annotations with the duplicate (#9049, cause behind #4014)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9054"
     }

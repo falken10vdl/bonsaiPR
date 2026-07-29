@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 411,
-    "skipped_conflict": 88,
+    "merged": 413,
+    "skipped_conflict": 86,
     "skipped_draft": 57,
     "total": 679
   },
-  "generated_at": "2026-07-29T16:41:25Z",
+  "generated_at": "2026-07-29T18:40:03Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1594,7 +1594,7 @@
       "author": "BIMvoice",
       "branch": "fix-4785-drawing-space-filter",
       "head": "23f0a9c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: apply the drawing Include filter to IfcSpace elements (#4785)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8351"
     },
@@ -5336,7 +5336,7 @@
       "author": "theoryshaw",
       "branch": "fix-9015-feet-decimal-dimensions",
       "head": "4888752",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix \"Feet - Decimal\" dimension unit breaking annotation decorators (#9015)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9016"
     },
@@ -5449,7 +5449,7 @@
       "author": "BIMvoice",
       "branch": "fix/7016-svgfill-multifile-wrong-entity",
       "head": "f791e79",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: resolve SVGFill hits against their own file, not the last linked model",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9039"
     },
@@ -5561,7 +5561,7 @@
       "author": "theoryshaw",
       "branch": "fix_copy_class_assigns_to_product_9049",
       "head": "d0c5bb9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "copy_class: don't share the original's annotations with the duplicate (#9049, cause behind #4014)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9054"
     }
