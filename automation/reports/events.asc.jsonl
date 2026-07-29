@@ -1031,3 +1031,4 @@
 {"ts": "2026-07-29T18:07:00Z", "order": "ascending", "pr": 9021, "event": "updated", "status": "failed", "from_head": "5da87bf", "to_head": "d911f18"}
 {"ts": "2026-07-29T18:07:00Z", "order": "ascending", "pr": 9051, "event": "status", "from": "failed", "to": "skipped_conflict"}
 {"ts": "2026-07-29T18:07:00Z", "order": "ascending", "pr": 9054, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-07-29T22:07:54Z", "order": "ascending", "pr": 8752, "event": "status", "from": "skipped_conflict", "to": "merged"}

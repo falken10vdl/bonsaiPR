@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 417,
-    "skipped_conflict": 82,
+    "merged": 418,
+    "skipped_conflict": 81,
     "skipped_draft": 57,
     "total": 679
   },
-  "generated_at": "2026-07-29T18:07:00Z",
+  "generated_at": "2026-07-29T22:07:54Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3766,7 +3766,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
