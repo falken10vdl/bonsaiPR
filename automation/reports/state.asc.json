@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 405,
+    "merged": 406,
     "skipped_conflict": 75,
     "skipped_draft": 57,
-    "total": 660
+    "total": 661
   },
-  "generated_at": "2026-07-29T04:07:14Z",
+  "generated_at": "2026-07-29T06:06:43Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -5412,6 +5412,14 @@
       "status": "merged",
       "title": "Bonsai: stop routing non-profile types into the polyline profile tool (#9006)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9028"
+    },
+    "9035": {
+      "author": "BIMvoice",
+      "branch": "fix/9001-axis1-layer-offset-wrong-axis",
+      "head": "477f57c",
+      "status": "merged",
+      "title": "Bonsai: fix AXIS1 material layer offset applied to wrong axis in drawings",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9035"
     }
   },
   "schema": 1

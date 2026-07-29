@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 123,
-    "merged": 402,
-    "skipped_conflict": 78,
+    "failed": 125,
+    "merged": 403,
+    "skipped_conflict": 76,
     "skipped_draft": 57,
-    "total": 660
+    "total": 661
   },
-  "generated_at": "2026-07-29T04:39:53Z",
+  "generated_at": "2026-07-29T06:39:21Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1106,7 +1106,8 @@
       "author": "BIMvoice",
       "branch": "fix/reassign-class-latent-8210",
       "head": "56a18b9",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "root.reassign_class: raise a clear error when no class is applicable (#8210)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8258"
     },
@@ -1138,7 +1139,8 @@
       "author": "BIMvoice",
       "branch": "feat/cost-total-applied-value-5912",
       "head": "c06fda0",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "util.cost: add calculate_total_applied_value (#5912)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8266"
     },
@@ -5412,6 +5414,14 @@
       "status": "merged",
       "title": "Bonsai: stop routing non-profile types into the polyline profile tool (#9006)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9028"
+    },
+    "9035": {
+      "author": "BIMvoice",
+      "branch": "fix/9001-axis1-layer-offset-wrong-axis",
+      "head": "477f57c",
+      "status": "merged",
+      "title": "Bonsai: fix AXIS1 material layer offset applied to wrong axis in drawings",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9035"
     }
   },
   "schema": 1
