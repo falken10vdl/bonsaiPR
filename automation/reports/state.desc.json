@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
+    "failed": 123,
     "merged": 402,
     "skipped_conflict": 78,
     "skipped_draft": 57,
-    "total": 661
+    "total": 660
   },
-  "generated_at": "2026-07-28T16:39:57Z",
+  "generated_at": "2026-07-29T04:39:53Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -2603,15 +2603,6 @@
       "status": "merged",
       "title": "ifcopenshell: attach owning file to geom.tree select results (#3189)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8522"
-    },
-    "8523": {
-      "author": "BIMvoice",
-      "branch": "fix-8400-directrix-hang",
-      "head": "d053530",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: collapse degenerate directrix segments to avoid a MakePipeShell hang (#8400)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8523"
     },
     "8524": {
       "author": "BIMvoice",
