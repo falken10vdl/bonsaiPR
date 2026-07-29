@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 123,
+    "failed": 124,
     "merged": 406,
-    "skipped_conflict": 86,
+    "skipped_conflict": 87,
     "skipped_draft": 57,
-    "total": 672
+    "total": 674
   },
-  "generated_at": "2026-07-29T13:12:50Z",
+  "generated_at": "2026-07-29T15:14:55Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -2503,7 +2503,8 @@
       "author": "Vanuan",
       "branch": "patch-3",
       "head": "9b8d94a",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Door/Opening documentation improvement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8509"
     },
@@ -4051,7 +4052,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6425-element-drawing-classes",
       "head": "de389bd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: per element drawing appearance via assignable CSS classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8800"
     },
@@ -4242,7 +4243,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-5719-annotation-fill-bg",
       "head": "f643c18",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop rasterizing fill-bg annotation text on PDF export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8830"
     },
@@ -5508,6 +5509,22 @@
       "status": "merged",
       "title": "Bonsai: add a way to hide the web export calculation row per column",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9046"
+    },
+    "9047": {
+      "author": "theoryshaw",
+      "branch": "select_assigned_annotations_9030",
+      "head": "1a443ac",
+      "status": "merged",
+      "title": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
+    },
+    "9048": {
+      "author": "BIMvoice",
+      "branch": "fix/9006-exit-edit-mode-callback-none-obj",
+      "head": "a9d2358",
+      "status": "merged",
+      "title": "Bonsai: don't crash the profile decorator's exit callback when nothing is selected",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9048"
     }
   },
   "schema": 1

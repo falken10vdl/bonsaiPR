@@ -3,11 +3,11 @@
   "counts": {
     "failed": 123,
     "merged": 411,
-    "skipped_conflict": 81,
+    "skipped_conflict": 82,
     "skipped_draft": 57,
-    "total": 672
+    "total": 673
   },
-  "generated_at": "2026-07-29T12:39:42Z",
+  "generated_at": "2026-07-29T14:41:17Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -4051,7 +4051,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6425-element-drawing-classes",
       "head": "de389bd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: per element drawing appearance via assignable CSS classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8800"
     },
@@ -5508,6 +5508,14 @@
       "status": "merged",
       "title": "Bonsai: add a way to hide the web export calculation row per column",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9046"
+    },
+    "9047": {
+      "author": "theoryshaw",
+      "branch": "select_assigned_annotations_9030",
+      "head": "1a443ac",
+      "status": "merged",
+      "title": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
     }
   },
   "schema": 1

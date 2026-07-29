@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 123,
-    "merged": 413,
-    "skipped_conflict": 79,
+    "failed": 124,
+    "merged": 414,
+    "skipped_conflict": 77,
     "skipped_draft": 57,
     "total": 672
   },
-  "generated_at": "2026-07-29T12:06:41Z",
+  "generated_at": "2026-07-29T14:07:27Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "ba8dc53",
+      "head": "6bcfb17",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1218,7 +1218,8 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -3138,7 +3139,7 @@
       "author": "BIMvoice",
       "branch": "fix-5450-mep-bend-profile-error",
       "head": "08b1cb3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: report a clean error instead of a traceback for unsupported bend profiles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8632"
     },
