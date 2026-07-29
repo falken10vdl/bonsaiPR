@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
-    "merged": 406,
-    "skipped_conflict": 87,
+    "failed": 123,
+    "merged": 410,
+    "skipped_conflict": 89,
     "skipped_draft": 57,
-    "total": 674
+    "total": 679
   },
-  "generated_at": "2026-07-29T15:14:55Z",
+  "generated_at": "2026-07-29T17:14:38Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -866,7 +866,7 @@
     "8032": {
       "author": "theoryshaw",
       "branch": "fix/duplicate-assigns-to-product",
-      "head": "683b717",
+      "head": "df35a89",
       "status": "merged",
       "title": "Closes #6621: Fix IfcRelAssignsToProduct on duplicate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8032"
@@ -1458,7 +1458,7 @@
       "author": "BIMvoice",
       "branch": "plan-drawing-spatial-containers",
       "head": "88290c9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai(drawing): plan drawings for spatial containers without a building storey",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8331"
     },
@@ -2460,8 +2460,8 @@
     "8503": {
       "author": "BIMvoice",
       "branch": "fix-6125-nonmanifold-volume",
-      "head": "b8b787f",
-      "status": "skipped_conflict",
+      "head": "62257e0",
+      "status": "merged",
       "title": "Return nan for non-manifold volume and skip it in QTO (#6125)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8503"
     },
@@ -2503,8 +2503,7 @@
       "author": "Vanuan",
       "branch": "patch-3",
       "head": "9b8d94a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Door/Opening documentation improvement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8509"
     },
@@ -4243,7 +4242,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-5719-annotation-fill-bg",
       "head": "f643c18",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stop rasterizing fill-bg annotation text on PDF export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8830"
     },
@@ -4504,7 +4503,7 @@
       "author": "BIMvoice",
       "branch": "4817-space-height-box",
       "head": "0445702",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add Height setting for spaces generated from cursor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8876"
     },
@@ -4856,7 +4855,7 @@
       "author": "BIMvoice",
       "branch": "feat-5729-freestyle-ifc-only",
       "head": "28d076f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add 'IFC Elements Only' preference for Freestyle linework",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8933"
     },
@@ -4993,7 +4992,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-append-asset-perf",
       "head": "83d41ce",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: propagate assume_asset_uniqueness_by_name to nested type append",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8956"
     },
@@ -5297,7 +5296,7 @@
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
       "head": "0357807",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     },
@@ -5352,7 +5351,7 @@
     "9021": {
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
-      "head": "5da87bf",
+      "head": "d911f18",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
@@ -5525,6 +5524,46 @@
       "status": "merged",
       "title": "Bonsai: don't crash the profile decorator's exit callback when nothing is selected",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9048"
+    },
+    "9050": {
+      "author": "BIMvoice",
+      "branch": "fix/9008-extractelements-presentation-layers",
+      "head": "5fe9438",
+      "status": "merged",
+      "title": "ifcpatch(ExtractElements): keep every element on its presentation layer (#9008)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9050"
+    },
+    "9051": {
+      "author": "BIMvoice",
+      "branch": "feat-9033-drawing-status-classes",
+      "head": "0241a87",
+      "status": "merged",
+      "title": "Bonsai: add a Status Classes toggle to drawings (#9033)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9051"
+    },
+    "9052": {
+      "author": "BIMvoice",
+      "branch": "stale-bounding-box-decorator-on-load",
+      "head": "c9696a7",
+      "status": "merged",
+      "title": "Bonsai: uninstall the bounding box decorator on file load",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9052"
+    },
+    "9053": {
+      "author": "BIMvoice",
+      "branch": "fix-9032-plan-cut-default-storey",
+      "head": "2f9738b",
+      "status": "merged",
+      "title": "Bonsai: default the plan cut to the active storey, not Origin (#9032)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9053"
+    },
+    "9054": {
+      "author": "theoryshaw",
+      "branch": "fix_copy_class_assigns_to_product_9049",
+      "head": "d0c5bb9",
+      "status": "merged",
+      "title": "copy_class: don't share the original's annotations with the duplicate (#9049, cause behind #4014)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9054"
     }
   },
   "schema": 1
