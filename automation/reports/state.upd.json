@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 481,
-    "skipped_conflict": 104,
+    "merged": 488,
+    "skipped_conflict": 107,
     "skipped_draft": 56,
-    "total": 767
+    "total": 777
   },
-  "generated_at": "2026-07-30T19:20:18Z",
+  "generated_at": "2026-07-30T21:22:49Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -152,7 +152,7 @@
       "author": "theoryshaw",
       "branch": "fix_6931",
       "head": "5285df1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "proposed fix for #6931",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/6933"
     },
@@ -1782,7 +1782,7 @@
       "author": "BIMvoice",
       "branch": "fix-7112-save-custom-psets",
       "head": "83c3e71",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix \"Save Pset As Template\" on IFC4X3 custom psets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8391"
     },
@@ -5833,7 +5833,7 @@
       "author": "BIMvoice",
       "branch": "fix/classification-change-level-hasreferences-crash",
       "head": "a76e1f5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop the classification level browser crashing on empty and IFC2X3 libraries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9094"
     },
@@ -6271,6 +6271,86 @@
       "status": "merged",
       "title": "ifc2ca: guard optional boundary stiffness values",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9155"
+    },
+    "9156": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-optional-attr-crashes-audit2",
+      "head": "844e296",
+      "status": "merged",
+      "title": "Bonsai: fix nine crashes on valid IFC files",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9156"
+    },
+    "9157": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcfm-cobie-crash-guards",
+      "head": "69ac5de",
+      "status": "merged",
+      "title": "ifcfm: fix four COBie export crashes on valid IFC",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9157"
+    },
+    "9158": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcbimtester-crash-guards",
+      "head": "339cc93",
+      "status": "merged",
+      "title": "ifcbimtester: fix eight crashes in step definitions",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9158"
+    },
+    "9159": {
+      "author": "BIMvoice",
+      "branch": "audit-bonsai-enum-dispatch-a112",
+      "head": "74c768d",
+      "status": "merged",
+      "title": "Bonsai: fix KeyError in 4D animation colors",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9159"
+    },
+    "9160": {
+      "author": "BIMvoice",
+      "branch": "fix-9xxx-ifc2x3-base-qto-relatingpropertydefinition",
+      "head": "b813124",
+      "status": "merged",
+      "title": "Bonsai: fix three IFC2X3-only defects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9160"
+    },
+    "9161": {
+      "author": "BIMvoice",
+      "branch": "fix/api-empty-aggregate-corruption",
+      "head": "2ac6e0b",
+      "status": "merged",
+      "title": "api: stop three functions writing invalid IFC",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9161"
+    },
+    "9162": {
+      "author": "BIMvoice",
+      "branch": "docs/api-fix-broken-examples",
+      "head": "1730ff4",
+      "status": "merged",
+      "title": "docs: fix seven broken api docstring examples",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9162"
+    },
+    "9163": {
+      "author": "BIMvoice",
+      "branch": "docs/api-examples-schema-sweep",
+      "head": "455d1f7",
+      "status": "merged",
+      "title": "docs: fix ten API examples that cannot run",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9163"
+    },
+    "9164": {
+      "author": "BIMvoice",
+      "branch": "fix/cost-item-quantity-empty-aggregate",
+      "head": "33fa043",
+      "status": "merged",
+      "title": "cost: fix CostQuantities left empty on removal",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9164"
+    },
+    "9166": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc2x3-costschedule-space-mandatory",
+      "head": "74dd126",
+      "status": "merged",
+      "title": "api: fix two IFC2X3 mandatory attributes never set",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9166"
     }
   },
   "schema": 1

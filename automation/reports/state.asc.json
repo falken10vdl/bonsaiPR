@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 490,
-    "skipped_conflict": 95,
+    "merged": 492,
+    "skipped_conflict": 96,
     "skipped_draft": 56,
-    "total": 767
+    "total": 770
   },
-  "generated_at": "2026-07-30T18:09:11Z",
+  "generated_at": "2026-07-30T20:09:17Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6271,6 +6271,30 @@
       "status": "merged",
       "title": "ifc2ca: guard optional boundary stiffness values",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9155"
+    },
+    "9156": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-optional-attr-crashes-audit2",
+      "head": "844e296",
+      "status": "skipped_conflict",
+      "title": "Bonsai: fix nine crashes on valid IFC files",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9156"
+    },
+    "9157": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcfm-cobie-crash-guards",
+      "head": "69ac5de",
+      "status": "merged",
+      "title": "ifcfm: fix four COBie export crashes on valid IFC",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9157"
+    },
+    "9158": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcbimtester-crash-guards",
+      "head": "339cc93",
+      "status": "merged",
+      "title": "ifcbimtester: fix eight crashes in step definitions",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9158"
     }
   },
   "schema": 1
