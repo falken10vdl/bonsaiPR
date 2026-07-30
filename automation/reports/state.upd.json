@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 123,
-    "merged": 444,
+    "failed": 124,
+    "merged": 452,
     "skipped_conflict": 94,
-    "skipped_draft": 57,
-    "total": 718
+    "skipped_draft": 56,
+    "total": 726
   },
-  "generated_at": "2026-07-30T05:15:00Z",
+  "generated_at": "2026-07-30T07:15:12Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1024,7 +1024,7 @@
       "author": "theoryshaw",
       "branch": "fix-snap-stale-object-reference",
       "head": "3248cc7",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix stale object reference crash in measure tool snapping",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
     },
@@ -2503,7 +2503,8 @@
       "author": "Vanuan",
       "branch": "patch-3",
       "head": "9b8d94a",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Door/Opening documentation improvement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8509"
     },
@@ -4390,14 +4391,6 @@
       "title": "ifcgeom: map IfcSphericalSurface so advanced-brep spheres render (#586)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8853"
     },
-    "8854": {
-      "author": "falken10vdl",
-      "branch": "circle_segment_approx_in_OpenCascade_Engine",
-      "head": "590a741",
-      "status": "skipped_draft",
-      "title": "Add circle_segments setting to control circle approximation in geometry imports",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8854"
-    },
     "8855": {
       "author": "BIMvoice",
       "branch": "issue-950-bcf-report",
@@ -5876,6 +5869,78 @@
       "status": "merged",
       "title": "Bonsai: return an empty list, not None, from the relating type enum callback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9095"
+    },
+    "9096": {
+      "author": "BIMvoice",
+      "branch": "fix/setworldcoordinatesystem-plan-context-2d",
+      "head": "5327b4c",
+      "status": "merged",
+      "title": "ifcpatch: fix SetWorldCoordinateSystem writing 3D data into IfcAxis2Placement2D",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9096"
+    },
+    "9097": {
+      "author": "BIMvoice",
+      "branch": "fix/archicad-doorswings-ifc2x3",
+      "head": "b8b6044",
+      "status": "merged",
+      "title": "ifcpatch: fix FixArchiCADToRevitDoorSwings crashing, and make it work on IFC2X3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9097"
+    },
+    "9098": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcpatch-docstring-argument-mismatches",
+      "head": "4a58fc2",
+      "status": "merged",
+      "title": "ifcpatch: fix wrong docstrings that break copy-pasted examples",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9098"
+    },
+    "9099": {
+      "author": "BIMvoice",
+      "branch": "fix-document-operator-assign-obj-guard",
+      "head": "1b1944e",
+      "status": "merged",
+      "title": "Bonsai: harden AssignDocument against a stale/typo'd object name",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9099"
+    },
+    "9100": {
+      "author": "BIMvoice",
+      "branch": "fix/audit-tail-null-guards",
+      "head": "1e5ed8a",
+      "status": "merged",
+      "title": "Bonsai: guard three None dereferences found by a bim/module audit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9100"
+    },
+    "9101": {
+      "author": "BIMvoice",
+      "branch": "fix/fixrevit2025tins-self-file-order",
+      "head": "85f2b21",
+      "status": "merged",
+      "title": "ifcpatch: make FixRevit2025TINs runnable (IFC2X3, self.file order, docstring)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9101"
+    },
+    "9102": {
+      "author": "BIMvoice",
+      "branch": "fix/data-sibling-none-guards",
+      "head": "b64d046",
+      "status": "merged",
+      "title": "Bonsai: guard three unnamed-entity crashes where a sibling method already had the fallback",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9102"
+    },
+    "9103": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-none-name-concat-crashes",
+      "head": "1e17d7b",
+      "status": "merged",
+      "title": "Bonsai: fix three TypeError crashes concatenating an unguarded optional Name",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9103"
+    },
+    "9104": {
+      "author": "BIMvoice",
+      "branch": "fix/9029-link-ifc-duplicate-on-repeat-click",
+      "head": "ed6e010",
+      "status": "merged",
+      "title": "Bonsai: stop Link IFC duplicating and reloading when a click is repeated",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9104"
     }
   },
   "schema": 1
