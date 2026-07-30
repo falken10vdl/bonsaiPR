@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 125,
-    "merged": 485,
-    "skipped_conflict": 94,
+    "failed": 126,
+    "merged": 490,
+    "skipped_conflict": 95,
     "skipped_draft": 56,
-    "total": 760
+    "total": 767
   },
-  "generated_at": "2026-07-30T16:09:09Z",
+  "generated_at": "2026-07-30T18:09:11Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6214,6 +6214,63 @@
       "status": "merged",
       "title": "util/api: fix two crashes reading unset optional attrs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9148"
+    },
+    "9149": {
+      "author": "BIMvoice",
+      "branch": "6647-1click-drawing-style-assets",
+      "head": "71f3700",
+      "status": "merged",
+      "title": "Bonsai: 1-click drawing style changes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9149"
+    },
+    "9150": {
+      "author": "BIMvoice",
+      "branch": "6356-export-import-filters-json",
+      "head": "8416ef1",
+      "status": "skipped_conflict",
+      "title": "Bonsai: export/import filters and colourschemes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9150"
+    },
+    "9151": {
+      "author": "yekose",
+      "branch": "fix/filereader-check-fopen",
+      "head": "95c685e",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcparse: check the result of fopen before using the FILE* (missing path kills the host process)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9151"
+    },
+    "9152": {
+      "author": "BIMvoice",
+      "branch": "fix-referent-alignment-no-placement",
+      "head": "a05ee2e",
+      "status": "merged",
+      "title": "alignment: guard referents w/o ObjectPlacement",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
+    },
+    "9153": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-optional-attr-read-guards",
+      "head": "5e2baae",
+      "status": "merged",
+      "title": "Bonsai: guard optional attrs in two read paths",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9153"
+    },
+    "9154": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc4d-export-crashes-valid-ifc",
+      "head": "a228476",
+      "status": "merged",
+      "title": "ifc4d: guard two export crashes on valid IFC",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9154"
+    },
+    "9155": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc2ca-optional-boundary-stiffness",
+      "head": "46316e4",
+      "status": "merged",
+      "title": "ifc2ca: guard optional boundary stiffness values",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9155"
     }
   },
   "schema": 1

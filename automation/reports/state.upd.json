@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 479,
+    "merged": 481,
     "skipped_conflict": 104,
     "skipped_draft": 56,
-    "total": 765
+    "total": 767
   },
-  "generated_at": "2026-07-30T17:19:25Z",
+  "generated_at": "2026-07-30T19:20:18Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6255,6 +6255,22 @@
       "status": "merged",
       "title": "Bonsai: guard optional attrs in two read paths",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9153"
+    },
+    "9154": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc4d-export-crashes-valid-ifc",
+      "head": "a228476",
+      "status": "merged",
+      "title": "ifc4d: guard two export crashes on valid IFC",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9154"
+    },
+    "9155": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc2ca-optional-boundary-stiffness",
+      "head": "46316e4",
+      "status": "merged",
+      "title": "ifc2ca: guard optional boundary stiffness values",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9155"
     }
   },
   "schema": 1
