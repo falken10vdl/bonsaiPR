@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 126,
-    "merged": 488,
-    "skipped_conflict": 107,
+    "failed": 128,
+    "merged": 489,
+    "skipped_conflict": 105,
     "skipped_draft": 56,
-    "total": 777
+    "total": 778
   },
-  "generated_at": "2026-07-30T21:22:49Z",
+  "generated_at": "2026-07-30T23:24:00Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1106,7 +1106,8 @@
       "author": "BIMvoice",
       "branch": "fix/reassign-class-latent-8210",
       "head": "56a18b9",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "root.reassign_class: raise a clear error when no class is applicable (#8210)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8258"
     },
@@ -1807,7 +1808,8 @@
       "author": "BIMvoice",
       "branch": "fix-7204-add-ifcspacetype",
       "head": "a004a00",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: fix creating IfcSpaceType from the Type Manager / Multi Object Tool",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8395"
     },
@@ -6351,6 +6353,14 @@
       "status": "merged",
       "title": "api: fix two IFC2X3 mandatory attributes never set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9166"
+    },
+    "9167": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-add-task-default-name",
+      "head": "23e0b38",
+      "status": "merged",
+      "title": "sequence: name tasks so they satisfy the WHERE rule",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9167"
     }
   },
   "schema": 1

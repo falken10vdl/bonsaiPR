@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 492,
-    "skipped_conflict": 96,
+    "merged": 497,
+    "skipped_conflict": 98,
     "skipped_draft": 56,
-    "total": 770
+    "total": 777
   },
-  "generated_at": "2026-07-30T20:09:17Z",
+  "generated_at": "2026-07-30T22:11:14Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3750,7 +3750,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -6295,6 +6295,62 @@
       "status": "merged",
       "title": "ifcbimtester: fix eight crashes in step definitions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9158"
+    },
+    "9159": {
+      "author": "BIMvoice",
+      "branch": "audit-bonsai-enum-dispatch-a112",
+      "head": "74c768d",
+      "status": "skipped_conflict",
+      "title": "Bonsai: fix KeyError in 4D animation colors",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9159"
+    },
+    "9160": {
+      "author": "BIMvoice",
+      "branch": "fix-9xxx-ifc2x3-base-qto-relatingpropertydefinition",
+      "head": "b813124",
+      "status": "merged",
+      "title": "Bonsai: fix three IFC2X3-only defects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9160"
+    },
+    "9161": {
+      "author": "BIMvoice",
+      "branch": "fix/api-empty-aggregate-corruption",
+      "head": "2ac6e0b",
+      "status": "merged",
+      "title": "api: stop three functions writing invalid IFC",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9161"
+    },
+    "9162": {
+      "author": "BIMvoice",
+      "branch": "docs/api-fix-broken-examples",
+      "head": "1730ff4",
+      "status": "merged",
+      "title": "docs: fix seven broken api docstring examples",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9162"
+    },
+    "9163": {
+      "author": "BIMvoice",
+      "branch": "docs/api-examples-schema-sweep",
+      "head": "455d1f7",
+      "status": "merged",
+      "title": "docs: fix ten API examples that cannot run",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9163"
+    },
+    "9164": {
+      "author": "BIMvoice",
+      "branch": "fix/cost-item-quantity-empty-aggregate",
+      "head": "33fa043",
+      "status": "merged",
+      "title": "cost: fix CostQuantities left empty on removal",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9164"
+    },
+    "9166": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc2x3-costschedule-space-mandatory",
+      "head": "74dd126",
+      "status": "merged",
+      "title": "api: fix two IFC2X3 mandatory attributes never set",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9166"
     }
   },
   "schema": 1

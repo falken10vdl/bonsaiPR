@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 488,
-    "skipped_conflict": 102,
+    "merged": 492,
+    "skipped_conflict": 103,
     "skipped_draft": 56,
-    "total": 772
+    "total": 777
   },
-  "generated_at": "2026-07-30T20:44:42Z",
+  "generated_at": "2026-07-30T22:47:53Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1506,7 +1506,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-viewport-text-size-3353",
       "head": "5ded244",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai(drawing): make viewport annotation text size resolution independent (#3353, #3683)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8338"
     },
@@ -6311,6 +6311,46 @@
       "status": "merged",
       "title": "Bonsai: fix three IFC2X3-only defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9160"
+    },
+    "9161": {
+      "author": "BIMvoice",
+      "branch": "fix/api-empty-aggregate-corruption",
+      "head": "2ac6e0b",
+      "status": "merged",
+      "title": "api: stop three functions writing invalid IFC",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9161"
+    },
+    "9162": {
+      "author": "BIMvoice",
+      "branch": "docs/api-fix-broken-examples",
+      "head": "1730ff4",
+      "status": "merged",
+      "title": "docs: fix seven broken api docstring examples",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9162"
+    },
+    "9163": {
+      "author": "BIMvoice",
+      "branch": "docs/api-examples-schema-sweep",
+      "head": "455d1f7",
+      "status": "merged",
+      "title": "docs: fix ten API examples that cannot run",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9163"
+    },
+    "9164": {
+      "author": "BIMvoice",
+      "branch": "fix/cost-item-quantity-empty-aggregate",
+      "head": "33fa043",
+      "status": "merged",
+      "title": "cost: fix CostQuantities left empty on removal",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9164"
+    },
+    "9166": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc2x3-costschedule-space-mandatory",
+      "head": "74dd126",
+      "status": "merged",
+      "title": "api: fix two IFC2X3 mandatory attributes never set",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9166"
     }
   },
   "schema": 1
