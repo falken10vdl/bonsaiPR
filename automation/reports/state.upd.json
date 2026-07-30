@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 410,
-    "skipped_conflict": 89,
+    "merged": 444,
+    "skipped_conflict": 94,
     "skipped_draft": 57,
-    "total": 679
+    "total": 718
   },
-  "generated_at": "2026-07-30T03:12:56Z",
+  "generated_at": "2026-07-30T05:15:00Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1290,7 +1290,7 @@
       "author": "BIMvoice",
       "branch": "fix-set-element-value-trailing-index-4687",
       "head": "cb5b598",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.selector: set_element_value accepts a trailing index like get_element_value (#4687)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8295"
     },
@@ -1322,7 +1322,7 @@
       "author": "BIMvoice",
       "branch": "fix-axis2placement2d-resize-6256",
       "head": "5fa2795",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util.placement: pad 2D RefDirection without in-place resize (#6256)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8307"
     },
@@ -1410,7 +1410,7 @@
       "author": "BIMvoice",
       "branch": "fix-selector-boolean-property-8100",
       "head": "f347728",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.selector: match boolean properties by True/False spelling (#8100)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8323"
     },
@@ -1466,7 +1466,7 @@
       "author": "BIMvoice",
       "branch": "qto-segment-length-from-geometry",
       "head": "a1c7612",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
     },
@@ -2801,7 +2801,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-bsdd-get-class-relations",
       "head": "29fb417",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix ci: test_get_class_relations calls the wrong bSDD client method",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8557"
     },
@@ -2865,7 +2865,7 @@
       "author": "sboddy",
       "branch": "fix-axis2placement-2d-resize",
       "head": "75b221f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix ValueError in get_axis2placement for 2D RefDirection",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8586"
     },
@@ -5564,6 +5564,318 @@
       "status": "merged",
       "title": "copy_class: don't share the original's annotations with the duplicate (#9049, cause behind #4014)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9054"
+    },
+    "9057": {
+      "author": "BIMvoice",
+      "branch": "ifcclash-tests-and-perf-fixes",
+      "head": "277f45d",
+      "status": "merged",
+      "title": "ifcclash: don't drop elements sharing a GlobalId across clash-set sources",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9057"
+    },
+    "9058": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-boolean-value-casting",
+      "head": "fa3b212",
+      "status": "merged",
+      "title": "ifctester: stop unrecognised boolean spellings matching True",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9058"
+    },
+    "9059": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-ifc2x3-predefined-pset-crash",
+      "head": "f3751e9",
+      "status": "merged",
+      "title": "ifctester: support IFC2X3 predefined property sets and fix a wrong SYSTEM fail",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9059"
+    },
+    "9060": {
+      "author": "BIMvoice",
+      "branch": "fix-ifccsv-xlsx-blank-cell-corruption",
+      "head": "373ecd5",
+      "status": "merged",
+      "title": "ifccsv: stop a blank spreadsheet cell writing \"nan\" into the model",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9060"
+    },
+    "9061": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcfm-cobie24legacy-zone-crash",
+      "head": "caf0fab",
+      "status": "merged",
+      "title": "ifcfm: guard COBie zone and container lookups, and add the package's first tests",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9061"
+    },
+    "9062": {
+      "author": "BIMvoice",
+      "branch": "fix-6344-gross-weight-profile-mass-openings",
+      "head": "9007133",
+      "status": "skipped_conflict",
+      "title": "ifc5d: fix GrossWeight ignoring authored profile mass on voided elements",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9062"
+    },
+    "9063": {
+      "author": "BIMvoice",
+      "branch": "qto-member-length-from-extrusion",
+      "head": "6d09100",
+      "status": "merged",
+      "title": "ifc5d: take Beam/Column/Member Length from the extrusion, not the bounding box",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9063"
+    },
+    "9064": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcdiff-class-change-detection",
+      "head": "05c5434",
+      "status": "merged",
+      "title": "ifcdiff: report an element whose IFC class changed",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9064"
+    },
+    "9065": {
+      "author": "BIMvoice",
+      "branch": "fix/removerevituniformat-ifc2x3",
+      "head": "c5c7612",
+      "status": "merged",
+      "title": "ifcpatch: make RemoveRevitUniformatClassification work on IFC2X3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9065"
+    },
+    "9066": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcpatch-optional-attr-guards",
+      "head": "9f60873",
+      "status": "merged",
+      "title": "ifcpatch: guard optional attributes in three recipes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9066"
+    },
+    "9067": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcpatch-recipe-output-bugs",
+      "head": "c67fa73",
+      "status": "merged",
+      "title": "ifcpatch: fix three recipes reporting the wrong thing to the user",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9067"
+    },
+    "9068": {
+      "author": "BIMvoice",
+      "branch": "fix-unit-convert-area-volume-prefix-scaling",
+      "head": "d261712",
+      "status": "merged",
+      "title": "util.unit: fix 1000x area and 1000000x volume conversion errors",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9068"
+    },
+    "9069": {
+      "author": "BIMvoice",
+      "branch": "fix/a2p-orthonormal-axes",
+      "head": "3643c52",
+      "status": "merged",
+      "title": "util.placement: build an orthonormal basis in a2p",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9069"
+    },
+    "9070": {
+      "author": "BIMvoice",
+      "branch": "fix/selector-boolean-facettransformer-order",
+      "head": "89ffa79",
+      "status": "merged",
+      "title": "util.selector: match boolean properties by True/False",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9070"
+    },
+    "9071": {
+      "author": "BIMvoice",
+      "branch": "fix-test-rules-empty-parametrize",
+      "head": "acd4b30",
+      "status": "merged",
+      "title": "test_rules: run the whole EXPRESS rule corpus instead of a coincidental subset",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9071"
+    },
+    "9072": {
+      "author": "BIMvoice",
+      "branch": "fix-aggregate-unassign-object-wrong-guard-var",
+      "head": "a771db8",
+      "status": "merged",
+      "title": "core.aggregate: guard the value actually used in unassign_object",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9072"
+    },
+    "9073": {
+      "author": "BIMvoice",
+      "branch": "fix-nest-unassign-object-wrong-guard-var",
+      "head": "f3d1835",
+      "status": "merged",
+      "title": "core.nest: guard the value actually used, and add Nest.get_relating_object",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9073"
+    },
+    "9074": {
+      "author": "BIMvoice",
+      "branch": "fix-cogo-survey-point-object-placement",
+      "head": "bf3a129",
+      "status": "merged",
+      "title": "api.cogo: give survey point annotations a valid IfcObjectPlacement",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9074"
+    },
+    "9075": {
+      "author": "BIMvoice",
+      "branch": "fix-ifc2ca-point-load-crash",
+      "head": "989374b",
+      "status": "merged",
+      "title": "ifc2ca: stop point loads crashing the load-case parser",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9075"
+    },
+    "9076": {
+      "author": "BIMvoice",
+      "branch": "georef-conversion-loop-test-gap",
+      "head": "8afbc2b",
+      "status": "merged",
+      "title": "api.georeference: apply the IFC2X3 pset value types the loop computes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9076"
+    },
+    "9077": {
+      "author": "BIMvoice",
+      "branch": "fix/ci-bonsai-project-geomslice-skiphidden-v2",
+      "head": "f967e1c",
+      "status": "merged",
+      "title": "Bonsai: fix linked-element geometry slice index space for hidden faces",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9077"
+    },
+    "9078": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcsverchok-multi-class-overwrite-remaining",
+      "head": "c78df1b",
+      "status": "merged",
+      "title": "ifcsverchok: stop batched node inputs overwriting each other",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9078"
+    },
+    "9079": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcedit-coerce-union-str-shadows-entity",
+      "head": "29c31d1",
+      "status": "merged",
+      "title": "ifcedit: stop str shadowing more specific Union alternatives",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9079"
+    },
+    "9080": {
+      "author": "BIMvoice",
+      "branch": "fix/ifccityjson-transform-not-applied",
+      "head": "a732706",
+      "status": "merged",
+      "title": "ifccityjson: apply the CityJSON transform, fixing 1000x geometry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9080"
+    },
+    "9081": {
+      "author": "BIMvoice",
+      "branch": "fix/bsdd-offline-tests-and-property-keyerror",
+      "head": "f37527e",
+      "status": "merged",
+      "title": "bsdd: run tests offline and guard optional class-property fields",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9081"
+    },
+    "9082": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc4d-export-lag-duration-truncation",
+      "head": "31dee85",
+      "status": "merged",
+      "title": "ifc4d: stop MSP and P6 export truncating sub-day durations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9082"
+    },
+    "9083": {
+      "author": "BIMvoice",
+      "branch": "fix/p6xer2ifc-shared-calendar-exceptions",
+      "head": "e931774",
+      "status": "merged",
+      "title": "ifc4d: stop P6 XER calendars sharing one exceptions dict",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9083"
+    },
+    "9084": {
+      "author": "BIMvoice",
+      "branch": "fix-6560-outliner-delete-type",
+      "head": "7083f4d",
+      "status": "merged",
+      "title": "Bonsai: keep occurrences when deleting a type from the Outliner",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9084"
+    },
+    "9085": {
+      "author": "BIMvoice",
+      "branch": "fix/selector-set-value-boolean-no-string",
+      "head": "4158f48",
+      "status": "merged",
+      "title": "util.selector: set_element_value casts \"no\" to True for boolean attributes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9085"
+    },
+    "9086": {
+      "author": "BIMvoice",
+      "branch": "fix-6125-nonmanifold-volume-qto-helper",
+      "head": "317b315",
+      "status": "merged",
+      "title": "Bonsai: guard Calculate Object Volumes against non-manifold meshes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9086"
+    },
+    "9087": {
+      "author": "BIMvoice",
+      "branch": "9031-camera-width-height-zero-crash",
+      "head": "2c2cc32",
+      "status": "merged",
+      "title": "Bonsai: stop the drawing camera Width/Height from reaching zero (refs #9031, not the crash)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9087"
+    },
+    "9088": {
+      "author": "BIMvoice",
+      "branch": "fix-structural-filtered-boundary-conditions-crash",
+      "head": "b28e7b5",
+      "status": "merged",
+      "title": "Bonsai: fix the boundary-condition filter crashing on a string subscript",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9088"
+    },
+    "9089": {
+      "author": "BIMvoice",
+      "branch": "fix-library-reference-attrs-ifc2x3",
+      "head": "37ec937",
+      "status": "merged",
+      "title": "Bonsai: fix the Library panel crashing on IFC2X3 library references",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9089"
+    },
+    "9090": {
+      "author": "BIMvoice",
+      "branch": "fix/owner-actor-identification-crash",
+      "head": "a8cc23e",
+      "status": "merged",
+      "title": "Bonsai: fix the Actors panel crashing on a missing organization identification",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9090"
+    },
+    "9091": {
+      "author": "BIMvoice",
+      "branch": "fix/cost-quantity-names-accumulate",
+      "head": "d8e168a",
+      "status": "merged",
+      "title": "Bonsai: accumulate quantity names across quantity sets instead of overwriting",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9091"
+    },
+    "9092": {
+      "author": "BIMvoice",
+      "branch": "fix-structural-point-load-decoration-indexerror",
+      "head": "500e30f",
+      "status": "merged",
+      "title": "Bonsai: fix IndexError showing loads on a member with a point load",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9092"
+    },
+    "9093": {
+      "author": "BIMvoice",
+      "branch": "fix-boundary-related-element-none",
+      "head": "73ce480",
+      "status": "merged",
+      "title": "Bonsai: handle IFC2X3 virtual space boundaries with no related element",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9093"
+    },
+    "9094": {
+      "author": "BIMvoice",
+      "branch": "fix/classification-change-level-hasreferences-crash",
+      "head": "a76e1f5",
+      "status": "merged",
+      "title": "Bonsai: stop the classification level browser crashing on empty and IFC2X3 libraries",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9094"
+    },
+    "9095": {
+      "author": "BIMvoice",
+      "branch": "fix/type-relating-type-classes-none-enum",
+      "head": "637252e",
+      "status": "merged",
+      "title": "Bonsai: return an empty list, not None, from the relating type enum callback",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9095"
     }
   },
   "schema": 1
