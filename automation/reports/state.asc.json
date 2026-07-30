@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
-    "merged": 469,
-    "skipped_conflict": 92,
+    "failed": 125,
+    "merged": 485,
+    "skipped_conflict": 94,
     "skipped_draft": 56,
-    "total": 741
+    "total": 760
   },
-  "generated_at": "2026-07-30T14:09:00Z",
+  "generated_at": "2026-07-30T16:09:09Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3750,7 +3750,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -6033,7 +6033,7 @@
     "9124": {
       "author": "BIMvoice",
       "branch": "api-audit-geometry-profile-fixes",
-      "head": "842f53b",
+      "head": "a9dc3e4",
       "status": "merged",
       "title": "api: fix a 1000x placement error on shared matrices, and 2D profiles written as invalid IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9124"
@@ -6061,6 +6061,159 @@
       "status": "merged",
       "title": "Bonsai: constrain the generic Attributes panel to schema-valid numeric ranges",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9127"
+    },
+    "9129": {
+      "author": "BIMvoice",
+      "branch": "fix/cost-zero-quantity-falsy-trap",
+      "head": "6d8fb46",
+      "status": "merged",
+      "title": "Bonsai: stop showing a legitimate zero cost-item quantity as 1",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9129"
+    },
+    "9130": {
+      "author": "BIMvoice",
+      "branch": "fix/template-timestamp-zero-timestring",
+      "head": "69b70b0",
+      "status": "merged",
+      "title": "ifcopenshell.template: fix timestring ignoring an explicit timestamp of 0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9130"
+    },
+    "9131": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-tool-twin-doc-inconsistencies",
+      "head": "7d6ee32",
+      "status": "merged",
+      "title": "Bonsai: correct two twin-function inconsistencies in tool/",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9131"
+    },
+    "9132": {
+      "author": "BIMvoice",
+      "branch": "fix/lying-tests-drawing-qto-type-2026-07-30",
+      "head": "6cc591a",
+      "status": "merged",
+      "title": "Bonsai tests: fix three tests that passed regardless of whether the code was correct",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9132"
+    },
+    "9133": {
+      "author": "BIMvoice",
+      "branch": "fix/operator-audit-covetool-diff-gis-guards",
+      "head": "1fb1461",
+      "status": "merged",
+      "title": "Bonsai: add missing poll() to six operators that throw on first use",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9133"
+    },
+    "9135": {
+      "author": "BIMvoice",
+      "branch": "docstring-audit-batch-a85b",
+      "head": "90cd1a1",
+      "status": "merged",
+      "title": "util: fix seven :param: entries that name arguments the functions do not have",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9135"
+    },
+    "9136": {
+      "author": "BIMvoice",
+      "branch": "bonsai-fix-create-svg-document",
+      "head": "2a779c3",
+      "status": "merged",
+      "title": "Bonsai: implement the missing tool.Drawing.create_svg_document, and add a test that catches this class",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9136"
+    },
+    "9137": {
+      "author": "BIMvoice",
+      "branch": "docs/api-param-name-mismatches",
+      "head": "27e225a",
+      "status": "skipped_conflict",
+      "title": "docs: fix 15 :param: names that no longer match the real signature, and freeze it with a test",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9137"
+    },
+    "9138": {
+      "author": "yekose",
+      "branch": "fix/profile-point-double-overload",
+      "head": "9c7146a",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcgeom: add a profile_point overload taking a plain double (fixes build with recent Boost)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9138"
+    },
+    "9139": {
+      "author": "yekose",
+      "branch": "fix/occt-interface-export",
+      "head": "f644b8f",
+      "status": "merged",
+      "title": "cmake: wrap the OpenCASCADE interface paths in BUILD_INTERFACE",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9139"
+    },
+    "9140": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcpatch-missing-project-error",
+      "head": "1e1b988",
+      "status": "skipped_conflict",
+      "title": "ifcpatch: fail clearly when IfcProject is missing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9140"
+    },
+    "9141": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcpatch-splitbystorey-dead-code",
+      "head": "a7afa93",
+      "status": "merged",
+      "title": "ifcpatch: drop dead code in SplitByBuildingStorey",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9141"
+    },
+    "9142": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-restriction-total-fraction-digits",
+      "head": "b9b78be",
+      "status": "merged",
+      "title": "ifctester: implement totalDigits and fractionDigits",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9142"
+    },
+    "9143": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcdiff-bsdd-falsy-params",
+      "head": "d7f9a76",
+      "status": "merged",
+      "title": "bsdd, ifcdiff: respect explicitly passed falsy params",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9143"
+    },
+    "9144": {
+      "author": "BIMvoice",
+      "branch": "fix/hotkey-s-e-no-representation-crash",
+      "head": "8d5a0a6",
+      "status": "merged",
+      "title": "Bonsai: fix Shift+E crash with no representation",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9144"
+    },
+    "9145": {
+      "author": "BIMvoice",
+      "branch": "5428-fine-lineweight-furniture-trees",
+      "head": "dbe1637",
+      "status": "merged",
+      "title": "Bonsai: print furniture and trees at fine lineweight",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9145"
+    },
+    "9146": {
+      "author": "BIMvoice",
+      "branch": "fix-6995-cross-platform-font-fallback",
+      "head": "fff948b",
+      "status": "merged",
+      "title": "Bonsai: find drawing fonts on macOS and Linux too",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9146"
+    },
+    "9147": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-recurrence-type-fallthrough",
+      "head": "1419f94",
+      "status": "skipped_conflict",
+      "title": "util.sequence: fix crash on valid recurrence patterns",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9147"
+    },
+    "9148": {
+      "author": "BIMvoice",
+      "branch": "fix/optional-attr-none-crashes-batch1",
+      "head": "b05b03d",
+      "status": "merged",
+      "title": "util/api: fix two crashes reading unset optional attrs",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9148"
     }
   },
   "schema": 1
