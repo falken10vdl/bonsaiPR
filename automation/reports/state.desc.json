@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 123,
-    "merged": 462,
-    "skipped_conflict": 91,
+    "failed": 124,
+    "merged": 460,
+    "skipped_conflict": 93,
     "skipped_draft": 56,
-    "total": 732
+    "total": 733
   },
-  "generated_at": "2026-07-30T08:42:25Z",
+  "generated_at": "2026-07-30T10:42:50Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1390,14 +1390,6 @@
       "title": "Retain linked aggregates when duplicating an aggregate (#8233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8319"
     },
-    "8320": {
-      "author": "BIMvoice",
-      "branch": "perf-extractelements-defer-shared-rels",
-      "head": "fe08cec",
-      "status": "merged",
-      "title": "ifcpatch(ExtractElements): defer shared relationship members to fix O(n²) extraction",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8320"
-    },
     "8322": {
       "author": "BIMvoice",
       "branch": "fix-pset-schema-reload-8236",
@@ -2070,14 +2062,6 @@
       "status": "merged",
       "title": "Bonsai: bind the MEP fitting start port even when no port is at the origin (#6249)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8441"
-    },
-    "8442": {
-      "author": "BIMvoice",
-      "branch": "fix-6405-space-regen-elevation",
-      "head": "1a6c6da",
-      "status": "merged",
-      "title": "Bonsai: stop shifting an IfcSpace by the container elevation on Regen (#6405)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8442"
     },
     "8443": {
       "author": "BIMvoice",
@@ -3332,7 +3316,7 @@
       "author": "BIMvoice",
       "branch": "fix-4322-material-csv-import",
       "head": "0bedfa9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #4322. Support importing IfcMaterial and profile attributes and psets via Spreadsheet Import/Export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8674"
     },
@@ -4491,14 +4475,6 @@
       "title": "Bonsai: stack multiple saved CSV templates into one spreadsheet export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8875"
     },
-    "8876": {
-      "author": "BIMvoice",
-      "branch": "4817-space-height-box",
-      "head": "0445702",
-      "status": "skipped_conflict",
-      "title": "Bonsai: add Height setting for spaces generated from cursor",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8876"
-    },
     "8877": {
       "author": "BIMvoice",
       "branch": "5157-subcontract-physical-quantities",
@@ -5112,7 +5088,7 @@
       "author": "BIMvoice",
       "branch": "fix/6616-cost-schedule-property-candidates",
       "head": "32c58f4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: allow cost schedule Property column to list candidate quantity names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8976"
     },
@@ -5609,7 +5585,7 @@
       "author": "BIMvoice",
       "branch": "qto-member-length-from-extrusion",
       "head": "6d09100",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: take Beam/Column/Member Length from the extrusion, not the bounding box",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9063"
     },
@@ -5988,6 +5964,39 @@
       "status": "merged",
       "title": "ifcopenshell.api: fix a segfault duplicating ratio-lag tasks, and zero-length durations being rejected",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9110"
+    },
+    "9113": {
+      "author": "BIMvoice",
+      "branch": "ifc5d-wrong-number-audit",
+      "head": "f8b1fcb",
+      "status": "merged",
+      "title": "ifc5d: fix four wrong-number defects in cost export, cost import and weight quantities",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
+    },
+    "9115": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc4d-zero-duration-milestone-p1d",
+      "head": "2492316",
+      "status": "merged",
+      "title": "ifc4d: stop zero-duration milestones importing as one-day tasks",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9115"
+    },
+    "9116": {
+      "author": "BIMvoice",
+      "branch": "ifcclash-ifccsv-audit-fixes",
+      "head": "2656842",
+      "status": "merged",
+      "title": "ifcclash/ifccsv: stop dropping a real clash, a wrong summary total, and silently ignored Country on reimport",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9116"
+    },
+    "9117": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcwrap-setargumentasnull-null-deref",
+      "head": "270573e",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcwrap: fix SIGSEGV passing None to any defined or enumeration type (UNBUILT, needs review)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9117"
     }
   },
   "schema": 1

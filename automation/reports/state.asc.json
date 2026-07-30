@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 123,
-    "merged": 451,
-    "skipped_conflict": 101,
+    "failed": 124,
+    "merged": 465,
+    "skipped_conflict": 90,
     "skipped_draft": 56,
-    "total": 731
+    "total": 735
   },
-  "generated_at": "2026-07-30T08:08:16Z",
+  "generated_at": "2026-07-30T10:08:07Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -795,7 +795,7 @@
       "author": "theoryshaw",
       "branch": "preserve-local-view-aggregate-exit",
       "head": "cc1b4a0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #7969: Preserve local view on aggregate mode exit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7970"
     },
@@ -1074,7 +1074,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcdiff-relationships-4110",
       "head": "38611e3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "IfcDiff: compare container and aggregate by GlobalId (#4110)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8249"
     },
@@ -1178,7 +1178,7 @@
       "author": "BIMvoice",
       "branch": "fix/mode-set-object-exec-8042",
       "head": "f6b8788",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: OverrideModeSetObject must survive direct execution (#8042)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8273"
     },
@@ -1389,14 +1389,6 @@
       "status": "merged",
       "title": "Retain linked aggregates when duplicating an aggregate (#8233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8319"
-    },
-    "8320": {
-      "author": "BIMvoice",
-      "branch": "perf-extractelements-defer-shared-rels",
-      "head": "fe08cec",
-      "status": "merged",
-      "title": "ifcpatch(ExtractElements): defer shared relationship members to fix O(n²) extraction",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8320"
     },
     "8322": {
       "author": "BIMvoice",
@@ -1782,7 +1774,7 @@
       "author": "BIMvoice",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "82a4117",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix BCF 2.1 viewpoint and snapshot file names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
@@ -3642,7 +3634,7 @@
       "author": "BIMvoice",
       "branch": "bv-2918-dimension-text-annotation",
       "head": "26c81af",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a real linked TEXT annotation for dimension labels",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8730"
     },
@@ -3766,7 +3758,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -3935,7 +3927,7 @@
       "author": "BIMvoice",
       "branch": "fix-7461-msvc-lnk1248-docs",
       "head": "534cef6",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "win: document LNK1248 causes and the USE_CCACHE escape hatch",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8783"
     },
@@ -4076,7 +4068,7 @@
       "author": "Bartok9",
       "branch": "sera/docs-linux-eigen-dep",
       "head": "ba12b71",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "docs: add Eigen to Linux install deps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
     },
@@ -4210,7 +4202,7 @@
       "author": "theoryshaw",
       "branch": "fix-bbim-boolean-data-dict",
       "head": "fce3781",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: harden BBIM_Boolean.Data parsing against non-list payloads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8822"
     },
@@ -4325,7 +4317,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6702-texture-support",
       "head": "fc82b71",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: load texture UV maps by default so textured IFCs actually render (#6702)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8841"
     },
@@ -4487,7 +4479,7 @@
       "author": "BIMvoice",
       "branch": "4748-stacked-csv-export",
       "head": "37c5b8f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stack multiple saved CSV templates into one spreadsheet export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8875"
     },
@@ -4663,7 +4655,7 @@
       "author": "BIMvoice",
       "branch": "7909-guard-stale-byid",
       "head": "1025b97",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: guard stale ifc_definition_id lookups that abort wall split and related flows",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8906"
     },
@@ -4823,7 +4815,7 @@
       "author": "BIMvoice",
       "branch": "fix-5611-roof-skylight-cut",
       "head": "8db33cd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: cut and align skylights/windows on parametric roofs to the sloped face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8930"
     },
@@ -4944,7 +4936,7 @@
       "author": "BIMvoice",
       "branch": "fix/extractelements-docstring-selector-syntax",
       "head": "2f76ec0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: fix invalid selector syntax in ExtractElements docstring",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8949"
     },
@@ -5056,7 +5048,7 @@
       "author": "BIMvoice",
       "branch": "fix/7470-outer-surface-area",
       "head": "5425588",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: correct OuterSurfaceArea to exclude top and bottom",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8967"
     },
@@ -5240,7 +5232,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-door-body-context-missing",
       "head": "a48ed52",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: create the Model/Body context when authoring a door into an imported IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8995"
     },
@@ -5272,7 +5264,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-door-recut-host-representation",
       "head": "226cb03",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: recut a voided host from the body it displays, not the first representation in its context",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9002"
     },
@@ -5304,7 +5296,7 @@
       "author": "BIMvoice",
       "branch": "fix/host-recut-active-representation",
       "head": "b6120cd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: recut a voided host from its active representation, not its context",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9011"
     },
@@ -5521,7 +5513,7 @@
       "author": "BIMvoice",
       "branch": "fix/9008-extractelements-presentation-layers",
       "head": "5fe9438",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch(ExtractElements): keep every element on its presentation layer (#9008)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9050"
     },
@@ -5980,6 +5972,47 @@
       "status": "merged",
       "title": "ifcpatch: AssignConstituentFractions silently skipped constituents with zero width",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9109"
+    },
+    "9110": {
+      "author": "BIMvoice",
+      "branch": "fix/api-audit-resource-sequence-batch2",
+      "head": "84477a9",
+      "status": "merged",
+      "title": "ifcopenshell.api: fix a segfault duplicating ratio-lag tasks, and zero-length durations being rejected",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9110"
+    },
+    "9113": {
+      "author": "BIMvoice",
+      "branch": "ifc5d-wrong-number-audit",
+      "head": "f8b1fcb",
+      "status": "skipped_conflict",
+      "title": "ifc5d: fix four wrong-number defects in cost export, cost import and weight quantities",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
+    },
+    "9115": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc4d-zero-duration-milestone-p1d",
+      "head": "2492316",
+      "status": "merged",
+      "title": "ifc4d: stop zero-duration milestones importing as one-day tasks",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9115"
+    },
+    "9116": {
+      "author": "BIMvoice",
+      "branch": "ifcclash-ifccsv-audit-fixes",
+      "head": "2656842",
+      "status": "skipped_conflict",
+      "title": "ifcclash/ifccsv: stop dropping a real clash, a wrong summary total, and silently ignored Country on reimport",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9116"
+    },
+    "9117": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcwrap-setargumentasnull-null-deref",
+      "head": "270573e",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcwrap: fix SIGSEGV passing None to any defined or enumeration type (UNBUILT, needs review)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9117"
     }
   },
   "schema": 1
