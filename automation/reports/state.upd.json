@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
-    "merged": 452,
-    "skipped_conflict": 94,
+    "failed": 123,
+    "merged": 457,
+    "skipped_conflict": 98,
     "skipped_draft": 56,
-    "total": 726
+    "total": 734
   },
-  "generated_at": "2026-07-30T07:15:12Z",
+  "generated_at": "2026-07-30T09:17:00Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "e033729",
+      "head": "41308cf",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1024,7 +1024,7 @@
       "author": "theoryshaw",
       "branch": "fix-snap-stale-object-reference",
       "head": "3248cc7",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix stale object reference crash in measure tool snapping",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
     },
@@ -1066,7 +1066,7 @@
       "author": "BIMvoice",
       "branch": "fix/selector-boolean-case-insensitive-6116",
       "head": "d7b6b27",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Selector: accept case-insensitive TRUE/FALSE in filter queries (#6116)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8248"
     },
@@ -1370,7 +1370,7 @@
       "author": "BIMvoice",
       "branch": "fix-get-part-of-product-none-repmaps-8081",
       "head": "d971623",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix get_part_of_product crash and IFC2X3 typo (#8081)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8317"
     },
@@ -1466,7 +1466,7 @@
       "author": "BIMvoice",
       "branch": "qto-segment-length-from-geometry",
       "head": "a1c7612",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
     },
@@ -1489,9 +1489,9 @@
     "8335": {
       "author": "BIMvoice",
       "branch": "fix-3019-nested-mapped-item",
-      "head": "879e67e",
+      "head": "db48b9a",
       "status": "merged",
-      "title": "Bonsai: fix nested mapped-item transform composition order (#3019)",
+      "title": "util.representation + Bonsai: fix two nested mapped-item transform bugs (#3019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8335"
     },
     "8336": {
@@ -2503,8 +2503,7 @@
       "author": "Vanuan",
       "branch": "patch-3",
       "head": "9b8d94a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Door/Opening documentation improvement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8509"
     },
@@ -4672,7 +4671,7 @@
       "author": "BIMvoice",
       "branch": "fix-4442-honor-calendar-work-hours",
       "head": "3a8d8b5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.api.sequence: honour the calendar's declared work hours",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8907"
     },
@@ -5113,7 +5112,7 @@
       "author": "BIMvoice",
       "branch": "fix/6616-cost-schedule-property-candidates",
       "head": "32c58f4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: allow cost schedule Property column to list candidate quantity names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8976"
     },
@@ -5169,7 +5168,7 @@
       "author": "BIMvoice",
       "branch": "6964-duration-precision",
       "head": "73d64fc",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.date: preserve microsecond precision when converting IfcDuration for calculation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8985"
     },
@@ -5177,7 +5176,7 @@
       "author": "BIMvoice",
       "branch": "6964-precision-audit",
       "head": "c41c9ca",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Audit cost/resource/schedule calculation paths for precision loss; fix float32-truncated Bonsai properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8986"
     },
@@ -5610,7 +5609,7 @@
       "author": "BIMvoice",
       "branch": "qto-member-length-from-extrusion",
       "head": "6d09100",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: take Beam/Column/Member Length from the extrusion, not the bounding box",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9063"
     },
@@ -5941,6 +5940,70 @@
       "status": "merged",
       "title": "Bonsai: stop Link IFC duplicating and reloading when a click is repeated",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9104"
+    },
+    "9105": {
+      "author": "BIMvoice",
+      "branch": "fix/cost-product-quantity-names-intersection",
+      "head": "3a82086",
+      "status": "merged",
+      "title": "util.cost: stop get_product_quantity_names resurrecting names after an empty intersection",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9105"
+    },
+    "9106": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-work-time-start-ignored",
+      "head": "b462145",
+      "status": "merged",
+      "title": "util.sequence: is_day_in_work_time ignored Start whenever Finish was also set",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9106"
+    },
+    "9107": {
+      "author": "BIMvoice",
+      "branch": "fix/reassign-class-drops-falsy-attributes",
+      "head": "fb882ae",
+      "status": "merged",
+      "title": "util.schema: reassign_class silently dropped falsy-but-set attribute values",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9107"
+    },
+    "9108": {
+      "author": "BIMvoice",
+      "branch": "api-audit-material-style-cost-2026-07-30",
+      "head": "bc563e7",
+      "status": "merged",
+      "title": "ifcopenshell.api: fix three defects that write wrong data into the file",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9108"
+    },
+    "9109": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcpatch-constituent-fractions-zero-width",
+      "head": "9898c5c",
+      "status": "merged",
+      "title": "ifcpatch: AssignConstituentFractions silently skipped constituents with zero width",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9109"
+    },
+    "9110": {
+      "author": "BIMvoice",
+      "branch": "fix/api-audit-resource-sequence-batch2",
+      "head": "84477a9",
+      "status": "merged",
+      "title": "ifcopenshell.api: fix a segfault duplicating ratio-lag tasks, and zero-length durations being rejected",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9110"
+    },
+    "9113": {
+      "author": "BIMvoice",
+      "branch": "ifc5d-wrong-number-audit",
+      "head": "f8b1fcb",
+      "status": "merged",
+      "title": "ifc5d: fix four wrong-number defects in cost export, cost import and weight quantities",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
+    },
+    "9115": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc4d-zero-duration-milestone-p1d",
+      "head": "2492316",
+      "status": "merged",
+      "title": "ifc4d: stop zero-duration milestones importing as one-day tasks",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9115"
     }
   },
   "schema": 1

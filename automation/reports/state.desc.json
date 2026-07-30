@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 123,
-    "merged": 456,
-    "skipped_conflict": 89,
-    "skipped_draft": 57,
-    "total": 725
+    "merged": 462,
+    "skipped_conflict": 91,
+    "skipped_draft": 56,
+    "total": 732
   },
-  "generated_at": "2026-07-30T06:41:26Z",
+  "generated_at": "2026-07-30T08:42:25Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "e033729",
+      "head": "41308cf",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1489,9 +1489,9 @@
     "8335": {
       "author": "BIMvoice",
       "branch": "fix-3019-nested-mapped-item",
-      "head": "879e67e",
-      "status": "merged",
-      "title": "Bonsai: fix nested mapped-item transform composition order (#3019)",
+      "head": "db48b9a",
+      "status": "skipped_conflict",
+      "title": "util.representation + Bonsai: fix two nested mapped-item transform bugs (#3019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8335"
     },
     "8336": {
@@ -4390,14 +4390,6 @@
       "title": "ifcgeom: map IfcSphericalSurface so advanced-brep spheres render (#586)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8853"
     },
-    "8854": {
-      "author": "falken10vdl",
-      "branch": "circle_segment_approx_in_OpenCascade_Engine",
-      "head": "590a741",
-      "status": "skipped_draft",
-      "title": "Add circle_segments setting to control circle approximation in geometry imports",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8854"
-    },
     "8855": {
       "author": "BIMvoice",
       "branch": "issue-950-bcf-report",
@@ -4679,7 +4671,7 @@
       "author": "BIMvoice",
       "branch": "fix-4442-honor-calendar-work-hours",
       "head": "3a8d8b5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.api.sequence: honour the calendar's declared work hours",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8907"
     },
@@ -5176,7 +5168,7 @@
       "author": "BIMvoice",
       "branch": "6964-duration-precision",
       "head": "73d64fc",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.date: preserve microsecond precision when converting IfcDuration for calculation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8985"
     },
@@ -5184,7 +5176,7 @@
       "author": "BIMvoice",
       "branch": "6964-precision-audit",
       "head": "c41c9ca",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Audit cost/resource/schedule calculation paths for precision loss; fix float32-truncated Bonsai properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8986"
     },
@@ -5932,6 +5924,70 @@
       "status": "merged",
       "title": "Bonsai: guard three unnamed-entity crashes where a sibling method already had the fallback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9102"
+    },
+    "9103": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-none-name-concat-crashes",
+      "head": "1e17d7b",
+      "status": "merged",
+      "title": "Bonsai: fix three TypeError crashes concatenating an unguarded optional Name",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9103"
+    },
+    "9104": {
+      "author": "BIMvoice",
+      "branch": "fix/9029-link-ifc-duplicate-on-repeat-click",
+      "head": "ed6e010",
+      "status": "merged",
+      "title": "Bonsai: stop Link IFC duplicating and reloading when a click is repeated",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9104"
+    },
+    "9105": {
+      "author": "BIMvoice",
+      "branch": "fix/cost-product-quantity-names-intersection",
+      "head": "3a82086",
+      "status": "merged",
+      "title": "util.cost: stop get_product_quantity_names resurrecting names after an empty intersection",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9105"
+    },
+    "9106": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-work-time-start-ignored",
+      "head": "b462145",
+      "status": "merged",
+      "title": "util.sequence: is_day_in_work_time ignored Start whenever Finish was also set",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9106"
+    },
+    "9107": {
+      "author": "BIMvoice",
+      "branch": "fix/reassign-class-drops-falsy-attributes",
+      "head": "fb882ae",
+      "status": "merged",
+      "title": "util.schema: reassign_class silently dropped falsy-but-set attribute values",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9107"
+    },
+    "9108": {
+      "author": "BIMvoice",
+      "branch": "api-audit-material-style-cost-2026-07-30",
+      "head": "bc563e7",
+      "status": "merged",
+      "title": "ifcopenshell.api: fix three defects that write wrong data into the file",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9108"
+    },
+    "9109": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcpatch-constituent-fractions-zero-width",
+      "head": "9898c5c",
+      "status": "merged",
+      "title": "ifcpatch: AssignConstituentFractions silently skipped constituents with zero width",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9109"
+    },
+    "9110": {
+      "author": "BIMvoice",
+      "branch": "fix/api-audit-resource-sequence-batch2",
+      "head": "84477a9",
+      "status": "merged",
+      "title": "ifcopenshell.api: fix a segfault duplicating ratio-lag tasks, and zero-length durations being rejected",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9110"
     }
   },
   "schema": 1
