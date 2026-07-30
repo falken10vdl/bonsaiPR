@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 124,
-    "merged": 456,
-    "skipped_conflict": 98,
+    "merged": 462,
+    "skipped_conflict": 99,
     "skipped_draft": 56,
-    "total": 734
+    "total": 741
   },
-  "generated_at": "2026-07-30T11:17:37Z",
+  "generated_at": "2026-07-30T13:17:32Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "41308cf",
+      "head": "3fc8384",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -3429,7 +3429,7 @@
       "author": "BIMvoice",
       "branch": "fix-3621-window-shapes",
       "head": "ca10002",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add Round and Arch shapes to the parametric window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8695"
     },
@@ -6005,6 +6005,62 @@
       "status": "merged",
       "title": "cost: stop edit_cost_value orphaning the old UnitBasis into the file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9118"
+    },
+    "9120": {
+      "author": "BIMvoice",
+      "branch": "fix/bcf-reference-save-crashes",
+      "head": "f98eb0a",
+      "status": "merged",
+      "title": "bcf: fix a crash that loses the entire save, plus two silent data losses",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9120"
+    },
+    "9122": {
+      "author": "BIMvoice",
+      "branch": "fix/classification-add-reference-cross-classification-collision",
+      "head": "55820fa",
+      "status": "merged",
+      "title": "api: stop classifying elements under the wrong classification system",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9122"
+    },
+    "9123": {
+      "author": "BIMvoice",
+      "branch": "fix/door-window-overall-dims-min",
+      "head": "5981ef0",
+      "status": "merged",
+      "title": "Bonsai: constrain properties that can write schema-invalid zero measures",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9123"
+    },
+    "9124": {
+      "author": "BIMvoice",
+      "branch": "api-audit-geometry-profile-fixes",
+      "head": "842f53b",
+      "status": "merged",
+      "title": "api: fix a 1000x placement error on shared matrices, and 2D profiles written as invalid IFC",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9124"
+    },
+    "9125": {
+      "author": "BIMvoice",
+      "branch": "fix/structural-drawing-api-audit-fixes",
+      "head": "e6ee235",
+      "status": "merged",
+      "title": "api: fix an orphaned boundary condition and two crashes on default input",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9125"
+    },
+    "9126": {
+      "author": "BIMvoice",
+      "branch": "fix/get-quantities-complex-verbose-keyerror",
+      "head": "a8c3c30",
+      "status": "merged",
+      "title": "util.element: fix KeyError in get_quantities(verbose=True), the twin of a fix already applied to get_properties",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9126"
+    },
+    "9127": {
+      "author": "BIMvoice",
+      "branch": "fix/attribute-min-max-schema-invalid-measures",
+      "head": "4ed5154",
+      "status": "merged",
+      "title": "Bonsai: constrain the generic Attributes panel to schema-valid numeric ranges",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9127"
     }
   },
   "schema": 1

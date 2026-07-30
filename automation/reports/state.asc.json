@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 124,
-    "merged": 465,
-    "skipped_conflict": 90,
+    "merged": 464,
+    "skipped_conflict": 91,
     "skipped_draft": 56,
     "total": 735
   },
-  "generated_at": "2026-07-30T10:08:07Z",
+  "generated_at": "2026-07-30T12:08:33Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2063,14 +2063,6 @@
       "title": "Bonsai: bind the MEP fitting start port even when no port is at the origin (#6249)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8441"
     },
-    "8442": {
-      "author": "BIMvoice",
-      "branch": "fix-6405-space-regen-elevation",
-      "head": "1a6c6da",
-      "status": "merged",
-      "title": "Bonsai: stop shifting an IfcSpace by the container elevation on Regen (#6405)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8442"
-    },
     "8443": {
       "author": "BIMvoice",
       "branch": "fix-6681-material-ui-select-type",
@@ -3758,7 +3750,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4482,14 +4474,6 @@
       "status": "merged",
       "title": "Bonsai: stack multiple saved CSV templates into one spreadsheet export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8875"
-    },
-    "8876": {
-      "author": "BIMvoice",
-      "branch": "4817-space-height-box",
-      "head": "0445702",
-      "status": "merged",
-      "title": "Bonsai: add Height setting for spaces generated from cursor",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8876"
     },
     "8877": {
       "author": "BIMvoice",
@@ -6008,11 +5992,27 @@
     "9117": {
       "author": "BIMvoice",
       "branch": "fix/ifcwrap-setargumentasnull-null-deref",
-      "head": "270573e",
+      "head": "2a80d21",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "ifcwrap: fix SIGSEGV passing None to any defined or enumeration type (UNBUILT, needs review)",
+      "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types (UNBUILT, needs review)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9117"
+    },
+    "9118": {
+      "author": "BIMvoice",
+      "branch": "fix/cost-unitbasis-leak",
+      "head": "68a9949",
+      "status": "merged",
+      "title": "cost: stop edit_cost_value orphaning the old UnitBasis into the file",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9118"
+    },
+    "9120": {
+      "author": "BIMvoice",
+      "branch": "fix/bcf-reference-save-crashes",
+      "head": "f98eb0a",
+      "status": "merged",
+      "title": "bcf: fix a crash that loses the entire save, plus two silent data losses",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9120"
     }
   },
   "schema": 1
