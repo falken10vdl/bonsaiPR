@@ -8,6 +8,15 @@ import time
 from datetime import datetime
 from dotenv import load_dotenv
 
+# pr_state lives alongside this script. main.py runs it with cwd=scripts_dir so a
+# plain import works, but insert the path explicitly for direct/manual invocation.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import pr_state
+
+# Committed per-order snapshots (state.asc/desc/upd.json). The report reads them
+# to annotate each PR with how it fared under the other merge orders.
+REPORTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "reports")
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -956,6 +965,30 @@ def generate_report(
                 failed_unknown += 1
     if not commit_hash:
         commit_hash = "unknown"
+
+    # --- Cross-order stability -------------------------------------------------
+    # Which PRs merge regardless of merge order, and which are in a conflict race.
+    # Purely additive: with fewer than two usable snapshots (first run ever, or a
+    # fresh sandbox) the columns and summary bullets are simply omitted.
+    order_states = pr_state.load_order_states(REPORTS_DIR)
+    robustness = pr_state.compute_robustness(order_states)
+    robustness_sources = pr_state.robustness_sources(order_states)
+    show_stability = len(robustness_sources) >= 2
+
+    def _stability_cell(pr_number):
+        """Orders this PR merged under, per the snapshots listed in the Summary.
+
+        Lists the orders explicitly rather than saying "all", because a PR the
+        other snapshots predate is judged on fewer than three orders.
+        """
+        entry = robustness.get(str(pr_number))
+        if not entry:
+            return "— not yet seen"
+        if not entry["merged_in"]:
+            return "✖ none"
+        prefix = "✅" if entry["stable"] else "⚠️"
+        return f"{prefix} {', '.join(entry['merged_in'])}"
+
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(f"# BonsaiPR Weekly Build Report\n")
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
@@ -1005,6 +1038,39 @@ def generate_report(
         f.write(
             f"      in the 'Conflict With Other PRs' table may appear in the companion {companion_order} release.\n\n"
         )
+        if show_stability:
+            stable_merged = 0
+            dependent_merged = 0
+            unseen_merged = 0
+            for pr in applied_prs:
+                entry = robustness.get(str(pr["number"]))
+                if not entry:
+                    unseen_merged += 1
+                elif entry["stable"]:
+                    stable_merged += 1
+                else:
+                    dependent_merged += 1
+            compared = ", ".join(suffix for suffix, _ in robustness_sources)
+            f.write(f"- Order-stable merges (merged under every order below): {stable_merged}\n")
+            f.write(
+                f"- Order-dependent merges (merged here, blocked under another order): {dependent_merged}\n"
+            )
+            f.write(f"- Too new to compare (absent from every snapshot): {unseen_merged}\n\n")
+            f.write(
+                f"Cross-order stability compares the most recent snapshot of each order ({compared}).\n"
+            )
+            f.write(
+                "      Snapshots are written when an order's build finishes, so companion orders are\n"
+            )
+            f.write("      generally one run behind:\n")
+            for suffix, generated_at in robustness_sources:
+                f.write(f"      - {suffix}: {generated_at or 'unknown'}\n")
+            f.write(
+                "      'Order-dependent' means the PR lost a conflict race to a PR it overlaps with.\n"
+            )
+            f.write(
+                "      It is a churn signal, not a defect: nothing about the PR itself failed.\n\n"
+            )
         if merge_order == "by-updated":
 
             def _sort_key(p):
@@ -1115,17 +1181,24 @@ def generate_report(
                 "another PR already merged in this release. They may appear in the companion "
                 "release built in the opposite order.\n\n"
             )
+            merges_under_header = " Merges under |" if show_stability else ""
+            merges_under_rule = "--------------|" if show_stability else ""
             f.write(
-                "| PR | Title | Author | Branch | Last commit | First detected | Base commit |\n"
+                "| PR | Title | Author | Branch | Last commit | First detected | Base commit |"
+                f"{merges_under_header}\n"
             )
             f.write(
-                "|----|-------|--------|--------|-------------|----------------|-------------|\n"
+                "|----|-------|--------|--------|-------------|----------------|-------------|"
+                f"{merges_under_rule}\n"
             )
             for pr in other_conflicts:
                 pr_link, author, branch, last_commit, first_detected, base_commit_cell = _pr_common_cells(pr)
+                merges_under = (
+                    f" {_stability_cell(pr['number'])} |" if show_stability else ""
+                )
                 f.write(
                     f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {last_commit} | "
-                    f"{first_detected} | {base_commit_cell} |\n"
+                    f"{first_detected} | {base_commit_cell} |{merges_under}\n"
                 )
             f.write("\n")
         if skipped_prs:
@@ -1157,8 +1230,14 @@ def generate_report(
             f.write("\n")
         if applied_prs:
             f.write(f"## ✅ Successfully Merged PRs ({len(applied_prs)})\n\n")
-            f.write("| PR | Title | Author | Branch | Created | Last commit |\n")
-            f.write("|----|-------|--------|--------|---------|-------------|\n")
+            stability_header = " Order stability |" if show_stability else ""
+            stability_rule = "-----------------|" if show_stability else ""
+            f.write(
+                f"| PR | Title | Author | Branch | Created | Last commit |{stability_header}\n"
+            )
+            f.write(
+                f"|----|-------|--------|--------|---------|-------------|{stability_rule}\n"
+            )
             for pr in sorted(applied_prs, key=_sort_key, reverse=reverse_sort):
                 pr_link = f"[#{pr['number']}]({pr['html_url']})"
                 author = _cell(pr['user']['login'])
@@ -1170,8 +1249,11 @@ def generate_report(
                     last_commit = f"[{last_sha[:7]}]({last_commit_url})"
                 else:
                     last_commit = ""
+                stability = (
+                    f" {_stability_cell(pr['number'])} |" if show_stability else ""
+                )
                 f.write(
-                    f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {created} | {last_commit} |\n"
+                    f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {created} | {last_commit} |{stability}\n"
                 )
             f.write("\n")
         f.write(f"## Developer Instructions\n\n")
