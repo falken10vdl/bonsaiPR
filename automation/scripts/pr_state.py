@@ -184,6 +184,88 @@ def load_state(path):
 
 
 # --------------------------------------------------------------------------- #
+# Cross-order robustness (asc / desc / upd)
+# --------------------------------------------------------------------------- #
+#
+# main.py builds up to three releases per run, one per merge order. Because a
+# conflict between two PRs is resolved by whichever one the order reaches first,
+# the merged set differs between orders. Comparing the three snapshots tells you
+# which PRs are in a conflict race and which are not.
+#
+# This is a CHURN signal, not a quality one: a PR that merges under `asc` but not
+# `desc` simply lost a race to a PR it textually overlaps with. Nothing about the
+# PR itself failed.
+
+ORDER_SUFFIX_BY_NAME = {"ascending": "asc", "descending": "desc", "by-updated": "upd"}
+ORDER_NAME_BY_SUFFIX = {v: k for k, v in ORDER_SUFFIX_BY_NAME.items()}
+ORDER_SUFFIXES = ("asc", "desc", "upd")
+
+
+def order_state_path(reports_dir, suffix):
+    """Path to the committed snapshot for one merge order."""
+    return os.path.join(reports_dir, f"state.{suffix}.json")
+
+
+def load_order_states(reports_dir, suffixes=ORDER_SUFFIXES):
+    """Load every per-order snapshot; missing or unreadable ones map to None.
+
+    An absent snapshot is normal (first run for that order, a run where the order
+    never triggered, or a fresh sandbox), so this never raises.
+    """
+    states = {}
+    for suffix in suffixes:
+        try:
+            states[suffix] = load_state(order_state_path(reports_dir, suffix))
+        except (OSError, ValueError):
+            states[suffix] = None
+    return states
+
+
+def robustness_sources(states):
+    """[(suffix, generated_at)] for the orders that actually have a snapshot.
+
+    The caller needs this for provenance: the snapshots are written at the END of
+    each order's build, so within a run the companion orders' files are still from
+    the PREVIOUS run. Any report quoting robustness has to say which vintage it
+    compared against.
+    """
+    return [
+        (suffix, (state or {}).get("generated_at"))
+        for suffix, state in states.items()
+        if state and state.get("prs")
+    ]
+
+
+def compute_robustness(states):
+    """Per-PR cross-order merge outcome, keyed by stringified PR number.
+
+    `states` is the {suffix: state|None} mapping from load_order_states(). Only
+    orders with a usable snapshot participate. Each record is:
+
+        merged_in   [suffix, ...]  orders whose snapshot merged this PR
+        blocked_in  [suffix, ...]  orders that saw it but did not merge it
+        stable      bool           merged in EVERY order that saw it, having been
+                                   seen by at least two
+
+    A PR absent from every snapshot (first seen this run) has no record at all.
+    """
+    robustness = {}
+    for suffix in ORDER_SUFFIXES:
+        state = (states or {}).get(suffix)
+        if not state or not state.get("prs"):
+            continue
+        for num, rec in state["prs"].items():
+            entry = robustness.setdefault(num, {"merged_in": [], "blocked_in": []})
+            bucket = "merged_in" if rec.get("status") == STATUS_MERGED else "blocked_in"
+            entry[bucket].append(suffix)
+
+    for entry in robustness.values():
+        seen = len(entry["merged_in"]) + len(entry["blocked_in"])
+        entry["stable"] = seen >= 2 and not entry["blocked_in"]
+    return robustness
+
+
+# --------------------------------------------------------------------------- #
 # Git-backed retrieval (any commit, no checkout)
 # --------------------------------------------------------------------------- #
 

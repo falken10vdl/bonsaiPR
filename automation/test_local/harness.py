@@ -183,7 +183,7 @@ def cmd_setup():
 # Fixture generation
 # --------------------------------------------------------------------------- #
 
-def _pr(num, title, author, sha, reason=None):
+def _pr(num, title, author, sha, reason=None, stability=None):
     return {
         "number": num,
         "title": title,
@@ -192,6 +192,9 @@ def _pr(num, title, author, sha, reason=None):
         "html_url": f"https://github.com/IfcOpenShell/IfcOpenShell/pull/{num}",
         "sha": sha,
         "reason": reason,
+        # Cross-order stability cell, exactly as generate_report() renders it.
+        # Trailing column: it must not shift any index 02_upload parses.
+        "stability": stability,
     }
 
 
@@ -206,21 +209,27 @@ def scenario(n):
     R_REAL = "Fails to merge against base (problem with PR itself)"
     R_CONFLICT = "Merges cleanly against base (conflict with other PRs)"
     R_DRAFT = "PR is in DRAFT status"
+    # The `stability` values cover every cell shape generate_report() can emit:
+    # stable-on-3, stable-on-2, order-dependent, blocked-everywhere, and unseen.
     if n == 1:
-        merged = [_pr(101, "Add wall tool", "alice", "aaaa111"),
-                  _pr(102, "Fix door swing", "bob", "bbbb111"),
-                  _pr(103, "Improve schedules", "carol", "cccc111")]
+        merged = [_pr(101, "Add wall tool", "alice", "aaaa111", stability="✅ asc, desc, upd"),
+                  _pr(102, "Fix door swing", "bob", "bbbb111", stability="⚠️ asc"),
+                  _pr(103, "Improve schedules", "carol", "cccc111", stability="✅ asc, desc")]
         failed = [_pr(201, "Break the build", "dave", "dddd111", R_REAL),
-                  _pr(301, "Nice feature, bad timing", "erin", "eeee111", R_CONFLICT)]
+                  _pr(301, "Nice feature, bad timing", "erin", "eeee111", R_CONFLICT,
+                      stability="✖ none"),
+                  _pr(302, "Rescued by another order", "heidi", "hhhh111", R_CONFLICT,
+                      stability="⚠️ desc, upd")]
         skipped = [_pr(401, "WIP experiment", "frank", "ffff111", R_DRAFT)]
     elif n == 2:
-        merged = [_pr(101, "Add wall tool", "alice", "aaaa222"),   # new commit
-                  _pr(102, "Fix door swing", "bob", "bbbb111"),     # unchanged
-                  _pr(103, "Improve schedules", "carol", "cccc111"),
-                  _pr(201, "Break the build", "dave", "dddd111"),   # recovered
-                  _pr(104, "New pretty panel", "grace", "gggg111")] # new PR
+        merged = [_pr(101, "Add wall tool", "alice", "aaaa222", stability="✅ asc, desc, upd"),  # new commit
+                  _pr(102, "Fix door swing", "bob", "bbbb111", stability="⚠️ asc"),  # unchanged
+                  _pr(103, "Improve schedules", "carol", "cccc111", stability="✅ asc, desc"),
+                  _pr(201, "Break the build", "dave", "dddd111", stability="⚠️ asc, upd"),  # recovered
+                  _pr(104, "New pretty panel", "grace", "gggg111",
+                      stability="— not yet seen")]  # new PR
         failed = []
-        skipped = [_pr(401, "WIP experiment", "frank", "ffff111", R_DRAFT)]  # #301 dropped
+        skipped = [_pr(401, "WIP experiment", "frank", "ffff111", R_DRAFT)]  # #301/#302 dropped
     else:
         raise SystemExit(f"unknown scenario {n}")
     return merged, failed, skipped
@@ -255,6 +264,17 @@ def write_report(path, version, ts10, merged, failed, skipped, order="ascending"
         rate = round(100 * len(merged) / total, 1) if total else 0
         f.write(f"- Success Rate: {rate}%\n\n")
 
+        # Cross-order stability bullets, mirroring generate_report(). They sit in
+        # the Summary block that 02_upload parses with startswith() prefixes, so
+        # this proves the new bullets don't shadow an existing counter.
+        n_stable = sum(1 for p in merged if (p.get("stability") or "").startswith("✅"))
+        n_dependent = sum(1 for p in merged if (p.get("stability") or "").startswith("⚠️"))
+        n_unseen = sum(1 for p in merged if (p.get("stability") or "").startswith("—"))
+        f.write(f"- Order-stable merges (merged under every order below): {n_stable}\n")
+        f.write(f"- Order-dependent merges (merged here, blocked under another order): {n_dependent}\n")
+        f.write(f"- Too new to compare (absent from every snapshot): {n_unseen}\n\n")
+        f.write("Cross-order stability compares the most recent snapshot of each order (asc, desc, upd).\n\n")
+
         # The single failed table was split in two (Reason column dropped): real
         # base failures vs PRs that merge cleanly but conflict with another PR.
         base_failed = [p for p in failed if "conflict with other PRs" not in (p["reason"] or "")]
@@ -271,11 +291,11 @@ def write_report(path, version, ts10, merged, failed, skipped, order="ascending"
             f.write(f"## 🔀 Conflict With Other PRs ({len(conflict_failed)})\n\n")
             f.write("These PRs merge cleanly against the base on their own, but conflict with "
                     "another PR already merged in this release.\n\n")
-            f.write("| PR | Title | Author | Branch | Last commit | First detected | Base commit |\n")
-            f.write("|----|-------|--------|--------|-------------|----------------|-------------|\n")
+            f.write("| PR | Title | Author | Branch | Last commit | First detected | Base commit | Merges under |\n")
+            f.write("|----|-------|--------|--------|-------------|----------------|-------------|--------------|\n")
             for p in conflict_failed:
                 f.write(f"| [#{p['number']}]({p['html_url']}) | {p['title']} | {p['author']} | "
-                        f"{p['branch']} | {_commit_cell(p['sha'])} |  |  |\n")
+                        f"{p['branch']} | {_commit_cell(p['sha'])} |  |  | {p.get('stability') or ''} |\n")
             f.write("\n")
         if skipped:
             f.write(f"## ⚠️ Skipped PRs ({len(skipped)})\n\n")
@@ -287,11 +307,12 @@ def write_report(path, version, ts10, merged, failed, skipped, order="ascending"
             f.write("\n")
         if merged:
             f.write(f"## ✅ Successfully Merged PRs ({len(merged)})\n\n")
-            f.write("| PR | Title | Author | Branch | Created | Last commit |\n")
-            f.write("|----|-------|--------|--------|---------|-------------|\n")
+            f.write("| PR | Title | Author | Branch | Created | Last commit | Order stability |\n")
+            f.write("|----|-------|--------|--------|---------|-------------|-----------------|\n")
             for p in merged:
                 f.write(f"| [#{p['number']}]({p['html_url']}) | {p['title']} | {p['author']} | "
-                        f"{p['branch']} | 2026-07-01 | {_commit_cell(p['sha'])} |\n")
+                        f"{p['branch']} | 2026-07-01 | {_commit_cell(p['sha'])} | "
+                        f"{p.get('stability') or ''} |\n")
             f.write("\n")
 
 
@@ -377,7 +398,8 @@ def cmd_run(n):
 # Verify a release body via the GitHub API
 # --------------------------------------------------------------------------- #
 
-def verify_release(tag, expect_delta, expect_failed=None, expect_conflict=None):
+def verify_release(tag, expect_delta, expect_failed=None, expect_conflict=None,
+                   expect_merged=None, expect_authors=()):
     print(f"● Verify release {tag}  (expect delta: {expect_delta})")
     r = _gh_api(f"/releases/tags/{tag}")
     if r.status_code != 200:
@@ -400,6 +422,18 @@ def verify_release(tag, expect_delta, expect_failed=None, expect_conflict=None):
         checks.append(
             (f"Build Statistics: Skipped (conflict w/ other PRs) = {expect_conflict}",
              f"- **Skipped (conflict with other PRs)**: {expect_conflict}\n" in body))
+    # The merged/author counts prove 02_upload still reads the right CELLS after
+    # generate_report() appended its trailing cross-order stability column. It
+    # parses by positional index (cells[5] for merged), so a shifted column shows
+    # up here as a wrong count or a mangled contributor list — not as an error.
+    if expect_merged is not None:
+        checks.append((f"Build Statistics: Successfully Merged = {expect_merged}",
+                       f"- **Successfully Merged**: {expect_merged}\n" in body))
+    for author in expect_authors:
+        checks.append((f"contributor '{author}' parsed from author cell",
+                       author in body))
+    checks.append(("no stability cell leaked into a parsed field",
+                   "asc, desc" not in body and "not yet seen" not in body))
     checks.append(("body no longer contains the big merged TABLE header",
                    "| PR | Branch | Title | Author | Last commit |" not in body))
     checks.append(("README asset uploaded", readme_asset is not None))
@@ -429,10 +463,14 @@ def cmd_verify():
     ok = True
     if "scenario1" in st:
         ok &= verify_release(st["scenario1"]["tag"], expect_delta=False,
-                             expect_failed=1, expect_conflict=1)
+                             expect_failed=1, expect_conflict=2,
+                             expect_merged=3,
+                             expect_authors=("alice", "bob", "carol"))
     if "scenario2" in st:
         ok &= verify_release(st["scenario2"]["tag"], expect_delta=True,
-                             expect_failed=0, expect_conflict=0)
+                             expect_failed=0, expect_conflict=0,
+                             expect_merged=5,
+                             expect_authors=("alice", "bob", "carol", "dave", "grace"))
     return ok
 
 
