@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 126,
-    "merged": 508,
-    "skipped_conflict": 104,
+    "failed": 130,
+    "merged": 495,
+    "skipped_conflict": 119,
     "skipped_draft": 56,
-    "total": 794
+    "total": 800
   },
-  "generated_at": "2026-07-31T06:44:33Z",
+  "generated_at": "2026-07-31T08:44:55Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -431,7 +431,7 @@
       "author": "KarimJerbi",
       "branch": "issue-7743-clone-opening-UI",
       "head": "ebae815",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #7743 : Fix clone opening UI and selection method",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7766"
     },
@@ -694,7 +694,7 @@
       "author": "brunopostle",
       "branch": "bonsai-license",
       "head": "a072c72",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai, add license tagging for IFC elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7917"
     },
@@ -1330,7 +1330,7 @@
       "author": "BIMvoice",
       "branch": "fix-ifcclassdata-partial-load-6398",
       "head": "58516b0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: don't cache a half-built IfcClassData on load failure (#6398)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8308"
     },
@@ -1458,7 +1458,7 @@
       "author": "BIMvoice",
       "branch": "qto-segment-length-from-geometry",
       "head": "a1c7612",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
     },
@@ -1586,7 +1586,7 @@
       "author": "BIMvoice",
       "branch": "fix-4785-drawing-space-filter",
       "head": "23f0a9c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: apply the drawing Include filter to IfcSpace elements (#4785)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8351"
     },
@@ -1594,7 +1594,7 @@
       "author": "BIMvoice",
       "branch": "fix-4766-cross-schema-append",
       "head": "77d3ccb",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "project.append_asset: migrate library asset to project schema on cross-schema append (#4766)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8352"
     },
@@ -1863,7 +1863,7 @@
       "author": "BIMvoice",
       "branch": "fix-7245-work",
       "head": "8907d07",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifctester: normalise scalar IDS values to their XML string form (#7245)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8407"
     },
@@ -1977,7 +1977,7 @@
       "author": "BIMvoice",
       "branch": "fix-6666-append-drawing-view",
       "head": "857ca22",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: append a drawing view from a library as a real drawing (#6666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8427"
     },
@@ -1993,7 +1993,7 @@
       "author": "BIMvoice",
       "branch": "fix-7450-section-level-auto",
       "head": "b831175",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop deleting user created Level (Section) annotations on drawing activation (#7450)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8432"
     },
@@ -2151,7 +2151,7 @@
       "author": "BIMvoice",
       "branch": "fix-7822-examples-occ-includes",
       "head": "63f41d5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "examples: fix missing OpenCASCADE includes on MSVC x64 (#7822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8456"
     },
@@ -2470,7 +2470,7 @@
       "author": "BIMvoice",
       "branch": "fix-8045-blank-name-dedup",
       "head": "daa5800",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Do not deduplicate appended assets by a blank name (#8045)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8507"
     },
@@ -2601,7 +2601,7 @@
       "author": "BIMvoice",
       "branch": "ship-3187-select",
       "head": "0279a5a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "express: include referencing SELECT types in typeof() (#3187)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8528"
     },
@@ -2681,7 +2681,8 @@
       "author": "BIMvoice",
       "branch": "ship-6676-usage-axis",
       "head": "2817009",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: preserve material usage direction across a type change (#6676)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8538"
     },
@@ -2713,7 +2714,7 @@
       "author": "BIMvoice",
       "branch": "ship-tester-webapp-hardening",
       "head": "a65a301",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: diagnose IfcTester webapp startup failures instead of a dead browser tab",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8543"
     },
@@ -2825,7 +2826,7 @@
       "author": "BIMvoice",
       "branch": "fix-7156-chmod-permission-error",
       "head": "a4f7787",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: don't crash registration on read-only pyradiance installs (#7156)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8583"
     },
@@ -2954,7 +2955,7 @@
       "author": "theoryshaw",
       "branch": "fix-decoration-no-scene-camera",
       "head": "c87e0a9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: skip drawing decorations when the scene has no active camera",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8600"
     },
@@ -3074,7 +3075,7 @@
       "author": "BIMvoice",
       "branch": "fix-6353-colour-by-pset-empty",
       "head": "b55d5bc",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai: populate Colour By pset dropdown from the whole file, not just selection (#6353)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8624"
     },
@@ -3186,7 +3187,7 @@
       "author": "BIMvoice",
       "branch": "fix-6134-annotation-text-refresh",
       "head": "09313ea",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: tolerate an already-removed mesh/curve/camera data-block in delete_data",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8642"
     },
@@ -3276,7 +3277,7 @@
       "author": "theoryshaw",
       "branch": "fix-8666-saferemoval-untracked-assertion",
       "head": "084818d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: don't crash on untracked removed element (#8666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8668"
     },
@@ -3308,7 +3309,7 @@
       "author": "BIMvoice",
       "branch": "fix-4309-section-plane-tab",
       "head": "6f7927d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: move temporary section cutaway panels to Drawings and Documents tab",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8673"
     },
@@ -3388,7 +3389,8 @@
       "author": "BIMvoice",
       "branch": "fix-3446-update-space-boundaries",
       "head": "4b90d96",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: update existing space boundaries in place instead of skipping them on regeneration",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8686"
     },
@@ -3469,7 +3471,7 @@
       "author": "BIMvoice",
       "branch": "bv-1428-blendergis-bridge",
       "head": "7b576be",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: import georeferencing from BlenderGIS scene properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8702"
     },
@@ -3774,7 +3776,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8666-8667-append-asset",
       "head": "a5bdfc5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: reject GlobalId matches across incompatible classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8756"
     },
@@ -4136,7 +4138,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-7410-selection-guard",
       "head": "0496043",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: guard set_objects_selection against excluded or hidden collections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8813"
     },
@@ -4267,7 +4270,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-5909-append-aggregate",
       "head": "9a02b30",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Append aggregates with their parts, sub-aggregates and openings (#5909)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8836"
     },
@@ -5048,7 +5051,7 @@
       "author": "BIMvoice",
       "branch": "fix/external-style-identification-crash",
       "head": "95888d3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: report bad external style data instead of raising",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8969"
     },
@@ -5577,7 +5580,8 @@
       "author": "BIMvoice",
       "branch": "fix-6344-gross-weight-profile-mass-openings",
       "head": "9007133",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifc5d: fix GrossWeight ignoring authored profile mass on voided elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9062"
     },
@@ -6487,6 +6491,54 @@
       "status": "merged",
       "title": "geom: tree.select and select_box accept int coords",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9183"
+    },
+    "9184": {
+      "author": "BIMvoice",
+      "branch": "perf-append-asset-safe-removal-scan",
+      "head": "b69610d",
+      "status": "merged",
+      "title": "append_asset: fix O(n^2) reuse_identities scan",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9184"
+    },
+    "9185": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-import-unit-name-none-guard",
+      "head": "ed82b89",
+      "status": "merged",
+      "title": "Bonsai: guard two nameless-entity crashes on import",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9185"
+    },
+    "9186": {
+      "author": "BIMvoice",
+      "branch": "fix/nest-mode-decorator-none-textcoords",
+      "head": "678eec8",
+      "status": "merged",
+      "title": "Bonsai: fix nest label crash off-screen",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9186"
+    },
+    "9187": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-material-unset-crash",
+      "head": "be520a6",
+      "status": "merged",
+      "title": "ifctester: fix crash on unset layer material",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9187"
+    },
+    "9188": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-property-table-datatype",
+      "head": "ff52024",
+      "status": "merged",
+      "title": "ifctester: fix property table dataType silent fail",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9188"
+    },
+    "9189": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-prohibited-requirement-status",
+      "head": "bb13311",
+      "status": "merged",
+      "title": "ifctester: fix prohibited spec requirement status",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9189"
     }
   },
   "schema": 1

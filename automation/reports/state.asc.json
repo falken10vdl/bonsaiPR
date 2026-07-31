@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 126,
-    "merged": 510,
-    "skipped_conflict": 100,
+    "failed": 127,
+    "merged": 516,
+    "skipped_conflict": 101,
     "skipped_draft": 56,
-    "total": 792
+    "total": 800
   },
-  "generated_at": "2026-07-31T06:09:41Z",
+  "generated_at": "2026-07-31T08:09:11Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "3d1e157",
+      "head": "d3ca116",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1218,7 +1218,8 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -3750,7 +3751,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -6471,6 +6472,70 @@
       "status": "merged",
       "title": "bcf: fix v3 crash on missing extensions.xml",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9181"
+    },
+    "9182": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcpatch-optimise-unset-attr",
+      "head": "c907129",
+      "status": "merged",
+      "title": "ifcpatch: fix Optimise crash on unset attribute",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9182"
+    },
+    "9183": {
+      "author": "BIMvoice",
+      "branch": "fix/geom-tree-select-int-coords",
+      "head": "78c1d1c",
+      "status": "merged",
+      "title": "geom: tree.select and select_box accept int coords",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9183"
+    },
+    "9184": {
+      "author": "BIMvoice",
+      "branch": "perf-append-asset-safe-removal-scan",
+      "head": "b69610d",
+      "status": "skipped_conflict",
+      "title": "append_asset: fix O(n^2) reuse_identities scan",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9184"
+    },
+    "9185": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-import-unit-name-none-guard",
+      "head": "ed82b89",
+      "status": "merged",
+      "title": "Bonsai: guard two nameless-entity crashes on import",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9185"
+    },
+    "9186": {
+      "author": "BIMvoice",
+      "branch": "fix/nest-mode-decorator-none-textcoords",
+      "head": "678eec8",
+      "status": "merged",
+      "title": "Bonsai: fix nest label crash off-screen",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9186"
+    },
+    "9187": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-material-unset-crash",
+      "head": "be520a6",
+      "status": "merged",
+      "title": "ifctester: fix crash on unset layer material",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9187"
+    },
+    "9188": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-property-table-datatype",
+      "head": "ff52024",
+      "status": "merged",
+      "title": "ifctester: fix property table dataType silent fail",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9188"
+    },
+    "9189": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-prohibited-requirement-status",
+      "head": "bb13311",
+      "status": "merged",
+      "title": "ifctester: fix prohibited spec requirement status",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9189"
     }
   },
   "schema": 1
