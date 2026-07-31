@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 492,
-    "skipped_conflict": 103,
+    "merged": 473,
+    "skipped_conflict": 126,
     "skipped_draft": 56,
-    "total": 777
+    "total": 781
   },
-  "generated_at": "2026-07-30T22:47:53Z",
+  "generated_at": "2026-07-31T00:47:09Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -646,7 +646,7 @@
       "author": "dipayansardar73-decode",
       "branch": "fix-6608-deterministic-annotation-sorting-v2",
       "head": "5130e40",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix: DetermFix: Deterministic and layered SVG annotation sort order (Resolves #6608)inistic and layered SVG annotation sort order (Resolves #6…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7895"
     },
@@ -1114,7 +1114,7 @@
       "author": "BIMvoice",
       "branch": "fix/raycast-none-verts-8187",
       "head": "c1d3523",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: skip fully off-screen edges in 2D proximity snap (#8187)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8261"
     },
@@ -1234,7 +1234,7 @@
       "author": "BIMvoice",
       "branch": "feat-ifcpatch-cli-entrypoint-6436",
       "head": "dbdc683",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: add console script entry point (#6436)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8281"
     },
@@ -1354,7 +1354,7 @@
       "author": "BIMvoice",
       "branch": "fix-linework-path-no-d-6876",
       "head": "0a51856",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: skip linework paths without a d attribute (#6876)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8314"
     },
@@ -1474,7 +1474,7 @@
       "author": "BIMvoice",
       "branch": "fix-3091-datetime-guard",
       "head": "c4d63e8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: don't crash the task time editor on malformed IfcDuration (#3091)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8334"
     },
@@ -1506,7 +1506,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-viewport-text-size-3353",
       "head": "5ded244",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai(drawing): make viewport annotation text size resolution independent (#3353, #3683)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8338"
     },
@@ -1602,7 +1602,7 @@
       "author": "BIMvoice",
       "branch": "fix-4790-regen-style",
       "head": "abb4309",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve IfcStyledItem when regenerating a wall body (#4790)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8353"
     },
@@ -1710,7 +1710,7 @@
       "author": "BIMvoice",
       "branch": "feat-validate-crash-diagnostics",
       "head": "61750d7",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Add ifcopenshell.diagnostics: report the entity most likely behind a crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8378"
     },
@@ -1742,7 +1742,7 @@
       "author": "BIMvoice",
       "branch": "fix-4934-presentation-layer-stale-id",
       "head": "bca2e6d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix \"Instance not found\" crash when removing a stale presentation layer",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8384"
     },
@@ -1863,7 +1863,7 @@
       "author": "BIMvoice",
       "branch": "fix-7245-work",
       "head": "8907d07",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifctester: normalise scalar IDS values to their XML string form (#7245)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8407"
     },
@@ -1993,7 +1993,7 @@
       "author": "BIMvoice",
       "branch": "fix-7450-section-level-auto",
       "head": "b831175",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop deleting user created Level (Section) annotations on drawing activation (#7450)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8432"
     },
@@ -2151,7 +2151,7 @@
       "author": "BIMvoice",
       "branch": "fix-7822-examples-occ-includes",
       "head": "63f41d5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "examples: fix missing OpenCASCADE includes on MSVC x64 (#7822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8456"
     },
@@ -2470,7 +2470,7 @@
       "author": "BIMvoice",
       "branch": "fix-8045-blank-name-dedup",
       "head": "daa5800",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Do not deduplicate appended assets by a blank name (#8045)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8507"
     },
@@ -2584,7 +2584,7 @@
       "author": "BIMvoice",
       "branch": "fix-3189-tree-file-pointer",
       "head": "dfefb53",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell: attach owning file to geom.tree select results (#3189)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8522"
     },
@@ -2697,7 +2697,7 @@
       "author": "BIMvoice",
       "branch": "ship-2554-derived-unit",
       "head": "d9d5666",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: implement Add Derived Unit in the units UI (#2554)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8541"
     },
@@ -2801,7 +2801,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-classification-honor-obj-arg",
       "head": "6080409",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix ci-bonsai-daily: classification operators honor their obj argument",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8566"
     },
@@ -2922,7 +2922,7 @@
       "author": "BIMvoice",
       "branch": "fix-3496-swept-disk-authoring",
       "head": "209e317",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix IfcSweptDiskSolid directrix round-trip when updating representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8595"
     },
@@ -3042,7 +3042,7 @@
       "author": "BIMvoice",
       "branch": "fix-4349-join-context-menu",
       "head": "9a9f601",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai: surface IFC-aware join in the object/right-click context menu (#4349)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8619"
     },
@@ -3154,7 +3154,7 @@
       "author": "BIMvoice",
       "branch": "fix-6354-colourscheme-save-load",
       "head": "bec61d6",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: persist colour-by-property Pset selection across save/reload",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8636"
     },
@@ -3242,7 +3242,7 @@
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
       "head": "44339de",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
@@ -3558,7 +3558,7 @@
       "author": "BIMvoice",
       "branch": "bv-3157-opening-thickness-sync",
       "head": "6eb7461",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: resync door and window openings after wall layer edits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8721"
     },
@@ -3700,7 +3700,7 @@
       "author": "BIMvoice",
       "branch": "fix-7234-arc-preserve-face",
       "head": "66cc660",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: warn instead of silently destroying faces in the 3-point arc CAD tool",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8743"
     },
@@ -3841,7 +3841,7 @@
       "author": "BIMvoice",
       "branch": "fix-2400-validate-measure-units",
       "head": "b5824ff",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "validate.py: flag instantiated measures with no corresponding unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8770"
     },
@@ -4153,7 +4153,7 @@
       "author": "BIMvoice",
       "branch": "7288-addon-prefs-hardening",
       "head": "fffcf20",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fail with an actionable error instead of a bare KeyError when addon preferences can't be found",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8815"
     },
@@ -4439,7 +4439,7 @@
       "author": "BIMvoice",
       "branch": "cost-quantity-selector-query-5390",
       "head": "33f4c06",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a selector query filter for cost item quantity assignment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8871"
     },
@@ -4447,7 +4447,7 @@
       "author": "BIMvoice",
       "branch": "6382-link-surface-features",
       "head": "026e6d1",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: show IfcSurfaceFeature in linked models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8872"
     },
@@ -4583,7 +4583,7 @@
       "author": "BIMvoice",
       "branch": "8849-linked-space-visibility",
       "head": "f234a04",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: exclude IfcSpace from the default linked-model query",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8897"
     },
@@ -4751,7 +4751,7 @@
       "author": "BIMvoice",
       "branch": "feat-6239-viewport-list-select-sync",
       "head": "8cf8647",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: sync Representation Items list selection with the 3D viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8924"
     },
@@ -4887,7 +4887,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-choco-subprocess-args",
       "head": "3aa40f2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix ci-bonsai-choco: subprocess calls given bare multi-word strings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8942"
     },
@@ -6347,10 +6347,42 @@
     "9166": {
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-costschedule-space-mandatory",
-      "head": "74dd126",
+      "head": "8ad73f5",
       "status": "merged",
-      "title": "api: fix two IFC2X3 mandatory attributes never set",
+      "title": "api: fix ten IFC2X3 mandatory attributes never set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9166"
+    },
+    "9167": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-add-task-default-name",
+      "head": "23e0b38",
+      "status": "merged",
+      "title": "sequence: name tasks so they satisfy the WHERE rule",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9167"
+    },
+    "9168": {
+      "author": "BIMvoice",
+      "branch": "audit-core-geometry-similar-openings",
+      "head": "3eea3f6",
+      "status": "merged",
+      "title": "core.geometry: guard similar-opening lookups",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9168"
+    },
+    "9169": {
+      "author": "BIMvoice",
+      "branch": "fix/mep-quickadd-profile-position",
+      "head": "bff2ba0",
+      "status": "merged",
+      "title": "root: set mandatory Position on quick-add profiles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9169"
+    },
+    "9170": {
+      "author": "BIMvoice",
+      "branch": "fix/cascade-schedule-ifc2x3-crash",
+      "head": "f8e0ab5",
+      "status": "merged",
+      "title": "sequence: fix cascade_schedule crash on IFC2X3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9170"
     }
   },
   "schema": 1

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 126,
-    "merged": 497,
-    "skipped_conflict": 98,
+    "failed": 127,
+    "merged": 498,
+    "skipped_conflict": 97,
     "skipped_draft": 56,
-    "total": 777
+    "total": 778
   },
-  "generated_at": "2026-07-30T22:11:14Z",
+  "generated_at": "2026-07-31T00:11:26Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1218,7 +1218,8 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -2705,7 +2706,7 @@
       "author": "BIMvoice",
       "branch": "ship-6807-geomset-delete",
       "head": "58dc1f3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: delete representation items nested in an IfcGeometricSet (#6807)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8542"
     },
@@ -4019,7 +4020,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6591-general-item-deletion",
       "head": "2138b07",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: generalise representation item deletion to nested items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8798"
     },
@@ -6351,6 +6352,14 @@
       "status": "merged",
       "title": "api: fix two IFC2X3 mandatory attributes never set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9166"
+    },
+    "9167": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-add-task-default-name",
+      "head": "23e0b38",
+      "status": "merged",
+      "title": "sequence: name tasks so they satisfy the WHERE rule",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9167"
     }
   },
   "schema": 1
