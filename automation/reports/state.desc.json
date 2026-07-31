@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 499,
-    "skipped_conflict": 103,
+    "merged": 508,
+    "skipped_conflict": 104,
     "skipped_draft": 56,
-    "total": 784
+    "total": 794
   },
-  "generated_at": "2026-07-31T04:45:01Z",
+  "generated_at": "2026-07-31T06:44:33Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "fb17c66",
+      "head": "d3ca116",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1082,7 +1082,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-empty-numeric-4112",
       "head": "9f8dce0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
     },
@@ -1218,7 +1218,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -2938,7 +2938,7 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "027fae4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -6407,6 +6407,86 @@
       "status": "merged",
       "title": "util: fix 2 crashes on unset optional attrs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9173"
+    },
+    "9174": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-pset-reload-schema-identifier",
+      "head": "ccf0c08",
+      "status": "merged",
+      "title": "Bonsai: pset reload no longer drops IFC4X3 psets",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9174"
+    },
+    "9175": {
+      "author": "BIMvoice",
+      "branch": "fix/misc-connected-system-elements-none-guard",
+      "head": "1d2a281",
+      "status": "merged",
+      "title": "Bonsai: guard non-IFC active object crash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9175"
+    },
+    "9176": {
+      "author": "BIMvoice",
+      "branch": "fix/edit-pset-untemplated-list-crash",
+      "head": "da3e48e",
+      "status": "merged",
+      "title": "pset.edit_pset: fix untemplated list-value crash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
+    },
+    "9177": {
+      "author": "BIMvoice",
+      "branch": "fix/unassign-representation-none-crash",
+      "head": "f5b36d7",
+      "status": "merged",
+      "title": "geometry.unassign_representation: fix None crash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9177"
+    },
+    "9178": {
+      "author": "BIMvoice",
+      "branch": "fix/validate-sqlite-guard",
+      "head": "1ddc620",
+      "status": "merged",
+      "title": "validate: raise cleanly on unsupported sqlite",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9178"
+    },
+    "9179": {
+      "author": "BIMvoice",
+      "branch": "fix/express-missing-rules-file",
+      "head": "a50d79e",
+      "status": "merged",
+      "title": "express: fail clean when rules are missing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9179"
+    },
+    "9180": {
+      "author": "BIMvoice",
+      "branch": "fix/rocksdb-attr-error",
+      "head": "dedfd9e",
+      "status": "merged",
+      "title": "file: raise AttributeError for bad rocksdb attr",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9180"
+    },
+    "9181": {
+      "author": "BIMvoice",
+      "branch": "fix/bcf-v3-missing-extensions-xml",
+      "head": "7470218",
+      "status": "merged",
+      "title": "bcf: fix v3 crash on missing extensions.xml",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9181"
+    },
+    "9182": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcpatch-optimise-unset-attr",
+      "head": "c907129",
+      "status": "merged",
+      "title": "ifcpatch: fix Optimise crash on unset attribute",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9182"
+    },
+    "9183": {
+      "author": "BIMvoice",
+      "branch": "fix/geom-tree-select-int-coords",
+      "head": "78c1d1c",
+      "status": "merged",
+      "title": "geom: tree.select and select_box accept int coords",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9183"
     }
   },
   "schema": 1

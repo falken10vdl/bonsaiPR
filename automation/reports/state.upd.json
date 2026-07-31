@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 126,
-    "merged": 494,
-    "skipped_conflict": 109,
+    "failed": 128,
+    "merged": 499,
+    "skipped_conflict": 112,
     "skipped_draft": 56,
-    "total": 785
+    "total": 795
   },
-  "generated_at": "2026-07-31T05:20:38Z",
+  "generated_at": "2026-07-31T07:19:04Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -242,7 +242,8 @@
       "author": "theoryshaw",
       "branch": "after_assign_remove_from_old_collection",
       "head": "7a60ff8",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Remove object from non-IFC collections after IFC class assignment.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7422"
     },
@@ -340,7 +341,8 @@
       "author": "jaliste",
       "branch": "fix/decorator-preview",
       "head": "509cb57",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix window/door preview alignment regression in ProductDecorator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7659"
     },
@@ -694,7 +696,7 @@
       "author": "brunopostle",
       "branch": "bonsai-license",
       "head": "a072c72",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai, add license tagging for IFC elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7917"
     },
@@ -932,7 +934,7 @@
       "author": "falken10vdl",
       "branch": "fix/create-polyline-from-loop-schema-aware",
       "head": "d4354ce",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Use builder.polyline that is schema-aware for create_polyline_from_loop",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8087"
     },
@@ -955,7 +957,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "fb17c66",
+      "head": "d3ca116",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1082,7 +1084,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-empty-numeric-4112",
       "head": "9f8dce0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
     },
@@ -1218,7 +1220,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -1594,7 +1596,7 @@
       "author": "BIMvoice",
       "branch": "fix-4766-cross-schema-append",
       "head": "77d3ccb",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "project.append_asset: migrate library asset to project schema on cross-schema append (#4766)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8352"
     },
@@ -1977,7 +1979,7 @@
       "author": "BIMvoice",
       "branch": "fix-6666-append-drawing-view",
       "head": "857ca22",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: append a drawing view from a library as a real drawing (#6666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8427"
     },
@@ -2470,7 +2472,7 @@
       "author": "BIMvoice",
       "branch": "fix-8045-blank-name-dedup",
       "head": "daa5800",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Do not deduplicate appended assets by a blank name (#8045)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8507"
     },
@@ -2938,7 +2940,7 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "027fae4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -3276,7 +3278,7 @@
       "author": "theoryshaw",
       "branch": "fix-8666-saferemoval-untracked-assertion",
       "head": "084818d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: don't crash on untracked removed element (#8666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8668"
     },
@@ -3774,7 +3776,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8666-8667-append-asset",
       "head": "a5bdfc5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: reject GlobalId matches across incompatible classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8756"
     },
@@ -4267,7 +4269,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-5909-append-aggregate",
       "head": "9a02b30",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Append aggregates with their parts, sub-aggregates and openings (#5909)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8836"
     },
@@ -6415,6 +6417,86 @@
       "status": "merged",
       "title": "Bonsai: pset reload no longer drops IFC4X3 psets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9174"
+    },
+    "9175": {
+      "author": "BIMvoice",
+      "branch": "fix/misc-connected-system-elements-none-guard",
+      "head": "1d2a281",
+      "status": "merged",
+      "title": "Bonsai: guard non-IFC active object crash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9175"
+    },
+    "9176": {
+      "author": "BIMvoice",
+      "branch": "fix/edit-pset-untemplated-list-crash",
+      "head": "da3e48e",
+      "status": "merged",
+      "title": "pset.edit_pset: fix untemplated list-value crash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
+    },
+    "9177": {
+      "author": "BIMvoice",
+      "branch": "fix/unassign-representation-none-crash",
+      "head": "f5b36d7",
+      "status": "merged",
+      "title": "geometry.unassign_representation: fix None crash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9177"
+    },
+    "9178": {
+      "author": "BIMvoice",
+      "branch": "fix/validate-sqlite-guard",
+      "head": "1ddc620",
+      "status": "merged",
+      "title": "validate: raise cleanly on unsupported sqlite",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9178"
+    },
+    "9179": {
+      "author": "BIMvoice",
+      "branch": "fix/express-missing-rules-file",
+      "head": "a50d79e",
+      "status": "merged",
+      "title": "express: fail clean when rules are missing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9179"
+    },
+    "9180": {
+      "author": "BIMvoice",
+      "branch": "fix/rocksdb-attr-error",
+      "head": "dedfd9e",
+      "status": "merged",
+      "title": "file: raise AttributeError for bad rocksdb attr",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9180"
+    },
+    "9181": {
+      "author": "BIMvoice",
+      "branch": "fix/bcf-v3-missing-extensions-xml",
+      "head": "7470218",
+      "status": "merged",
+      "title": "bcf: fix v3 crash on missing extensions.xml",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9181"
+    },
+    "9182": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcpatch-optimise-unset-attr",
+      "head": "c907129",
+      "status": "merged",
+      "title": "ifcpatch: fix Optimise crash on unset attribute",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9182"
+    },
+    "9183": {
+      "author": "BIMvoice",
+      "branch": "fix/geom-tree-select-int-coords",
+      "head": "78c1d1c",
+      "status": "merged",
+      "title": "geom: tree.select and select_box accept int coords",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9183"
+    },
+    "9184": {
+      "author": "BIMvoice",
+      "branch": "perf-append-asset-safe-removal-scan",
+      "head": "b69610d",
+      "status": "merged",
+      "title": "append_asset: fix O(n^2) reuse_identities scan",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9184"
     }
   },
   "schema": 1

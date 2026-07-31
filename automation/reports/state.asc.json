@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 503,
-    "skipped_conflict": 99,
+    "merged": 510,
+    "skipped_conflict": 100,
     "skipped_draft": 56,
-    "total": 784
+    "total": 792
   },
-  "generated_at": "2026-07-31T04:09:24Z",
+  "generated_at": "2026-07-31T06:09:41Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "008ac8a",
+      "head": "3d1e157",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -6407,6 +6407,70 @@
       "status": "skipped_conflict",
       "title": "util: fix 2 crashes on unset optional attrs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9173"
+    },
+    "9174": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-pset-reload-schema-identifier",
+      "head": "ccf0c08",
+      "status": "merged",
+      "title": "Bonsai: pset reload no longer drops IFC4X3 psets",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9174"
+    },
+    "9175": {
+      "author": "BIMvoice",
+      "branch": "fix/misc-connected-system-elements-none-guard",
+      "head": "1d2a281",
+      "status": "merged",
+      "title": "Bonsai: guard non-IFC active object crash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9175"
+    },
+    "9176": {
+      "author": "BIMvoice",
+      "branch": "fix/edit-pset-untemplated-list-crash",
+      "head": "da3e48e",
+      "status": "skipped_conflict",
+      "title": "pset.edit_pset: fix untemplated list-value crash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
+    },
+    "9177": {
+      "author": "BIMvoice",
+      "branch": "fix/unassign-representation-none-crash",
+      "head": "f5b36d7",
+      "status": "merged",
+      "title": "geometry.unassign_representation: fix None crash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9177"
+    },
+    "9178": {
+      "author": "BIMvoice",
+      "branch": "fix/validate-sqlite-guard",
+      "head": "1ddc620",
+      "status": "merged",
+      "title": "validate: raise cleanly on unsupported sqlite",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9178"
+    },
+    "9179": {
+      "author": "BIMvoice",
+      "branch": "fix/express-missing-rules-file",
+      "head": "a50d79e",
+      "status": "merged",
+      "title": "express: fail clean when rules are missing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9179"
+    },
+    "9180": {
+      "author": "BIMvoice",
+      "branch": "fix/rocksdb-attr-error",
+      "head": "dedfd9e",
+      "status": "merged",
+      "title": "file: raise AttributeError for bad rocksdb attr",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9180"
+    },
+    "9181": {
+      "author": "BIMvoice",
+      "branch": "fix/bcf-v3-missing-extensions-xml",
+      "head": "7470218",
+      "status": "merged",
+      "title": "bcf: fix v3 crash on missing extensions.xml",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9181"
     }
   },
   "schema": 1
