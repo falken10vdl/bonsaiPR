@@ -1394,3 +1394,18 @@
 {"ts": "2026-07-31T11:20:24Z", "order": "by-updated", "pr": 9195, "event": "added", "to": "merged"}
 {"ts": "2026-07-31T11:20:24Z", "order": "by-updated", "pr": 9196, "event": "added", "to": "merged"}
 {"ts": "2026-07-31T11:20:24Z", "order": "by-updated", "pr": 9197, "event": "added", "to": "merged"}
+{"ts": "2026-07-31T12:59:33Z", "order": "upd", "pr": 8335, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-07-31T12:59:33Z", "order": "upd", "pr": 8593, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-07-31T12:59:33Z", "order": "upd", "pr": 8813, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-07-31T12:59:33Z", "order": "upd", "pr": 8971, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-07-31T12:59:33Z", "order": "upd", "pr": 9010, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-07-31T12:59:33Z", "order": "upd", "pr": 9038, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-07-31T13:20:13Z", "order": "by-updated", "pr": 8429, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-07-31T13:20:13Z", "order": "by-updated", "pr": 8803, "event": "removed", "from": "merged"}
+{"ts": "2026-07-31T13:20:13Z", "order": "by-updated", "pr": 8940, "event": "removed", "from": "merged"}
+{"ts": "2026-07-31T13:20:13Z", "order": "by-updated", "pr": 8956, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-07-31T13:20:13Z", "order": "by-updated", "pr": 8988, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-07-31T13:20:13Z", "order": "by-updated", "pr": 9038, "event": "updated", "status": "merged", "from_head": "75346ef", "to_head": "c8aa3b3"}
+{"ts": "2026-07-31T13:20:13Z", "order": "by-updated", "pr": 9050, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-07-31T13:20:13Z", "order": "by-updated", "pr": 9117, "event": "updated", "status": "failed", "from_head": "d9df813", "to_head": "4ce9ecd"}
+{"ts": "2026-07-31T13:20:13Z", "order": "by-updated", "pr": 9198, "event": "added", "to": "merged"}

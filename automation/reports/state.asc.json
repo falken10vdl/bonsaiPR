@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
-    "merged": 521,
-    "skipped_conflict": 102,
+    "failed": 125,
+    "merged": 518,
+    "skipped_conflict": 103,
     "skipped_draft": 56,
-    "total": 803
+    "total": 802
   },
-  "generated_at": "2026-07-31T10:09:39Z",
+  "generated_at": "2026-07-31T12:09:26Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1609,8 +1609,9 @@
     "8354": {
       "author": "BIMvoice",
       "branch": "fix-4822-print-graceful",
-      "head": "9ddd91d",
-      "status": "merged",
+      "head": "bcf28f7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: fail gracefully when the sheet PDF/DXF conversion command is missing or fails (#4822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8354"
     },
@@ -4056,14 +4057,6 @@
       "title": "Bonsai: draw element Axis reference lines in drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8802"
     },
-    "8803": {
-      "author": "Bartok9",
-      "branch": "sera/docs-linux-eigen-dep",
-      "head": "ba12b71",
-      "status": "merged",
-      "title": "docs: add Eigen to Linux install deps",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
-    },
     "8804": {
       "author": "BIMvoice",
       "branch": "bonsai-6428-sheet-item-position",
@@ -5400,8 +5393,8 @@
     "9038": {
       "author": "BIMvoice",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
-      "head": "75346ef",
-      "status": "merged",
+      "head": "c8aa3b3",
+      "status": "skipped_conflict",
       "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },

@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 125,
-    "merged": 514,
-    "skipped_conflict": 108,
+    "merged": 511,
+    "skipped_conflict": 109,
     "skipped_draft": 56,
-    "total": 803
+    "total": 801
   },
-  "generated_at": "2026-07-31T10:45:02Z",
+  "generated_at": "2026-07-31T12:44:41Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -4057,14 +4057,6 @@
       "title": "Bonsai: draw element Axis reference lines in drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8802"
     },
-    "8803": {
-      "author": "Bartok9",
-      "branch": "sera/docs-linux-eigen-dep",
-      "head": "ba12b71",
-      "status": "merged",
-      "title": "docs: add Eigen to Linux install deps",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8803"
-    },
     "8804": {
       "author": "BIMvoice",
       "branch": "bonsai-6428-sheet-item-position",
@@ -4868,14 +4860,6 @@
       "title": "Bonsai: expose thickness when creating a layered element type",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8939"
     },
-    "8940": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/actions/setup-python-7",
-      "head": "fe42b35",
-      "status": "merged",
-      "title": "build(deps): bump actions/setup-python from 6 to 7",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8940"
-    },
     "8941": {
       "author": "BIMvoice",
       "branch": "fix/4612-classification-file-enum",
@@ -5401,8 +5385,8 @@
     "9038": {
       "author": "BIMvoice",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
-      "head": "75346ef",
-      "status": "merged",
+      "head": "c8aa3b3",
+      "status": "skipped_conflict",
       "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },
@@ -5977,7 +5961,7 @@
     "9117": {
       "author": "BIMvoice",
       "branch": "fix/ifcwrap-setargumentasnull-null-deref",
-      "head": "d9df813",
+      "head": "4ce9ecd",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types (UNBUILT, needs review)",
