@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 500,
-    "skipped_conflict": 102,
+    "merged": 499,
+    "skipped_conflict": 103,
     "skipped_draft": 56,
     "total": 784
   },
-  "generated_at": "2026-07-31T02:45:27Z",
+  "generated_at": "2026-07-31T04:45:01Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -159,7 +159,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "bcd772a",
+      "head": "fff3e0c",
       "status": "skipped_conflict",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "008ac8a",
+      "head": "fb17c66",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -2681,7 +2681,7 @@
       "author": "BIMvoice",
       "branch": "ship-6676-usage-axis",
       "head": "2817009",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve material usage direction across a type change (#6676)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8538"
     },
@@ -3241,7 +3241,7 @@
     "8658": {
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
-      "head": "44339de",
+      "head": "6ca69d2",
       "status": "merged",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"

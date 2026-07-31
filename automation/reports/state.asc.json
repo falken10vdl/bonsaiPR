@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 504,
-    "skipped_conflict": 98,
+    "merged": 503,
+    "skipped_conflict": 99,
     "skipped_draft": 56,
     "total": 784
   },
-  "generated_at": "2026-07-31T02:10:38Z",
+  "generated_at": "2026-07-31T04:09:24Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -159,7 +159,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "bcd772a",
+      "head": "fff3e0c",
       "status": "merged",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "3fc8384",
+      "head": "008ac8a",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -3241,8 +3241,8 @@
     "8658": {
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
-      "head": "44339de",
-      "status": "merged",
+      "head": "6ca69d2",
+      "status": "skipped_conflict",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },

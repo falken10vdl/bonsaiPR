@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 496,
-    "skipped_conflict": 106,
+    "merged": 494,
+    "skipped_conflict": 109,
     "skipped_draft": 56,
-    "total": 784
+    "total": 785
   },
-  "generated_at": "2026-07-31T03:20:31Z",
+  "generated_at": "2026-07-31T05:20:38Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -159,8 +159,8 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "bcd772a",
-      "status": "skipped_conflict",
+      "head": "fff3e0c",
+      "status": "merged",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
     },
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "008ac8a",
+      "head": "fb17c66",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1554,7 +1554,7 @@
       "author": "BIMvoice",
       "branch": "fix-4332-door-flip-2d",
       "head": "8351f85",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: flip fills against the Body representation so doors don't jump out of host in 2D (#4332)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8346"
     },
@@ -1903,7 +1903,7 @@
       "author": "BIMvoice",
       "branch": "fix-7533-duplicate-boolean-remap",
       "head": "8267e94",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve half space cuts when duplicating an element (#7533)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8417"
     },
@@ -3766,7 +3766,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3302-mirror-joins",
       "head": "f3ed4f4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: resync mirrored walls' openings so voids follow their door/window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
     },
@@ -5272,7 +5272,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-door-orientation-2",
       "head": "b2bd4bd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: rotate the door hover preview with the wall on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9010"
     },
@@ -5361,7 +5361,7 @@
       "author": "BIMvoice",
       "branch": "fix/door-orientation-no-reference-line",
       "head": "82d9b10",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: orient a filling from the clicked face when the host has no reference line",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9026"
     },
@@ -6404,9 +6404,17 @@
       "author": "BIMvoice",
       "branch": "fix/util-optional-material-position-crashes",
       "head": "fa629c5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util: fix 2 crashes on unset optional attrs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9173"
+    },
+    "9174": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-pset-reload-schema-identifier",
+      "head": "ccf0c08",
+      "status": "merged",
+      "title": "Bonsai: pset reload no longer drops IFC4X3 psets",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9174"
     }
   },
   "schema": 1
