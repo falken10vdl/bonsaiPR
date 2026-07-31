@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 125,
-    "merged": 518,
-    "skipped_conflict": 103,
+    "merged": 517,
+    "skipped_conflict": 104,
     "skipped_draft": 56,
     "total": 802
   },
-  "generated_at": "2026-07-31T12:09:26Z",
+  "generated_at": "2026-07-31T14:09:39Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4860,14 +4860,6 @@
       "title": "Bonsai: expose thickness when creating a layered element type",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8939"
     },
-    "8940": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/actions/setup-python-7",
-      "head": "fe42b35",
-      "status": "merged",
-      "title": "build(deps): bump actions/setup-python from 6 to 7",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8940"
-    },
     "8941": {
       "author": "BIMvoice",
       "branch": "fix/4612-classification-file-enum",
@@ -5969,7 +5961,7 @@
     "9117": {
       "author": "BIMvoice",
       "branch": "fix/ifcwrap-setargumentasnull-null-deref",
-      "head": "d9df813",
+      "head": "4ce9ecd",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types (UNBUILT, needs review)",
@@ -6550,6 +6542,14 @@
       "status": "skipped_conflict",
       "title": "Bonsai: raise, not no-op, on missing polygon",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9197"
+    },
+    "9198": {
+      "author": "BIMvoice",
+      "branch": "fix/assignconstituentfractions-ifc2x3",
+      "head": "36fb218",
+      "status": "skipped_conflict",
+      "title": "ifcpatch: AssignConstituentFractions crashes on any IFC2X3 file",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9198"
     }
   },
   "schema": 1

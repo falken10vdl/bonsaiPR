@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 125,
-    "merged": 511,
+    "merged": 512,
     "skipped_conflict": 109,
     "skipped_draft": 56,
-    "total": 801
+    "total": 802
   },
-  "generated_at": "2026-07-31T12:44:41Z",
+  "generated_at": "2026-07-31T14:45:12Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6542,6 +6542,14 @@
       "status": "merged",
       "title": "Bonsai: raise, not no-op, on missing polygon",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9197"
+    },
+    "9198": {
+      "author": "BIMvoice",
+      "branch": "fix/assignconstituentfractions-ifc2x3",
+      "head": "36fb218",
+      "status": "merged",
+      "title": "ifcpatch: AssignConstituentFractions crashes on any IFC2X3 file",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9198"
     }
   },
   "schema": 1

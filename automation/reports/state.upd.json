@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 125,
-    "merged": 506,
+    "failed": 124,
+    "merged": 507,
     "skipped_conflict": 115,
     "skipped_draft": 56,
     "total": 802
   },
-  "generated_at": "2026-07-31T13:20:13Z",
+  "generated_at": "2026-07-31T15:20:50Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -347,9 +347,8 @@
     "7669": {
       "author": "falken10vdl",
       "branch": "clipboard-module",
-      "head": "c509309",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "4bc21f8",
+      "status": "merged",
       "title": "First version clipboard module. 3 modes available (RENAME, DUPLICATE, DESTINATION)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7669"
     },
@@ -1594,7 +1593,7 @@
       "author": "BIMvoice",
       "branch": "fix-4766-cross-schema-append",
       "head": "77d3ccb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: migrate library asset to project schema on cross-schema append (#4766)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8352"
     },
@@ -2471,7 +2470,7 @@
       "author": "BIMvoice",
       "branch": "fix-8045-blank-name-dedup",
       "head": "daa5800",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Do not deduplicate appended assets by a blank name (#8045)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8507"
     },
@@ -3277,7 +3276,7 @@
       "author": "theoryshaw",
       "branch": "fix-8666-saferemoval-untracked-assertion",
       "head": "084818d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "project.append_asset: don't crash on untracked removed element (#8666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8668"
     },
@@ -3775,7 +3774,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8666-8667-append-asset",
       "head": "a5bdfc5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "project.append_asset: reject GlobalId matches across incompatible classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8756"
     },
@@ -4945,7 +4944,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-append-asset-perf",
       "head": "83d41ce",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: propagate assume_asset_uniqueness_by_name to nested type append",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8956"
     },
@@ -6435,7 +6434,7 @@
       "author": "BIMvoice",
       "branch": "perf-append-asset-safe-removal-scan",
       "head": "b69610d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "append_asset: fix O(n^2) reuse_identities scan",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9184"
     },
