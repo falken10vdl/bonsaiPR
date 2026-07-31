@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 127,
-    "merged": 498,
-    "skipped_conflict": 97,
+    "failed": 126,
+    "merged": 504,
+    "skipped_conflict": 98,
     "skipped_draft": 56,
-    "total": 778
+    "total": 784
   },
-  "generated_at": "2026-07-31T00:11:26Z",
+  "generated_at": "2026-07-31T02:10:38Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1218,8 +1218,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -2706,7 +2705,7 @@
       "author": "BIMvoice",
       "branch": "ship-6807-geomset-delete",
       "head": "58dc1f3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: delete representation items nested in an IfcGeometricSet (#6807)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8542"
     },
@@ -3751,7 +3750,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4020,7 +4019,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6591-general-item-deletion",
       "head": "2138b07",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: generalise representation item deletion to nested items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8798"
     },
@@ -6348,9 +6347,9 @@
     "9166": {
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-costschedule-space-mandatory",
-      "head": "74dd126",
+      "head": "8ad73f5",
       "status": "merged",
-      "title": "api: fix two IFC2X3 mandatory attributes never set",
+      "title": "api: fix ten IFC2X3 mandatory attributes never set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9166"
     },
     "9167": {
@@ -6360,6 +6359,54 @@
       "status": "merged",
       "title": "sequence: name tasks so they satisfy the WHERE rule",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9167"
+    },
+    "9168": {
+      "author": "BIMvoice",
+      "branch": "audit-core-geometry-similar-openings",
+      "head": "3eea3f6",
+      "status": "merged",
+      "title": "core.geometry: guard similar-opening lookups",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9168"
+    },
+    "9169": {
+      "author": "BIMvoice",
+      "branch": "fix/mep-quickadd-profile-position",
+      "head": "bff2ba0",
+      "status": "merged",
+      "title": "root: set mandatory Position on quick-add profiles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9169"
+    },
+    "9170": {
+      "author": "BIMvoice",
+      "branch": "fix/cascade-schedule-ifc2x3-crash",
+      "head": "f8e0ab5",
+      "status": "merged",
+      "title": "sequence: fix cascade_schedule crash on IFC2X3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9170"
+    },
+    "9171": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-tool-optional-attr-guards",
+      "head": "de3092a",
+      "status": "merged",
+      "title": "Bonsai: guard five crashes on valid IFC files",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9171"
+    },
+    "9172": {
+      "author": "BIMvoice",
+      "branch": "fix/geometry-data-representation-type-none",
+      "head": "25914e8",
+      "status": "merged",
+      "title": "Bonsai: guard optional RepresentationType concat",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9172"
+    },
+    "9173": {
+      "author": "BIMvoice",
+      "branch": "fix/util-optional-material-position-crashes",
+      "head": "fa629c5",
+      "status": "skipped_conflict",
+      "title": "util: fix 2 crashes on unset optional attrs",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9173"
     }
   },
   "schema": 1

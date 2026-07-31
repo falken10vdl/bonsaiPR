@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 126,
-    "merged": 497,
-    "skipped_conflict": 105,
+    "merged": 496,
+    "skipped_conflict": 106,
     "skipped_draft": 56,
     "total": 784
   },
-  "generated_at": "2026-07-31T01:22:50Z",
+  "generated_at": "2026-07-31T03:20:31Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "3fc8384",
+      "head": "008ac8a",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -2681,7 +2681,7 @@
       "author": "BIMvoice",
       "branch": "ship-6676-usage-axis",
       "head": "2817009",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve material usage direction across a type change (#6676)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8538"
     },
@@ -3241,7 +3241,7 @@
     "8658": {
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
-      "head": "44339de",
+      "head": "6ca69d2",
       "status": "merged",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
