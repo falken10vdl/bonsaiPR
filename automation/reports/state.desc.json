@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 125,
+    "failed": 124,
     "merged": 512,
-    "skipped_conflict": 109,
+    "skipped_conflict": 110,
     "skipped_draft": 56,
     "total": 802
   },
-  "generated_at": "2026-07-31T14:45:12Z",
+  "generated_at": "2026-07-31T16:45:10Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -347,9 +347,8 @@
     "7669": {
       "author": "falken10vdl",
       "branch": "clipboard-module",
-      "head": "c509309",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "4bc21f8",
+      "status": "skipped_conflict",
       "title": "First version clipboard module. 3 modes available (RENAME, DUPLICATE, DESTINATION)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7669"
     },
@@ -5964,7 +5963,7 @@
       "head": "4ce9ecd",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types (UNBUILT, needs review)",
+      "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9117"
     },
     "9118": {
@@ -6186,7 +6185,7 @@
     "9152": {
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
-      "head": "a05ee2e",
+      "head": "3fea62c",
       "status": "merged",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"

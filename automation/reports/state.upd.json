@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
-    "merged": 507,
+    "failed": 125,
+    "merged": 506,
     "skipped_conflict": 115,
     "skipped_draft": 56,
     "total": 802
   },
-  "generated_at": "2026-07-31T15:20:50Z",
+  "generated_at": "2026-07-31T17:22:41Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1425,7 +1425,7 @@
       "author": "BIMvoice",
       "branch": "fix-manual-classification-reference-no-classification-7506",
       "head": "38987be",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai(classification): report a clear error when adding a manual reference with no classification (#7506)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8327"
     },
@@ -5561,7 +5561,8 @@
       "author": "BIMvoice",
       "branch": "qto-member-length-from-extrusion",
       "head": "6d09100",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifc5d: take Beam/Column/Member Length from the extrusion, not the bounding box",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9063"
     },
@@ -5963,7 +5964,7 @@
       "head": "4ce9ecd",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types (UNBUILT, needs review)",
+      "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9117"
     },
     "9118": {
@@ -6185,7 +6186,7 @@
     "9152": {
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
-      "head": "a05ee2e",
+      "head": "3fea62c",
       "status": "merged",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
@@ -6545,7 +6546,7 @@
     "9198": {
       "author": "BIMvoice",
       "branch": "fix/assignconstituentfractions-ifc2x3",
-      "head": "36fb218",
+      "head": "1339693",
       "status": "merged",
       "title": "ifcpatch: AssignConstituentFractions crashes on any IFC2X3 file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9198"

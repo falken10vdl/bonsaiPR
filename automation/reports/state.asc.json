@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 125,
-    "merged": 517,
-    "skipped_conflict": 104,
+    "failed": 124,
+    "merged": 516,
+    "skipped_conflict": 106,
     "skipped_draft": 56,
     "total": 802
   },
-  "generated_at": "2026-07-31T14:09:39Z",
+  "generated_at": "2026-07-31T16:09:31Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -347,9 +347,8 @@
     "7669": {
       "author": "falken10vdl",
       "branch": "clipboard-module",
-      "head": "c509309",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "4bc21f8",
+      "status": "merged",
       "title": "First version clipboard module. 3 modes available (RENAME, DUPLICATE, DESTINATION)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7669"
     },
@@ -3751,7 +3750,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4945,7 +4944,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-append-asset-perf",
       "head": "83d41ce",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: propagate assume_asset_uniqueness_by_name to nested type append",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8956"
     },
@@ -5153,7 +5152,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-extractelements-progress-ui",
       "head": "8870292",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: report real progress while a patch recipe runs, instead of freezing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8988"
     },
@@ -5386,7 +5385,7 @@
       "author": "BIMvoice",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
       "head": "c8aa3b3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },
