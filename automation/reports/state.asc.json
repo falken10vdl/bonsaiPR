@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
-    "merged": 516,
-    "skipped_conflict": 106,
+    "failed": 127,
+    "merged": 505,
+    "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 802
+    "total": 808
   },
-  "generated_at": "2026-07-31T16:09:31Z",
+  "generated_at": "2026-07-31T18:10:13Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1774,7 +1774,7 @@
       "author": "BIMvoice",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "82a4117",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix BCF 2.1 viewpoint and snapshot file names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
@@ -3782,7 +3782,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-3941-mep-split-hotkey",
       "head": "e289777",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: wire Shift+K to split pipe/duct segments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8758"
     },
@@ -3919,7 +3920,7 @@
       "author": "BIMvoice",
       "branch": "fix-7461-msvc-lnk1248-docs",
       "head": "534cef6",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "win: document LNK1248 causes and the USE_CCACHE escape hatch",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8783"
     },
@@ -4077,7 +4078,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7146-vertical-axis3",
       "head": "bd3a727",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: don't blow up a vertical AXIS3 element when its layers change",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8806"
     },
@@ -4218,7 +4219,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-5719-annotation-fill-bg",
       "head": "f643c18",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop rasterizing fill-bg annotation text on PDF export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8830"
     },
@@ -4370,7 +4371,7 @@
       "author": "BIMvoice",
       "branch": "issue-950-bcf-report",
       "head": "be35a62",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bcf: add Reporter for exporting BCF topics to CSV/XLSX/ODS (#950)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8855"
     },
@@ -4535,7 +4536,8 @@
       "author": "BIMvoice",
       "branch": "8885-unit-name-guard",
       "head": "da0a315",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: load projects with a nameless LENGTHUNIT instead of crashing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8889"
     },
@@ -4727,7 +4729,7 @@
       "author": "BIMvoice",
       "branch": "feat-6232-grid-params-prompt",
       "head": "634ffcb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: prompt for grid U/V parameters before creating a grid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8922"
     },
@@ -5008,7 +5010,7 @@
       "author": "BIMvoice",
       "branch": "fix/7151-trim-merge-poll",
       "head": "0e78a18",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: grey out Trim and Merge when the active-tool selection is invalid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8966"
     },
@@ -5056,7 +5058,7 @@
       "author": "BIMvoice",
       "branch": "7497-annotation-camera-bounds",
       "head": "634c442",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: keep auto-generated drawing reference annotations within camera bounds",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8972"
     },
@@ -5264,7 +5266,7 @@
       "author": "BIMvoice",
       "branch": "fix/host-recut-active-representation",
       "head": "b6120cd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: recut a voided host from its active representation, not its context",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9011"
     },
@@ -5385,7 +5387,7 @@
       "author": "BIMvoice",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
       "head": "c8aa3b3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },
@@ -5513,7 +5515,7 @@
       "author": "BIMvoice",
       "branch": "ifcclash-tests-and-perf-fixes",
       "head": "277f45d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcclash: don't drop elements sharing a GlobalId across clash-set sources",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9057"
     },
@@ -5601,7 +5603,7 @@
       "author": "BIMvoice",
       "branch": "fix-unit-convert-area-volume-prefix-scaling",
       "head": "d261712",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util.unit: fix 1000x area and 1000000x volume conversion errors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9068"
     },
@@ -5777,7 +5779,7 @@
       "author": "BIMvoice",
       "branch": "fix/cost-quantity-names-accumulate",
       "head": "d8e168a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: accumulate quantity names across quantity sets instead of overwriting",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9091"
     },
@@ -5905,7 +5907,7 @@
       "author": "BIMvoice",
       "branch": "fix/reassign-class-drops-falsy-attributes",
       "head": "fb882ae",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.schema: reassign_class silently dropped falsy-but-set attribute values",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9107"
     },
@@ -5963,7 +5965,7 @@
       "head": "4ce9ecd",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types (UNBUILT, needs review)",
+      "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9117"
     },
     "9118": {
@@ -6042,7 +6044,7 @@
       "author": "BIMvoice",
       "branch": "fix/bonsai-tool-twin-doc-inconsistencies",
       "head": "7d6ee32",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: correct two twin-function inconsistencies in tool/",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9131"
     },
@@ -6170,7 +6172,7 @@
       "author": "BIMvoice",
       "branch": "6647-1click-drawing-style-assets",
       "head": "71f3700",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: 1-click drawing style changes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9149"
     },
@@ -6185,7 +6187,7 @@
     "9152": {
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
-      "head": "a05ee2e",
+      "head": "3fea62c",
       "status": "merged",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
@@ -6298,7 +6300,8 @@
       "author": "BIMvoice",
       "branch": "fix/sequence-add-task-default-name",
       "head": "23e0b38",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "sequence: name tasks so they satisfy the WHERE rule",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9167"
     },
@@ -6545,10 +6548,58 @@
     "9198": {
       "author": "BIMvoice",
       "branch": "fix/assignconstituentfractions-ifc2x3",
-      "head": "36fb218",
+      "head": "1339693",
       "status": "skipped_conflict",
       "title": "ifcpatch: AssignConstituentFractions crashes on any IFC2X3 file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9198"
+    },
+    "9200": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcfm-cobie-zero-value-properties-dropped",
+      "head": "e8e95f8",
+      "status": "skipped_conflict",
+      "title": "ifcfm: COBie export drops properties valued zero or False",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9200"
+    },
+    "9201": {
+      "author": "BIMvoice",
+      "branch": "bonsai-window-body-context-missing",
+      "head": "da0d880",
+      "status": "skipped_conflict",
+      "title": "Bonsai: creating a window in an imported IFC crashes (#8081)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9201"
+    },
+    "9202": {
+      "author": "BIMvoice",
+      "branch": "fix/mergeduplicatetypes-tag-attribute-guard",
+      "head": "c48bbf6",
+      "status": "merged",
+      "title": "ifcpatch: guard Tag getattr for non-product type objects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9202"
+    },
+    "9203": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-partof-userdefined",
+      "head": "0f2b2ed",
+      "status": "merged",
+      "title": "ifctester: PartOf false pass on USERDEFINED predefinedType",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9203"
+    },
+    "9204": {
+      "author": "BIMvoice",
+      "branch": "bonsai-body-context-remaining-sites",
+      "head": "f8ae61d",
+      "status": "skipped_conflict",
+      "title": "Bonsai: authoring walls, slabs, railings, roofs, profiles in an imported IFC crashes (#8081)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9204"
+    },
+    "9205": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-verdict-audit-round2",
+      "head": "9a0dd14",
+      "status": "merged",
+      "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
     }
   },
   "schema": 1

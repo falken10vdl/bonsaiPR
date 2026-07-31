@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 124,
-    "merged": 512,
-    "skipped_conflict": 110,
+    "merged": 517,
+    "skipped_conflict": 111,
     "skipped_draft": 56,
-    "total": 802
+    "total": 808
   },
-  "generated_at": "2026-07-31T16:45:10Z",
+  "generated_at": "2026-07-31T18:46:20Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -3733,7 +3733,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "eb6f3b0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -4960,7 +4960,7 @@
       "author": "BIMvoice",
       "branch": "7702-remove-deprecated-mesh-add-operators",
       "head": "c386f81",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: remove deprecated mesh.add_* duplicate operators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8959"
     },
@@ -5545,7 +5545,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcfm-cobie24legacy-zone-crash",
       "head": "caf0fab",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcfm: guard COBie zone and container lookups, and add the package's first tests",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9061"
     },
@@ -6545,10 +6545,58 @@
     "9198": {
       "author": "BIMvoice",
       "branch": "fix/assignconstituentfractions-ifc2x3",
-      "head": "36fb218",
+      "head": "1339693",
       "status": "merged",
       "title": "ifcpatch: AssignConstituentFractions crashes on any IFC2X3 file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9198"
+    },
+    "9200": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcfm-cobie-zero-value-properties-dropped",
+      "head": "e8e95f8",
+      "status": "merged",
+      "title": "ifcfm: COBie export drops properties valued zero or False",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9200"
+    },
+    "9201": {
+      "author": "BIMvoice",
+      "branch": "bonsai-window-body-context-missing",
+      "head": "da0d880",
+      "status": "merged",
+      "title": "Bonsai: creating a window in an imported IFC crashes (#8081)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9201"
+    },
+    "9202": {
+      "author": "BIMvoice",
+      "branch": "fix/mergeduplicatetypes-tag-attribute-guard",
+      "head": "c48bbf6",
+      "status": "merged",
+      "title": "ifcpatch: guard Tag getattr for non-product type objects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9202"
+    },
+    "9203": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-partof-userdefined",
+      "head": "0f2b2ed",
+      "status": "merged",
+      "title": "ifctester: PartOf false pass on USERDEFINED predefinedType",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9203"
+    },
+    "9204": {
+      "author": "BIMvoice",
+      "branch": "bonsai-body-context-remaining-sites",
+      "head": "f8ae61d",
+      "status": "merged",
+      "title": "Bonsai: authoring walls, slabs, railings, roofs, profiles in an imported IFC crashes (#8081)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9204"
+    },
+    "9205": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-verdict-audit-round2",
+      "head": "9a0dd14",
+      "status": "merged",
+      "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
     }
   },
   "schema": 1
