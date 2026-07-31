@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
-    "merged": 502,
-    "skipped_conflict": 113,
+    "failed": 125,
+    "merged": 507,
+    "skipped_conflict": 115,
     "skipped_draft": 56,
-    "total": 795
+    "total": 803
   },
-  "generated_at": "2026-07-31T09:20:05Z",
+  "generated_at": "2026-07-31T11:20:24Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1609,8 +1609,9 @@
     "8354": {
       "author": "BIMvoice",
       "branch": "fix-4822-print-graceful",
-      "head": "9ddd91d",
-      "status": "merged",
+      "head": "bcf28f7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: fail gracefully when the sheet PDF/DXF conversion command is missing or fails (#4822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8354"
     },
@@ -1985,7 +1986,7 @@
       "author": "theoryshaw",
       "branch": "fix-layer3-slab-horizontal-profile-edit",
       "head": "3a98019",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix horizontal profile editing for sloped LAYER3 slabs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8429"
     },
@@ -3461,7 +3462,7 @@
       "author": "BIMvoice",
       "branch": "fix-3754-wall-covering",
       "head": "34a5dc2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: automate wall coverings (cladding, insulation) from wall side faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8699"
     },
@@ -5976,7 +5977,7 @@
     "9117": {
       "author": "BIMvoice",
       "branch": "fix/ifcwrap-setargumentasnull-null-deref",
-      "head": "2a80d21",
+      "head": "d9df813",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types (UNBUILT, needs review)",
@@ -6493,6 +6494,70 @@
       "status": "merged",
       "title": "ifctester: fix prohibited spec requirement status",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9189"
+    },
+    "9190": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-verdict-audit",
+      "head": "80f9dc2",
+      "status": "merged",
+      "title": "ifctester: fix four wrong-verdict defects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9190"
+    },
+    "9191": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-create-baseline-non-planned",
+      "head": "1f69e00",
+      "status": "merged",
+      "title": "sequence.create_baseline: raise on non-PLANNED",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9191"
+    },
+    "9192": {
+      "author": "BIMvoice",
+      "branch": "fix/nest-change-nest-no-parent",
+      "head": "0957861",
+      "status": "merged",
+      "title": "nest.change_nest: nest items with no old parent",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9192"
+    },
+    "9193": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcfm-duplicate-key-silent-drop",
+      "head": "6f34788",
+      "status": "merged",
+      "title": "ifcfm: warn when a duplicate key drops data",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9193"
+    },
+    "9194": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc4d-p6-project-name",
+      "head": "eb694ce",
+      "status": "merged",
+      "title": "ifc4d: fix P6 XML project name always Unnamed",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9194"
+    },
+    "9195": {
+      "author": "BIMvoice",
+      "branch": "fix/asta-calendar-missing-days",
+      "head": "924773b",
+      "status": "merged",
+      "title": "ifc4d: fix Asta calendar wrong-language days",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9195"
+    },
+    "9196": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc4d-csv-equipment-output-swap",
+      "head": "f0ba6da",
+      "status": "merged",
+      "title": "ifc4d: fix equipment output in wrong CSV column",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9196"
+    },
+    "9197": {
+      "author": "BIMvoice",
+      "branch": "silent-noop-core-tool-audit",
+      "head": "6558b3b",
+      "status": "merged",
+      "title": "Bonsai: raise, not no-op, on missing polygon",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9197"
     }
   },
   "schema": 1
