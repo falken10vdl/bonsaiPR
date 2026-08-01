@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 127,
-    "merged": 515,
-    "skipped_conflict": 114,
+    "failed": 125,
+    "merged": 514,
+    "skipped_conflict": 117,
     "skipped_draft": 56,
     "total": 812
   },
-  "generated_at": "2026-08-01T06:44:28Z",
+  "generated_at": "2026-08-01T08:44:36Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -3650,8 +3650,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8049-resilient-drawing-print",
       "head": "ee5583f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: don't let one bad element abort an entire drawing print",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8734"
     },
@@ -3667,8 +3666,7 @@
       "author": "BIMvoice",
       "branch": "fix-7484-stair-first-last-locks",
       "head": "c19b3a6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: independent locks for the first and last stair tread",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8738"
     },
@@ -3735,7 +3733,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "eb6f3b0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -5962,7 +5960,7 @@
     "9117": {
       "author": "BIMvoice",
       "branch": "fix/ifcwrap-setargumentasnull-null-deref",
-      "head": "4ce9ecd",
+      "head": "2b31c82",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types",

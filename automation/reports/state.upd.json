@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 125,
-    "merged": 514,
-    "skipped_conflict": 117,
+    "failed": 127,
+    "merged": 513,
+    "skipped_conflict": 116,
     "skipped_draft": 56,
     "total": 812
   },
-  "generated_at": "2026-08-01T07:19:42Z",
+  "generated_at": "2026-08-01T09:20:20Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -2978,7 +2978,8 @@
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
       "head": "c5aad9a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Add copy attribute to selection for boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8607"
     },
@@ -5248,7 +5249,8 @@
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
       "head": "0357807",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     },
@@ -5960,7 +5962,7 @@
     "9117": {
       "author": "BIMvoice",
       "branch": "fix/ifcwrap-setargumentasnull-null-deref",
-      "head": "4ce9ecd",
+      "head": "2b31c82",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types",
