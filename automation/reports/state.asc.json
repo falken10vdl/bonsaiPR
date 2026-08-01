@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 127,
-    "merged": 517,
-    "skipped_conflict": 113,
+    "merged": 516,
+    "skipped_conflict": 114,
     "skipped_draft": 56,
     "total": 813
   },
-  "generated_at": "2026-08-01T10:09:22Z",
+  "generated_at": "2026-08-01T12:09:19Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -954,7 +954,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "d3ca116",
+      "head": "6abeb45",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -2857,7 +2857,7 @@
       "author": "sboddy",
       "branch": "fix-slab-wall-generation",
       "head": "bec3e10",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #6896 wall generation from composite/arc/circle/rectangle slab profiles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8587"
     },
@@ -6572,7 +6572,7 @@
       "author": "BIMvoice",
       "branch": "fix/mergeduplicatetypes-tag-attribute-guard",
       "head": "c48bbf6",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: guard Tag getattr for non-product type objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9202"
     },
@@ -6628,9 +6628,9 @@
     "9212": {
       "author": "BIMvoice",
       "branch": "fix/9207-shared-product-representation",
-      "head": "34317b3",
-      "status": "merged",
-      "title": "Bonsai: deleting a wall destroys another wall's shared geometry (#9207)",
+      "head": "bf1ca12",
+      "status": "skipped_conflict",
+      "title": "geometry.unassign_representation: stop destroying shared geometry (#9207)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9212"
     },
     "9213": {

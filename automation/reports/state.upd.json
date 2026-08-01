@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 127,
-    "merged": 500,
-    "skipped_conflict": 130,
+    "merged": 511,
+    "skipped_conflict": 119,
     "skipped_draft": 56,
     "total": 813
   },
-  "generated_at": "2026-08-01T11:20:00Z",
+  "generated_at": "2026-08-01T13:19:34Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -693,7 +693,7 @@
       "author": "brunopostle",
       "branch": "bonsai-license",
       "head": "a072c72",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai, add license tagging for IFC elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7917"
     },
@@ -954,7 +954,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "d3ca116",
+      "head": "064ce00",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1097,7 +1097,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcclash-notrequired-keys-8224",
       "head": "b6626db",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcClash: default NotRequired clash set keys instead of asserting (#8224)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8257"
     },
@@ -1593,7 +1593,7 @@
       "author": "BIMvoice",
       "branch": "fix-4766-cross-schema-append",
       "head": "77d3ccb",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "project.append_asset: migrate library asset to project schema on cross-schema append (#4766)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8352"
     },
@@ -1977,7 +1977,7 @@
       "author": "BIMvoice",
       "branch": "fix-6666-append-drawing-view",
       "head": "857ca22",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: append a drawing view from a library as a real drawing (#6666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8427"
     },
@@ -2470,7 +2470,7 @@
       "author": "BIMvoice",
       "branch": "fix-8045-blank-name-dedup",
       "head": "daa5800",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Do not deduplicate appended assets by a blank name (#8045)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8507"
     },
@@ -3203,7 +3203,7 @@
       "author": "BIMvoice",
       "branch": "fix-7318-bcf-gp-strokes",
       "head": "ce198ff",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix BCF viewpoint line markup crash on modern Grease Pencil API",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8645"
     },
@@ -3277,7 +3277,7 @@
       "author": "theoryshaw",
       "branch": "fix-8666-saferemoval-untracked-assertion",
       "head": "084818d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: don't crash on untracked removed element (#8666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8668"
     },
@@ -3701,7 +3701,7 @@
       "author": "BIMvoice",
       "branch": "fix-7234-arc-preserve-face",
       "head": "66cc660",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: warn instead of silently destroying faces in the 3-point arc CAD tool",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8743"
     },
@@ -3775,7 +3775,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8666-8667-append-asset",
       "head": "a5bdfc5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: reject GlobalId matches across incompatible classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8756"
     },
@@ -3912,7 +3912,7 @@
       "author": "BIMvoice",
       "branch": "fix-7413-builddeps-exit",
       "head": "f98b64e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "win: do not close the calling console when build-deps.cmd finishes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8782"
     },
@@ -4260,7 +4260,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-5909-append-aggregate",
       "head": "9a02b30",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Append aggregates with their parts, sub-aggregates and openings (#5909)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8836"
     },
@@ -4285,7 +4285,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-mep-bend-flow-arrow",
       "head": "07b1927",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: draw MEP flow arrows through bend fittings along the bend, not the chord",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8839"
     },
@@ -4432,7 +4432,7 @@
       "author": "BIMvoice",
       "branch": "cost-quantity-selector-query-5390",
       "head": "33f4c06",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a selector query filter for cost item quantity assignment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8871"
     },
@@ -4512,7 +4512,7 @@
       "author": "BIMvoice",
       "branch": "8085-mep-port-points",
       "head": "7a48fb0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: carry diameter on distribution ports and connect two ports with a segment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8884"
     },
@@ -4760,7 +4760,7 @@
       "author": "BIMvoice",
       "branch": "feat-6241-fillet-unconnected-lines",
       "head": "c9b0575",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fillet CAD tool works on unconnected lines (and no longer crashes)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8926"
     },
@@ -4913,7 +4913,7 @@
       "author": "BIMvoice",
       "branch": "fix/8947-asset-browser-null-representation",
       "head": "32c27fa",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: warn instead of silently dropping geometry for collection instances",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8950"
     },
@@ -5081,7 +5081,7 @@
       "author": "BIMvoice",
       "branch": "6724-preserve-mesh-topology-on-assign-class",
       "head": "2a14819",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: preserve quads/n-gons in the viewport after assigning an IFC class",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8977"
     },
@@ -5419,7 +5419,7 @@
       "author": "BIMvoice",
       "branch": "fix/9034-bsdd-referencecode-keyerror",
       "head": "a68a376",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix bSDD class search crashing on classes without a referenceCode",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9042"
     },
@@ -5571,7 +5571,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcdiff-class-change-detection",
       "head": "05c5434",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcdiff: report an element whose IFC class changed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9064"
     },
@@ -5715,7 +5715,7 @@
       "author": "BIMvoice",
       "branch": "fix/p6xer2ifc-shared-calendar-exceptions",
       "head": "e931774",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc4d: stop P6 XER calendars sharing one exceptions dict",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9083"
     },
@@ -5859,7 +5859,7 @@
       "author": "BIMvoice",
       "branch": "fix/fixrevit2025tins-self-file-order",
       "head": "85f2b21",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: make FixRevit2025TINs runnable (IFC2X3, self.file order, docstring)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9101"
     },
@@ -5899,7 +5899,7 @@
       "author": "BIMvoice",
       "branch": "fix/sequence-work-time-start-ignored",
       "head": "b462145",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.sequence: is_day_in_work_time ignored Start whenever Finish was also set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9106"
     },
@@ -6012,7 +6012,7 @@
       "author": "BIMvoice",
       "branch": "fix/structural-drawing-api-audit-fixes",
       "head": "e6ee235",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "api: fix an orphaned boundary condition and two crashes on default input",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9125"
     },
@@ -6092,7 +6092,7 @@
       "author": "yekose",
       "branch": "fix/occt-interface-export",
       "head": "f644b8f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "cmake: wrap the OpenCASCADE interface paths in BUILD_INTERFACE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9139"
     },
@@ -6156,7 +6156,7 @@
       "author": "BIMvoice",
       "branch": "fix/sequence-recurrence-type-fallthrough",
       "head": "1419f94",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util.sequence: fix crash on valid recurrence patterns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9147"
     },
@@ -6300,7 +6300,7 @@
       "author": "BIMvoice",
       "branch": "fix/sequence-add-task-default-name",
       "head": "23e0b38",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "sequence: name tasks so they satisfy the WHERE rule",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9167"
     },
@@ -6436,7 +6436,7 @@
       "author": "BIMvoice",
       "branch": "perf-append-asset-safe-removal-scan",
       "head": "b69610d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "append_asset: fix O(n^2) reuse_identities scan",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9184"
     },

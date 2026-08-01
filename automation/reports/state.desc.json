@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 131,
-    "merged": 508,
-    "skipped_conflict": 118,
+    "failed": 127,
+    "merged": 513,
+    "skipped_conflict": 117,
     "skipped_draft": 56,
     "total": 813
   },
-  "generated_at": "2026-08-01T10:44:48Z",
+  "generated_at": "2026-08-01T12:44:25Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -389,7 +389,7 @@
       "author": "theoryshaw",
       "branch": "Generalize_ExcludeAnnotation_to_any_IFC_element_2",
       "head": "8634569",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Generalize ExcludeAnnotation to any IFC element",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7715"
     },
@@ -661,8 +661,7 @@
       "author": "theoryshaw",
       "branch": "center-opening-on-cursor",
       "head": "9d0cc5a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "Center IfcOpeningElement bbox on 3D cursor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7899"
     },
@@ -811,7 +810,7 @@
       "author": "theoryshaw",
       "branch": "AI_effort_estimate",
       "head": "c7ff18d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "The is a proposal include an **effort estimate** in the commit messag…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7977"
     },
@@ -932,7 +931,7 @@
       "author": "falken10vdl",
       "branch": "fix/create-polyline-from-loop-schema-aware",
       "head": "d4354ce",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Use builder.polyline that is schema-aware for create_polyline_from_loop",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8087"
     },
@@ -955,7 +954,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "d3ca116",
+      "head": "6abeb45",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1122,8 +1121,7 @@
       "author": "BIMvoice",
       "branch": "fix/add-reference-image-kwarg-8130",
       "head": "537ab95",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: drop stale kwarg when invoking add_reference_image (#8130)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
     },
@@ -2683,8 +2681,7 @@
       "author": "BIMvoice",
       "branch": "ship-6676-usage-axis",
       "head": "2817009",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve material usage direction across a type change (#6676)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8538"
     },
@@ -2933,7 +2930,7 @@
       "author": "BIMvoice",
       "branch": "fix-3747-curtain-wall-space-bounding",
       "head": "d3e8d3b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: let curtain wall members/plates close space boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8596"
     },
@@ -4819,8 +4816,7 @@
       "author": "BIMvoice",
       "branch": "feat-5729-freestyle-ifc-only",
       "head": "28d076f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: add 'IFC Elements Only' preference for Freestyle linework",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8933"
     },
