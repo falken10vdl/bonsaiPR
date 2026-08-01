@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 125,
-    "merged": 513,
+    "merged": 514,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 811
+    "total": 812
   },
-  "generated_at": "2026-08-01T05:22:42Z",
+  "generated_at": "2026-08-01T07:19:42Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6622,6 +6622,14 @@
       "status": "failed",
       "title": "Bonsai: normalize occurrence-local representations onto the type (Promote to Type)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9210"
+    },
+    "9212": {
+      "author": "BIMvoice",
+      "branch": "fix/9207-shared-product-representation",
+      "head": "34317b3",
+      "status": "merged",
+      "title": "Bonsai: deleting a wall destroys another wall's shared geometry (#9207)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9212"
     }
   },
   "schema": 1
