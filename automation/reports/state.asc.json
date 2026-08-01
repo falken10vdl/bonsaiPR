@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 133,
-    "merged": 504,
-    "skipped_conflict": 122,
+    "failed": 128,
+    "merged": 518,
+    "skipped_conflict": 114,
     "skipped_draft": 56,
-    "total": 815
+    "total": 816
   },
-  "generated_at": "2026-08-01T18:09:21Z",
+  "generated_at": "2026-08-01T20:09:17Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2858,7 +2858,7 @@
       "author": "sboddy",
       "branch": "fix-slab-wall-generation",
       "head": "bec3e10",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #6896 wall generation from composite/arc/circle/rectangle slab profiles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8587"
     },
@@ -3228,8 +3228,7 @@
       "author": "BIMvoice",
       "branch": "fix-3995-curtain-wall-boundary",
       "head": "0593a84",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: let standalone IfcCurtainWall bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8653"
     },
@@ -3319,7 +3318,7 @@
       "author": "BIMvoice",
       "branch": "fix-4322-material-csv-import",
       "head": "0bedfa9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #4322. Support importing IfcMaterial and profile attributes and psets via Spreadsheet Import/Export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8674"
     },
@@ -3956,7 +3955,7 @@
       "author": "BIMvoice",
       "branch": "fix-6488-docker-latest-tag",
       "head": "761f9a3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ci: push the latest tag when publishing the docker image",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8790"
     },
@@ -4022,8 +4021,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6591-general-item-deletion",
       "head": "2138b07",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: generalise representation item deletion to nested items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8798"
     },
@@ -4106,7 +4104,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-dead-gherkin-runner",
       "head": "6e152d6",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: remove the dead Gherkin runner from test/bim/bootstrap.py",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8809"
     },
@@ -4255,7 +4253,7 @@
       "author": "BIMvoice",
       "branch": "ifcsverchok-6809-file-socket",
       "head": "a7889a1",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcsverchok: document how to work with an existing IFC file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8835"
     },
@@ -4451,7 +4449,7 @@
       "author": "BIMvoice",
       "branch": "7901-filter-from-selection",
       "head": "9c738c3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add Filter From Selection query builder to Search panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8873"
     },
@@ -4827,7 +4825,7 @@
       "author": "BIMvoice",
       "branch": "feat-5373-symbol-viewport-representation",
       "head": "258f41a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: draw real symbol geometry in the viewport instead of an asterisk placeholder",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8935"
     },
@@ -4964,8 +4962,7 @@
       "author": "BIMvoice",
       "branch": "7702-remove-deprecated-mesh-add-operators",
       "head": "c386f81",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: remove deprecated mesh.add_* duplicate operators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8959"
     },
@@ -5109,7 +5106,7 @@
       "author": "BIMvoice",
       "branch": "6100-orthogonal-path-routing",
       "head": "f97c5ac",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.util: add a standalone orthogonal path calculator for MEP routing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8980"
     },
@@ -5407,7 +5404,7 @@
       "author": "BIMvoice",
       "branch": "fix-6967-add-from-perimeter-button",
       "head": "f68c716",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: restore the Add From Perimeter and Add From Closed Loop buttons",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9040"
     },
@@ -5551,7 +5548,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcfm-cobie24legacy-zone-crash",
       "head": "caf0fab",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcfm: guard COBie zone and container lookups, and add the package's first tests",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9061"
     },
@@ -5623,8 +5620,7 @@
       "author": "BIMvoice",
       "branch": "fix/selector-boolean-facettransformer-order",
       "head": "89ffa79",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "util.selector: match boolean properties by True/False",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9070"
     },
@@ -5696,7 +5692,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifccityjson-transform-not-applied",
       "head": "a732706",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifccityjson: apply the CityJSON transform, fixing 1000x geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9080"
     },
@@ -5840,7 +5836,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-docstring-argument-mismatches",
       "head": "4a58fc2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: fix wrong docstrings that break copy-pasted examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9098"
     },
@@ -5960,7 +5956,7 @@
       "author": "BIMvoice",
       "branch": "ifcclash-ifccsv-audit-fixes",
       "head": "2656842",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcclash/ifccsv: stop dropping a real clash, a wrong summary total, and silently ignored Country on reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9116"
     },
@@ -5993,7 +5989,7 @@
       "author": "BIMvoice",
       "branch": "fix/classification-add-reference-cross-classification-collision",
       "head": "55820fa",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "api: stop classifying elements under the wrong classification system",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9122"
     },
@@ -6137,7 +6133,7 @@
       "author": "BIMvoice",
       "branch": "fix/hotkey-s-e-no-representation-crash",
       "head": "8d5a0a6",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix Shift+E crash with no representation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9144"
     },
@@ -6281,7 +6277,7 @@
       "author": "BIMvoice",
       "branch": "docs/api-examples-schema-sweep",
       "head": "455d1f7",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "docs: fix ten API examples that cannot run",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9163"
     },
@@ -6425,7 +6421,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-optimise-unset-attr",
       "head": "c907129",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: fix Optimise crash on unset attribute",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9182"
     },
@@ -6561,7 +6557,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcfm-cobie-zero-value-properties-dropped",
       "head": "e8e95f8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcfm: COBie export drops properties valued zero or False",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9200"
     },
@@ -6634,8 +6630,7 @@
       "author": "BIMvoice",
       "branch": "fix/9207-shared-product-representation",
       "head": "bf1ca12",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "geometry.unassign_representation: stop destroying shared geometry (#9207)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9212"
     },
@@ -6662,6 +6657,14 @@
       "status": "merged",
       "title": "Bonsai: a space you just generated is hidden immediately (#9214)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9219"
+    },
+    "9221": {
+      "author": "CyrilWaechter",
+      "branch": "auto-generate-ifc-based-space-boundaries",
+      "head": "66e86a4",
+      "status": "skipped_conflict",
+      "title": "Replace blender based space boundary generation with IFC based",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
     }
   },
   "schema": 1

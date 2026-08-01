@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 128,
-    "merged": 511,
-    "skipped_conflict": 120,
+    "merged": 513,
+    "skipped_conflict": 119,
     "skipped_draft": 56,
-    "total": 815
+    "total": 816
   },
-  "generated_at": "2026-08-01T18:44:47Z",
+  "generated_at": "2026-08-01T20:44:20Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1081,7 +1081,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-empty-numeric-4112",
       "head": "9f8dce0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
     },
@@ -1217,7 +1217,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -2939,7 +2939,7 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "027fae4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -3479,7 +3479,7 @@
       "author": "BIMvoice",
       "branch": "fix-3995-standalone-window-boundaries",
       "head": "2cc00c5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: let standalone windows bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8703"
     },
@@ -4237,7 +4237,7 @@
       "author": "BIMvoice",
       "branch": "fix-6895-shape-elevation-guard",
       "head": "86de6c2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell.util.shape: fail loudly on non-finite elevation instead of returning the infinity sentinel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8832"
     },
@@ -6229,7 +6229,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcfm-cobie-crash-guards",
       "head": "69ac5de",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcfm: fix four COBie export crashes on valid IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9157"
     },
@@ -6373,7 +6373,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-untemplated-list-crash",
       "head": "da3e48e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "pset.edit_pset: fix untemplated list-value crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
     },
@@ -6517,7 +6517,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifc4d-p6-project-name",
       "head": "eb694ce",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc4d: fix P6 XML project name always Unnamed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9194"
     },
@@ -6654,9 +6654,17 @@
       "author": "BIMvoice",
       "branch": "fix/9214-space-hidden-on-generate",
       "head": "586bf2f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: a space you just generated is hidden immediately (#9214)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9219"
+    },
+    "9221": {
+      "author": "CyrilWaechter",
+      "branch": "auto-generate-ifc-based-space-boundaries",
+      "head": "66e86a4",
+      "status": "merged",
+      "title": "Replace blender based space boundary generation with IFC based",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
     }
   },
   "schema": 1
