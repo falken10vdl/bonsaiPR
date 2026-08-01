@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 127,
+    "failed": 128,
     "merged": 512,
-    "skipped_conflict": 119,
+    "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 814
+    "total": 816
   },
-  "generated_at": "2026-08-01T17:18:58Z",
+  "generated_at": "2026-08-01T19:19:43Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1505,7 +1505,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-viewport-text-size-3353",
       "head": "5ded244",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai(drawing): make viewport annotation text size resolution independent (#3353, #3683)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8338"
     },
@@ -1992,9 +1992,10 @@
     "8432": {
       "author": "BIMvoice",
       "branch": "fix-7450-section-level-auto",
-      "head": "b831175",
-      "status": "merged",
-      "title": "Bonsai: stop deleting user created Level (Section) annotations on drawing activation (#7450)",
+      "head": "db8f020",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: stop deleting user-created Level (Section) annotations (#7450, #9215)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8432"
     },
     "8433": {
@@ -2445,7 +2446,7 @@
       "author": "BIMvoice",
       "branch": "fix-6125-nonmanifold-volume",
       "head": "62257e0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Return nan for non-manifold volume and skip it in QTO (#6125)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8503"
     },
@@ -3478,7 +3479,7 @@
       "author": "BIMvoice",
       "branch": "fix-3995-standalone-window-boundaries",
       "head": "2cc00c5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: let standalone windows bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8703"
     },
@@ -3709,7 +3710,7 @@
       "author": "BIMvoice",
       "branch": "fix-7490-fill-alignment",
       "head": "69872ec",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: support aligning a hosted window/door to its wall's exterior/centerline/interior face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8744"
     },
@@ -4004,7 +4005,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7453-explicit-axis",
       "head": "c1081dc",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: surface + explicitly fix mesh-converted walls whose length is on local Y (#7453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8796"
     },
@@ -6648,6 +6649,22 @@
       "status": "merged",
       "title": "Bonsai: remove_representation handles occurrence reps mapped to a floating map (#9216)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9217"
+    },
+    "9219": {
+      "author": "BIMvoice",
+      "branch": "fix/9214-space-hidden-on-generate",
+      "head": "586bf2f",
+      "status": "merged",
+      "title": "Bonsai: a space you just generated is hidden immediately (#9214)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9219"
+    },
+    "9221": {
+      "author": "CyrilWaechter",
+      "branch": "auto-generate-ifc-based-space-boundaries",
+      "head": "66e86a4",
+      "status": "merged",
+      "title": "Replace blender based space boundary generation with IFC based",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
     }
   },
   "schema": 1

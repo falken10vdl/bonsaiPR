@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 127,
-    "merged": 513,
-    "skipped_conflict": 118,
+    "failed": 128,
+    "merged": 511,
+    "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 814
+    "total": 815
   },
-  "generated_at": "2026-08-01T16:43:59Z",
+  "generated_at": "2026-08-01T18:44:47Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -504,7 +504,7 @@
       "author": "theoryshaw",
       "branch": "dont_sanitize_drawing_name",
       "head": "45c64e1",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #7784: Fix drawing names with special chars in sheets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7818"
     },
@@ -1081,7 +1081,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-empty-numeric-4112",
       "head": "9f8dce0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
     },
@@ -1217,7 +1217,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -1992,9 +1992,10 @@
     "8432": {
       "author": "BIMvoice",
       "branch": "fix-7450-section-level-auto",
-      "head": "b831175",
-      "status": "merged",
-      "title": "Bonsai: stop deleting user created Level (Section) annotations on drawing activation (#7450)",
+      "head": "db8f020",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: stop deleting user-created Level (Section) annotations (#7450, #9215)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8432"
     },
     "8433": {
@@ -2938,7 +2939,7 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "027fae4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -6228,7 +6229,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcfm-cobie-crash-guards",
       "head": "69ac5de",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcfm: fix four COBie export crashes on valid IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9157"
     },
@@ -6372,7 +6373,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-untemplated-list-crash",
       "head": "da3e48e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: fix untemplated list-value crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
     },
@@ -6516,7 +6517,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifc4d-p6-project-name",
       "head": "eb694ce",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc4d: fix P6 XML project name always Unnamed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9194"
     },
@@ -6648,6 +6649,14 @@
       "status": "merged",
       "title": "Bonsai: remove_representation handles occurrence reps mapped to a floating map (#9216)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9217"
+    },
+    "9219": {
+      "author": "BIMvoice",
+      "branch": "fix/9214-space-hidden-on-generate",
+      "head": "586bf2f",
+      "status": "skipped_conflict",
+      "title": "Bonsai: a space you just generated is hidden immediately (#9214)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9219"
     }
   },
   "schema": 1
