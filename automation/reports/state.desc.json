@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 124,
-    "merged": 517,
+    "merged": 519,
     "skipped_conflict": 111,
     "skipped_draft": 56,
-    "total": 808
+    "total": 810
   },
-  "generated_at": "2026-07-31T18:46:20Z",
+  "generated_at": "2026-08-01T00:45:27Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6597,6 +6597,22 @@
       "status": "merged",
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
+    },
+    "9208": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.64",
+      "head": "ef10e2d",
+      "status": "merged",
+      "title": "build(deps): bump ty from 0.0.63 to 0.0.64",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9208"
+    },
+    "9209": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/docker/login-action-4.5.2",
+      "head": "09ceb64",
+      "status": "merged",
+      "title": "build(deps): bump docker/login-action from 4 to 4.5.2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9209"
     }
   },
   "schema": 1

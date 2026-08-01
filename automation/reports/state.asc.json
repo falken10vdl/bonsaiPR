@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 127,
-    "merged": 505,
-    "skipped_conflict": 120,
+    "failed": 124,
+    "merged": 522,
+    "skipped_conflict": 108,
     "skipped_draft": 56,
-    "total": 808
+    "total": 810
   },
-  "generated_at": "2026-07-31T18:10:13Z",
+  "generated_at": "2026-08-01T00:10:14Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1774,7 +1774,7 @@
       "author": "BIMvoice",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "82a4117",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix BCF 2.1 viewpoint and snapshot file names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
@@ -3750,7 +3750,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -3782,8 +3782,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3941-mep-split-hotkey",
       "head": "e289777",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: wire Shift+K to split pipe/duct segments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8758"
     },
@@ -3920,7 +3919,7 @@
       "author": "BIMvoice",
       "branch": "fix-7461-msvc-lnk1248-docs",
       "head": "534cef6",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "win: document LNK1248 causes and the USE_CCACHE escape hatch",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8783"
     },
@@ -4078,7 +4077,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7146-vertical-axis3",
       "head": "bd3a727",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: don't blow up a vertical AXIS3 element when its layers change",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8806"
     },
@@ -4219,7 +4218,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-5719-annotation-fill-bg",
       "head": "f643c18",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stop rasterizing fill-bg annotation text on PDF export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8830"
     },
@@ -4371,7 +4370,7 @@
       "author": "BIMvoice",
       "branch": "issue-950-bcf-report",
       "head": "be35a62",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bcf: add Reporter for exporting BCF topics to CSV/XLSX/ODS (#950)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8855"
     },
@@ -4536,8 +4535,7 @@
       "author": "BIMvoice",
       "branch": "8885-unit-name-guard",
       "head": "da0a315",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "Bonsai: load projects with a nameless LENGTHUNIT instead of crashing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8889"
     },
@@ -4729,7 +4727,7 @@
       "author": "BIMvoice",
       "branch": "feat-6232-grid-params-prompt",
       "head": "634ffcb",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: prompt for grid U/V parameters before creating a grid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8922"
     },
@@ -5010,7 +5008,7 @@
       "author": "BIMvoice",
       "branch": "fix/7151-trim-merge-poll",
       "head": "0e78a18",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: grey out Trim and Merge when the active-tool selection is invalid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8966"
     },
@@ -5058,7 +5056,7 @@
       "author": "BIMvoice",
       "branch": "7497-annotation-camera-bounds",
       "head": "634c442",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: keep auto-generated drawing reference annotations within camera bounds",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8972"
     },
@@ -5266,7 +5264,7 @@
       "author": "BIMvoice",
       "branch": "fix/host-recut-active-representation",
       "head": "b6120cd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: recut a voided host from its active representation, not its context",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9011"
     },
@@ -5387,7 +5385,7 @@
       "author": "BIMvoice",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
       "head": "c8aa3b3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },
@@ -5515,7 +5513,7 @@
       "author": "BIMvoice",
       "branch": "ifcclash-tests-and-perf-fixes",
       "head": "277f45d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcclash: don't drop elements sharing a GlobalId across clash-set sources",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9057"
     },
@@ -5603,7 +5601,7 @@
       "author": "BIMvoice",
       "branch": "fix-unit-convert-area-volume-prefix-scaling",
       "head": "d261712",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.unit: fix 1000x area and 1000000x volume conversion errors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9068"
     },
@@ -5779,7 +5777,7 @@
       "author": "BIMvoice",
       "branch": "fix/cost-quantity-names-accumulate",
       "head": "d8e168a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: accumulate quantity names across quantity sets instead of overwriting",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9091"
     },
@@ -5907,7 +5905,7 @@
       "author": "BIMvoice",
       "branch": "fix/reassign-class-drops-falsy-attributes",
       "head": "fb882ae",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util.schema: reassign_class silently dropped falsy-but-set attribute values",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9107"
     },
@@ -6044,7 +6042,7 @@
       "author": "BIMvoice",
       "branch": "fix/bonsai-tool-twin-doc-inconsistencies",
       "head": "7d6ee32",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: correct two twin-function inconsistencies in tool/",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9131"
     },
@@ -6172,7 +6170,7 @@
       "author": "BIMvoice",
       "branch": "6647-1click-drawing-style-assets",
       "head": "71f3700",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: 1-click drawing style changes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9149"
     },
@@ -6300,8 +6298,7 @@
       "author": "BIMvoice",
       "branch": "fix/sequence-add-task-default-name",
       "head": "23e0b38",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "sequence: name tasks so they satisfy the WHERE rule",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9167"
     },
@@ -6600,6 +6597,22 @@
       "status": "merged",
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
+    },
+    "9208": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.64",
+      "head": "ef10e2d",
+      "status": "merged",
+      "title": "build(deps): bump ty from 0.0.63 to 0.0.64",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9208"
+    },
+    "9209": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/docker/login-action-4.5.2",
+      "head": "09ceb64",
+      "status": "merged",
+      "title": "build(deps): bump docker/login-action from 4 to 4.5.2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9209"
     }
   },
   "schema": 1

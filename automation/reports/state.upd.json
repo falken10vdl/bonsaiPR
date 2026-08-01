@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 124,
-    "merged": 516,
+    "merged": 518,
     "skipped_conflict": 112,
     "skipped_draft": 56,
-    "total": 808
+    "total": 810
   },
-  "generated_at": "2026-07-31T19:22:05Z",
+  "generated_at": "2026-08-01T01:26:50Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1481,7 +1481,7 @@
       "author": "BIMvoice",
       "branch": "fix-3019-nested-mapped-item",
       "head": "db48b9a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util.representation + Bonsai: fix two nested mapped-item transform bugs (#3019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8335"
     },
@@ -2075,7 +2075,7 @@
       "author": "BIMvoice",
       "branch": "fix-reimport-multiprocessing-toggle",
       "head": "f26746f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: honour the CPU Multiprocessing toggle on representation reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8444"
     },
@@ -5047,8 +5047,8 @@
     "8971": {
       "author": "BIMvoice",
       "branch": "5696-batch-reimport-iterator",
-      "head": "fe131cd",
-      "status": "skipped_conflict",
+      "head": "1cc34f6",
+      "status": "merged",
       "title": "Bonsai: batch geometry iterator setup when reimporting many representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8971"
     },
@@ -5280,7 +5280,7 @@
       "author": "BIMvoice",
       "branch": "fix/opening-subtraction-context-ids",
       "head": "d6bff7e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: cut the opening when the host and the void sit on different contexts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9013"
     },
@@ -6597,6 +6597,22 @@
       "status": "merged",
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
+    },
+    "9208": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.64",
+      "head": "ef10e2d",
+      "status": "merged",
+      "title": "build(deps): bump ty from 0.0.63 to 0.0.64",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9208"
+    },
+    "9209": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/docker/login-action-4.5.2",
+      "head": "09ceb64",
+      "status": "merged",
+      "title": "build(deps): bump docker/login-action from 4 to 4.5.2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9209"
     }
   },
   "schema": 1
