@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 125,
-    "merged": 518,
-    "skipped_conflict": 112,
+    "merged": 513,
+    "skipped_conflict": 117,
     "skipped_draft": 56,
     "total": 811
   },
-  "generated_at": "2026-08-01T03:22:11Z",
+  "generated_at": "2026-08-01T05:22:42Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6457,32 +6457,32 @@
     "9187": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-material-unset-crash",
-      "head": "be520a6",
-      "status": "merged",
+      "head": "0a02e19",
+      "status": "skipped_conflict",
       "title": "ifctester: fix crash on unset layer material",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9187"
     },
     "9188": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-property-table-datatype",
-      "head": "ff52024",
-      "status": "merged",
+      "head": "dbccf2d",
+      "status": "skipped_conflict",
       "title": "ifctester: fix property table dataType silent fail",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9188"
     },
     "9189": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-prohibited-requirement-status",
-      "head": "bb13311",
-      "status": "merged",
+      "head": "7db4f7c",
+      "status": "skipped_conflict",
       "title": "ifctester: fix prohibited spec requirement status",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9189"
     },
     "9190": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-verdict-audit",
-      "head": "80f9dc2",
-      "status": "merged",
+      "head": "20e685b",
+      "status": "skipped_conflict",
       "title": "ifctester: fix four wrong-verdict defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9190"
     },
@@ -6577,8 +6577,8 @@
     "9203": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-partof-userdefined",
-      "head": "0f2b2ed",
-      "status": "merged",
+      "head": "5ccf00b",
+      "status": "skipped_conflict",
       "title": "ifctester: PartOf false pass on USERDEFINED predefinedType",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9203"
     },
@@ -6593,7 +6593,7 @@
     "9205": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-verdict-audit-round2",
-      "head": "9a0dd14",
+      "head": "bc24b72",
       "status": "merged",
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
