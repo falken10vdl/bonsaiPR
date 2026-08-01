@@ -1323,3 +1323,6 @@
 {"ts": "2026-08-01T14:09:21Z", "order": "ascending", "pr": 8139, "event": "updated", "status": "skipped_draft", "from_head": "6abeb45", "to_head": "064ce00"}
 {"ts": "2026-08-01T14:09:21Z", "order": "ascending", "pr": 9202, "event": "status", "from": "skipped_conflict", "to": "merged"}
 {"ts": "2026-08-01T14:09:21Z", "order": "ascending", "pr": 9210, "event": "updated", "status": "failed", "from_head": "ca5d67d", "to_head": "d0ebdd5"}
+{"ts": "2026-08-01T16:09:02Z", "order": "ascending", "pr": 8706, "event": "updated", "status": "merged", "from_head": "bcb555c", "to_head": "62d01b1"}
+{"ts": "2026-08-01T16:09:02Z", "order": "ascending", "pr": 8707, "event": "updated", "status": "merged", "from_head": "82bd46d", "to_head": "3a900e9"}
+{"ts": "2026-08-01T16:09:02Z", "order": "ascending", "pr": 9217, "event": "added", "to": "merged"}

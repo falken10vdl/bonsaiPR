@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 127,
-    "merged": 517,
+    "merged": 518,
     "skipped_conflict": 113,
     "skipped_draft": 56,
-    "total": 813
+    "total": 814
   },
-  "generated_at": "2026-08-01T14:09:21Z",
+  "generated_at": "2026-08-01T16:09:02Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3493,7 +3493,7 @@
     "8706": {
       "author": "theoryshaw",
       "branch": "merge-duplicate-contexts",
-      "head": "bcb555c",
+      "head": "62d01b1",
       "status": "merged",
       "title": "ifcpatch: add MergeDuplicateContexts recipe",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8706"
@@ -3501,7 +3501,7 @@
     "8707": {
       "author": "theoryshaw",
       "branch": "fix-mergeprojects-dup-contexts",
-      "head": "82bd46d",
+      "head": "3a900e9",
       "status": "merged",
       "title": "ifcpatch: stop MergeProjects leaving duplicate representation contexts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8707"
@@ -6640,6 +6640,14 @@
       "status": "merged",
       "title": "docker: forward IFCOS_NUM_BUILD_PROCS so -j can actually be lowered",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9213"
+    },
+    "9217": {
+      "author": "theoryshaw",
+      "branch": "fix-remove-floating-map-representation",
+      "head": "fcb382f",
+      "status": "merged",
+      "title": "Bonsai: remove_representation handles occurrence reps mapped to a floating map (#9216)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9217"
     }
   },
   "schema": 1

@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 127,
-    "merged": 513,
-    "skipped_conflict": 118,
+    "merged": 512,
+    "skipped_conflict": 119,
     "skipped_draft": 56,
     "total": 814
   },
-  "generated_at": "2026-08-01T15:19:30Z",
+  "generated_at": "2026-08-01T17:18:58Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1505,7 +1505,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-viewport-text-size-3353",
       "head": "5ded244",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai(drawing): make viewport annotation text size resolution independent (#3353, #3683)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8338"
     },
@@ -3493,7 +3493,7 @@
     "8706": {
       "author": "theoryshaw",
       "branch": "merge-duplicate-contexts",
-      "head": "bcb555c",
+      "head": "62d01b1",
       "status": "merged",
       "title": "ifcpatch: add MergeDuplicateContexts recipe",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8706"
@@ -3501,7 +3501,7 @@
     "8707": {
       "author": "theoryshaw",
       "branch": "fix-mergeprojects-dup-contexts",
-      "head": "82bd46d",
+      "head": "3a900e9",
       "status": "merged",
       "title": "ifcpatch: stop MergeProjects leaving duplicate representation contexts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8707"
@@ -3709,7 +3709,7 @@
       "author": "BIMvoice",
       "branch": "fix-7490-fill-alignment",
       "head": "69872ec",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: support aligning a hosted window/door to its wall's exterior/centerline/interior face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8744"
     },
@@ -4004,7 +4004,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7453-explicit-axis",
       "head": "c1081dc",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: surface + explicitly fix mesh-converted walls whose length is on local Y (#7453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8796"
     },
