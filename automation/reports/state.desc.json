@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 124,
+    "failed": 125,
     "merged": 519,
     "skipped_conflict": 111,
     "skipped_draft": 56,
-    "total": 810
+    "total": 811
   },
-  "generated_at": "2026-08-01T00:45:27Z",
+  "generated_at": "2026-08-01T02:45:59Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -5047,7 +5047,7 @@
     "8971": {
       "author": "BIMvoice",
       "branch": "5696-batch-reimport-iterator",
-      "head": "fe131cd",
+      "head": "1cc34f6",
       "status": "skipped_conflict",
       "title": "Bonsai: batch geometry iterator setup when reimporting many representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8971"
@@ -6613,6 +6613,15 @@
       "status": "merged",
       "title": "build(deps): bump docker/login-action from 4 to 4.5.2",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9209"
+    },
+    "9210": {
+      "author": "theoryshaw",
+      "branch": "occurrence-representations",
+      "head": "ca5d67d",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: normalize occurrence-local representations onto the type (Promote to Type)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9210"
     }
   },
   "schema": 1
