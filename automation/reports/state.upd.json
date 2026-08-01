@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 127,
-    "merged": 511,
-    "skipped_conflict": 119,
+    "merged": 513,
+    "skipped_conflict": 118,
     "skipped_draft": 56,
-    "total": 813
+    "total": 814
   },
-  "generated_at": "2026-08-01T13:19:34Z",
+  "generated_at": "2026-08-01T15:19:30Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1097,7 +1097,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcclash-notrequired-keys-8224",
       "head": "b6626db",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "IfcClash: default NotRequired clash set keys instead of asserting (#8224)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8257"
     },
@@ -1481,7 +1481,7 @@
       "author": "BIMvoice",
       "branch": "fix-3019-nested-mapped-item",
       "head": "db48b9a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.representation + Bonsai: fix two nested mapped-item transform bugs (#3019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8335"
     },
@@ -2075,7 +2075,7 @@
       "author": "BIMvoice",
       "branch": "fix-reimport-multiprocessing-toggle",
       "head": "f26746f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: honour the CPU Multiprocessing toggle on representation reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8444"
     },
@@ -5049,7 +5049,7 @@
       "author": "BIMvoice",
       "branch": "5696-batch-reimport-iterator",
       "head": "1cc34f6",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: batch geometry iterator setup when reimporting many representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8971"
     },
@@ -5282,7 +5282,7 @@
       "author": "BIMvoice",
       "branch": "fix/opening-subtraction-context-ids",
       "head": "d6bff7e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: cut the opening when the host and the void sit on different contexts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9013"
     },
@@ -6619,7 +6619,7 @@
     "9210": {
       "author": "theoryshaw",
       "branch": "occurrence-representations",
-      "head": "ca5d67d",
+      "head": "d0ebdd5",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: normalize occurrence-local representations onto the type (Promote to Type)",
@@ -6640,6 +6640,14 @@
       "status": "merged",
       "title": "docker: forward IFCOS_NUM_BUILD_PROCS so -j can actually be lowered",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9213"
+    },
+    "9217": {
+      "author": "theoryshaw",
+      "branch": "fix-remove-floating-map-representation",
+      "head": "fcb382f",
+      "status": "merged",
+      "title": "Bonsai: remove_representation handles occurrence reps mapped to a floating map (#9216)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9217"
     }
   },
   "schema": 1

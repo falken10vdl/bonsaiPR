@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 127,
-    "merged": 513,
-    "skipped_conflict": 117,
+    "merged": 512,
+    "skipped_conflict": 118,
     "skipped_draft": 56,
     "total": 813
   },
-  "generated_at": "2026-08-01T12:44:25Z",
+  "generated_at": "2026-08-01T14:44:24Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -954,7 +954,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "6abeb45",
+      "head": "064ce00",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -2930,7 +2930,7 @@
       "author": "BIMvoice",
       "branch": "fix-3747-curtain-wall-space-bounding",
       "head": "d3e8d3b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: let curtain wall members/plates close space boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8596"
     },
@@ -6619,7 +6619,7 @@
     "9210": {
       "author": "theoryshaw",
       "branch": "occurrence-representations",
-      "head": "ca5d67d",
+      "head": "d0ebdd5",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: normalize occurrence-local representations onto the type (Promote to Type)",
