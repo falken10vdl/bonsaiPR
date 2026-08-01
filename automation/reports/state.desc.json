@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 125,
-    "merged": 514,
-    "skipped_conflict": 117,
+    "failed": 131,
+    "merged": 508,
+    "skipped_conflict": 118,
     "skipped_draft": 56,
-    "total": 812
+    "total": 813
   },
-  "generated_at": "2026-08-01T08:44:36Z",
+  "generated_at": "2026-08-01T10:44:48Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -389,7 +389,7 @@
       "author": "theoryshaw",
       "branch": "Generalize_ExcludeAnnotation_to_any_IFC_element_2",
       "head": "8634569",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Generalize ExcludeAnnotation to any IFC element",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7715"
     },
@@ -661,7 +661,8 @@
       "author": "theoryshaw",
       "branch": "center-opening-on-cursor",
       "head": "9d0cc5a",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Center IfcOpeningElement bbox on 3D cursor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7899"
     },
@@ -810,7 +811,7 @@
       "author": "theoryshaw",
       "branch": "AI_effort_estimate",
       "head": "c7ff18d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "The is a proposal include an **effort estimate** in the commit messag…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7977"
     },
@@ -931,7 +932,7 @@
       "author": "falken10vdl",
       "branch": "fix/create-polyline-from-loop-schema-aware",
       "head": "d4354ce",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Use builder.polyline that is schema-aware for create_polyline_from_loop",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8087"
     },
@@ -1121,7 +1122,8 @@
       "author": "BIMvoice",
       "branch": "fix/add-reference-image-kwarg-8130",
       "head": "537ab95",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: drop stale kwarg when invoking add_reference_image (#8130)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
     },
@@ -2681,7 +2683,8 @@
       "author": "BIMvoice",
       "branch": "ship-6676-usage-axis",
       "head": "2817009",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: preserve material usage direction across a type change (#6676)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8538"
     },
@@ -2930,7 +2933,7 @@
       "author": "BIMvoice",
       "branch": "fix-3747-curtain-wall-space-bounding",
       "head": "d3e8d3b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: let curtain wall members/plates close space boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8596"
     },
@@ -2978,7 +2981,8 @@
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
       "head": "c5aad9a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Add copy attribute to selection for boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8607"
     },
@@ -3733,7 +3737,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "eb6f3b0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -4235,7 +4239,7 @@
       "author": "BIMvoice",
       "branch": "fix-6895-shape-elevation-guard",
       "head": "86de6c2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.util.shape: fail loudly on non-finite elevation instead of returning the infinity sentinel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8832"
     },
@@ -4815,7 +4819,8 @@
       "author": "BIMvoice",
       "branch": "feat-5729-freestyle-ifc-only",
       "head": "28d076f",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: add 'IFC Elements Only' preference for Freestyle linework",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8933"
     },
@@ -5248,7 +5253,8 @@
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
       "head": "0357807",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     },
@@ -5905,7 +5911,7 @@
       "author": "BIMvoice",
       "branch": "fix/reassign-class-drops-falsy-attributes",
       "head": "fb882ae",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.schema: reassign_class silently dropped falsy-but-set attribute values",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9107"
     },
@@ -6378,7 +6384,7 @@
       "author": "BIMvoice",
       "branch": "fix/unassign-representation-none-crash",
       "head": "f5b36d7",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "geometry.unassign_representation: fix None crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9177"
     },
@@ -6626,10 +6632,18 @@
     "9212": {
       "author": "BIMvoice",
       "branch": "fix/9207-shared-product-representation",
-      "head": "34317b3",
+      "head": "bf1ca12",
       "status": "merged",
-      "title": "Bonsai: deleting a wall destroys another wall's shared geometry (#9207)",
+      "title": "geometry.unassign_representation: stop destroying shared geometry (#9207)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9212"
+    },
+    "9213": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcos-env-num-build-procs",
+      "head": "755073a",
+      "status": "merged",
+      "title": "docker: forward IFCOS_NUM_BUILD_PROCS so -j can actually be lowered",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9213"
     }
   },
   "schema": 1

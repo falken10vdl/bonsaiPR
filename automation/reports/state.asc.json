@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 125,
-    "merged": 518,
+    "failed": 127,
+    "merged": 517,
     "skipped_conflict": 113,
     "skipped_draft": 56,
-    "total": 812
+    "total": 813
   },
-  "generated_at": "2026-08-01T08:09:24Z",
+  "generated_at": "2026-08-01T10:09:22Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2857,7 +2857,7 @@
       "author": "sboddy",
       "branch": "fix-slab-wall-generation",
       "head": "bec3e10",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #6896 wall generation from composite/arc/circle/rectangle slab profiles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8587"
     },
@@ -2978,7 +2978,8 @@
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
       "head": "c5aad9a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Add copy attribute to selection for boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8607"
     },
@@ -5248,7 +5249,8 @@
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
       "head": "0357807",
-      "status": "skipped_conflict",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     },
@@ -5960,7 +5962,7 @@
     "9117": {
       "author": "BIMvoice",
       "branch": "fix/ifcwrap-setargumentasnull-null-deref",
-      "head": "4ce9ecd",
+      "head": "2b31c82",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcwrap: fix two SIGSEGVs on defined and enumeration types",
@@ -6630,6 +6632,14 @@
       "status": "merged",
       "title": "Bonsai: deleting a wall destroys another wall's shared geometry (#9207)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9212"
+    },
+    "9213": {
+      "author": "BIMvoice",
+      "branch": "fix/ifcos-env-num-build-procs",
+      "head": "755073a",
+      "status": "merged",
+      "title": "docker: forward IFCOS_NUM_BUILD_PROCS so -j can actually be lowered",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9213"
     }
   },
   "schema": 1
