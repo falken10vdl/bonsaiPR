@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 133,
-    "merged": 514,
-    "skipped_conflict": 117,
-    "skipped_draft": 55,
+    "merged": 515,
+    "skipped_conflict": 118,
+    "skipped_draft": 53,
     "total": 819
   },
-  "generated_at": "2026-08-02T15:47:20Z",
+  "generated_at": "2026-08-02T17:46:02Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -3327,7 +3327,7 @@
       "author": "BIMvoice",
       "branch": "fix-2011-ifc-node-graph",
       "head": "2eefad7",
-      "status": "skipped_draft",
+      "status": "merged",
       "title": "Bonsai: add IFC Graph node editor to explore entity relationships",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8676"
     },
@@ -3335,7 +3335,7 @@
       "author": "BIMvoice",
       "branch": "fix-6377-plate-3d-editing",
       "head": "8dbd772",
-      "status": "skipped_draft",
+      "status": "skipped_conflict",
       "title": "Bonsai: realign plate placement when a triangular profile is edited in 3D",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
     },
