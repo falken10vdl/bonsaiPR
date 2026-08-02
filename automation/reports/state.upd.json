@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 132,
-    "merged": 511,
-    "skipped_conflict": 118,
-    "skipped_draft": 56,
-    "total": 817
+    "failed": 133,
+    "merged": 513,
+    "skipped_conflict": 120,
+    "skipped_draft": 53,
+    "total": 819
   },
-  "generated_at": "2026-08-02T08:21:28Z",
+  "generated_at": "2026-08-02T16:23:00Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -184,7 +184,8 @@
       "author": "brunopostle",
       "branch": "web_running_pid",
       "head": "219b7d0",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Put Bonsai webui PID file in a writable location",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7219"
     },
@@ -1977,7 +1978,7 @@
       "author": "theoryshaw",
       "branch": "fix-layer3-slab-horizontal-profile-edit",
       "head": "3a98019",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix horizontal profile editing for sloped LAYER3 slabs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8429"
     },
@@ -2762,7 +2763,7 @@
       "author": "BIMvoice",
       "branch": "ship-6481-parametric-profile",
       "head": "e1c0e7b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve a parametric profile through an edit round trip (#6481)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8553"
     },
@@ -3326,7 +3327,7 @@
       "author": "BIMvoice",
       "branch": "fix-2011-ifc-node-graph",
       "head": "2eefad7",
-      "status": "skipped_draft",
+      "status": "merged",
       "title": "Bonsai: add IFC Graph node editor to explore entity relationships",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8676"
     },
@@ -3334,7 +3335,7 @@
       "author": "BIMvoice",
       "branch": "fix-6377-plate-3d-editing",
       "head": "8dbd772",
-      "status": "skipped_draft",
+      "status": "merged",
       "title": "Bonsai: realign plate placement when a triangular profile is edited in 3D",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
     },
@@ -3595,7 +3596,7 @@
       "author": "BIMvoice",
       "branch": "fix-7614-shared-profile-edit-refresh",
       "head": "c3b3ef4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: refresh every sharing element's mesh after an extrusion profile edit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8726"
     },
@@ -3702,7 +3703,7 @@
       "author": "BIMvoice",
       "branch": "fix-7490-fill-alignment",
       "head": "69872ec",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: support aligning a hosted window/door to its wall's exterior/centerline/interior face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8744"
     },
@@ -6677,6 +6678,22 @@
       "status": "failed",
       "title": "Bonsai: close IfcPolyline loops by appending the closing edge",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9226"
+    },
+    "9228": {
+      "author": "theoryshaw",
+      "branch": "dev-environment-detect-python",
+      "head": "3321d7d",
+      "status": "merged",
+      "title": "dev_environment.py: detect Blender's bundled Python from disk",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
+    },
+    "9229": {
+      "author": "brunopostle",
+      "branch": "ifcmcp-tool-descriptions-single-source",
+      "head": "8f89086",
+      "status": "merged",
+      "title": "ifcmcp: fix descriptions in ifcquery/ifcedit instead of duplicating",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9229"
     }
   },
   "schema": 1

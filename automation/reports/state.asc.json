@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 132,
-    "merged": 505,
-    "skipped_conflict": 124,
+    "merged": 518,
+    "skipped_conflict": 113,
     "skipped_draft": 56,
-    "total": 817
+    "total": 819
   },
-  "generated_at": "2026-08-02T07:10:18Z",
+  "generated_at": "2026-08-02T15:10:30Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3744,7 +3744,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4417,7 +4417,7 @@
       "author": "BIMvoice",
       "branch": "6305-footing-gross-outer-area",
       "head": "ff74339",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc5d: compute footing gross area, volume and outer surface on the ifcopenshell engine (#6305)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8868"
     },
@@ -4617,7 +4617,7 @@
       "author": "BIMvoice",
       "branch": "2848-cpp-docs-examples",
       "head": "86e771e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "docs: add C++ geometry iterator example (empty examples, #2848)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8904"
     },
@@ -4801,7 +4801,7 @@
       "author": "BIMvoice",
       "branch": "fix-5374-cable-segment-default-type",
       "head": "9bee9f8",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: default profile for cable carrier / cable segment tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8932"
     },
@@ -5098,7 +5098,7 @@
       "author": "BIMvoice",
       "branch": "6100-orthogonal-path-routing",
       "head": "f97c5ac",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.util: add a standalone orthogonal path calculator for MEP routing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8980"
     },
@@ -5380,7 +5380,7 @@
       "author": "BIMvoice",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
       "head": "c8aa3b3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },
@@ -5524,7 +5524,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-ifc2x3-predefined-pset-crash",
       "head": "f3751e9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifctester: support IFC2X3 predefined property sets and fix a wrong SYSTEM fail",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9059"
     },
@@ -5668,7 +5668,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcsverchok-multi-class-overwrite-remaining",
       "head": "c78df1b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcsverchok: stop batched node inputs overwriting each other",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9078"
     },
@@ -5804,7 +5804,7 @@
       "author": "BIMvoice",
       "branch": "fix/type-relating-type-classes-none-enum",
       "head": "637252e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: return an empty list, not None, from the relating type enum callback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9095"
     },
@@ -6101,7 +6101,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-splitbystorey-dead-code",
       "head": "a7afa93",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: drop dead code in SplitByBuildingStorey",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9141"
     },
@@ -6246,7 +6246,7 @@
       "author": "BIMvoice",
       "branch": "fix-9xxx-ifc2x3-base-qto-relatingpropertydefinition",
       "head": "b813124",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix three IFC2X3-only defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9160"
     },
@@ -6677,6 +6677,22 @@
       "status": "failed",
       "title": "Bonsai: close IfcPolyline loops by appending the closing edge",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9226"
+    },
+    "9228": {
+      "author": "theoryshaw",
+      "branch": "dev-environment-detect-python",
+      "head": "3321d7d",
+      "status": "merged",
+      "title": "dev_environment.py: detect Blender's bundled Python from disk",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
+    },
+    "9229": {
+      "author": "brunopostle",
+      "branch": "ifcmcp-tool-descriptions-single-source",
+      "head": "8f89086",
+      "status": "merged",
+      "title": "ifcmcp: fix descriptions in ifcquery/ifcedit instead of duplicating",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9229"
     }
   },
   "schema": 1

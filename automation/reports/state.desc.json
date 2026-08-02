@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 132,
-    "merged": 512,
+    "failed": 133,
+    "merged": 514,
     "skipped_conflict": 117,
-    "skipped_draft": 56,
-    "total": 817
+    "skipped_draft": 55,
+    "total": 819
   },
-  "generated_at": "2026-08-02T07:45:55Z",
+  "generated_at": "2026-08-02T15:47:20Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -184,7 +184,8 @@
       "author": "brunopostle",
       "branch": "web_running_pid",
       "head": "219b7d0",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Put Bonsai webui PID file in a writable location",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7219"
     },
@@ -6677,6 +6678,22 @@
       "status": "failed",
       "title": "Bonsai: close IfcPolyline loops by appending the closing edge",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9226"
+    },
+    "9228": {
+      "author": "theoryshaw",
+      "branch": "dev-environment-detect-python",
+      "head": "3321d7d",
+      "status": "merged",
+      "title": "dev_environment.py: detect Blender's bundled Python from disk",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
+    },
+    "9229": {
+      "author": "brunopostle",
+      "branch": "ifcmcp-tool-descriptions-single-source",
+      "head": "8f89086",
+      "status": "merged",
+      "title": "ifcmcp: fix descriptions in ifcquery/ifcedit instead of duplicating",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9229"
     }
   },
   "schema": 1
