@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 128,
+    "failed": 130,
     "merged": 512,
-    "skipped_conflict": 120,
+    "skipped_conflict": 118,
     "skipped_draft": 56,
     "total": 816
   },
-  "generated_at": "2026-08-01T21:19:54Z",
+  "generated_at": "2026-08-02T00:21:55Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -2446,7 +2446,7 @@
       "author": "BIMvoice",
       "branch": "fix-6125-nonmanifold-volume",
       "head": "62257e0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Return nan for non-manifold volume and skip it in QTO (#6125)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8503"
     },
@@ -2770,7 +2770,7 @@
       "author": "BIMvoice",
       "branch": "ship-6481-parametric-profile",
       "head": "e1c0e7b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: preserve a parametric profile through an edit round trip (#6481)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8553"
     },
@@ -2978,8 +2978,8 @@
     "8607": {
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
-      "head": "c5aad9a",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "head": "d5e6c19",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add copy attribute to selection for boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8607"
@@ -3479,7 +3479,7 @@
       "author": "BIMvoice",
       "branch": "fix-3995-standalone-window-boundaries",
       "head": "2cc00c5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: let standalone windows bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8703"
     },
@@ -3603,7 +3603,7 @@
       "author": "BIMvoice",
       "branch": "fix-7614-shared-profile-edit-refresh",
       "head": "c3b3ef4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: refresh every sharing element's mesh after an extrusion profile edit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8726"
     },
@@ -5249,8 +5249,8 @@
     "9005": {
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
-      "head": "0357807",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "head": "2ad4ae8",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
@@ -6189,7 +6189,8 @@
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
       "head": "3fea62c",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
     },
@@ -6661,8 +6662,9 @@
     "9221": {
       "author": "CyrilWaechter",
       "branch": "auto-generate-ifc-based-space-boundaries",
-      "head": "66e86a4",
-      "status": "merged",
+      "head": "61a0baf",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Replace blender based space boundary generation with IFC based",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
     }

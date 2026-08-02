@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 128,
-    "merged": 518,
+    "failed": 127,
+    "merged": 519,
     "skipped_conflict": 114,
     "skipped_draft": 56,
     "total": 816
   },
-  "generated_at": "2026-08-01T20:09:17Z",
+  "generated_at": "2026-08-01T23:11:14Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2979,8 +2979,7 @@
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
       "head": "c5aad9a",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "Add copy attribute to selection for boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8607"
     },
@@ -5249,7 +5248,7 @@
     "9005": {
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
-      "head": "0357807",
+      "head": "bd2872e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Auto-detect space height + IFC-direct space generation",
@@ -6661,7 +6660,7 @@
     "9221": {
       "author": "CyrilWaechter",
       "branch": "auto-generate-ifc-based-space-boundaries",
-      "head": "66e86a4",
+      "head": "84ff4b3",
       "status": "skipped_conflict",
       "title": "Replace blender based space boundary generation with IFC based",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
