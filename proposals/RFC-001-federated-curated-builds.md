@@ -18,6 +18,7 @@
   - [3.4 The honest caveat that shapes everything below](#s3-4)
 - [4. Artifact 1: the Profile](#s4)
   - [4.1 Backwards compatibility](#s4-1)
+  - [4.2 How an exclusion actually works](#s4-2)
 - [5. Distilling a profile from an existing build branch](#s5)
   - [5.1 What a real poweruser branch actually contains](#s5-1)
   - [5.2 The `distill` command](#s5-2)
@@ -30,7 +31,8 @@
 - [8. The aggregator and its signals](#s8)
   - [8.1 Signal definitions](#s8-1)
   - [8.2 Integration robustness is not functional robustness](#s8-2)
-  - [8.3 Worked example](#s8-3)
+  - [8.3 What rejection reveals that selection cannot](#s8-3)
+  - [8.4 Worked example](#s8-4)
 - [9. Trust and anti-gaming](#s9)
 - [10. Consumption: per-profile Blender feeds](#s10)
 - [11. Phasing](#s11)
@@ -76,6 +78,19 @@ Stating these up front because they are the failure modes this design is steerin
 - **No new governance authority.** This produces evidence. It does not produce
   decisions, votes, or merge rights. Upstream maintainers remain free to ignore all
   of it.
+
+  It would be dishonest, though, to stop there. Evidence has second-order governance
+  effects whether a document disclaims them or not, and the most likely one is worth
+  saying out loud: **a public, continuous record of who curates well will probably
+  change how people become maintainers.** Today that path runs on visibility and
+  personal relationship, which is slow, reproduces the existing group's blind spots,
+  and depends on an incumbent having time to notice you. A public record does not
+  replace the moment someone grants merge rights — it makes that grant answer to
+  something. Two years of well-adopted curation becomes hard to ignore, and social
+  proximity alone becomes harder to promote on.
+
+  That is a feature, and it is also the design's most obvious way to go wrong, so it
+  is tracked as a risk in [§12](#s12) rather than claimed as a benefit.
 - **Not a fork of BonsaiPR.** Every phase below is backwards compatible with the
   canonical falken10vdl instance, and phases 0–1 require no change to how that
   instance runs.
@@ -169,11 +184,19 @@ maintains, forks, and is known for.
     "labels": []
   },
   "exclude": {
-    "prs": [7098],
+    "prs": {
+      "7098": {
+        "why": "architecture",
+        "reason": "bypasses the tool/ abstraction and calls ifcopenshell directly",
+        "since": "8f09b96"
+      },
+      "8206": "crashes on IFC4X3 files"
+    },
     "authors": [],
     "drafts": true,
     "cpp": true
   },
+  "prefer": [[7900, 8123]],
   "pin": {
     "7123": "8f09b96"
   },
@@ -196,6 +219,15 @@ Notes on the design:
   curator who pins is saying "I tested this exact commit."
 - **`orders`** is per-profile because a selective profile with 40 PRs may have no
   conflicts at all, in which case building three orders is wasted CPU.
+- **`exclude.prs` carries a reason, not just a number.** This is the single most
+  important field in the format and the argument for it is [§8.3](#s8-3): what a
+  curator *refuses* is more architecturally informative than what they accept. A bare
+  list of numbers throws that away. Mechanics in [§4.2](#s4-2).
+- **`prefer`** records *"when these two collide, take the first."* A pairwise
+  preference is not a rejection of the loser, and collapsing it into one would be the
+  fastest way to make the objection signal lie — see [§4.2](#s4-2). It is also directly
+  useful to the build itself, since it is the same shape of knowledge as
+  `KNOWN_CONFLICT_RESOLUTIONS`.
 
 ### <a id="s4-1"></a>4.1 Backwards compatibility
 
@@ -215,6 +247,62 @@ becomes a call to `load_profile()` that returns the same `users` / `excluded_prs
 `SKIP_CPP_PRS` values it produces today, sourced either from a profile file
 (`BONSAIPR_PROFILE=architecture-production`) or from the legacy env vars. The ~950
 lines of merge logic downstream do not change.
+
+### <a id="s4-2"></a>4.2 How an exclusion actually works
+
+An exclusion is the highest-value thing in a profile ([§8.3](#s8-3)) and also the
+easiest to get wrong, so the mechanics matter more than the field does.
+
+**An exclusion only means anything relative to a baseline that would have included it.**
+If a profile says `inherits: falken10vdl/all` and then excludes #8123, that is a real
+subtraction: the PR *was* in the set and the curator took it out. If a profile is a bare
+`allowlist` of 40 PRs, the other 445 are not rejected — they are absent, and were very
+likely never looked at. `exclude` on a profile with no `inherits` is therefore almost
+always a mistake and should raise a validation warning rather than being silently
+aggregated.
+
+**The `since` SHA is what keeps this fair.** An exclusion records the head commit it was
+made against:
+
+```json
+"8206": { "why": "regression", "reason": "crashes on IFC4X3 files", "since": "8f09b96" }
+```
+
+Once the PR advances past that commit, the objection goes **stale** and stops counting
+until someone reaffirms it. Without this the aggregate becomes a permanent public mark
+on a contribution based on a months-old snapshot — the author fixes the crash three
+weeks later and the objection follows them anyway. Staleness is not a nicety here; it is
+the difference between a signal and a grudge.
+
+**`why` is a small controlled vocabulary; `reason` is free text.** Category makes the
+data aggregatable, free text keeps it honest, and neither works alone:
+
+| `why` | meaning | feeds the design signal? |
+|---|---|---|
+| `architecture` | works, but is built the wrong way | **yes — this is the one** |
+| `regression` | it broke something | no — this is a bug report |
+| `scope` | fine, but not what this profile is for | no |
+| `duplicate` | superseded by another PR | no |
+| `performance` / `unstable` | measured or observed problems | no |
+
+Both fields are optional. A bare `"8206": "reason string"` and even a plain array of
+numbers stay valid and mean "excluded, no reason given." **Reasons are encouraged and
+never required** — a mandatory field would simply fill up with `"n/a"`.
+
+**Capture it at the moment of discovery, not in bulk afterwards.** The realistic
+sequence is: a build misbehaves, the delta report says what is new since the last good
+one, the curator finds the culprit, and has to act right then. That is also the only
+moment they know precisely why. Reasons written later, in a batch, will be worthless:
+
+```
+bonsaipr exclude 8206 --why regression --reason "crashes on IFC4X3 files"
+```
+
+**A preference is not a rejection.** "I took #7900 over #8123 because they collide" says
+nothing about #8123's quality — the curator may well like it. That belongs in `prefer`,
+as an edge between two PRs. Recording it as an exclusion would make every PR that merely
+lost a merge race accumulate objections it never earned, which is the single fastest way
+to make this whole aggregate dishonest.
 
 ---
 
@@ -283,6 +371,14 @@ Steps 4–5 cost nothing extra: BonsaiPR already fetches every open PR every run
 patch-id index is a by-product of work the pipeline does anyway. Step 5 exists because a
 squashed cherry-pick's patch-id matches the PR's *combined* diff and no individual
 commit in it — naive matching misses those entirely.
+
+**`distill` must not emit exclusions.** A PR absent from a build branch was, in almost
+every case, never considered — not rejected. Recording those 445 absences as
+`exclude.prs` would flood the `objections` signal ([§8.3](#s8-3)) with reasonless
+rejections that no human ever made, and that signal is only worth having because every
+entry in it is a deliberate act. A distilled profile therefore lists what the branch
+merged and nothing else; exclusions are added afterwards, by hand, when the curator
+actually means one.
 
 Every classification is written to `profiles/<name>.provenance.json` with its evidence
 and confidence. **Nothing is silently guessed.** A curator can audit why any commit was
@@ -477,10 +573,17 @@ math — a signal that gets over-read is worse than no signal.
 | `streak.builds` / `streak.days` | consecutive builds merged, and elapsed span | it has survived upstream drift | absence of latent bugs |
 | `rivals` | PR numbers it lost merge races to, and how often | a real, specific conflict to resolve | fault on either side |
 | `divergence` | merged for some publishers, blocked for others | base- or order-sensitive | flakiness |
+| `excluded_by` | distinct publishers who deliberately excluded it, counting only non-stale exclusions ([§4.2](#s4-2)) | someone saw it and said no | that it is broken |
+| `objections` | those exclusions' reasons, grouped by `why` category and recurrence | *why* they said no — see [§8.3](#s8-3) | consensus; two people can object for opposite reasons |
+| `lost_to` | PRs that curators explicitly `prefer` over this one | a curatorial choice between two options | a judgment on this PR's quality |
 
 `streak` and `rivals` are derivable from data already being logged —
 `events.<order>.jsonl` and the *"Broken by"* / *"Conflicting files"* columns the report
 already emits.
+
+Note the asymmetry between `blocked_by` and `excluded_by`: the first is the automation
+failing to merge something a curator wanted, the second is a curator not wanting it.
+Conflating them would be the single easiest way to make this whole aggregate lie.
 
 ### <a id="s8-2"></a>8.2 Integration robustness is not functional robustness
 
@@ -498,7 +601,72 @@ narrow the gap, both later phases:
    build, publish pass/fail in the manifest. Turns `verification` into a real signal
    for the profiles that opt in.
 
-### <a id="s8-3"></a>8.3 Worked example
+### <a id="s8-3"></a>8.3 What rejection reveals that selection cannot
+
+There is a fair objection to this whole proposal: **aggregation is selective, not
+generative.** It can rank the things people built. It cannot produce the thing nobody
+proposed — the abstraction that should have been used, the refactor that collapses five
+PRs into one, the "this approach is wrong, do it the other way." Selection pressure over
+a population only chooses among the variants present, so aggregating *inclusions*
+produces coherence — things that work together survive together — which resembles
+architecture from a distance while being a different thing.
+
+Aggregated *exclusions with reasons* get closer to the real thing, for a simple reason:
+inclusion is a statement about usefulness, and rejection is usually a statement about
+principle. Nobody excludes a working PR from their own build without a view about how
+the software ought to be put together.
+
+But five different things look like "not in my build," and only one of them carries
+design information. Conflating them is how this signal would become worthless:
+
+| what happened | recorded as | signal |
+|---|---|---|
+| never considered — the 445 nobody looked at | *nothing* | none, and it must stay that way ([§5.2](#s5-2)) |
+| could not merge — conflicts | `blocked_by` | automation-level, not a human act |
+| lost a race — curator preferred another PR | `prefer` → `lost_to` | a choice between two options |
+| tried it, it broke | `why: regression` | a bug report, and a useful one |
+| **works fine, curator does not want it** | **`why: architecture`** | **the design signal** |
+
+So the interesting output is not a count. It is a recurring *reason*:
+
+```
+#8123  excluded by 5 curators (2 stale, not counted)
+       3 cite [architecture]: bypasses the tool/ abstraction, calls ifcopenshell directly
+       1 cite [scope]:        not relevant to a documentation-focused build
+       1 no reason given
+```
+
+Three independent people rejecting the same PR *for the same architectural reason* is a
+design principle being discovered rather than decreed — and it is legible to a
+maintainer, a newcomer, and an AI reviewer alike, which is exactly what an
+Architecture Decision Record is for. The difference is that this one is derived from
+what people actually did, and it costs nobody a meeting.
+
+**Nothing renders publicly on a single objection.** One curator excluding a PR is an
+opinion, not a signal, and publishing it against a named contributor's work would be
+mostly a way to hurt people. Two or more *independent* curators citing the same category
+is the threshold; below it the data stays raw. Reasons are always quoted verbatim with
+attribution — you own your words — and nothing is ever rendered as a score on a
+*person*.
+
+Three limits worth keeping in view:
+
+- **It is still a lagging indicator.** It surfaces principles after enough people have
+  independently hit the same wall. Architectural judgment is most valuable *before* the
+  work, where "don't build it that way" saves the effort.
+- **This is where maintainer participation matters most.** If maintainers curate — and
+  they will, because they need working builds too — their exclusion lists are the
+  highest-signal input in the entire system: an architectural stance in executable
+  form, continuously maintained and publicly diffable in a way an Architecture Decision
+  Record is not.
+- **It depends on people bothering, and most will not.** The likely outcome is many
+  bare exclusions and a thin seam of categorized ones, written by the handful of
+  curators who care about design — which is arguably the right population, but it means
+  this signal stays sparse for a long time, exactly as [§3.4](#s3-4) says the inclusion
+  signal does. The `bonsaipr exclude` one-liner in [§4.2](#s4-2) exists because
+  friction at that moment is the whole ballgame.
+
+### <a id="s8-4"></a>8.4 Worked example
 
 ```
 PR #7123 — "Extend profiles and extrusions to 3D cursor"
@@ -509,6 +677,7 @@ PR #7123 — "Extend profiles and extrusions to 3D cursor"
   streak        14 builds / 42 days
   rivals        #7098 (blocked in 3 of 6, ascending order only)
   divergence    none
+  excluded_by   1 (falken10vdl — "needs a rebase onto the new ShapeBuilder API")
 
   ⚠ Integration signal only. No functional verification reported.
 ```
@@ -599,6 +768,23 @@ features are worth the build on their own.
   `inherits` and `pin` keep the ongoing cost near zero; `distill` ([§5](#s5)) removes the
   up-front cost, since the first profile is generated from a branch the curator
   already has rather than authored from nothing.
+- *Good architecture is frequently unpopular, and this measures popularity.* Saying no
+  to a well-liked feature because it bypasses an abstraction is the job; an aggregate
+  built on adoption will systematically under-rate whoever does it. Conferred authority
+  is biased toward insularity, earned-by-metric is biased toward crowd-pleasing, and
+  neither bias is obviously worse — but the second one is newer, so it is the one
+  nobody will see coming. The moment standing confers anything, it becomes worth
+  optimizing for. `objections` ([§8.3](#s8-3)) is a partial hedge, since it rewards
+  articulating an unpopular principle rather than accumulating agreement, but it is a
+  hedge and not a fix. Anyone rendering a digest should resist ranking *people*.
+- *Exclusion reasons become noise, or become weapons.* Free text invites `"broken"`,
+  `"don't like it"`, and occasionally something unkind about the author. [§4.2](#s4-2)
+  and [§8.3](#s8-3) specify the guards — `why` categories, `since`-SHA staleness so an
+  objection expires when the PR is fixed, a two-independent-curator threshold before
+  anything renders publicly, verbatim attributed quoting, and never scoring a person —
+  but guards on paper are not the same as guards in code. The clustering step in
+  particular should not publish anything against a named contributor's PR without a
+  human having looked at it.
 - *Distillation publishes something private by accident.* A build branch is a personal
   workspace. The residue default is `private` and opt-in is per-cluster ([§5.4](#s5-4)), but
   this is the failure mode most likely to actually happen and it deserves a second
@@ -651,6 +837,14 @@ maintaining by hand**.
 Most of the machinery already exists. What is genuinely new is naming the curation and
 publishing who did it, which is what turns BonsaiPR from *one build everybody shares*
 into *a network of curated builds whose agreement means something*.
+
+The field I would defend hardest is the smallest one: a **reason** attached to an
+exclusion ([§8.3](#s8-3)). Inclusion counts measure usefulness, and there is a fair
+objection that aggregating them produces coherence rather than architecture. Rejections
+are different — nobody excludes a working PR from their own build without a view about
+how the software ought to be put together. Three curators independently refusing the
+same PR for the same stated reason is a design principle being discovered rather than
+decreed, and it costs nobody a meeting.
 
 The measurement in [§5.1](#s5-1) is the part I would point at first. A single poweruser branch
 turned out to be 98.75% mechanically attributable to open PRs, to carry roughly twelve
