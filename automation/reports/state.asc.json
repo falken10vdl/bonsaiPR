@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 127,
-    "merged": 519,
+    "failed": 130,
+    "merged": 516,
     "skipped_conflict": 114,
     "skipped_draft": 56,
     "total": 816
   },
-  "generated_at": "2026-08-01T23:11:14Z",
+  "generated_at": "2026-08-02T01:09:25Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2978,8 +2978,9 @@
     "8607": {
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
-      "head": "c5aad9a",
-      "status": "merged",
+      "head": "d5e6c19",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Add copy attribute to selection for boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8607"
     },
@@ -2987,7 +2988,7 @@
       "author": "theoryshaw",
       "branch": "fix-mergeduplicatetypes-null-and-crossclass",
       "head": "684ec64",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8610"
     },
@@ -5248,8 +5249,8 @@
     "9005": {
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
-      "head": "bd2872e",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "head": "9cd0f83",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
@@ -6188,7 +6189,8 @@
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
       "head": "3fea62c",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
     },
@@ -6660,8 +6662,9 @@
     "9221": {
       "author": "CyrilWaechter",
       "branch": "auto-generate-ifc-based-space-boundaries",
-      "head": "84ff4b3",
-      "status": "skipped_conflict",
+      "head": "61a0baf",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Replace blender based space boundary generation with IFC based",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
     }

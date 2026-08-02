@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 126,
+    "failed": 130,
     "merged": 513,
-    "skipped_conflict": 121,
+    "skipped_conflict": 117,
     "skipped_draft": 56,
     "total": 816
   },
-  "generated_at": "2026-08-01T23:46:32Z",
+  "generated_at": "2026-08-02T01:45:01Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -2979,7 +2979,8 @@
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
       "head": "d5e6c19",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Add copy attribute to selection for boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8607"
     },
@@ -3462,7 +3463,7 @@
       "author": "BIMvoice",
       "branch": "fix-3754-wall-covering",
       "head": "34a5dc2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: automate wall coverings (cladding, insulation) from wall side faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8699"
     },
@@ -3478,7 +3479,7 @@
       "author": "BIMvoice",
       "branch": "fix-3995-standalone-window-boundaries",
       "head": "2cc00c5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: let standalone windows bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8703"
     },
@@ -4236,7 +4237,7 @@
       "author": "BIMvoice",
       "branch": "fix-6895-shape-elevation-guard",
       "head": "86de6c2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.util.shape: fail loudly on non-finite elevation instead of returning the infinity sentinel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8832"
     },
@@ -5248,8 +5249,9 @@
     "9005": {
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
-      "head": "2ad4ae8",
-      "status": "skipped_conflict",
+      "head": "9cd0f83",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     },
@@ -6187,7 +6189,8 @@
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
       "head": "3fea62c",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
     },
@@ -6539,7 +6542,7 @@
       "author": "BIMvoice",
       "branch": "silent-noop-core-tool-audit",
       "head": "6558b3b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: raise, not no-op, on missing polygon",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9197"
     },
@@ -6659,8 +6662,9 @@
     "9221": {
       "author": "CyrilWaechter",
       "branch": "auto-generate-ifc-based-space-boundaries",
-      "head": "84ff4b3",
-      "status": "merged",
+      "head": "61a0baf",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Replace blender based space boundary generation with IFC based",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
     }
