@@ -1,0 +1,660 @@
+# RFC-001: Federated Curated Builds
+
+**Status:** Draft — for discussion
+**Author:** theoryshaw
+**Audience:** falken10vdl, BonsaiPR collaborators, OSArch
+**Target:** BonsaiPR automation (`automation/`)
+
+---
+
+## Contents
+
+- [1. The problem](#s1)
+- [2. Non-goals](#s2)
+- [3. What already exists (and why this is smaller than it sounds)](#s3)
+  - [3.1 The aggregation algorithm exists](#s3-1)
+  - [3.2 The published artifact exists](#s3-2)
+  - [3.3 Curation exists, but is not an artifact](#s3-3)
+  - [3.4 The honest caveat that shapes everything below](#s3-4)
+- [4. Artifact 1: the Profile](#s4)
+  - [4.1 Backwards compatibility](#s4-1)
+- [5. Distilling a profile from an existing build branch](#s5)
+  - [5.1 What a real poweruser branch actually contains](#s5-1)
+  - [5.2 The `distill` command](#s5-2)
+  - [5.3 Two things worth more than the PR list](#s5-3)
+  - [5.4 Residue handling, and the privacy default](#s5-4)
+  - [5.5 Replay and reconciliation](#s5-5)
+  - [5.6 Where this is weakest](#s5-6)
+- [6. Artifact 2: the Manifest](#s6)
+- [7. Artifact 3: the Peer index](#s7)
+- [8. The aggregator and its signals](#s8)
+  - [8.1 Signal definitions](#s8-1)
+  - [8.2 Integration robustness is not functional robustness](#s8-2)
+  - [8.3 Worked example](#s8-3)
+- [9. Trust and anti-gaming](#s9)
+- [10. Consumption: per-profile Blender feeds](#s10)
+- [11. Phasing](#s11)
+- [12. Risks and open questions](#s12)
+- [13. Summary](#s13)
+
+---
+
+## <a id="s1"></a>1. The problem
+
+Bonsai has more open PRs than any maintainer can evaluate. The current build reports
+show ~760 PRs processed per run, ~485 of which merge cleanly. Every one of those is a
+change that *might* be worth merging upstream, and the only evidence a maintainer has
+for any of them is the PR diff and whatever comments it accumulated.
+
+BonsaiPR already changed the question from *"should this be merged?"* to *"who wants to
+use this?"* — but it currently answers that question with a single, one-size-fits-all
+build. Everyone gets everything.
+
+This RFC proposes the next step: let people publish their own **curated** builds, and
+let those curations **aggregate** into a signal that says which PRs and which
+*combinations* of PRs actually hold up in practice.
+
+The payoff for an upstream maintainer is a line like this on a PR:
+
+> Selected by 6 of 9 independent curators. Merged cleanly in 14 consecutive builds
+> over 42 days. Conflicts only with #7098. No curator has dropped it.
+
+That is a materially different kind of evidence from three "LGTM" comments.
+
+---
+
+## <a id="s2"></a>2. Non-goals
+
+Stating these up front because they are the failure modes this design is steering around.
+
+- **No user telemetry.** Nothing here reports on people, installs, sessions, or usage.
+  The unit of data is a *build manifest* — a machine-readable statement of what a
+  curator chose to build. It is published deliberately, by a person, as a file in a
+  git repo. If a signal can only be obtained by watching users, it is out of scope.
+- **No central server.** Aggregation is a pull over public URLs. Any curator can run
+  the aggregator over any peer list and get the same answer.
+- **No new governance authority.** This produces evidence. It does not produce
+  decisions, votes, or merge rights. Upstream maintainers remain free to ignore all
+  of it.
+- **Not a fork of BonsaiPR.** Every phase below is backwards compatible with the
+  canonical falken10vdl instance, and phases 0–1 require no change to how that
+  instance runs.
+
+---
+
+## <a id="s3"></a>3. What already exists (and why this is smaller than it sounds)
+
+Most of the substrate is built. This RFC is largely about *generalizing* three things
+that already work.
+
+### <a id="s3-1"></a>3.1 The aggregation algorithm exists
+
+[`pr_state.py:239`](../automation/scripts/pr_state.py) `compute_robustness()` already
+takes N independent builds of the same PR set and, per PR, computes:
+
+```
+merged_in   [source, ...]   sources whose build merged this PR
+blocked_in  [source, ...]   sources that saw it but did not merge it
+stable      bool            merged in every source that saw it, seen by >= 2
+```
+
+Today N = 3 and the sources are the canonical instance's own `asc` / `desc` / `upd`
+merge orders. **Federation is the same function with the source key changed from a
+merge order to a publisher.** The sorting, the "seen by ≥ 2" guard, and the provenance
+tracking in `robustness_sources()` all carry over unchanged.
+
+That function is already consumed to render per-PR stability into the build report at
+[`00_clone_merge_and_create_branch.py:973-976`](../automation/scripts/00_clone_merge_and_create_branch.py).
+That is where a federated signal would render too.
+
+### <a id="s3-2"></a>3.2 The published artifact exists
+
+`automation/reports/state.{asc,desc,upd}.json` is already a normalized, diff-stable,
+per-PR snapshot, committed every run, with an append-only companion
+`events.{asc,desc,upd}.jsonl`. It already carries `base`, `merge_order`,
+`generated_at`, `counts`, and per PR: `status`, `head`, `title`, `author`, `branch`,
+`url`.
+
+It is already pushed to a public repo by `commit_reports.py`, which means it is
+already fetchable at a stable `raw.githubusercontent.com` URL. **A peer needs nothing
+we do not already publish**, except a statement of *who published it and under what
+curation* ([§6](#s6)).
+
+### <a id="s3-3"></a>3.3 Curation exists, but is not an artifact
+
+`USERNAMES`, `EXCLUDED`, and `SKIP_CPP_PRS` in
+[`.env.example:23-28`](../automation/.env.example) are already a curation mechanism, and
+[`.env.collaborator.example`](../automation/.env.collaborator.example) already anticipates
+other people running their own instances.
+
+What is missing is that a curation is currently **three comma-separated strings in an
+untracked `.env`**. It cannot be named, versioned, shared, forked, diffed, or cited.
+That is the actual gap, and [§4](#s4) addresses it.
+
+### <a id="s3-4"></a>3.4 The honest caveat that shapes everything below
+
+**Today, "included in a BonsaiPR build" carries almost no information**, because the
+canonical build includes every non-draft PR that merges. A signal built on inclusion
+would report "included by 1 of 1" for 485 PRs and mean nothing.
+
+The signal only becomes informative once curation is *selective* — once a curator has
+said "I want these 40, not those 445." This is why profiles are not a nice-to-have
+bolted onto the aggregator; **they are the precondition for the aggregator to carry
+any information at all.** The two halves ship together or not at all.
+
+---
+
+## <a id="s4"></a>4. Artifact 1: the Profile
+
+A profile is a curation expressed as a committed file. It is the thing a person
+maintains, forks, and is known for.
+
+`profiles/architecture-production.json`:
+
+```json
+{
+  "schema": 1,
+  "name": "architecture-production",
+  "description": "Bonsai for production architectural documentation. Drawing, scheduling, and sheet workflows. No experimental UI.",
+  "maintainer": "theoryshaw",
+  "inherits": "falken10vdl/all",
+  "base": {
+    "repo": "IfcOpenShell/IfcOpenShell",
+    "branch": "v0.8.0"
+  },
+  "select": {
+    "mode": "allowlist",
+    "prs": [7123, 7151, 7798, 8719, 9019],
+    "authors": [],
+    "labels": []
+  },
+  "exclude": {
+    "prs": [7098],
+    "authors": [],
+    "drafts": true,
+    "cpp": true
+  },
+  "pin": {
+    "7123": "8f09b96"
+  },
+  "orders": ["ascending", "descending", "by-updated"]
+}
+```
+
+Notes on the design:
+
+- **`mode`** is `allowlist` (only these PRs) or `everything` (current BonsaiPR
+  behaviour: all non-draft PRs, minus `exclude`). `everything` keeps the canonical
+  instance expressible as a profile, which is what makes migration free.
+- **`inherits`** handles the common case — *"whatever the canonical build ships, minus
+  these three."* Without it, every curator has to restate 485 PR numbers and the file
+  churns on every upstream change. Resolution is a shallow merge: the parent's
+  `select` is the starting set, the child's `exclude` and `select` are applied on top.
+- **`pin`** freezes a PR at a known-good head SHA. This is what makes a curated build
+  a *stable product* rather than something that silently changes under the user when a
+  contributor force-pushes. It is also, deliberately, a strong quality signal — a
+  curator who pins is saying "I tested this exact commit."
+- **`orders`** is per-profile because a selective profile with 40 PRs may have no
+  conflicts at all, in which case building three orders is wasted CPU.
+
+### <a id="s4-1"></a>4.1 Backwards compatibility
+
+`.env` keys map onto an implicit profile, so nothing breaks and nobody is forced to
+migrate:
+
+| `.env` today  | Profile field           |
+|---------------|-------------------------|
+| *(unset)*     | `select.mode: everything` |
+| `USERNAMES`   | `select.authors`        |
+| `EXCLUDED`    | `exclude.prs`           |
+| `SKIP_CPP_PRS`| `exclude.cpp`           |
+
+Integration point: the env parsing block at
+[`00_clone_merge_and_create_branch.py:41-62`](../automation/scripts/00_clone_merge_and_create_branch.py)
+becomes a call to `load_profile()` that returns the same `users` / `excluded_prs` /
+`SKIP_CPP_PRS` values it produces today, sourced either from a profile file
+(`BONSAIPR_PROFILE=architecture-production`) or from the legacy env vars. The ~950
+lines of merge logic downstream do not change.
+
+---
+
+## <a id="s5"></a>5. Distilling a profile from an existing build branch
+
+Nobody is going to hand-write a profile listing 158 PR numbers. But powerusers are
+*already* maintaining exactly that curation — as a long-lived, hand-composed build
+branch, accumulated over months of merging and cherry-picking. Those branches are
+messy, private, and undocumented, and every one of them is a curation that the
+federation wants.
+
+So the primary way a profile should come into existence is not by authoring one. It is
+by **distilling one out of a branch that already works.**
+
+### <a id="s5-1"></a>5.1 What a real poweruser branch actually contains
+
+Measured against `Ryan_build-0.8.6-alpha2607071335` (638 commits ahead of `v0.8.0`):
+
+| | count | |
+|---|---:|---|
+| commits ahead of base | 638 | |
+| merge commits | 183 | |
+| **first-parent merges** | **160** | deliberate integration acts by the curator |
+| — carrying `pr-NNNN/` in the subject | **158** | attributable to a PR by regex alone |
+| **first-parent non-merge commits** | **77** | the residue — the curator's own commits |
+| first-parent merges carrying a manual conflict resolution | ~12 (3 of 40 sampled) | |
+
+Two findings from this that shape the design:
+
+**The branch is already a declarative curation.** 158 of 160 integration acts name their
+PR directly (`Merge remote-tracking branch 'pr-8353/fix-4790-regen-style'`). Attribution
+is a regex, not an inference problem. The remaining two name a fork and branch instead
+(`BIMvoice/fix-6508-geography-element-qto`), which resolves against the GitHub API's
+`head.label` field.
+
+**The residue is not glue — it is unpublished feature work.** I expected the 77 local
+commits to be conflict fixups. They are not. They are substantive features, many
+already citing upstream issues: annotations shared across drawings (#9019), linked-model
+include/exclude filters, storey elevation sync (#8545), `MergeDuplicateContexts`,
+appended-asset style preservation (#8667, #8666). Some of these correspond to PRs the
+author opened elsewhere; some have never been offered upstream at all.
+
+That reframes this feature. It is not only an on-ramp to profiles — it is a way to find
+contributions that already exist and were never submitted.
+
+### <a id="s5-2"></a>5.2 The `distill` command
+
+```
+bonsaipr distill --branch Ryan_build-0.8.6-alpha2607071335 --base v0.8.0
+```
+
+Walks first-parent history and classifies each commit down a ladder, most reliable
+first:
+
+| # | Evidence | Result | Confidence |
+|---|---|---|---|
+| 1 | merge subject matches `pr-(\d+)/` | PR N | exact |
+| 2 | merge subject names `owner/branch`, resolved via GitHub `head.label` | PR N | exact |
+| 3 | merge subject contains `(#NNNN)` | PR N | probable |
+| 4 | commit patch-id matches a commit in an open PR | PR N | exact |
+| 5 | commit patch-id matches a PR's *combined* diff (squashed cherry-pick) | PR N | exact |
+| 6 | `git cherry` finds an equivalent already in base | drop — absorbed upstream | exact |
+| 7 | none of the above | residue | — |
+
+Steps 4–5 cost nothing extra: BonsaiPR already fetches every open PR every run, so the
+patch-id index is a by-product of work the pipeline does anyway. Step 5 exists because a
+squashed cherry-pick's patch-id matches the PR's *combined* diff and no individual
+commit in it — naive matching misses those entirely.
+
+Every classification is written to `profiles/<name>.provenance.json` with its evidence
+and confidence. **Nothing is silently guessed.** A curator can audit why any commit was
+attributed the way it was, which matters because step 3 is a heuristic and step 4 fails
+whenever a cherry-pick required conflict resolution (the resolved diff no longer matches
+the original patch-id).
+
+### <a id="s5-3"></a>5.3 Two things worth more than the PR list
+
+**The recorded merge order.** BonsaiPR currently *guesses* at order, building asc, desc,
+and by-updated to maximise inclusion. A poweruser branch encodes something better: a
+hand-validated sequence that is known to produce a build that works. That justifies a
+fourth order:
+
+```json
+"orders": ["recorded"],
+"order_seq": [8353, 8352, 8351, 8349, "…"]
+```
+
+**The conflict resolutions.** `KNOWN_CONFLICT_RESOLUTIONS` in
+[`00_clone_merge_and_create_branch.py:83`](../automation/scripts/00_clone_merge_and_create_branch.py)
+is a hand-maintained table of *"when PR A conflicts with PR B in this file, take this
+side."* It currently has **exactly one entry**. A single poweruser branch contains
+roughly twelve — every merge that required manual resolution is a curator having
+already solved a conflict the automation will hit again next run.
+
+Where a resolution is wholesale (a file taken entirely from one side), `distill` can
+emit it directly in that table's existing `{pr: [(path, strategy)]}` shape. Where it is
+hunk-level, it emits a patch and flags it for human review rather than pretending it can
+be reduced to `theirs`/`ours`. This is the single highest-value output of the whole
+command, and it is a straight transfer of knowledge from a private branch into shared
+automation.
+
+### <a id="s5-4"></a>5.4 Residue handling, and the privacy default
+
+The 77 residue commits are clustered into candidate patch series — contiguous runs in
+first-parent order with overlapping file sets — and each cluster is presented for a
+human decision:
+
+- **`link`** — patch-id matches an open PR the curator authored elsewhere. Fold into
+  `select.prs`; it is already public.
+- **`promote`** — a coherent, never-submitted feature. Emit as a formatted patch series
+  with a suggested title. *This is the "you have three unsubmitted features" report.*
+- **`private`** — never publish. Local dev notes, machine-specific paths, scratch work.
+
+**The default is `private`.** Residue is not published unless a human opts a cluster in,
+one at a time. A build branch is a personal workspace and will contain things its owner
+never intended to ship; a tool that published it by default would be a serious
+misfeature. Clustering is a heuristic and is presented as a proposal, never applied
+silently.
+
+### <a id="s5-5"></a>5.5 Replay and reconciliation
+
+The distilled profile is then rebuilt through the normal pipeline: current `v0.8.0`,
+plus the profile's PRs at their *current* heads, in the recorded order, with the
+recorded resolutions.
+
+**This will not reproduce the original branch, and should not claim to.** The PRs have
+advanced since they were merged; that is the entire point of replaying rather than
+shipping the branch. So the output is a reconciliation report, not a pass/fail:
+
+- PRs whose head moved since the branch merged them (behaviour may have changed)
+- PRs now closed or absorbed upstream — dropped, with the commit that absorbed them
+- PRs that no longer merge in the recorded order — the order needs revisiting
+- Residue patches that no longer apply
+- A tree diff of replay vs. original branch, restricted to paths the profile claims
+
+A curator reads that report and decides. The tool's job is to make the divergence
+visible and attributable, not to assert equivalence it cannot verify.
+
+### <a id="s5-6"></a>5.6 Where this is weakest
+
+- **Distillation is lossy.** A branch's behaviour is the product of its exact merge
+  order *and* its resolutions *and* the PR heads at the time. Replaying against advanced
+  heads can legitimately produce different behaviour. [§5.5](#s5-5) is the mitigation, not a
+  guarantee.
+- **Attribution depends on the curator's habits.** `pr-NNNN/` is *one* person's naming
+  convention, and it is why the measured attribution rate is 98.75%. Someone who
+  cherry-picks without `-x` and without naming conventions falls through to patch-id,
+  which conflict resolution defeats. `distill` should report its attribution rate per
+  branch and say plainly when a branch is too unstructured to be worth distilling.
+- **It only works on branches built by merging.** A branch maintained by rebasing loses
+  the merge-commit evidence entirely and depends wholly on patch-id matching.
+
+---
+
+## <a id="s6"></a>6. Artifact 2: the Manifest
+
+The manifest is what a curator publishes and a peer consumes. It is
+`state.<order>.json` plus an identity block — because "PR #7123 merged cleanly" is
+useless without knowing *who* built it, *from what base*, and *under which curation*.
+
+```json
+{
+  "schema": 2,
+
+  "publisher": {
+    "id": "theoryshaw",
+    "instance": "https://github.com/theoryshaw/bonsaiPR",
+    "contact": "https://github.com/theoryshaw"
+  },
+  "profile": {
+    "name": "architecture-production",
+    "url": "https://github.com/theoryshaw/bonsaiPR/blob/main/profiles/architecture-production.json",
+    "digest": "sha256:1f3a…",
+    "selected": 41
+  },
+  "build": {
+    "id": "v0.8.6-alpha2607301845",
+    "order": "ascending",
+    "base": "v0.8.0",
+    "base_commit": "8deefe497cca8b9fd41e29e809ec0d0ad9478169",
+    "generated_at": "2026-07-30T18:58:24Z"
+  },
+
+  "counts": { "merged": 38, "failed": 2, "skipped_conflict": 1, "skipped_draft": 0, "total": 41 },
+  "prs": { "7123": { "status": "merged", "head": "8f09b96", "…": "…" } }
+}
+```
+
+Everything under `counts` and `prs` is exactly what `build_state()` emits today.
+`build.base_commit` is already captured — it is printed in the report header as
+*"IfcOpenShell source commit: …"*. Only `publisher` and `profile` are genuinely new,
+and `profile.digest` is what lets a consumer verify that a claimed curation matches the
+file it points at.
+
+Integration point: [`02_upload_to_falken10vdl.py:1118-1142`](../automation/scripts/02_upload_to_falken10vdl.py),
+which already calls `build_state()` and `write_state()`. Schema 1 readers ignore
+unknown keys, so bumping to 2 is additive.
+
+**Publication** requires no new infrastructure: `commit_reports.py` already pushes
+`automation/reports/` to the publisher's repo. A curator running their own fork
+already produces the manifest at a stable raw URL for free.
+
+---
+
+## <a id="s7"></a>7. Artifact 3: the Peer index
+
+`federation/peers.json` — the list of curators an aggregator pulls from. Explicitly a
+*subscription*, not a registry: there is no authority, and different people can run
+different peer lists.
+
+```json
+{
+  "schema": 1,
+  "peers": [
+    {
+      "id": "falken10vdl",
+      "display_name": "BonsaiPR (canonical)",
+      "reports_base": "https://raw.githubusercontent.com/falken10vdl/bonsaiPR/main/automation/reports/",
+      "profiles": ["all"],
+      "role": "anchor"
+    },
+    {
+      "id": "theoryshaw",
+      "display_name": "Architectural production",
+      "reports_base": "https://raw.githubusercontent.com/theoryshaw/bonsaiPR/main/automation/reports/",
+      "profiles": ["architecture-production"],
+      "role": "curator"
+    }
+  ]
+}
+```
+
+`role: anchor` marks the canonical everything-build. It is excluded from adoption
+counts ([§8.1](#s8-1)) — an anchor including a PR is not a curatorial endorsement, it is the
+absence of one.
+
+---
+
+## <a id="s8"></a>8. The aggregator and its signals
+
+`automation/scripts/federate.py`:
+
+```
+fetch peers.json → fetch each peer's manifests → validate → aggregate → emit
+  federation/federation.json     machine-readable, per-PR signals
+  federation/DIGEST.md           maintainer-facing summary
+```
+
+### <a id="s8-1"></a>8.1 Signal definitions
+
+Each signal states plainly what it does and does not mean. This matters more than the
+math — a signal that gets over-read is worse than no signal.
+
+| Signal | Definition | What it means | What it does **not** mean |
+|---|---|---|---|
+| `selected_by` | distinct non-anchor publishers whose profile selects the PR | someone deliberately wanted this | that anyone used it |
+| `merged_by` | distinct publishers whose build merged it cleanly | it integrates | that it works |
+| `blocked_by` | publishers that selected it but could not merge it | it conflicts under some curation | that it is bad |
+| `pinned_by` | publishers pinning a specific head SHA | a curator tested that exact commit | ongoing validity |
+| `streak.builds` / `streak.days` | consecutive builds merged, and elapsed span | it has survived upstream drift | absence of latent bugs |
+| `rivals` | PR numbers it lost merge races to, and how often | a real, specific conflict to resolve | fault on either side |
+| `divergence` | merged for some publishers, blocked for others | base- or order-sensitive | flakiness |
+
+`streak` and `rivals` are derivable from data already being logged —
+`events.<order>.jsonl` and the *"Broken by"* / *"Conflicting files"* columns the report
+already emits.
+
+### <a id="s8-2"></a>8.2 Integration robustness is not functional robustness
+
+Everything above measures whether a PR *merges and keeps merging*. None of it measures
+whether the resulting Bonsai does the right thing. A PR can merge cleanly into 9 builds
+for 6 months and still be wrong.
+
+This should be stated on every rendered digest, not buried. Two honest ways to
+narrow the gap, both later phases:
+
+1. **Curator attestation** — an optional `attest` block in the profile: *"I used this
+   in production for 3 months."* Signed by a person, worth more than any automatic
+   count, and impossible to compute.
+2. **Profile-level smoke results** — if a curator runs a test suite against their
+   build, publish pass/fail in the manifest. Turns `verification` into a real signal
+   for the profiles that opt in.
+
+### <a id="s8-3"></a>8.3 Worked example
+
+```
+PR #7123 — "Extend profiles and extrusions to 3D cursor"
+
+  selected_by   6 of 9 curators          ████████░░
+  merged_by     6 of 6 that selected it  ██████████
+  pinned_by     2 (theoryshaw, firm-a)
+  streak        14 builds / 42 days
+  rivals        #7098 (blocked in 3 of 6, ascending order only)
+  divergence    none
+
+  ⚠ Integration signal only. No functional verification reported.
+```
+
+---
+
+## <a id="s9"></a>9. Trust and anti-gaming
+
+Any aggregate is attackable. The specific attack here is cheap: spin up 50 forks, each
+publishing a profile that selects your PR, and manufacture consensus.
+
+Mitigations, in order of importance:
+
+1. **Count publishers, never builds.** A publisher running 3 merge orders × 24 builds
+   a day contributes exactly one vote. The canonical instance's asc/desc/upd collapse
+   to one.
+2. **Subscription, not registry.** There is no global list to inject yourself into. A
+   peer appears in *your* aggregate because *you* added them to *your* `peers.json`.
+   Sybils cost nothing to create and gain nothing without adoption.
+3. **Anchors do not vote.** The everything-build inflates every count equally, which is
+   the same as informing none of them.
+4. **Weight by divergence, not agreement.** A curator whose profile is identical to
+   another's adds no independent information. Optionally down-weight near-duplicate
+   profiles by set overlap.
+5. **Publish the peer list with every digest.** Any claim of "6 of 9 curators" is
+   meaningless without naming the 9. The digest must always name them.
+6. **Attestations are signed by humans and never aggregated automatically.** They are
+   quoted, with attribution, or not shown.
+
+What this explicitly does *not* try to do is prevent a determined bad actor from
+publishing a dishonest manifest. It makes dishonesty *attributable* — a manifest names
+its publisher, and the profile digest can be checked against the file — and leaves the
+consequences social.
+
+---
+
+## <a id="s10"></a>10. Consumption: per-profile Blender feeds
+
+The Blender extension side follows for free. `update_index_json.py` currently writes a
+single `index.json` with one add-on entry, `id: bonsaiPR`. A profile-aware version
+writes `profiles/<name>/index.json` per profile, letting a user subscribe their Blender
+to *a curation* rather than to "the" BonsaiPR:
+
+```
+https://raw.githubusercontent.com/theoryshaw/bonsaiPR/main/profiles/architecture-production/index.json
+```
+
+The existing root `index.json` stays exactly where it is and keeps working. The
+one-add-on-at-a-time constraint in the README (Bonsai *or* BonsaiPR, never both) still
+applies, and now applies across profiles too — worth a warning in the UI text.
+
+---
+
+## <a id="s11"></a>11. Phasing
+
+Deliberately ordered so each phase is useful alone and none of the early ones require
+falken10vdl to change how the canonical instance runs.
+
+| Phase | Deliverable | Requires |
+|---|---|---|
+| **0** | `federate.py` run over the existing `state.{asc,desc,upd}.json` as three synthetic publishers. Proves the signal math and the rendering against real data. | nothing |
+| **1** | Profile format + `load_profile()` + `.env` compat shim. Canonical instance expressible as `everything`. | small change at `00_clone_…py:41-62` |
+| **1.5** | `distill` ([§5](#s5)) — attribution ladder, provenance file, residue clustering, harvested conflict resolutions. Run against `Ryan_build-0.8.6-…` as the first real input. | phase 1 |
+| **2** | Manifest schema 2 (`publisher` / `profile` blocks) + `peers.json` + real cross-publisher aggregation. | small change at `02_upload_…py:1118` |
+| **3** | Per-profile `index.json` feeds. | `update_index_json.py` |
+| **4** | Maintainer digest — optionally as a bot comment or a status check on the upstream PR. | upstream buy-in |
+| **5** | Attestations and profile-level smoke results ([§8.2](#s8-2)). | curator opt-in |
+
+Phase 0 is the one that settles whether the signal math is worth anything, and it can
+be written and run today against data already in the repo.
+
+Phase 1.5 is arguably the one that settles whether *anyone will participate*, and it has
+its own standalone payoff regardless of federation: even if no one ever publishes a
+manifest, harvesting twelve conflict resolutions and surfacing a curator's unsubmitted
+features are worth the build on their own.
+
+---
+
+## <a id="s12"></a>12. Risks and open questions
+
+**Risks**
+
+- *The signal is thin until curation is selective.* Addressed by shipping profiles with
+  the aggregator ([§3.4](#s3-4)), but it means the first several months of federation data will
+  be sparse. Phase 0 exists partly to avoid over-investing before that is known.
+- *Curator burnout.* This proposal creates a new maintenance role. If maintaining a
+  profile is not substantially cheaper than maintaining a fork, nobody will do it.
+  `inherits` and `pin` keep the ongoing cost near zero; `distill` ([§5](#s5)) removes the
+  up-front cost, since the first profile is generated from a branch the curator
+  already has rather than authored from nothing.
+- *Distillation publishes something private by accident.* A build branch is a personal
+  workspace. The residue default is `private` and opt-in is per-cluster ([§5.4](#s5-4)), but
+  this is the failure mode most likely to actually happen and it deserves a second
+  pair of eyes on the implementation, not just the design.
+- *Fragmentation.* Nine curated builds mean nine slightly different Bonsais, and bug
+  reports get harder. Mitigated by every build already carrying a manifest that
+  states exactly what is in it — arguably *better* than today's situation.
+- *Schema churn.* Manifests are consumed by other people's tools. Schema 2 should be
+  additive-only, and the version must be checked, not assumed.
+- *Storage.* `automation/reports/` is already ~52 MB — 1.5 MB of live state/event JSON
+  plus 206 archived markdown reports. Aggregating N peers multiplies the fetch, not
+  the local storage, but each peer carries that same growing archive in their own repo,
+  and the archive retention policy is worth settling before N gets large.
+
+**Open questions**
+
+1. **Profile format: JSON or TOML?** JSON matches everything else in the repo
+   (`index.json`, `state.json`) and needs no dependency. TOML is materially nicer to
+   hand-edit and is stdlib-readable on 3.11+, but the automation host's Python version
+   is not pinned anywhere I can find. *Leaning JSON for consistency.*
+2. **Where does `peers.json` live** — canonical repo (one blessed list, simpler, more
+   centralized) or per-curator (fully federated, but no shared view)? *Leaning
+   per-curator with the canonical repo publishing a suggested default.*
+3. **Should the aggregate be published back to the canonical repo**, so there is one
+   well-known digest people can link to, even though anyone can compute their own?
+4. **Does upstream (IfcOpenShell) actually want this?** Phase 4 is the only phase that
+   touches upstream, and it should not be built until a maintainer says the digest
+   would be useful. Everything through phase 3 is valuable regardless of the answer.
+5. **Attestation format** — freeform prose is honest but unaggregatable; structured
+   fields are aggregatable but invite exactly the over-reading [§8.2](#s8-2) warns about.
+6. **Should the canonical instance build a `recorded` order** ([§5.3](#s5-3)) from a distilled
+   profile, alongside asc/desc/upd? It would test whether a human-validated order beats
+   all three guesses at inclusion — a cheap and fairly interesting experiment — but it
+   costs a fourth build per run.
+7. **Who owns a distilled profile?** It is derived from one person's branch but names
+   other people's PRs and may harvest their conflict resolutions. Attribution in the
+   provenance file is probably sufficient, but it should be settled before the first
+   one is published, not after.
+
+---
+
+## <a id="s13"></a>13. Summary
+
+Three artifacts — a **profile** (curation as a committed file), a **manifest** (a build
+declaring who made it and from what), and a **peer list** (who you aggregate) — plus
+two scripts: one that generalizes `compute_robustness()` from three merge orders to N
+publishers, and one that **distills a profile out of a build branch someone is already
+maintaining by hand**.
+
+Most of the machinery already exists. What is genuinely new is naming the curation and
+publishing who did it, which is what turns BonsaiPR from *one build everybody shares*
+into *a network of curated builds whose agreement means something*.
+
+The measurement in [§5.1](#s5-1) is the part I would point at first. A single poweruser branch
+turned out to be 98.75% mechanically attributable to open PRs, to carry roughly twelve
+hand-made conflict resolutions against a shared table that currently holds one, and to
+contain 77 commits of real feature work that upstream has never seen. Whatever happens
+to the federation idea, that branch — and every branch like it — is holding
+information the project could be using today.
