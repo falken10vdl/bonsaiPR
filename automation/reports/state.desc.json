@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 131,
-    "merged": 513,
-    "skipped_conflict": 117,
+    "failed": 134,
+    "merged": 512,
+    "skipped_conflict": 115,
     "skipped_draft": 56,
     "total": 817
   },
-  "generated_at": "2026-08-02T03:47:47Z",
+  "generated_at": "2026-08-02T05:45:14Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1112,7 +1112,7 @@
     "8261": {
       "author": "BIMvoice",
       "branch": "fix/raycast-none-verts-8187",
-      "head": "c1d3523",
+      "head": "a5ce824",
       "status": "merged",
       "title": "Bonsai: skip fully off-screen edges in 2D proximity snap (#8187)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8261"
@@ -1915,14 +1915,6 @@
       "status": "failed",
       "title": "IfcParse: free simple type instances created after load (#8070)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8419"
-    },
-    "8420": {
-      "author": "BIMvoice",
-      "branch": "fix-8043-polyline-closing-edge",
-      "head": "696e295",
-      "status": "merged",
-      "title": "Bonsai: close IfcPolyline loops by appending the closing edge (#8043)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8420"
     },
     "8421": {
       "author": "BIMvoice",
@@ -6382,7 +6374,8 @@
       "author": "BIMvoice",
       "branch": "fix/unassign-representation-none-crash",
       "head": "f5b36d7",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "geometry.unassign_representation: fix None crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9177"
     },
@@ -6462,7 +6455,8 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-material-unset-crash",
       "head": "0a02e19",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifctester: fix crash on unset layer material",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9187"
     },
@@ -6671,11 +6665,20 @@
     "9225": {
       "author": "CyrilWaechter",
       "branch": "auto-container-regen",
-      "head": "7b324e7",
+      "head": "aede574",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Use space's own container for regeneration instead of requiring default",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9225"
+    },
+    "9226": {
+      "author": "CyrilWaechter",
+      "branch": "fix-8043-boundary-loop-closing-edge",
+      "head": "766a25d",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: close IfcPolyline loops by appending the closing edge",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9226"
     }
   },
   "schema": 1
