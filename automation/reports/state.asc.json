@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 130,
+    "failed": 131,
     "merged": 516,
     "skipped_conflict": 114,
     "skipped_draft": 56,
-    "total": 816
+    "total": 817
   },
-  "generated_at": "2026-08-02T01:09:25Z",
+  "generated_at": "2026-08-02T03:11:29Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -954,7 +954,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "064ce00",
+      "head": "1cd78f4",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -2988,7 +2988,7 @@
       "author": "theoryshaw",
       "branch": "fix-mergeduplicatetypes-null-and-crossclass",
       "head": "684ec64",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8610"
     },
@@ -3752,7 +3752,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -6667,6 +6667,15 @@
       "status": "failed",
       "title": "Replace blender based space boundary generation with IFC based",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
+    },
+    "9225": {
+      "author": "CyrilWaechter",
+      "branch": "auto-container-regen",
+      "head": "7b324e7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Use space's own container for regeneration instead of requiring default",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9225"
     }
   },
   "schema": 1

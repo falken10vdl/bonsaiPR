@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 130,
+    "failed": 131,
     "merged": 513,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 816
+    "total": 817
   },
-  "generated_at": "2026-08-02T01:45:01Z",
+  "generated_at": "2026-08-02T03:47:47Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -954,7 +954,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "064ce00",
+      "head": "1cd78f4",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -6667,6 +6667,15 @@
       "status": "failed",
       "title": "Replace blender based space boundary generation with IFC based",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
+    },
+    "9225": {
+      "author": "CyrilWaechter",
+      "branch": "auto-container-regen",
+      "head": "7b324e7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Use space's own container for regeneration instead of requiring default",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9225"
     }
   },
   "schema": 1
