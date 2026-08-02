@@ -1619,3 +1619,8 @@
 {"ts": "2026-08-02T06:20:33Z", "order": "by-updated", "pr": 8420, "event": "removed", "from": "merged"}
 {"ts": "2026-08-02T06:20:33Z", "order": "by-updated", "pr": 9225, "event": "updated", "status": "failed", "from_head": "7b324e7", "to_head": "aede574"}
 {"ts": "2026-08-02T06:20:33Z", "order": "by-updated", "pr": 9226, "event": "added", "to": "failed"}
+{"ts": "2026-08-02T08:00:48Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-02T08:21:28Z", "order": "by-updated", "pr": 8434, "event": "updated", "status": "merged", "from_head": "4d643c2", "to_head": "9891bca"}
+{"ts": "2026-08-02T08:21:28Z", "order": "by-updated", "pr": 8553, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-08-02T08:21:28Z", "order": "by-updated", "pr": 8726, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-08-02T08:21:28Z", "order": "by-updated", "pr": 9087, "event": "updated", "status": "merged", "from_head": "2c2cc32", "to_head": "e451d61"}

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 134,
+    "failed": 132,
     "merged": 512,
-    "skipped_conflict": 115,
+    "skipped_conflict": 117,
     "skipped_draft": 56,
     "total": 817
   },
-  "generated_at": "2026-08-02T05:45:14Z",
+  "generated_at": "2026-08-02T07:45:55Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -2002,9 +2002,9 @@
     "8434": {
       "author": "BIMvoice",
       "branch": "fix-8034-camera-size-persist",
-      "head": "4d643c2",
+      "head": "9891bca",
       "status": "merged",
-      "title": "Bonsai: persist a drawing camera size edit into the IFC representation (#8034)",
+      "title": "Bonsai: persist a drawing camera size edit, without calling an operator from a property callback (#8034)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8434"
     },
     "8435": {
@@ -5739,7 +5739,7 @@
     "9087": {
       "author": "BIMvoice",
       "branch": "9031-camera-width-height-zero-crash",
-      "head": "2c2cc32",
+      "head": "e451d61",
       "status": "merged",
       "title": "Bonsai: stop the drawing camera Width/Height from reaching zero (refs #9031, not the crash)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9087"
@@ -6374,8 +6374,7 @@
       "author": "BIMvoice",
       "branch": "fix/unassign-representation-none-crash",
       "head": "f5b36d7",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "geometry.unassign_representation: fix None crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9177"
     },
@@ -6455,8 +6454,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-material-unset-crash",
       "head": "0a02e19",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "ifctester: fix crash on unset layer material",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9187"
     },

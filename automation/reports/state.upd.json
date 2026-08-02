@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 817
   },
-  "generated_at": "2026-08-02T06:20:33Z",
+  "generated_at": "2026-08-02T08:21:28Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -2002,9 +2002,9 @@
     "8434": {
       "author": "BIMvoice",
       "branch": "fix-8034-camera-size-persist",
-      "head": "4d643c2",
+      "head": "9891bca",
       "status": "merged",
-      "title": "Bonsai: persist a drawing camera size edit into the IFC representation (#8034)",
+      "title": "Bonsai: persist a drawing camera size edit, without calling an operator from a property callback (#8034)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8434"
     },
     "8435": {
@@ -2762,7 +2762,7 @@
       "author": "BIMvoice",
       "branch": "ship-6481-parametric-profile",
       "head": "e1c0e7b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: preserve a parametric profile through an edit round trip (#6481)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8553"
     },
@@ -3595,7 +3595,7 @@
       "author": "BIMvoice",
       "branch": "fix-7614-shared-profile-edit-refresh",
       "head": "c3b3ef4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: refresh every sharing element's mesh after an extrusion profile edit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8726"
     },
@@ -5739,7 +5739,7 @@
     "9087": {
       "author": "BIMvoice",
       "branch": "9031-camera-width-height-zero-crash",
-      "head": "2c2cc32",
+      "head": "e451d61",
       "status": "merged",
       "title": "Bonsai: stop the drawing camera Width/Height from reaching zero (refs #9031, not the crash)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9087"

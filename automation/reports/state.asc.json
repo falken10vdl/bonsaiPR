@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 132,
-    "merged": 515,
-    "skipped_conflict": 114,
+    "merged": 505,
+    "skipped_conflict": 124,
     "skipped_draft": 56,
     "total": 817
   },
-  "generated_at": "2026-08-02T05:09:29Z",
+  "generated_at": "2026-08-02T07:10:18Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2002,9 +2002,9 @@
     "8434": {
       "author": "BIMvoice",
       "branch": "fix-8034-camera-size-persist",
-      "head": "4d643c2",
+      "head": "9891bca",
       "status": "merged",
-      "title": "Bonsai: persist a drawing camera size edit into the IFC representation (#8034)",
+      "title": "Bonsai: persist a drawing camera size edit, without calling an operator from a property callback (#8034)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8434"
     },
     "8435": {
@@ -3744,7 +3744,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4417,7 +4417,7 @@
       "author": "BIMvoice",
       "branch": "6305-footing-gross-outer-area",
       "head": "ff74339",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: compute footing gross area, volume and outer surface on the ifcopenshell engine (#6305)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8868"
     },
@@ -4617,7 +4617,7 @@
       "author": "BIMvoice",
       "branch": "2848-cpp-docs-examples",
       "head": "86e771e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "docs: add C++ geometry iterator example (empty examples, #2848)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8904"
     },
@@ -4801,7 +4801,7 @@
       "author": "BIMvoice",
       "branch": "fix-5374-cable-segment-default-type",
       "head": "9bee9f8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: default profile for cable carrier / cable segment tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8932"
     },
@@ -5098,7 +5098,7 @@
       "author": "BIMvoice",
       "branch": "6100-orthogonal-path-routing",
       "head": "f97c5ac",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell.util: add a standalone orthogonal path calculator for MEP routing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8980"
     },
@@ -5380,7 +5380,7 @@
       "author": "BIMvoice",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
       "head": "c8aa3b3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },
@@ -5524,7 +5524,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-ifc2x3-predefined-pset-crash",
       "head": "f3751e9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifctester: support IFC2X3 predefined property sets and fix a wrong SYSTEM fail",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9059"
     },
@@ -5668,7 +5668,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcsverchok-multi-class-overwrite-remaining",
       "head": "c78df1b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcsverchok: stop batched node inputs overwriting each other",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9078"
     },
@@ -5739,7 +5739,7 @@
     "9087": {
       "author": "BIMvoice",
       "branch": "9031-camera-width-height-zero-crash",
-      "head": "2c2cc32",
+      "head": "e451d61",
       "status": "merged",
       "title": "Bonsai: stop the drawing camera Width/Height from reaching zero (refs #9031, not the crash)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9087"
@@ -5804,7 +5804,7 @@
       "author": "BIMvoice",
       "branch": "fix/type-relating-type-classes-none-enum",
       "head": "637252e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: return an empty list, not None, from the relating type enum callback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9095"
     },
@@ -6101,7 +6101,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-splitbystorey-dead-code",
       "head": "a7afa93",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: drop dead code in SplitByBuildingStorey",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9141"
     },
@@ -6246,7 +6246,7 @@
       "author": "BIMvoice",
       "branch": "fix-9xxx-ifc2x3-base-qto-relatingpropertydefinition",
       "head": "b813124",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix three IFC2X3-only defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9160"
     },
@@ -6566,7 +6566,7 @@
       "author": "BIMvoice",
       "branch": "fix/mergeduplicatetypes-tag-attribute-guard",
       "head": "c48bbf6",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: guard Tag getattr for non-product type objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9202"
     },
@@ -6663,7 +6663,7 @@
     "9225": {
       "author": "CyrilWaechter",
       "branch": "auto-container-regen",
-      "head": "7b324e7",
+      "head": "aede574",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Use space's own container for regeneration instead of requiring default",
@@ -6672,7 +6672,7 @@
     "9226": {
       "author": "CyrilWaechter",
       "branch": "fix-8043-boundary-loop-closing-edge",
-      "head": "5410855",
+      "head": "766a25d",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: close IfcPolyline loops by appending the closing edge",
