@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 133,
-    "merged": 515,
+    "failed": 129,
+    "merged": 520,
     "skipped_conflict": 120,
     "skipped_draft": 53,
-    "total": 821
+    "total": 822
   },
-  "generated_at": "2026-08-03T14:47:43Z",
+  "generated_at": "2026-08-03T16:47:05Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -159,8 +159,9 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "fff3e0c",
-      "status": "skipped_conflict",
+      "head": "289689c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
     },
@@ -955,7 +956,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "a655ef6",
+      "head": "83a7836",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -2964,7 +2965,7 @@
       "author": "thierry-FreeBSD",
       "branch": "v0.8.0",
       "head": "65ade98",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "cmake/CMakeLists.txt: fix for dependencies",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8604"
     },
@@ -3414,9 +3415,8 @@
     "8694": {
       "author": "BIMvoice",
       "branch": "fix-3748-sloped-space-roof",
-      "head": "677da41",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "5a7fea8",
+      "status": "skipped_conflict",
       "title": "Bonsai: opt-in space generation that follows sloping roofs and slabs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8694"
     },
@@ -3603,9 +3603,8 @@
     "8727": {
       "author": "BIMvoice",
       "branch": "fix-7663-item-mode-half-space-selection",
-      "head": "bcc355f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "1071273",
+      "status": "merged",
       "title": "Bonsai: confine Item Mode half-space cuts to the explicitly selected item",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8727"
     },
@@ -3668,9 +3667,8 @@
     "8739": {
       "author": "BIMvoice",
       "branch": "fix-7477-space-visibility-orphaned-object",
-      "head": "18fbcac",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "d590d36",
+      "status": "skipped_conflict",
       "title": "Bonsai: skip spaces with no linked Blender object when toggling visibility",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8739"
     },
@@ -4873,9 +4871,8 @@
     "8944": {
       "author": "BIMvoice",
       "branch": "fix/8934-spatial-panel-regex-filter",
-      "head": "2dd0af8",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "398c29e",
+      "status": "merged",
       "title": "Bonsai: add regex pattern matching to spatial decomposition panel filters",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8944"
     },
@@ -6101,9 +6098,9 @@
     "9142": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-restriction-total-fraction-digits",
-      "head": "b9b78be",
+      "head": "38daf6c",
       "status": "merged",
-      "title": "ifctester: implement totalDigits and fractionDigits",
+      "title": "ifctester: warn instead of silently ignoring unsupported restrictions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9142"
     },
     "9143": {
@@ -6173,9 +6170,8 @@
     "9152": {
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
-      "head": "3fea62c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "6b2450d",
+      "status": "merged",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
     },
@@ -6710,6 +6706,14 @@
       "status": "merged",
       "title": "dev_environment.py: survive a locked file while symlinking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
+    },
+    "9241": {
+      "author": "BIMvoice",
+      "branch": "fix/black-drift-referent-names",
+      "head": "362dc32",
+      "status": "merged",
+      "title": "tests: fix black drift blocking unrelated commits",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9241"
     }
   },
   "schema": 1

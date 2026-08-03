@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 133,
-    "merged": 518,
-    "skipped_conflict": 116,
+    "failed": 129,
+    "merged": 524,
+    "skipped_conflict": 115,
     "skipped_draft": 53,
-    "total": 820
+    "total": 821
   },
-  "generated_at": "2026-08-03T14:10:57Z",
+  "generated_at": "2026-08-03T16:10:45Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -159,8 +159,9 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "fff3e0c",
-      "status": "merged",
+      "head": "289689c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
     },
@@ -955,7 +956,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "a655ef6",
+      "head": "83a7836",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1554,7 +1555,7 @@
       "author": "BIMvoice",
       "branch": "fix-4332-door-flip-2d",
       "head": "8351f85",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: flip fills against the Body representation so doors don't jump out of host in 2D (#4332)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8346"
     },
@@ -1904,7 +1905,7 @@
       "author": "BIMvoice",
       "branch": "fix-7533-duplicate-boolean-remap",
       "head": "8267e94",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: preserve half space cuts when duplicating an element (#7533)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8417"
     },
@@ -3415,8 +3416,7 @@
       "author": "BIMvoice",
       "branch": "fix-3748-sloped-space-roof",
       "head": "677da41",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: opt-in space generation that follows sloping roofs and slabs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8694"
     },
@@ -3604,8 +3604,7 @@
       "author": "BIMvoice",
       "branch": "fix-7663-item-mode-half-space-selection",
       "head": "bcc355f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: confine Item Mode half-space cuts to the explicitly selected item",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8727"
     },
@@ -3669,8 +3668,7 @@
       "author": "BIMvoice",
       "branch": "fix-7477-space-visibility-orphaned-object",
       "head": "18fbcac",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: skip spaces with no linked Blender object when toggling visibility",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8739"
     },
@@ -3761,7 +3759,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3302-mirror-joins",
       "head": "f3ed4f4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: resync mirrored walls' openings so voids follow their door/window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
     },
@@ -4874,8 +4872,7 @@
       "author": "BIMvoice",
       "branch": "fix/8934-spatial-panel-regex-filter",
       "head": "2dd0af8",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "Bonsai: add regex pattern matching to spatial decomposition panel filters",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8944"
     },
@@ -6174,8 +6171,7 @@
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
       "head": "3fea62c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
     },
@@ -6335,7 +6331,7 @@
       "author": "BIMvoice",
       "branch": "fix/util-optional-material-position-crashes",
       "head": "fa629c5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util: fix 2 crashes on unset optional attrs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9173"
     },
@@ -6702,6 +6698,14 @@
       "status": "skipped_conflict",
       "title": "Bonsai: GrossSideArea equals NetSideArea when openings are baked in (#9235)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9236"
+    },
+    "9240": {
+      "author": "theoryshaw",
+      "branch": "dev-environment-locked-file",
+      "head": "f7fa4b9",
+      "status": "merged",
+      "title": "dev_environment.py: survive a locked file while symlinking",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
     }
   },
   "schema": 1

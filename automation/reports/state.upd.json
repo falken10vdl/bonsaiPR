@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 134,
-    "merged": 514,
-    "skipped_conflict": 120,
+    "failed": 136,
+    "merged": 515,
+    "skipped_conflict": 118,
     "skipped_draft": 53,
-    "total": 821
+    "total": 822
   },
-  "generated_at": "2026-08-03T15:24:49Z",
+  "generated_at": "2026-08-03T17:23:27Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -159,7 +159,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "fff3e0c",
+      "head": "289689c",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add true object mirroring operator",
@@ -573,7 +573,8 @@
       "author": "jazzific",
       "branch": "documentation",
       "head": "91ebb81",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Documentation guide for Spaces basic modelling",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7863"
     },
@@ -820,7 +821,8 @@
       "author": "c-mellueh",
       "branch": "use-get_class_properties-instead-of-get_class",
       "head": "8b7348a",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Use get class properties instead of get class",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7986"
     },
@@ -956,7 +958,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "a655ef6",
+      "head": "83a7836",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1025,7 +1027,7 @@
       "author": "theoryshaw",
       "branch": "fix-snap-stale-object-reference",
       "head": "3248cc7",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix stale object reference crash in measure tool snapping",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
     },
@@ -1227,7 +1229,7 @@
       "author": "BIMvoice",
       "branch": "fix-cascade-milestone-duration-6834",
       "head": "5f1e55e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "sequence.cascade_schedule: milestones cascade with zero duration (#6834)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8280"
     },
@@ -1712,7 +1714,8 @@
       "author": "BIMvoice",
       "branch": "feat-validate-crash-diagnostics",
       "head": "61750d7",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Add ifcopenshell.diagnostics: report the entity most likely behind a crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8378"
     },
@@ -2440,7 +2443,8 @@
       "author": "BIMvoice",
       "branch": "fix-6125-nonmanifold-volume",
       "head": "62257e0",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Return nan for non-manifold volume and skip it in QTO (#6125)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8503"
     },
@@ -3415,9 +3419,8 @@
     "8694": {
       "author": "BIMvoice",
       "branch": "fix-3748-sloped-space-roof",
-      "head": "677da41",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "5a7fea8",
+      "status": "merged",
       "title": "Bonsai: opt-in space generation that follows sloping roofs and slabs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8694"
     },
@@ -3604,9 +3607,8 @@
     "8727": {
       "author": "BIMvoice",
       "branch": "fix-7663-item-mode-half-space-selection",
-      "head": "bcc355f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "1071273",
+      "status": "merged",
       "title": "Bonsai: confine Item Mode half-space cuts to the explicitly selected item",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8727"
     },
@@ -3669,9 +3671,8 @@
     "8739": {
       "author": "BIMvoice",
       "branch": "fix-7477-space-visibility-orphaned-object",
-      "head": "18fbcac",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "d590d36",
+      "status": "merged",
       "title": "Bonsai: skip spaces with no linked Blender object when toggling visibility",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8739"
     },
@@ -4098,7 +4099,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-dead-gherkin-runner",
       "head": "6e152d6",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: remove the dead Gherkin runner from test/bim/bootstrap.py",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8809"
     },
@@ -4874,7 +4876,7 @@
     "8944": {
       "author": "BIMvoice",
       "branch": "fix/8934-spatial-panel-regex-filter",
-      "head": "2dd0af8",
+      "head": "398c29e",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: add regex pattern matching to spatial decomposition panel filters",
@@ -4940,7 +4942,7 @@
       "author": "BIMvoice",
       "branch": "fix/7889-toggle-hide-spaces-missing-obj",
       "head": "050fea6",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix crash toggling hide on spaces not loaded into the scene",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8958"
     },
@@ -6102,9 +6104,9 @@
     "9142": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-restriction-total-fraction-digits",
-      "head": "b9b78be",
+      "head": "38daf6c",
       "status": "merged",
-      "title": "ifctester: implement totalDigits and fractionDigits",
+      "title": "ifctester: warn instead of silently ignoring unsupported restrictions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9142"
     },
     "9143": {
@@ -6174,9 +6176,8 @@
     "9152": {
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
-      "head": "3fea62c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "6b2450d",
+      "status": "merged",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
     },
@@ -6472,7 +6473,8 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-verdict-audit",
       "head": "20e685b",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifctester: fix four wrong-verdict defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9190"
     },
@@ -6641,7 +6643,7 @@
       "author": "BIMvoice",
       "branch": "fix/9214-space-hidden-on-generate",
       "head": "586bf2f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: a space you just generated is hidden immediately (#9214)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9219"
     },
@@ -6711,6 +6713,14 @@
       "status": "merged",
       "title": "dev_environment.py: survive a locked file while symlinking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
+    },
+    "9241": {
+      "author": "BIMvoice",
+      "branch": "fix/black-drift-referent-names",
+      "head": "362dc32",
+      "status": "merged",
+      "title": "tests: fix black drift blocking unrelated commits",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9241"
     }
   },
   "schema": 1
