@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 133,
-    "merged": 514,
-    "skipped_conflict": 119,
+    "merged": 515,
+    "skipped_conflict": 120,
     "skipped_draft": 53,
-    "total": 819
+    "total": 821
   },
-  "generated_at": "2026-08-03T12:48:06Z",
+  "generated_at": "2026-08-03T14:47:43Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -2964,7 +2964,7 @@
       "author": "thierry-FreeBSD",
       "branch": "v0.8.0",
       "head": "65ade98",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "cmake/CMakeLists.txt: fix for dependencies",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8604"
     },
@@ -6694,6 +6694,22 @@
       "status": "merged",
       "title": "Bonsai: grid axis label truncation and duplicate axis objects (#9232)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
+    },
+    "9236": {
+      "author": "BIMvoice",
+      "branch": "fix-9235-gross-side-area-baked-openings",
+      "head": "bda130e",
+      "status": "merged",
+      "title": "Bonsai: GrossSideArea equals NetSideArea when openings are baked in (#9235)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9236"
+    },
+    "9240": {
+      "author": "theoryshaw",
+      "branch": "dev-environment-locked-file",
+      "head": "f7fa4b9",
+      "status": "merged",
+      "title": "dev_environment.py: survive a locked file while symlinking",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
     }
   },
   "schema": 1

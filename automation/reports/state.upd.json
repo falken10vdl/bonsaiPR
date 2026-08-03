@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 133,
-    "merged": 513,
-    "skipped_conflict": 121,
+    "failed": 134,
+    "merged": 514,
+    "skipped_conflict": 120,
     "skipped_draft": 53,
-    "total": 820
+    "total": 821
   },
-  "generated_at": "2026-08-03T13:24:43Z",
+  "generated_at": "2026-08-03T15:24:49Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -160,7 +160,8 @@
       "author": "Rob2309",
       "branch": "general-mirroring",
       "head": "fff3e0c",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
     },
@@ -6702,6 +6703,14 @@
       "status": "merged",
       "title": "Bonsai: GrossSideArea equals NetSideArea when openings are baked in (#9235)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9236"
+    },
+    "9240": {
+      "author": "theoryshaw",
+      "branch": "dev-environment-locked-file",
+      "head": "f7fa4b9",
+      "status": "merged",
+      "title": "dev_environment.py: survive a locked file while symlinking",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
     }
   },
   "schema": 1
