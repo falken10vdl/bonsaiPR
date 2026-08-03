@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 133,
-    "merged": 511,
-    "skipped_conflict": 123,
+    "merged": 513,
+    "skipped_conflict": 121,
     "skipped_draft": 53,
     "total": 820
   },
-  "generated_at": "2026-08-03T11:24:04Z",
+  "generated_at": "2026-08-03T13:24:43Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -778,7 +778,7 @@
       "author": "theoryshaw",
       "branch": "fix/duplicate-opening-not-applied",
       "head": "bd934d9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #7948: Fix duplicate not applying openings to geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7963"
     },
@@ -2439,7 +2439,7 @@
       "author": "BIMvoice",
       "branch": "fix-6125-nonmanifold-volume",
       "head": "62257e0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Return nan for non-manifold volume and skip it in QTO (#6125)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8503"
     },
@@ -3871,7 +3871,7 @@
       "author": "BIMvoice",
       "branch": "2381-parent-task-animation",
       "head": "4d9785e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: allow 4D animation at parent task granularity",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8774"
     },
@@ -4230,7 +4230,7 @@
       "author": "BIMvoice",
       "branch": "fix-6895-shape-elevation-guard",
       "head": "86de6c2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.util.shape: fail loudly on non-finite elevation instead of returning the infinity sentinel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8832"
     },
@@ -6679,14 +6679,6 @@
       "title": "dev_environment.py: detect Blender's bundled Python from disk",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
     },
-    "9229": {
-      "author": "brunopostle",
-      "branch": "ifcmcp-tool-descriptions-single-source",
-      "head": "8f89086",
-      "status": "merged",
-      "title": "ifcmcp: fix descriptions in ifcquery/ifcedit instead of duplicating",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9229"
-    },
     "9233": {
       "author": "BIMvoice",
       "branch": "fix-9230-void-profile-open-loop",
@@ -6698,10 +6690,18 @@
     "9234": {
       "author": "BIMvoice",
       "branch": "fix-9232-grid-axis-dot-truncation",
-      "head": "c5da61d",
+      "head": "261d8c6",
       "status": "merged",
-      "title": "Bonsai: grid axis labels truncate AxisTags containing a dot (#9232)",
+      "title": "Bonsai: grid axis label truncation and duplicate axis objects (#9232)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
+    },
+    "9236": {
+      "author": "BIMvoice",
+      "branch": "fix-9235-gross-side-area-baked-openings",
+      "head": "bda130e",
+      "status": "merged",
+      "title": "Bonsai: GrossSideArea equals NetSideArea when openings are baked in (#9235)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9236"
     }
   },
   "schema": 1

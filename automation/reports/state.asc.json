@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 133,
-    "merged": 519,
-    "skipped_conflict": 115,
+    "failed": 138,
+    "merged": 503,
+    "skipped_conflict": 125,
     "skipped_draft": 53,
-    "total": 820
+    "total": 819
   },
-  "generated_at": "2026-08-03T10:10:23Z",
+  "generated_at": "2026-08-03T12:11:27Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1530,7 +1530,8 @@
       "author": "BIMvoice",
       "branch": "fix-3217-auto-context",
       "head": "1e91c58",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: auto-create Model/Body context on drawing creation for external IFCs (#3217)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8343"
     },
@@ -1775,7 +1776,7 @@
       "author": "BIMvoice",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "82a4117",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix BCF 2.1 viewpoint and snapshot file names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
@@ -3375,7 +3376,8 @@
       "author": "BIMvoice",
       "branch": "fix-8631-vs2017-msbuild-detect",
       "head": "a2e0a26",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "win: pre-detect VS2017 MSBuild path before building mpir dependency",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8685"
     },
@@ -3745,7 +3747,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4230,7 +4232,8 @@
       "author": "BIMvoice",
       "branch": "fix-6895-shape-elevation-guard",
       "head": "86de6c2",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcopenshell.util.shape: fail loudly on non-finite elevation instead of returning the infinity sentinel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8832"
     },
@@ -4458,7 +4461,7 @@
       "author": "BIMvoice",
       "branch": "4748-stacked-csv-export",
       "head": "37c5b8f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stack multiple saved CSV templates into one spreadsheet export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8875"
     },
@@ -4650,7 +4653,7 @@
       "author": "BIMvoice",
       "branch": "feat-4252-ifccsv-split-worksheets",
       "head": "2638da1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcCSV: split export results into multiple worksheets (split_by)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8912"
     },
@@ -4834,7 +4837,7 @@
       "author": "BIMvoice",
       "branch": "fix-6063-select-type-is-a-by-type",
       "head": "1612da8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell.file: support EXPRESS SELECT types in is_a() and by_type()",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8937"
     },
@@ -4987,7 +4990,7 @@
       "author": "BIMvoice",
       "branch": "fix/6118-extract-selected-elements",
       "head": "41f43a1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add File menu entry to export selected elements as a new IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8964"
     },
@@ -5131,7 +5134,7 @@
       "author": "BIMvoice",
       "branch": "8984-leader-text-gap",
       "head": "4ee1364",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a printed-sheet gap between leader lines and their text",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8987"
     },
@@ -5139,7 +5142,8 @@
       "author": "BIMvoice",
       "branch": "fix/8945-extractelements-progress-ui",
       "head": "8870292",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: report real progress while a patch recipe runs, instead of freezing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8988"
     },
@@ -5260,7 +5264,7 @@
       "author": "BIMvoice",
       "branch": "fix/wall-body-context-regenerate",
       "head": "fa437cd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "geometry.regenerate_wall_representation: create the Body context when missing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9012"
     },
@@ -5397,7 +5401,7 @@
       "author": "BIMvoice",
       "branch": "fix/covering-thumbnail-key-mismatch",
       "head": "3d15c87",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix the Covering Tool type thumbnail never appearing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9041"
     },
@@ -5533,7 +5537,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcfm-cobie24legacy-zone-crash",
       "head": "caf0fab",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcfm: guard COBie zone and container lookups, and add the package's first tests",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9061"
     },
@@ -5677,7 +5681,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifccityjson-transform-not-applied",
       "head": "a732706",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifccityjson: apply the CityJSON transform, fixing 1000x geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9080"
     },
@@ -5813,7 +5817,7 @@
       "author": "BIMvoice",
       "branch": "fix/archicad-doorswings-ifc2x3",
       "head": "b8b6044",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: fix FixArchiCADToRevitDoorSwings crashing, and make it work on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9097"
     },
@@ -5925,7 +5929,8 @@
       "author": "BIMvoice",
       "branch": "ifc5d-wrong-number-audit",
       "head": "f8b1fcb",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifc5d: fix four wrong-number defects in cost export, cost import and weight quantities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
     },
@@ -5958,7 +5963,7 @@
       "author": "BIMvoice",
       "branch": "fix/cost-unitbasis-leak",
       "head": "68a9949",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "cost: stop edit_cost_value orphaning the old UnitBasis into the file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9118"
     },
@@ -6102,7 +6107,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-restriction-total-fraction-digits",
       "head": "b9b78be",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifctester: implement totalDigits and fractionDigits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9142"
     },
@@ -6247,7 +6252,7 @@
       "author": "BIMvoice",
       "branch": "fix/api-empty-aggregate-corruption",
       "head": "2ac6e0b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "api: stop three functions writing invalid IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9161"
     },
@@ -6391,7 +6396,7 @@
       "author": "BIMvoice",
       "branch": "fix/rocksdb-attr-error",
       "head": "dedfd9e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "file: raise AttributeError for bad rocksdb attr",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9180"
     },
@@ -6543,7 +6548,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcfm-cobie-zero-value-properties-dropped",
       "head": "e8e95f8",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcfm: COBie export drops properties valued zero or False",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9200"
     },
@@ -6678,14 +6683,6 @@
       "status": "merged",
       "title": "dev_environment.py: detect Blender's bundled Python from disk",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
-    },
-    "9229": {
-      "author": "brunopostle",
-      "branch": "ifcmcp-tool-descriptions-single-source",
-      "head": "8f89086",
-      "status": "merged",
-      "title": "ifcmcp: fix descriptions in ifcquery/ifcedit instead of duplicating",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9229"
     },
     "9233": {
       "author": "BIMvoice",

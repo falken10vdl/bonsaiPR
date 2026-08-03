@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 133,
-    "merged": 515,
+    "merged": 514,
     "skipped_conflict": 119,
     "skipped_draft": 53,
-    "total": 820
+    "total": 819
   },
-  "generated_at": "2026-08-03T10:46:33Z",
+  "generated_at": "2026-08-03T12:48:06Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6679,14 +6679,6 @@
       "title": "dev_environment.py: detect Blender's bundled Python from disk",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
     },
-    "9229": {
-      "author": "brunopostle",
-      "branch": "ifcmcp-tool-descriptions-single-source",
-      "head": "8f89086",
-      "status": "merged",
-      "title": "ifcmcp: fix descriptions in ifcquery/ifcedit instead of duplicating",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9229"
-    },
     "9233": {
       "author": "BIMvoice",
       "branch": "fix-9230-void-profile-open-loop",
@@ -6698,9 +6690,9 @@
     "9234": {
       "author": "BIMvoice",
       "branch": "fix-9232-grid-axis-dot-truncation",
-      "head": "c5da61d",
+      "head": "261d8c6",
       "status": "merged",
-      "title": "Bonsai: grid axis labels truncate AxisTags containing a dot (#9232)",
+      "title": "Bonsai: grid axis label truncation and duplicate axis objects (#9232)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
     }
   },
