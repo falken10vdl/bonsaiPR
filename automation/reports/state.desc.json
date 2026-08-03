@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 133,
-    "merged": 514,
-    "skipped_conflict": 118,
+    "merged": 515,
+    "skipped_conflict": 119,
     "skipped_draft": 53,
-    "total": 818
+    "total": 820
   },
-  "generated_at": "2026-08-03T08:49:22Z",
+  "generated_at": "2026-08-03T10:46:33Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6134,7 +6134,7 @@
       "author": "BIMvoice",
       "branch": "fix-6995-cross-platform-font-fallback",
       "head": "fff948b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: find drawing fonts on macOS and Linux too",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9146"
     },
@@ -6686,6 +6686,22 @@
       "status": "merged",
       "title": "ifcmcp: fix descriptions in ifcquery/ifcedit instead of duplicating",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9229"
+    },
+    "9233": {
+      "author": "BIMvoice",
+      "branch": "fix-9230-void-profile-open-loop",
+      "head": "cb7e6ad",
+      "status": "merged",
+      "title": "Bonsai: crash editing a void whose curve encloses no area (#9230)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9233"
+    },
+    "9234": {
+      "author": "BIMvoice",
+      "branch": "fix-9232-grid-axis-dot-truncation",
+      "head": "c5da61d",
+      "status": "merged",
+      "title": "Bonsai: grid axis labels truncate AxisTags containing a dot (#9232)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
     }
   },
   "schema": 1

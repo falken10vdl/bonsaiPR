@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 133,
-    "merged": 518,
+    "merged": 519,
     "skipped_conflict": 115,
     "skipped_draft": 53,
-    "total": 819
+    "total": 820
   },
-  "generated_at": "2026-08-03T08:11:15Z",
+  "generated_at": "2026-08-03T10:10:23Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2981,7 +2981,7 @@
       "author": "theoryshaw",
       "branch": "fix-mergeduplicatetypes-null-and-crossclass",
       "head": "684ec64",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8610"
     },
@@ -4927,14 +4927,6 @@
       "title": "Bonsai: fix null representation for items added via the Asset Browser",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8954"
     },
-    "8955": {
-      "author": "mtngrj",
-      "branch": "ifcmcp-tool-descriptions",
-      "head": "baefbac",
-      "status": "merged",
-      "title": "Add missing tool descriptions to ifcmcp server",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8955"
-    },
     "8956": {
       "author": "BIMvoice",
       "branch": "fix/8945-append-asset-perf",
@@ -6694,6 +6686,22 @@
       "status": "merged",
       "title": "ifcmcp: fix descriptions in ifcquery/ifcedit instead of duplicating",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9229"
+    },
+    "9233": {
+      "author": "BIMvoice",
+      "branch": "fix-9230-void-profile-open-loop",
+      "head": "cb7e6ad",
+      "status": "merged",
+      "title": "Bonsai: crash editing a void whose curve encloses no area (#9230)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9233"
+    },
+    "9234": {
+      "author": "BIMvoice",
+      "branch": "fix-9232-grid-axis-dot-truncation",
+      "head": "c5da61d",
+      "status": "skipped_conflict",
+      "title": "Bonsai: grid axis labels truncate AxisTags containing a dot (#9232)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
     }
   },
   "schema": 1
