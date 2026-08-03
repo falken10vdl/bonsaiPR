@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 133,
-    "merged": 515,
+    "merged": 514,
     "skipped_conflict": 118,
     "skipped_draft": 53,
-    "total": 819
+    "total": 818
   },
-  "generated_at": "2026-08-02T17:46:02Z",
+  "generated_at": "2026-08-03T08:49:22Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "1cd78f4",
+      "head": "a655ef6",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -4926,14 +4926,6 @@
       "status": "merged",
       "title": "Bonsai: fix null representation for items added via the Asset Browser",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8954"
-    },
-    "8955": {
-      "author": "mtngrj",
-      "branch": "ifcmcp-tool-descriptions",
-      "head": "baefbac",
-      "status": "merged",
-      "title": "Add missing tool descriptions to ifcmcp server",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8955"
     },
     "8956": {
       "author": "BIMvoice",
