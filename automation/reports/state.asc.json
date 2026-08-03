@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 524,
-    "skipped_conflict": 115,
+    "merged": 509,
+    "skipped_conflict": 132,
     "skipped_draft": 53,
-    "total": 821
+    "total": 823
   },
-  "generated_at": "2026-08-03T16:10:45Z",
+  "generated_at": "2026-08-03T18:11:13Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -391,7 +391,7 @@
       "author": "theoryshaw",
       "branch": "Generalize_ExcludeAnnotation_to_any_IFC_element_2",
       "head": "8634569",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Generalize ExcludeAnnotation to any IFC element",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7715"
     },
@@ -671,7 +671,7 @@
       "author": "theoryshaw",
       "branch": "fix-3742-coplanar-bonsai-projection_2",
       "head": "5a1723f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "* Fix #3742: Remove coplanar boundary lines between adjacent same-mat…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7908"
     },
@@ -812,7 +812,7 @@
       "author": "theoryshaw",
       "branch": "AI_effort_estimate",
       "head": "c7ff18d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "The is a proposal include an **effort estimate** in the commit messag…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7977"
     },
@@ -949,7 +949,7 @@
       "author": "theoryshaw",
       "branch": "fix/remove-drawing-corrupted",
       "head": "d538542",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix remove_drawing crash on corrupted drawing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8123"
     },
@@ -1099,7 +1099,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcclash-notrequired-keys-8224",
       "head": "b6626db",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcClash: default NotRequired clash set keys instead of asserting (#8224)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8257"
     },
@@ -1243,7 +1243,7 @@
       "author": "BIMvoice",
       "branch": "fix-msp2ifc-optional-elements-5556",
       "head": "f8d48de",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc4d: MSP2Ifc tolerates optional task elements (#5556)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8285"
     },
@@ -1339,7 +1339,7 @@
       "author": "BIMvoice",
       "branch": "fix-remove-drawing-no-document-6518",
       "head": "c6b01d5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: remove_drawing tolerates a drawing with no document (#6518)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8312"
     },
@@ -1379,7 +1379,7 @@
       "author": "BIMvoice",
       "branch": "fix-shape-dimensions-empty-geometry-7147",
       "head": "73360ab",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Skip quantity takeoff for elements with empty geometry (#7147)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8318"
     },
@@ -1523,7 +1523,7 @@
       "author": "BIMvoice",
       "branch": "fix-4606-mixed-repr",
       "head": "2979c2c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: import representations that mix polygons and curves (#4606)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8340"
     },
@@ -1678,7 +1678,7 @@
       "author": "BIMvoice",
       "branch": "fix-4128-sklearn-graceful",
       "head": "8781090",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcclash: fail gracefully when scikit-learn is missing for smart grouping (#4128)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8372"
     },
@@ -1833,7 +1833,7 @@
       "author": "BIMvoice",
       "branch": "fix-7233-work",
       "head": "7d3276f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: expose 2-Point Arc resolution in redo panel (#7233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8402"
     },
@@ -2307,7 +2307,7 @@
       "author": "BIMvoice",
       "branch": "bv-7835-examples-build-convert",
       "head": "6b84ff0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "build: decouple the OpenCascade examples from BUILD_CONVERT (#7835)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8478"
     },
@@ -2506,7 +2506,7 @@
       "author": "BIMvoice",
       "branch": "fix-8036-drawing-none-doc",
       "head": "1eaaa43",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: guard drawing with no document reference in get_sheet_references (#8036, #7266)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8512"
     },
@@ -2522,7 +2522,7 @@
       "author": "BIMvoice",
       "branch": "fix-7154-aggregate-cycle",
       "head": "0d2736b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Refuse cyclic aggregation in aggregate.assign_object (#7154)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8514"
     },
@@ -2660,7 +2660,7 @@
       "author": "BIMvoice",
       "branch": "ship-7454-extend-guard",
       "head": "0ee86ac",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: clean error instead of a traceback for Extend To Underside on a non-wall selection (#7454)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8536"
     },
@@ -2788,7 +2788,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-project-geomslice-skiphidden",
       "head": "a197a1b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix ci-bonsai-daily: get_linked_element_geom_slice hidden-face index space",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8560"
     },
@@ -3062,7 +3062,7 @@
       "author": "BIMvoice",
       "branch": "fix-5088-resource-cost-value-editor",
       "head": "fc2d5b5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai: give resources their own fixed cost value field instead of borrowing Cost Schedules' (#5088)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8622"
     },
@@ -3198,7 +3198,7 @@
       "author": "BIMvoice",
       "branch": "fix-7318-bcf-gp-strokes",
       "head": "ce198ff",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix BCF viewpoint line markup crash on modern Grease Pencil API",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8645"
     },
@@ -3344,7 +3344,7 @@
       "author": "BIMvoice",
       "branch": "fix-7237-zone-nesting",
       "head": "3869b82",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: allow assigning an IfcZone to another IfcZone via the Zones UI",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8678"
     },
@@ -3415,8 +3415,8 @@
     "8694": {
       "author": "BIMvoice",
       "branch": "fix-3748-sloped-space-roof",
-      "head": "677da41",
-      "status": "skipped_conflict",
+      "head": "5a7fea8",
+      "status": "merged",
       "title": "Bonsai: opt-in space generation that follows sloping roofs and slabs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8694"
     },
@@ -3504,7 +3504,7 @@
       "author": "BIMvoice",
       "branch": "bv-2438-door-panel-pset-edit",
       "head": "b45d19d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: mark predefined property sets as read only in the pset editor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8708"
     },
@@ -3603,8 +3603,8 @@
     "8727": {
       "author": "BIMvoice",
       "branch": "fix-7663-item-mode-half-space-selection",
-      "head": "bcc355f",
-      "status": "skipped_conflict",
+      "head": "1071273",
+      "status": "merged",
       "title": "Bonsai: confine Item Mode half-space cuts to the explicitly selected item",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8727"
     },
@@ -3667,7 +3667,7 @@
     "8739": {
       "author": "BIMvoice",
       "branch": "fix-7477-space-visibility-orphaned-object",
-      "head": "18fbcac",
+      "head": "d590d36",
       "status": "skipped_conflict",
       "title": "Bonsai: skip spaces with no linked Blender object when toggling visibility",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8739"
@@ -4195,7 +4195,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-stairflight-ifc43-deprecated-attrs",
       "head": "63ac1fe",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop writing IFC4.3-deprecated IfcStairFlight attributes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8828"
     },
@@ -4363,7 +4363,7 @@
       "author": "BIMvoice",
       "branch": "issue-950-bcf-report",
       "head": "be35a62",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bcf: add Reporter for exporting BCF topics to CSV/XLSX/ODS (#950)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8855"
     },
@@ -4871,7 +4871,7 @@
     "8944": {
       "author": "BIMvoice",
       "branch": "fix/8934-spatial-panel-regex-filter",
-      "head": "2dd0af8",
+      "head": "398c29e",
       "status": "merged",
       "title": "Bonsai: add regex pattern matching to spatial decomposition panel filters",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8944"
@@ -6098,9 +6098,9 @@
     "9142": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-restriction-total-fraction-digits",
-      "head": "b9b78be",
+      "head": "38daf6c",
       "status": "merged",
-      "title": "ifctester: implement totalDigits and fractionDigits",
+      "title": "ifctester: warn instead of silently ignoring unsupported restrictions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9142"
     },
     "9143": {
@@ -6170,7 +6170,7 @@
     "9152": {
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
-      "head": "3fea62c",
+      "head": "6b2450d",
       "status": "merged",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
@@ -6636,7 +6636,7 @@
       "author": "BIMvoice",
       "branch": "fix/9214-space-hidden-on-generate",
       "head": "586bf2f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: a space you just generated is hidden immediately (#9214)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9219"
     },
@@ -6706,6 +6706,22 @@
       "status": "merged",
       "title": "dev_environment.py: survive a locked file while symlinking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
+    },
+    "9241": {
+      "author": "BIMvoice",
+      "branch": "fix/black-drift-referent-names",
+      "head": "362dc32",
+      "status": "merged",
+      "title": "tests: fix black drift blocking unrelated commits",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9241"
+    },
+    "9242": {
+      "author": "BIMvoice",
+      "branch": "fix/black-force-exclude-generated",
+      "head": "b9b0f77",
+      "status": "merged",
+      "title": "build: force-exclude generated files so the pre-commit hook matches CI",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9242"
     }
   },
   "schema": 1

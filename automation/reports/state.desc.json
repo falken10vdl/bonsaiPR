@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 520,
+    "merged": 521,
     "skipped_conflict": 120,
     "skipped_draft": 53,
-    "total": 822
+    "total": 823
   },
-  "generated_at": "2026-08-03T16:47:05Z",
+  "generated_at": "2026-08-03T18:48:05Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6714,6 +6714,14 @@
       "status": "merged",
       "title": "tests: fix black drift blocking unrelated commits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9241"
+    },
+    "9242": {
+      "author": "BIMvoice",
+      "branch": "fix/black-force-exclude-generated",
+      "head": "b9b0f77",
+      "status": "merged",
+      "title": "build: force-exclude generated files so the pre-commit hook matches CI",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9242"
     }
   },
   "schema": 1

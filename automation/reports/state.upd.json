@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 136,
-    "merged": 515,
-    "skipped_conflict": 118,
+    "failed": 129,
+    "merged": 518,
+    "skipped_conflict": 123,
     "skipped_draft": 53,
-    "total": 822
+    "total": 823
   },
-  "generated_at": "2026-08-03T17:23:27Z",
+  "generated_at": "2026-08-03T19:24:58Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -573,8 +573,7 @@
       "author": "jazzific",
       "branch": "documentation",
       "head": "91ebb81",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Documentation guide for Spaces basic modelling",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7863"
     },
@@ -821,8 +820,7 @@
       "author": "c-mellueh",
       "branch": "use-get_class_properties-instead-of-get_class",
       "head": "8b7348a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Use get class properties instead of get class",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7986"
     },
@@ -1027,7 +1025,7 @@
       "author": "theoryshaw",
       "branch": "fix-snap-stale-object-reference",
       "head": "3248cc7",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix stale object reference crash in measure tool snapping",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
     },
@@ -1229,7 +1227,7 @@
       "author": "BIMvoice",
       "branch": "fix-cascade-milestone-duration-6834",
       "head": "5f1e55e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "sequence.cascade_schedule: milestones cascade with zero duration (#6834)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8280"
     },
@@ -1714,8 +1712,7 @@
       "author": "BIMvoice",
       "branch": "feat-validate-crash-diagnostics",
       "head": "61750d7",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Add ifcopenshell.diagnostics: report the entity most likely behind a crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8378"
     },
@@ -2443,8 +2440,7 @@
       "author": "BIMvoice",
       "branch": "fix-6125-nonmanifold-volume",
       "head": "62257e0",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Return nan for non-manifold volume and skip it in QTO (#6125)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8503"
     },
@@ -4099,8 +4095,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-dead-gherkin-runner",
       "head": "6e152d6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: remove the dead Gherkin runner from test/bim/bootstrap.py",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8809"
     },
@@ -4877,8 +4872,7 @@
       "author": "BIMvoice",
       "branch": "fix/8934-spatial-panel-regex-filter",
       "head": "398c29e",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: add regex pattern matching to spatial decomposition panel filters",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8944"
     },
@@ -6473,8 +6467,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-verdict-audit",
       "head": "20e685b",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "ifctester: fix four wrong-verdict defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9190"
     },
@@ -6721,6 +6714,14 @@
       "status": "merged",
       "title": "tests: fix black drift blocking unrelated commits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9241"
+    },
+    "9242": {
+      "author": "BIMvoice",
+      "branch": "fix/black-force-exclude-generated",
+      "head": "b9b0f77",
+      "status": "merged",
+      "title": "build: force-exclude generated files so the pre-commit hook matches CI",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9242"
     }
   },
   "schema": 1
