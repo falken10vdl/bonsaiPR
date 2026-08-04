@@ -7,7 +7,7 @@
     "skipped_draft": 53,
     "total": 829
   },
-  "generated_at": "2026-08-04T15:48:06Z",
+  "generated_at": "2026-08-04T17:48:25Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -159,7 +159,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "a5ad188",
+      "head": "4ffc70e",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add true object mirroring operator",
@@ -956,7 +956,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "6c750b0",
+      "head": "0e6e3ed",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
