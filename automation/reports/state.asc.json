@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 129,
+    "failed": 130,
     "merged": 527,
     "skipped_conflict": 114,
     "skipped_draft": 53,
-    "total": 823
+    "total": 824
   },
-  "generated_at": "2026-08-04T02:11:27Z",
+  "generated_at": "2026-08-04T04:10:38Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -159,7 +159,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "7eb4e02",
+      "head": "572c89b",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add true object mirroring operator",
@@ -6722,6 +6722,15 @@
       "status": "merged",
       "title": "build: force-exclude generated files so the pre-commit hook matches CI",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9242"
+    },
+    "9243": {
+      "author": "CyrilWaechter",
+      "branch": "space-regeneration-sloped-roof-clipped-extrusion",
+      "head": "4e5607b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9243"
     }
   },
   "schema": 1

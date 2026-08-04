@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 517,
-    "skipped_conflict": 124,
+    "merged": 519,
+    "skipped_conflict": 123,
     "skipped_draft": 53,
-    "total": 824
+    "total": 825
   },
-  "generated_at": "2026-08-04T03:25:52Z",
+  "generated_at": "2026-08-04T05:23:22Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1025,7 +1025,7 @@
       "author": "theoryshaw",
       "branch": "fix-snap-stale-object-reference",
       "head": "3248cc7",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix stale object reference crash in measure tool snapping",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
     },
@@ -6731,6 +6731,14 @@
       "status": "failed",
       "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9243"
+    },
+    "9244": {
+      "author": "BIMvoice",
+      "branch": "fix/testcase-name-result-suffix",
+      "head": "94fe4ac",
+      "status": "merged",
+      "title": "ifctester: put pass/fail at the end of generated testcase names",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9244"
     }
   },
   "schema": 1
