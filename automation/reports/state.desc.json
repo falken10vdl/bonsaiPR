@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 130,
+    "failed": 133,
     "merged": 522,
-    "skipped_conflict": 121,
+    "skipped_conflict": 118,
     "skipped_draft": 53,
     "total": 826
   },
-  "generated_at": "2026-08-04T06:48:08Z",
+  "generated_at": "2026-08-04T08:47:31Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -820,7 +820,8 @@
       "author": "c-mellueh",
       "branch": "use-get_class_properties-instead-of-get_class",
       "head": "8b7348a",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Use get class properties instead of get class",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7986"
     },
@@ -828,7 +829,8 @@
       "author": "isma3lMB",
       "branch": "v0.8.0",
       "head": "ef1e534",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Ensuring that Entity name is a string",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7993"
     },
@@ -836,7 +838,8 @@
       "author": "theoryshaw",
       "branch": "fix/isolate-objects-select-all-context",
       "head": "d72c400",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix #7999: Fix isolate_objects context for select_all op",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8000"
     },
@@ -956,7 +959,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "83a7836",
+      "head": "6aeaba0",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"

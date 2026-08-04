@@ -1714,3 +1714,7 @@
 {"ts": "2026-08-04T07:24:39Z", "order": "by-updated", "pr": 9042, "event": "status", "from": "merged", "to": "skipped_conflict"}
 {"ts": "2026-08-04T07:24:39Z", "order": "by-updated", "pr": 9236, "event": "updated", "status": "merged", "from_head": "bda130e", "to_head": "25f938c"}
 {"ts": "2026-08-04T07:24:39Z", "order": "by-updated", "pr": 9245, "event": "added", "to": "merged"}
+{"ts": "2026-08-04T09:03:19Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-04T09:03:19Z", "order": "upd", "pr": 8739, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-04T09:03:19Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-04T09:24:00Z", "order": "by-updated", "pr": 8139, "event": "updated", "status": "skipped_draft", "from_head": "83a7836", "to_head": "6aeaba0"}

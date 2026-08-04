@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 528,
-    "skipped_conflict": 115,
+    "merged": 527,
+    "skipped_conflict": 116,
     "skipped_draft": 53,
     "total": 826
   },
-  "generated_at": "2026-08-04T06:11:43Z",
+  "generated_at": "2026-08-04T08:10:50Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -956,7 +956,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "83a7836",
+      "head": "6aeaba0",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -3743,7 +3743,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
