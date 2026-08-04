@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 531,
-    "skipped_conflict": 115,
+    "merged": 532,
+    "skipped_conflict": 114,
     "skipped_draft": 53,
     "total": 829
   },
-  "generated_at": "2026-08-04T13:11:16Z",
+  "generated_at": "2026-08-04T15:11:06Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -159,7 +159,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "572c89b",
+      "head": "a5ad188",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add true object mirroring operator",
@@ -2982,7 +2982,7 @@
       "author": "theoryshaw",
       "branch": "fix-mergeduplicatetypes-null-and-crossclass",
       "head": "684ec64",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8610"
     },

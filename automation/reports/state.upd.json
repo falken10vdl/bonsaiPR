@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 516,
-    "skipped_conflict": 130,
+    "merged": 524,
+    "skipped_conflict": 122,
     "skipped_draft": 53,
     "total": 829
   },
-  "generated_at": "2026-08-04T14:25:39Z",
+  "generated_at": "2026-08-04T16:25:22Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -152,14 +152,14 @@
       "author": "theoryshaw",
       "branch": "fix_6931",
       "head": "5285df1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "proposed fix for #6931",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/6933"
     },
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "572c89b",
+      "head": "a5ad188",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add true object mirroring operator",
@@ -1083,7 +1083,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-empty-numeric-4112",
       "head": "9f8dce0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
     },
@@ -1219,7 +1219,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -1291,7 +1291,7 @@
       "author": "BIMvoice",
       "branch": "fix-set-element-value-trailing-index-4687",
       "head": "cb5b598",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.selector: set_element_value accepts a trailing index like get_element_value (#4687)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8295"
     },
@@ -1784,7 +1784,7 @@
       "author": "BIMvoice",
       "branch": "fix-7112-save-custom-psets",
       "head": "83c3e71",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix \"Save Pset As Template\" on IFC4X3 custom psets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8391"
     },
@@ -2440,7 +2440,7 @@
       "author": "BIMvoice",
       "branch": "fix-6125-nonmanifold-volume",
       "head": "62257e0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Return nan for non-manifold volume and skip it in QTO (#6125)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8503"
     },
@@ -2933,7 +2933,7 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "027fae4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -4228,7 +4228,7 @@
       "author": "BIMvoice",
       "branch": "fix-6895-shape-elevation-guard",
       "head": "86de6c2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.util.shape: fail loudly on non-finite elevation instead of returning the infinity sentinel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8832"
     },
@@ -4712,7 +4712,7 @@
       "author": "BIMvoice",
       "branch": "feat-4613-builtin-classification-library",
       "head": "9fe946d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: built-in classification library picker",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8920"
     },
@@ -4888,7 +4888,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-ifctester-org-branch-filter",
       "head": "0bc1710",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ci-ifctester-org: restrict publish trigger to v0.8.0 branch",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8948"
     },
@@ -5040,7 +5040,7 @@
       "author": "BIMvoice",
       "branch": "7497-annotation-camera-bounds",
       "head": "634c442",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: keep auto-generated drawing reference annotations within camera bounds",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8972"
     },
@@ -5200,7 +5200,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-ifc2x3-quick-create-door",
       "head": "4eb9b32",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: Quick Create authors a real door type on IFC2X3, not an empty one",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8997"
     },
@@ -5394,7 +5394,7 @@
       "author": "BIMvoice",
       "branch": "fix/covering-thumbnail-key-mismatch",
       "head": "3d15c87",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix the Covering Tool type thumbnail never appearing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9041"
     },
@@ -5562,7 +5562,7 @@
       "author": "BIMvoice",
       "branch": "fix/removerevituniformat-ifc2x3",
       "head": "c5c7612",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: make RemoveRevitUniformatClassification work on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9065"
     },
@@ -5714,7 +5714,7 @@
       "author": "BIMvoice",
       "branch": "fix/selector-set-value-boolean-no-string",
       "head": "4158f48",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util.selector: set_element_value casts \"no\" to True for boolean attributes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9085"
     },
@@ -5786,7 +5786,7 @@
       "author": "BIMvoice",
       "branch": "fix/classification-change-level-hasreferences-crash",
       "head": "a76e1f5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop the classification level browser crashing on empty and IFC2X3 libraries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9094"
     },
@@ -5866,7 +5866,7 @@
       "author": "BIMvoice",
       "branch": "fix/9029-link-ifc-duplicate-on-repeat-click",
       "head": "ed6e010",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stop Link IFC duplicating and reloading when a click is repeated",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9104"
     },
@@ -6027,7 +6027,7 @@
       "author": "BIMvoice",
       "branch": "fix/bonsai-tool-twin-doc-inconsistencies",
       "head": "7d6ee32",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: correct two twin-function inconsistencies in tool/",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9131"
     },
@@ -6203,7 +6203,7 @@
       "author": "BIMvoice",
       "branch": "fix/bonsai-optional-attr-crashes-audit2",
       "head": "844e296",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix nine crashes on valid IFC files",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9156"
     },
@@ -6355,7 +6355,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-untemplated-list-crash",
       "head": "da3e48e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "pset.edit_pset: fix untemplated list-value crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
     },
@@ -6587,7 +6587,7 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/pip/ty-0.0.64",
       "head": "ef10e2d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "build(deps): bump ty from 0.0.63 to 0.0.64",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9208"
     },
@@ -6695,7 +6695,7 @@
       "author": "BIMvoice",
       "branch": "fix-9235-gross-side-area-baked-openings",
       "head": "25f938c",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: wall side areas wrong for baked openings and Y-oriented walls (#9235, #9237)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9236"
     },

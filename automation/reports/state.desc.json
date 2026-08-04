@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 135,
-    "merged": 523,
-    "skipped_conflict": 118,
+    "failed": 130,
+    "merged": 526,
+    "skipped_conflict": 120,
     "skipped_draft": 53,
     "total": 829
   },
-  "generated_at": "2026-08-04T13:48:15Z",
+  "generated_at": "2026-08-04T15:48:06Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -159,7 +159,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "572c89b",
+      "head": "a5ad188",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add true object mirroring operator",
@@ -432,7 +432,7 @@
       "author": "KarimJerbi",
       "branch": "issue-7743-clone-opening-UI",
       "head": "ebae815",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #7743 : Fix clone opening UI and selection method",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7766"
     },
@@ -597,7 +597,7 @@
       "author": "theoryshaw",
       "branch": "Fix_PermissionError",
       "head": "4664072",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix PermissionError deleting locked HDF5 cache on Windows",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7870"
     },
@@ -605,8 +605,7 @@
       "author": "theoryshaw",
       "branch": "split_profile_based_objects",
       "head": "f229ad5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "closes #3804: Add S_K split support for profile-based elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7871"
     },
@@ -1124,8 +1123,7 @@
       "author": "BIMvoice",
       "branch": "fix/add-reference-image-kwarg-8130",
       "head": "537ab95",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: drop stale kwarg when invoking add_reference_image (#8130)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
     },
@@ -1730,7 +1728,7 @@
       "author": "BIMvoice",
       "branch": "fix-7117-door-custom-width",
       "head": "59de054",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "fix(bonsai): add door geometry to an object with no mesh data (#7117)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8381"
     },
@@ -2702,8 +2700,7 @@
       "author": "BIMvoice",
       "branch": "ship-6807-geomset-delete",
       "head": "58dc1f3",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: delete representation items nested in an IfcGeometricSet (#6807)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8542"
     },
@@ -3663,8 +3660,7 @@
       "author": "BIMvoice",
       "branch": "fix-7484-stair-first-last-locks",
       "head": "c19b3a6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: independent locks for the first and last stair tread",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8738"
     },
@@ -5036,8 +5032,7 @@
       "author": "BIMvoice",
       "branch": "5696-batch-reimport-iterator",
       "head": "1cc34f6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: batch geometry iterator setup when reimporting many representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8971"
     },
