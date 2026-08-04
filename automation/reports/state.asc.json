@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 527,
-    "skipped_conflict": 114,
+    "merged": 528,
+    "skipped_conflict": 115,
     "skipped_draft": 53,
-    "total": 824
+    "total": 826
   },
-  "generated_at": "2026-08-04T04:10:38Z",
+  "generated_at": "2026-08-04T06:11:43Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6694,9 +6694,9 @@
     "9236": {
       "author": "BIMvoice",
       "branch": "fix-9235-gross-side-area-baked-openings",
-      "head": "bda130e",
+      "head": "25f938c",
       "status": "skipped_conflict",
-      "title": "Bonsai: GrossSideArea equals NetSideArea when openings are baked in (#9235)",
+      "title": "Bonsai: wall side areas wrong for baked openings and Y-oriented walls (#9235, #9237)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9236"
     },
     "9240": {
@@ -6731,6 +6731,22 @@
       "status": "failed",
       "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9243"
+    },
+    "9244": {
+      "author": "BIMvoice",
+      "branch": "fix/testcase-name-result-suffix",
+      "head": "94fe4ac",
+      "status": "merged",
+      "title": "ifctester: put pass/fail at the end of generated testcase names",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9244"
+    },
+    "9245": {
+      "author": "BIMvoice",
+      "branch": "fix-9034-bsdd-referencecode-keyerror",
+      "head": "1cb6d58",
+      "status": "skipped_conflict",
+      "title": "Bonsai: bSDD search crashes on dictionaries without referenceCode (#9034)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9245"
     }
   },
   "schema": 1

@@ -3,11 +3,11 @@
   "counts": {
     "failed": 130,
     "merged": 519,
-    "skipped_conflict": 123,
+    "skipped_conflict": 124,
     "skipped_draft": 53,
-    "total": 825
+    "total": 826
   },
-  "generated_at": "2026-08-04T05:23:22Z",
+  "generated_at": "2026-08-04T07:24:39Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -5402,7 +5402,7 @@
       "author": "BIMvoice",
       "branch": "fix/9034-bsdd-referencecode-keyerror",
       "head": "a68a376",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix bSDD class search crashing on classes without a referenceCode",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9042"
     },
@@ -6694,9 +6694,9 @@
     "9236": {
       "author": "BIMvoice",
       "branch": "fix-9235-gross-side-area-baked-openings",
-      "head": "bda130e",
+      "head": "25f938c",
       "status": "merged",
-      "title": "Bonsai: GrossSideArea equals NetSideArea when openings are baked in (#9235)",
+      "title": "Bonsai: wall side areas wrong for baked openings and Y-oriented walls (#9235, #9237)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9236"
     },
     "9240": {
@@ -6739,6 +6739,14 @@
       "status": "merged",
       "title": "ifctester: put pass/fail at the end of generated testcase names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9244"
+    },
+    "9245": {
+      "author": "BIMvoice",
+      "branch": "fix-9034-bsdd-referencecode-keyerror",
+      "head": "1cb6d58",
+      "status": "merged",
+      "title": "Bonsai: bSDD search crashes on dictionaries without referenceCode (#9034)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9245"
     }
   },
   "schema": 1

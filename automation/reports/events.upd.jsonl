@@ -1708,3 +1708,9 @@
 {"ts": "2026-08-04T05:02:41Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-08-04T05:23:22Z", "order": "by-updated", "pr": 8206, "event": "status", "from": "skipped_conflict", "to": "merged"}
 {"ts": "2026-08-04T05:23:22Z", "order": "by-updated", "pr": 9244, "event": "added", "to": "merged"}
+{"ts": "2026-08-04T07:03:57Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-04T07:03:57Z", "order": "upd", "pr": 8739, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-04T07:03:57Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-04T07:24:39Z", "order": "by-updated", "pr": 9042, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-08-04T07:24:39Z", "order": "by-updated", "pr": 9236, "event": "updated", "status": "merged", "from_head": "bda130e", "to_head": "25f938c"}
+{"ts": "2026-08-04T07:24:39Z", "order": "by-updated", "pr": 9245, "event": "added", "to": "merged"}

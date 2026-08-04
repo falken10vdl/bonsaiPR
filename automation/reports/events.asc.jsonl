@@ -1545,3 +1545,6 @@
 {"ts": "2026-08-04T02:11:27Z", "order": "ascending", "pr": 8855, "event": "status", "from": "skipped_conflict", "to": "merged"}
 {"ts": "2026-08-04T04:10:38Z", "order": "ascending", "pr": 7003, "event": "updated", "status": "failed", "from_head": "7eb4e02", "to_head": "572c89b"}
 {"ts": "2026-08-04T04:10:38Z", "order": "ascending", "pr": 9243, "event": "added", "to": "failed"}
+{"ts": "2026-08-04T06:11:43Z", "order": "ascending", "pr": 9236, "event": "updated", "status": "skipped_conflict", "from_head": "bda130e", "to_head": "25f938c"}
+{"ts": "2026-08-04T06:11:43Z", "order": "ascending", "pr": 9244, "event": "added", "to": "merged"}
+{"ts": "2026-08-04T06:11:43Z", "order": "ascending", "pr": 9245, "event": "added", "to": "skipped_conflict"}
