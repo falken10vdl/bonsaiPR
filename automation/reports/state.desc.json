@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 526,
-    "skipped_conflict": 120,
+    "merged": 525,
+    "skipped_conflict": 121,
     "skipped_draft": 53,
     "total": 829
   },
-  "generated_at": "2026-08-04T17:48:25Z",
+  "generated_at": "2026-08-04T19:48:48Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -956,7 +956,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "0e6e3ed",
+      "head": "8bdaa8c",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1728,7 +1728,7 @@
       "author": "BIMvoice",
       "branch": "fix-7117-door-custom-width",
       "head": "59de054",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "fix(bonsai): add door geometry to an object with no mesh data (#7117)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8381"
     },
