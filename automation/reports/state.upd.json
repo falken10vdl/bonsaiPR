@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 519,
-    "skipped_conflict": 124,
+    "merged": 516,
+    "skipped_conflict": 130,
     "skipped_draft": 53,
-    "total": 826
+    "total": 829
   },
-  "generated_at": "2026-08-04T11:25:05Z",
+  "generated_at": "2026-08-04T14:25:39Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -152,7 +152,7 @@
       "author": "theoryshaw",
       "branch": "fix_6931",
       "head": "5285df1",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "proposed fix for #6931",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/6933"
     },
@@ -1083,7 +1083,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-empty-numeric-4112",
       "head": "9f8dce0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
     },
@@ -1219,7 +1219,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -1291,7 +1291,7 @@
       "author": "BIMvoice",
       "branch": "fix-set-element-value-trailing-index-4687",
       "head": "cb5b598",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "util.selector: set_element_value accepts a trailing index like get_element_value (#4687)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8295"
     },
@@ -1784,7 +1784,7 @@
       "author": "BIMvoice",
       "branch": "fix-7112-save-custom-psets",
       "head": "83c3e71",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix \"Save Pset As Template\" on IFC4X3 custom psets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8391"
     },
@@ -2440,7 +2440,7 @@
       "author": "BIMvoice",
       "branch": "fix-6125-nonmanifold-volume",
       "head": "62257e0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Return nan for non-manifold volume and skip it in QTO (#6125)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8503"
     },
@@ -2933,7 +2933,7 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "027fae4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -3668,7 +3668,7 @@
       "author": "BIMvoice",
       "branch": "fix-7477-space-visibility-orphaned-object",
       "head": "d590d36",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: skip spaces with no linked Blender object when toggling visibility",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8739"
     },
@@ -4228,7 +4228,7 @@
       "author": "BIMvoice",
       "branch": "fix-6895-shape-elevation-guard",
       "head": "86de6c2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell.util.shape: fail loudly on non-finite elevation instead of returning the infinity sentinel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8832"
     },
@@ -4535,9 +4535,9 @@
     "8890": {
       "author": "BIMvoice",
       "branch": "8850-relating-type-enum",
-      "head": "00c3e83",
+      "head": "3102de0",
       "status": "merged",
-      "title": "Bonsai: guard stale relating_type_id enum assignment in set/duplicate type",
+      "title": "Bonsai: setting an active type fails silently on a stale enum (#8850, #9238)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
     },
     "8891": {
@@ -4712,7 +4712,7 @@
       "author": "BIMvoice",
       "branch": "feat-4613-builtin-classification-library",
       "head": "9fe946d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: built-in classification library picker",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8920"
     },
@@ -4888,7 +4888,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-ifctester-org-branch-filter",
       "head": "0bc1710",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ci-ifctester-org: restrict publish trigger to v0.8.0 branch",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8948"
     },
@@ -4936,7 +4936,7 @@
       "author": "BIMvoice",
       "branch": "fix/7889-toggle-hide-spaces-missing-obj",
       "head": "050fea6",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix crash toggling hide on spaces not loaded into the scene",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8958"
     },
@@ -5040,7 +5040,7 @@
       "author": "BIMvoice",
       "branch": "7497-annotation-camera-bounds",
       "head": "634c442",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: keep auto-generated drawing reference annotations within camera bounds",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8972"
     },
@@ -5200,7 +5200,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-ifc2x3-quick-create-door",
       "head": "4eb9b32",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: Quick Create authors a real door type on IFC2X3, not an empty one",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8997"
     },
@@ -5394,7 +5394,7 @@
       "author": "BIMvoice",
       "branch": "fix/covering-thumbnail-key-mismatch",
       "head": "3d15c87",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix the Covering Tool type thumbnail never appearing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9041"
     },
@@ -5562,7 +5562,7 @@
       "author": "BIMvoice",
       "branch": "fix/removerevituniformat-ifc2x3",
       "head": "c5c7612",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: make RemoveRevitUniformatClassification work on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9065"
     },
@@ -5714,7 +5714,7 @@
       "author": "BIMvoice",
       "branch": "fix/selector-set-value-boolean-no-string",
       "head": "4158f48",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.selector: set_element_value casts \"no\" to True for boolean attributes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9085"
     },
@@ -5786,7 +5786,7 @@
       "author": "BIMvoice",
       "branch": "fix/classification-change-level-hasreferences-crash",
       "head": "a76e1f5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stop the classification level browser crashing on empty and IFC2X3 libraries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9094"
     },
@@ -5866,7 +5866,7 @@
       "author": "BIMvoice",
       "branch": "fix/9029-link-ifc-duplicate-on-repeat-click",
       "head": "ed6e010",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop Link IFC duplicating and reloading when a click is repeated",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9104"
     },
@@ -6027,7 +6027,7 @@
       "author": "BIMvoice",
       "branch": "fix/bonsai-tool-twin-doc-inconsistencies",
       "head": "7d6ee32",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: correct two twin-function inconsistencies in tool/",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9131"
     },
@@ -6203,7 +6203,7 @@
       "author": "BIMvoice",
       "branch": "fix/bonsai-optional-attr-crashes-audit2",
       "head": "844e296",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix nine crashes on valid IFC files",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9156"
     },
@@ -6355,7 +6355,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-untemplated-list-crash",
       "head": "da3e48e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: fix untemplated list-value crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
     },
@@ -6443,7 +6443,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-material-unset-crash",
       "head": "0a02e19",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifctester: fix crash on unset layer material",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9187"
     },
@@ -6562,8 +6562,8 @@
     "9203": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-partof-userdefined",
-      "head": "5ccf00b",
-      "status": "skipped_conflict",
+      "head": "405d1ac",
+      "status": "merged",
       "title": "ifctester: PartOf false pass on USERDEFINED predefinedType",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9203"
     },
@@ -6578,7 +6578,7 @@
     "9205": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-verdict-audit-round2",
-      "head": "bc24b72",
+      "head": "e5f693f",
       "status": "merged",
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
@@ -6587,7 +6587,7 @@
       "author": "dependabot[bot]",
       "branch": "dependabot/pip/ty-0.0.64",
       "head": "ef10e2d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "build(deps): bump ty from 0.0.63 to 0.0.64",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9208"
     },
@@ -6678,9 +6678,9 @@
     "9233": {
       "author": "BIMvoice",
       "branch": "fix-9230-void-profile-open-loop",
-      "head": "cb7e6ad",
+      "head": "702ccfe",
       "status": "merged",
-      "title": "Bonsai: crash editing a void whose curve encloses no area (#9230)",
+      "title": "Bonsai: void loop that encloses no area crashes (#9230), or is silently lost (#8983)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9233"
     },
     "9234": {
@@ -6695,7 +6695,7 @@
       "author": "BIMvoice",
       "branch": "fix-9235-gross-side-area-baked-openings",
       "head": "25f938c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: wall side areas wrong for baked openings and Y-oriented walls (#9235, #9237)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9236"
     },
@@ -6747,6 +6747,30 @@
       "status": "merged",
       "title": "Bonsai: bSDD search crashes on dictionaries without referenceCode (#9034)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9245"
+    },
+    "9248": {
+      "author": "BIMvoice",
+      "branch": "fix/9216-tests-for-9217",
+      "head": "30d0f1a",
+      "status": "merged",
+      "title": "Bonsai: fix the four core tests this branch breaks, and its lint",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9248"
+    },
+    "9249": {
+      "author": "BIMvoice",
+      "branch": "fix-shapely-geoms-crash-sweep",
+      "head": "f9f1576",
+      "status": "merged",
+      "title": "Bonsai: guard union_all().geoms crash sites in shapely fills",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9249"
+    },
+    "9250": {
+      "author": "BIMvoice",
+      "branch": "fix/ids-371-bounded-property-restriction",
+      "head": "7e6cde6",
+      "status": "merged",
+      "title": "ifctester: fix bounded property restriction checks",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9250"
     }
   },
   "schema": 1

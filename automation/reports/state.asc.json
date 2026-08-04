@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 528,
+    "merged": 531,
     "skipped_conflict": 115,
     "skipped_draft": 53,
-    "total": 826
+    "total": 829
   },
-  "generated_at": "2026-08-04T10:11:40Z",
+  "generated_at": "2026-08-04T13:11:16Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2982,7 +2982,7 @@
       "author": "theoryshaw",
       "branch": "fix-mergeduplicatetypes-null-and-crossclass",
       "head": "684ec64",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8610"
     },
@@ -4535,9 +4535,9 @@
     "8890": {
       "author": "BIMvoice",
       "branch": "8850-relating-type-enum",
-      "head": "00c3e83",
+      "head": "3102de0",
       "status": "merged",
-      "title": "Bonsai: guard stale relating_type_id enum assignment in set/duplicate type",
+      "title": "Bonsai: setting an active type fails silently on a stale enum (#8850, #9238)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
     },
     "8891": {
@@ -6562,8 +6562,8 @@
     "9203": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-partof-userdefined",
-      "head": "5ccf00b",
-      "status": "skipped_conflict",
+      "head": "405d1ac",
+      "status": "merged",
       "title": "ifctester: PartOf false pass on USERDEFINED predefinedType",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9203"
     },
@@ -6578,8 +6578,8 @@
     "9205": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-verdict-audit-round2",
-      "head": "bc24b72",
-      "status": "skipped_conflict",
+      "head": "e5f693f",
+      "status": "merged",
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
     },
@@ -6678,9 +6678,9 @@
     "9233": {
       "author": "BIMvoice",
       "branch": "fix-9230-void-profile-open-loop",
-      "head": "cb7e6ad",
+      "head": "702ccfe",
       "status": "merged",
-      "title": "Bonsai: crash editing a void whose curve encloses no area (#9230)",
+      "title": "Bonsai: void loop that encloses no area crashes (#9230), or is silently lost (#8983)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9233"
     },
     "9234": {
@@ -6747,6 +6747,30 @@
       "status": "skipped_conflict",
       "title": "Bonsai: bSDD search crashes on dictionaries without referenceCode (#9034)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9245"
+    },
+    "9248": {
+      "author": "BIMvoice",
+      "branch": "fix/9216-tests-for-9217",
+      "head": "30d0f1a",
+      "status": "merged",
+      "title": "Bonsai: fix the four core tests this branch breaks, and its lint",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9248"
+    },
+    "9249": {
+      "author": "BIMvoice",
+      "branch": "fix-shapely-geoms-crash-sweep",
+      "head": "f9f1576",
+      "status": "skipped_conflict",
+      "title": "Bonsai: guard union_all().geoms crash sites in shapely fills",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9249"
+    },
+    "9250": {
+      "author": "BIMvoice",
+      "branch": "fix/ids-371-bounded-property-restriction",
+      "head": "7e6cde6",
+      "status": "merged",
+      "title": "ifctester: fix bounded property restriction checks",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9250"
     }
   },
   "schema": 1

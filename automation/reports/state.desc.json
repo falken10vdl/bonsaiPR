@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 130,
-    "merged": 521,
-    "skipped_conflict": 122,
+    "failed": 135,
+    "merged": 523,
+    "skipped_conflict": 118,
     "skipped_draft": 53,
-    "total": 826
+    "total": 829
   },
-  "generated_at": "2026-08-04T10:48:12Z",
+  "generated_at": "2026-08-04T13:48:15Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -432,7 +432,7 @@
       "author": "KarimJerbi",
       "branch": "issue-7743-clone-opening-UI",
       "head": "ebae815",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #7743 : Fix clone opening UI and selection method",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7766"
     },
@@ -597,7 +597,7 @@
       "author": "theoryshaw",
       "branch": "Fix_PermissionError",
       "head": "4664072",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix PermissionError deleting locked HDF5 cache on Windows",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7870"
     },
@@ -605,7 +605,8 @@
       "author": "theoryshaw",
       "branch": "split_profile_based_objects",
       "head": "f229ad5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "closes #3804: Add S_K split support for profile-based elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7871"
     },
@@ -1123,7 +1124,8 @@
       "author": "BIMvoice",
       "branch": "fix/add-reference-image-kwarg-8130",
       "head": "537ab95",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: drop stale kwarg when invoking add_reference_image (#8130)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
     },
@@ -1728,7 +1730,7 @@
       "author": "BIMvoice",
       "branch": "fix-7117-door-custom-width",
       "head": "59de054",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "fix(bonsai): add door geometry to an object with no mesh data (#7117)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8381"
     },
@@ -2700,7 +2702,8 @@
       "author": "BIMvoice",
       "branch": "ship-6807-geomset-delete",
       "head": "58dc1f3",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: delete representation items nested in an IfcGeometricSet (#6807)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8542"
     },
@@ -3660,7 +3663,8 @@
       "author": "BIMvoice",
       "branch": "fix-7484-stair-first-last-locks",
       "head": "c19b3a6",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: independent locks for the first and last stair tread",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8738"
     },
@@ -3726,7 +3730,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "eb6f3b0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -4535,9 +4539,9 @@
     "8890": {
       "author": "BIMvoice",
       "branch": "8850-relating-type-enum",
-      "head": "00c3e83",
+      "head": "3102de0",
       "status": "merged",
-      "title": "Bonsai: guard stale relating_type_id enum assignment in set/duplicate type",
+      "title": "Bonsai: setting an active type fails silently on a stale enum (#8850, #9238)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
     },
     "8891": {
@@ -4872,7 +4876,7 @@
       "author": "BIMvoice",
       "branch": "fix/8934-spatial-panel-regex-filter",
       "head": "398c29e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add regex pattern matching to spatial decomposition panel filters",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8944"
     },
@@ -5032,7 +5036,8 @@
       "author": "BIMvoice",
       "branch": "5696-batch-reimport-iterator",
       "head": "1cc34f6",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: batch geometry iterator setup when reimporting many representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8971"
     },
@@ -6467,7 +6472,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-verdict-audit",
       "head": "20e685b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifctester: fix four wrong-verdict defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9190"
     },
@@ -6562,8 +6567,8 @@
     "9203": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-partof-userdefined",
-      "head": "5ccf00b",
-      "status": "skipped_conflict",
+      "head": "405d1ac",
+      "status": "merged",
       "title": "ifctester: PartOf false pass on USERDEFINED predefinedType",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9203"
     },
@@ -6578,7 +6583,7 @@
     "9205": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-verdict-audit-round2",
-      "head": "bc24b72",
+      "head": "e5f693f",
       "status": "merged",
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
@@ -6678,9 +6683,9 @@
     "9233": {
       "author": "BIMvoice",
       "branch": "fix-9230-void-profile-open-loop",
-      "head": "cb7e6ad",
+      "head": "702ccfe",
       "status": "merged",
-      "title": "Bonsai: crash editing a void whose curve encloses no area (#9230)",
+      "title": "Bonsai: void loop that encloses no area crashes (#9230), or is silently lost (#8983)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9233"
     },
     "9234": {
@@ -6747,6 +6752,30 @@
       "status": "merged",
       "title": "Bonsai: bSDD search crashes on dictionaries without referenceCode (#9034)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9245"
+    },
+    "9248": {
+      "author": "BIMvoice",
+      "branch": "fix/9216-tests-for-9217",
+      "head": "30d0f1a",
+      "status": "merged",
+      "title": "Bonsai: fix the four core tests this branch breaks, and its lint",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9248"
+    },
+    "9249": {
+      "author": "BIMvoice",
+      "branch": "fix-shapely-geoms-crash-sweep",
+      "head": "f9f1576",
+      "status": "merged",
+      "title": "Bonsai: guard union_all().geoms crash sites in shapely fills",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9249"
+    },
+    "9250": {
+      "author": "BIMvoice",
+      "branch": "fix/ids-371-bounded-property-restriction",
+      "head": "7e6cde6",
+      "status": "merged",
+      "title": "ifctester: fix bounded property restriction checks",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9250"
     }
   },
   "schema": 1
