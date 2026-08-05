@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 532,
+    "merged": 533,
     "skipped_conflict": 115,
     "skipped_draft": 53,
-    "total": 829
+    "total": 830
   },
-  "generated_at": "2026-08-05T00:10:57Z",
+  "generated_at": "2026-08-05T05:11:42Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6770,6 +6770,14 @@
       "status": "merged",
       "title": "ifctester: fix bounded property restriction checks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9250"
+    },
+    "9251": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/socket.io-parser-4.2.7",
+      "head": "cede64f",
+      "status": "merged",
+      "title": "build(deps): bump socket.io-parser from 4.2.6 to 4.2.7 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9251"
     }
   },
   "schema": 1

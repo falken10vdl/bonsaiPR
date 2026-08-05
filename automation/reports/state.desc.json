@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 526,
-    "skipped_conflict": 121,
+    "merged": 525,
+    "skipped_conflict": 123,
     "skipped_draft": 53,
-    "total": 829
+    "total": 830
   },
-  "generated_at": "2026-08-05T00:47:38Z",
+  "generated_at": "2026-08-05T05:47:56Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -358,7 +358,7 @@
       "author": "jaliste",
       "branch": "fix/decoration-missing-splines-7655",
       "head": "10a50eb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #7655: Handle missing spline data in decoration.py",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7670"
     },
@@ -3635,7 +3635,7 @@
       "author": "BIMvoice",
       "branch": "fix-6278-duct-bend-flow-direction",
       "head": "ec6b560",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve flow direction when splicing a bend into a duct connection",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8733"
     },
@@ -6770,6 +6770,14 @@
       "status": "merged",
       "title": "ifctester: fix bounded property restriction checks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9250"
+    },
+    "9251": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/socket.io-parser-4.2.7",
+      "head": "cede64f",
+      "status": "merged",
+      "title": "build(deps): bump socket.io-parser from 4.2.6 to 4.2.7 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9251"
     }
   },
   "schema": 1
