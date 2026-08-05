@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 523,
-    "skipped_conflict": 125,
+    "merged": 526,
+    "skipped_conflict": 124,
     "skipped_draft": 53,
-    "total": 830
+    "total": 832
   },
-  "generated_at": "2026-08-05T12:28:28Z",
+  "generated_at": "2026-08-05T14:25:56Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -695,7 +695,7 @@
       "author": "brunopostle",
       "branch": "bonsai-license",
       "head": "a072c72",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai, add license tagging for IFC elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7917"
     },
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "8bdaa8c",
+      "head": "d1027c5",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1970,7 +1970,7 @@
       "author": "BIMvoice",
       "branch": "fix-6666-append-drawing-view",
       "head": "857ca22",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: append a drawing view from a library as a real drawing (#6666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8427"
     },
@@ -4251,7 +4251,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-5909-append-aggregate",
       "head": "9a02b30",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Append aggregates with their parts, sub-aggregates and openings (#5909)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8836"
     },
@@ -6778,6 +6778,22 @@
       "status": "merged",
       "title": "build(deps): bump socket.io-parser from 4.2.6 to 4.2.7 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9251"
+    },
+    "9254": {
+      "author": "BIMvoice",
+      "branch": "perf/9247-append-asset-queue",
+      "head": "3071dcc",
+      "status": "merged",
+      "title": "append_asset: pop the subelement queue in O(1) (#9247)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9254"
+    },
+    "9255": {
+      "author": "BIMvoice",
+      "branch": "fix/ifc2x3-port-append-proxy",
+      "head": "618f142",
+      "status": "merged",
+      "title": "append_asset: IFC2X3 MEP ports are silently dropped (#9247)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9255"
     }
   },
   "schema": 1
