@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 526,
-    "skipped_conflict": 124,
+    "merged": 530,
+    "skipped_conflict": 125,
     "skipped_draft": 53,
-    "total": 832
+    "total": 837
   },
-  "generated_at": "2026-08-05T14:25:56Z",
+  "generated_at": "2026-08-05T16:26:08Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6138,7 +6138,7 @@
       "author": "BIMvoice",
       "branch": "fix/sequence-recurrence-type-fallthrough",
       "head": "1950e10",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.sequence: fix crash on valid recurrence patterns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9147"
     },
@@ -6794,7 +6794,51 @@
       "status": "merged",
       "title": "append_asset: IFC2X3 MEP ports are silently dropped (#9247)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9255"
+    },
+    "9257": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-assign-product-quadratic-9253",
+      "head": "38e2778",
+      "status": "merged",
+      "title": "sequence: assign_product is quadratic on fan-in (#9253)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9257"
+    },
+    "9258": {
+      "author": "BIMvoice",
+      "branch": "fix/api-empty-aggregate-ownership",
+      "head": "dc088fc",
+      "status": "merged",
+      "title": "api: five removal functions write empty aggregates",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9258"
+    },
+    "9259": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-recurrence-interval-9134",
+      "head": "f7fd125",
+      "status": "merged",
+      "title": "sequence: implement recurrence Interval and Occurrences",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9259"
+    },
+    "9260": {
+      "author": "BIMvoice",
+      "branch": "diag-silent-geometry-failure",
+      "head": "5f9f2bc",
+      "status": "merged",
+      "title": "Bonsai: warn when geometry creation silently fails",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9260"
+    },
+    "9261": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-ifc2x3-material-properties",
+      "head": "96930c9",
+      "status": "merged",
+      "title": "ifctester: fix crash on IFC2X3 material properties",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9261"
     }
+  },
+  "release": {
+    "tag": "v0.8.6-alpha2608051749",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608051749"
   },
   "schema": 1
 }

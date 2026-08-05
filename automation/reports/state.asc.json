@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 535,
-    "skipped_conflict": 115,
+    "merged": 536,
+    "skipped_conflict": 114,
     "skipped_draft": 53,
     "total": 832
   },
-  "generated_at": "2026-08-05T13:10:58Z",
+  "generated_at": "2026-08-05T15:11:28Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "8bdaa8c",
+      "head": "d1027c5",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -4052,7 +4052,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6428-sheet-item-position",
       "head": "3a0e8cc",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: position drawings on sheets without leaving Blender",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8804"
     },
@@ -6795,6 +6795,10 @@
       "title": "append_asset: IFC2X3 MEP ports are silently dropped (#9247)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9255"
     }
+  },
+  "release": {
+    "tag": "v0.8.6-alpha2608051635",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608051635"
   },
   "schema": 1
 }
