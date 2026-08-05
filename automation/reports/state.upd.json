@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 130,
-    "merged": 524,
-    "skipped_conflict": 122,
+    "failed": 129,
+    "merged": 521,
+    "skipped_conflict": 126,
     "skipped_draft": 53,
     "total": 829
   },
-  "generated_at": "2026-08-04T20:25:49Z",
+  "generated_at": "2026-08-05T01:24:02Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -884,7 +884,7 @@
       "author": "theoryshaw",
       "branch": "dims_with_multiple_customunits",
       "head": "e511673",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "closes #8060: add multiple customunits to the dimensions string.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8061"
     },
@@ -892,7 +892,7 @@
       "author": "theoryshaw",
       "branch": "BIM_Dimension_SuppressZeroFeet",
       "head": "f588752",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bim dimension suppress zero feet",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8062"
     },
@@ -900,7 +900,7 @@
       "author": "theoryshaw",
       "branch": "ordinate_dimensioning",
       "head": "bea4f2c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Ordinate dimensioning",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8064"
     },
@@ -915,9 +915,8 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "a26eb38",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "a27c9ef",
+      "status": "merged",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
     },
@@ -1387,7 +1386,7 @@
       "author": "BIMvoice",
       "branch": "fix-8233-duplicate-linked-aggregate",
       "head": "c3b8202",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Retain linked aggregates when duplicating an aggregate (#8233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8319"
     },
@@ -1395,7 +1394,7 @@
       "author": "BIMvoice",
       "branch": "fix-pset-schema-reload-8236",
       "head": "4d96bae",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai(pset): bind schema module directly so pset UI survives add-on reload (#8236)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8322"
     },
@@ -3504,7 +3503,7 @@
       "author": "BIMvoice",
       "branch": "bv-2438-door-panel-pset-edit",
       "head": "b45d19d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: mark predefined property sets as read only in the pset editor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8708"
     },
@@ -3612,7 +3611,7 @@
       "author": "BIMvoice",
       "branch": "fix-7462-bulk-add-pset",
       "head": "9ef27ad",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: apply a new Pset/Qto to the whole selection, not just the active object",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8728"
     },
@@ -3620,7 +3619,7 @@
       "author": "BIMvoice",
       "branch": "bv-2918-dimension-text-annotation",
       "head": "26c81af",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a real linked TEXT annotation for dimension labels",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8730"
     },
@@ -4020,7 +4019,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6427-multiline-text",
       "head": "0483114",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: real multiline entry for text annotations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8799"
     },
@@ -5442,7 +5441,7 @@
       "author": "theoryshaw",
       "branch": "select_assigned_annotations_9030",
       "head": "1a443ac",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
     },

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 130,
+    "failed": 129,
     "merged": 532,
-    "skipped_conflict": 114,
+    "skipped_conflict": 115,
     "skipped_draft": 53,
     "total": 829
   },
-  "generated_at": "2026-08-04T19:11:40Z",
+  "generated_at": "2026-08-05T00:10:57Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -915,9 +915,8 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "1c9d45d",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "a27c9ef",
+      "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
     },

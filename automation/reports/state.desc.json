@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 130,
-    "merged": 525,
+    "failed": 129,
+    "merged": 526,
     "skipped_conflict": 121,
     "skipped_draft": 53,
     "total": 829
   },
-  "generated_at": "2026-08-04T19:48:48Z",
+  "generated_at": "2026-08-05T00:47:38Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -915,9 +915,8 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "1c9d45d",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "a27c9ef",
+      "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
     },
@@ -1728,7 +1727,7 @@
       "author": "BIMvoice",
       "branch": "fix-7117-door-custom-width",
       "head": "59de054",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "fix(bonsai): add door geometry to an object with no mesh data (#7117)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8381"
     },
