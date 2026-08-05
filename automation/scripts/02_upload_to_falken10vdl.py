@@ -1123,6 +1123,15 @@ def generate_release_body(
                 merge_order=merge_order,
                 base=BONSAI_BASE_TAG,
                 total_prs=total_prs,
+                # Stamp the release this snapshot describes, so the NEXT run's
+                # report can link each "Merges under" order at the exact build
+                # that contains the PR.
+                release_tag=tag_name,
+                release_url=(
+                    f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/tag/{tag_name}"
+                    if tag_name
+                    else None
+                ),
             )
 
             # Previous run's committed snapshot for THIS order (working-tree copy;

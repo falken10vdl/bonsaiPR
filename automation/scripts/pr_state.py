@@ -113,12 +113,19 @@ def build_state(
     base=None,
     generated_at=None,
     total_prs=None,
+    release_tag=None,
+    release_url=None,
 ):
     """Assemble a normalized, sorted snapshot from the parsed PR lists.
 
     The four lists are exactly the ones generate_release_body() builds. Keys are
     stringified PR numbers (JSON requires string keys); read them back with
     int(k) when you need numeric sort.
+
+    `release_tag`/`release_url` identify the build this snapshot came from, so a
+    later report can link "merges under desc" straight at the desc release that
+    actually contains the PR. Both are optional: snapshots written before this
+    field existed simply render as plain text.
     """
     prs = {}
 
@@ -160,6 +167,7 @@ def build_state(
         "generated_at": generated_at,
         "merge_order": (merge_order or "").strip() or "unknown",
         "base": base,
+        "release": {"tag": release_tag, "url": release_url},
         "counts": counts,
         # Sorted numerically now so the committed file is diff-stable.
         "prs": {k: prs[k] for k in sorted(prs, key=int)},
@@ -234,6 +242,29 @@ def robustness_sources(states):
         for suffix, state in states.items()
         if state and state.get("prs")
     ]
+
+
+def order_releases(states):
+    """{suffix: {"tag":..., "url":...}} for orders whose snapshot names its build.
+
+    Lets a report turn "merges under desc" into a link to the desc release that
+    actually contains the PR. Snapshots written before build_state() recorded the
+    release — or by a run that had no tag yet — are simply absent from the map,
+    so callers must fall back to plain text.
+    """
+    releases = {}
+    for suffix, state in (states or {}).items():
+        release = (state or {}).get("release") or {}
+        if release.get("url") or release.get("tag"):
+            releases[suffix] = {"tag": release.get("tag"), "url": release.get("url")}
+    return releases
+
+
+def order_link(suffix, releases, label=None):
+    """Markdown link to the build that produced `suffix`'s snapshot, else bare text."""
+    label = label or suffix
+    url = (releases or {}).get(suffix, {}).get("url")
+    return f"[{label}]({url})" if url else label
 
 
 def compute_robustness(states):

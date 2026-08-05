@@ -198,6 +198,29 @@ def _pr(num, title, author, sha, reason=None, stability=None):
     }
 
 
+# Tag used in the fixtures' per-order release links. Deliberately NOT resolvable:
+# verify_release() greps for it to prove no stability cell was parsed into a field
+# it doesn't belong in, which only works if no real build can ever produce it. Real
+# tags are v<upstream version>-alpha<10-digit timestamp>, so this shares no shape
+# with one — and a reader who clicks it in a testbed report sees at a glance that
+# it is fixture data rather than a build that went missing.
+FAKE_RELEASE_TAG = "TESTRIG-NOT-A-REAL-RELEASE"
+
+
+def _orders(prefix, *suffixes):
+    """A 'Merges under' cell in report shape: each order links to its release.
+
+    generate_report() renders the orders as markdown links (pr_state.order_link),
+    so the fixture has to carry the brackets too — a bare 'asc, desc' would let a
+    parser bug that trips on link punctuation slip through.
+    """
+    linked = ", ".join(
+        f"[{s}](https://github.com/{OWNER}/{REPO}/releases/tag/{FAKE_RELEASE_TAG}-{s})"
+        for s in suffixes
+    )
+    return f"{prefix} {linked}"
+
+
 def scenario(n):
     """Return (merged, failed_table, skipped_table) PR lists for scenario n.
 
@@ -212,20 +235,20 @@ def scenario(n):
     # The `stability` values cover every cell shape generate_report() can emit:
     # stable-on-3, stable-on-2, order-dependent, blocked-everywhere, and unseen.
     if n == 1:
-        merged = [_pr(101, "Add wall tool", "alice", "aaaa111", stability="✅ asc, desc, upd"),
-                  _pr(102, "Fix door swing", "bob", "bbbb111", stability="⚠️ asc"),
-                  _pr(103, "Improve schedules", "carol", "cccc111", stability="✅ asc, desc")]
+        merged = [_pr(101, "Add wall tool", "alice", "aaaa111", stability=_orders("✅", "asc", "desc", "upd")),
+                  _pr(102, "Fix door swing", "bob", "bbbb111", stability=_orders("⚠️", "asc")),
+                  _pr(103, "Improve schedules", "carol", "cccc111", stability=_orders("✅", "asc", "desc"))]
         failed = [_pr(201, "Break the build", "dave", "dddd111", R_REAL),
                   _pr(301, "Nice feature, bad timing", "erin", "eeee111", R_CONFLICT,
                       stability="✖ none"),
                   _pr(302, "Rescued by another order", "heidi", "hhhh111", R_CONFLICT,
-                      stability="⚠️ desc, upd")]
+                      stability=_orders("⚠️", "desc", "upd"))]
         skipped = [_pr(401, "WIP experiment", "frank", "ffff111", R_DRAFT)]
     elif n == 2:
-        merged = [_pr(101, "Add wall tool", "alice", "aaaa222", stability="✅ asc, desc, upd"),  # new commit
-                  _pr(102, "Fix door swing", "bob", "bbbb111", stability="⚠️ asc"),  # unchanged
-                  _pr(103, "Improve schedules", "carol", "cccc111", stability="✅ asc, desc"),
-                  _pr(201, "Break the build", "dave", "dddd111", stability="⚠️ asc, upd"),  # recovered
+        merged = [_pr(101, "Add wall tool", "alice", "aaaa222", stability=_orders("✅", "asc", "desc", "upd")),  # new commit
+                  _pr(102, "Fix door swing", "bob", "bbbb111", stability=_orders("⚠️", "asc")),  # unchanged
+                  _pr(103, "Improve schedules", "carol", "cccc111", stability=_orders("✅", "asc", "desc")),
+                  _pr(201, "Break the build", "dave", "dddd111", stability=_orders("⚠️", "asc", "upd")),  # recovered
                   _pr(104, "New pretty panel", "grace", "gggg111",
                       stability="— not yet seen")]  # new PR
         failed = []
@@ -273,7 +296,10 @@ def write_report(path, version, ts10, merged, failed, skipped, order="ascending"
         f.write(f"- Order-stable merges (merged under every order below): {n_stable}\n")
         f.write(f"- Order-dependent merges (merged here, blocked under another order): {n_dependent}\n")
         f.write(f"- Too new to compare (absent from every snapshot): {n_unseen}\n\n")
-        f.write("Cross-order stability compares the most recent snapshot of each order (asc, desc, upd).\n\n")
+        f.write(
+            "Cross-order stability compares the most recent snapshot of each order "
+            f"({_orders('', 'asc', 'desc', 'upd').strip()}).\n\n"
+        )
 
         # The single failed table was split in two (Reason column dropped): real
         # base failures vs PRs that merge cleanly but conflict with another PR.
@@ -432,8 +458,11 @@ def verify_release(tag, expect_delta, expect_failed=None, expect_conflict=None,
     for author in expect_authors:
         checks.append((f"contributor '{author}' parsed from author cell",
                        author in body))
+    # The stability cells now carry markdown links to per-order releases. The
+    # fixture uses a tag no real build ever produces, so its presence anywhere in
+    # the body means a stability cell was parsed as something else.
     checks.append(("no stability cell leaked into a parsed field",
-                   "asc, desc" not in body and "not yet seen" not in body))
+                   FAKE_RELEASE_TAG not in body and "not yet seen" not in body))
     checks.append(("body no longer contains the big merged TABLE header",
                    "| PR | Branch | Title | Author | Last commit |" not in body))
     checks.append(("README asset uploaded", readme_asset is not None))

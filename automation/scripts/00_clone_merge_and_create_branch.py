@@ -973,13 +973,17 @@ def generate_report(
     order_states = pr_state.load_order_states(REPORTS_DIR)
     robustness = pr_state.compute_robustness(order_states)
     robustness_sources = pr_state.robustness_sources(order_states)
+    order_releases = pr_state.order_releases(order_states)
     show_stability = len(robustness_sources) >= 2
 
     def _stability_cell(pr_number):
         """Orders this PR merged under, per the snapshots listed in the Summary.
 
         Lists the orders explicitly rather than saying "all", because a PR the
-        other snapshots predate is judged on fewer than three orders.
+        other snapshots predate is judged on fewer than three orders. Each order
+        links to the release whose snapshot merged the PR — i.e. the exact build
+        to download if you want it. Snapshots that predate release stamping have
+        no URL and stay plain text.
         """
         entry = robustness.get(str(pr_number))
         if not entry:
@@ -987,7 +991,10 @@ def generate_report(
         if not entry["merged_in"]:
             return "✖ none"
         prefix = "✅" if entry["stable"] else "⚠️"
-        return f"{prefix} {', '.join(entry['merged_in'])}"
+        linked = ", ".join(
+            pr_state.order_link(suffix, order_releases) for suffix in entry["merged_in"]
+        )
+        return f"{prefix} {linked}"
 
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(f"# BonsaiPR Weekly Build Report\n")
@@ -1050,7 +1057,10 @@ def generate_report(
                     stable_merged += 1
                 else:
                     dependent_merged += 1
-            compared = ", ".join(suffix for suffix, _ in robustness_sources)
+            compared = ", ".join(
+                pr_state.order_link(suffix, order_releases)
+                for suffix, _ in robustness_sources
+            )
             f.write(f"- Order-stable merges (merged under every order below): {stable_merged}\n")
             f.write(
                 f"- Order-dependent merges (merged here, blocked under another order): {dependent_merged}\n"
@@ -1064,7 +1074,15 @@ def generate_report(
             )
             f.write("      generally one run behind:\n")
             for suffix, generated_at in robustness_sources:
-                f.write(f"      - {suffix}: {generated_at or 'unknown'}\n")
+                release = order_releases.get(suffix, {})
+                # The tag is what the "Merges under" links point at; naming it
+                # here makes the vintage of each link explicit.
+                build = (
+                    f" — {pr_state.order_link(suffix, order_releases, release['tag'])}"
+                    if release.get("tag")
+                    else ""
+                )
+                f.write(f"      - {suffix}: {generated_at or 'unknown'}{build}\n")
             f.write(
                 "      'Order-dependent' means the PR lost a conflict race to a PR it overlaps with.\n"
             )
