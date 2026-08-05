@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 530,
-    "skipped_conflict": 125,
+    "merged": 535,
+    "skipped_conflict": 126,
     "skipped_draft": 53,
-    "total": 837
+    "total": 843
   },
-  "generated_at": "2026-08-05T16:26:08Z",
+  "generated_at": "2026-08-05T18:26:16Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -5505,7 +5505,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-boolean-value-casting",
       "head": "fa3b212",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifctester: stop unrecognised boolean spellings matching True",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9058"
     },
@@ -6731,14 +6731,6 @@
       "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9243"
     },
-    "9244": {
-      "author": "BIMvoice",
-      "branch": "fix/testcase-name-result-suffix",
-      "head": "94fe4ac",
-      "status": "merged",
-      "title": "ifctester: put pass/fail at the end of generated testcase names",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9244"
-    },
     "9245": {
       "author": "BIMvoice",
       "branch": "fix-9034-bsdd-referencecode-keyerror",
@@ -6834,11 +6826,67 @@
       "status": "merged",
       "title": "ifctester: fix crash on IFC2X3 material properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9261"
+    },
+    "9263": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-tolerance-absolute-component",
+      "head": "ea972c5",
+      "status": "merged",
+      "title": "ifctester: tolerance is missing its fixed component",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9263"
+    },
+    "9264": {
+      "author": "BIMvoice",
+      "branch": "fix/get-total-inverses-docstring",
+      "head": "0dc3174",
+      "status": "merged",
+      "title": "Fix false get_total_inverses docstring claim",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9264"
+    },
+    "9265": {
+      "author": "BIMvoice",
+      "branch": "fix/add-occurrence-relating-type-sync",
+      "head": "74b5ec6",
+      "status": "merged",
+      "title": "Fix dead relating_type_id guard in AddOccurrence",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9265"
+    },
+    "9266": {
+      "author": "BIMvoice",
+      "branch": "fix-7468-bsdd-pypi-modules",
+      "head": "33aa739",
+      "status": "merged",
+      "title": "bsdd: dist target ships only one of three modules",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9266"
+    },
+    "9267": {
+      "author": "BIMvoice",
+      "branch": "9262-item-mode-decoration-preview",
+      "head": "729788f",
+      "status": "merged",
+      "title": "Bonsai: keep dimension preview visible in Item/Edit mode (#9262)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9267"
+    },
+    "9268": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-boolean-enum-cast",
+      "head": "105d2ee",
+      "status": "merged",
+      "title": "ifctester: wrong-case boolean enum matches anything",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9268"
+    },
+    "9269": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-requirements-facet-order",
+      "head": "76740b8",
+      "status": "merged",
+      "title": "ifctester: canonicalise parsed requirement order",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9269"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608051749",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608051749"
+    "tag": "v0.8.6-alpha2608051949",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608051949"
   },
   "schema": 1
 }
