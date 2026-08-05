@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 131,
-    "merged": 534,
-    "skipped_conflict": 112,
+    "failed": 129,
+    "merged": 519,
+    "skipped_conflict": 129,
     "skipped_draft": 53,
     "total": 830
   },
-  "generated_at": "2026-08-05T08:11:08Z",
+  "generated_at": "2026-08-05T11:11:17Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -998,7 +998,7 @@
       "author": "carlopav",
       "branch": "fix-spatialzone-outliner-collection",
       "head": "29b12af",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Place IfcSpatialZone in its spatial parent's collection instead of Unsorted",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8174"
     },
@@ -1775,7 +1775,7 @@
       "author": "BIMvoice",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "82a4117",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix BCF 2.1 viewpoint and snapshot file names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
@@ -1929,7 +1929,7 @@
       "author": "BIMvoice",
       "branch": "fix-7978-metadata-linked-collections",
       "head": "c405286",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: keep user linked collections when writing the metadata blend (#7978)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8422"
     },
@@ -2093,7 +2093,7 @@
       "author": "BIMvoice",
       "branch": "fix-3950-csv-search-attributes",
       "head": "58e13cd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: persist CSV attributes when saving a spreadsheet search (#3950)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8447"
     },
@@ -2431,7 +2431,7 @@
       "author": "BIMvoice",
       "branch": "fix-5898-extrusion-edge",
       "head": "f4dba8b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: pick the true sweep edge in detect_extrusion_edge (#5898)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8501"
     },
@@ -2578,7 +2578,7 @@
       "author": "BIMvoice",
       "branch": "fix-3189-tree-file-pointer",
       "head": "dfefb53",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell: attach owning file to geom.tree select results (#3189)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8522"
     },
@@ -2707,7 +2707,7 @@
       "author": "BIMvoice",
       "branch": "ship-tester-webapp-hardening",
       "head": "a65a301",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: diagnose IfcTester webapp startup failures instead of a dead browser tab",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8543"
     },
@@ -3125,7 +3125,7 @@
       "author": "BIMvoice",
       "branch": "fix-6274-wall-join-2d",
       "head": "99f2a0c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai(drawing): join mitred wall/slab linework by actual layer materials, not LayerSetName",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8633"
     },
@@ -3271,7 +3271,7 @@
       "author": "theoryshaw",
       "branch": "fix-8666-saferemoval-untracked-assertion",
       "head": "084818d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: don't crash on untracked removed element (#8666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8668"
     },
@@ -3431,7 +3431,7 @@
       "author": "BIMvoice",
       "branch": "fix-3642-overlap-warning",
       "head": "66d98de",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: warn when overlapping solids cause shapely fill cells to merge",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8696"
     },
@@ -3471,8 +3471,7 @@
       "author": "BIMvoice",
       "branch": "fix-3995-standalone-window-boundaries",
       "head": "2cc00c5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: let standalone windows bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8703"
     },
@@ -3480,8 +3479,7 @@
       "author": "BIMvoice",
       "branch": "bv-7032-stale-ifc-definition-id",
       "head": "bdf4e13",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop a stale ifc_definition_id from aborting the whole project save",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8705"
     },
@@ -3760,7 +3758,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3302-mirror-joins",
       "head": "f3ed4f4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: resync mirrored walls' openings so voids follow their door/window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
     },
@@ -3989,7 +3987,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6400-unit-change-warning",
       "head": "248fb3e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: warn before a unit change that would silently rescale the model",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8795"
     },
@@ -4147,7 +4145,7 @@
       "author": "BIMvoice",
       "branch": "issue-7178-clash-feet-units",
       "head": "e6489c2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix clash pin drifting away when a false origin is active",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8816"
     },
@@ -4457,7 +4455,7 @@
       "author": "BIMvoice",
       "branch": "4748-stacked-csv-export",
       "head": "37c5b8f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stack multiple saved CSV templates into one spreadsheet export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8875"
     },
@@ -4489,7 +4487,7 @@
       "author": "BIMvoice",
       "branch": "6400-display-units-length",
       "head": "c2f4fe7",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a display length unit preference (#6400)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8881"
     },
@@ -4865,7 +4863,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-choco-subprocess-args",
       "head": "3aa40f2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix ci-bonsai-choco: subprocess calls given bare multi-word strings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8942"
     },
@@ -5017,7 +5015,7 @@
       "author": "BIMvoice",
       "branch": "fix/external-style-identification-crash",
       "head": "95888d3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: report bad external style data instead of raising",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8969"
     },

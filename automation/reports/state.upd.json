@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 133,
+    "failed": 129,
     "merged": 523,
-    "skipped_conflict": 121,
+    "skipped_conflict": 125,
     "skipped_draft": 53,
     "total": 830
   },
-  "generated_at": "2026-08-05T09:24:44Z",
+  "generated_at": "2026-08-05T12:28:28Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1643,8 +1643,7 @@
       "author": "BIMvoice",
       "branch": "fix-5221-schedule-font-scope",
       "head": "b22055d",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: scope schedule/document styles on a sheet so they keep their own font (#5221)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8361"
     },
@@ -2021,8 +2020,7 @@
       "author": "BIMvoice",
       "branch": "fix-7289-sheet-unique-ids",
       "head": "e20098f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: uniquify referenced SVG ids on a sheet so text does not garble (#7289)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8437"
     },
@@ -3546,8 +3544,7 @@
       "author": "BIMvoice",
       "branch": "fix-6664-status-element-visibility",
       "head": "17de480",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: compose element visibility with the Status filter instead of overwriting it",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8720"
     },
@@ -3990,8 +3987,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6400-unit-change-warning",
       "head": "248fb3e",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: warn before a unit change that would silently rescale the model",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8795"
     },
