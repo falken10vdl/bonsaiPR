@@ -216,7 +216,12 @@ Notes on the design:
 - **`pin`** freezes a PR at a known-good head SHA. This is what makes a curated build
   a *stable product* rather than something that silently changes under the user when a
   contributor force-pushes. It is also, deliberately, a strong quality signal — a
-  curator who pins is saying "I tested this exact commit."
+  curator who pins is saying "I tested this exact commit." One caveat: if the contributor
+  rebases or force-pushes their PR branch, the old SHA becomes orphaned — no longer
+  fetchable from any public ref, and impossible to verify even in principle. This is
+  distinct from a PR simply advancing (where the old SHA remains reachable as an
+  ancestor of the new tip). The reconciliation report ([§5.5](#s5-5)) distinguishes these
+  two cases, and `pinned_by` ([§8.1](#s8-1)) counts only pins whose SHA is still reachable.
 - **`orders`** is per-profile because a selective profile with 40 PRs may have no
   conflicts at all, in which case building three orders is wasted CPU.
 - **`exclude.prs` carries a reason, not just a number.** This is the single most
@@ -412,6 +417,16 @@ be reduced to `theirs`/`ours`. This is the single highest-value output of the wh
 command, and it is a straight transfer of knowledge from a private branch into shared
 automation.
 
+**The non-overlap invariant — a resolution the tool can derive without human input.**
+The two categories above require judgement. There is a third that does not: if a file
+was *not changed between the merge-base and the current base*, its correct post-rebase
+state is exactly the branch tip — not `--ours`, not `--theirs`, not a merge. This is
+derivable in full from `git diff` and costs no human time. `distill` should apply it as
+an automated pre-filter and report the split explicitly: *"N conflicts auto-resolved via
+non-overlap invariant; M overlap files require human review."* On the `parametric_dimensions`
+rebase this distinction separated 22 trivially deterministic resolutions from the 8
+files that actually needed a human decision.
+
 ### <a id="s5-4"></a>5.4 Residue handling, and the privacy default
 
 The 77 residue commits are clustered into candidate patch series — contiguous runs in
@@ -444,6 +459,10 @@ shipping the branch. So the output is a reconciliation report, not a pass/fail:
 - PRs now closed or absorbed upstream — dropped, with the commit that absorbed them
 - PRs that no longer merge in the recorded order — the order needs revisiting
 - Residue patches that no longer apply
+- **Pins referencing orphaned commits** — the pinned SHA is no longer fetchable from any
+  public ref due to a contributor force-push or rebase; the pin must be reaffirmed
+  against the current tip before the build runs (distinct from "PR advanced," where
+  the old SHA is still reachable as an ancestor)
 - A tree diff of replay vs. original branch, restricted to paths the profile claims
 
 A curator reads that report and decides. The tool's job is to make the divergence
@@ -462,6 +481,17 @@ visible and attributable, not to assert equivalence it cannot verify.
   branch and say plainly when a branch is too unstructured to be worth distilling.
 - **It only works on branches built by merging.** A branch maintained by rebasing loses
   the merge-commit evidence entirely and depends wholly on patch-id matching.
+- **Ancestry-merge commits inflate distillation complexity even on merge-based branches.**
+  `git merge -s ours` commits — used to establish git ancestry between a build branch
+  and upstream PRs — each silently contribute their second-parent commit chains into the
+  branch's reachable history. The `parametric_dimensions` branch carried three such
+  commits; when replayed during rebase, those three generated 13 duplicate commits and
+  ~30 conflict rounds across 52 total commits. `distill` must recognize `-s ours` merges
+  (identifiable by their empty tree-delta relative to HEAD) and skip their second-parent
+  chains rather than walking them as integrations. It should also report the count
+  upfront, since it predicts conflict workload: *"3 ancestry-merge commits found —
+  duplicate chains excluded from walk."* Branches with ten or more such merges may be
+  impractical to rebase without a structured resolution strategy.
 
 ---
 
@@ -584,6 +614,12 @@ already emits.
 Note the asymmetry between `blocked_by` and `excluded_by`: the first is the automation
 failing to merge something a curator wanted, the second is a curator not wanting it.
 Conflating them would be the single easiest way to make this whole aggregate lie.
+
+`pinned_by` counts only pins whose SHA is currently reachable from the PR's head ref or
+any public ancestor thereof. A force-pushed PR branch orphans the old SHA; a broken pin
+must not count toward the signal until reaffirmed. The reconciliation report
+([§5.5](#s5-5)) surfaces these as the distinct *orphaned* category rather than folding
+them into the general "PR head moved" bucket.
 
 ### <a id="s8-2"></a>8.2 Integration robustness is not functional robustness
 
@@ -792,6 +828,20 @@ features are worth the build on their own.
 - *Fragmentation.* Nine curated builds mean nine slightly different Bonsais, and bug
   reports get harder. Mitigated by every build already carrying a manifest that
   states exactly what is in it — arguably *better* than today's situation.
+- *Ancestry-merge debt becomes a rebase liability.* Poweruser build branches commonly
+  use `git merge -s ours` to establish git ancestry between accumulated PRs, preventing
+  re-application of already-merged content on future merges. Each such commit silently
+  inflates a future rebase: three ancestry-merge commits on `parametric_dimensions`
+  produced 13 duplicate commits and ~30 conflict rounds on a 52-commit replay. A branch
+  maintained over a year with ten or more such merges may become impractical to rebase
+  without the explicit resolution strategy documented in the log. `distill` ([§5](#s5)) must
+  detect and skip these — identifiable by their empty tree-delta relative to HEAD — and
+  warn curators before they invest in a distillation pass. The profile-based model
+  eliminates this pattern entirely: because the aggregator manages merge sequence
+  explicitly via `order_seq` and `KNOWN_CONFLICT_RESOLUTIONS`, no PR branch ever needs
+  to become a git parent of another, so no `merge -s ours` commits are needed. This is
+  a concrete structural advantage of profile-based builds that is not obvious from the
+  profile format alone.
 - *Schema churn.* Manifests are consumed by other people's tools. Schema 2 should be
   additive-only, and the version must be checked, not assumed.
 - *Storage.* `automation/reports/` is already ~52 MB — 1.5 MB of live state/event JSON
