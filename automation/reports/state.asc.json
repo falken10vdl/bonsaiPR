@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 129,
-    "merged": 533,
-    "skipped_conflict": 115,
+    "failed": 131,
+    "merged": 534,
+    "skipped_conflict": 112,
     "skipped_draft": 53,
     "total": 830
   },
-  "generated_at": "2026-08-05T05:11:42Z",
+  "generated_at": "2026-08-05T08:11:08Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3471,7 +3471,8 @@
       "author": "BIMvoice",
       "branch": "fix-3995-standalone-window-boundaries",
       "head": "2cc00c5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: let standalone windows bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8703"
     },
@@ -3479,7 +3480,8 @@
       "author": "BIMvoice",
       "branch": "bv-7032-stale-ifc-definition-id",
       "head": "bdf4e13",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: stop a stale ifc_definition_id from aborting the whole project save",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8705"
     },
@@ -5880,7 +5882,7 @@
     "9106": {
       "author": "BIMvoice",
       "branch": "fix/sequence-work-time-start-ignored",
-      "head": "b462145",
+      "head": "4eebb5e",
       "status": "merged",
       "title": "util.sequence: is_day_in_work_time ignored Start whenever Finish was also set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9106"
@@ -6137,8 +6139,8 @@
     "9147": {
       "author": "BIMvoice",
       "branch": "fix/sequence-recurrence-type-fallthrough",
-      "head": "1419f94",
-      "status": "skipped_conflict",
+      "head": "1950e10",
+      "status": "merged",
       "title": "util.sequence: fix crash on valid recurrence patterns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9147"
     },

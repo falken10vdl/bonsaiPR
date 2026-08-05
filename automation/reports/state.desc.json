@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 525,
-    "skipped_conflict": 123,
+    "merged": 528,
+    "skipped_conflict": 120,
     "skipped_draft": 53,
     "total": 830
   },
-  "generated_at": "2026-08-05T05:47:56Z",
+  "generated_at": "2026-08-05T08:47:39Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -358,7 +358,7 @@
       "author": "jaliste",
       "branch": "fix/decoration-missing-splines-7655",
       "head": "10a50eb",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix #7655: Handle missing spline data in decoration.py",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7670"
     },
@@ -3635,7 +3635,7 @@
       "author": "BIMvoice",
       "branch": "fix-6278-duct-bend-flow-direction",
       "head": "ec6b560",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: preserve flow direction when splicing a bend into a duct connection",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8733"
     },
@@ -5880,8 +5880,8 @@
     "9106": {
       "author": "BIMvoice",
       "branch": "fix/sequence-work-time-start-ignored",
-      "head": "b462145",
-      "status": "skipped_conflict",
+      "head": "4eebb5e",
+      "status": "merged",
       "title": "util.sequence: is_day_in_work_time ignored Start whenever Finish was also set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9106"
     },
@@ -6137,7 +6137,7 @@
     "9147": {
       "author": "BIMvoice",
       "branch": "fix/sequence-recurrence-type-fallthrough",
-      "head": "1419f94",
+      "head": "1950e10",
       "status": "merged",
       "title": "util.sequence: fix crash on valid recurrence patterns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9147"

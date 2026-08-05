@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 129,
-    "merged": 522,
-    "skipped_conflict": 126,
+    "failed": 133,
+    "merged": 523,
+    "skipped_conflict": 121,
     "skipped_draft": 53,
     "total": 830
   },
-  "generated_at": "2026-08-05T06:24:34Z",
+  "generated_at": "2026-08-05T09:24:44Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1643,7 +1643,8 @@
       "author": "BIMvoice",
       "branch": "fix-5221-schedule-font-scope",
       "head": "b22055d",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: scope schedule/document styles on a sheet so they keep their own font (#5221)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8361"
     },
@@ -2020,7 +2021,8 @@
       "author": "BIMvoice",
       "branch": "fix-7289-sheet-unique-ids",
       "head": "e20098f",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: uniquify referenced SVG ids on a sheet so text does not garble (#7289)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8437"
     },
@@ -3544,7 +3546,8 @@
       "author": "BIMvoice",
       "branch": "fix-6664-status-element-visibility",
       "head": "17de480",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: compose element visibility with the Status filter instead of overwriting it",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8720"
     },
@@ -3987,7 +3990,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-6400-unit-change-warning",
       "head": "248fb3e",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: warn before a unit change that would silently rescale the model",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8795"
     },
@@ -5880,8 +5884,8 @@
     "9106": {
       "author": "BIMvoice",
       "branch": "fix/sequence-work-time-start-ignored",
-      "head": "b462145",
-      "status": "skipped_conflict",
+      "head": "4eebb5e",
+      "status": "merged",
       "title": "util.sequence: is_day_in_work_time ignored Start whenever Finish was also set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9106"
     },
@@ -6137,7 +6141,7 @@
     "9147": {
       "author": "BIMvoice",
       "branch": "fix/sequence-recurrence-type-fallthrough",
-      "head": "1419f94",
+      "head": "1950e10",
       "status": "merged",
       "title": "util.sequence: fix crash on valid recurrence patterns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9147"
