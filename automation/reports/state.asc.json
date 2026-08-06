@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 549,
-    "skipped_conflict": 116,
+    "merged": 548,
+    "skipped_conflict": 117,
     "skipped_draft": 53,
     "total": 847
   },
-  "generated_at": "2026-08-06T11:11:15Z",
+  "generated_at": "2026-08-06T13:11:24Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2981,7 +2981,7 @@
       "author": "theoryshaw",
       "branch": "fix-mergeduplicatetypes-null-and-crossclass",
       "head": "684ec64",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8610"
     },
@@ -6917,8 +6917,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608061235",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061235"
+    "tag": "v0.8.6-alpha2608061435",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061435"
   },
   "schema": 1
 }

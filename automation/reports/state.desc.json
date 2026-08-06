@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 129,
+    "failed": 132,
     "merged": 544,
-    "skipped_conflict": 121,
+    "skipped_conflict": 118,
     "skipped_draft": 53,
     "total": 847
   },
-  "generated_at": "2026-08-06T11:48:27Z",
+  "generated_at": "2026-08-06T13:48:57Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -3423,7 +3423,8 @@
       "author": "BIMvoice",
       "branch": "fix-3621-window-shapes",
       "head": "ca10002",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: add Round and Arch shapes to the parametric window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8695"
     },
@@ -3455,7 +3456,8 @@
       "author": "BIMvoice",
       "branch": "fix-3754-wall-covering",
       "head": "34a5dc2",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: automate wall coverings (cladding, insulation) from wall side faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8699"
     },
@@ -3503,7 +3505,8 @@
       "author": "BIMvoice",
       "branch": "bv-2438-door-panel-pset-edit",
       "head": "b45d19d",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: mark predefined property sets as read only in the pset editor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8708"
     },
@@ -6917,8 +6920,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608061312",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061312"
+    "tag": "v0.8.6-alpha2608061512",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061512"
   },
   "schema": 1
 }
