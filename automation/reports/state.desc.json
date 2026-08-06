@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 132,
+    "failed": 129,
     "merged": 544,
-    "skipped_conflict": 118,
-    "skipped_draft": 53,
-    "total": 847
+    "skipped_conflict": 121,
+    "skipped_draft": 54,
+    "total": 848
   },
-  "generated_at": "2026-08-06T13:48:57Z",
+  "generated_at": "2026-08-06T16:48:32Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "74b405a",
+      "head": "e044b86",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -3423,8 +3423,7 @@
       "author": "BIMvoice",
       "branch": "fix-3621-window-shapes",
       "head": "ca10002",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: add Round and Arch shapes to the parametric window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8695"
     },
@@ -3456,8 +3455,7 @@
       "author": "BIMvoice",
       "branch": "fix-3754-wall-covering",
       "head": "34a5dc2",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: automate wall coverings (cladding, insulation) from wall side faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8699"
     },
@@ -3505,8 +3503,7 @@
       "author": "BIMvoice",
       "branch": "bv-2438-door-panel-pset-edit",
       "head": "b45d19d",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: mark predefined property sets as read only in the pset editor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8708"
     },
@@ -6917,11 +6914,19 @@
       "status": "merged",
       "title": "ifctester: two false passes in prohibited property checks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9274"
+    },
+    "9276": {
+      "author": "BIMvoice",
+      "branch": "fix-9270-unsaved-ifc-warning",
+      "head": "0f04bbc",
+      "status": "skipped_draft",
+      "title": "Bonsai: warn before saving the .blend drops unsaved IFC edits",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9276"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608061512",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061512"
+    "tag": "v0.8.6-alpha2608061812",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061812"
   },
   "schema": 1
 }

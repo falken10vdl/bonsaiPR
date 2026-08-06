@@ -4,10 +4,10 @@
     "failed": 129,
     "merged": 539,
     "skipped_conflict": 126,
-    "skipped_draft": 53,
-    "total": 847
+    "skipped_draft": 54,
+    "total": 848
   },
-  "generated_at": "2026-08-06T14:26:34Z",
+  "generated_at": "2026-08-06T17:25:41Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "74b405a",
+      "head": "e044b86",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -6914,11 +6914,19 @@
       "status": "merged",
       "title": "ifctester: two false passes in prohibited property checks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9274"
+    },
+    "9276": {
+      "author": "BIMvoice",
+      "branch": "fix-9270-unsaved-ifc-warning",
+      "head": "0f04bbc",
+      "status": "skipped_draft",
+      "title": "Bonsai: warn before saving the .blend drops unsaved IFC edits",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9276"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608061549",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061549"
+    "tag": "v0.8.6-alpha2608061849",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061849"
   },
   "schema": 1
 }

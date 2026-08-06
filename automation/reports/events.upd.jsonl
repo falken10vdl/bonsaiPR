@@ -1889,3 +1889,8 @@
 {"ts": "2026-08-06T14:05:55Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-08-06T14:05:55Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-08-06T14:05:55Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-06T17:05:01Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-06T17:05:01Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-06T17:05:01Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-06T17:25:41Z", "order": "by-updated", "pr": 8139, "event": "updated", "status": "skipped_draft", "from_head": "74b405a", "to_head": "e044b86"}
+{"ts": "2026-08-06T17:25:41Z", "order": "by-updated", "pr": 9276, "event": "added", "to": "skipped_draft"}

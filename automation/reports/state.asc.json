@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 548,
-    "skipped_conflict": 117,
-    "skipped_draft": 53,
-    "total": 847
+    "merged": 549,
+    "skipped_conflict": 116,
+    "skipped_draft": 54,
+    "total": 848
   },
-  "generated_at": "2026-08-06T13:11:24Z",
+  "generated_at": "2026-08-06T16:11:54Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "74b405a",
+      "head": "e044b86",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -2981,7 +2981,7 @@
       "author": "theoryshaw",
       "branch": "fix-mergeduplicatetypes-null-and-crossclass",
       "head": "684ec64",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8610"
     },
@@ -6914,11 +6914,19 @@
       "status": "merged",
       "title": "ifctester: two false passes in prohibited property checks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9274"
+    },
+    "9276": {
+      "author": "BIMvoice",
+      "branch": "fix-9270-unsaved-ifc-warning",
+      "head": "0f04bbc",
+      "status": "skipped_draft",
+      "title": "Bonsai: warn before saving the .blend drops unsaved IFC edits",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9276"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608061435",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061435"
+    "tag": "v0.8.6-alpha2608061735",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061735"
   },
   "schema": 1
 }
