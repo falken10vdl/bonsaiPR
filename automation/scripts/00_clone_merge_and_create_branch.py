@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 # plain import works, but insert the path explicitly for direct/manual invocation.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pr_state
+import bonsaipr_profile
 
 # Committed per-order snapshots (state.asc/desc/upd.json). The report reads them
 # to annotate each PR with how it fared under the other merge orders.
@@ -38,28 +39,26 @@ fork_repo_url_public = (
 )
 work_dir = os.getenv("BASE_CLONE_DIR", "/home/falken10vdl/bonsaiPRDevel/IfcOpenShell")
 upstream_repo = f"{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}"
-# Parse USERNAMES and strip whitespace from each username
-raw_usernames = os.getenv("USERNAMES", "")
-if raw_usernames:
-    users = [u.strip() for u in raw_usernames.split(",") if u.strip()]
-else:
-    users = [""]  # Add specific usernames or leave empty for all users
-
-# Parse EXCLUDED PR numbers from .env
-raw_excluded = os.getenv("EXCLUDED", "")
-if raw_excluded:
-    excluded_prs = set(
-        int(x.strip()) for x in raw_excluded.split(",") if x.strip().isdigit()
-    )
-else:
-    excluded_prs = set()
-
-# Skip PRs that change C++ compiled into the ifcopenshell wheel Bonsai loads.
-# BonsaiPR ships the Python add-on against a pinned prebuilt wheel and never
-# recompiles C++, so a PR whose Python depends on new/changed C++ either crashes
-# at runtime or silently runs the old wheel behavior. Opt-in via .env
-# (SKIP_CPP_PRS=1); default off so we don't drop PRs whose Python is testable.
-SKIP_CPP_PRS = os.getenv("SKIP_CPP_PRS", "").strip().lower() in ("1", "true", "yes")
+# Which PRs this build curates. Set BONSAIPR_PROFILE to build a named profile
+# from profiles/; leave it unset and the legacy USERNAMES / EXCLUDED /
+# SKIP_CPP_PRS env vars are read exactly as before, so an existing .env keeps
+# working untouched. See RFC-001 s4.1 for the mapping.
+#
+# The three names below are the only things the ~950 lines downstream consume,
+# so a profile is purely a different way of *deciding* them:
+#
+#   users        author allowlist ([""] means all authors)
+#   excluded_prs PR numbers to skip outright
+#   SKIP_CPP_PRS skip PRs that change C++ compiled into the ifcopenshell wheel
+#                Bonsai loads. BonsaiPR ships the Python add-on against a pinned
+#                prebuilt wheel and never recompiles C++, so a PR whose Python
+#                depends on new/changed C++ either crashes at runtime or silently
+#                runs the old wheel behavior. Default off so we don't drop PRs
+#                whose Python is testable.
+CURATION = bonsaipr_profile.load_profile()
+users = CURATION.users
+excluded_prs = CURATION.excluded_prs
+SKIP_CPP_PRS = CURATION.skip_cpp
 
 # File extensions that only take effect after a C++ recompile.
 COMPILED_EXTS = {".cpp", ".cxx", ".cc", ".c", ".h", ".hpp", ".hxx", ".i", ".ipp"}
@@ -353,12 +352,85 @@ def get_open_prs():
     return all_prs
 
 
+# RFC-001 phase 1.1: which already-merged PR did each blocked PR lose to?
+#
+# The reports have always recorded *that* a PR was conflict-skipped and which
+# orders it merges under, but never *which PR beat it* - and that pairing cannot
+# be reconstructed afterwards, because the losing merge is aborted and leaves no
+# trace. It is the difference between "this conflicts with something" and "this
+# conflicts with #7098, go talk to each other", so it is worth the one extra
+# `git diff --name-only` per successful merge that capturing it costs.
+#
+# Module-level rather than threaded through the return signature: this script
+# runs once per process and `apply_prs_to_branch` already has three return
+# values consumed positionally at its only call site.
+PR_RIVALS = {}
+
+
+def _files_changed_by_last_merge():
+    """Paths the merge just committed brought in, relative to the branch tip."""
+    result = subprocess.run(
+        ["git", "diff", "--name-only", "HEAD^1", "HEAD"],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        return []
+    return [f.strip() for f in result.stdout.strip().split("\n") if f.strip()]
+
+
+def _conflicting_paths():
+    """Unmerged paths in the working tree, read before `git merge --abort`."""
+    result = subprocess.run(
+        ["git", "diff", "--name-only", "--diff-filter=U"],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        return []
+    return [f.strip() for f in result.stdout.strip().split("\n") if f.strip()]
+
+
+def write_rivals(reports_dir, order_suffix, rivals):
+    """Persist the loser -> [winners] map for one merge order.
+
+    A sidecar rather than a new field in state.<order>.json: the state snapshot
+    is parsed out of the rendered report by 02_upload, so extending it means
+    touching the report format too. This keeps a production pipeline change
+    small, and RFC-001 phase 2's manifest can absorb it later.
+    """
+    if not rivals:
+        return None
+    path = os.path.join(reports_dir, f"rivals.{order_suffix}.json")
+    payload = {
+        "schema": 1,
+        "generated_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "order": order_suffix,
+        "rivals": {str(k): sorted(v) for k, v in sorted(rivals.items())},
+    }
+    try:
+        os.makedirs(os.path.abspath(reports_dir), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, sort_keys=True, ensure_ascii=False)
+            f.write("\n")
+        print(f"🥊 Recorded {len(rivals)} conflict pairing(s) -> {path}")
+        return path
+    except OSError as e:
+        # Never fail a build over telemetry about the build.
+        print(f"⚠️  Could not write rivals file: {e}")
+        return None
+
+
 def apply_prs_to_branch(branch_name, prs):
     """Apply PRs to the new branch"""
     original_dir = os.getcwd()
     applied = []
     failed = []
     skipped = []
+    # path -> PR number that last touched it on this branch. Built as we go,
+    # which makes attributing a conflict exact rather than a `git log` guess.
+    file_owner = {}
+    PR_RIVALS.clear()
 
     try:
         os.chdir(work_dir)
@@ -379,11 +451,17 @@ def apply_prs_to_branch(branch_name, prs):
             pr_number = pr["number"]
             pr_title = pr["title"]
 
-            # Skip PRs in EXCLUDED list
+            # Skip PRs the active curation excludes. Quote the curator's reason
+            # when they gave one - "excluded because it bypasses the tool/ layer"
+            # is worth infinitely more to the PR author than "excluded".
             if pr_number in excluded_prs:
-                print(f"⚠️  Skipping PR #{pr_number}: Excluded by .env EXCLUDED list")
+                detail = CURATION.exclusions.get(pr_number, {})
+                why = f"[{detail['why']}] " if detail.get("why") else ""
+                reason = detail.get("reason") or f"listed in {CURATION.source}"
+                skip_reason = f"Excluded by curation: {why}{reason}"
+                print(f"⚠️  Skipping PR #{pr_number}: {skip_reason}")
                 pr_with_reason = pr.copy()
-                pr_with_reason["skip_reason"] = "Excluded by .env EXCLUDED list"
+                pr_with_reason["skip_reason"] = skip_reason
                 pr_with_reason["individual_test_merge"] = None
                 skipped.append(pr_with_reason)
                 continue
@@ -481,13 +559,30 @@ def apply_prs_to_branch(branch_name, prs):
                 if merge_result.returncode == 0:
                     print(f"✅ Successfully applied PR #{pr_number}")
                     applied.append(pr)
+                    for path in _files_changed_by_last_merge():
+                        file_owner[path] = pr_number
                 elif try_resolve_known_conflict(pr_number):
                     print(
                         f"✅ Successfully applied PR #{pr_number} (resolved known conflict)"
                     )
                     applied.append(pr)
+                    for path in _files_changed_by_last_merge():
+                        file_owner[path] = pr_number
                 else:
                     print(f"❌ Failed to apply PR #{pr_number}: {merge_result.stderr}")
+                    # Read the unmerged paths BEFORE aborting - the abort is what
+                    # destroys the only record of who this PR lost to.
+                    rivals = []
+                    for path in _conflicting_paths():
+                        owner = file_owner.get(path)
+                        if owner and owner not in rivals:
+                            rivals.append(owner)
+                    if rivals:
+                        PR_RIVALS[pr_number] = rivals
+                        print(
+                            f"   ↳ lost to "
+                            + ", ".join(f"#{r}" for r in rivals)
+                        )
                     subprocess.run(["git", "merge", "--abort"], capture_output=True)
                     failed.append(pr)
 
@@ -1389,6 +1484,12 @@ def main():
         return
     # Apply PRs to new branch
     applied, failed, skipped = apply_prs_to_branch(branch_name, prs)
+    # Persist who-lost-to-whom while it still exists (RFC-001 phase 1.1).
+    write_rivals(
+        REPORTS_DIR,
+        pr_state.ORDER_SUFFIX_BY_NAME.get(merge_order_str, merge_order_str),
+        PR_RIVALS,
+    )
     # Push branch to fork BEFORE running individual PR tests
     push_branch_to_fork(branch_name)
     # Clean up old branches after successfully pushing new one

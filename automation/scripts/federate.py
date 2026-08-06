@@ -186,6 +186,25 @@ def _parse(ts):
 # Events -> per-PR history
 # --------------------------------------------------------------------------- #
 
+def load_rivals(reports_dir, order_suffix):
+    """Who each blocked PR lost its merge race to, if the build recorded it.
+
+    Written by `00_clone_merge_and_create_branch.py` (RFC-001 phase 1.1). Absent
+    for any build that ran before that landed, which is why `rivals` is reported
+    as unavailable rather than empty when no file exists - a blocked PR with no
+    recorded rival is unknown, not unopposed.
+    """
+    path = os.path.join(reports_dir, f"rivals.{order_suffix}.json")
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, ValueError):
+        return None
+    return {str(k): list(v) for k, v in (data.get("rivals") or {}).items()}
+
+
 def load_events(reports_dir, order_suffix):
     """Read one order's append-only event log. Missing/corrupt lines are skipped."""
     path = os.path.join(reports_dir, f"events.{order_suffix}.jsonl")
@@ -278,7 +297,8 @@ def churn_for(events_for_pr):
 # Aggregation
 # --------------------------------------------------------------------------- #
 
-def aggregate(sources, events_by_order=None, stamps_by_order=None, now=None):
+def aggregate(sources, events_by_order=None, stamps_by_order=None,
+              rivals_by_order=None, now=None):
     """Per-PR signals across N sources, keyed by stringified PR number.
 
     This is `pr_state.compute_robustness()` generalized: instead of bucketing by
@@ -288,6 +308,13 @@ def aggregate(sources, events_by_order=None, stamps_by_order=None, now=None):
     """
     events_by_order = events_by_order or {}
     stamps_by_order = stamps_by_order or {}
+    rivals_by_order = rivals_by_order or {}
+
+    # Rivals are per-order by nature: which PR wins a race is decided by the
+    # order that reaches it first, so #A beating #B under `asc` and losing to it
+    # under `desc` is the normal case, not a contradiction. Keep them keyed by
+    # source rather than flattened into one list.
+    rival_sources = {k: v for k, v in rivals_by_order.items() if v is not None}
 
     # Streak and churn are computed against ONE lineage, not all three pooled.
     # Each order is independent: a PR can be merged in `asc` and conflict-skipped
@@ -346,6 +373,9 @@ def aggregate(sources, events_by_order=None, stamps_by_order=None, now=None):
             "status_by_source": e["status_by_source"],
             "lineage": lineage,
             "churn": churn_for(pr_events),
+            "rivals": {
+                src: rivals[num] for src, rivals in rival_sources.items() if num in rivals
+            },
             "title": e["title"],
             "author": e["author"],
             "url": e["url"],
@@ -360,25 +390,33 @@ def aggregate(sources, events_by_order=None, stamps_by_order=None, now=None):
     return out
 
 
-def unavailable_signals():
+def unavailable_signals(have_rivals=False):
     """Signals RFC-001 defines that phase 0 genuinely cannot compute.
 
     Emitted into federation.json so a consumer can tell "zero" from "unknown" -
     the distinction the whole s8.1 table exists to protect.
     """
-    return {
-        "selected_by": "requires profiles (RFC-001 phase 1) - every build here selects everything",
-        "excluded_by": "requires profiles (RFC-001 phase 1)",
-        "objections": "requires profiles (RFC-001 phase 1)",
-        "lost_to": "requires profiles (RFC-001 phase 1)",
-        "rivals": "requires recording the winning PR number at conflict time; "
-                  "the reports currently record that a conflict happened and which "
-                  "orders a PR merges under, but not which PR it lost to",
+    out = {
+        "selected_by": "requires a selective profile; every build aggregated here "
+                       "still selects everything, so inclusion carries no information "
+                       "(RFC-001 s3.4)",
+        "excluded_by": "requires curators publishing profiles with exclusions "
+                       "(RFC-001 phase 2)",
+        "objections": "requires curators publishing exclusion reasons "
+                      "(RFC-001 phase 2)",
+        "lost_to": "requires curators publishing `prefer` pairs (RFC-001 phase 2)",
         "verification": "requires curator-published smoke results (RFC-001 phase 5)",
     }
+    if not have_rivals:
+        out["rivals"] = (
+            "no rivals.<order>.json found - this build predates RFC-001 phase 1.1, "
+            "which records the winning PR number at conflict time. A blocked PR with "
+            "no recorded rival is unknown, not unopposed."
+        )
+    return out
 
 
-def build_federation(sources, signals, synthetic=True, now=None):
+def build_federation(sources, signals, synthetic=True, now=None, have_rivals=False):
     """The full machine-readable artifact."""
     return {
         "schema": SCHEMA_VERSION,
@@ -398,7 +436,7 @@ def build_federation(sources, signals, synthetic=True, now=None):
             for s in sources
         ],
         "publishers": sorted({s.publisher for s in sources}),
-        "unavailable": unavailable_signals(),
+        "unavailable": unavailable_signals(have_rivals=have_rivals),
         "prs": signals,
     }
 
@@ -538,6 +576,30 @@ def render_digest(fed, top=15):
         )
         lines.append("")
 
+    # --- rivals: who beat whom ---
+    with_rivals = [(n, r) for n, r in signals.items() if r.get("rivals")]
+    if with_rivals:
+        lines.append(f"## Merge races lost ({len(with_rivals)})")
+        lines.append("")
+        lines.append("| PR | lost to | in | title |")
+        lines.append("|---|---|---|---|")
+        for n, r in sorted(with_rivals, key=lambda kv: int(kv[0]))[:top]:
+            for src, losers in sorted(r["rivals"].items()):
+                lines.append(
+                    f"| {_pr_link(n, r['url'])} "
+                    f"| {', '.join('#' + str(x) for x in losers)} "
+                    f"| `{src}` | {_short(r['title'])} |"
+                )
+        if len(with_rivals) > top:
+            lines.append(f"| … | | | _{len(with_rivals) - top} more_ |")
+        lines.append("")
+        lines.append(
+            "_Which PR wins a race is decided by the order that reaches it first, so "
+            "the same pair can invert between `asc` and `desc`. This names a specific, "
+            "fixable collision rather than \"conflicts with something\"._"
+        )
+        lines.append("")
+
     lines.append("## Not computed")
     lines.append("")
     lines.append(
@@ -568,12 +630,13 @@ def _repo_root(start=None):
 def _collect(reports_dir, repo_dir, synthetic):
     sources = load_local_sources(reports_dir, synthetic=synthetic)
     if not sources:
-        return None, None, None
-    events_by_order, stamps_by_order = {}, {}
+        return None, None, None, None
+    events_by_order, stamps_by_order, rivals_by_order = {}, {}, {}
     for s in sources:
         events_by_order[s.id] = load_events(reports_dir, s.id)
         stamps_by_order[s.id] = build_times(s.id, repo_dir=repo_dir)
-    return sources, events_by_order, stamps_by_order
+        rivals_by_order[s.id] = load_rivals(reports_dir, s.id)
+    return sources, events_by_order, stamps_by_order, rivals_by_order
 
 
 def main(argv=None):
@@ -597,13 +660,16 @@ def main(argv=None):
     args = ap.parse_args(argv)
 
     synthetic = not args.real_publishers
-    sources, events, stamps = _collect(args.reports, args.repo, synthetic)
+    sources, events, stamps, rivals = _collect(args.reports, args.repo, synthetic)
     if not sources:
         print(f"❌ No state.<order>.json snapshots under {args.reports}", file=sys.stderr)
         return 1
 
-    signals = aggregate(sources, events, stamps)
-    fed = build_federation(sources, signals, synthetic=synthetic)
+    signals = aggregate(sources, events, stamps, rivals)
+    have_rivals = any(v for v in (rivals or {}).values())
+    fed = build_federation(
+        sources, signals, synthetic=synthetic, have_rivals=have_rivals
+    )
     digest = render_digest(fed, top=args.top)
 
     if args.command == "digest":
