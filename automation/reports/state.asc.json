@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 549,
+    "merged": 550,
     "skipped_conflict": 116,
     "skipped_draft": 54,
-    "total": 848
+    "total": 849
   },
-  "generated_at": "2026-08-06T16:11:54Z",
+  "generated_at": "2026-08-06T22:11:48Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6922,11 +6922,19 @@
       "status": "skipped_draft",
       "title": "Bonsai: warn before saving the .blend drops unsaved IFC edits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9276"
+    },
+    "9277": {
+      "author": "sanzoghenzo",
+      "branch": "add-scripts-entrypoints",
+      "head": "ec33969",
+      "status": "merged",
+      "title": "Add scripts entrypoints",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9277"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608061735",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061735"
+    "tag": "v0.8.6-alpha2608062335",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608062335"
   },
   "schema": 1
 }

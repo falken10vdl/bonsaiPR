@@ -3,11 +3,11 @@
   "counts": {
     "failed": 129,
     "merged": 544,
-    "skipped_conflict": 121,
+    "skipped_conflict": 122,
     "skipped_draft": 54,
-    "total": 848
+    "total": 849
   },
-  "generated_at": "2026-08-06T16:48:32Z",
+  "generated_at": "2026-08-06T22:50:01Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1434,7 +1434,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-camera-bounds-on-save-8205",
       "head": "09e314d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai(drawing): persist drawing camera zoom and crop on save (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8328"
     },
@@ -6922,11 +6922,19 @@
       "status": "skipped_draft",
       "title": "Bonsai: warn before saving the .blend drops unsaved IFC edits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9276"
+    },
+    "9277": {
+      "author": "sanzoghenzo",
+      "branch": "add-scripts-entrypoints",
+      "head": "ec33969",
+      "status": "merged",
+      "title": "Add scripts entrypoints",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9277"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608061812",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061812"
+    "tag": "v0.8.6-alpha2608070012",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608070012"
   },
   "schema": 1
 }
