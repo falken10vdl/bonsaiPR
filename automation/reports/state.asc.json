@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 130,
+    "failed": 136,
     "merged": 544,
-    "skipped_conflict": 116,
+    "skipped_conflict": 112,
     "skipped_draft": 53,
-    "total": 843
+    "total": 845
   },
-  "generated_at": "2026-08-06T03:13:46Z",
+  "generated_at": "2026-08-06T05:10:44Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1775,7 +1775,7 @@
       "author": "BIMvoice",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "82a4117",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix BCF 2.1 viewpoint and snapshot file names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
@@ -3471,7 +3471,8 @@
       "author": "BIMvoice",
       "branch": "fix-3995-standalone-window-boundaries",
       "head": "2cc00c5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: let standalone windows bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8703"
     },
@@ -3479,7 +3480,8 @@
       "author": "BIMvoice",
       "branch": "bv-7032-stale-ifc-definition-id",
       "head": "bdf4e13",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: stop a stale ifc_definition_id from aborting the whole project save",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8705"
     },
@@ -3595,7 +3597,8 @@
       "author": "BIMvoice",
       "branch": "fix-7614-shared-profile-edit-refresh",
       "head": "c3b3ef4",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: refresh every sharing element's mesh after an extrusion profile edit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8726"
     },
@@ -3742,7 +3745,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4927,7 +4930,8 @@
       "author": "BIMvoice",
       "branch": "fix/8945-append-asset-perf",
       "head": "83d41ce",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "project.append_asset: propagate assume_asset_uniqueness_by_name to nested type append",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8956"
     },
@@ -4935,7 +4939,8 @@
       "author": "BIMvoice",
       "branch": "fix/7889-toggle-hide-spaces-missing-obj",
       "head": "050fea6",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: fix crash toggling hide on spaces not loaded into the scene",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8958"
     },
@@ -4959,7 +4964,7 @@
       "author": "BIMvoice",
       "branch": "fix/7048-csv2ifc-delimiter",
       "head": "aeaea94",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc5d: make the cost schedule CSV delimiter configurable",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8961"
     },
@@ -5921,7 +5926,8 @@
       "author": "BIMvoice",
       "branch": "ifc5d-wrong-number-audit",
       "head": "f8b1fcb",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifc5d: fix four wrong-number defects in cost export, cost import and weight quantities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
     },
@@ -5937,7 +5943,8 @@
       "author": "BIMvoice",
       "branch": "ifcclash-ifccsv-audit-fixes",
       "head": "2656842",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcclash/ifccsv: stop dropping a real clash, a wrong summary total, and silently ignored Country on reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9116"
     },
@@ -6678,7 +6685,7 @@
       "author": "BIMvoice",
       "branch": "fix-9230-void-profile-open-loop",
       "head": "702ccfe",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: void loop that encloses no area crashes (#9230), or is silently lost (#8983)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9233"
     },
@@ -6735,8 +6742,7 @@
       "author": "BIMvoice",
       "branch": "fix-9034-bsdd-referencecode-keyerror",
       "head": "1cb6d58",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: bSDD search crashes on dictionaries without referenceCode (#9034)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9245"
     },
@@ -6883,11 +6889,27 @@
       "status": "merged",
       "title": "ifctester: canonicalise parsed requirement order",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9269"
+    },
+    "9271": {
+      "author": "BIMvoice",
+      "branch": "ids-339-identifier-roundtrip",
+      "head": "15419b5",
+      "status": "merged",
+      "title": "ifctester: stop dropping specification identifier",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9271"
+    },
+    "9272": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-partof-relation-recursion",
+      "head": "81f603d",
+      "status": "merged",
+      "title": "ifctester: PartOf group and containment do not recurse",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9272"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608060435",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060435"
+    "tag": "v0.8.6-alpha2608060635",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060635"
   },
   "schema": 1
 }

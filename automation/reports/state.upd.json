@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 534,
-    "skipped_conflict": 127,
+    "merged": 539,
+    "skipped_conflict": 126,
     "skipped_draft": 53,
-    "total": 843
+    "total": 847
   },
-  "generated_at": "2026-08-06T04:27:28Z",
+  "generated_at": "2026-08-06T06:24:25Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -407,7 +407,7 @@
       "author": "KarimJerbi",
       "branch": "grids-selectability-feature",
       "head": "9e18e81",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "FIX #6187: Adds ability to toggle Grids and Grid Axes selectability",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7736"
     },
@@ -5512,9 +5512,9 @@
     "9059": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-ifc2x3-predefined-pset-crash",
-      "head": "f3751e9",
+      "head": "b52d328",
       "status": "merged",
-      "title": "ifctester: support IFC2X3 predefined property sets and fix a wrong SYSTEM fail",
+      "title": "ifctester: IFC2X3 predefined psets crash, and two Classification false verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9059"
     },
     "9060": {
@@ -6882,11 +6882,43 @@
       "status": "merged",
       "title": "ifctester: canonicalise parsed requirement order",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9269"
+    },
+    "9271": {
+      "author": "BIMvoice",
+      "branch": "ids-339-identifier-roundtrip",
+      "head": "15419b5",
+      "status": "merged",
+      "title": "ifctester: stop dropping specification identifier",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9271"
+    },
+    "9272": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-partof-relation-recursion",
+      "head": "81f603d",
+      "status": "merged",
+      "title": "ifctester: PartOf group and containment do not recurse",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9272"
+    },
+    "9273": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-attribute-prohibited-empty",
+      "head": "6c7df0b",
+      "status": "merged",
+      "title": "ifctester: prohibited attribute passes when empty",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9273"
+    },
+    "9274": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-property-prohibited-empty",
+      "head": "4bd43eb",
+      "status": "merged",
+      "title": "ifctester: prohibited property passes when empty",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9274"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608060551",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060551"
+    "tag": "v0.8.6-alpha2608060748",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060748"
   },
   "schema": 1
 }
