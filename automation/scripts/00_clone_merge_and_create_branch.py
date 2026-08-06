@@ -278,7 +278,11 @@ def setup_repository():
                 )
                 time.sleep(retry_delay_seconds)
 
-    if os.path.exists(work_dir):
+    # Test for a real repository, not merely a directory: an empty or
+    # pre-created BASE_CLONE_DIR would otherwise take the "update" path and fail
+    # on `git checkout <base>` with nothing to check out. `git clone` into an
+    # existing empty directory is fine, so cloning is the safe default.
+    if os.path.exists(os.path.join(work_dir, ".git")):
         print(f"Updating existing repository in {work_dir}")
         original_dir = os.getcwd()
         try:
@@ -1440,6 +1444,10 @@ def main():
     elif reverse_order:
         merge_order_str = "descending"
         print("Merging PRs in descending order (highest to lowest number)")
+    elif CURATION.data.get("order_seq"):
+        # Announced properly once the PRs are actually sorted, below; saying
+        # "ascending" here would be a lie the log never retracts.
+        merge_order_str = "recorded"
     else:
         merge_order_str = "ascending"
         print("Merging PRs in ascending order (lowest to highest number)")
