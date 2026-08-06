@@ -122,7 +122,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.BONSAIPR_TOKEN }}
         working-directory: automation/src
         run: |
-          mkdir -p "$BASE_CLONE_DIR" "$BUILD_BASE_DIR" "$WORKING_DIR" "$REPORT_PATH"
+          # NOT BASE_CLONE_DIR — stage 0 clones into it, and pre-creating it
+          # makes the script take its "update existing repo" path instead.
+          mkdir -p "$(dirname "$BASE_CLONE_DIR")" "$BUILD_BASE_DIR" "$WORKING_DIR" "$REPORT_PATH"
           if [ "${{ inputs.stages }}" = "manifest-only" ]; then
             # Stage 0 alone produces everything federation consumes: the report,
             # state.<order>.json and rivals.<order>.json. Stages 1-2 only add
