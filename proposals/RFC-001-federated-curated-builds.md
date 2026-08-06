@@ -43,10 +43,16 @@
 
 ## <a id="s1"></a>1. The problem
 
-Bonsai has more open PRs than any maintainer can evaluate. The current build reports
-show ~760 PRs processed per run, ~485 of which merge cleanly. Every one of those is a
-change that *might* be worth merging upstream, and the only evidence a maintainer has
-for any of them is the PR diff and whatever comments it accumulated.
+**AI moved the bottleneck in open source from writing code to curating it.** Producing a
+plausible patch is now nearly free; deciding whether it belongs is not, and that cost
+lands on the smallest group in any project. Everything below follows from that one
+observation, and none of it is specific to Bonsai — Bonsai is just where the numbers
+happen to be in front of us.
+
+Those numbers: the current build reports show ~760 PRs processed per run, ~485 of which
+merge cleanly. Every one is a change that *might* be worth merging upstream, and the
+only evidence a maintainer has for any of them is the PR diff and whatever comments it
+accumulated.
 
 BonsaiPR already changed the question from *"should this be merged?"* to *"who wants to
 use this?"* — but it currently answers that question with a single, one-size-fits-all
@@ -589,6 +595,15 @@ fetch peers.json → fetch each peer's manifests → validate → aggregate → 
   federation/DIGEST.md           maintainer-facing summary
 ```
 
+What the aggregate is measuring is worth naming precisely, because it is not the thing
+most governance mechanisms measure. Committees, votes, and review threads optimize for
+**consensus** — *we discussed this and agreed.* This optimizes for **independent
+agreement** — *we never spoke, and we each arrived at the same place anyway.* The second
+is the stronger signal, for the same reason independent replication outranks committee
+endorsement in science: nobody talked anybody into it. It is also the only kind of
+agreement obtainable from volunteers scattered across time zones who will never reliably
+attend the same meeting.
+
 ### <a id="s8-1"></a>8.1 Signal definitions
 
 Each signal states plainly what it does and does not mean. This matters more than the
@@ -650,7 +665,10 @@ architecture from a distance while being a different thing.
 Aggregated *exclusions with reasons* get closer to the real thing, for a simple reason:
 inclusion is a statement about usefulness, and rejection is usually a statement about
 principle. Nobody excludes a working PR from their own build without a view about how
-the software ought to be put together.
+the software ought to be put together. **An exclusion with a reason is compressed
+architectural knowledge** — and note that almost every signal open source currently
+collects (stars, installs, downloads, reactions) is positive-only, which means the more
+informative half of the record is the half nobody keeps.
 
 But five different things look like "not in my build," and only one of them carries
 design information. Conflating them is how this signal would become worthless:
