@@ -36,10 +36,11 @@
 - [9. Trust and anti-gaming](#s9)
 - [10. Consumption: per-profile Blender feeds](#s10)
 - [11. Phasing](#s11)
-- [12. Phase 0 results](#s12)
+- [12. Implementation results](#s12)
   - [12.1 What the current backlog looks like](#s12-1)
   - [12.2 The anti-gaming rule, demonstrated](#s12-2)
   - [12.3 What phase 0 changed about the plan](#s12-3)
+  - [12.4 Phase 1 results](#s12-4)
 - [13. Risks and open questions](#s13)
 - [14. Summary](#s14)
 
@@ -183,7 +184,7 @@ maintains, forks, and is known for.
   "name": "architecture-production",
   "description": "Bonsai for production architectural documentation. Drawing, scheduling, and sheet workflows. No experimental UI.",
   "maintainer": "theoryshaw",
-  "inherits": "falken10vdl/all",
+  "inherits": "falken10vdl/everything",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
     "branch": "v0.8.0"
@@ -224,6 +225,12 @@ Notes on the design:
   these three."* Without it, every curator has to restate 485 PR numbers and the file
   churns on every upstream change. Resolution is a shallow merge: the parent's
   `select` is the starting set, the child's `exclude` and `select` are applied on top.
+  **Exclusions union rather than replace** — a child saying "also not this one" must
+  never silently drop the parent's refusals, which is the one merge rule that would
+  quietly change a curation's meaning if it went the other way. An `owner/profile`
+  reference is federated and needs phase 2 to fetch; until then only the local part
+  resolves, with a warning, rather than silently building something other than what
+  the file asks for.
 - **`pin`** freezes a PR at a known-good head SHA. This is what makes a curated build
   a *stable product* rather than something that silently changes under the user when a
   contributor force-pushes. It is also, deliberately, a strong quality signal — a
@@ -270,7 +277,7 @@ An exclusion is the highest-value thing in a profile ([§8.3](#s8-3)) and also t
 easiest to get wrong, so the mechanics matter more than the field does.
 
 **An exclusion only means anything relative to a baseline that would have included it.**
-If a profile says `inherits: falken10vdl/all` and then excludes #8123, that is a real
+If a profile says `inherits: falken10vdl/everything` and then excludes #8123, that is a real
 subtraction: the PR *was* in the set and the curator took it out. If a profile is a bare
 `allowlist` of 40 PRs, the other 445 are not rejected — they are absent, and were very
 likely never looked at. `exclude` on a profile with no `inherits` is therefore almost
@@ -313,6 +320,23 @@ moment they know precisely why. Reasons written later, in a batch, will be worth
 ```
 bonsaipr exclude 8206 --why regression --reason "crashes on IFC4X3 files"
 ```
+
+**What the loader warns about.** All of these are warnings, never failures — a curation
+that is slightly wrong should still build. They are the cases that would quietly corrupt
+the aggregate rather than break a run:
+
+| condition | why it matters |
+|---|---|
+| `exclude` on an allowlist with no `inherits` | asserts rejections nobody made |
+| unknown `why` category | carried, but silently absent from the design signal |
+| `since` that is not a sha | staleness can never be checked |
+| **a reason with no `since`** | **the objection can never go stale, so it is permanent** |
+| circular `inherits` | resolution would not terminate |
+
+The fourth one only became obvious while implementing: a curator who writes a careful
+architectural reason and omits `since` has, without meaning to, made a permanent public
+mark on someone's PR. Warning about it is the difference between the staleness rule
+being a design intention and being a thing that actually happens.
 
 **A preference is not a rejection.** "I took #7900 over #8123 because they collide" says
 nothing about #8123's quality — the curator may well like it. That belongs in `prefer`,
@@ -570,7 +594,7 @@ different peer lists.
       "id": "falken10vdl",
       "display_name": "BonsaiPR (canonical)",
       "reports_base": "https://raw.githubusercontent.com/falken10vdl/bonsaiPR/main/automation/reports/",
-      "profiles": ["all"],
+      "profiles": ["everything"],
       "role": "anchor"
     },
     {
@@ -808,8 +832,8 @@ falken10vdl to change how the canonical instance runs.
 | Phase | Deliverable | Requires |
 |---|---|---|
 | **0** ✅ | `federate.py` run over the existing `state.{asc,desc,upd}.json` as three synthetic publishers. Proves the signal math and the rendering against real data. **Done — results in [§12](#s12).** | nothing |
-| **1** | Profile format + `load_profile()` + `.env` compat shim. Canonical instance expressible as `everything`. | small change at `00_clone_…py:41-62` |
-| **1.1** | Record the *winning* PR number when a merge conflict skips a PR, so `rivals` becomes computable. Discovered in phase 0 ([§12](#s12)); cheap now, unrecoverable retroactively. | small change at `00_clone_…py` |
+| **1** ✅ | Profile format + `load_profile()` + `.env` compat shim. Canonical instance expressible as `everything`. **Done — `bonsaipr_profile.py`, `profiles/everything.json`; notes in [§12.4](#s12-4).** | small change at `00_clone_…py:41-62` |
+| **1.1** ✅ | Record the *winning* PR number when a merge conflict skips a PR, so `rivals` becomes computable. Discovered in phase 0 ([§12](#s12)); cheap now, unrecoverable retroactively. **Done — `reports/rivals.<order>.json`.** | small change at `00_clone_…py` |
 | **1.5** | `distill` ([§5](#s5)) — attribution ladder, provenance file, residue clustering, harvested conflict resolutions. Run against `Ryan_build-0.8.6-…` as the first real input. | phase 1 |
 | **2** | Manifest schema 2 (`publisher` / `profile` blocks) + `peers.json` + real cross-publisher aggregation. | small change at `02_upload_…py:1118` |
 | **3** | Per-profile `index.json` feeds. | `update_index_json.py` |
@@ -826,7 +850,7 @@ features are worth the build on their own.
 
 ---
 
-## <a id="s12"></a>12. Phase 0 results
+## <a id="s12"></a>12. Implementation results
 
 `automation/scripts/federate.py` implements the aggregation math and its rendering. It
 touches nothing in the build pipeline, reads only files the repo already produces, and
@@ -885,6 +909,41 @@ to bite.
 Nothing in phase 0 validates the parts of this proposal that depend on people. It
 proves the arithmetic and the rendering; whether curators materialise, and whether they
 write reasons, remains entirely untested.
+
+### <a id="s12-4"></a>12.4 Phase 1 results
+
+`bonsaipr_profile.py` plus `profiles/everything.json`. The claim in
+[§4.1](#s4-1) — that nobody is forced to migrate — is now verified rather than
+asserted, against the real merge script:
+
+| configuration | `users` | `excluded_prs` | `SKIP_CPP_PRS` |
+|---|---|---|---|
+| nothing set | `['']` | `[]` | `False` |
+| legacy `.env` vars | `['theoryshaw', 'falken10vdl']` | `[7098, 8123]` | `True` |
+| `BONSAIPR_PROFILE` set | `['']` | 3, with reasons | `True` |
+
+The first row is the important one: with no profile configured the canonical instance
+produces byte-identical curation decisions to before. The merge script's ~950 lines
+downstream were not touched — a profile only changes how those three values are
+*decided*.
+
+Two things the implementation had to settle that this document had left ambiguous:
+
+- **Inherited exclusions union rather than replace** ([§4](#s4)). The other reading
+  would let a child profile silently discard its parent's refusals, which is a change
+  of meaning disguised as a merge rule.
+- **A reason without a `since` sha is a permanent objection.** Now warned about
+  ([§4.2](#s4-2)). This is the failure mode most likely to happen by accident and it
+  lands on a contributor rather than on the curator who caused it.
+
+Phase 1.1 records `reports/rivals.<order>.json` as a sidecar rather than extending
+`state.<order>.json`, because the state snapshot is parsed back out of the *rendered
+report* by `02_upload_to_falken10vdl.py` — extending it would have meant changing the
+report format in the same pass. [§6](#s6)'s manifest can absorb it later.
+
+**Nothing here is retroactive.** Rival pairings start accumulating on the next real
+build run; every run before that lost them permanently, which was the argument for
+landing phase 1.1 early rather than when a later phase wanted the signal.
 
 ---
 
