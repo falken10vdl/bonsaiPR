@@ -7,7 +7,7 @@
     "skipped_draft": 53,
     "total": 847
   },
-  "generated_at": "2026-08-06T09:11:13Z",
+  "generated_at": "2026-08-06T11:11:15Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "d1027c5",
+      "head": "74b405a",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -6912,13 +6912,13 @@
       "branch": "fix/ifctester-property-prohibited-empty",
       "head": "9a305e3",
       "status": "merged",
-      "title": "ifctester: prohibited property passes when empty",
+      "title": "ifctester: two false passes in prohibited property checks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9274"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608061035",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061035"
+    "tag": "v0.8.6-alpha2608061235",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061235"
   },
   "schema": 1
 }
