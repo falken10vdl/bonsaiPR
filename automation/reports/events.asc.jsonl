@@ -1647,3 +1647,16 @@
 {"ts": "2026-08-06T05:10:44Z", "order": "ascending", "pr": 9245, "event": "status", "from": "failed", "to": "skipped_conflict"}
 {"ts": "2026-08-06T05:10:44Z", "order": "ascending", "pr": 9271, "event": "added", "to": "merged"}
 {"ts": "2026-08-06T05:10:44Z", "order": "ascending", "pr": 9272, "event": "added", "to": "merged"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 8390, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 8703, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 8705, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 8726, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 8752, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 8956, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 8958, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 9059, "event": "updated", "status": "merged", "from_head": "f3751e9", "to_head": "b52d328"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 9113, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 9116, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 9233, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 9273, "event": "added", "to": "merged"}
+{"ts": "2026-08-06T07:11:12Z", "order": "ascending", "pr": 9274, "event": "added", "to": "merged"}

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 136,
-    "merged": 544,
-    "skipped_conflict": 112,
+    "failed": 129,
+    "merged": 549,
+    "skipped_conflict": 116,
     "skipped_draft": 53,
-    "total": 845
+    "total": 847
   },
-  "generated_at": "2026-08-06T05:10:44Z",
+  "generated_at": "2026-08-06T07:11:12Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1775,7 +1775,7 @@
       "author": "BIMvoice",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "82a4117",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix BCF 2.1 viewpoint and snapshot file names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
@@ -3471,8 +3471,7 @@
       "author": "BIMvoice",
       "branch": "fix-3995-standalone-window-boundaries",
       "head": "2cc00c5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: let standalone windows bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8703"
     },
@@ -3480,8 +3479,7 @@
       "author": "BIMvoice",
       "branch": "bv-7032-stale-ifc-definition-id",
       "head": "bdf4e13",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop a stale ifc_definition_id from aborting the whole project save",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8705"
     },
@@ -3597,8 +3595,7 @@
       "author": "BIMvoice",
       "branch": "fix-7614-shared-profile-edit-refresh",
       "head": "c3b3ef4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: refresh every sharing element's mesh after an extrusion profile edit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8726"
     },
@@ -3745,7 +3742,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4930,8 +4927,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-append-asset-perf",
       "head": "83d41ce",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "project.append_asset: propagate assume_asset_uniqueness_by_name to nested type append",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8956"
     },
@@ -4939,8 +4935,7 @@
       "author": "BIMvoice",
       "branch": "fix/7889-toggle-hide-spaces-missing-obj",
       "head": "050fea6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix crash toggling hide on spaces not loaded into the scene",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8958"
     },
@@ -5517,9 +5512,9 @@
     "9059": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-ifc2x3-predefined-pset-crash",
-      "head": "f3751e9",
+      "head": "b52d328",
       "status": "merged",
-      "title": "ifctester: support IFC2X3 predefined property sets and fix a wrong SYSTEM fail",
+      "title": "ifctester: IFC2X3 predefined psets crash, and two Classification false verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9059"
     },
     "9060": {
@@ -5926,8 +5921,7 @@
       "author": "BIMvoice",
       "branch": "ifc5d-wrong-number-audit",
       "head": "f8b1fcb",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "ifc5d: fix four wrong-number defects in cost export, cost import and weight quantities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
     },
@@ -5943,8 +5937,7 @@
       "author": "BIMvoice",
       "branch": "ifcclash-ifccsv-audit-fixes",
       "head": "2656842",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "ifcclash/ifccsv: stop dropping a real clash, a wrong summary total, and silently ignored Country on reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9116"
     },
@@ -6685,7 +6678,7 @@
       "author": "BIMvoice",
       "branch": "fix-9230-void-profile-open-loop",
       "head": "702ccfe",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: void loop that encloses no area crashes (#9230), or is silently lost (#8983)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9233"
     },
@@ -6905,11 +6898,27 @@
       "status": "merged",
       "title": "ifctester: PartOf group and containment do not recurse",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9272"
+    },
+    "9273": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-attribute-prohibited-empty",
+      "head": "6c7df0b",
+      "status": "merged",
+      "title": "ifctester: prohibited attribute passes when empty",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9273"
+    },
+    "9274": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-property-prohibited-empty",
+      "head": "4bd43eb",
+      "status": "merged",
+      "title": "ifctester: prohibited property passes when empty",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9274"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608060635",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060635"
+    "tag": "v0.8.6-alpha2608060835",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060835"
   },
   "schema": 1
 }

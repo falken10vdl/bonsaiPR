@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 539,
-    "skipped_conflict": 126,
+    "merged": 544,
+    "skipped_conflict": 121,
     "skipped_draft": 53,
     "total": 847
   },
-  "generated_at": "2026-08-06T05:47:39Z",
+  "generated_at": "2026-08-06T07:48:24Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -605,7 +605,7 @@
       "author": "theoryshaw",
       "branch": "split_profile_based_objects",
       "head": "f229ad5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "closes #3804: Add S_K split support for profile-based elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7871"
     },
@@ -2699,7 +2699,7 @@
       "author": "BIMvoice",
       "branch": "ship-6807-geomset-delete",
       "head": "58dc1f3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: delete representation items nested in an IfcGeometricSet (#6807)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8542"
     },
@@ -2899,7 +2899,7 @@
       "author": "BIMvoice",
       "branch": "fix-3067-structural-axis-default",
       "head": "7ee97d0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: set a default Axis on structural curve member/connection creation (#3067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8593"
     },
@@ -3774,7 +3774,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3941-mep-split-hotkey",
       "head": "e289777",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: wire Shift+K to split pipe/duct segments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8758"
     },
@@ -4011,7 +4011,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6591-general-item-deletion",
       "head": "2138b07",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: generalise representation item deletion to nested items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8798"
     },
@@ -4194,7 +4194,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-stairflight-ifc43-deprecated-attrs",
       "head": "63ac1fe",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stop writing IFC4.3-deprecated IfcStairFlight attributes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8828"
     },
@@ -4362,7 +4362,7 @@
       "author": "BIMvoice",
       "branch": "issue-950-bcf-report",
       "head": "be35a62",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bcf: add Reporter for exporting BCF topics to CSV/XLSX/ODS (#950)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8855"
     },
@@ -4615,7 +4615,7 @@
       "author": "BIMvoice",
       "branch": "2848-cpp-docs-examples",
       "head": "86e771e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "docs: add C++ geometry iterator example (empty examples, #2848)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8904"
     },
@@ -4823,7 +4823,7 @@
       "author": "BIMvoice",
       "branch": "feat-5133-annotation-selection-highlight",
       "head": "1825b39",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: highlight selected IfcAnnotation fills in the drawing decorator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8936"
     },
@@ -4991,7 +4991,7 @@
       "author": "BIMvoice",
       "branch": "fix/7151-trim-merge-poll",
       "head": "0e78a18",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: grey out Trim and Merge when the active-tool selection is invalid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8966"
     },
@@ -5151,7 +5151,7 @@
       "author": "BIMvoice",
       "branch": "fix-7996-mapped-transform-duplicate",
       "head": "904f90e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: keep per-occurrence mapped transforms when duplicating (#7996)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8991"
     },
@@ -5512,9 +5512,9 @@
     "9059": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-ifc2x3-predefined-pset-crash",
-      "head": "f3751e9",
+      "head": "b52d328",
       "status": "merged",
-      "title": "ifctester: support IFC2X3 predefined property sets and fix a wrong SYSTEM fail",
+      "title": "ifctester: IFC2X3 predefined psets crash, and two Classification false verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9059"
     },
     "9060": {
@@ -6917,8 +6917,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608060711",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060711"
+    "tag": "v0.8.6-alpha2608060912",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060912"
   },
   "schema": 1
 }
