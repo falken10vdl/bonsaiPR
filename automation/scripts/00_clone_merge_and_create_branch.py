@@ -338,9 +338,14 @@ def get_open_prs():
         if not prs:
             break
 
-        # Filter by users if specified
-        if users and users != [""]:
-            prs = [pr for pr in prs if pr["user"]["login"] in users]
+        # Apply the active curation. For the legacy/`everything` case this is
+        # exactly the old author filter; for an `allowlist` profile it is also
+        # what narrows 847 open PRs down to the ones the curator chose.
+        prs = [
+            pr
+            for pr in prs
+            if CURATION.selects(pr["number"], (pr.get("user") or {}).get("login"))
+        ]
 
         all_prs.extend(prs)
         page += 1
@@ -348,7 +353,23 @@ def get_open_prs():
         if len(prs) < 100:  # Last page
             break
 
-    print(f"Found {len(all_prs)} open pull requests")
+    if CURATION.mode == bonsaipr_profile.MODE_ALLOWLIST:
+        missing = sorted(CURATION.select_prs - {pr["number"] for pr in all_prs})
+        print(
+            f"Found {len(all_prs)} open pull requests "
+            f"(curation selects {len(CURATION.select_prs)})"
+        )
+        if missing:
+            # Selected PRs that are no longer open: merged upstream, closed, or
+            # made private. Naming them is how a curator learns their profile has
+            # drifted; silently building 12 fewer PRs than asked for would not be.
+            print(
+                f"⚠️  {len(missing)} selected PR(s) are no longer open and will be "
+                f"skipped: {', '.join('#' + str(n) for n in missing[:20])}"
+                + (" …" if len(missing) > 20 else "")
+            )
+    else:
+        print(f"Found {len(all_prs)} open pull requests")
     return all_prs
 
 
@@ -1436,7 +1457,22 @@ def main():
     # Get open PRs
     prs = get_open_prs()
     # Sort PRs
-    if by_updated_order:
+    recorded = CURATION.data.get("order_seq") or []
+    if recorded and not reverse_order and not by_updated_order:
+        # RFC-001 §5.3: a distilled profile carries the sequence its curator
+        # actually built in — a hand-validated order known to produce a working
+        # tree, where asc/desc/upd are guesses. PRs absent from the recording
+        # (added upstream since the branch was distilled) go last, in number
+        # order, so a stale profile degrades instead of dropping them.
+        rank = {int(n): i for i, n in enumerate(recorded)}
+        merge_order_str = "recorded"
+        prs = sorted(prs, key=lambda pr: (rank.get(pr["number"], len(rank)), pr["number"]))
+        unranked = sum(1 for pr in prs if pr["number"] not in rank)
+        print(
+            f"Merging PRs in the order recorded by profile '{CURATION.name}'"
+            + (f" ({unranked} newer PR(s) appended)" if unranked else "")
+        )
+    elif by_updated_order:
         prs = sorted(prs, key=lambda pr: pr.get("updated_at", ""), reverse=True)
     else:
         prs = sorted(prs, key=lambda pr: pr["number"], reverse=reverse_order)

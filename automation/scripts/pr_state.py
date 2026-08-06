@@ -204,9 +204,17 @@ def load_state(path):
 # `desc` simply lost a race to a PR it textually overlaps with. Nothing about the
 # PR itself failed.
 
-ORDER_SUFFIX_BY_NAME = {"ascending": "asc", "descending": "desc", "by-updated": "upd"}
+# `recorded` is the order a distilled profile carries (RFC-001 s5.3): the
+# sequence its curator actually built in, rather than one of the three guesses.
+# It only ever appears for a profile that has an order_seq.
+ORDER_SUFFIX_BY_NAME = {
+    "ascending": "asc",
+    "descending": "desc",
+    "by-updated": "upd",
+    "recorded": "rec",
+}
 ORDER_NAME_BY_SUFFIX = {v: k for k, v in ORDER_SUFFIX_BY_NAME.items()}
-ORDER_SUFFIXES = ("asc", "desc", "upd")
+ORDER_SUFFIXES = ("asc", "desc", "upd", "rec")
 
 
 def order_state_path(reports_dir, suffix):

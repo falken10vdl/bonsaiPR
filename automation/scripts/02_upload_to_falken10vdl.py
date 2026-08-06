@@ -43,9 +43,12 @@ BONSAI_BASE_TAG = "v0.8.0"
 # Committed snapshots/event logs live in automation/reports (this file is in
 # automation/scripts).
 REPORTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "reports")
-# Maps the parsed "Merge Order:" value to the [asc]/[desc]/[upd] tag suffix so
-# each order gets its own diff lineage (never diff ascending vs by-updated).
-_ORDER_SUFFIX = {"ascending": "asc", "descending": "desc", "by-updated": "upd"}
+# Maps the parsed "Merge Order:" value to its tag suffix so each order gets its
+# own diff lineage (never diff ascending vs by-updated). Sourced from pr_state
+# rather than restated here: the two copies had to agree, and a new order
+# (`recorded`, RFC-001 s5.3) is exactly the kind of change that would have been
+# added to one and not the other.
+_ORDER_SUFFIX = pr_state.ORDER_SUFFIX_BY_NAME
 
 
 def _reports_publish_branch(repo_dir):
