@@ -7,7 +7,7 @@
     "skipped_draft": 53,
     "total": 847
   },
-  "generated_at": "2026-08-06T07:48:24Z",
+  "generated_at": "2026-08-06T09:48:36Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6910,15 +6910,15 @@
     "9274": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-property-prohibited-empty",
-      "head": "4bd43eb",
+      "head": "9a305e3",
       "status": "merged",
-      "title": "ifctester: prohibited property passes when empty",
+      "title": "ifctester: two false passes in prohibited property checks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9274"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608060912",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060912"
+    "tag": "v0.8.6-alpha2608061112",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608061112"
   },
   "schema": 1
 }
