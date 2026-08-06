@@ -1,0 +1,3454 @@
+{
+  "schema": 1,
+  "branch": "Ryan_build-0.8.6-alpha2607071335",
+  "base": "v0.8.0",
+  "attribution_rate": 1.0,
+  "order_seq": [
+    5452,
+    7003,
+    7342,
+    7417,
+    7422,
+    7478,
+    7523,
+    7648,
+    7653,
+    7659,
+    7670,
+    7715,
+    7719,
+    7736,
+    7744,
+    7766,
+    7769,
+    7777,
+    7781,
+    7795,
+    7798,
+    7807,
+    7813,
+    7818,
+    7833,
+    7839,
+    7851,
+    7863,
+    7868,
+    7870,
+    7871,
+    7892,
+    7895,
+    7899,
+    7908,
+    7915,
+    7916,
+    7917,
+    7918,
+    7920,
+    7937,
+    7940,
+    7963,
+    7965,
+    7968,
+    7970,
+    7971,
+    7977,
+    7986,
+    7987,
+    7993,
+    8005,
+    8007,
+    8012,
+    8028,
+    8029,
+    8032,
+    8055,
+    8058,
+    8065,
+    8075,
+    8076,
+    8083,
+    8086,
+    8087,
+    8094,
+    8123,
+    8126,
+    8145,
+    8153,
+    8161,
+    8171,
+    8174,
+    8181,
+    8189,
+    8200,
+    8201,
+    8206,
+    8228,
+    8229,
+    8239,
+    8241,
+    8242,
+    8246,
+    8247,
+    8248,
+    8249,
+    8250,
+    8251,
+    8252,
+    8253,
+    8254,
+    8256,
+    8257,
+    8258,
+    8259,
+    8260,
+    8261,
+    8264,
+    8265,
+    8266,
+    8267,
+    8268,
+    8269,
+    8270,
+    8271,
+    8273,
+    8274,
+    8275,
+    8276,
+    8277,
+    8281,
+    8283,
+    8285,
+    8286,
+    8287,
+    8291,
+    8293,
+    8295,
+    8296,
+    8298,
+    8304,
+    8306,
+    8307,
+    8311,
+    8314,
+    8315,
+    8317,
+    8318,
+    8319,
+    8321,
+    8322,
+    8323,
+    8325,
+    8326,
+    8327,
+    8328,
+    8329,
+    8331,
+    8332,
+    8333,
+    8334,
+    8335,
+    8336,
+    8337,
+    8338,
+    8339,
+    8340,
+    8341,
+    8342,
+    8344,
+    8345,
+    8347,
+    8348,
+    8349,
+    8351,
+    8352,
+    8353,
+    8393,
+    7669
+  ],
+  "provenance": [
+    {
+      "sha": "1afd266b4a16",
+      "subject": "Merge remote-tracking branch 'pr-5452/light/newUI' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:11+02:00",
+      "kind": "merge",
+      "pr": 5452,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Radiance Rendering Changes",
+      "pr_author": "chiragsingh1711"
+    },
+    {
+      "sha": "1a1968874a38",
+      "subject": "Merge remote-tracking branch 'pr-7003/general-mirroring' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:11+02:00",
+      "kind": "merge",
+      "pr": 7003,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Add true object mirroring operator",
+      "pr_author": "Rob2309"
+    },
+    {
+      "sha": "6324398a6213",
+      "subject": "Merge remote-tracking branch 'pr-7342/v0.8.0' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:12+02:00",
+      "kind": "merge",
+      "pr": 7342,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "#7331 related: Modifications to include IfcSpace entities in Cost Schedules, as elements and quantities + Project Library extended support for costing and scheduling",
+      "pr_author": "DimitriosThe"
+    },
+    {
+      "sha": "c58b15ede84d",
+      "subject": "Merge remote-tracking branch 'pr-7417/catch_assign_product_bug' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:13+02:00",
+      "kind": "merge",
+      "pr": 7417,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "try to catch bug in assign_product",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "4dfb623128d4",
+      "subject": "Merge remote-tracking branch 'pr-7422/after_assign_remove_from_old_collection' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:14+02:00",
+      "kind": "merge",
+      "pr": 7422,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Remove object from non-IFC collections after IFC class assignment.",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "bbd2697b4793",
+      "subject": "Merge remote-tracking branch 'pr-7478/fix-elementy-by-predefined-property-sets-ifc2x3' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:14+02:00",
+      "kind": "merge",
+      "pr": 7478,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix getting elements by predefined property sets in IFC2X3",
+      "pr_author": "andy-5"
+    },
+    {
+      "sha": "7260217ae898",
+      "subject": "Merge remote-tracking branch 'pr-7523/dev/bug/hybrid-kernel-sigsegv-fallback' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:15+02:00",
+      "kind": "merge",
+      "pr": 7523,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix: hybrid kernel sigsegv fallback (0.8.0)",
+      "pr_author": "ZijianWang-ZW"
+    },
+    {
+      "sha": "7be5e7f29832",
+      "subject": "Merge remote-tracking branch 'pr-7648/extend-profiles-and-extrusions' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:16+02:00",
+      "kind": "merge",
+      "pr": 7648,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "closes #3565 - extend profiles and basic extrusions to 3D cursor with…",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "84dd41e3d333",
+      "subject": "Merge remote-tracking branch 'pr-7653/fix/demo-library-materials' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:17+02:00",
+      "kind": "merge",
+      "pr": 7653,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Add material associations to IFC4 Demo Library window/door types",
+      "pr_author": "jaliste"
+    },
+    {
+      "sha": "7823cbc25dfe",
+      "subject": "Merge remote-tracking branch 'pr-7659/fix/decorator-preview' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:17+02:00",
+      "kind": "merge",
+      "pr": 7659,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix window/door preview alignment regression in ProductDecorator",
+      "pr_author": "jaliste"
+    },
+    {
+      "sha": "d743722b5708",
+      "subject": "Merge remote-tracking branch 'pr-7670/fix/decoration-missing-splines-7655' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:18+02:00",
+      "kind": "merge",
+      "pr": 7670,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7655: Handle missing spline data in decoration.py",
+      "pr_author": "jaliste"
+    },
+    {
+      "sha": "707c0bdf35c7",
+      "subject": "Merge remote-tracking branch 'pr-7715/Generalize_ExcludeAnnotation_to_any_IFC_element_2' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:19+02:00",
+      "kind": "merge",
+      "pr": 7715,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Generalize ExcludeAnnotation to any IFC element",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "8cc822061a81",
+      "subject": "Merge remote-tracking branch 'pr-7719/Fix_FallDecorator2' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:20+02:00",
+      "kind": "merge",
+      "pr": 7719,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7718: Fix FallDecorator label calculation for all slope annotation types",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "efccb1083e98",
+      "subject": "Merge remote-tracking branch 'pr-7736/grids-selectability-feature' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:21+02:00",
+      "kind": "merge",
+      "pr": 7736,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "FIX #6187: Adds ability to toggle Grids and Grid Axes selectability",
+      "pr_author": "KarimJerbi"
+    },
+    {
+      "sha": "fda6167097b3",
+      "subject": "Merge remote-tracking branch 'pr-7744/Fix_isolate_objects_ignoring_hide_select_hide_viewport' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:21+02:00",
+      "kind": "merge",
+      "pr": 7744,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7681: Fix isolate_objects ignoring hide_select/hide_viewport (#7710)",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "28d4c8fd41d4",
+      "subject": "Merge remote-tracking branch 'pr-7766/issue-7743-clone-opening-UI' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:23+02:00",
+      "kind": "merge",
+      "pr": 7766,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7743 : Fix clone opening UI and selection method",
+      "pr_author": "KarimJerbi"
+    },
+    {
+      "sha": "eb4f37ccc7d2",
+      "subject": "Merge remote-tracking branch 'pr-7769/vscode-dev-env-fix-for-linux' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:23+02:00",
+      "kind": "merge",
+      "pr": 7769,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix JSON formatting in launch.json and add \"justMyCode\":false to allow for breakpoints in Linux",
+      "pr_author": "falken10vdl"
+    },
+    {
+      "sha": "9160ca0c8318",
+      "subject": "Merge remote-tracking branch 'pr-7777/fix/select-similar-pset-spaces' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:24+02:00",
+      "kind": "merge",
+      "pr": 7777,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "85b9e09e2af7",
+      "subject": "Merge remote-tracking branch 'pr-7781/Unhide_with_alt_click' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:24+02:00",
+      "kind": "merge",
+      "pr": 7781,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Closes #7780 - Add ALT+Click to unhide stuff",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "b03d84f4847c",
+      "subject": "Merge remote-tracking branch 'pr-7795/default_relative_path' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:25+02:00",
+      "kind": "merge",
+      "pr": 7795,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Closes #7765: Default IFC file path to relative and auto-convert on blend save",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "b4ebd78b6269",
+      "subject": "Merge remote-tracking branch 'pr-7798/ManualDrawingReference' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:26+02:00",
+      "kind": "merge",
+      "pr": 7798,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Manual drawing reference",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "d9267ff13da9",
+      "subject": "Merge remote-tracking branch 'pr-7807/fix/drawing-activation-stale-bbox' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:26+02:00",
+      "kind": "merge",
+      "pr": 7807,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7799: Fix elements hidden when activating plan drawings",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "41559b232fc2",
+      "subject": "Merge remote-tracking branch 'pr-7813/new-profiler' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:27+02:00",
+      "kind": "merge",
+      "pr": 7813,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Replaced the old profiler function with the ifcopenshell.util profiler",
+      "pr_author": "paragforwork"
+    },
+    {
+      "sha": "c1e182527dfa",
+      "subject": "Merge remote-tracking branch 'pr-7818/dont_sanitize_drawing_name' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:28+02:00",
+      "kind": "merge",
+      "pr": 7818,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7784: Fix drawing names with special chars in sheets",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "35fe4e87b70a",
+      "subject": "Merge remote-tracking branch 'pr-7833/grid_issues' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:29+02:00",
+      "kind": "merge",
+      "pr": 7833,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Grid issues",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "5eb1910c2298",
+      "subject": "Merge remote-tracking branch 'pr-7839/slab_issues' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:30+02:00",
+      "kind": "merge",
+      "pr": 7839,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7838: Fix slab layer direction and thickness offset",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "b126083c7fe4",
+      "subject": "Merge remote-tracking branch 'pr-7851/v0.8.0' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:30+02:00",
+      "kind": "merge",
+      "pr": 7851,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fixed missing definition resulting in USD support not being built",
+      "pr_author": "rares-radu"
+    },
+    {
+      "sha": "6bf3207dfb54",
+      "subject": "Merge remote-tracking branch 'pr-7863/documentation' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:32+02:00",
+      "kind": "merge",
+      "pr": 7863,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Documentation guide for Spaces basic modelling",
+      "pr_author": "jazzific"
+    },
+    {
+      "sha": "8cfcd2c62940",
+      "subject": "Merge remote-tracking branch 'pr-7868/automatically_creating_contexts' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:32+02:00",
+      "kind": "merge",
+      "pr": 7868,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7840: Auto-create body context when adding drawing",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "ea43ffd1b035",
+      "subject": "Merge remote-tracking branch 'pr-7870/Fix_PermissionError' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:33+02:00",
+      "kind": "merge",
+      "pr": 7870,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix PermissionError deleting locked HDF5 cache on Windows",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "3404ecbdd648",
+      "subject": "Merge remote-tracking branch 'pr-7871/split_profile_based_objects' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:34+02:00",
+      "kind": "merge",
+      "pr": 7871,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "closes #3804: Add S_K split support for profile-based elements",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "d7b0258cc280",
+      "subject": "Merge remote-tracking branch 'pr-7892/fix-7827-wall-joint-regression-v2' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:37+02:00",
+      "kind": "merge",
+      "pr": 7892,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7827 wall joint regression on ATPATH connectionsFix",
+      "pr_author": "dipayansardar73-decode"
+    },
+    {
+      "sha": "6347c690e0cb",
+      "subject": "Merge remote-tracking branch 'pr-7895/fix-6608-deterministic-annotation-sorting-v2' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:38+02:00",
+      "kind": "merge",
+      "pr": 7895,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix: DetermFix: Deterministic and layered SVG annotation sort order (Resolves #6608)inistic and layered SVG annotation sort order (Resolves #6…",
+      "pr_author": "dipayansardar73-decode"
+    },
+    {
+      "sha": "ad53863a9cba",
+      "subject": "Merge remote-tracking branch 'pr-7899/center-opening-on-cursor' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:39+02:00",
+      "kind": "merge",
+      "pr": 7899,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Center IfcOpeningElement bbox on 3D cursor",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "ac3024e9c991",
+      "subject": "Merge remote-tracking branch 'pr-7908/fix-3742-coplanar-bonsai-projection_2' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:40+02:00",
+      "kind": "merge",
+      "pr": 7908,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "* Fix #3742: Remove coplanar boundary lines between adjacent same-mat…",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "747afc1d91e1",
+      "subject": "Merge remote-tracking branch 'pr-7915/bulk-switch-representation' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:41+02:00",
+      "kind": "merge",
+      "pr": 7915,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Helps with #7853: Switch representation in bulk on selected objects",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "6e5e48c5c9d7",
+      "subject": "Merge remote-tracking branch 'pr-7916/select-by-representation-type' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:41+02:00",
+      "kind": "merge",
+      "pr": 7916,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Helps with #7853: Select objects by RepresentationType from panel",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "24aedcbb1f02",
+      "subject": "Merge remote-tracking branch 'pr-7917/bonsai-license' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:42+02:00",
+      "kind": "merge",
+      "pr": 7917,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai, add license tagging for IFC elements",
+      "pr_author": "brunopostle"
+    },
+    {
+      "sha": "bb3db319b1ee",
+      "subject": "Merge remote-tracking branch 'pr-7918/bonsai-drawing-revisions' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:43+02:00",
+      "kind": "merge",
+      "pr": 7918,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai, drawing sheets show git tag revision history in titleblocks",
+      "pr_author": "brunopostle"
+    },
+    {
+      "sha": "ed0825866895",
+      "subject": "Merge remote-tracking branch 'pr-7920/fix/ifctester-setuptools-py312-v2' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:43+02:00",
+      "kind": "merge",
+      "pr": 7920,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "fix(ifctester): add setuptools to venv pip install for Python 3.12+ compatibility",
+      "pr_author": "falken10vdl"
+    },
+    {
+      "sha": "4032aaf48984",
+      "subject": "Merge remote-tracking branch 'pr-7937/ifcclash_modif' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:45+02:00",
+      "kind": "merge",
+      "pr": 7937,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Repair IfcClash order",
+      "pr_author": "JocelinBirling"
+    },
+    {
+      "sha": "016500e7cdf2",
+      "subject": "Merge remote-tracking branch 'pr-7940/Concatenate_selections' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:45+02:00",
+      "kind": "merge",
+      "pr": 7940,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Concatenate selections",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "8fa6d34866af",
+      "subject": "Merge remote-tracking branch 'pr-7963/fix/duplicate-opening-not-applied' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:47+02:00",
+      "kind": "merge",
+      "pr": 7963,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7948: Fix duplicate not applying openings to geometry",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "1022b00300f2",
+      "subject": "Merge remote-tracking branch 'pr-7965/inset_section_endpoints' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:47+02:00",
+      "kind": "merge",
+      "pr": 7965,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "b621deaad210",
+      "subject": "Merge remote-tracking branch 'pr-7968/grab-selects-array' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:48+02:00",
+      "kind": "merge",
+      "pr": 7968,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "0f73f8e22148",
+      "subject": "Merge remote-tracking branch 'pr-7970/preserve-local-view-aggregate-exit' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:49+02:00",
+      "kind": "merge",
+      "pr": 7970,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #7969: Preserve local view on aggregate mode exit",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "9eb27b379005",
+      "subject": "Merge remote-tracking branch 'pr-7971/update_schedule_size_on_sheet' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:49+02:00",
+      "kind": "merge",
+      "pr": 7971,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "closes #5382: Add update_sheet_schedule_sizes to SheetBuilder",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "c5d2be366979",
+      "subject": "Merge remote-tracking branch 'pr-7977/AI_effort_estimate' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:50+02:00",
+      "kind": "merge",
+      "pr": 7977,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "The is a proposal include an **effort estimate** in the commit messag…",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "c59d03dd524f",
+      "subject": "Merge remote-tracking branch 'pr-7986/use-get_class_properties-instead-of-get_class' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:51+02:00",
+      "kind": "merge",
+      "pr": 7986,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Use get class properties instead of get class",
+      "pr_author": "c-mellueh"
+    },
+    {
+      "sha": "a0acecce05e3",
+      "subject": "Merge remote-tracking branch 'pr-7987/dependabot/pip/src/ifcopenshell-python/ifcopenshell/lxml-6.1.0' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:51+02:00",
+      "kind": "merge",
+      "pr": 7987,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "3d5eb9b12f30",
+      "subject": "Merge remote-tracking branch 'pr-7993/v0.8.0' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:52+02:00",
+      "kind": "merge",
+      "pr": 7993,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Ensuring that Entity name is a string",
+      "pr_author": "isma3lMB"
+    },
+    {
+      "sha": "39b0541703f9",
+      "subject": "Merge remote-tracking branch 'pr-8005/sheet-drawing-resize-anchor' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:53+02:00",
+      "kind": "merge",
+      "pr": 8005,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Closes #7984: Resize sheet drawings from upper-left corner",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "0178f24b95e2",
+      "subject": "Merge remote-tracking branch 'pr-8007/reference-drawing-view-title-scale' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:54+02:00",
+      "kind": "merge",
+      "pr": 8007,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Closes #7877:Add scale to reference view-title from SVG class",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "c54d4d3abc0d",
+      "subject": "Merge remote-tracking branch 'pr-8012/measure_in_edit_mode' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:54+02:00",
+      "kind": "merge",
+      "pr": 8012,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Closes #7691: Enable bim.measure_tool in edit mode",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "f69432199c7b",
+      "subject": "Merge remote-tracking branch 'pr-8028/dependabot/npm_and_yarn/src/ifctester/webapp/multi-ad47e4b907' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:55+02:00",
+      "kind": "merge",
+      "pr": 8028,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "1387c971b405",
+      "subject": "Merge remote-tracking branch 'pr-8029/dependabot/npm_and_yarn/src/ifctester/webapp/postcss-8.5.13' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:56+02:00",
+      "kind": "merge",
+      "pr": 8029,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "2dbc37432a85",
+      "subject": "Merge remote-tracking branch 'pr-8032/fix/duplicate-assigns-to-product' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:56+02:00",
+      "kind": "merge",
+      "pr": 8032,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Closes #6621: Fix IfcRelAssignsToProduct on duplicate",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "305d73fffd36",
+      "subject": "Merge remote-tracking branch 'pr-8055/debug-active-drawing-improvements' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:57+02:00",
+      "kind": "merge",
+      "pr": 8055,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Add export option to DebugActiveDrawing",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "941fb4f8910d",
+      "subject": "Merge remote-tracking branch 'pr-8058/dependabot/npm_and_yarn/src/ifctester/webapp/devalue-5.8.1' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:35:58+02:00",
+      "kind": "merge",
+      "pr": 8058,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "43005d31f6b7",
+      "subject": "Merge remote-tracking branch 'pr-8065/v0.8.0' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:00+02:00",
+      "kind": "merge",
+      "pr": 8065,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix #8046 - Entity xs:restriction name crashes with AttributeError on…",
+      "pr_author": "bsmithuk"
+    },
+    {
+      "sha": "3fcfcb250124",
+      "subject": "Merge remote-tracking branch 'pr-8075/dependabot/npm_and_yarn/src/ifctester/webapp/svelte-5.55.8' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:01+02:00",
+      "kind": "merge",
+      "pr": 8075,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "bd7c0fc2a641",
+      "subject": "Merge remote-tracking branch 'pr-8076/dependabot/pip/src/ifcopenshell-python/lxml-6.1.0' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:01+02:00",
+      "kind": "merge",
+      "pr": 8076,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "a5b1fa747ea4",
+      "subject": "Merge remote-tracking branch 'pr-8083/parametric_dimensions' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:02+02:00",
+      "kind": "merge",
+      "pr": 8083,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Parametric dimensions",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "0aa4f6ddabd5",
+      "subject": "Merge remote-tracking branch 'pr-8086/fix/convert-curve-to-mesh-closing-edge' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:03+02:00",
+      "kind": "merge",
+      "pr": 8086,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix closing edge for IfcPolyline in convert_curve_to_mesh",
+      "pr_author": "falken10vdl"
+    },
+    {
+      "sha": "7c5ab0c7fbb8",
+      "subject": "Merge remote-tracking branch 'pr-8087/fix/create-polyline-from-loop-schema-aware' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:03+02:00",
+      "kind": "merge",
+      "pr": 8087,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Use builder.polyline that is schema-aware for create_polyline_from_loop",
+      "pr_author": "falken10vdl"
+    },
+    {
+      "sha": "05105d7af265",
+      "subject": "Merge remote-tracking branch 'pr-8094/dependabot/pip/black-26.5.1' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:04+02:00",
+      "kind": "merge",
+      "pr": 8094,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "bf7ac9645357",
+      "subject": "Merge remote-tracking branch 'pr-8123/fix/remove-drawing-corrupted' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:04+02:00",
+      "kind": "merge",
+      "pr": 8123,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix remove_drawing crash on corrupted drawing",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "22f9c281152a",
+      "subject": "Merge remote-tracking branch 'pr-8126/dependabot/pip/gersemi-0.27.7' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:05+02:00",
+      "kind": "merge",
+      "pr": 8126,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "a42d44814bfd",
+      "subject": "Merge remote-tracking branch 'pr-8145/rab_IfcAxis2PlacementLinear_fix' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:06+02:00",
+      "kind": "merge",
+      "pr": 8145,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Implements default direction of IfcAxis2PlacementLinear.Axis and RefDirection",
+      "pr_author": "RickBrice"
+    },
+    {
+      "sha": "aa98d7f8e099",
+      "subject": "Merge remote-tracking branch 'pr-8153/cross_select_integration' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:06+02:00",
+      "kind": "merge",
+      "pr": 8153,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Add CAD-style cross selection as the default for Bonsai tools",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "7329c1d292d9",
+      "subject": "Merge remote-tracking branch 'pr-8161/fix/ifctester-logical-unknown' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:07+02:00",
+      "kind": "merge",
+      "pr": 8161,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "fix(ifctester): allow IFCLOGICAL properties with UNKNOWN value to pass existence check",
+      "pr_author": "gernotluidolt"
+    },
+    {
+      "sha": "9c02e903bd8a",
+      "subject": "Merge remote-tracking branch 'pr-8171/drawing_render_overrides' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:07+02:00",
+      "kind": "merge",
+      "pr": 8171,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Add per-drawing render overrides (status_render module)",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "88ab8ade53cc",
+      "subject": "Merge remote-tracking branch 'pr-8174/fix-spatialzone-outliner-collection' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:08+02:00",
+      "kind": "merge",
+      "pr": 8174,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Place IfcSpatialZone in its spatial parent's collection instead of Unsorted",
+      "pr_author": "carlopav"
+    },
+    {
+      "sha": "4efcd61d329e",
+      "subject": "Merge remote-tracking branch 'pr-8181/dependabot/npm_and_yarn/src/ifctester/webapp/multi-ba6cf36f62' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:09+02:00",
+      "kind": "merge",
+      "pr": 8181,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "bc7e6919d7c5",
+      "subject": "Merge remote-tracking branch 'pr-8189/dependabot/github_actions/actions/checkout-7' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:10+02:00",
+      "kind": "merge",
+      "pr": 8189,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "bf7a0aa2670b",
+      "subject": "Merge remote-tracking branch 'pr-8200/opening-template-on-type' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:10+02:00",
+      "kind": "merge",
+      "pr": 8200,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Preserve custom opening geometry via a type-level Reference template",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "74f18ed5a22a",
+      "subject": "Merge remote-tracking branch 'pr-8201/dev-notes-system' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:11+02:00",
+      "kind": "merge",
+      "pr": 8201,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Dev notes system",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "486ba4578766",
+      "subject": "Merge remote-tracking branch 'pr-8206/fix-snap-stale-object-reference' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:12+02:00",
+      "kind": "merge",
+      "pr": 8206,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix stale object reference crash in measure tool snapping",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "0b7b34be4f62",
+      "subject": "Merge remote-tracking branch 'pr-8228/debug-drawing-faster-failure-search' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:14+02:00",
+      "kind": "merge",
+      "pr": 8228,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Debug drawing faster failure search",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "20cf5c6f907f",
+      "subject": "Merge remote-tracking branch 'pr-8229/layer2-agnostic-parametric-tools' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:14+02:00",
+      "kind": "merge",
+      "pr": 8229,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Make LAYER2 parametric wall tools IFC-class agnostic",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "31e152690f90",
+      "subject": "Merge remote-tracking branch 'pr-8239/copilot/research-wall-generation-from-slabs' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:15+02:00",
+      "kind": "merge",
+      "pr": 8239,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "89d4d7807f11",
+      "subject": "Merge remote-tracking branch 'pr-8241/Additional_Selection_and_Deselection_Tools' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:16+02:00",
+      "kind": "merge",
+      "pr": 8241,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Additional selection and deselection tools",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "50aea07f9e78",
+      "subject": "Merge remote-tracking branch 'pr-8242/Linked_File_Features' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:16+02:00",
+      "kind": "merge",
+      "pr": 8242,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Linked file features",
+      "pr_author": "theoryshaw"
+    },
+    {
+      "sha": "43a9da5381c5",
+      "subject": "Merge remote-tracking branch 'pr-8246/fix/selector-round-non-numeric-6776' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:18+02:00",
+      "kind": "merge",
+      "pr": 8246,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "503f0e9858d9",
+      "subject": "Merge remote-tracking branch 'pr-8247/fix/ifcdiff-predefined-type-8214' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:18+02:00",
+      "kind": "merge",
+      "pr": 8247,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "b3690fe4ef66",
+      "subject": "Merge remote-tracking branch 'pr-8248/fix/selector-boolean-case-insensitive-6116' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:19+02:00",
+      "kind": "merge",
+      "pr": 8248,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Selector: accept case-insensitive TRUE/FALSE in filter queries (#6116)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "6ea9797ccda0",
+      "subject": "Merge remote-tracking branch 'pr-8249/fix/ifcdiff-relationships-4110' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:19+02:00",
+      "kind": "merge",
+      "pr": 8249,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "IfcDiff: compare container and aggregate by GlobalId (#4110)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "21e2da0c0cdb",
+      "subject": "Merge remote-tracking branch 'pr-8250/fix/ifctester-restriction-entity-8046' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:20+02:00",
+      "kind": "merge",
+      "pr": 8250,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "578f2c2ba62c",
+      "subject": "Merge remote-tracking branch 'pr-8251/fix/edit-pset-empty-numeric-4112' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:20+02:00",
+      "kind": "merge",
+      "pr": 8251,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "c804c92ec98b",
+      "subject": "Merge remote-tracking branch 'pr-8252/fix/resource-assign-typo-8203' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:21+02:00",
+      "kind": "merge",
+      "pr": 8252,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "09dbd917668d",
+      "subject": "Merge remote-tracking branch 'pr-8253/fix/ifctester-predefinedtype-restriction-7855' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:21+02:00",
+      "kind": "merge",
+      "pr": 8253,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "IfcTester: fix predefinedType restrictions that include USERDEFINED (#7855, #7856)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "7900feca5808",
+      "subject": "Merge remote-tracking branch 'pr-8254/fix/selector-list-negation-8129' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:22+02:00",
+      "kind": "merge",
+      "pr": 8254,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "e36b1dfa4def",
+      "subject": "Merge remote-tracking branch 'pr-8256/fix/sequence-subday-durations-8245' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:22+02:00",
+      "kind": "merge",
+      "pr": 8256,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "bea6fc0a2b78",
+      "subject": "Merge remote-tracking branch 'pr-8257/fix/ifcclash-notrequired-keys-8224' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:23+02:00",
+      "kind": "merge",
+      "pr": 8257,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "IfcClash: default NotRequired clash set keys instead of asserting (#8224)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "3723ff18bb1f",
+      "subject": "Merge remote-tracking branch 'pr-8258/fix/reassign-class-latent-8210' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:23+02:00",
+      "kind": "merge",
+      "pr": 8258,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "root.reassign_class: raise a clear error when no class is applicable (#8210)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "39e2df08f3eb",
+      "subject": "Merge remote-tracking branch 'pr-8259/fix/docs-quickstart-todos-8208' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:24+02:00",
+      "kind": "merge",
+      "pr": 8259,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "45f480c01765",
+      "subject": "Merge remote-tracking branch 'pr-8260/fix/import-decimetre-unit-8074' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:24+02:00",
+      "kind": "merge",
+      "pr": 8260,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "8cb22c09de9e",
+      "subject": "Merge remote-tracking branch 'pr-8261/fix/raycast-none-verts-8187' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:25+02:00",
+      "kind": "merge",
+      "pr": 8261,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: skip fully off-screen edges in 2D proximity snap (#8187)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "e9bc8225d666",
+      "subject": "Merge remote-tracking branch 'pr-8264/fix/selector-material-filters-6787' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:26+02:00",
+      "kind": "merge",
+      "pr": 8264,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Selector: fix material != and NULL filtering (#6787)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "6f6b31234a8c",
+      "subject": "Merge remote-tracking branch 'pr-8265/feat/selector-ref-structure-key-7806' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:26+02:00",
+      "kind": "merge",
+      "pr": 8265,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "33ca04957a3e",
+      "subject": "Merge remote-tracking branch 'pr-8266/feat/cost-total-applied-value-5912' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:27+02:00",
+      "kind": "merge",
+      "pr": 8266,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "util.cost: add calculate_total_applied_value (#5912)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "3cafc5de6c52",
+      "subject": "Merge remote-tracking branch 'pr-8267/fix/format-distance-km-mile-8255' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:27+02:00",
+      "kind": "merge",
+      "pr": 8267,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "21827f63a5e5",
+      "subject": "Merge remote-tracking branch 'pr-8268/fix/format-length-non-numeric-5297' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:28+02:00",
+      "kind": "merge",
+      "pr": 8268,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Selector: length formatters pass non-numeric values through (#5297)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "78bbbbf136ab",
+      "subject": "Merge remote-tracking branch 'pr-8269/fix/edit-mode-enum-8066' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:28+02:00",
+      "kind": "merge",
+      "pr": 8269,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: don't crash TAB when EDIT is not in the mode enum (#8066)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "1a93442cc5d0",
+      "subject": "Merge remote-tracking branch 'pr-8270/feat/polyline-comma-decimal-8262' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:29+02:00",
+      "kind": "merge",
+      "pr": 8270,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: accept comma decimals in dimension input (#8262)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "3651e745a531",
+      "subject": "Merge remote-tracking branch 'pr-8271/fix/profile-walk-none-8072' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:29+02:00",
+      "kind": "merge",
+      "pr": 8271,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: fail profile detection cleanly on discontinuous loops (#8072)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "fddc18ab4df4",
+      "subject": "Merge remote-tracking branch 'pr-8273/fix/mode-set-object-exec-8042' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:30+02:00",
+      "kind": "merge",
+      "pr": 8273,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: OverrideModeSetObject must survive direct execution (#8042)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "bfd6f783b47b",
+      "subject": "Merge remote-tracking branch 'pr-8274/fix/aggregate-error-report-7983' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:30+02:00",
+      "kind": "merge",
+      "pr": 8274,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: report incompatible aggregates instead of crashing (#7983)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "bc763cdf13e3",
+      "subject": "Merge remote-tracking branch 'pr-8275/fix/drawing-scale-integer-ratio-7957' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:31+02:00",
+      "kind": "merge",
+      "pr": 8275,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: keep an explicit denominator in custom drawing scales (#7957)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "ef1088816bcf",
+      "subject": "Merge remote-tracking branch 'pr-8276/fix/build-deps-exit-b-7884' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:31+02:00",
+      "kind": "merge",
+      "pr": 8276,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "win: use exit /b in build-deps.cmd so the console stays open (#7884)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "26905b51bec6",
+      "subject": "Merge remote-tracking branch 'pr-8277/fix/quick-favorites-enum-int-7773' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:32+02:00",
+      "kind": "merge",
+      "pr": 8277,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: coerce non-string enum values when importing quick favorites (#7773)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "8e0d043e8f5e",
+      "subject": "Merge remote-tracking branch 'pr-8281/feat-ifcpatch-cli-entrypoint-6436' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:33+02:00",
+      "kind": "merge",
+      "pr": 8281,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "ifcpatch: add console script entry point (#6436)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "dd324252d138",
+      "subject": "Merge remote-tracking branch 'pr-8283/feat-selector-rotation-keys-6262' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:34+02:00",
+      "kind": "merge",
+      "pr": 8283,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "484c3205df7d",
+      "subject": "Merge remote-tracking branch 'pr-8285/fix-msp2ifc-optional-elements-5556' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:34+02:00",
+      "kind": "merge",
+      "pr": 8285,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "ifc4d: MSP2Ifc tolerates optional task elements (#5556)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "db1495343b2c",
+      "subject": "Merge remote-tracking branch 'pr-8286/fix-swept-disk-curve-style-8194' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:35+02:00",
+      "kind": "merge",
+      "pr": 8286,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: don't assert on non-surface item styles in swept disk loader (#8194)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "1ba6a7c3aa1b",
+      "subject": "Merge remote-tracking branch 'pr-8287/fix-ifc5d-export-quality-6251' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:35+02:00",
+      "kind": "merge",
+      "pr": 8287,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "68cd69ed222b",
+      "subject": "Merge remote-tracking branch 'pr-8291/fix-assign-container-type-product-8084' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:37+02:00",
+      "kind": "merge",
+      "pr": 8291,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "spatial.assign_container: clear error for non-containable products (#8084)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "79c2abd1de46",
+      "subject": "Merge remote-tracking branch 'pr-8293/fix-loader-guess-origin-no-context-7350' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:38+02:00",
+      "kind": "merge",
+      "pr": 8293,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: guess_false_origin tolerates a file without a project (#7350)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "ef72c172369e",
+      "subject": "Merge remote-tracking branch 'pr-8295/fix-set-element-value-trailing-index-4687' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:39+02:00",
+      "kind": "merge",
+      "pr": 8295,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "util.selector: set_element_value accepts a trailing index like get_element_value (#4687)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "bb103141b13b",
+      "subject": "Merge remote-tracking branch 'pr-8296/fix-edit-pset-empty-string-numeric-4112' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:39+02:00",
+      "kind": "merge",
+      "pr": 8296,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "df053882be75",
+      "subject": "Merge remote-tracking branch 'pr-8298/fix-edit-pset-update-list-value-5195' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:40+02:00",
+      "kind": "merge",
+      "pr": 8298,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "pset.edit_pset: support updating IfcPropertyListValue properties (#5195)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "3c731d3af4b9",
+      "subject": "Merge remote-tracking branch 'pr-8304/fix-georef-drawing-camera-offset-8205' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:42+02:00",
+      "kind": "merge",
+      "pr": 8304,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: apply georeferencing offset to imported drawing cameras (#8205)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "475e522c2728",
+      "subject": "Merge remote-tracking branch 'pr-8306/fix-style-assignment-none-7883' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:43+02:00",
+      "kind": "merge",
+      "pr": 8306,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "f77a57b1173b",
+      "subject": "Merge remote-tracking branch 'pr-8307/fix-axis2placement2d-resize-6256' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:43+02:00",
+      "kind": "merge",
+      "pr": 8307,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "util.placement: pad 2D RefDirection without in-place resize (#6256)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "ec6eb6aadd30",
+      "subject": "Merge remote-tracking branch 'pr-8311/fix-space-boundary-opening-placement-8237' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:44+02:00",
+      "kind": "merge",
+      "pr": 8311,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "93ea7feb95a0",
+      "subject": "Merge remote-tracking branch 'pr-8314/fix-linework-path-no-d-6876' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:45+02:00",
+      "kind": "merge",
+      "pr": 8314,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: skip linework paths without a d attribute (#6876)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "c07e1f56889d",
+      "subject": "Merge remote-tracking branch 'pr-8315/fix-edit-non-extrusion-slab-6283' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:46+02:00",
+      "kind": "merge",
+      "pr": 8315,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: don't crash editing a non-extrusion slab (#6283)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "16d0c7ebcfbf",
+      "subject": "Merge remote-tracking branch 'pr-8317/fix-get-part-of-product-none-repmaps-8081' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:47+02:00",
+      "kind": "merge",
+      "pr": 8317,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Fix get_part_of_product crash and IFC2X3 typo (#8081)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "74bc4faaf5eb",
+      "subject": "Merge remote-tracking branch 'pr-8318/fix-shape-dimensions-empty-geometry-7147' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:47+02:00",
+      "kind": "merge",
+      "pr": 8318,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Skip quantity takeoff for elements with empty geometry (#7147)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "7262bee3a5ab",
+      "subject": "Merge remote-tracking branch 'pr-8319/fix-8233-duplicate-linked-aggregate' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:48+02:00",
+      "kind": "merge",
+      "pr": 8319,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Retain linked aggregates when duplicating an aggregate (#8233)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "67793e7437be",
+      "subject": "Merge remote-tracking branch 'pr-8321/fix-mappeditem-none-source-7170' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:49+02:00",
+      "kind": "merge",
+      "pr": 8321,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "59be82f82965",
+      "subject": "Merge remote-tracking branch 'pr-8322/fix-pset-schema-reload-8236' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:49+02:00",
+      "kind": "merge",
+      "pr": 8322,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "bonsai(pset): bind schema module directly so pset UI survives add-on reload (#8236)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "dd14792500b0",
+      "subject": "Merge remote-tracking branch 'pr-8323/fix-selector-boolean-property-8100' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:50+02:00",
+      "kind": "merge",
+      "pr": 8323,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "util.selector: match boolean properties by True/False spelling (#8100)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "1d6ff289c706",
+      "subject": "Merge remote-tracking branch 'pr-8325/fix-material-layer-panel-flip-order-8240' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:50+02:00",
+      "kind": "merge",
+      "pr": 8325,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "bonsai(material): keep the layer panel in stored order so a wall flip does not reorder it (#8240)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "411eb29e9cc9",
+      "subject": "Merge remote-tracking branch 'pr-8326/fix-append-asset-duplicate-classification-7150' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:51+02:00",
+      "kind": "merge",
+      "pr": 8326,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "project(append_asset): reuse an existing IfcClassification instead of duplicating it (#7150)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "ed185edd7a5f",
+      "subject": "Merge remote-tracking branch 'pr-8327/fix-manual-classification-reference-no-classification-7506' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:51+02:00",
+      "kind": "merge",
+      "pr": 8327,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "bonsai(classification): report a clear error when adding a manual reference with no classification (#7506)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "2f1490841c6a",
+      "subject": "Merge remote-tracking branch 'pr-8328/fix-drawing-camera-bounds-on-save-8205' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:52+02:00",
+      "kind": "merge",
+      "pr": 8328,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "bonsai(drawing): persist drawing camera zoom and crop on save (#8205)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "8a81560057b2",
+      "subject": "Merge remote-tracking branch 'pr-8329/fix-bcf-viewpoint-georef-offset-8205' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:52+02:00",
+      "kind": "merge",
+      "pr": 8329,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "bonsai(bcf): store viewpoints in global coordinates on georeferenced models (#8205)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "b1b447b48dc3",
+      "subject": "Merge remote-tracking branch 'pr-8331/plan-drawing-spatial-containers' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:53+02:00",
+      "kind": "merge",
+      "pr": 8331,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "bonsai(drawing): plan drawings for spatial containers without a building storey",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "5a1e15711be7",
+      "subject": "Merge remote-tracking branch 'pr-8332/qto-segment-length-from-geometry' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:53+02:00",
+      "kind": "merge",
+      "pr": 8332,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "840d7327cbaf",
+      "subject": "Merge remote-tracking branch 'pr-8333/fix-8330-tab-wall-item-mode' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:54+02:00",
+      "kind": "merge",
+      "pr": 8333,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "bonsai(model): TAB on a wall enters IFC Item Mode again (#8330)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "f7e77caaaa9e",
+      "subject": "Merge remote-tracking branch 'pr-8334/fix-3091-datetime-guard' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:54+02:00",
+      "kind": "merge",
+      "pr": 8334,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: don't crash the task time editor on malformed IfcDuration (#3091)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "8b4f2fc12645",
+      "subject": "Merge remote-tracking branch 'pr-8335/fix-3019-nested-mapped-item' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:55+02:00",
+      "kind": "merge",
+      "pr": 8335,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "util.representation + Bonsai: fix two nested mapped-item transform bugs (#3019)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "7fa92f8f2906",
+      "subject": "Merge remote-tracking branch 'pr-8336/fix-2851-extrusion-dedup' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:55+02:00",
+      "kind": "merge",
+      "pr": 8336,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: recover extrusions from OCCT-duplicated verts, tessellate only when truly not an extrusion (#2851)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "cf6eb41531c6",
+      "subject": "Merge remote-tracking branch 'pr-8337/fix-3129-storey-elevation-precision' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:56+02:00",
+      "kind": "merge",
+      "pr": 8337,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: round length attributes to model precision on write (#3129)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "ca711c5748a7",
+      "subject": "Merge remote-tracking branch 'pr-8338/fix-drawing-viewport-text-size-3353' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:56+02:00",
+      "kind": "merge",
+      "pr": 8338,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "bonsai(drawing): make viewport annotation text size resolution independent (#3353, #3683)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "933120b4860f",
+      "subject": "Merge remote-tracking branch 'pr-8339/fix-3932-mep-bend-crash' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:57+02:00",
+      "kind": "merge",
+      "pr": 8339,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: don't crash Add Bend on parallel/collinear MEP segments (#3932)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "24cdc8b8f2fe",
+      "subject": "Merge remote-tracking branch 'pr-8340/fix-4606-mixed-repr' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:57+02:00",
+      "kind": "merge",
+      "pr": 8340,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: import representations that mix polygons and curves (#4606)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "4ff155ecb71f",
+      "subject": "Merge remote-tracking branch 'pr-8341/fix-4797-atomic-write' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:58+02:00",
+      "kind": "merge",
+      "pr": 8341,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "8bfd5a85023a",
+      "subject": "Merge remote-tracking branch 'pr-8342/style-flat-pretty-toggle' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:58+02:00",
+      "kind": "merge",
+      "pr": 8342,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "note": "not in PR index (closed, merged upstream, or private)"
+    },
+    {
+      "sha": "83a1cfabcb6d",
+      "subject": "Merge remote-tracking branch 'pr-8344/fix-4048-storey-elevation-sync' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:36:59+02:00",
+      "kind": "merge",
+      "pr": 8344,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: sync storey placement on Load Spatial Structure + stop re-import resetting elevations to 0 (#4048, #8545)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "cab577cefb29",
+      "subject": "Merge remote-tracking branch 'pr-8345/fix-4593-add-repr-loose-edges' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:37:00+02:00",
+      "kind": "merge",
+      "pr": 8345,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "geometry.add_representation: keep loose edges (curves) when a mesh also has faces (#4593)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "530cce48098d",
+      "subject": "Merge remote-tracking branch 'pr-8347/fix-4641-clipplane-reload' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:37:01+02:00",
+      "kind": "merge",
+      "pr": 8347,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: relaunch the clipping-plane refresh modal after a .blend reload (#4641)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "55c2d4bca8a8",
+      "subject": "Merge remote-tracking branch 'pr-8348/fix-4703-dxf-transform' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:37:01+02:00",
+      "kind": "merge",
+      "pr": 8348,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: fix DXF export dropping/scrambling polylines with integer or scientific coordinates (#4703)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "273e38c2db7a",
+      "subject": "Merge remote-tracking branch 'pr-8349/fix-4694-tool-shortcut' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:37:02+02:00",
+      "kind": "merge",
+      "pr": 8349,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: give Create Element and Annotation tools stable toolbar-popup shortcuts (#4694)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "66ba74f424fd",
+      "subject": "Merge remote-tracking branch 'pr-8351/fix-4785-drawing-space-filter' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:37:02+02:00",
+      "kind": "merge",
+      "pr": 8351,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: apply the drawing Include filter to IfcSpace elements (#4785)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "bdd881c0dc75",
+      "subject": "Merge remote-tracking branch 'pr-8352/fix-4766-cross-schema-append' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:37:03+02:00",
+      "kind": "merge",
+      "pr": 8352,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "project.append_asset: migrate library asset to project schema on cross-schema append (#4766)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "8ec336f7ec03",
+      "subject": "Merge remote-tracking branch 'pr-8353/fix-4790-regen-style' into build-0.8.6-alpha2607071335",
+      "author": "falken10vdl",
+      "date": "2026-07-07T13:37:03+02:00",
+      "kind": "merge",
+      "pr": 8353,
+      "confidence": "exact",
+      "evidence": "merge subject names pr-<n>/ remote",
+      "title": "Bonsai: preserve IfcStyledItem when regenerating a wall body (#4790)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "1591d3b280c0",
+      "subject": "Fix horizontal profile editing for sloped LAYER3 slabs",
+      "author": "Ryan Schultz",
+      "date": "2026-07-07T08:32:15-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "e9bfd804f3c2",
+      "subject": "Bonsai: draw moved and multi-linked models at their displayed locations",
+      "author": "Ryan Schultz",
+      "date": "2026-07-08T22:46:34-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "5ac464cc2c26",
+      "subject": "Bonsai: keep linked models cut linework in BISECT cut mode",
+      "author": "Ryan Schultz",
+      "date": "2026-07-08T23:37:22-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "1ca0f9e8c3fc",
+      "subject": "Bonsai: include/exclude filter pair for linked models",
+      "author": "Ryan Schultz",
+      "date": "2026-07-10T15:26:33-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "52e7c33d8e87",
+      "subject": "Bonsai: reload-all-links button in the Links panel header",
+      "author": "Ryan Schultz",
+      "date": "2026-07-10T15:51:59-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "dd90e9df18f0",
+      "subject": "changed 'Query' to 'Include'",
+      "author": "Ryan Schultz",
+      "date": "2026-07-10T16:24:56-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "ceb34824c9b2",
+      "subject": "Note Include/Exclude UI labels in the dev note",
+      "author": "Ryan Schultz",
+      "date": "2026-07-10T18:05:10-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "c83b84f8fa51",
+      "subject": "Bonsai: auto-load links that were loaded and visible at save time",
+      "author": "Ryan Schultz",
+      "date": "2026-07-11T09:08:51-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "5f62ad350150",
+      "subject": "Note STEP p21e3 as the long-term serialization target in the dev note",
+      "author": "Ryan Schultz",
+      "date": "2026-07-11T09:31:02-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "fef79c73745b",
+      "subject": "Bonsai: unit tests for link filter helpers + refactor notes",
+      "author": "Ryan Schultz",
+      "date": "2026-07-11T10:06:15-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "23867697d07d",
+      "subject": "Bonsai: custom display names for links",
+      "author": "Ryan Schultz",
+      "date": "2026-07-11T10:37:57-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "80b0ae9151c4",
+      "subject": "Add bulk-load of selected drawings' annotations",
+      "author": "Ryan Schultz",
+      "date": "2026-07-11T15:51:20-05:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "966da58cca48",
+      "subject": "Bonsai: stop spatial re-import from resetting storey elevations to 0 (#8545)",
+      "author": "Ryan Schultz",
+      "date": "2026-07-12T09:23:31-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "a07e3ba29460",
+      "subject": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
+      "author": "Ryan Schultz",
+      "date": "2026-07-12T10:37:28-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "d8c6114da7c2",
+      "subject": "Bonsai: orient the section marker to the view direction (#4103)",
+      "author": "Petru Conduraru",
+      "date": "2026-07-10T12:36:59+03:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "333a2df1ee05",
+      "subject": "Bonsai: orient section markers in section/elevation views (#4103 follow-up)",
+      "author": "Ryan Schultz",
+      "date": "2026-07-12T21:04:09-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "87dd8283a8bc",
+      "subject": "Merge remote-tracking branch 'remotes/BIMvoice/fix-6508-geography-element-qto' into build-0.8.6-alpha2607071335",
+      "author": "Ryan Schultz",
+      "date": "2026-07-13T07:51:20-05:00",
+      "kind": "merge",
+      "pr": 8393,
+      "confidence": "exact",
+      "evidence": "owner/branch BIMvoice/fix-6508-geography-element-qto matched PR index",
+      "title": "ifc5d: add base-quantity rule for IfcGeographicElement (#6508)",
+      "pr_author": "BIMvoice"
+    },
+    {
+      "sha": "15837cb920c9",
+      "subject": "bonsai(drawing): guard save against cameras with no active representation (#8205)",
+      "author": "Ryan Schultz",
+      "date": "2026-07-13T08:23:44-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "31227cea7f64",
+      "subject": "Bonsai: don't crash decoration labels on a zero-length text direction",
+      "author": "Ryan Schultz",
+      "date": "2026-07-13T14:24:41-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "970ef18c703c",
+      "subject": "Bonsai: skip drawing decorations when the scene has no active camera",
+      "author": "Ryan Schultz",
+      "date": "2026-07-13T14:25:20-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "a4753ad1560d",
+      "subject": "Bonsai: resolve activate-drawing-from-sheet in invoke(), not draw()",
+      "author": "Ryan Schultz",
+      "date": "2026-07-13T14:25:20-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "481bec2b3d24",
+      "subject": "Add CTRL+ALT+Click regex-search dialog to five select operators",
+      "author": "Ryan Schultz",
+      "date": "2026-07-15T08:21:27-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "120077fb3f6e",
+      "subject": "Refactor select operators onto shared scaffolding in bim.helper",
+      "author": "Ryan Schultz",
+      "date": "2026-07-15T08:52:58-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "4db0ead78b5c",
+      "subject": "Replace select_products flags with a mode enum and consolidate loops",
+      "author": "Ryan Schultz",
+      "date": "2026-07-15T09:09:52-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "d32440c8906a",
+      "subject": "Bonsai: support IfcTrimmedCurve arc segments in profile edit (#6929)",
+      "author": "Petru Conduraru",
+      "date": "2026-07-12T08:22:53+03:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "a2163c19e1b2",
+      "subject": "Merge remote-tracking branch 'falken10vdl/clipboard-module' into build-0.8.6-alpha2607071335",
+      "author": "Ryan Schultz",
+      "date": "2026-07-15T13:51:24-05:00",
+      "kind": "merge",
+      "pr": 7669,
+      "confidence": "exact",
+      "evidence": "owner/branch falken10vdl/clipboard-module matched PR index",
+      "title": "First version clipboard module. 3 modes available (RENAME, DUPLICATE, DESTINATION)",
+      "pr_author": "falken10vdl"
+    },
+    {
+      "sha": "4ebcfcbe654a",
+      "subject": "proposed fix for #6931",
+      "author": "Ryan Schultz",
+      "date": "2025-07-22T08:45:15-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "3cf72f131670",
+      "subject": "Resolve mapped/boolean items in unassign_representation_item_style #6931",
+      "author": "Ryan Schultz",
+      "date": "2026-07-15T15:05:55-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "3439a3c95de8",
+      "subject": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
+      "author": "Ryan Schultz",
+      "date": "2026-07-15T16:20:21-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "f51231bfc39c",
+      "subject": "Bonsai: add \"Make Length Per-Instance\" for typed/mapped profile types",
+      "author": "Ryan Schultz",
+      "date": "2026-07-15T22:17:31-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "81811dc34460",
+      "subject": "Bonsai: guard change_data against a None mesh datablock",
+      "author": "Ryan Schultz",
+      "date": "2026-07-16T12:39:47-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "38fdf4e1dbf3",
+      "subject": "Bonsai: toggle a profile type's length between typed and per-instance",
+      "author": "Ryan Schultz",
+      "date": "2026-07-16T12:39:47-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "d26edfa902d1",
+      "subject": "api.project.append_asset: preserve material styles reached via a layer set usage",
+      "author": "Ryan Schultz",
+      "date": "2026-07-16T17:10:08-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "3fff6f917fbf",
+      "subject": "Bonsai: allow cross-family class reassignment for spatial elements with geometry",
+      "author": "Ryan Schultz",
+      "date": "2026-07-16T18:31:34-05:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "44a050a1b29b",
+      "subject": "project.append_asset: don't crash on untracked removed element (#8666)",
+      "author": "Ryan Schultz",
+      "date": "2026-07-16T21:47:23-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "ba8d3ba43dbb",
+      "subject": "project.append_asset: don't abort batch on GlobalId collision (#8667)",
+      "author": "Ryan Schultz",
+      "date": "2026-07-16T21:48:36-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "a8c9c0f6b725",
+      "subject": "Guard append_asset against an empty aggregate attribute (#7261)",
+      "author": "Petru Conduraru",
+      "date": "2026-07-11T15:27:02+03:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "1eeb9fa17d8d",
+      "subject": "ifcpatch: add MergeDuplicateContexts recipe",
+      "author": "Ryan Schultz",
+      "date": "2026-07-17T09:53:27-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "1b4ac196ab67",
+      "subject": "dev-notes: MergeDuplicateContexts recipe",
+      "author": "Ryan Schultz",
+      "date": "2026-07-17T10:13:23-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "2d8adcd622b4",
+      "subject": "ifcpatch: make MergeDuplicateContexts resilient to unresolvable contexts",
+      "author": "Ryan Schultz",
+      "date": "2026-07-18T09:27:17-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "b4ca4c4d8c00",
+      "subject": "ifcpatch: stop MergeProjects leaving duplicate representation contexts",
+      "author": "Ryan Schultz",
+      "date": "2026-07-17T10:00:13-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "11e1a65be97e",
+      "subject": "dev-notes: MergeProjects duplicate-context fix",
+      "author": "Ryan Schultz",
+      "date": "2026-07-17T10:10:05-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "cd7e5c441506",
+      "subject": "Bonsai: add Delete Type button to Type Attributes panel",
+      "author": "Ryan Schultz",
+      "date": "2026-07-18T15:26:42-05:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "00535e754887",
+      "subject": "Bonsai: preserve occurrence geometry/material/styles when deleting a type",
+      "author": "Ryan Schultz",
+      "date": "2026-07-18T17:32:49-05:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "bb1500716849",
+      "subject": "Bonsai: fix profile reconstruction after duplicating a circle/arc in Edit Mode",
+      "author": "Petru Conduraru",
+      "date": "2026-07-19T09:32:33+03:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "dc96c171e582",
+      "subject": "Bonsai: fix the same duplicate-loop vertex-group bug in auto_detect_curves",
+      "author": "Petru Conduraru",
+      "date": "2026-07-19T09:42:17+03:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "a6d28d7e3eec",
+      "subject": "Bonsai: refresh the arc/circle decorator immediately after duplicating a loop",
+      "author": "Petru Conduraru",
+      "date": "2026-07-19T18:27:01+03:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "f30ba42cf6f7",
+      "subject": "Bonsai: fix AttributeError when grab-moving array members",
+      "author": "Ryan Schultz",
+      "date": "2026-07-19T13:56:56-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "29af1857e38f",
+      "subject": "Bonsai: harden BBIM_Boolean.Data parsing against non-list payloads",
+      "author": "Ryan Schultz",
+      "date": "2026-07-20T13:40:26-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "79ecdf529233",
+      "subject": "Bonsai: add toggle to show only drawings placed on sheets",
+      "author": "Ryan Schultz",
+      "date": "2026-07-20T19:01:32-05:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "e5260653fe60",
+      "subject": "Bonsai: add category-level select-all to the Drawings list",
+      "author": "Ryan Schultz",
+      "date": "2026-07-20T20:34:49-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "fcf9c3943664",
+      "subject": "Bonsai: right-click rename on a material name (#6680)",
+      "author": "Petru Conduraru",
+      "date": "2026-07-21T15:54:59+03:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "f469c6982c93",
+      "subject": "Bonsai: refresh the UI after renaming a material",
+      "author": "Petru Conduraru",
+      "date": "2026-07-21T17:11:56+03:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "096faedd3973",
+      "subject": "Bonsai: refresh material data unconditionally instead of forcing a redraw",
+      "author": "Petru Conduraru",
+      "date": "2026-07-21T21:08:21+03:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "fdd310f72286",
+      "subject": "Bonsai: fix ExtrusionWidget gizmo crashes from split class",
+      "author": "Ryan Schultz",
+      "date": "2026-07-25T11:51:56-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "c813abc6cfe0",
+      "subject": "Show IfcSpace in projection drawings",
+      "author": "Ryan Schultz",
+      "date": "2026-03-26T22:27:45-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "68c98cfa41fe",
+      "subject": "Bonsai: fillet unconnected lines by extending them to a virtual corner",
+      "author": "Petru Conduraru",
+      "date": "2026-07-24T16:41:27+03:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "5b002c2b73c9",
+      "subject": "Bonsai: batch geometry iterator setup when reimporting many representations",
+      "author": "Petru Conduraru",
+      "date": "2026-07-25T13:59:06+03:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "b2ccedca30cd",
+      "subject": "Bonsai: fix \"Feet - Decimal\" dimension unit breaking annotation decorators",
+      "author": "Ryan Schultz",
+      "date": "2026-07-27T17:50:46-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "a679594acebd",
+      "subject": "Bonsai: apply parametric representation edits across the whole selection",
+      "author": "Petru Conduraru",
+      "date": "2026-07-18T09:46:29+03:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "200ac866f7dc",
+      "subject": "Bonsai: allow aggregating IfcAnnotation elements and moving them as a unit",
+      "author": "Ryan Schultz",
+      "date": "2026-07-27T19:37:42-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "724115d6b84a",
+      "subject": "Bonsai: add one click copy of annotations to another drawing (#8719)",
+      "author": "Petru Conduraru",
+      "date": "2026-07-20T02:50:14+03:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "e4aaf061562c",
+      "subject": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
+      "author": "Ryan Schultz",
+      "date": "2026-07-27T21:58:21-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "0d8a4e99fde1",
+      "subject": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product (#9030)",
+      "author": "Ryan Schultz",
+      "date": "2026-07-29T09:02:38-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "1ee72ffca758",
+      "subject": "copy_class: don't share the original's annotations with the copy (#9049)",
+      "author": "Ryan Schultz",
+      "date": "2026-07-29T09:41:07-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "bd98253d74ab",
+      "subject": "Bonsai: hand the duplicated annotation to the duplicated product (#9049 follow-up)",
+      "author": "Ryan Schultz",
+      "date": "2026-07-29T10:21:50-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "71852eb15748",
+      "subject": "Bonsai: remove every selected annotation from a drawing, not just the active one",
+      "author": "Ryan Schultz",
+      "date": "2026-07-29T10:45:20-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "9dbb3352306c",
+      "subject": "Bonsai: re-point an occurrence's material usage when the mapping is skipped",
+      "author": "Ryan Schultz",
+      "date": "2026-07-30T21:14:07-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "8a5349ecdf46",
+      "subject": "Bonsai: update the core assign_type tests for should_map_representations",
+      "author": "Ryan Schultz",
+      "date": "2026-07-30T21:20:55-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "998b1ba5e500",
+      "subject": "Bonsai: cover the material usage re-point on retype",
+      "author": "Ryan Schultz",
+      "date": "2026-07-30T21:36:11-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "291617fc6f86",
+      "subject": "dev-notes: record the material usage trap in should_map_representations",
+      "author": "Ryan Schultz",
+      "date": "2026-07-30T21:37:34-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "b8a6d43c57ea",
+      "subject": "dev-notes: record the shared mapped-body defect on this branch",
+      "author": "Ryan Schultz",
+      "date": "2026-07-30T22:17:39-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "c60702ee7cc6",
+      "subject": "Bonsai: normalize occurrence-local representations onto the type",
+      "author": "Ryan Schultz",
+      "date": "2026-07-31T18:28:54-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "c1c4dff27872",
+      "subject": "Bonsai: guard record_object_materials against a data-less object",
+      "author": "Ryan Schultz",
+      "date": "2026-07-31T18:48:13-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "f6f599f15e58",
+      "subject": "Bonsai: make Promote to Type slot-based (type wins)",
+      "author": "Ryan Schultz",
+      "date": "2026-07-31T19:38:41-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "a302b7b0e03a",
+      "subject": "Bonsai: promote replaces any existing rep in the slot, not just local",
+      "author": "Ryan Schultz",
+      "date": "2026-08-01T08:32:20-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "b1a10e1ca699",
+      "subject": "Bonsai: remove_representation handles occurrence reps mapped to a floating map",
+      "author": "Ryan Schultz",
+      "date": "2026-08-01T09:09:33-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "91da937cb5b3",
+      "subject": "ifcopenshell.util.element: dedupe SET-typed attributes in replace_attribute",
+      "author": "Petru Conduraru",
+      "date": "2026-07-20T15:54:59+03:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "42edd58076ff",
+      "subject": "dev_environment.py: detect Blender's bundled Python from disk",
+      "author": "Ryan Schultz",
+      "date": "2026-08-02T08:57:29-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "a1e3cdafd4cb",
+      "subject": "dev_environment.py: survive a locked file while symlinking",
+      "author": "Ryan Schultz",
+      "date": "2026-08-03T09:06:51-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "d9b1db895d86",
+      "subject": "dev_environment.py: add --skip-binaries flag",
+      "author": "Andrej730",
+      "date": "2026-07-22T18:04:59+05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "e6d6b2db9fb6",
+      "subject": "dev_environment.py: add shebang and make executable",
+      "author": "Andrej730",
+      "date": "2026-07-14T12:12:54+05:00",
+      "kind": "commit",
+      "classification": "absorbed-upstream"
+    },
+    {
+      "sha": "f64ac5937095",
+      "subject": "Bonsai: fix PROFILE beam teleporting and visual un-mirror after TrueMirrorElements",
+      "author": "Ryan Schultz",
+      "date": "2026-08-03T20:15:02-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "f5207e603eb0",
+      "subject": "Bonsai: skip IfcMappedItem in _apply_opening_mirror to avoid crash",
+      "author": "Ryan Schultz",
+      "date": "2026-08-03T20:50:18-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "c39a0b2e26eb",
+      "subject": "Bonsai: remove duplicate TrueMirrorElements operator and double Mirror Geometry button",
+      "author": "Ryan Schultz",
+      "date": "2026-08-04T09:17:21-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "c813f641a6ab",
+      "subject": "Bonsai: rebuild filled openings after mirroring a LAYER2/LAYER3 wall",
+      "author": "Ryan Schultz",
+      "date": "2026-08-04T10:25:19-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "52758dc55faa",
+      "subject": "Bonsai: fix curved-wall arc direction wrong after diagonal TrueMirrorElements",
+      "author": "Ryan Schultz",
+      "date": "2026-08-04T11:12:51-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "35ebd6c1485e",
+      "subject": "Bonsai: strip curved-wall mirror debug prints",
+      "author": "Ryan Schultz",
+      "date": "2026-08-04T11:15:31-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "90f4b83591fc",
+      "subject": "Bonsai: restore try/except around builder.mirror fallback in invert_general_object",
+      "author": "Ryan Schultz",
+      "date": "2026-08-04T11:24:22-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "5c1212377393",
+      "subject": "Prioritize camera-perpendicular faces for parametric dimension snapping",
+      "author": "Ryan Schultz",
+      "date": "2026-08-04T12:49:57-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "0d49cebd9083",
+      "subject": "Evict stale snap_objs cache entries on ReferenceError",
+      "author": "Ryan Schultz",
+      "date": "2026-08-04T12:56:44-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "94deca7f630d",
+      "subject": "Make LinePosition camera-relative in section/elevation views",
+      "author": "Ryan Schultz",
+      "date": "2026-08-04T14:21:50-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "26c62ed9f4f5",
+      "subject": "Add insert/remove anchor vertices on existing parametric dimensions",
+      "author": "Ryan Schultz",
+      "date": "2026-08-05T16:13:07-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "a9f91006c8e4",
+      "subject": "Fix LinePosition not preserved in section views on element move",
+      "author": "Ryan Schultz",
+      "date": "2026-08-05T16:41:29-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "cc1a3f3d6ec1",
+      "subject": "Add missing is_manual_drawing_reference getter to Drawing tool",
+      "author": "Ryan Schultz",
+      "date": "2026-08-05T19:39:33-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    },
+    {
+      "sha": "409542f5b3ba",
+      "subject": "Add DriveDimensionLength operator to move anchored objects to target dimension",
+      "author": "Ryan Schultz",
+      "date": "2026-08-05T21:08:46-05:00",
+      "kind": "commit",
+      "classification": "residue"
+    }
+  ],
+  "clusters": [
+    {
+      "title": "Fix horizontal profile editing for sloped LAYER3 slabs",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/bim/module/model/slab.py"
+      ],
+      "commits": [
+        {
+          "sha": "1591d3b280c0",
+          "subject": "Fix horizontal profile editing for sloped LAYER3 slabs"
+        }
+      ]
+    },
+    {
+      "title": "Bonsai: draw moved and multi-linked models at their displayed locations",
+      "disposition": "private",
+      "files": [
+        "docs/dev-notes/linked-file-features.md",
+        "src/bonsai/bonsai/bim/module/drawing/decoration.py",
+        "src/bonsai/bonsai/bim/module/drawing/operator.py",
+        "src/bonsai/bonsai/bim/module/drawing/ui.py",
+        "src/bonsai/bonsai/bim/module/geometry/prop.py",
+        "src/bonsai/bonsai/bim/module/geometry/ui.py",
+        "src/bonsai/bonsai/bim/module/project/__init__.py",
+        "src/bonsai/bonsai/bim/module/project/operator.py",
+        "src/bonsai/bonsai/bim/module/project/prop.py",
+        "src/bonsai/bonsai/bim/module/project/ui.py",
+        "src/bonsai/bonsai/bim/module/spatial/operator.py",
+        "src/bonsai/bonsai/bim/module/spatial/prop.py",
+        "src/bonsai/bonsai/tool/drawing.py",
+        "src/bonsai/bonsai/tool/project.py",
+        "src/bonsai/bonsai/tool/spatial.py",
+        "src/bonsai/test/tool/test_project.py"
+      ],
+      "commits": [
+        {
+          "sha": "e9bfd804f3c2",
+          "subject": "Bonsai: draw moved and multi-linked models at their displayed locations"
+        },
+        {
+          "sha": "5ac464cc2c26",
+          "subject": "Bonsai: keep linked models cut linework in BISECT cut mode"
+        },
+        {
+          "sha": "1ca0f9e8c3fc",
+          "subject": "Bonsai: include/exclude filter pair for linked models"
+        },
+        {
+          "sha": "52e7c33d8e87",
+          "subject": "Bonsai: reload-all-links button in the Links panel header"
+        },
+        {
+          "sha": "dd90e9df18f0",
+          "subject": "changed 'Query' to 'Include'"
+        },
+        {
+          "sha": "ceb34824c9b2",
+          "subject": "Note Include/Exclude UI labels in the dev note"
+        },
+        {
+          "sha": "c83b84f8fa51",
+          "subject": "Bonsai: auto-load links that were loaded and visible at save time"
+        },
+        {
+          "sha": "5f62ad350150",
+          "subject": "Note STEP p21e3 as the long-term serialization target in the dev note"
+        },
+        {
+          "sha": "fef79c73745b",
+          "subject": "Bonsai: unit tests for link filter helpers + refactor notes"
+        },
+        {
+          "sha": "23867697d07d",
+          "subject": "Bonsai: custom display names for links"
+        },
+        {
+          "sha": "966da58cca48",
+          "subject": "Bonsai: stop spatial re-import from resetting storey elevations to 0 (#8545)"
+        },
+        {
+          "sha": "a07e3ba29460",
+          "subject": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel"
+        },
+        {
+          "sha": "d8c6114da7c2",
+          "subject": "Bonsai: orient the section marker to the view direction (#4103)"
+        },
+        {
+          "sha": "333a2df1ee05",
+          "subject": "Bonsai: orient section markers in section/elevation views (#4103 follow-up)"
+        },
+        {
+          "sha": "15837cb920c9",
+          "subject": "bonsai(drawing): guard save against cameras with no active representation (#8205)"
+        },
+        {
+          "sha": "31227cea7f64",
+          "subject": "Bonsai: don't crash decoration labels on a zero-length text direction"
+        },
+        {
+          "sha": "970ef18c703c",
+          "subject": "Bonsai: skip drawing decorations when the scene has no active camera"
+        },
+        {
+          "sha": "a4753ad1560d",
+          "subject": "Bonsai: resolve activate-drawing-from-sheet in invoke(), not draw()"
+        }
+      ]
+    },
+    {
+      "title": "Add CTRL+ALT+Click regex-search dialog to five select operators",
+      "disposition": "private",
+      "files": [
+        "docs/dev-notes/Additional_Selection_and_Deselection_Tools.md",
+        "src/bonsai/bonsai/bim/helper.py",
+        "src/bonsai/bonsai/bim/module/aggregate/operator.py",
+        "src/bonsai/bonsai/bim/module/group/operator.py",
+        "src/bonsai/bonsai/bim/module/material/operator.py",
+        "src/bonsai/bonsai/bim/module/search/operator.py",
+        "src/bonsai/bonsai/bim/module/spatial/operator.py",
+        "src/bonsai/bonsai/bim/module/type/operator.py",
+        "src/bonsai/bonsai/core/material.py",
+        "src/bonsai/bonsai/core/spatial.py",
+        "src/bonsai/bonsai/core/tool.py",
+        "src/bonsai/bonsai/tool/spatial.py"
+      ],
+      "commits": [
+        {
+          "sha": "481bec2b3d24",
+          "subject": "Add CTRL+ALT+Click regex-search dialog to five select operators"
+        },
+        {
+          "sha": "120077fb3f6e",
+          "subject": "Refactor select operators onto shared scaffolding in bim.helper"
+        },
+        {
+          "sha": "4db0ead78b5c",
+          "subject": "Replace select_products flags with a mode enum and consolidate loops"
+        }
+      ]
+    },
+    {
+      "title": "Bonsai: support IfcTrimmedCurve arc segments in profile edit (#6929)",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/tool/model.py"
+      ],
+      "commits": [
+        {
+          "sha": "d32440c8906a",
+          "subject": "Bonsai: support IfcTrimmedCurve arc segments in profile edit (#6929)"
+        }
+      ]
+    },
+    {
+      "title": "proposed fix for #6931",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/bim/module/geometry/operator.py"
+      ],
+      "commits": [
+        {
+          "sha": "4ebcfcbe654a",
+          "subject": "proposed fix for #6931"
+        },
+        {
+          "sha": "3cf72f131670",
+          "subject": "Resolve mapped/boolean items in unassign_representation_item_style #6931"
+        }
+      ]
+    },
+    {
+      "title": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
+      "disposition": "private",
+      "files": [
+        "src/ifcpatch/ifcpatch/recipes/MergeDuplicateTypes.py",
+        "src/ifcpatch/test/test_MergeDuplicateTypes.py"
+      ],
+      "commits": [
+        {
+          "sha": "3439a3c95de8",
+          "subject": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types"
+        }
+      ]
+    },
+    {
+      "title": "Bonsai: add \"Make Length Per-Instance\" for typed/mapped profile types",
+      "disposition": "private",
+      "files": [
+        "docs/dev-notes/profile-length-per-instance.md",
+        "src/bonsai/bonsai/bim/module/model/__init__.py",
+        "src/bonsai/bonsai/bim/module/model/profile.py",
+        "src/bonsai/bonsai/bim/module/type/data.py",
+        "src/bonsai/bonsai/bim/module/type/prop.py",
+        "src/bonsai/bonsai/bim/module/type/ui.py",
+        "src/bonsai/bonsai/core/type.py",
+        "src/bonsai/bonsai/tool/geometry.py"
+      ],
+      "commits": [
+        {
+          "sha": "f51231bfc39c",
+          "subject": "Bonsai: add \"Make Length Per-Instance\" for typed/mapped profile types"
+        },
+        {
+          "sha": "81811dc34460",
+          "subject": "Bonsai: guard change_data against a None mesh datablock"
+        },
+        {
+          "sha": "38fdf4e1dbf3",
+          "subject": "Bonsai: toggle a profile type's length between typed and per-instance"
+        }
+      ]
+    },
+    {
+      "title": "api.project.append_asset: preserve material styles reached via a layer set usage",
+      "disposition": "private",
+      "files": [
+        "docs/dev-notes/append-asset-material-styles.md",
+        "src/ifcopenshell-python/ifcopenshell/api/project/append_asset.py",
+        "src/ifcopenshell-python/test/api/project/test_append_asset.py"
+      ],
+      "commits": [
+        {
+          "sha": "d26edfa902d1",
+          "subject": "api.project.append_asset: preserve material styles reached via a layer set usage"
+        },
+        {
+          "sha": "44a050a1b29b",
+          "subject": "project.append_asset: don't crash on untracked removed element (#8666)"
+        },
+        {
+          "sha": "ba8d3ba43dbb",
+          "subject": "project.append_asset: don't abort batch on GlobalId collision (#8667)"
+        },
+        {
+          "sha": "a8c9c0f6b725",
+          "subject": "Guard append_asset against an empty aggregate attribute (#7261)"
+        }
+      ]
+    },
+    {
+      "title": "ifcpatch: add MergeDuplicateContexts recipe",
+      "disposition": "private",
+      "files": [
+        "src/ifcpatch/ifcpatch/recipes/MergeDuplicateContexts.py",
+        "src/ifcpatch/test/test_MergeDuplicateContexts.py"
+      ],
+      "commits": [
+        {
+          "sha": "1eeb9fa17d8d",
+          "subject": "ifcpatch: add MergeDuplicateContexts recipe"
+        }
+      ]
+    },
+    {
+      "title": "dev-notes: MergeDuplicateContexts recipe",
+      "disposition": "private",
+      "files": [
+        "docs/dev-notes/merge-duplicate-contexts.md"
+      ],
+      "commits": [
+        {
+          "sha": "1b4ac196ab67",
+          "subject": "dev-notes: MergeDuplicateContexts recipe"
+        }
+      ]
+    },
+    {
+      "title": "ifcpatch: make MergeDuplicateContexts resilient to unresolvable contexts",
+      "disposition": "private",
+      "files": [
+        "src/ifcpatch/ifcpatch/recipes/MergeDuplicateContexts.py",
+        "src/ifcpatch/ifcpatch/recipes/MergeProjects.py",
+        "src/ifcpatch/test/test_MergeProject.py"
+      ],
+      "commits": [
+        {
+          "sha": "2d8adcd622b4",
+          "subject": "ifcpatch: make MergeDuplicateContexts resilient to unresolvable contexts"
+        },
+        {
+          "sha": "b4ca4c4d8c00",
+          "subject": "ifcpatch: stop MergeProjects leaving duplicate representation contexts"
+        }
+      ]
+    },
+    {
+      "title": "dev-notes: MergeProjects duplicate-context fix",
+      "disposition": "private",
+      "files": [
+        "docs/dev-notes/fix-mergeprojects-dup-contexts.md"
+      ],
+      "commits": [
+        {
+          "sha": "11e1a65be97e",
+          "subject": "dev-notes: MergeProjects duplicate-context fix"
+        }
+      ]
+    },
+    {
+      "title": "Bonsai: fix AttributeError when grab-moving array members",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/bim/data/assets/default.css",
+        "src/bonsai/bonsai/bim/data/assets/sample.css",
+        "src/bonsai/bonsai/bim/module/cad/operator.py",
+        "src/bonsai/bonsai/bim/module/drawing/__init__.py",
+        "src/bonsai/bonsai/bim/module/drawing/data.py",
+        "src/bonsai/bonsai/bim/module/drawing/gizmos.py",
+        "src/bonsai/bonsai/bim/module/drawing/helper.py",
+        "src/bonsai/bonsai/bim/module/drawing/operator.py",
+        "src/bonsai/bonsai/bim/module/drawing/ui.py",
+        "src/bonsai/bonsai/bim/module/drawing/workspace.py",
+        "src/bonsai/bonsai/bim/module/geometry/operator.py",
+        "src/bonsai/bonsai/bim/module/group/operator.py",
+        "src/bonsai/bonsai/core/drawing.py",
+        "src/bonsai/bonsai/core/geometry.py",
+        "src/bonsai/bonsai/core/tool.py",
+        "src/bonsai/bonsai/tool/aggregate.py",
+        "src/bonsai/bonsai/tool/cad.py",
+        "src/bonsai/bonsai/tool/collector.py",
+        "src/bonsai/bonsai/tool/drawing.py",
+        "src/bonsai/bonsai/tool/geometry.py",
+        "src/bonsai/bonsai/tool/model.py",
+        "src/bonsai/test/core/test_drawing.py",
+        "src/bonsai/test/core/test_geometry.py",
+        "src/bonsai/test/tool/test_cad.py",
+        "src/bonsai/test/tool/test_drawing.py"
+      ],
+      "commits": [
+        {
+          "sha": "f30ba42cf6f7",
+          "subject": "Bonsai: fix AttributeError when grab-moving array members"
+        },
+        {
+          "sha": "29af1857e38f",
+          "subject": "Bonsai: harden BBIM_Boolean.Data parsing against non-list payloads"
+        },
+        {
+          "sha": "e5260653fe60",
+          "subject": "Bonsai: add category-level select-all to the Drawings list"
+        },
+        {
+          "sha": "fdd310f72286",
+          "subject": "Bonsai: fix ExtrusionWidget gizmo crashes from split class"
+        },
+        {
+          "sha": "c813abc6cfe0",
+          "subject": "Show IfcSpace in projection drawings"
+        },
+        {
+          "sha": "68c98cfa41fe",
+          "subject": "Bonsai: fillet unconnected lines by extending them to a virtual corner"
+        },
+        {
+          "sha": "5b002c2b73c9",
+          "subject": "Bonsai: batch geometry iterator setup when reimporting many representations"
+        },
+        {
+          "sha": "b2ccedca30cd",
+          "subject": "Bonsai: fix \"Feet - Decimal\" dimension unit breaking annotation decorators"
+        },
+        {
+          "sha": "a679594acebd",
+          "subject": "Bonsai: apply parametric representation edits across the whole selection"
+        },
+        {
+          "sha": "200ac866f7dc",
+          "subject": "Bonsai: allow aggregating IfcAnnotation elements and moving them as a unit"
+        },
+        {
+          "sha": "724115d6b84a",
+          "subject": "Bonsai: add one click copy of annotations to another drawing (#8719)"
+        },
+        {
+          "sha": "e4aaf061562c",
+          "subject": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)"
+        },
+        {
+          "sha": "0d8a4e99fde1",
+          "subject": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product (#9030)"
+        }
+      ]
+    },
+    {
+      "title": "copy_class: don't share the original's annotations with the copy (#9049)",
+      "disposition": "private",
+      "files": [
+        "src/ifcopenshell-python/ifcopenshell/api/root/copy_class.py",
+        "src/ifcopenshell-python/test/api/root/test_copy_class.py"
+      ],
+      "commits": [
+        {
+          "sha": "1ee72ffca758",
+          "subject": "copy_class: don't share the original's annotations with the copy (#9049)"
+        }
+      ]
+    },
+    {
+      "title": "Bonsai: hand the duplicated annotation to the duplicated product (#9049 follow-up)",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/bim/module/drawing/operator.py",
+        "src/bonsai/bonsai/core/type.py",
+        "src/bonsai/bonsai/tool/geometry.py",
+        "src/bonsai/test/bim/module/type/test_assign_type_material_usage.py",
+        "src/bonsai/test/core/test_type.py"
+      ],
+      "commits": [
+        {
+          "sha": "bd98253d74ab",
+          "subject": "Bonsai: hand the duplicated annotation to the duplicated product (#9049 follow-up)"
+        },
+        {
+          "sha": "71852eb15748",
+          "subject": "Bonsai: remove every selected annotation from a drawing, not just the active one"
+        },
+        {
+          "sha": "9dbb3352306c",
+          "subject": "Bonsai: re-point an occurrence's material usage when the mapping is skipped"
+        },
+        {
+          "sha": "8a5349ecdf46",
+          "subject": "Bonsai: update the core assign_type tests for should_map_representations"
+        },
+        {
+          "sha": "998b1ba5e500",
+          "subject": "Bonsai: cover the material usage re-point on retype"
+        }
+      ]
+    },
+    {
+      "title": "dev-notes: record the material usage trap in should_map_representations",
+      "disposition": "private",
+      "files": [
+        "docs/dev-notes/general-mirroring.md",
+        "docs/dev-notes/profile-length-per-instance.md"
+      ],
+      "commits": [
+        {
+          "sha": "291617fc6f86",
+          "subject": "dev-notes: record the material usage trap in should_map_representations"
+        },
+        {
+          "sha": "b8a6d43c57ea",
+          "subject": "dev-notes: record the shared mapped-body defect on this branch"
+        }
+      ]
+    },
+    {
+      "title": "Bonsai: normalize occurrence-local representations onto the type",
+      "disposition": "private",
+      "files": [
+        "docs/dev-notes/occurrence-representations.md",
+        "src/bonsai/bonsai/bim/module/geometry/__init__.py",
+        "src/bonsai/bonsai/bim/module/geometry/data.py",
+        "src/bonsai/bonsai/bim/module/geometry/operator.py",
+        "src/bonsai/bonsai/bim/module/geometry/ui.py",
+        "src/bonsai/bonsai/core/geometry.py",
+        "src/bonsai/bonsai/core/tool.py",
+        "src/bonsai/bonsai/tool/geometry.py"
+      ],
+      "commits": [
+        {
+          "sha": "c60702ee7cc6",
+          "subject": "Bonsai: normalize occurrence-local representations onto the type"
+        },
+        {
+          "sha": "c1c4dff27872",
+          "subject": "Bonsai: guard record_object_materials against a data-less object"
+        },
+        {
+          "sha": "f6f599f15e58",
+          "subject": "Bonsai: make Promote to Type slot-based (type wins)"
+        },
+        {
+          "sha": "a302b7b0e03a",
+          "subject": "Bonsai: promote replaces any existing rep in the slot, not just local"
+        },
+        {
+          "sha": "b1a10e1ca699",
+          "subject": "Bonsai: remove_representation handles occurrence reps mapped to a floating map"
+        }
+      ]
+    },
+    {
+      "title": "dev_environment.py: detect Blender's bundled Python from disk",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/scripts/dev_environment.py"
+      ],
+      "commits": [
+        {
+          "sha": "42edd58076ff",
+          "subject": "dev_environment.py: detect Blender's bundled Python from disk"
+        },
+        {
+          "sha": "a1e3cdafd4cb",
+          "subject": "dev_environment.py: survive a locked file while symlinking"
+        },
+        {
+          "sha": "d9b1db895d86",
+          "subject": "dev_environment.py: add --skip-binaries flag"
+        }
+      ]
+    },
+    {
+      "title": "Bonsai: fix PROFILE beam teleporting and visual un-mirror after TrueMirrorElements",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/bim/module/model/product.py",
+        "src/bonsai/bonsai/bim/module/model/workspace.py"
+      ],
+      "commits": [
+        {
+          "sha": "f64ac5937095",
+          "subject": "Bonsai: fix PROFILE beam teleporting and visual un-mirror after TrueMirrorElements"
+        },
+        {
+          "sha": "f5207e603eb0",
+          "subject": "Bonsai: skip IfcMappedItem in _apply_opening_mirror to avoid crash"
+        },
+        {
+          "sha": "c39a0b2e26eb",
+          "subject": "Bonsai: remove duplicate TrueMirrorElements operator and double Mirror Geometry button"
+        },
+        {
+          "sha": "c813f641a6ab",
+          "subject": "Bonsai: rebuild filled openings after mirroring a LAYER2/LAYER3 wall"
+        },
+        {
+          "sha": "52758dc55faa",
+          "subject": "Bonsai: fix curved-wall arc direction wrong after diagonal TrueMirrorElements"
+        },
+        {
+          "sha": "35ebd6c1485e",
+          "subject": "Bonsai: strip curved-wall mirror debug prints"
+        },
+        {
+          "sha": "90f4b83591fc",
+          "subject": "Bonsai: restore try/except around builder.mirror fallback in invert_general_object"
+        }
+      ]
+    },
+    {
+      "title": "Prioritize camera-perpendicular faces for parametric dimension snapping",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/bim/module/drawing/operator.py"
+      ],
+      "commits": [
+        {
+          "sha": "5c1212377393",
+          "subject": "Prioritize camera-perpendicular faces for parametric dimension snapping"
+        }
+      ]
+    },
+    {
+      "title": "Evict stale snap_objs cache entries on ReferenceError",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/tool/raycast.py"
+      ],
+      "commits": [
+        {
+          "sha": "0d49cebd9083",
+          "subject": "Evict stale snap_objs cache entries on ReferenceError"
+        }
+      ]
+    },
+    {
+      "title": "Make LinePosition camera-relative in section/elevation views",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/bim/module/drawing/__init__.py",
+        "src/bonsai/bonsai/bim/module/drawing/gizmos.py",
+        "src/bonsai/bonsai/bim/module/drawing/handler.py",
+        "src/bonsai/bonsai/bim/module/drawing/operator.py",
+        "src/bonsai/bonsai/bim/module/drawing/prop.py",
+        "src/ifcopenshell-python/ifcopenshell/api/drawing/regenerate_dimension.py"
+      ],
+      "commits": [
+        {
+          "sha": "94deca7f630d",
+          "subject": "Make LinePosition camera-relative in section/elevation views"
+        },
+        {
+          "sha": "26c62ed9f4f5",
+          "subject": "Add insert/remove anchor vertices on existing parametric dimensions"
+        },
+        {
+          "sha": "a9f91006c8e4",
+          "subject": "Fix LinePosition not preserved in section views on element move"
+        }
+      ]
+    },
+    {
+      "title": "Add missing is_manual_drawing_reference getter to Drawing tool",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/tool/drawing.py"
+      ],
+      "commits": [
+        {
+          "sha": "cc1a3f3d6ec1",
+          "subject": "Add missing is_manual_drawing_reference getter to Drawing tool"
+        }
+      ]
+    },
+    {
+      "title": "Add DriveDimensionLength operator to move anchored objects to target dimension",
+      "disposition": "private",
+      "files": [
+        "src/bonsai/bonsai/bim/module/drawing/__init__.py",
+        "src/bonsai/bonsai/bim/module/drawing/gizmos.py",
+        "src/bonsai/bonsai/bim/module/drawing/operator.py"
+      ],
+      "commits": [
+        {
+          "sha": "409542f5b3ba",
+          "subject": "Add DriveDimensionLength operator to move anchored objects to target dimension"
+        }
+      ]
+    }
+  ],
+  "resolutions": [
+    {
+      "sha": "a2163c19e1b2",
+      "pr": 7669,
+      "subject": "Merge remote-tracking branch 'falken10vdl/clipboard-module' into build-0.8.6-alpha2607071335",
+      "files": [
+        {
+          "path": "src/bonsai/bonsai/bim/__init__.py",
+          "strategy": "manual"
+        },
+        {
+          "path": "src/ifcopenshell-python/ifcopenshell/api/project/append_asset.py",
+          "strategy": "manual"
+        }
+      ]
+    }
+  ]
+}
