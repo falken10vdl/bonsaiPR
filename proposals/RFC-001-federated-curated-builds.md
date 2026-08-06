@@ -359,34 +359,51 @@ by **distilling one out of a branch that already works.**
 
 ### <a id="s5-1"></a>5.1 What a real poweruser branch actually contains
 
-Measured against `Ryan_build-0.8.6-alpha2607071335` (638 commits ahead of `v0.8.0`):
+Measured by `distill.py` against `Ryan_build-0.8.6-alpha2607071335`, base `v0.8.0` at
+`6f3acc84ee`, on 2026-08-06. (An earlier draft of this section quoted figures taken
+against a different `v0.8.0` tip; base branches move, so any measurement like this has
+to name the commit it was taken against.)
 
 | | count | |
 |---|---:|---|
-| commits ahead of base | 638 | |
+| commits ahead of base | 655 | |
 | merge commits | 183 | |
 | **first-parent merges** | **160** | deliberate integration acts by the curator |
-| — carrying `pr-NNNN/` in the subject | **158** | attributable to a PR by regex alone |
-| **first-parent non-merge commits** | **77** | the residue — the curator's own commits |
-| first-parent merges carrying a manual conflict resolution | ~12 (3 of 40 sampled) | |
+| — carrying `pr-NNNN/` in the subject | **158** | attributable by regex alone |
+| — attributed once the PR index is consulted | **160** | **100%** |
+| first-parent non-merge commits | 94 | |
+| — already absorbed upstream | 13 | dropped, not attributed |
+| — **residue** | **81** | the curator's own unpublished work |
+| first-parent merges needing a textual hand-resolution | **1** | |
+| off-path **ancestry resolutions** | **7** | see [§5.3](#s5-3) |
 
-Two findings from this that shape the design:
+Three findings from this that shape the design:
 
 **The branch is already a declarative curation.** 158 of 160 integration acts name their
 PR directly (`Merge remote-tracking branch 'pr-8353/fix-4790-regen-style'`). Attribution
-is a regex, not an inference problem. The remaining two name a fork and branch instead
-(`BIMvoice/fix-6508-geography-element-qto`), which resolves against the GitHub API's
-`head.label` field.
+is a regex, not an inference problem. The other two name a fork and branch
+(`BIMvoice/fix-6508-geography-element-qto`) and resolve against the PR index — which is
+just `state.asc.json`, already published every run, so the ladder needs no GitHub API at
+all. Combined attribution is 100%.
 
-**The residue is not glue — it is unpublished feature work.** I expected the 77 local
+**The residue is not glue — it is unpublished feature work.** I expected the local
 commits to be conflict fixups. They are not. They are substantive features, many
 already citing upstream issues: annotations shared across drawings (#9019), linked-model
 include/exclude filters, storey elevation sync (#8545), `MergeDuplicateContexts`,
-appended-asset style preservation (#8667, #8666). Some of these correspond to PRs the
-author opened elsewhere; some have never been offered upstream at all.
+appended-asset style preservation (#8667, #8666). Some correspond to PRs the author
+opened elsewhere; some have never been offered upstream at all. They cluster into 24
+candidate patch series, 13 of which hold more than one commit.
 
 That reframes this feature. It is not only an on-ramp to profiles — it is a way to find
 contributions that already exist and were never submitted.
+
+**Hand-resolved conflicts are far rarer than they look, and hide somewhere else.** This
+is a correction: an earlier draft claimed roughly twelve, extrapolated from a sample
+that used `git show --diff-merges=cc` as an evil-merge detector. That test is wrong —
+it also reports every ordinary automatic merge where two sides edited different regions
+of one file. Replaying all 160 merges with `git merge-tree --write-tree`, which performs
+a real three-way merge and reports genuine conflicts, gives **1**. See [§5.3](#s5-3) for
+where the other resolutions actually live.
 
 ### <a id="s5-2"></a>5.2 The `distill` command
 
@@ -438,22 +455,47 @@ fourth order:
 "order_seq": [8353, 8352, 8351, 8349, "…"]
 ```
 
-**The conflict resolutions.** `KNOWN_CONFLICT_RESOLUTIONS` in
+**The conflict resolutions — but not the ones this document originally expected.**
+`KNOWN_CONFLICT_RESOLUTIONS` in
 [`00_clone_merge_and_create_branch.py:83`](../automation/scripts/00_clone_merge_and_create_branch.py)
 is a hand-maintained table of *"when PR A conflicts with PR B in this file, take this
-side."* It currently has **exactly one entry**. A single poweruser branch contains
-roughly twelve — every merge that required manual resolution is a curator having
-already solved a conflict the automation will hit again next run.
+side."* It has **exactly one entry**, and the original hope here was that a poweruser
+branch would yield a dozen more.
 
-Where a resolution is wholesale (a file taken entirely from one side), `distill` can
-emit it directly in that table's existing `{pr: [(path, strategy)]}` shape. Where it is
-hunk-level, it emits a patch and flags it for human review rather than pretending it can
-be reduced to `theirs`/`ours`. This is the single highest-value output of the whole
-command, and it is a straight transfer of knowledge from a private branch into shared
-automation.
+Measured, it yields **one** textual hand-resolution, and that one is hunk-level rather
+than wholesale, so it does not reduce to `theirs`/`ours` and cannot be added to the table
+mechanically. As a source of entries for that particular table, distillation is close to
+a dead end.
+
+**The resolutions are real; they are just expressed as graph surgery.** Seven merges on
+this branch fix conflicts by *absorbing the rival PR's ancestry* — merging the colliding
+branch into the PR branch so the two stop conflicting at all:
+
+```
+Merge PR #7940 (Concatenate_selections) to resolve build conflicts
+Merge PR #7965 (inset_section_endpoints) ancestry to fix build conflict
+Absorb old-pd ancestry to fix build merge conflict with PR #7798
+```
+
+This is exactly what [`prompts/resolve conflicts with other PRs.md`](../prompts/resolve%20conflicts%20with%20other%20PRs.md)
+already tells contributors to do — *"the fix must land on the PR branch itself
+(ancestry-merge or rebase) so it resolves cleanly in future builds without touching
+`KNOWN_CONFLICT_RESOLUTIONS`."* The project's own documented practice steers people away
+from the table, which is why the table has one entry and why a branch following that
+practice yields no more.
+
+Two consequences:
+
+- **These merges are not on the first-parent path.** They sit on the PR branches, so a
+  first-parent-only scan — the obvious way to write `distill` — misses every one of
+  them. It has to scan the full merge graph for them separately.
+- **The knowledge they carry is a pair, not a file strategy**: *"#7798 needs old-pd's
+  ancestry"*, *"#8083 and this collide."* That is the same shape as
+  [`prefer`](#s4) and as the `rivals` signal, not the same shape as
+  `KNOWN_CONFLICT_RESOLUTIONS`. Harvesting it should feed those.
 
 **The non-overlap invariant — a resolution the tool can derive without human input.**
-The two categories above require judgement. There is a third that does not: if a file
+The categories above require judgement. There is one that does not: if a file
 was *not changed between the merge-base and the current base*, its correct post-rebase
 state is exactly the branch tip — not `--ours`, not `--theirs`, not a merge. This is
 derivable in full from `git diff` and costs no human time. `distill` should apply it as
@@ -464,7 +506,7 @@ files that actually needed a human decision.
 
 ### <a id="s5-4"></a>5.4 Residue handling, and the privacy default
 
-The 77 residue commits are clustered into candidate patch series — contiguous runs in
+The 81 residue commits are clustered into candidate patch series — contiguous runs in
 first-parent order with overlapping file sets — and each cluster is presented for a
 human decision:
 
@@ -510,7 +552,7 @@ visible and attributable, not to assert equivalence it cannot verify.
   heads can legitimately produce different behaviour. [§5.5](#s5-5) is the mitigation, not a
   guarantee.
 - **Attribution depends on the curator's habits.** `pr-NNNN/` is *one* person's naming
-  convention, and it is why the measured attribution rate is 98.75%. Someone who
+  convention, and it is why regex alone attributes 98.75% of its merges. Someone who
   cherry-picks without `-x` and without naming conventions falls through to patch-id,
   which conflict resolution defeats. `distill` should report its attribution rate per
   branch and say plainly when a branch is too unstructured to be worth distilling.
@@ -845,8 +887,8 @@ be written and run today against data already in the repo.
 
 Phase 1.5 is arguably the one that settles whether *anyone will participate*, and it has
 its own standalone payoff regardless of federation: even if no one ever publishes a
-manifest, harvesting twelve conflict resolutions and surfacing a curator's unsubmitted
-features are worth the build on their own.
+manifest, surfacing 81 commits of a curator's unsubmitted feature work is worth the
+build on its own.
 
 ---
 
@@ -1052,8 +1094,7 @@ same PR for the same stated reason is a design principle being discovered rather
 decreed, and it costs nobody a meeting.
 
 The measurement in [§5.1](#s5-1) is the part I would point at first. A single poweruser branch
-turned out to be 98.75% mechanically attributable to open PRs, to carry roughly twelve
-hand-made conflict resolutions against a shared table that currently holds one, and to
-contain 77 commits of real feature work that upstream has never seen. Whatever happens
+turned out to be 100% mechanically attributable to open PRs, and to contain 81 commits
+of real feature work that upstream has never seen. Whatever happens
 to the federation idea, that branch — and every branch like it — is holding
 information the project could be using today.
