@@ -29,8 +29,9 @@ aggregate), and a **`distill`** command that reverse-engineers a profile out of 
 hand-maintained build branches powerusers already keep.
 
 **Why it might matter even if the federation idea goes nowhere:** measuring one real
-poweruser branch found ~12 hand-made conflict resolutions against a shared table that
-currently holds one, and 77 commits of feature work upstream has never seen.
+poweruser branch found that 100% of its 160 integration merges are mechanically
+attributable to open PRs, and that it carries 81 commits of the curator's own feature
+work — much of which upstream has never seen.
 
 **Open questions needing a decision:** profile file format; whether the peer list is
 canonical or per-curator; whether the canonical instance should build a fourth
