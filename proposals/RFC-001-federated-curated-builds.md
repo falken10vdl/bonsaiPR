@@ -36,8 +36,12 @@
 - [9. Trust and anti-gaming](#s9)
 - [10. Consumption: per-profile Blender feeds](#s10)
 - [11. Phasing](#s11)
-- [12. Risks and open questions](#s12)
-- [13. Summary](#s13)
+- [12. Phase 0 results](#s12)
+  - [12.1 What the current backlog looks like](#s12-1)
+  - [12.2 The anti-gaming rule, demonstrated](#s12-2)
+  - [12.3 What phase 0 changed about the plan](#s12-3)
+- [13. Risks and open questions](#s13)
+- [14. Summary](#s14)
 
 ---
 
@@ -49,10 +53,11 @@ lands on the smallest group in any project. Everything below follows from that o
 observation, and none of it is specific to Bonsai — Bonsai is just where the numbers
 happen to be in front of us.
 
-Those numbers: the current build reports show ~760 PRs processed per run, ~485 of which
-merge cleanly. Every one is a change that *might* be worth merging upstream, and the
-only evidence a maintainer has for any of them is the PR diff and whatever comments it
-accumulated.
+Those numbers: as of 2026-08-06 a build run sees **847 open PRs**, of which 454 merge
+cleanly under every merge order, 181 merge under some and not others, and 212 merge
+under none ([§12](#s12)). Every one of the first two groups is a change that *might* be
+worth merging upstream, and the only evidence a maintainer has for any of them is the PR
+diff and whatever comments it accumulated.
 
 BonsaiPR already changed the question from *"should this be merged?"* to *"who wants to
 use this?"* — but it currently answers that question with a single, one-size-fits-all
@@ -96,7 +101,7 @@ Stating these up front because they are the failure modes this design is steerin
   proximity alone becomes harder to promote on.
 
   That is a feature, and it is also the design's most obvious way to go wrong, so it
-  is tracked as a risk in [§12](#s12) rather than claimed as a benefit.
+  is tracked as a risk in [§13](#s13) rather than claimed as a benefit.
 - **Not a fork of BonsaiPR.** Every phase below is backwards compatible with the
   canonical falken10vdl instance, and phases 0–1 require no change to how that
   instance runs.
@@ -622,9 +627,19 @@ math — a signal that gets over-read is worse than no signal.
 | `objections` | those exclusions' reasons, grouped by `why` category and recurrence | *why* they said no — see [§8.3](#s8-3) | consensus; two people can object for opposite reasons |
 | `lost_to` | PRs that curators explicitly `prefer` over this one | a curatorial choice between two options | a judgment on this PR's quality |
 
-`streak` and `rivals` are derivable from data already being logged —
-`events.<order>.jsonl` and the *"Broken by"* / *"Conflicting files"* columns the report
-already emits.
+`streak` is derivable from data already being logged. `rivals` is **not** — see
+[§12](#s12); the reports record that a conflict occurred and which orders a PR merges
+under, but never which PR won the race, so the pairing cannot be reconstructed after
+the fact.
+
+**`streak` and `churn` must be computed against a single lineage.** Each merge order is
+an independent history — the same PR can be merged in `asc` and conflict-skipped in
+`desc` on the same run — so interleaving two orders' event logs produces a status
+history that never happened, and pooling their build timestamps counts every run once
+per order. Phase 0 quotes both against `asc`, which is the canonical lineage elsewhere
+in this pipeline. This is easy to get wrong and expensive to notice: the first
+implementation did exactly this and reported 376-build streaks against a history
+containing 140 builds.
 
 Note the asymmetry between `blocked_by` and `excluded_by`: the first is the automation
 failing to merge something a curator wanted, the second is a curator not wanting it.
@@ -792,8 +807,9 @@ falken10vdl to change how the canonical instance runs.
 
 | Phase | Deliverable | Requires |
 |---|---|---|
-| **0** | `federate.py` run over the existing `state.{asc,desc,upd}.json` as three synthetic publishers. Proves the signal math and the rendering against real data. | nothing |
+| **0** ✅ | `federate.py` run over the existing `state.{asc,desc,upd}.json` as three synthetic publishers. Proves the signal math and the rendering against real data. **Done — results in [§12](#s12).** | nothing |
 | **1** | Profile format + `load_profile()` + `.env` compat shim. Canonical instance expressible as `everything`. | small change at `00_clone_…py:41-62` |
+| **1.1** | Record the *winning* PR number when a merge conflict skips a PR, so `rivals` becomes computable. Discovered in phase 0 ([§12](#s12)); cheap now, unrecoverable retroactively. | small change at `00_clone_…py` |
 | **1.5** | `distill` ([§5](#s5)) — attribution ladder, provenance file, residue clustering, harvested conflict resolutions. Run against `Ryan_build-0.8.6-…` as the first real input. | phase 1 |
 | **2** | Manifest schema 2 (`publisher` / `profile` blocks) + `peers.json` + real cross-publisher aggregation. | small change at `02_upload_…py:1118` |
 | **3** | Per-profile `index.json` feeds. | `update_index_json.py` |
@@ -810,7 +826,69 @@ features are worth the build on their own.
 
 ---
 
-## <a id="s12"></a>12. Risks and open questions
+## <a id="s12"></a>12. Phase 0 results
+
+`automation/scripts/federate.py` implements the aggregation math and its rendering. It
+touches nothing in the build pipeline, reads only files the repo already produces, and
+runs in about two seconds. Run it with `python federate.py digest` from
+`automation/scripts/`.
+
+### <a id="s12-1"></a>12.1 What the current backlog looks like
+
+Against the snapshots of 2026-08-06:
+
+```
+847 PRs seen  =  454 merged everywhere  +  181 divergent  +  212 merged by nobody
+```
+
+**181 of 847 — 21% of the open backlog — is divergent**: merged under one merge order
+and blocked under another. That number is the best single argument in this document.
+It is not a hypothetical about future curators; it is a measurement saying that a fifth
+of all open PRs are already sensitive to the order they are integrated in, and that this
+fact is currently scattered across three release pages and visible to nobody.
+
+Under real federation the identical computation reads *"some curators can carry this and
+others cannot"* — which is exactly the question a maintainer wants answered before
+merging.
+
+Streak and churn work as designed: 549 PRs carry a continuous-merge streak, the longest
+running 140 builds across 18.4 days, and the most volatile PR has changed bucket 36
+times.
+
+### <a id="s12-2"></a>12.2 The anti-gaming rule, demonstrated
+
+`federate.py --real-publishers` stops promoting merge orders to publishers and counts
+the single real one. **`stable` drops from 454 to 0.**
+
+That is not a bug — it is [§9](#s9)'s central rule executing. `stable` requires
+agreement from at least two *independent publishers*, and one person running three merge
+orders is one publisher. The rule is therefore not an aspiration in a document; it is a
+runnable assertion, and the two modes differ by exactly the amount the rule is supposed
+to bite.
+
+### <a id="s12-3"></a>12.3 What phase 0 changed about the plan
+
+- **`rivals` cannot be computed, and the data to compute it is being thrown away.** The
+  reports record *that* a PR was conflict-skipped and which orders it merges under, but
+  never *which PR beat it*. That pairing is one of the more actionable signals in
+  [§8.1](#s8-1) — it names a specific, fixable collision — and it is unrecoverable
+  retroactively. Recording the winner at conflict time is small and should land early,
+  hence phase 1.1.
+- **Signal correctness is lineage-sensitive** in a way that is not obvious and fails
+  quietly. See [§8.1](#s8-1); the first implementation pooled all three orders and
+  produced 376-build streaks against a 140-build history.
+- **"Unavailable" has to be a first-class output.** `federation.json` carries an
+  `unavailable` block naming every signal it cannot compute and why, so a consumer can
+  distinguish *zero* from *unknown*. Without it, a phase-0 aggregate looks like every PR
+  has zero objections, which is false in the most misleading possible direction.
+
+Nothing in phase 0 validates the parts of this proposal that depend on people. It
+proves the arithmetic and the rendering; whether curators materialise, and whether they
+write reasons, remains entirely untested.
+
+---
+
+## <a id="s13"></a>13. Risks and open questions
 
 **Risks**
 
@@ -894,7 +972,7 @@ features are worth the build on their own.
 
 ---
 
-## <a id="s13"></a>13. Summary
+## <a id="s14"></a>14. Summary
 
 Three artifacts — a **profile** (curation as a committed file), a **manifest** (a build
 declaring who made it and from what), and a **peer list** (who you aggregate) — plus
