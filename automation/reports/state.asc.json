@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 129,
-    "merged": 542,
+    "failed": 130,
+    "merged": 544,
     "skipped_conflict": 116,
     "skipped_draft": 53,
-    "total": 840
+    "total": 843
   },
-  "generated_at": "2026-08-05T17:11:14Z",
+  "generated_at": "2026-08-06T03:13:46Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -915,7 +915,7 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "a27c9ef",
+      "head": "053d8e9",
       "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
@@ -3742,7 +3742,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
       "head": "6a0da5b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
@@ -4959,7 +4959,7 @@
       "author": "BIMvoice",
       "branch": "fix/7048-csv2ifc-delimiter",
       "head": "aeaea94",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: make the cost schedule CSV delimiter configurable",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8961"
     },
@@ -6735,7 +6735,8 @@
       "author": "BIMvoice",
       "branch": "fix-9034-bsdd-referencecode-keyerror",
       "head": "1cb6d58",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: bSDD search crashes on dictionaries without referenceCode (#9034)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9245"
     },
@@ -6858,11 +6859,35 @@
       "status": "merged",
       "title": "bsdd: dist target ships only one of three modules",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9266"
+    },
+    "9267": {
+      "author": "BIMvoice",
+      "branch": "9262-item-mode-decoration-preview",
+      "head": "729788f",
+      "status": "merged",
+      "title": "Bonsai: keep dimension preview visible in Item/Edit mode (#9262)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9267"
+    },
+    "9268": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-boolean-enum-cast",
+      "head": "105d2ee",
+      "status": "skipped_conflict",
+      "title": "ifctester: wrong-case boolean enum matches anything",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9268"
+    },
+    "9269": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-requirements-facet-order",
+      "head": "76740b8",
+      "status": "merged",
+      "title": "ifctester: canonicalise parsed requirement order",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9269"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608051835",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608051835"
+    "tag": "v0.8.6-alpha2608060435",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060435"
   },
   "schema": 1
 }

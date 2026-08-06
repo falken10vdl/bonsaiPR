@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 535,
-    "skipped_conflict": 126,
+    "merged": 534,
+    "skipped_conflict": 127,
     "skipped_draft": 53,
     "total": 843
   },
-  "generated_at": "2026-08-05T18:26:16Z",
+  "generated_at": "2026-08-06T04:27:28Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -407,7 +407,7 @@
       "author": "KarimJerbi",
       "branch": "grids-selectability-feature",
       "head": "9e18e81",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "FIX #6187: Adds ability to toggle Grids and Grid Axes selectability",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7736"
     },
@@ -915,7 +915,7 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "a27c9ef",
+      "head": "053d8e9",
       "status": "merged",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
@@ -6885,8 +6885,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608051949",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608051949"
+    "tag": "v0.8.6-alpha2608060551",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060551"
   },
   "schema": 1
 }

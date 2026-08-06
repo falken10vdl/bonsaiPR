@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 129,
+    "failed": 132,
     "merged": 539,
-    "skipped_conflict": 121,
+    "skipped_conflict": 119,
     "skipped_draft": 53,
-    "total": 842
+    "total": 843
   },
-  "generated_at": "2026-08-05T17:48:52Z",
+  "generated_at": "2026-08-06T03:50:23Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -915,7 +915,7 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "a27c9ef",
+      "head": "053d8e9",
       "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
@@ -3725,7 +3725,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "eb6f3b0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -4839,7 +4839,8 @@
       "author": "BIMvoice",
       "branch": "feat-5872-simplify-section-markers",
       "head": "e6d6a14",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: option to hide the sheet reference on section/elevation markers",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8938"
     },
@@ -4871,7 +4872,8 @@
       "author": "BIMvoice",
       "branch": "fix/8934-spatial-panel-regex-filter",
       "head": "398c29e",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: add regex pattern matching to spatial decomposition panel filters",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8944"
     },
@@ -4927,7 +4929,8 @@
       "author": "BIMvoice",
       "branch": "fix/8945-append-asset-perf",
       "head": "83d41ce",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "project.append_asset: propagate assume_asset_uniqueness_by_name to nested type append",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8956"
     },
@@ -6874,11 +6877,19 @@
       "status": "merged",
       "title": "ifctester: wrong-case boolean enum matches anything",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9268"
+    },
+    "9269": {
+      "author": "BIMvoice",
+      "branch": "fix/ifctester-requirements-facet-order",
+      "head": "76740b8",
+      "status": "merged",
+      "title": "ifctester: canonicalise parsed requirement order",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9269"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608051912",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608051912"
+    "tag": "v0.8.6-alpha2608060514",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608060514"
   },
   "schema": 1
 }
