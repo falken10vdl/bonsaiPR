@@ -498,11 +498,33 @@ Two consequences:
 The categories above require judgement. There is one that does not: if a file
 was *not changed between the merge-base and the current base*, its correct post-rebase
 state is exactly the branch tip — not `--ours`, not `--theirs`, not a merge. This is
-derivable in full from `git diff` and costs no human time. `distill` should apply it as
-an automated pre-filter and report the split explicitly: *"N conflicts auto-resolved via
-non-overlap invariant; M overlap files require human review."* On the `parametric_dimensions`
-rebase this distinction separated 22 trivially deterministic resolutions from the 8
-files that actually needed a human decision.
+derivable in full from `git diff` and costs no human time. The tool should report the
+split explicitly: *"N conflicts auto-resolved via non-overlap invariant; M overlap files
+require human review."* On the `parametric_dimensions` rebase this distinction separated
+22 trivially deterministic resolutions from the 8 files that actually needed a human
+decision.
+
+**Measured, though, it does not pay off in the merge path — so it is not implemented.**
+Replaying every local branch against `v0.8.0` with `git merge-tree` (142 branches, 47 of
+which conflict, 482 conflicted files in total) puts only **14 files — 2.9% — in the
+non-overlap bucket**, and 13 of those 14 come from a single outlier branch. For 45 of
+the 47 conflicting branches it fires exactly zero times.
+
+That is the expected result on reflection: a three-way merge only conflicts in a file
+when *both* sides changed it, so if upstream never touched the file there is no conflict
+to resolve in the first place. The invariant is nearly vacuous when merging onto a base.
+
+Rebase is a genuinely different operation — it replays commit by commit, with each
+step's merge base being the commit's own parent, which is where cumulative context drift
+produces conflicts a whole-branch merge never sees. That is the case the 22/8 figure
+came from. It could not be re-measured here: `parametric_dimensions` now replays onto
+`v0.8.0` with zero conflicts across all 47 commits, because that rebase has since been
+done and the conflicted state no longer exists in any ref.
+
+So the invariant stays documented and unimplemented. The cheap way to settle it is to
+run the classifier in *report-only* mode during the next real rebase and see whether the
+non-overlap bucket is ever populated on live data, rather than building an auto-resolver
+against a payoff nobody has been able to reproduce.
 
 ### <a id="s5-4"></a>5.4 Residue handling, and the privacy default
 
