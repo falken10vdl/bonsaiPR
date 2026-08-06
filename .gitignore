@@ -5,3 +5,4 @@ automation/.env
 automation/logs/*
 !automation/logs/.gitkeep
 *.tmp.*
+federation/
