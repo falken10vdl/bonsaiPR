@@ -338,23 +338,28 @@ def get_open_prs():
             print(f"Error fetching PRs: {response.status_code}")
             break
 
-        prs = response.json()
-        if not prs:
+        page_items = response.json()
+        if not page_items:
             break
+
+        # Pagination is decided by how many items the API returned, NOT by how
+        # many survive curation. Testing the filtered count ends the walk on the
+        # first page for any selective profile — a page of 100 open PRs rarely
+        # contains 100 that a curator selected — and silently yields a fraction
+        # of the curation, or nothing at all.
+        is_last_page = len(page_items) < params["per_page"]
 
         # Apply the active curation. For the legacy/`everything` case this is
         # exactly the old author filter; for an `allowlist` profile it is also
         # what narrows 847 open PRs down to the ones the curator chose.
-        prs = [
+        all_prs.extend(
             pr
-            for pr in prs
+            for pr in page_items
             if CURATION.selects(pr["number"], (pr.get("user") or {}).get("login"))
-        ]
-
-        all_prs.extend(prs)
+        )
         page += 1
 
-        if len(prs) < 100:  # Last page
+        if is_last_page:
             break
 
     if CURATION.mode == bonsaipr_profile.MODE_ALLOWLIST:
@@ -1489,6 +1494,18 @@ def main():
         applied, failed, skipped = [], [], []
         failed_pr_test_results = {}
         pr_conflict_data = {}
+        # Actually create the branch before pushing it. apply_prs_to_branch()
+        # normally does this, but it is skipped entirely on this path, so the
+        # push below used to fail with "src refspec does not match any" — an
+        # error that says nothing about the real problem, which is that the
+        # curation matched no open PRs.
+        original_dir = os.getcwd()
+        try:
+            os.chdir(work_dir)
+            subprocess.run(["git", "branch", "-D", branch_name], capture_output=True)
+            subprocess.run(["git", "checkout", "-b", branch_name], check=True)
+        finally:
+            os.chdir(original_dir)
         # Push branch to fork (even if empty)
         push_branch_to_fork(branch_name)
         # Print current branch for verification
