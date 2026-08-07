@@ -7,7 +7,7 @@
     "skipped_draft": 54,
     "total": 849
   },
-  "generated_at": "2026-08-06T22:11:48Z",
+  "generated_at": "2026-08-07T06:11:23Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1863,7 +1863,7 @@
     "8407": {
       "author": "BIMvoice",
       "branch": "fix-7245-work",
-      "head": "8907d07",
+      "head": "b3388c3",
       "status": "merged",
       "title": "ifctester: normalise scalar IDS values to their XML string form (#7245)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8407"
@@ -5504,7 +5504,7 @@
     "9058": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-boolean-value-casting",
-      "head": "fa3b212",
+      "head": "f3c332e",
       "status": "merged",
       "title": "ifctester: stop unrecognised boolean spellings matching True",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9058"
@@ -6933,8 +6933,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608062335",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608062335"
+    "tag": "v0.8.6-alpha2608070735",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608070735"
   },
   "schema": 1
 }

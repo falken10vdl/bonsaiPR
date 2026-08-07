@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 544,
-    "skipped_conflict": 122,
+    "merged": 545,
+    "skipped_conflict": 121,
     "skipped_draft": 54,
     "total": 849
   },
-  "generated_at": "2026-08-06T22:50:01Z",
+  "generated_at": "2026-08-07T06:47:50Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1089,7 +1089,7 @@
     "8253": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-predefinedtype-restriction-7855",
-      "head": "7abf78f",
+      "head": "6dc4b55",
       "status": "merged",
       "title": "IfcTester: fix predefinedType restrictions that include USERDEFINED (#7855, #7856)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8253"
@@ -1273,7 +1273,7 @@
     "8292": {
       "author": "BIMvoice",
       "branch": "fix-ifctester-restriction-entity-8046",
-      "head": "5d01d30",
+      "head": "34eb84d",
       "status": "merged",
       "title": "ifctester: entity requirement as xs:restriction no longer crashes on fail (#8046)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8292"
@@ -1434,7 +1434,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-camera-bounds-on-save-8205",
       "head": "09e314d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai(drawing): persist drawing camera zoom and crop on save (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8328"
     },
@@ -1863,7 +1863,7 @@
     "8407": {
       "author": "BIMvoice",
       "branch": "fix-7245-work",
-      "head": "8907d07",
+      "head": "b3388c3",
       "status": "merged",
       "title": "ifctester: normalise scalar IDS values to their XML string form (#7245)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8407"
@@ -5504,7 +5504,7 @@
     "9058": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-boolean-value-casting",
-      "head": "fa3b212",
+      "head": "f3c332e",
       "status": "skipped_conflict",
       "title": "ifctester: stop unrecognised boolean spellings matching True",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9058"
@@ -6097,7 +6097,7 @@
     "9142": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-restriction-total-fraction-digits",
-      "head": "38daf6c",
+      "head": "521cc08",
       "status": "merged",
       "title": "ifctester: warn instead of silently ignoring unsupported restrictions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9142"
@@ -6933,8 +6933,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608070012",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608070012"
+    "tag": "v0.8.6-alpha2608070812",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608070812"
   },
   "schema": 1
 }
