@@ -478,6 +478,75 @@ def write_rivals(reports_dir, order_suffix, rivals):
         return None
 
 
+def _state_pr(pr):
+    """Shape a live GitHub PR dict the way pr_state.build_state expects.
+
+    build_state was written for `02_upload`, which reconstructs these fields by
+    parsing its own rendered report. Stage 0 has them natively, so this is just
+    a translation - no parsing round-trip.
+    """
+    head = pr.get("head") or {}
+    sha = (head.get("sha") or "").strip()
+    return {
+        "line": f"- **PR #{pr['number']}**: {pr.get('title') or ''}",
+        # 7-char to match the shas the report-parsing path produces; _sha_eq is
+        # tolerant of either, but keeping one convention avoids phantom deltas.
+        "last_commit": {"sha": sha[:7]} if sha else None,
+        "author": (pr.get("user") or {}).get("login"),
+        "branch": head.get("ref"),
+        "url": pr.get("html_url"),
+    }
+
+
+def write_state_snapshot(applied, failed, skipped, test_results, merge_order, total_prs):
+    """Write state.<order>.json + append events.<order>.jsonl from stage 0.
+
+    Normally `02_upload_to_falken10vdl.py` owns this, because it also renders the
+    run-to-run delta into the release body. But a curated instance may only want
+    the *manifest* - the thing federation actually consumes (RFC-001 s6) - without
+    building and releasing four platform zips to get it.
+
+    Opt-in via BONSAIPR_WRITE_STATE so the two never both write in one run: if
+    stage 0 wrote the snapshot, stage 2's delta would diff it against itself and
+    the release body would lose its "changes since last build" section.
+    """
+    test_results = test_results or {}
+    suffix = pr_state.ORDER_SUFFIX_BY_NAME.get(merge_order, merge_order)
+    state_path = os.path.join(REPORTS_DIR, f"state.{suffix}.json")
+    events_path = os.path.join(REPORTS_DIR, f"events.{suffix}.jsonl")
+
+    # Same split the report uses: merging alone against base means the conflict
+    # was with another PR, not with the base.
+    conflict_with_others, failed_against_base = [], []
+    for pr in failed or []:
+        target = (
+            conflict_with_others
+            if test_results.get(pr["number"]) is True
+            else failed_against_base
+        )
+        target.append(_state_pr(pr))
+
+    new_state = pr_state.build_state(
+        applied_prs=[_state_pr(p) for p in applied or []],
+        failed_prs=failed_against_base,
+        skipped_conflict_prs=conflict_with_others,
+        skipped_draft_prs=[_state_pr(p) for p in skipped or []],
+        merge_order=merge_order,
+        base=SOURCE_BASE_BRANCH,
+        total_prs=total_prs,
+    )
+
+    prev_state = pr_state.load_state(state_path)
+    if prev_state:
+        delta = pr_state.compute_delta(prev_state, new_state, strict_order=True)
+        pr_state.append_events(events_path, pr_state.delta_to_events(delta))
+    pr_state.write_state(new_state, state_path)
+    print(
+        f"🧾 Wrote manifest {os.path.basename(state_path)} "
+        f"({new_state['counts']['merged']} merged of {new_state['counts']['total']})"
+    )
+
+
 def apply_prs_to_branch(branch_name, prs):
     """Apply PRs to the new branch"""
     original_dir = os.getcwd()
@@ -1622,6 +1691,20 @@ def main():
         pr_conflict_data,
         merge_order=merge_order_str,
     )
+    # Manifest, when stage 2 is not going to run (see write_state_snapshot).
+    if os.getenv("BONSAIPR_WRITE_STATE", "").strip().lower() in ("1", "true", "yes"):
+        try:
+            write_state_snapshot(
+                applied,
+                failed,
+                skipped,
+                failed_pr_test_results,
+                merge_order_str,
+                len(prs),
+            )
+        except Exception as e:
+            # A manifest is downstream of the build, never a reason to fail one.
+            print(f"⚠️  Could not write state snapshot: {e}")
     print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
     print(
         f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}"
