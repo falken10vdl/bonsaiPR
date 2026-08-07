@@ -204,17 +204,73 @@ def load_state(path):
 # `desc` simply lost a race to a PR it textually overlaps with. Nothing about the
 # PR itself failed.
 
+# Everything about a merge order lives here, because it used to live in five
+# places: this dict plus four separate `if ascending / elif descending / else`
+# chains across two scripts. Every one of those chains treated "anything else"
+# as by-updated, so adding `recorded` produced a build correctly merged in the
+# recorded order and then labelled `[upd]` in its release title, its banner and
+# its report.
+#
 # `recorded` is the order a distilled profile carries (RFC-001 s5.3): the
 # sequence its curator actually built in, rather than one of the three guesses.
 # It only ever appears for a profile that has an order_seq.
-ORDER_SUFFIX_BY_NAME = {
-    "ascending": "asc",
-    "descending": "desc",
-    "by-updated": "upd",
-    "recorded": "rec",
+ORDER_META = {
+    "ascending": {
+        "suffix": "asc",
+        "emoji": "⬆️",
+        "short": "lowest → highest PR#",
+        "label": "ascending — lowest PR# merged first",
+    },
+    "descending": {
+        "suffix": "desc",
+        "emoji": "⬇️",
+        "short": "highest → lowest PR#",
+        "label": "descending — highest PR# merged first",
+    },
+    "by-updated": {
+        "suffix": "upd",
+        "emoji": "\U0001f552",
+        "short": "most recently updated PR first",
+        "label": "by last update — most recently updated PR merged first",
+    },
+    "recorded": {
+        "suffix": "rec",
+        "emoji": "\U0001f4cb",
+        "short": "the sequence recorded by the curation profile",
+        "label": "recorded — the order this profile's curator merged in",
+    },
 }
+
+ORDER_SUFFIX_BY_NAME = {name: meta["suffix"] for name, meta in ORDER_META.items()}
 ORDER_NAME_BY_SUFFIX = {v: k for k, v in ORDER_SUFFIX_BY_NAME.items()}
-ORDER_SUFFIXES = ("asc", "desc", "upd", "rec")
+ORDER_SUFFIXES = tuple(ORDER_SUFFIX_BY_NAME.values())
+
+
+def order_meta(merge_order):
+    """Presentation metadata for a merge order.
+
+    An unrecognised order describes itself rather than being silently reported
+    as one of the known ones - mislabelling a build is worse than an ugly label.
+    """
+    name = (merge_order or "").strip()
+    if name in ORDER_META:
+        return ORDER_META[name]
+    return {
+        "suffix": name or "unknown",
+        "emoji": "❓",
+        "short": f"{name or 'unknown'} order",
+        "label": name or "unknown",
+    }
+
+
+def companion_orders(merge_order, names=None):
+    """Human-readable list of the other orders, for 'may appear in ...' notes."""
+    others = [n for n in (names or ORDER_META) if n != merge_order]
+    if not others:
+        return "another order"
+    if len(others) == 1:
+        return others[0]
+    return " or ".join([", ".join(others[:-1]), others[-1]])
 
 
 def order_state_path(reports_dir, suffix):
