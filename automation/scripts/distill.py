@@ -437,8 +437,13 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
     attributed_merges = sum(
         1 for r in provenance if r["kind"] == "merge" and r.get("pr")
     )
+    # The branch was built on the merge-base, not on wherever the base branch
+    # has since moved to - that is the commit its PR set is known to apply at.
+    base_commit = git(["merge-base", base, branch], repo).strip() or None
+
     return {
         "base": base,
+        "base_commit": base_commit,
         "branch": branch,
         "commits_first_parent": len(commits),
         "merges": len(merges),
@@ -473,7 +478,18 @@ def to_profile(result, name, maintainer=""):
                 f"merges attributed). Review before use.",
             ),
             ("maintainer", maintainer),
-            ("base", {"repo": "IfcOpenShell/IfcOpenShell", "branch": result["base"]}),
+            # Pin to the commit the branch was actually built against. A
+            # distilled curation is only known to work at that base; following
+            # the branch tip instead would silently change what it means the
+            # first time upstream moves. Delete `commit` to track the tip.
+            (
+                "base",
+                {
+                    "repo": "IfcOpenShell/IfcOpenShell",
+                    "branch": result["base"],
+                    "commit": result.get("base_commit"),
+                },
+            ),
             (
                 "select",
                 {

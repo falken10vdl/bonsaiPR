@@ -176,6 +176,17 @@ class Profile:
         self.maintainer = self.data.get("maintainer") or ""
         self.inherits = self.data.get("inherits")
 
+        # base.commit PINS the build to a commit instead of following the branch
+        # tip. Upstream drift is the dominant cause of merge failures - a PR that
+        # merged cleanly when it was written conflicts months later because the
+        # base moved under it, not because anything is wrong with the PR. Pinning
+        # keeps a curation buildable without asking every contributor to rebase,
+        # at the cost of not receiving upstream fixes until the pin is advanced.
+        base = self.data.get("base") or {}
+        self.base_repo = base.get("repo") or "IfcOpenShell/IfcOpenShell"
+        self.base_branch = base.get("branch") or "v0.8.0"
+        self.base_commit = (base.get("commit") or "").strip() or None
+
         self.mode = (select.get("mode") or MODE_EVERYTHING).strip().lower()
         self.select_prs = _as_int_set(select.get("prs"))
         self.select_authors = [a for a in (select.get("authors") or []) if a]
@@ -252,6 +263,11 @@ class Profile:
             bits.append(f"prefer={len(self.prefer)}")
         if self.exclude_cpp:
             bits.append("skip-cpp")
+        bits.append(
+            f"base={self.base_branch}@{self.base_commit[:10]}"
+            if self.base_commit
+            else f"base={self.base_branch}@tip"
+        )
         return "  ".join(bits)
 
 

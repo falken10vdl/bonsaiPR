@@ -111,6 +111,7 @@ def build_state(
     skipped_draft_prs,
     merge_order,
     base=None,
+    base_commit=None,
     generated_at=None,
     total_prs=None,
     release_tag=None,
@@ -167,6 +168,11 @@ def build_state(
         "generated_at": generated_at,
         "merge_order": (merge_order or "").strip() or "unknown",
         "base": base,
+        # The exact commit the PRs were merged onto. A branch name is not enough
+        # once profiles can pin a base (RFC-001): "#7798 merged" means different
+        # things at different bases, so an aggregate that compares publishers
+        # without knowing this is comparing things that are not comparable.
+        "base_commit": base_commit,
         "release": {"tag": release_tag, "url": release_url},
         "counts": counts,
         # Sorted numerically now so the committed file is diff-stable.

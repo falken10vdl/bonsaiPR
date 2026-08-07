@@ -218,6 +218,23 @@ def try_resolve_known_conflict(pr_number):
         return False
 
 
+def _base_ref():
+    """What to build on: the curation's pinned commit, or the branch tip.
+
+    RFC-001. Upstream drift, not PR quality, is what breaks most merges: a PR
+    that applied cleanly when written conflicts months later because the base
+    moved. Pinning lets a curation keep building without every contributor
+    rebasing; the cost is that upstream fixes stop arriving until the pin moves.
+    """
+    if CURATION.base_commit:
+        print(
+            f"📌 Base pinned by profile '{CURATION.name}' to "
+            f"{CURATION.base_commit[:10]} (not {SOURCE_BASE_BRANCH} tip)"
+        )
+        return CURATION.base_commit
+    return f"upstream/{SOURCE_BASE_BRANCH}"
+
+
 def setup_repository():
     """Clone or update the fork repository with upstream remote"""
     def _run_git(cmd):
@@ -301,7 +318,7 @@ def setup_repository():
                     "checkout",
                     "-B",
                     SOURCE_BASE_BRANCH,
-                    f"upstream/{SOURCE_BASE_BRANCH}",
+                    _base_ref(),
                 ]
             )
 
@@ -337,7 +354,7 @@ def setup_repository():
                     "checkout",
                     "-B",
                     SOURCE_BASE_BRANCH,
-                    f"upstream/{SOURCE_BASE_BRANCH}",
+                    _base_ref(),
                 ],
                 check=True,
             )
@@ -498,7 +515,9 @@ def _state_pr(pr):
     }
 
 
-def write_state_snapshot(applied, failed, skipped, test_results, merge_order, total_prs):
+def write_state_snapshot(
+    applied, failed, skipped, test_results, merge_order, total_prs, base_commit=None
+):
     """Write state.<order>.json + append events.<order>.jsonl from stage 0.
 
     Normally `02_upload_to_falken10vdl.py` owns this, because it also renders the
@@ -533,6 +552,7 @@ def write_state_snapshot(applied, failed, skipped, test_results, merge_order, to
         skipped_draft_prs=[_state_pr(p) for p in skipped or []],
         merge_order=merge_order,
         base=SOURCE_BASE_BRANCH,
+        base_commit=base_commit,
         total_prs=total_prs,
     )
 
@@ -1701,6 +1721,7 @@ def main():
                 failed_pr_test_results,
                 merge_order_str,
                 len(prs),
+                base_commit=source_commit_hash,
             )
         except Exception as e:
             # A manifest is downstream of the build, never a reason to fail one.

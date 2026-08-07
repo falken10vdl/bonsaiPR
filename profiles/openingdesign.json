@@ -5,7 +5,8 @@
   "maintainer": "OpeningDesign",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
-    "branch": "v0.8.0"
+    "branch": "v0.8.0",
+    "commit": "644b92263d1da7559bdc9f05607121fb8c4723d7"
   },
   "select": {
     "mode": "allowlist",
