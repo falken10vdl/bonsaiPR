@@ -753,12 +753,20 @@ def generate_release_body(
         merge_order = (
             "ascending"  # default; overridden if report contains "Merge Order:"
         )
+        # The commit the PRs were merged onto. Mandatory in the manifest once a
+        # profile can pin a base (RFC-001 §8.1): "#7798 merged" means different
+        # things at bases a month apart, so an aggregate that cannot see this is
+        # comparing things that are not comparable.
+        base_commit = None
 
         for idx, line in enumerate(lines):
             line = line.strip()
             if line.startswith("Merge Order:"):
                 # e.g. "Merge Order: ascending (lowest → highest PR#)"
                 merge_order = line.split(":", 1)[1].strip().split("(")[0].strip()
+            elif line.startswith("IfcOpenShell source commit:"):
+                value = line.split(":", 1)[1].strip()
+                base_commit = value if value and value != "unknown" else None
             elif line.startswith("- Total PRs processed:"):
                 total_prs = int(line.split(":")[1].strip())
             elif line.startswith("- Successfully merged:"):
@@ -1119,6 +1127,7 @@ def generate_release_body(
                 skipped_draft_prs=skipped_draft_prs,
                 merge_order=merge_order,
                 base=BONSAI_BASE_TAG,
+                base_commit=base_commit,
                 total_prs=total_prs,
                 # Stamp the release this snapshot describes, so the NEXT run's
                 # report can link each "Merges under" order at the exact build
