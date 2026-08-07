@@ -290,11 +290,20 @@ def setup_repository():
             # Reset to clean state
             _run_git(["git", "reset", "--hard", "HEAD"])
             _run_git(["git", "clean", "-fd"])
-            _run_git(["git", "checkout", SOURCE_BASE_BRANCH])
 
-            # Update from upstream
+            # Update from upstream, then land on the base branch as upstream
+            # defines it. `checkout -B` creates the local branch if the fork
+            # never had one, so this does not depend on the fork's branch layout.
             _run_git(["git", "fetch", "upstream"])
-            _run_git(["git", "reset", "--hard", f"upstream/{SOURCE_BASE_BRANCH}"])
+            _run_git(
+                [
+                    "git",
+                    "checkout",
+                    "-B",
+                    SOURCE_BASE_BRANCH,
+                    f"upstream/{SOURCE_BASE_BRANCH}",
+                ]
+            )
 
             # Update the origin remote URL to use token for authentication
             _run_git(["git", "remote", "set-url", "origin", fork_repo_url])
@@ -317,7 +326,25 @@ def setup_repository():
                 ["git", "remote", "add", "upstream", upstream_repo_url], check=True
             )
             subprocess.run(["git", "fetch", "upstream"], check=True)
-            print("Added upstream remote and fetched latest changes")
+            # A fresh clone lands on the FORK's default branch, which has nothing
+            # to do with the branch being curated — for a fork whose default is
+            # still v0.7.0 that means merging v0.8.0 PRs onto a v0.7.0 tree, and
+            # every single one conflicts. Land on upstream's base branch
+            # explicitly, exactly as the update path above does.
+            subprocess.run(
+                [
+                    "git",
+                    "checkout",
+                    "-B",
+                    SOURCE_BASE_BRANCH,
+                    f"upstream/{SOURCE_BASE_BRANCH}",
+                ],
+                check=True,
+            )
+            print(
+                f"Added upstream remote, fetched, and checked out "
+                f"{SOURCE_BASE_BRANCH} from upstream"
+            )
         finally:
             os.chdir(original_dir)
 
