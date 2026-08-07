@@ -120,6 +120,10 @@ jobs:
       - name: Run the pipeline
         env:
           GITHUB_TOKEN: ${{ secrets.BONSAIPR_TOKEN }}
+          # Stage 0 writes state.<order>.json itself when stage 2 will not run.
+          # Never set for `full`, or stage 2 would diff the snapshot against
+          # itself and the release body would lose its delta section.
+          BONSAIPR_WRITE_STATE: ${{ inputs.stages == 'manifest-only' && '1' || '' }}
         working-directory: automation/src
         run: |
           # NOT BASE_CLONE_DIR — stage 0 clones into it, and pre-creating it
