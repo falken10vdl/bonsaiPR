@@ -3,9 +3,10 @@
 **Branch:** `feat/rfc-001-federation` · **PR:** falken10vdl/bonsaiPR#11 (draft)
 **Status as of:** 2026-08-07
 
-Working note for an in-progress **programme**, not a single feature. Phases 2–5
-remain after PR #11 merges, and there is a live instance being operated, so this
-note persists rather than being deleted at merge — see [Lifecycle](#lifecycle).
+The **engineering log for this subsystem** — permanent, and rewritten as things
+change, rather than a branch note deleted when its PR merges. Federation will
+keep being refined long after the phases close. See [Lifecycle](#lifecycle) for
+which sections decay and which do not.
 
 Design, evidence and measurements live in
 [`proposals/RFC-001-federated-curated-builds.md`](../../proposals/RFC-001-federated-curated-builds.md).
@@ -118,14 +119,43 @@ different merge order. Neither would have been caught by exit codes.
 
 ## <a id="lifecycle"></a>Lifecycle
 
-Upstream's dev-notes convention says to delete a note when its PR merges. That
-assumes a *feature*: one branch, one PR, done. This is a programme with phases
-still to come and a running instance behind it, so instead:
+**This note is permanent.** Upstream's dev-notes convention says to delete a note
+when its PR merges, which assumes a *feature*: one branch, one PR, done. This is
+a subsystem that will keep being refined long after the phases close, with a
+running instance behind it, so there is no point at which "the context is
+obsolete" becomes true.
 
-**At each phase boundary, prune and promote.** Anything still true after a phase
-lands moves to the RFC (design, evidence) or `README-curated-build.md`
-(operating it); this note keeps only what is live. Update the date at the top
-when you do.
+That makes it the subsystem's engineering log rather than a branch note, and
+gives it a durable split from the RFC:
 
-The failure mode to avoid is not the note existing — it is a note that still
-says "phase 2 next" a year after phase 2 shipped.
+| | answers | changes |
+|---|---|---|
+| `proposals/RFC-001-…` | what we agreed, and why | frozen; superseded by a new RFC, not rewritten |
+| this note | what to know before touching it | rewritten continuously |
+| `README-curated-build.md` | how to operate an instance | rewritten as the workflow changes |
+
+### What decays, and what does not
+
+Sections here are deliberately of two kinds, because a reader needs to know
+which parts to trust:
+
+- **Volatile** — *Where the work is*, *Untested*. True only on the date at the
+  top. Rewrite these; never let them accumulate.
+- **Durable** — *Things that cost real time*, *The six bugs*, *Local setup*.
+  These stay true as long as the code does. Add to them; delete only when the
+  underlying cause is genuinely gone.
+- **Transitional** — *Open threads*. Each entry leaves when it is resolved or
+  promoted into the RFC.
+
+### Staleness test
+
+"We will keep it updated" is what everyone says, so here is something checkable:
+
+> If the **Status as of** date at the top is older than the newest commit
+> touching `automation/scripts/` or `profiles/`, this note is stale. Fix it
+> before doing anything else.
+
+The failure mode to guard against was never the note existing — it is a note
+that still says "phase 2 next" a year after phase 2 shipped, sitting beside a
+"traps" section that is still perfectly accurate, with nothing telling a reader
+which is which.
