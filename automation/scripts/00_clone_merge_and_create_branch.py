@@ -1222,12 +1222,7 @@ def generate_report(
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
         f.write(f"Branch: {branch_name}\n")
         f.write(f"IfcOpenShell source commit: {commit_hash}\n")
-        if merge_order == "ascending":
-            order_desc = "lowest → highest PR#"
-        elif merge_order == "descending":
-            order_desc = "highest → lowest PR#"
-        else:
-            order_desc = "most recently updated PR first"
+        order_desc = pr_state.order_meta(merge_order)["short"]
         f.write(f"Merge Order: {merge_order} ({order_desc})\n")
         f.write(
             f"Fork Repository: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}\n\n"
@@ -1251,21 +1246,26 @@ def generate_report(
             f.write(f"- Success Rate: {success_rate}%\n\n")
         else:
             f.write(f"- Success Rate: N/A\n\n")
-        if merge_order == "ascending":
-            companion_order = "descending or by-updated"
-        elif merge_order == "descending":
-            companion_order = "ascending or by-updated"
+        f.write(
+            f"Note: PRs were merged in {merge_order} order ({order_desc}).\n"
+        )
+        if merge_order == "recorded":
+            # A profile that pins one order gets one build, so there is no
+            # companion release for a conflict-skipped PR to turn up in.
+            f.write(
+                f"      This build follows the order recorded by its curation profile, so it is\n"
+                f"      not one of a set — PRs listed in the 'Conflict With Other PRs' table were\n"
+                f"      blocked in this order and are simply absent here.\n\n"
+            )
         else:
-            companion_order = "ascending or descending"
-        f.write(
-            f"Note: PRs were merged in {merge_order} order ({order_desc}). BonsaiPR builds up to three releases\n"
-        )
-        f.write(
-            f"      per run — ascending, descending, and by-updated — to maximise inclusion. PRs listed\n"
-        )
-        f.write(
-            f"      in the 'Conflict With Other PRs' table may appear in the companion {companion_order} release.\n\n"
-        )
+            companion_order = pr_state.companion_orders(
+                merge_order, ["ascending", "descending", "by-updated"]
+            )
+            f.write(
+                f"      BonsaiPR builds up to three releases per run — ascending, descending, and\n"
+                f"      by-updated — to maximise inclusion. PRs listed in the 'Conflict With Other\n"
+                f"      PRs' table may appear in the companion {companion_order} release.\n\n"
+            )
         if show_stability:
             stable_merged = 0
             dependent_merged = 0

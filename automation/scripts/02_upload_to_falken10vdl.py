@@ -1081,19 +1081,13 @@ def generate_release_body(
 
         success_rate = (successfully_merged / total_prs * 100) if total_prs > 0 else 0
 
-        # Build the merge-order banner
-        if merge_order == "ascending":
-            order_emoji = "⬆️"
-            order_label = "ascending — lowest PR# merged first"
-            companion_order = "descending or by-updated"
-        elif merge_order == "descending":
-            order_emoji = "⬇️"
-            order_label = "descending — highest PR# merged first"
-            companion_order = "ascending or by-updated"
-        else:  # by-updated
-            order_emoji = "🕒"
-            order_label = "by last update — most recently updated PR merged first"
-            companion_order = "ascending or descending"
+        # Build the merge-order banner (metadata lives in pr_state.ORDER_META)
+        _meta = pr_state.order_meta(merge_order)
+        order_emoji = _meta["emoji"]
+        order_label = _meta["label"]
+        companion_order = pr_state.companion_orders(
+            merge_order, ["ascending", "descending", "by-updated"]
+        )
         order_title = merge_order.replace("-", " ").title()
         merge_order_banner = (
             f"## {order_emoji} Merge Order: {order_title}\n\n"
@@ -1560,23 +1554,14 @@ def upload_to_falken10vdl():
         except Exception as e:
             print(f"Warning: Could not fetch branch commit hash: {e}")
 
-    if merge_order == "ascending":
-        order_suffix = "asc"
-    elif merge_order == "descending":
-        order_suffix = "desc"
-    else:
-        order_suffix = "upd"
+    order_suffix = pr_state.order_meta(merge_order)["suffix"]
     release_name = (
         f"BonsaiPR v{version}-alpha{ts_short}-{branch_short_hash} [{order_suffix}]"
     )
 
     # Build release body with source commit and branch information
-    if merge_order == "ascending":
-        order_label_header = "ascending (lowest → highest PR#)"
-    elif merge_order == "descending":
-        order_label_header = "descending (highest → lowest PR#)"
-    else:
-        order_label_header = "by-updated (most recently updated PR first)"
+    _hdr = pr_state.order_meta(merge_order)
+    order_label_header = f"{merge_order} ({_hdr['short']})"
     release_body_header = (
         f"IfcOpenShell source commit (before PR merging): {commit_link}\n"
     )
