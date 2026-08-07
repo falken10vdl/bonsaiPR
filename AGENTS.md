@@ -5,15 +5,19 @@ agent regardless of platform, alongside tool-specific configuration.
 
 ## Read first
 
-**Before touching an in-progress feature, read its note in
+**Before touching a subsystem, read its note in
 [`docs/dev-notes/`](docs/dev-notes/).** Those notes exist so a session starting
 cold does not re-derive context, repeat a dead end, or re-discover a trap that
-already cost someone a day. Keep the relevant note current as you work.
+already cost someone a day. Keep the relevant note current as you work — that
+upkeep is part of the change, not an optional extra.
 
-Convention borrowed from IfcOpenShell/IfcOpenShell#8201, with one change: notes
-here cover multi-phase *programmes* as well as single features, so they are
-pruned and promoted at each phase boundary rather than deleted when a PR merges.
-See the Lifecycle section of any note.
+Convention borrowed from IfcOpenShell/IfcOpenShell#8201, with one change. Notes
+there are branch-scoped and deleted when their PR merges; here they are
+**permanent engineering logs** for subsystems that keep evolving after the
+original work lands. Each note marks which of its sections are volatile (status,
+untested) and which are durable (traps, past defects), and carries a staleness
+test — if its date is older than the newest commit touching the code it
+describes, fix the note first.
 
 ## Where things live
 
