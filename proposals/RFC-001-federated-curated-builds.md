@@ -187,7 +187,8 @@ maintains, forks, and is known for.
   "inherits": "falken10vdl/everything",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
-    "branch": "v0.8.0"
+    "branch": "v0.8.0",
+    "commit": "644b92263d"
   },
   "select": {
     "mode": "allowlist",
@@ -246,6 +247,32 @@ Notes on the design:
   important field in the format and the argument for it is [§8.3](#s8-3): what a
   curator *refuses* is more architecturally informative than what they accept. A bare
   list of numbers throws that away. Mechanics in [§4.2](#s4-2).
+- **`base.commit` pins the base; omit it to follow the branch tip.** This is the
+  field with the largest measured effect on whether a curation builds at all, because
+  **upstream drift — not PR quality — is what breaks most merges.** A PR that applied
+  cleanly when written conflicts months later because the base moved under it.
+
+  Measured on the `openingdesign` curation (160 PRs) with `base_advisor.py`, against
+  successive `v0.8.0` commits:
+
+  | base | date | PRs landing | vs pinned |
+  |---|---|---:|---|
+  | pinned `644b92263d` | 2026-07-07 | **158/160** | — |
+  | `6ca8c8ac94` | 2026-07-15 | 151/160 | +0 / **−7** |
+  | `e52e5e2e58` | 2026-07-20 | 144/160 | +0 / **−14** |
+  | tip `048242783e` | 2026-08-05 | 141/160 | +0 / **−17** |
+
+  Note the `+0` in every row: advancing the base gained this curation *nothing* and
+  cost it up to 17 PRs — roughly 17 lost per month of drift. That asymmetry is
+  specific to an `allowlist` profile, and it is why pinning is close to free there:
+  every selected PR predates the pin, so a newer base can only take PRs away. The
+  usual objection — "you will miss newly-opened PRs" — only applies when *adding* one
+  to the curation, which is exactly the moment to re-run the advisor.
+
+  What pinning does cost is real, just elsewhere: the build stops receiving upstream
+  fixes, and rebase debt compounds until the pin advances. A persistent "lost" column
+  is also a list of PRs whose authors would benefit from rebasing — so it doubles as a
+  work queue rather than a reason to stay pinned indefinitely.
 - **`prefer`** records *"when these two collide, take the first."* A pairwise
   preference is not a rejection of the loser, and collapsing it into one would be the
   fastest way to make the objection signal lie — see [§4.2](#s4-2). It is also directly
@@ -732,6 +759,14 @@ containing 140 builds.
 Note the asymmetry between `blocked_by` and `excluded_by`: the first is the automation
 failing to merge something a curator wanted, the second is a curator not wanting it.
 Conflating them would be the single easiest way to make this whole aggregate lie.
+
+**Every signal above is relative to a base commit.** Once profiles can pin a base
+([§4](#s4)), "#7798 merged for A but not for B" may say nothing about #7798 and
+everything about A and B standing on bases a month apart — the measurements there show
+a 17-PR swing from drift alone. Manifests therefore record `base_commit`, not just a
+branch name, and an aggregator that compares publishers without accounting for it is
+comparing things that are not comparable. Grouping by base, or reporting the spread
+alongside the count, is not optional refinement; it is what keeps the number honest.
 
 `pinned_by` counts only pins whose SHA is currently reachable from the PR's head ref or
 any public ancestor thereof. A force-pushed PR branch orphans the old SHA; a broken pin
