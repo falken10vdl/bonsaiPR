@@ -114,7 +114,104 @@ has worked end to end.
 
 ---
 
-## 6. Joining the federation
+## 6. The base, and advancing it
+
+A profile can **pin** the commit it builds on:
+
+```json
+"base": { "repo": "IfcOpenShell/IfcOpenShell", "branch": "v0.8.0",
+          "commit": "644b92263d" }
+```
+
+Omit `commit` to follow the branch tip. `distill` sets it automatically to the
+commit your branch was derived from, because that is where its PR set is known
+to apply.
+
+**Why pinning helps.** Upstream drift, not PR quality, is what breaks most
+merges — a PR that applied cleanly when written conflicts months later because
+the base moved under it. Measured on the `openingdesign` curation:
+
+| base | date | PRs landing | vs pinned |
+|---|---|---:|---|
+| pinned `644b92263d` | 2026-07-07 | **158/160** | — |
+| `6ca8c8ac94` | 2026-07-15 | 151/160 | +0 / −7 |
+| tip `048242783e` | 2026-08-05 | 141/160 | +0 / −17 |
+
+Advancing gained *nothing* and cost up to 17 PRs. That asymmetry is specific to
+an allowlist profile: every selected PR predates the pin, so a newer base can
+only take PRs away.
+
+**What it costs.** The build stops receiving upstream fixes, and rebase debt
+compounds. Pinning and never looking is how a distribution rots. Pinning *while
+watching the number* is how one stays healthy — which is what the rest of this
+section is for.
+
+### 6.1 Advancing the pin
+
+**Step 1 — measure first.**
+
+```bash
+cd automation/scripts
+python base_advisor.py --profile openingdesign --repo /path/to/IfcOpenShell
+```
+
+Read-only: it evaluates candidate bases with `git merge-tree`, never checks
+anything out, and deletes its own scratch refs. **The "lost" column is your task
+list** — those are the PRs that stop merging if you advance.
+
+**Step 2 — split the list by who owns it.** Your own PRs you can rebase today.
+Other people's you cannot. On the first run of this exercise, 8 of 11 blockers
+were the curator's own.
+
+**Step 3 — rebase your own PR branches.** This happens in your IfcOpenShell
+clone, *not* in the profile: a profile references PRs, it does not contain their
+commits. For each one:
+
+```bash
+git checkout <pr-branch>
+git rebase origin/v0.8.0        # resolve conflicts
+git push --force-with-lease     # updates the PR head
+```
+
+`--force-with-lease`, not `--force`: these are open PRs and someone else may
+have pushed to them. See [`prompts/rebase branch onto v0.8.0.md`](../../prompts/rebase%20branch%20onto%20v0.8.0.md).
+
+**Step 4 — re-measure.** The lost column should have shrunk by exactly the
+number you rebased. That is the check that the work actually landed.
+
+**Step 5 — decide about PRs that are not yours.** In descending order of
+usefulness:
+
+1. **Ask the author to rebase.** Their conflict with the base is real and affects
+   every build, not only yours.
+2. **Exclude it**, with a reason so the objection carries information:
+   `"exclude": {"prs": {"5452": {"why": "regression", "reason": "no longer merges against v0.8.0", "since": "<their head sha>"}}}`
+3. **Stay pinned** a while longer, if the PR matters more than the upstream fixes
+   you are forgoing.
+
+**Step 6 — advance the pin and rebuild.** Edit `base.commit`, commit the
+profile, and run the workflow. Confirm the landing count went *up*.
+
+### 6.2 A gap worth knowing about
+
+There is currently **no way to carry a rebased copy of someone else's PR**. If an
+author never rebases, the only options are to exclude the PR or stay pinned —
+you cannot say "use my fixed version of their branch."
+
+That is precisely what Debian does with `debian/patches`, and the format is one
+small step away: `pin` already maps a PR to a head SHA, so allowing it to name a
+ref in *your* fork would express it:
+
+```json
+"pin": { "5452": { "repo": "OpeningDesign/IfcOpenShell", "ref": "rebased/pr-5452" } }
+```
+
+Not built. Worth building the first time a PR you genuinely need is abandoned by
+its author — not before.
+
+---
+
+## 7. Joining the federation
 
 Once your instance publishes reports, others add you to their `peers.json` and
 your curation starts contributing to the aggregate. Your reports are already at
