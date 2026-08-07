@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 129,
-    "merged": 545,
-    "skipped_conflict": 121,
+    "merged": 544,
+    "skipped_conflict": 122,
     "skipped_draft": 54,
     "total": 849
   },
-  "generated_at": "2026-08-07T08:49:01Z",
+  "generated_at": "2026-08-07T18:49:02Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "e044b86",
+      "head": "1a931dd",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -3725,7 +3725,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "eb6f3b0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -6933,8 +6933,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608071012",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608071012"
+    "tag": "v0.8.6-alpha2608072012",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608072012"
   },
   "schema": 1
 }
