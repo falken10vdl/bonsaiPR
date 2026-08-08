@@ -1817,8 +1817,26 @@ def upload_to_falken10vdl():
     try:
         repo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
         index_rel_path = os.path.relpath(index_path, repo_dir)
-        # Stage index.json
-        subprocess.run(["git", "add", index_rel_path], cwd=repo_dir, check=True)
+        to_stage = [index_rel_path]
+
+        # RFC-001 §10: also publish the feed under the curation's own name, so a
+        # subscriber picks a curation rather than picking whoever configured
+        # theirs the way they wanted. The root index.json keeps working and keeps
+        # its URL — existing subscribers are not moved.
+        profile_name = os.getenv("BONSAIPR_PROFILE", "").strip()
+        if profile_name:
+            try:
+                from update_index_json import write_profile_feed
+            except ImportError:
+                from automation.scripts.update_index_json import write_profile_feed
+            feed = write_profile_feed(
+                index_path, profile_name, owner=GITHUB_OWNER, repo=GITHUB_REPO
+            )
+            if feed:
+                to_stage.append(os.path.relpath(feed, repo_dir))
+
+        # Stage index.json (and the curated feed, when there is one)
+        subprocess.run(["git", "add"] + to_stage, cwd=repo_dir, check=True)
         # Commit with a standard message
         subprocess.run(
             ["git", "commit", "-m", f"Update index.json for release {tag_name}"],

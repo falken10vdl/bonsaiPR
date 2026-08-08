@@ -2,6 +2,55 @@ import os
 import json
 import hashlib
 
+def write_profile_feed(index_path, profile_name, out_root=None, description=None,
+                       owner=None, repo=None):
+    """Publish a per-curation Blender feed at profiles/<name>/index.json.
+
+    RFC-001 s10. The root index.json advertises "BonsaiPR" — whatever this
+    instance happens to build. Once instances build *different* curations, that
+    name stops identifying anything: a user subscribing to a URL cannot tell
+    which selection of PRs they are about to install. A per-profile feed names
+    the curation, so subscribing is a choice between curations rather than a
+    choice of who to trust to have configured theirs the way you wanted.
+
+    The extension `id` deliberately stays `bonsaiPR`. Curated builds are
+    alternatives, not companions — the same one-at-a-time rule that already
+    applies between Bonsai and BonsaiPR applies between two curations, because
+    they are the same Python module. Distinct ids would imply they can coexist.
+
+    Returns the path written, or None.
+    """
+    if not profile_name or not os.path.exists(index_path):
+        return None
+
+    owner = owner or os.getenv("GITHUB_OWNER", "falken10vdl")
+    repo = repo or os.getenv("GITHUB_REPO", "bonsaiPR")
+
+    with open(index_path, "r", encoding="utf-8") as f:
+        index = json.load(f)
+
+    label = f"BonsaiPR · {profile_name}"
+    tagline = description or (
+        f"Bonsai built from the '{profile_name}' curation of open PRs."
+    )
+    # Blender rejects a tagline that runs long or ends in punctuation.
+    tagline = tagline[:102].rstrip().rstrip(".")
+
+    for entry in index.get("data", []):
+        entry["name"] = label
+        entry["tagline"] = tagline
+        entry["website"] = f"https://github.com/{owner}/{repo}/blob/main/profiles/{profile_name}.json"
+
+    out_root = out_root or os.path.join(os.path.dirname(index_path), "profiles")
+    out_dir = os.path.join(out_root, profile_name)
+    os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, "index.json")
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(index, f, indent=2)
+    print(f"📡 Wrote curated feed for '{profile_name}' -> {out_path}")
+    return out_path
+
+
 def update_index_json(index_path, release_tag, addon_files, owner=None, repo=None):
     """
     Update index.json with new release info for each platform.
