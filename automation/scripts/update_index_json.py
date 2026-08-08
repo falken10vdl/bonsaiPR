@@ -2,14 +2,23 @@ import os
 import json
 import hashlib
 
-def update_index_json(index_path, release_tag, addon_files):
+def update_index_json(index_path, release_tag, addon_files, owner=None, repo=None):
     """
     Update index.json with new release info for each platform.
     Args:
         index_path (str): Path to index.json
         release_tag (str): Tag of the new release (e.g., v0.8.5-alpha2601161635)
         addon_files (list): List of paths to uploaded addon zip files
+        owner (str): Release owner; defaults to $GITHUB_OWNER, then falken10vdl
+        repo (str): Release repo;  defaults to $GITHUB_REPO,  then bonsaiPR
+
+    The archive URLs must point at the repository that actually holds the
+    release. Hardcoding one publisher means a second instance publishes an
+    index.json advertising downloads it does not host — Blender would follow
+    those links to another project's builds, or to nothing.
     """
+    owner = owner or os.getenv("GITHUB_OWNER", "falken10vdl")
+    repo = repo or os.getenv("GITHUB_REPO", "bonsaiPR")
     if not os.path.exists(index_path):
         print(f"index.json not found at {index_path}")
         return False
@@ -52,7 +61,7 @@ def update_index_json(index_path, release_tag, addon_files):
             continue
         plat = plat_list[0]
         if plat in file_info:
-            entry['archive_url'] = f"https://github.com/falken10vdl/bonsaiPR/releases/download/{release_tag}/{file_info[plat]['filename']}"
+            entry['archive_url'] = f"https://github.com/{owner}/{repo}/releases/download/{release_tag}/{file_info[plat]['filename']}"
             entry['archive_size'] = file_info[plat]['size']
             entry['archive_hash'] = f"sha256:{file_info[plat]['hash']}"
             # Optionally update version/tag if needed

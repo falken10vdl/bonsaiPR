@@ -1,0 +1,179 @@
+# BonsaiPR — curated build
+#
+# Runs a *curated* BonsaiPR instance from a profile (RFC-001). Unlike the
+# canonical instance, which builds every open non-draft PR, this builds only the
+# PRs its profile selects — which is what makes it a distinct federation
+# publisher rather than a second copy of the same answer.
+#
+# Scheduled hourly for the manifest and daily for a full build; also runnable by
+# hand from the Actions tab.
+#
+# Setup: see .github/workflows/README-curated-build.md
+
+name: Curated build
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: "Profile name from profiles/ (without .json)"
+        required: true
+        default: openingdesign
+      stages:
+        description: "How much of the pipeline to run"
+        required: true
+        default: full
+        type: choice
+        options: [full, manifest-only]
+  # `inputs` is EMPTY on a schedule trigger — dispatch defaults do not apply. The
+  # env block below therefore falls back to SCHEDULED_* rather than reading
+  # inputs directly; without that, a cron run would build with no profile at all
+  # (i.e. every open PR, unpinned) and publish it as a release.
+  schedule:
+    # Hourly manifest: cheap, no release, and it is what builds the run-to-run
+    # history federation aggregates. Nothing else produces that history.
+    - cron: "20 * * * *"
+    # Daily full build. Releases are pruned to the most recent 30, so daily keeps
+    # a month of installable builds; hourly would keep 30 hours of them.
+    - cron: "40 3 * * *"
+
+concurrency:
+  # Two overlapping runs would fight over the same force-pushed build branch.
+  group: curated-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # A curated profile merges far fewer PRs than the canonical 847, but each
+    # merge fetches from a different contributor's fork, and that dominates.
+    timeout-minutes: 330
+
+    env:
+      # Resolve once, here, because `inputs` is empty on a schedule trigger and
+      # every later reference would silently become "".
+      PROFILE: ${{ inputs.profile || vars.BONSAIPR_SCHEDULED_PROFILE || 'openingdesign' }}
+      # Hourly cron = manifest only; daily cron = full build; dispatch = whatever
+      # was chosen.
+      STAGES: ${{ inputs.stages || (github.event.schedule == '40 3 * * *' && 'full' || 'manifest-only') }}
+
+      BONSAIPR_PROFILE: ${{ inputs.profile || vars.BONSAIPR_SCHEDULED_PROFILE || 'openingdesign' }}
+
+      # Where releases and the extension index are published.
+      GITHUB_OWNER: ${{ vars.BONSAIPR_OWNER || 'OpeningDesign' }}
+      GITHUB_REPO: ${{ vars.BONSAIPR_REPO || 'bonsaiPR' }}
+
+      # Fork that receives the force-pushed build branch. MUST be a fork you own
+      # — the push is `--force` and will overwrite whatever is there.
+      FORK_OWNER: ${{ vars.BONSAIPR_FORK_OWNER || 'OpeningDesign' }}
+      FORK_REPO: ${{ vars.BONSAIPR_FORK_REPO || 'IfcOpenShell' }}
+
+      # Upstream being curated.
+      SOURCE_REPO_OWNER: IfcOpenShell
+      SOURCE_REPO_NAME: IfcOpenShell
+      SOURCE_BASE_BRANCH: v0.8.0
+
+      # Runner paths. BASE_CLONE_DIR is checked out, reset, branch-deleted and
+      # force-pushed from — it must never point at a repo anyone is working in.
+      BASE_CLONE_DIR: ${{ github.workspace }}/work/IfcOpenShell
+      BUILD_BASE_DIR: ${{ github.workspace }}/work/bonsaiPR-build
+      WORKING_DIR: ${{ github.workspace }}/work/MergingPR
+      REPORT_PATH: ${{ github.workspace }}/work/reports
+
+      # A curated profile is an explicit list; author filtering is not wanted.
+      USERNAMES: ""
+      EXCLUDED: ""
+
+    steps:
+      - name: Check out the automation
+        uses: actions/checkout@v4
+        with:
+          # commit_reports.py pushes report/state files back to this repo.
+          token: ${{ secrets.BONSAIPR_TOKEN }}
+          fetch-depth: 0
+
+      - name: Reclaim runner disk
+        # The IfcOpenShell clone plus per-platform build trees do not
+        # comfortably fit alongside the runner's preinstalled toolchains.
+        run: |
+          echo "before:"; df -h / | tail -1
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
+                      /usr/local/share/boost "$AGENT_TOOLSDIRECTORY" || true
+          echo "after:"; df -h / | tail -1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node
+        # Stage 1 runs `npm install` while packaging the add-on.
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r automation/requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends zip make
+
+      - name: Verify the profile resolves
+        # Fail before doing 40 minutes of merging if the curation is malformed.
+        working-directory: automation/scripts
+        run: |
+          python bonsaipr_profile.py show "$PROFILE"
+
+      - name: Configure git
+        run: |
+          git config --global user.name  "bonsaiPR automation"
+          git config --global user.email "actions@users.noreply.github.com"
+          git config --global credential.helper store
+          echo "https://x-access-token:${{ secrets.BONSAIPR_TOKEN }}@github.com" \
+            > ~/.git-credentials
+
+      - name: Run the pipeline
+        env:
+          GITHUB_TOKEN: ${{ secrets.BONSAIPR_TOKEN }}
+          # The checkout step already put the automation at the exact commit
+          # this run was launched from; main.py's self-pull would be redundant.
+          BONSAIPR_SKIP_SELF_PULL: "1"
+        working-directory: automation/src
+        run: |
+          # NOT BASE_CLONE_DIR — stage 0 clones into it, and pre-creating it
+          # makes the script take its "update existing repo" path instead.
+          mkdir -p "$(dirname "$BASE_CLONE_DIR")" "$BUILD_BASE_DIR" "$WORKING_DIR" "$REPORT_PATH"
+          echo "profile=$PROFILE  stages=$STAGES"
+          if [ "$STAGES" = "manifest-only" ]; then
+            # Stage 0 produces everything federation consumes — report,
+            # state/events/rivals/pinned — and owns the manifest either way.
+            # Stages 1-2 only add installable zips and a release.
+            cd ../scripts && python 00_clone_merge_and_create_branch.py
+          else
+            python main.py
+          fi
+
+      - name: Aggregate own signals
+        # Cheap, and it means a failed federation step never costs a build.
+        continue-on-error: true
+        working-directory: automation/scripts
+        run: python federate.py aggregate
+
+      - name: Publish reports
+        env:
+          GITHUB_TOKEN: ${{ secrets.BONSAIPR_TOKEN }}
+          BONSAIPR_REPORTS_PUSH: "1"
+        working-directory: automation/scripts
+        run: python commit_reports.py || echo "no report changes to publish"
+
+      - name: Upload run artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: curated-build-${{ github.run_id }}
+          retention-days: 14
+          path: |
+            automation/reports/
+            federation/
+            work/reports/
+          if-no-files-found: ignore

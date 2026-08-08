@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 # plain import works, but insert the path explicitly for direct/manual invocation.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pr_state
+import bonsaipr_profile
 
 # Committed per-order snapshots (state.asc/desc/upd.json). The report reads them
 # to annotate each PR with how it fared under the other merge orders.
@@ -38,28 +39,26 @@ fork_repo_url_public = (
 )
 work_dir = os.getenv("BASE_CLONE_DIR", "/home/falken10vdl/bonsaiPRDevel/IfcOpenShell")
 upstream_repo = f"{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}"
-# Parse USERNAMES and strip whitespace from each username
-raw_usernames = os.getenv("USERNAMES", "")
-if raw_usernames:
-    users = [u.strip() for u in raw_usernames.split(",") if u.strip()]
-else:
-    users = [""]  # Add specific usernames or leave empty for all users
-
-# Parse EXCLUDED PR numbers from .env
-raw_excluded = os.getenv("EXCLUDED", "")
-if raw_excluded:
-    excluded_prs = set(
-        int(x.strip()) for x in raw_excluded.split(",") if x.strip().isdigit()
-    )
-else:
-    excluded_prs = set()
-
-# Skip PRs that change C++ compiled into the ifcopenshell wheel Bonsai loads.
-# BonsaiPR ships the Python add-on against a pinned prebuilt wheel and never
-# recompiles C++, so a PR whose Python depends on new/changed C++ either crashes
-# at runtime or silently runs the old wheel behavior. Opt-in via .env
-# (SKIP_CPP_PRS=1); default off so we don't drop PRs whose Python is testable.
-SKIP_CPP_PRS = os.getenv("SKIP_CPP_PRS", "").strip().lower() in ("1", "true", "yes")
+# Which PRs this build curates. Set BONSAIPR_PROFILE to build a named profile
+# from profiles/; leave it unset and the legacy USERNAMES / EXCLUDED /
+# SKIP_CPP_PRS env vars are read exactly as before, so an existing .env keeps
+# working untouched. See RFC-001 s4.1 for the mapping.
+#
+# The three names below are the only things the ~950 lines downstream consume,
+# so a profile is purely a different way of *deciding* them:
+#
+#   users        author allowlist ([""] means all authors)
+#   excluded_prs PR numbers to skip outright
+#   SKIP_CPP_PRS skip PRs that change C++ compiled into the ifcopenshell wheel
+#                Bonsai loads. BonsaiPR ships the Python add-on against a pinned
+#                prebuilt wheel and never recompiles C++, so a PR whose Python
+#                depends on new/changed C++ either crashes at runtime or silently
+#                runs the old wheel behavior. Default off so we don't drop PRs
+#                whose Python is testable.
+CURATION = bonsaipr_profile.load_profile()
+users = CURATION.users
+excluded_prs = CURATION.excluded_prs
+SKIP_CPP_PRS = CURATION.skip_cpp
 
 # File extensions that only take effect after a C++ recompile.
 COMPILED_EXTS = {".cpp", ".cxx", ".cc", ".c", ".h", ".hpp", ".hxx", ".i", ".ipp"}
@@ -219,6 +218,23 @@ def try_resolve_known_conflict(pr_number):
         return False
 
 
+def _base_ref():
+    """What to build on: the curation's pinned commit, or the branch tip.
+
+    RFC-001. Upstream drift, not PR quality, is what breaks most merges: a PR
+    that applied cleanly when written conflicts months later because the base
+    moved. Pinning lets a curation keep building without every contributor
+    rebasing; the cost is that upstream fixes stop arriving until the pin moves.
+    """
+    if CURATION.base_commit:
+        print(
+            f"📌 Base pinned by profile '{CURATION.name}' to "
+            f"{CURATION.base_commit[:10]} (not {SOURCE_BASE_BRANCH} tip)"
+        )
+        return CURATION.base_commit
+    return f"upstream/{SOURCE_BASE_BRANCH}"
+
+
 def setup_repository():
     """Clone or update the fork repository with upstream remote"""
     def _run_git(cmd):
@@ -279,7 +295,11 @@ def setup_repository():
                 )
                 time.sleep(retry_delay_seconds)
 
-    if os.path.exists(work_dir):
+    # Test for a real repository, not merely a directory: an empty or
+    # pre-created BASE_CLONE_DIR would otherwise take the "update" path and fail
+    # on `git checkout <base>` with nothing to check out. `git clone` into an
+    # existing empty directory is fine, so cloning is the safe default.
+    if os.path.exists(os.path.join(work_dir, ".git")):
         print(f"Updating existing repository in {work_dir}")
         original_dir = os.getcwd()
         try:
@@ -287,11 +307,20 @@ def setup_repository():
             # Reset to clean state
             _run_git(["git", "reset", "--hard", "HEAD"])
             _run_git(["git", "clean", "-fd"])
-            _run_git(["git", "checkout", SOURCE_BASE_BRANCH])
 
-            # Update from upstream
+            # Update from upstream, then land on the base branch as upstream
+            # defines it. `checkout -B` creates the local branch if the fork
+            # never had one, so this does not depend on the fork's branch layout.
             _run_git(["git", "fetch", "upstream"])
-            _run_git(["git", "reset", "--hard", f"upstream/{SOURCE_BASE_BRANCH}"])
+            _run_git(
+                [
+                    "git",
+                    "checkout",
+                    "-B",
+                    SOURCE_BASE_BRANCH,
+                    _base_ref(),
+                ]
+            )
 
             # Update the origin remote URL to use token for authentication
             _run_git(["git", "remote", "set-url", "origin", fork_repo_url])
@@ -314,7 +343,25 @@ def setup_repository():
                 ["git", "remote", "add", "upstream", upstream_repo_url], check=True
             )
             subprocess.run(["git", "fetch", "upstream"], check=True)
-            print("Added upstream remote and fetched latest changes")
+            # A fresh clone lands on the FORK's default branch, which has nothing
+            # to do with the branch being curated — for a fork whose default is
+            # still v0.7.0 that means merging v0.8.0 PRs onto a v0.7.0 tree, and
+            # every single one conflicts. Land on upstream's base branch
+            # explicitly, exactly as the update path above does.
+            subprocess.run(
+                [
+                    "git",
+                    "checkout",
+                    "-B",
+                    SOURCE_BASE_BRANCH,
+                    _base_ref(),
+                ],
+                check=True,
+            )
+            print(
+                f"Added upstream remote, fetched, and checked out "
+                f"{SOURCE_BASE_BRANCH} from upstream"
+            )
         finally:
             os.chdir(original_dir)
 
@@ -335,22 +382,258 @@ def get_open_prs():
             print(f"Error fetching PRs: {response.status_code}")
             break
 
-        prs = response.json()
-        if not prs:
+        page_items = response.json()
+        if not page_items:
             break
 
-        # Filter by users if specified
-        if users and users != [""]:
-            prs = [pr for pr in prs if pr["user"]["login"] in users]
+        # Pagination is decided by how many items the API returned, NOT by how
+        # many survive curation. Testing the filtered count ends the walk on the
+        # first page for any selective profile — a page of 100 open PRs rarely
+        # contains 100 that a curator selected — and silently yields a fraction
+        # of the curation, or nothing at all.
+        is_last_page = len(page_items) < params["per_page"]
 
-        all_prs.extend(prs)
+        # Apply the active curation. For the legacy/`everything` case this is
+        # exactly the old author filter; for an `allowlist` profile it is also
+        # what narrows 847 open PRs down to the ones the curator chose.
+        all_prs.extend(
+            pr
+            for pr in page_items
+            if CURATION.selects(pr["number"], (pr.get("user") or {}).get("login"))
+        )
         page += 1
 
-        if len(prs) < 100:  # Last page
+        if is_last_page:
             break
 
-    print(f"Found {len(all_prs)} open pull requests")
+    if CURATION.mode == bonsaipr_profile.MODE_ALLOWLIST:
+        missing = sorted(CURATION.select_prs - {pr["number"] for pr in all_prs})
+        print(
+            f"Found {len(all_prs)} open pull requests "
+            f"(curation selects {len(CURATION.select_prs)})"
+        )
+        if missing:
+            # Selected PRs that are no longer open: merged upstream, closed, or
+            # made private. Naming them is how a curator learns their profile has
+            # drifted; silently building 12 fewer PRs than asked for would not be.
+            print(
+                f"⚠️  {len(missing)} selected PR(s) are no longer open and will be "
+                f"skipped: {', '.join('#' + str(n) for n in missing[:20])}"
+                + (" …" if len(missing) > 20 else "")
+            )
+    else:
+        print(f"Found {len(all_prs)} open pull requests")
     return all_prs
+
+
+# RFC-001 phase 1.1: which already-merged PR did each blocked PR lose to?
+#
+# The reports have always recorded *that* a PR was conflict-skipped and which
+# orders it merges under, but never *which PR beat it* - and that pairing cannot
+# be reconstructed afterwards, because the losing merge is aborted and leaves no
+# trace. It is the difference between "this conflicts with something" and "this
+# conflicts with #7098, go talk to each other", so it is worth the one extra
+# `git diff --name-only` per successful merge that capturing it costs.
+#
+# Module-level rather than threaded through the return signature: this script
+# runs once per process and `apply_prs_to_branch` already has three return
+# values consumed positionally at its only call site.
+PR_RIVALS = {}
+
+# PR number -> the curator-validated sha built instead of the PR's current tip,
+# when the tip would not merge. Surfaced in the report and the manifest: a build
+# that quietly ships an older commit than the PR points at is the kind of thing
+# nobody can detect from the outside.
+PR_PINNED = {}
+# PR number -> its head sha at build time, so the report can show what was built
+# alongside what the PR now points at.
+_pr_tip_shas = {}
+
+
+def _files_changed_by_last_merge():
+    """Paths the merge just committed brought in, relative to the branch tip."""
+    result = subprocess.run(
+        ["git", "diff", "--name-only", "HEAD^1", "HEAD"],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        return []
+    return [f.strip() for f in result.stdout.strip().split("\n") if f.strip()]
+
+
+def _conflicting_paths():
+    """Unmerged paths in the working tree, read before `git merge --abort`."""
+    result = subprocess.run(
+        ["git", "diff", "--name-only", "--diff-filter=U"],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        return []
+    return [f.strip() for f in result.stdout.strip().split("\n") if f.strip()]
+
+
+def write_pinned(reports_dir, order_suffix, pinned):
+    """Persist which PRs were built at a curator-validated commit.
+
+    A sidecar for the same reason `rivals` is one: stage 2 owns the manifest for
+    a full run and reconstructs its records by parsing the rendered report, so
+    anything stage 0 knows and the report does not carry is lost. Without this
+    the manifest records each PR's current tip as what was built - asserting that
+    a commit merges when the build proved it does not.
+    """
+    if not pinned:
+        return None
+    path = os.path.join(reports_dir, f"pinned.{order_suffix}.json")
+    payload = {
+        "schema": 1,
+        "generated_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "order": order_suffix,
+        "pinned": {str(k): v for k, v in sorted(pinned.items())},
+    }
+    try:
+        os.makedirs(os.path.abspath(reports_dir), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, sort_keys=True, ensure_ascii=False)
+            f.write("\n")
+        print(f"📌 Recorded {len(pinned)} pinned build commit(s) -> {path}")
+        return path
+    except OSError as e:
+        print(f"⚠️  Could not write pinned file: {e}")
+        return None
+
+
+def write_rivals(reports_dir, order_suffix, rivals):
+    """Persist the loser -> [winners] map for one merge order.
+
+    A sidecar rather than a new field in state.<order>.json: the state snapshot
+    is parsed out of the rendered report by 02_upload, so extending it means
+    touching the report format too. This keeps a production pipeline change
+    small, and RFC-001 phase 2's manifest can absorb it later.
+    """
+    if not rivals:
+        return None
+    path = os.path.join(reports_dir, f"rivals.{order_suffix}.json")
+    payload = {
+        "schema": 1,
+        "generated_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "order": order_suffix,
+        "rivals": {str(k): sorted(v) for k, v in sorted(rivals.items())},
+    }
+    try:
+        os.makedirs(os.path.abspath(reports_dir), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, sort_keys=True, ensure_ascii=False)
+            f.write("\n")
+        print(f"🥊 Recorded {len(rivals)} conflict pairing(s) -> {path}")
+        return path
+    except OSError as e:
+        # Never fail a build over telemetry about the build.
+        print(f"⚠️  Could not write rivals file: {e}")
+        return None
+
+
+def _state_pr(pr, merged_sha=None):
+    """Shape a live GitHub PR dict the way pr_state.build_state expects.
+
+    build_state was written for `02_upload`, which reconstructs these fields by
+    parsing its own rendered report. Stage 0 has them natively, so this is just
+    a translation - no parsing round-trip.
+
+    `head` records THE COMMIT THIS BUILD MERGED, which is not always the PR's
+    current tip: a pinned fallback builds an earlier, validated commit. Recording
+    the tip regardless would assert that the tip merges when it demonstrably does
+    not - the reverse of the truth, and unfalsifiable from the outside. When the
+    two differ the record says so explicitly and carries both.
+    """
+    head = pr.get("head") or {}
+    tip = (head.get("sha") or "").strip()
+    built = (merged_sha or tip or "").strip()
+    rec = {
+        "line": f"- **PR #{pr['number']}**: {pr.get('title') or ''}",
+        # 7-char to match the shas the report-parsing path produces; _sha_eq is
+        # tolerant of either, but keeping one convention avoids phantom deltas.
+        "last_commit": {"sha": built[:7]} if built else None,
+        "author": (pr.get("user") or {}).get("login"),
+        "branch": head.get("ref"),
+        "url": pr.get("html_url"),
+    }
+    if merged_sha and tip and not merged_sha.startswith(tip[:7]):
+        rec["pinned"] = True
+        rec["tip"] = tip[:7]
+    return rec
+
+
+def write_state_snapshot(
+    applied, failed, skipped, test_results, merge_order, total_prs, base_commit=None
+):
+    """Write state.<order>.json, events.<order>.jsonl and delta.<order>.md.
+
+    Stage 0 is the sole owner of the manifest. It was not always: stage 2 wrote
+    it for a full run by reconstructing the four PR buckets from its own rendered
+    report, while stage 0 wrote it for a manifest-only run from the data it
+    already had. One artefact, two producers, differing fidelity - which
+    published three untruths before this was consolidated:
+
+      * base_commit missing entirely (branch name only)
+      * pinned builds recorded at the PR's tip, asserting that a commit merges
+        when the build had just proved it does not
+      * both fixed in stage 0 first, where they did not run for a full build
+
+    Stage 2 still needs the run-to-run delta for the release body, so that is
+    rendered here and handed over as `delta.<order>.md` rather than recomputed
+    from a second snapshot.
+    """
+    test_results = test_results or {}
+    suffix = pr_state.ORDER_SUFFIX_BY_NAME.get(merge_order, merge_order)
+    state_path = os.path.join(REPORTS_DIR, f"state.{suffix}.json")
+    events_path = os.path.join(REPORTS_DIR, f"events.{suffix}.jsonl")
+
+    # Same split the report uses: merging alone against base means the conflict
+    # was with another PR, not with the base.
+    conflict_with_others, failed_against_base = [], []
+    for pr in failed or []:
+        target = (
+            conflict_with_others
+            if test_results.get(pr["number"]) is True
+            else failed_against_base
+        )
+        target.append(_state_pr(pr, PR_PINNED.get(pr["number"])))
+
+    new_state = pr_state.build_state(
+        applied_prs=[_state_pr(p, PR_PINNED.get(p["number"])) for p in applied or []],
+        failed_prs=failed_against_base,
+        skipped_conflict_prs=conflict_with_others,
+        skipped_draft_prs=[_state_pr(p, PR_PINNED.get(p["number"])) for p in skipped or []],
+        merge_order=merge_order,
+        base=SOURCE_BASE_BRANCH,
+        base_commit=base_commit,
+        total_prs=total_prs,
+    )
+
+    prev_state = pr_state.load_state(state_path)
+    delta_md = ""
+    if prev_state:
+        delta = pr_state.compute_delta(prev_state, new_state, strict_order=True)
+        pr_state.append_events(events_path, pr_state.delta_to_events(delta))
+        delta_md = pr_state.render_delta_md(delta)
+    pr_state.write_state(new_state, state_path)
+
+    # Handed to stage 2 for the release body. Written even when empty, so its
+    # absence means "stage 0 did not run / is older" rather than "no changes" -
+    # stage 2 falls back to its own computation only in the former case.
+    try:
+        with open(
+            os.path.join(REPORTS_DIR, f"delta.{suffix}.md"), "w", encoding="utf-8"
+        ) as f:
+            f.write(delta_md)
+    except OSError as e:
+        print(f"⚠️  Could not write delta summary: {e}")
+    print(
+        f"🧾 Wrote manifest {os.path.basename(state_path)} "
+        f"({new_state['counts']['merged']} merged of {new_state['counts']['total']})"
+    )
 
 
 def apply_prs_to_branch(branch_name, prs):
@@ -359,6 +642,15 @@ def apply_prs_to_branch(branch_name, prs):
     applied = []
     failed = []
     skipped = []
+    # path -> PR number that last touched it on this branch. Built as we go,
+    # which makes attributing a conflict exact rather than a `git log` guess.
+    file_owner = {}
+    # PR number -> validated sha used because the current head would not merge.
+    # Reported at the end: a PR whose head has broken is a nudge worth sending.
+    pinned_fallbacks = {}
+    PR_RIVALS.clear()
+    PR_PINNED.clear()
+    _pr_tip_shas.clear()
 
     try:
         os.chdir(work_dir)
@@ -379,11 +671,17 @@ def apply_prs_to_branch(branch_name, prs):
             pr_number = pr["number"]
             pr_title = pr["title"]
 
-            # Skip PRs in EXCLUDED list
+            # Skip PRs the active curation excludes. Quote the curator's reason
+            # when they gave one - "excluded because it bypasses the tool/ layer"
+            # is worth infinitely more to the PR author than "excluded".
             if pr_number in excluded_prs:
-                print(f"⚠️  Skipping PR #{pr_number}: Excluded by .env EXCLUDED list")
+                detail = CURATION.exclusions.get(pr_number, {})
+                why = f"[{detail['why']}] " if detail.get("why") else ""
+                reason = detail.get("reason") or f"listed in {CURATION.source}"
+                skip_reason = f"Excluded by curation: {why}{reason}"
+                print(f"⚠️  Skipping PR #{pr_number}: {skip_reason}")
                 pr_with_reason = pr.copy()
-                pr_with_reason["skip_reason"] = "Excluded by .env EXCLUDED list"
+                pr_with_reason["skip_reason"] = skip_reason
                 pr_with_reason["individual_test_merge"] = None
                 skipped.append(pr_with_reason)
                 continue
@@ -428,6 +726,9 @@ def apply_prs_to_branch(branch_name, prs):
 
             pr_head_ref = pr["head"]["ref"]
             pr_head_repo = pr["head"]["repo"]["clone_url"]
+            pr_head_sha = pr["head"].get("sha")
+            if pr_head_sha:
+                _pr_tip_shas[pr_number] = pr_head_sha
 
             # Additional safety check for required fields
             if not pr_head_ref or not pr_head_repo:
@@ -478,16 +779,68 @@ def apply_prs_to_branch(branch_name, prs):
                     text=True,
                 )
 
+                if merge_result.returncode != 0 and CURATION.pins.get(pr_number):
+                    # The current head does not merge, but the curator recorded a
+                    # commit of this PR that did. Fall back to it rather than
+                    # dropping the PR: `pin` is a fallback, not a freeze (RFC-001
+                    # §4), so authors' newer work is always tried first and only
+                    # a genuinely broken head costs the PR its place.
+                    pinned = CURATION.pins[pr_number]
+                    subprocess.run(["git", "merge", "--abort"], capture_output=True)
+                    fetch_pin = subprocess.run(
+                        ["git", "fetch", remote_name, pinned],
+                        capture_output=True, text=True,
+                    )
+                    if fetch_pin.returncode == 0:
+                        retry = subprocess.run(
+                            ["git", "merge", "--no-ff", "--no-edit", "FETCH_HEAD"],
+                            capture_output=True, text=True,
+                        )
+                        if retry.returncode == 0:
+                            print(
+                                f"📌 PR #{pr_number}: head {pr_head_sha[:7] if pr_head_sha else '?'} "
+                                f"does not merge; used curator-validated {pinned[:7]}"
+                            )
+                            pinned_fallbacks[pr_number] = pinned
+                            PR_PINNED[pr_number] = pinned
+                            merge_result = retry
+                        else:
+                            subprocess.run(
+                                ["git", "merge", "--abort"], capture_output=True
+                            )
+                    else:
+                        print(
+                            f"   ⚠️  PR #{pr_number}: pinned commit {pinned[:7]} "
+                            f"could not be fetched (force-pushed away?)"
+                        )
+
                 if merge_result.returncode == 0:
                     print(f"✅ Successfully applied PR #{pr_number}")
                     applied.append(pr)
+                    for path in _files_changed_by_last_merge():
+                        file_owner[path] = pr_number
                 elif try_resolve_known_conflict(pr_number):
                     print(
                         f"✅ Successfully applied PR #{pr_number} (resolved known conflict)"
                     )
                     applied.append(pr)
+                    for path in _files_changed_by_last_merge():
+                        file_owner[path] = pr_number
                 else:
                     print(f"❌ Failed to apply PR #{pr_number}: {merge_result.stderr}")
+                    # Read the unmerged paths BEFORE aborting - the abort is what
+                    # destroys the only record of who this PR lost to.
+                    rivals = []
+                    for path in _conflicting_paths():
+                        owner = file_owner.get(path)
+                        if owner and owner not in rivals:
+                            rivals.append(owner)
+                    if rivals:
+                        PR_RIVALS[pr_number] = rivals
+                        print(
+                            f"   ↳ lost to "
+                            + ", ".join(f"#{r}" for r in rivals)
+                        )
                     subprocess.run(["git", "merge", "--abort"], capture_output=True)
                     failed.append(pr)
 
@@ -505,6 +858,13 @@ def apply_prs_to_branch(branch_name, prs):
                 )
 
         print(f"\nPR Application Summary:")
+        if pinned_fallbacks:
+            print(
+                f"📌 Used curator-validated commits for {len(pinned_fallbacks)} PR(s) "
+                f"whose current head no longer merges:"
+            )
+            for n, sha in sorted(pinned_fallbacks.items()):
+                print(f"     #{n} -> {sha[:7]}")
         print(f"✅ Successfully applied: {len(applied)} PRs")
         print(f"❌ Failed to apply: {len(failed)} PRs")
         print(f"⚠️  Skipped (draft/repo issues): {len(skipped)} PRs")
@@ -1001,12 +1361,7 @@ def generate_report(
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
         f.write(f"Branch: {branch_name}\n")
         f.write(f"IfcOpenShell source commit: {commit_hash}\n")
-        if merge_order == "ascending":
-            order_desc = "lowest → highest PR#"
-        elif merge_order == "descending":
-            order_desc = "highest → lowest PR#"
-        else:
-            order_desc = "most recently updated PR first"
+        order_desc = pr_state.order_meta(merge_order)["short"]
         f.write(f"Merge Order: {merge_order} ({order_desc})\n")
         f.write(
             f"Fork Repository: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}\n\n"
@@ -1030,21 +1385,50 @@ def generate_report(
             f.write(f"- Success Rate: {success_rate}%\n\n")
         else:
             f.write(f"- Success Rate: N/A\n\n")
-        if merge_order == "ascending":
-            companion_order = "descending or by-updated"
-        elif merge_order == "descending":
-            companion_order = "ascending or by-updated"
+        if PR_PINNED:
+            # Anyone testing this build is testing an older commit than the PR
+            # currently points at, and the PR's author almost certainly does not
+            # know their head stopped merging. Both facts belong in the report,
+            # not only in a CI log nobody reads.
+            f.write(
+                f"\n## 📌 Built at a curator-validated commit ({len(PR_PINNED)})\n\n"
+            )
+            f.write(
+                "These PRs no longer merge at their current head, so this build used the\n"
+                "commit the curation last validated. **You are testing an older version of\n"
+                "these PRs than the branch now contains** — and their authors may not know\n"
+                "the head has broken.\n\n"
+            )
+            f.write("| PR | Built commit | Current head |\n")
+            f.write("|----|--------------|--------------|\n")
+            for n, sha in sorted(PR_PINNED.items()):
+                tip = _pr_tip_shas.get(n, "unknown")
+                f.write(
+                    f"| [#{n}](https://github.com/{upstream_repo}/pull/{n}) "
+                    f"| `{sha[:10]}` | `{tip[:10]}` |\n"
+                )
+            f.write("\n")
+
+        f.write(
+            f"Note: PRs were merged in {merge_order} order ({order_desc}).\n"
+        )
+        if merge_order == "recorded":
+            # A profile that pins one order gets one build, so there is no
+            # companion release for a conflict-skipped PR to turn up in.
+            f.write(
+                f"      This build follows the order recorded by its curation profile, so it is\n"
+                f"      not one of a set — PRs listed in the 'Conflict With Other PRs' table were\n"
+                f"      blocked in this order and are simply absent here.\n\n"
+            )
         else:
-            companion_order = "ascending or descending"
-        f.write(
-            f"Note: PRs were merged in {merge_order} order ({order_desc}). BonsaiPR builds up to three releases\n"
-        )
-        f.write(
-            f"      per run — ascending, descending, and by-updated — to maximise inclusion. PRs listed\n"
-        )
-        f.write(
-            f"      in the 'Conflict With Other PRs' table may appear in the companion {companion_order} release.\n\n"
-        )
+            companion_order = pr_state.companion_orders(
+                merge_order, ["ascending", "descending", "by-updated"]
+            )
+            f.write(
+                f"      BonsaiPR builds up to three releases per run — ascending, descending, and\n"
+                f"      by-updated — to maximise inclusion. PRs listed in the 'Conflict With Other\n"
+                f"      PRs' table may appear in the companion {companion_order} release.\n\n"
+            )
         if show_stability:
             stable_merged = 0
             dependent_merged = 0
@@ -1324,6 +1708,10 @@ def main():
     elif reverse_order:
         merge_order_str = "descending"
         print("Merging PRs in descending order (highest to lowest number)")
+    elif CURATION.data.get("order_seq"):
+        # Announced properly once the PRs are actually sorted, below; saying
+        # "ascending" here would be a lie the log never retracts.
+        merge_order_str = "recorded"
     else:
         merge_order_str = "ascending"
         print("Merging PRs in ascending order (lowest to highest number)")
@@ -1341,7 +1729,22 @@ def main():
     # Get open PRs
     prs = get_open_prs()
     # Sort PRs
-    if by_updated_order:
+    recorded = CURATION.data.get("order_seq") or []
+    if recorded and not reverse_order and not by_updated_order:
+        # RFC-001 §5.3: a distilled profile carries the sequence its curator
+        # actually built in — a hand-validated order known to produce a working
+        # tree, where asc/desc/upd are guesses. PRs absent from the recording
+        # (added upstream since the branch was distilled) go last, in number
+        # order, so a stale profile degrades instead of dropping them.
+        rank = {int(n): i for i, n in enumerate(recorded)}
+        merge_order_str = "recorded"
+        prs = sorted(prs, key=lambda pr: (rank.get(pr["number"], len(rank)), pr["number"]))
+        unranked = sum(1 for pr in prs if pr["number"] not in rank)
+        print(
+            f"Merging PRs in the order recorded by profile '{CURATION.name}'"
+            + (f" ({unranked} newer PR(s) appended)" if unranked else "")
+        )
+    elif by_updated_order:
         prs = sorted(prs, key=lambda pr: pr.get("updated_at", ""), reverse=True)
     else:
         prs = sorted(prs, key=lambda pr: pr["number"], reverse=reverse_order)
@@ -1350,6 +1753,18 @@ def main():
         applied, failed, skipped = [], [], []
         failed_pr_test_results = {}
         pr_conflict_data = {}
+        # Actually create the branch before pushing it. apply_prs_to_branch()
+        # normally does this, but it is skipped entirely on this path, so the
+        # push below used to fail with "src refspec does not match any" — an
+        # error that says nothing about the real problem, which is that the
+        # curation matched no open PRs.
+        original_dir = os.getcwd()
+        try:
+            os.chdir(work_dir)
+            subprocess.run(["git", "branch", "-D", branch_name], capture_output=True)
+            subprocess.run(["git", "checkout", "-b", branch_name], check=True)
+        finally:
+            os.chdir(original_dir)
         # Push branch to fork (even if empty)
         push_branch_to_fork(branch_name)
         # Print current branch for verification
@@ -1389,6 +1804,10 @@ def main():
         return
     # Apply PRs to new branch
     applied, failed, skipped = apply_prs_to_branch(branch_name, prs)
+    # Persist who-lost-to-whom while it still exists (RFC-001 phase 1.1).
+    _order_suffix = pr_state.ORDER_SUFFIX_BY_NAME.get(merge_order_str, merge_order_str)
+    write_rivals(REPORTS_DIR, _order_suffix, PR_RIVALS)
+    write_pinned(REPORTS_DIR, _order_suffix, PR_PINNED)
     # Push branch to fork BEFORE running individual PR tests
     push_branch_to_fork(branch_name)
     # Clean up old branches after successfully pushing new one
@@ -1433,6 +1852,21 @@ def main():
         pr_conflict_data,
         merge_order=merge_order_str,
     )
+    # The manifest, always. Stage 0 owns it whether or not stage 2 runs, because
+    # stage 0 is the only place that knows what was actually built.
+    try:
+        write_state_snapshot(
+            applied,
+            failed,
+            skipped,
+            failed_pr_test_results,
+            merge_order_str,
+            len(prs),
+            base_commit=source_commit_hash,
+        )
+    except Exception as e:
+        # A manifest is downstream of the build, never a reason to fail one.
+        print(f"⚠️  Could not write state snapshot: {e}")
     print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
     print(
         f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}"

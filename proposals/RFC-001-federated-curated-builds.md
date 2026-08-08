@@ -36,8 +36,13 @@
 - [9. Trust and anti-gaming](#s9)
 - [10. Consumption: per-profile Blender feeds](#s10)
 - [11. Phasing](#s11)
-- [12. Risks and open questions](#s12)
-- [13. Summary](#s13)
+- [12. Implementation results](#s12)
+  - [12.1 What the current backlog looks like](#s12-1)
+  - [12.2 The anti-gaming rule, demonstrated](#s12-2)
+  - [12.3 What phase 0 changed about the plan](#s12-3)
+  - [12.4 Phase 1 results](#s12-4)
+- [13. Risks and open questions](#s13)
+- [14. Summary](#s14)
 
 ---
 
@@ -49,10 +54,11 @@ lands on the smallest group in any project. Everything below follows from that o
 observation, and none of it is specific to Bonsai — Bonsai is just where the numbers
 happen to be in front of us.
 
-Those numbers: the current build reports show ~760 PRs processed per run, ~485 of which
-merge cleanly. Every one is a change that *might* be worth merging upstream, and the
-only evidence a maintainer has for any of them is the PR diff and whatever comments it
-accumulated.
+Those numbers: as of 2026-08-06 a build run sees **847 open PRs**, of which 454 merge
+cleanly under every merge order, 181 merge under some and not others, and 212 merge
+under none ([§12](#s12)). Every one of the first two groups is a change that *might* be
+worth merging upstream, and the only evidence a maintainer has for any of them is the PR
+diff and whatever comments it accumulated.
 
 BonsaiPR already changed the question from *"should this be merged?"* to *"who wants to
 use this?"* — but it currently answers that question with a single, one-size-fits-all
@@ -96,7 +102,7 @@ Stating these up front because they are the failure modes this design is steerin
   proximity alone becomes harder to promote on.
 
   That is a feature, and it is also the design's most obvious way to go wrong, so it
-  is tracked as a risk in [§12](#s12) rather than claimed as a benefit.
+  is tracked as a risk in [§13](#s13) rather than claimed as a benefit.
 - **Not a fork of BonsaiPR.** Every phase below is backwards compatible with the
   canonical falken10vdl instance, and phases 0–1 require no change to how that
   instance runs.
@@ -178,10 +184,11 @@ maintains, forks, and is known for.
   "name": "architecture-production",
   "description": "Bonsai for production architectural documentation. Drawing, scheduling, and sheet workflows. No experimental UI.",
   "maintainer": "theoryshaw",
-  "inherits": "falken10vdl/all",
+  "inherits": "falken10vdl/everything",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
-    "branch": "v0.8.0"
+    "branch": "v0.8.0",
+    "commit": "644b92263d"
   },
   "select": {
     "mode": "allowlist",
@@ -219,6 +226,12 @@ Notes on the design:
   these three."* Without it, every curator has to restate 485 PR numbers and the file
   churns on every upstream change. Resolution is a shallow merge: the parent's
   `select` is the starting set, the child's `exclude` and `select` are applied on top.
+  **Exclusions union rather than replace** — a child saying "also not this one" must
+  never silently drop the parent's refusals, which is the one merge rule that would
+  quietly change a curation's meaning if it went the other way. An `owner/profile`
+  reference is federated and needs phase 2 to fetch; until then only the local part
+  resolves, with a warning, rather than silently building something other than what
+  the file asks for.
 - **`pin`** freezes a PR at a known-good head SHA. This is what makes a curated build
   a *stable product* rather than something that silently changes under the user when a
   contributor force-pushes. It is also, deliberately, a strong quality signal — a
@@ -234,6 +247,49 @@ Notes on the design:
   important field in the format and the argument for it is [§8.3](#s8-3): what a
   curator *refuses* is more architecturally informative than what they accept. A bare
   list of numbers throws that away. Mechanics in [§4.2](#s4-2).
+- **`base.commit` pins the base; omit it to follow the branch tip.** This is the
+  field with the largest measured effect on whether a curation builds at all, because
+  **upstream drift — not PR quality — is what breaks most merges.** A PR that applied
+  cleanly when written conflicts months later because the base moved under it.
+
+  Measured on the `openingdesign` curation (160 PRs) with `base_advisor.py`, against
+  successive `v0.8.0` commits:
+
+  | base | date | PRs landing | vs pinned |
+  |---|---|---:|---|
+  | pinned `644b92263d` | 2026-07-07 | **158/160** | — |
+  | `6ca8c8ac94` | 2026-07-15 | 151/160 | +0 / **−7** |
+  | `e52e5e2e58` | 2026-07-20 | 144/160 | +0 / **−14** |
+  | tip `048242783e` | 2026-08-05 | 141/160 | +0 / **−17** |
+
+  Note the `+0` in every row: advancing the base gained this curation *nothing* and
+  cost it up to 17 PRs — roughly 17 lost per month of drift. That asymmetry is
+  specific to an `allowlist` profile, and it is why pinning is close to free there:
+  every selected PR predates the pin, so a newer base can only take PRs away. The
+  usual objection — "you will miss newly-opened PRs" — only applies when *adding* one
+  to the curation, which is exactly the moment to re-run the advisor.
+
+  What pinning does cost is real, just elsewhere: the build stops receiving upstream
+  fixes, and rebase debt compounds until the pin advances. A persistent "lost" column
+  is also a list of PRs whose authors would benefit from rebasing — so it doubles as a
+  work queue rather than a reason to stay pinned indefinitely.
+
+  **`base.commit` and `pin` are one setting, not two.** `pin` holds commits validated
+  *against a particular base*, so the two must move together. Measured across the same
+  129 PRs:
+
+  | | validated `pin` | current heads |
+  |---|---:|---:|
+  | pinned base (2026-07-07) | **128/129** | 127/129 |
+  | `v0.8.0` tip | **113/129** | 116/129 |
+
+  Matched pairs win, and the mismatched cell is the worst of the four — a new base
+  carrying old pins lands *fewer* PRs than never having pinned at all, because the
+  validated commits are old code while their authors have been rebasing toward the new
+  base. Advancing `base.commit` must therefore clear or regenerate `pin` in the same
+  change. Consistency between the base and the PR commits matters more than the
+  recency of either, which is the same reason a distribution ships a *set* of versions
+  rather than the newest of everything.
 - **`prefer`** records *"when these two collide, take the first."* A pairwise
   preference is not a rejection of the loser, and collapsing it into one would be the
   fastest way to make the objection signal lie — see [§4.2](#s4-2). It is also directly
@@ -265,7 +321,7 @@ An exclusion is the highest-value thing in a profile ([§8.3](#s8-3)) and also t
 easiest to get wrong, so the mechanics matter more than the field does.
 
 **An exclusion only means anything relative to a baseline that would have included it.**
-If a profile says `inherits: falken10vdl/all` and then excludes #8123, that is a real
+If a profile says `inherits: falken10vdl/everything` and then excludes #8123, that is a real
 subtraction: the PR *was* in the set and the curator took it out. If a profile is a bare
 `allowlist` of 40 PRs, the other 445 are not rejected — they are absent, and were very
 likely never looked at. `exclude` on a profile with no `inherits` is therefore almost
@@ -309,6 +365,23 @@ moment they know precisely why. Reasons written later, in a batch, will be worth
 bonsaipr exclude 8206 --why regression --reason "crashes on IFC4X3 files"
 ```
 
+**What the loader warns about.** All of these are warnings, never failures — a curation
+that is slightly wrong should still build. They are the cases that would quietly corrupt
+the aggregate rather than break a run:
+
+| condition | why it matters |
+|---|---|
+| `exclude` on an allowlist with no `inherits` | asserts rejections nobody made |
+| unknown `why` category | carried, but silently absent from the design signal |
+| `since` that is not a sha | staleness can never be checked |
+| **a reason with no `since`** | **the objection can never go stale, so it is permanent** |
+| circular `inherits` | resolution would not terminate |
+
+The fourth one only became obvious while implementing: a curator who writes a careful
+architectural reason and omits `since` has, without meaning to, made a permanent public
+mark on someone's PR. Warning about it is the difference between the staleness rule
+being a design intention and being a thing that actually happens.
+
 **A preference is not a rejection.** "I took #7900 over #8123 because they collide" says
 nothing about #8123's quality — the curator may well like it. That belongs in `prefer`,
 as an edge between two PRs. Recording it as an exclusion would make every PR that merely
@@ -330,34 +403,51 @@ by **distilling one out of a branch that already works.**
 
 ### <a id="s5-1"></a>5.1 What a real poweruser branch actually contains
 
-Measured against `Ryan_build-0.8.6-alpha2607071335` (638 commits ahead of `v0.8.0`):
+Measured by `distill.py` against `Ryan_build-0.8.6-alpha2607071335`, base `v0.8.0` at
+`6f3acc84ee`, on 2026-08-06. (An earlier draft of this section quoted figures taken
+against a different `v0.8.0` tip; base branches move, so any measurement like this has
+to name the commit it was taken against.)
 
 | | count | |
 |---|---:|---|
-| commits ahead of base | 638 | |
+| commits ahead of base | 655 | |
 | merge commits | 183 | |
 | **first-parent merges** | **160** | deliberate integration acts by the curator |
-| — carrying `pr-NNNN/` in the subject | **158** | attributable to a PR by regex alone |
-| **first-parent non-merge commits** | **77** | the residue — the curator's own commits |
-| first-parent merges carrying a manual conflict resolution | ~12 (3 of 40 sampled) | |
+| — carrying `pr-NNNN/` in the subject | **158** | attributable by regex alone |
+| — attributed once the PR index is consulted | **160** | **100%** |
+| first-parent non-merge commits | 94 | |
+| — already absorbed upstream | 13 | dropped, not attributed |
+| — **residue** | **81** | the curator's own unpublished work |
+| first-parent merges needing a textual hand-resolution | **1** | |
+| off-path **ancestry resolutions** | **7** | see [§5.3](#s5-3) |
 
-Two findings from this that shape the design:
+Three findings from this that shape the design:
 
 **The branch is already a declarative curation.** 158 of 160 integration acts name their
 PR directly (`Merge remote-tracking branch 'pr-8353/fix-4790-regen-style'`). Attribution
-is a regex, not an inference problem. The remaining two name a fork and branch instead
-(`BIMvoice/fix-6508-geography-element-qto`), which resolves against the GitHub API's
-`head.label` field.
+is a regex, not an inference problem. The other two name a fork and branch
+(`BIMvoice/fix-6508-geography-element-qto`) and resolve against the PR index — which is
+just `state.asc.json`, already published every run, so the ladder needs no GitHub API at
+all. Combined attribution is 100%.
 
-**The residue is not glue — it is unpublished feature work.** I expected the 77 local
+**The residue is not glue — it is unpublished feature work.** I expected the local
 commits to be conflict fixups. They are not. They are substantive features, many
 already citing upstream issues: annotations shared across drawings (#9019), linked-model
 include/exclude filters, storey elevation sync (#8545), `MergeDuplicateContexts`,
-appended-asset style preservation (#8667, #8666). Some of these correspond to PRs the
-author opened elsewhere; some have never been offered upstream at all.
+appended-asset style preservation (#8667, #8666). Some correspond to PRs the author
+opened elsewhere; some have never been offered upstream at all. They cluster into 24
+candidate patch series, 13 of which hold more than one commit.
 
 That reframes this feature. It is not only an on-ramp to profiles — it is a way to find
 contributions that already exist and were never submitted.
+
+**Hand-resolved conflicts are far rarer than they look, and hide somewhere else.** This
+is a correction: an earlier draft claimed roughly twelve, extrapolated from a sample
+that used `git show --diff-merges=cc` as an evil-merge detector. That test is wrong —
+it also reports every ordinary automatic merge where two sides edited different regions
+of one file. Replaying all 160 merges with `git merge-tree --write-tree`, which performs
+a real three-way merge and reports genuine conflicts, gives **1**. See [§5.3](#s5-3) for
+where the other resolutions actually live.
 
 ### <a id="s5-2"></a>5.2 The `distill` command
 
@@ -409,33 +499,80 @@ fourth order:
 "order_seq": [8353, 8352, 8351, 8349, "…"]
 ```
 
-**The conflict resolutions.** `KNOWN_CONFLICT_RESOLUTIONS` in
+**The conflict resolutions — but not the ones this document originally expected.**
+`KNOWN_CONFLICT_RESOLUTIONS` in
 [`00_clone_merge_and_create_branch.py:83`](../automation/scripts/00_clone_merge_and_create_branch.py)
 is a hand-maintained table of *"when PR A conflicts with PR B in this file, take this
-side."* It currently has **exactly one entry**. A single poweruser branch contains
-roughly twelve — every merge that required manual resolution is a curator having
-already solved a conflict the automation will hit again next run.
+side."* It has **exactly one entry**, and the original hope here was that a poweruser
+branch would yield a dozen more.
 
-Where a resolution is wholesale (a file taken entirely from one side), `distill` can
-emit it directly in that table's existing `{pr: [(path, strategy)]}` shape. Where it is
-hunk-level, it emits a patch and flags it for human review rather than pretending it can
-be reduced to `theirs`/`ours`. This is the single highest-value output of the whole
-command, and it is a straight transfer of knowledge from a private branch into shared
-automation.
+Measured, it yields **one** textual hand-resolution, and that one is hunk-level rather
+than wholesale, so it does not reduce to `theirs`/`ours` and cannot be added to the table
+mechanically. As a source of entries for that particular table, distillation is close to
+a dead end.
+
+**The resolutions are real; they are just expressed as graph surgery.** Seven merges on
+this branch fix conflicts by *absorbing the rival PR's ancestry* — merging the colliding
+branch into the PR branch so the two stop conflicting at all:
+
+```
+Merge PR #7940 (Concatenate_selections) to resolve build conflicts
+Merge PR #7965 (inset_section_endpoints) ancestry to fix build conflict
+Absorb old-pd ancestry to fix build merge conflict with PR #7798
+```
+
+This is exactly what [`prompts/resolve conflicts with other PRs.md`](../prompts/resolve%20conflicts%20with%20other%20PRs.md)
+already tells contributors to do — *"the fix must land on the PR branch itself
+(ancestry-merge or rebase) so it resolves cleanly in future builds without touching
+`KNOWN_CONFLICT_RESOLUTIONS`."* The project's own documented practice steers people away
+from the table, which is why the table has one entry and why a branch following that
+practice yields no more.
+
+Two consequences:
+
+- **These merges are not on the first-parent path.** They sit on the PR branches, so a
+  first-parent-only scan — the obvious way to write `distill` — misses every one of
+  them. It has to scan the full merge graph for them separately.
+- **The knowledge they carry is a pair, not a file strategy**: *"#7798 needs old-pd's
+  ancestry"*, *"#8083 and this collide."* That is the same shape as
+  [`prefer`](#s4) and as the `rivals` signal, not the same shape as
+  `KNOWN_CONFLICT_RESOLUTIONS`. Harvesting it should feed those.
 
 **The non-overlap invariant — a resolution the tool can derive without human input.**
-The two categories above require judgement. There is a third that does not: if a file
+The categories above require judgement. There is one that does not: if a file
 was *not changed between the merge-base and the current base*, its correct post-rebase
 state is exactly the branch tip — not `--ours`, not `--theirs`, not a merge. This is
-derivable in full from `git diff` and costs no human time. `distill` should apply it as
-an automated pre-filter and report the split explicitly: *"N conflicts auto-resolved via
-non-overlap invariant; M overlap files require human review."* On the `parametric_dimensions`
-rebase this distinction separated 22 trivially deterministic resolutions from the 8
-files that actually needed a human decision.
+derivable in full from `git diff` and costs no human time. The tool should report the
+split explicitly: *"N conflicts auto-resolved via non-overlap invariant; M overlap files
+require human review."* On the `parametric_dimensions` rebase this distinction separated
+22 trivially deterministic resolutions from the 8 files that actually needed a human
+decision.
+
+**Measured, though, it does not pay off in the merge path — so it is not implemented.**
+Replaying every local branch against `v0.8.0` with `git merge-tree` (142 branches, 47 of
+which conflict, 482 conflicted files in total) puts only **14 files — 2.9% — in the
+non-overlap bucket**, and 13 of those 14 come from a single outlier branch. For 45 of
+the 47 conflicting branches it fires exactly zero times.
+
+That is the expected result on reflection: a three-way merge only conflicts in a file
+when *both* sides changed it, so if upstream never touched the file there is no conflict
+to resolve in the first place. The invariant is nearly vacuous when merging onto a base.
+
+Rebase is a genuinely different operation — it replays commit by commit, with each
+step's merge base being the commit's own parent, which is where cumulative context drift
+produces conflicts a whole-branch merge never sees. That is the case the 22/8 figure
+came from. It could not be re-measured here: `parametric_dimensions` now replays onto
+`v0.8.0` with zero conflicts across all 47 commits, because that rebase has since been
+done and the conflicted state no longer exists in any ref.
+
+So the invariant stays documented and unimplemented. The cheap way to settle it is to
+run the classifier in *report-only* mode during the next real rebase and see whether the
+non-overlap bucket is ever populated on live data, rather than building an auto-resolver
+against a payoff nobody has been able to reproduce.
 
 ### <a id="s5-4"></a>5.4 Residue handling, and the privacy default
 
-The 77 residue commits are clustered into candidate patch series — contiguous runs in
+The 81 residue commits are clustered into candidate patch series — contiguous runs in
 first-parent order with overlapping file sets — and each cluster is presented for a
 human decision:
 
@@ -481,7 +618,7 @@ visible and attributable, not to assert equivalence it cannot verify.
   heads can legitimately produce different behaviour. [§5.5](#s5-5) is the mitigation, not a
   guarantee.
 - **Attribution depends on the curator's habits.** `pr-NNNN/` is *one* person's naming
-  convention, and it is why the measured attribution rate is 98.75%. Someone who
+  convention, and it is why regex alone attributes 98.75% of its merges. Someone who
   cherry-picks without `-x` and without naming conventions falls through to patch-id,
   which conflict resolution defeats. `distill` should report its attribution rate per
   branch and say plainly when a branch is too unstructured to be worth distilling.
@@ -565,7 +702,7 @@ different peer lists.
       "id": "falken10vdl",
       "display_name": "BonsaiPR (canonical)",
       "reports_base": "https://raw.githubusercontent.com/falken10vdl/bonsaiPR/main/automation/reports/",
-      "profiles": ["all"],
+      "profiles": ["everything"],
       "role": "anchor"
     },
     {
@@ -622,13 +759,31 @@ math — a signal that gets over-read is worse than no signal.
 | `objections` | those exclusions' reasons, grouped by `why` category and recurrence | *why* they said no — see [§8.3](#s8-3) | consensus; two people can object for opposite reasons |
 | `lost_to` | PRs that curators explicitly `prefer` over this one | a curatorial choice between two options | a judgment on this PR's quality |
 
-`streak` and `rivals` are derivable from data already being logged —
-`events.<order>.jsonl` and the *"Broken by"* / *"Conflicting files"* columns the report
-already emits.
+`streak` is derivable from data already being logged. `rivals` is **not** — see
+[§12](#s12); the reports record that a conflict occurred and which orders a PR merges
+under, but never which PR won the race, so the pairing cannot be reconstructed after
+the fact.
+
+**`streak` and `churn` must be computed against a single lineage.** Each merge order is
+an independent history — the same PR can be merged in `asc` and conflict-skipped in
+`desc` on the same run — so interleaving two orders' event logs produces a status
+history that never happened, and pooling their build timestamps counts every run once
+per order. Phase 0 quotes both against `asc`, which is the canonical lineage elsewhere
+in this pipeline. This is easy to get wrong and expensive to notice: the first
+implementation did exactly this and reported 376-build streaks against a history
+containing 140 builds.
 
 Note the asymmetry between `blocked_by` and `excluded_by`: the first is the automation
 failing to merge something a curator wanted, the second is a curator not wanting it.
 Conflating them would be the single easiest way to make this whole aggregate lie.
+
+**Every signal above is relative to a base commit.** Once profiles can pin a base
+([§4](#s4)), "#7798 merged for A but not for B" may say nothing about #7798 and
+everything about A and B standing on bases a month apart — the measurements there show
+a 17-PR swing from drift alone. Manifests therefore record `base_commit`, not just a
+branch name, and an aggregator that compares publishers without accounting for it is
+comparing things that are not comparable. Grouping by base, or reporting the spread
+alongside the count, is not optional refinement; it is what keeps the number honest.
 
 `pinned_by` counts only pins whose SHA is currently reachable from the PR's head ref or
 any public ancestor thereof. A force-pushed PR branch orphans the old SHA; a broken pin
@@ -792,8 +947,9 @@ falken10vdl to change how the canonical instance runs.
 
 | Phase | Deliverable | Requires |
 |---|---|---|
-| **0** | `federate.py` run over the existing `state.{asc,desc,upd}.json` as three synthetic publishers. Proves the signal math and the rendering against real data. | nothing |
-| **1** | Profile format + `load_profile()` + `.env` compat shim. Canonical instance expressible as `everything`. | small change at `00_clone_…py:41-62` |
+| **0** ✅ | `federate.py` run over the existing `state.{asc,desc,upd}.json` as three synthetic publishers. Proves the signal math and the rendering against real data. **Done — results in [§12](#s12).** | nothing |
+| **1** ✅ | Profile format + `load_profile()` + `.env` compat shim. Canonical instance expressible as `everything`. **Done — `bonsaipr_profile.py`, `profiles/everything.json`; notes in [§12.4](#s12-4).** | small change at `00_clone_…py:41-62` |
+| **1.1** ✅ | Record the *winning* PR number when a merge conflict skips a PR, so `rivals` becomes computable. Discovered in phase 0 ([§12](#s12)); cheap now, unrecoverable retroactively. **Done — `reports/rivals.<order>.json`.** | small change at `00_clone_…py` |
 | **1.5** | `distill` ([§5](#s5)) — attribution ladder, provenance file, residue clustering, harvested conflict resolutions. Run against `Ryan_build-0.8.6-…` as the first real input. | phase 1 |
 | **2** | Manifest schema 2 (`publisher` / `profile` blocks) + `peers.json` + real cross-publisher aggregation. | small change at `02_upload_…py:1118` |
 | **3** | Per-profile `index.json` feeds. | `update_index_json.py` |
@@ -805,12 +961,109 @@ be written and run today against data already in the repo.
 
 Phase 1.5 is arguably the one that settles whether *anyone will participate*, and it has
 its own standalone payoff regardless of federation: even if no one ever publishes a
-manifest, harvesting twelve conflict resolutions and surfacing a curator's unsubmitted
-features are worth the build on their own.
+manifest, surfacing 81 commits of a curator's unsubmitted feature work is worth the
+build on its own.
 
 ---
 
-## <a id="s12"></a>12. Risks and open questions
+## <a id="s12"></a>12. Implementation results
+
+`automation/scripts/federate.py` implements the aggregation math and its rendering. It
+touches nothing in the build pipeline, reads only files the repo already produces, and
+runs in about two seconds. Run it with `python federate.py digest` from
+`automation/scripts/`.
+
+### <a id="s12-1"></a>12.1 What the current backlog looks like
+
+Against the snapshots of 2026-08-06:
+
+```
+847 PRs seen  =  454 merged everywhere  +  181 divergent  +  212 merged by nobody
+```
+
+**181 of 847 — 21% of the open backlog — is divergent**: merged under one merge order
+and blocked under another. That number is the best single argument in this document.
+It is not a hypothetical about future curators; it is a measurement saying that a fifth
+of all open PRs are already sensitive to the order they are integrated in, and that this
+fact is currently scattered across three release pages and visible to nobody.
+
+Under real federation the identical computation reads *"some curators can carry this and
+others cannot"* — which is exactly the question a maintainer wants answered before
+merging.
+
+Streak and churn work as designed: 549 PRs carry a continuous-merge streak, the longest
+running 140 builds across 18.4 days, and the most volatile PR has changed bucket 36
+times.
+
+### <a id="s12-2"></a>12.2 The anti-gaming rule, demonstrated
+
+`federate.py --real-publishers` stops promoting merge orders to publishers and counts
+the single real one. **`stable` drops from 454 to 0.**
+
+That is not a bug — it is [§9](#s9)'s central rule executing. `stable` requires
+agreement from at least two *independent publishers*, and one person running three merge
+orders is one publisher. The rule is therefore not an aspiration in a document; it is a
+runnable assertion, and the two modes differ by exactly the amount the rule is supposed
+to bite.
+
+### <a id="s12-3"></a>12.3 What phase 0 changed about the plan
+
+- **`rivals` cannot be computed, and the data to compute it is being thrown away.** The
+  reports record *that* a PR was conflict-skipped and which orders it merges under, but
+  never *which PR beat it*. That pairing is one of the more actionable signals in
+  [§8.1](#s8-1) — it names a specific, fixable collision — and it is unrecoverable
+  retroactively. Recording the winner at conflict time is small and should land early,
+  hence phase 1.1.
+- **Signal correctness is lineage-sensitive** in a way that is not obvious and fails
+  quietly. See [§8.1](#s8-1); the first implementation pooled all three orders and
+  produced 376-build streaks against a 140-build history.
+- **"Unavailable" has to be a first-class output.** `federation.json` carries an
+  `unavailable` block naming every signal it cannot compute and why, so a consumer can
+  distinguish *zero* from *unknown*. Without it, a phase-0 aggregate looks like every PR
+  has zero objections, which is false in the most misleading possible direction.
+
+Nothing in phase 0 validates the parts of this proposal that depend on people. It
+proves the arithmetic and the rendering; whether curators materialise, and whether they
+write reasons, remains entirely untested.
+
+### <a id="s12-4"></a>12.4 Phase 1 results
+
+`bonsaipr_profile.py` plus `profiles/everything.json`. The claim in
+[§4.1](#s4-1) — that nobody is forced to migrate — is now verified rather than
+asserted, against the real merge script:
+
+| configuration | `users` | `excluded_prs` | `SKIP_CPP_PRS` |
+|---|---|---|---|
+| nothing set | `['']` | `[]` | `False` |
+| legacy `.env` vars | `['theoryshaw', 'falken10vdl']` | `[7098, 8123]` | `True` |
+| `BONSAIPR_PROFILE` set | `['']` | 3, with reasons | `True` |
+
+The first row is the important one: with no profile configured the canonical instance
+produces byte-identical curation decisions to before. The merge script's ~950 lines
+downstream were not touched — a profile only changes how those three values are
+*decided*.
+
+Two things the implementation had to settle that this document had left ambiguous:
+
+- **Inherited exclusions union rather than replace** ([§4](#s4)). The other reading
+  would let a child profile silently discard its parent's refusals, which is a change
+  of meaning disguised as a merge rule.
+- **A reason without a `since` sha is a permanent objection.** Now warned about
+  ([§4.2](#s4-2)). This is the failure mode most likely to happen by accident and it
+  lands on a contributor rather than on the curator who caused it.
+
+Phase 1.1 records `reports/rivals.<order>.json` as a sidecar rather than extending
+`state.<order>.json`, because the state snapshot is parsed back out of the *rendered
+report* by `02_upload_to_falken10vdl.py` — extending it would have meant changing the
+report format in the same pass. [§6](#s6)'s manifest can absorb it later.
+
+**Nothing here is retroactive.** Rival pairings start accumulating on the next real
+build run; every run before that lost them permanently, which was the argument for
+landing phase 1.1 early rather than when a later phase wanted the signal.
+
+---
+
+## <a id="s13"></a>13. Risks and open questions
 
 **Risks**
 
@@ -894,7 +1147,7 @@ features are worth the build on their own.
 
 ---
 
-## <a id="s13"></a>13. Summary
+## <a id="s14"></a>14. Summary
 
 Three artifacts — a **profile** (curation as a committed file), a **manifest** (a build
 declaring who made it and from what), and a **peer list** (who you aggregate) — plus
@@ -915,8 +1168,7 @@ same PR for the same stated reason is a design principle being discovered rather
 decreed, and it costs nobody a meeting.
 
 The measurement in [§5.1](#s5-1) is the part I would point at first. A single poweruser branch
-turned out to be 98.75% mechanically attributable to open PRs, to carry roughly twelve
-hand-made conflict resolutions against a shared table that currently holds one, and to
-contain 77 commits of real feature work that upstream has never seen. Whatever happens
+turned out to be 100% mechanically attributable to open PRs, and to contain 81 commits
+of real feature work that upstream has never seen. Whatever happens
 to the federation idea, that branch — and every branch like it — is holding
 information the project could be using today.
