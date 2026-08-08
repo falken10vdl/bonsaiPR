@@ -1,7 +1,7 @@
 # RFC-001 — federated curated builds
 
 **Branch:** `feat/rfc-001-federation` · **PR:** falken10vdl/bonsaiPR#11 (draft)
-**Status as of:** 2026-08-07
+**Status as of:** 2026-08-08
 
 The **engineering log for this subsystem** — permanent, and rewritten as things
 change, rather than a branch note deleted when its PR merges. Federation will
@@ -26,12 +26,17 @@ bit us, and what is still open.
 | 1.1 | record which PR won a merge race → `rivals.<order>.json` | done |
 | 1.5 | `distill.py` — recover a profile from a build branch | done |
 | — | base pinning + `base_advisor.py` | done |
-| 2 | `peers.json`, `publisher` block, HTTP peer fetch | **next** |
-| 3 | per-profile `index.json` feeds | not started |
-| 4 / 5 | maintainer digest / attestations | need buy-in |
+| 2 | `peers.json`, `publisher` block, HTTP peer fetch | done |
+| 3 | per-profile `index.json` feeds | done |
+| — | pin fallback: build a validated commit when a PR's head breaks | done |
+| — | manifest consolidated onto stage 0 | done |
+| 4 / 5 | maintainer digest / attestations | **need buy-in — nothing to build until someone asks** |
 
-Live instance: `OpeningDesign/bonsaiPR`, profile `openingdesign` (160 PRs,
-pinned base `644b92263d`). Publishes `state.rec.json`, `rivals.rec.json`.
+Live instance: `OpeningDesign/bonsaiPR`, profile `openingdesign` (160 PRs, 160 pins,
+pinned base `644b92263d`). Scheduled hourly (`manifest-only`) and daily (`full`).
+Latest: **128 of 129 merged**, 11 via pinned fallback. Publishes
+`state.rec.json`, `events.rec.jsonl`, `rivals.rec.json`, `pinned.rec.json`,
+`delta.rec.md`, and a curated Blender feed at `profiles/openingdesign/index.json`.
 
 ---
 
@@ -80,11 +85,11 @@ different merge order. Neither would have been caught by exit codes.
 
 ## Open threads
 
-- **Manifest ownership is split.** Stage 0 writes `state.<order>.json` when
-  `BONSAIPR_WRITE_STATE=1`; stage 2 writes it otherwise, and reconstructs the
-  same four buckets by parsing its own rendered report. Phase 2 should
-  consolidate on stage 0 and leave stage 2 to render a delta it is handed. The
-  gating exists only so the two never both write in one run.
+- ~~Manifest ownership is split.~~ **Resolved.** Stage 0 owns it and hands stage 2
+  `delta.<order>.md` for the release body; stage 2 falls back to its old path only
+  when that file is absent. It cost three published untruths before being fixed —
+  missing `base_commit`, and pinned builds recorded at the PR's tip — each
+  invisible until a build shipped something false.
 - **No way to carry a rebased copy of someone else's PR.** An abandoned PR can
   only be excluded or pinned around. `pin` already maps a PR to a head sha and
   would only need to accept a ref in your own fork. Deliberately unbuilt until a
@@ -97,11 +102,14 @@ different merge order. Neither would have been caught by exit codes.
 
 ## Untested
 
-- Phase 2 end to end (nothing fetches a peer manifest over HTTP yet).
-- A `full` run under the pinned base. Expect ~158/160 rather than 114/129, and a
-  `[rec]`-labelled release rather than `[upd]`.
-- The scheduled trigger. Still commented out in the workflow; every run so far
-  has been manual.
+- **A second *curator*.** The federation aggregates two publishers, but one is an
+  anchor. Adoption signals (`selected_by`, `excluded_by`, `objections`) stay
+  near-meaningless until somebody else publishes a selective profile — §3.4's
+  caveat, still unresolved by anything built so far.
+- **A pinned commit that has been force-pushed away.** Handled with a warning, never
+  actually observed.
+- **Blender installing the curated feed.** The feed is published and well-formed; no
+  one has subscribed to it and installed from it.
 
 ---
 

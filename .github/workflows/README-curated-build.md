@@ -93,8 +93,15 @@ your profile merges at all before spending an hour on packaging.
 
 Once that succeeds, run again with `full`.
 
-The schedule is commented out in the workflow. Enable it only after a manual run
-has worked end to end.
+The workflow is scheduled: **hourly `manifest-only`** (builds the run-to-run
+history federation aggregates — nothing else produces it, and it cannot be
+back-filled) and **daily `full`** (releases prune to the most recent 30, so daily
+keeps a month of installable builds where hourly would keep 30 hours).
+
+`inputs` is empty on a schedule trigger, so profile and stages are resolved in the
+workflow's `env` block with cron-aware defaults. Change the profile a cron uses by
+setting the `BONSAIPR_SCHEDULED_PROFILE` repository variable — not by editing the
+dispatch defaults, which schedules ignore.
 
 ---
 
