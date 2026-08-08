@@ -370,6 +370,7 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
     absorbed = upstream_absorbed(repo, base, branch)
 
     order_seq = []           # PR numbers, in the order the curator merged them
+    validated = {}           # PR number -> the head sha the curator actually merged
     provenance = []          # one row per first-parent commit
     residue = []
     probable = []
@@ -394,6 +395,13 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
                 row["note"] = "not in PR index (closed, merged upstream, or private)"
             if int(pr) not in order_seq:
                 order_seq.append(int(pr))
+            # The commit the curator actually merged: the merge's second parent.
+            # Recording only PR numbers means a replay fetches whatever the head
+            # is on the day it runs, which is a different commit from the one
+            # that was validated - the base ends up pinned while the PRs float.
+            if c["is_merge"] and len(c["parents"]) > 1:
+                validated[int(pr)] = c["parents"][1]
+                row["merged_head"] = c["parents"][1][:12]
             if confidence == PROBABLE:
                 probable.append(row)
         elif c["is_merge"]:
@@ -450,6 +458,7 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
         "attributed_merges": attributed_merges,
         "attribution_rate": (attributed_merges / len(merges)) if merges else 0.0,
         "order_seq": order_seq,
+        "validated": validated,
         "provenance": provenance,
         "residue": residue,
         "clusters": clusters,
@@ -501,6 +510,18 @@ def to_profile(result, name, maintainer=""):
             # No `exclude`: RFC-001 s5.2. Absence from a branch is not rejection.
             ("orders", ["recorded"]),
             ("order_seq", list(result["order_seq"])),
+            # `pin` is a FALLBACK, not a freeze (RFC-001 s4). The build uses each
+            # PR's current head so authors' fixes keep arriving, and drops back to
+            # the commit the curator validated only when the current head will not
+            # merge. Pinning outright would be reproducible and stagnant; pinning
+            # nothing is what left 11 of 12 failures traceable to head drift.
+            (
+                "pin",
+                {
+                    str(n): sha
+                    for n, sha in sorted((result.get("validated") or {}).items())
+                },
+            ),
         ]
     )
 
