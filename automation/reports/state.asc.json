@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 133,
-    "merged": 551,
-    "skipped_conflict": 112,
+    "failed": 130,
+    "merged": 550,
+    "skipped_conflict": 116,
     "skipped_draft": 54,
     "total": 850
   },
-  "generated_at": "2026-08-08T13:11:30Z",
+  "generated_at": "2026-08-08T17:11:29Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3213,8 +3213,7 @@
       "author": "BIMvoice",
       "branch": "fix-3096-git-describe-titleblock",
       "head": "d15a0e2",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: expose git describe string to titleblock templates",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8652"
     },
@@ -3222,8 +3221,7 @@
       "author": "BIMvoice",
       "branch": "fix-3995-curtain-wall-boundary",
       "head": "0593a84",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: let standalone IfcCurtainWall bound spaces and boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8653"
     },
@@ -3239,8 +3237,7 @@
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
       "head": "6ca69d2",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
@@ -6770,7 +6767,7 @@
     "9254": {
       "author": "BIMvoice",
       "branch": "perf/9247-append-asset-queue",
-      "head": "3071dcc",
+      "head": "5f5c386",
       "status": "merged",
       "title": "append_asset: pop the subelement queue in O(1) (#9247)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9254"
@@ -6779,7 +6776,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-port-append-proxy",
       "head": "618f142",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "append_asset: IFC2X3 MEP ports are silently dropped (#9247)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9255"
     },
@@ -6945,8 +6942,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608081435",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608081435"
+    "tag": "v0.8.6-alpha2608081835",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608081835"
   },
   "schema": 1
 }

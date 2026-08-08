@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 541,
-    "skipped_conflict": 125,
+    "merged": 540,
+    "skipped_conflict": 126,
     "skipped_draft": 54,
     "total": 850
   },
-  "generated_at": "2026-08-08T14:26:09Z",
+  "generated_at": "2026-08-08T18:26:09Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6767,15 +6767,15 @@
     "9254": {
       "author": "BIMvoice",
       "branch": "perf/9247-append-asset-queue",
-      "head": "3071dcc",
-      "status": "merged",
+      "head": "5f5c386",
+      "status": "skipped_conflict",
       "title": "append_asset: pop the subelement queue in O(1) (#9247)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9254"
     },
     "9255": {
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-port-append-proxy",
-      "head": "618f142",
+      "head": "bab4ca6",
       "status": "merged",
       "title": "append_asset: IFC2X3 MEP ports are silently dropped (#9247)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9255"
@@ -6942,8 +6942,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608081549",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608081549"
+    "tag": "v0.8.6-alpha2608081949",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608081949"
   },
   "schema": 1
 }
