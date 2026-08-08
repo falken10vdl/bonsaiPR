@@ -50,6 +50,7 @@ import os
 import re
 import sys
 import json
+import hashlib
 import argparse
 
 SCHEMA_VERSION = 1
@@ -163,9 +164,10 @@ def _normalize_pins(raw):
 class Profile:
     """A resolved curation, plus the compat surface the merge script expects."""
 
-    def __init__(self, data, source="(env)", warnings=None):
+    def __init__(self, data, source="(env)", warnings=None, path=None):
         self.data = data or {}
         self.source = source
+        self.path = path
         self.warnings = list(warnings or [])
 
         select = self.data.get("select") or {}
@@ -237,6 +239,37 @@ class Profile:
         if self.select_authors and author and author not in self.select_authors:
             return False
         return True
+
+    def digest(self):
+        """sha256 of the profile file, or None for the implicit env profile.
+
+        Lets a consumer check that a manifest claiming profile X was built from
+        the X that is published, rather than taking the name on trust.
+        """
+        if not self.path or not os.path.exists(self.path):
+            return None
+        h = hashlib.sha256()
+        with open(self.path, "rb") as f:
+            for chunk in iter(lambda: f.read(65536), b""):
+                h.update(chunk)
+        return "sha256:" + h.hexdigest()
+
+    def manifest_block(self, repo_url=None):
+        """The `profile` block for a published manifest (RFC-001 s6)."""
+        return {
+            "name": self.name,
+            "mode": self.mode,
+            "selected": len(self.select_prs) if self.mode == MODE_ALLOWLIST else None,
+            "digest": self.digest(),
+            "base_branch": self.base_branch,
+            "base_commit": self.base_commit,
+            "pinned_prs": len(self.pins),
+            "url": (
+                f"{repo_url.rstrip('/')}/blob/main/profiles/{self.name}.json"
+                if repo_url and self.path
+                else None
+            ),
+        }
 
     def architectural_objections(self):
         """Exclusions that state a design principle (RFC-001 s8.3)."""
@@ -448,7 +481,10 @@ def load_profile(name=None, profiles_dir=None, env=None, verbose=True):
     else:
         data, warnings = resolve(name, profiles_dir)
         warnings = warnings + validate(data, source=f"profiles/{name}.json")
-        profile = Profile(data, source=f"profiles/{name}.json", warnings=warnings)
+        profile = Profile(
+            data, source=f"profiles/{name}.json", warnings=warnings,
+            path=_profile_path(name, profiles_dir),
+        )
 
     if verbose:
         print(f"📋 Curation: {profile.summary()}  [{profile.source}]")

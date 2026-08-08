@@ -40,7 +40,10 @@ import json
 import subprocess
 import datetime
 
-SCHEMA_VERSION = 1
+# 2 adds `publisher` and `profile`: who produced this manifest and under which
+# curation (RFC-001 s6). Purely additive - a schema-1 reader ignores both, and
+# every schema-1 field keeps its meaning.
+SCHEMA_VERSION = 2
 
 # Status buckets. These are the only values that appear in state["prs"][n]["status"].
 STATUS_MERGED = "merged"
@@ -124,6 +127,8 @@ def build_state(
     total_prs=None,
     release_tag=None,
     release_url=None,
+    publisher=None,
+    profile=None,
 ):
     """Assemble a normalized, sorted snapshot from the parsed PR lists.
 
@@ -181,6 +186,13 @@ def build_state(
         # things at different bases, so an aggregate that compares publishers
         # without knowing this is comparing things that are not comparable.
         "base_commit": base_commit,
+        # Who produced this, and under what curation. A peer needs both: without
+        # `publisher` an aggregate cannot count distinct publishers (RFC-001 s9,
+        # the rule that stops one person being fifty), and without `profile` it
+        # cannot tell a deliberate selection from an everything-build, which is
+        # the difference between evidence and noise (s3.4).
+        "publisher": publisher or None,
+        "profile": profile or None,
         "release": {"tag": release_tag, "url": release_url},
         "counts": counts,
         # Sorted numerically now so the committed file is diff-stable.
