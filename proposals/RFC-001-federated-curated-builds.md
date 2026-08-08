@@ -273,6 +273,23 @@ Notes on the design:
   fixes, and rebase debt compounds until the pin advances. A persistent "lost" column
   is also a list of PRs whose authors would benefit from rebasing — so it doubles as a
   work queue rather than a reason to stay pinned indefinitely.
+
+  **`base.commit` and `pin` are one setting, not two.** `pin` holds commits validated
+  *against a particular base*, so the two must move together. Measured across the same
+  129 PRs:
+
+  | | validated `pin` | current heads |
+  |---|---:|---:|
+  | pinned base (2026-07-07) | **128/129** | 127/129 |
+  | `v0.8.0` tip | **113/129** | 116/129 |
+
+  Matched pairs win, and the mismatched cell is the worst of the four — a new base
+  carrying old pins lands *fewer* PRs than never having pinned at all, because the
+  validated commits are old code while their authors have been rebasing toward the new
+  base. Advancing `base.commit` must therefore clear or regenerate `pin` in the same
+  change. Consistency between the base and the PR commits matters more than the
+  recency of either, which is the same reason a distribution ships a *set* of versions
+  rather than the newest of everything.
 - **`prefer`** records *"when these two collide, take the first."* A pairwise
   preference is not a rejection of the loser, and collapsing it into one would be the
   fastest way to make the objection signal lie — see [§4.2](#s4-2). It is also directly

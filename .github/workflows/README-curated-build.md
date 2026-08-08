@@ -148,6 +148,10 @@ section is for.
 
 ### 6.1 Advancing the pin
 
+The base and the PR pins move **together** — see the warning at step 6 before
+starting, because advancing one without the other makes the build worse than
+leaving both alone.
+
 **Step 1 — measure first.**
 
 ```bash
@@ -189,8 +193,41 @@ usefulness:
 3. **Stay pinned** a while longer, if the PR matters more than the upstream fixes
    you are forgoing.
 
-**Step 6 — advance the pin and rebuild.** Edit `base.commit`, commit the
-profile, and run the workflow. Confirm the landing count went *up*.
+**Step 6 — advance the base and clear the PR pins together.** Edit
+`base.commit`, **and empty or regenerate `pin`**, then rebuild. Confirm the
+landing count went *up*.
+
+> ⚠️ **Do not advance the base while carrying the old PR pins.** They are not
+> independent settings. `pin` holds the commits a curator validated *against the
+> old base*; replaying that old code onto a newer base conflicts more, not less,
+> while the PR authors have generally been rebasing their heads *toward* the new
+> base. Measured across 129 PRs:
+>
+> | | validated pins | current heads |
+> |---|---:|---:|
+> | **pinned base** (2026-07-07) | **128/129** | 127/129 |
+> | **`v0.8.0` tip** | **113/129** | **116/129** |
+>
+> Matched pairs win. Old base with old pins lands 128; new base with current
+> heads lands 116; new base with *old* pins lands 113 — worse than never having
+> pinned anything. Consistency between the base and the PR commits matters more
+> than the recency of either.
+>
+> (These are isolated merges of each PR against the base, so they measure base
+> compatibility, not a build total — a real build also loses PRs to PR-vs-PR
+> races. The comparison between cells is what counts.)
+
+So when you advance:
+
+```bash
+# regenerate the profile against the new base — this re-derives `pin`
+python distill.py profile --branch <your-build-branch> --repo /path/to/IfcOpenShell \
+  --name <profile> --maintainer <you>
+```
+
+or, if you are not re-distilling, set `"pin": {}` by hand and let every PR build
+at its current head. Re-pinning then happens naturally the next time you
+hand-validate a branch.
 
 ### 6.2 A gap worth knowing about
 
