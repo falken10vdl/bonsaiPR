@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 129,
-    "merged": 550,
-    "skipped_conflict": 116,
+    "failed": 133,
+    "merged": 551,
+    "skipped_conflict": 112,
     "skipped_draft": 54,
-    "total": 849
+    "total": 850
   },
-  "generated_at": "2026-08-07T18:11:52Z",
+  "generated_at": "2026-08-08T00:12:09Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -4235,7 +4235,8 @@
       "author": "BIMvoice",
       "branch": "alignment-6890-csv-spirals-cant",
       "head": "c36fe0a",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "alignment: support spiral transition curves and cant in the PI-method CSV import (#6890)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8833"
     },
@@ -5873,7 +5874,8 @@
       "author": "BIMvoice",
       "branch": "fix/cost-product-quantity-names-intersection",
       "head": "3a82086",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "util.cost: stop get_product_quantity_names resurrecting names after an empty intersection",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9105"
     },
@@ -5921,7 +5923,8 @@
       "author": "BIMvoice",
       "branch": "ifc5d-wrong-number-audit",
       "head": "f8b1fcb",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifc5d: fix four wrong-number defects in cost export, cost import and weight quantities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
     },
@@ -5937,7 +5940,8 @@
       "author": "BIMvoice",
       "branch": "ifcclash-ifccsv-audit-fixes",
       "head": "2656842",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcclash/ifccsv: stop dropping a real clash, a wrong summary total, and silently ignored Country on reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9116"
     },
@@ -6066,7 +6070,7 @@
       "author": "BIMvoice",
       "branch": "docs/api-param-name-mismatches",
       "head": "27e225a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "docs: fix 15 :param: names that no longer match the real signature, and freeze it with a test",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9137"
     },
@@ -6582,14 +6586,6 @@
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
     },
-    "9208": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ty-0.0.64",
-      "head": "ef10e2d",
-      "status": "merged",
-      "title": "build(deps): bump ty from 0.0.63 to 0.0.64",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9208"
-    },
     "9209": {
       "author": "dependabot[bot]",
       "branch": "dependabot/github_actions/docker/login-action-4.5.2",
@@ -6930,11 +6926,27 @@
       "status": "merged",
       "title": "Add scripts entrypoints",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9277"
+    },
+    "9279": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.16.1",
+      "head": "5bba21a",
+      "status": "merged",
+      "title": "build(deps): bump ruff from 0.16.0 to 0.16.1",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9279"
+    },
+    "9280": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.66",
+      "head": "4c9e2ad",
+      "status": "merged",
+      "title": "build(deps): bump ty from 0.0.63 to 0.0.66",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9280"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608071935",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608071935"
+    "tag": "v0.8.6-alpha2608080135",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608080135"
   },
   "schema": 1
 }

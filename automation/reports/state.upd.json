@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 129,
-    "merged": 540,
-    "skipped_conflict": 126,
+    "failed": 130,
+    "merged": 541,
+    "skipped_conflict": 125,
     "skipped_draft": 54,
-    "total": 849
+    "total": 850
   },
-  "generated_at": "2026-08-07T19:26:57Z",
+  "generated_at": "2026-08-08T01:26:23Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -4235,7 +4235,8 @@
       "author": "BIMvoice",
       "branch": "alignment-6890-csv-spirals-cant",
       "head": "c36fe0a",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "alignment: support spiral transition curves and cant in the PI-method CSV import (#6890)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8833"
     },
@@ -6582,14 +6583,6 @@
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
     },
-    "9208": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ty-0.0.64",
-      "head": "ef10e2d",
-      "status": "merged",
-      "title": "build(deps): bump ty from 0.0.63 to 0.0.64",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9208"
-    },
     "9209": {
       "author": "dependabot[bot]",
       "branch": "dependabot/github_actions/docker/login-action-4.5.2",
@@ -6930,11 +6923,27 @@
       "status": "merged",
       "title": "Add scripts entrypoints",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9277"
+    },
+    "9279": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.16.1",
+      "head": "5bba21a",
+      "status": "merged",
+      "title": "build(deps): bump ruff from 0.16.0 to 0.16.1",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9279"
+    },
+    "9280": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.66",
+      "head": "4c9e2ad",
+      "status": "merged",
+      "title": "build(deps): bump ty from 0.0.63 to 0.0.66",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9280"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608072050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608072050"
+    "tag": "v0.8.6-alpha2608080250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608080250"
   },
   "schema": 1
 }
