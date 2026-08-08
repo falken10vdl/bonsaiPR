@@ -576,6 +576,9 @@ def apply_prs_to_branch(branch_name, prs):
     # path -> PR number that last touched it on this branch. Built as we go,
     # which makes attributing a conflict exact rather than a `git log` guess.
     file_owner = {}
+    # PR number -> validated sha used because the current head would not merge.
+    # Reported at the end: a PR whose head has broken is a nudge worth sending.
+    pinned_fallbacks = {}
     PR_RIVALS.clear()
 
     try:
@@ -652,6 +655,7 @@ def apply_prs_to_branch(branch_name, prs):
 
             pr_head_ref = pr["head"]["ref"]
             pr_head_repo = pr["head"]["repo"]["clone_url"]
+            pr_head_sha = pr["head"].get("sha")
 
             # Additional safety check for required fields
             if not pr_head_ref or not pr_head_repo:
@@ -702,6 +706,40 @@ def apply_prs_to_branch(branch_name, prs):
                     text=True,
                 )
 
+                if merge_result.returncode != 0 and CURATION.pins.get(pr_number):
+                    # The current head does not merge, but the curator recorded a
+                    # commit of this PR that did. Fall back to it rather than
+                    # dropping the PR: `pin` is a fallback, not a freeze (RFC-001
+                    # §4), so authors' newer work is always tried first and only
+                    # a genuinely broken head costs the PR its place.
+                    pinned = CURATION.pins[pr_number]
+                    subprocess.run(["git", "merge", "--abort"], capture_output=True)
+                    fetch_pin = subprocess.run(
+                        ["git", "fetch", remote_name, pinned],
+                        capture_output=True, text=True,
+                    )
+                    if fetch_pin.returncode == 0:
+                        retry = subprocess.run(
+                            ["git", "merge", "--no-ff", "--no-edit", "FETCH_HEAD"],
+                            capture_output=True, text=True,
+                        )
+                        if retry.returncode == 0:
+                            print(
+                                f"📌 PR #{pr_number}: head {pr_head_sha[:7] if pr_head_sha else '?'} "
+                                f"does not merge; used curator-validated {pinned[:7]}"
+                            )
+                            pinned_fallbacks[pr_number] = pinned
+                            merge_result = retry
+                        else:
+                            subprocess.run(
+                                ["git", "merge", "--abort"], capture_output=True
+                            )
+                    else:
+                        print(
+                            f"   ⚠️  PR #{pr_number}: pinned commit {pinned[:7]} "
+                            f"could not be fetched (force-pushed away?)"
+                        )
+
                 if merge_result.returncode == 0:
                     print(f"✅ Successfully applied PR #{pr_number}")
                     applied.append(pr)
@@ -746,6 +784,13 @@ def apply_prs_to_branch(branch_name, prs):
                 )
 
         print(f"\nPR Application Summary:")
+        if pinned_fallbacks:
+            print(
+                f"📌 Used curator-validated commits for {len(pinned_fallbacks)} PR(s) "
+                f"whose current head no longer merges:"
+            )
+            for n, sha in sorted(pinned_fallbacks.items()):
+                print(f"     #{n} -> {sha[:7]}")
         print(f"✅ Successfully applied: {len(applied)} PRs")
         print(f"❌ Failed to apply: {len(failed)} PRs")
         print(f"⚠️  Skipped (draft/repo issues): {len(skipped)} PRs")

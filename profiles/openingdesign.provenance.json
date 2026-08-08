@@ -176,7 +176,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Radiance Rendering Changes",
-      "pr_author": "chiragsingh1711"
+      "pr_author": "chiragsingh1711",
+      "merged_head": "ac18195361cb"
     },
     {
       "sha": "1a1968874a38",
@@ -188,7 +189,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Add true object mirroring operator",
-      "pr_author": "Rob2309"
+      "pr_author": "Rob2309",
+      "merged_head": "bcd772a01842"
     },
     {
       "sha": "6324398a6213",
@@ -200,7 +202,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "#7331 related: Modifications to include IfcSpace entities in Cost Schedules, as elements and quantities + Project Library extended support for costing and scheduling",
-      "pr_author": "DimitriosThe"
+      "pr_author": "DimitriosThe",
+      "merged_head": "e56926e093cd"
     },
     {
       "sha": "c58b15ede84d",
@@ -212,7 +215,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "try to catch bug in assign_product",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "1ca1954edc78"
     },
     {
       "sha": "4dfb623128d4",
@@ -224,7 +228,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Remove object from non-IFC collections after IFC class assignment.",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "7a60ff886d79"
     },
     {
       "sha": "bbd2697b4793",
@@ -236,7 +241,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix getting elements by predefined property sets in IFC2X3",
-      "pr_author": "andy-5"
+      "pr_author": "andy-5",
+      "merged_head": "b2ce4a93c582"
     },
     {
       "sha": "7260217ae898",
@@ -248,7 +254,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix: hybrid kernel sigsegv fallback (0.8.0)",
-      "pr_author": "ZijianWang-ZW"
+      "pr_author": "ZijianWang-ZW",
+      "merged_head": "370eea183ef2"
     },
     {
       "sha": "7be5e7f29832",
@@ -260,7 +267,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "closes #3565 - extend profiles and basic extrusions to 3D cursor with…",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "648c328d3783"
     },
     {
       "sha": "84dd41e3d333",
@@ -272,7 +280,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Add material associations to IFC4 Demo Library window/door types",
-      "pr_author": "jaliste"
+      "pr_author": "jaliste",
+      "merged_head": "50ddd25bf7b4"
     },
     {
       "sha": "7823cbc25dfe",
@@ -284,7 +293,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix window/door preview alignment regression in ProductDecorator",
-      "pr_author": "jaliste"
+      "pr_author": "jaliste",
+      "merged_head": "509cb570792c"
     },
     {
       "sha": "d743722b5708",
@@ -296,7 +306,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7655: Handle missing spline data in decoration.py",
-      "pr_author": "jaliste"
+      "pr_author": "jaliste",
+      "merged_head": "10a50eb95ee7"
     },
     {
       "sha": "707c0bdf35c7",
@@ -308,7 +319,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Generalize ExcludeAnnotation to any IFC element",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "8634569de7da"
     },
     {
       "sha": "8cc822061a81",
@@ -320,7 +332,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7718: Fix FallDecorator label calculation for all slope annotation types",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "8e02ab5b3090"
     },
     {
       "sha": "efccb1083e98",
@@ -332,7 +345,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "FIX #6187: Adds ability to toggle Grids and Grid Axes selectability",
-      "pr_author": "KarimJerbi"
+      "pr_author": "KarimJerbi",
+      "merged_head": "9e18e81d90d2"
     },
     {
       "sha": "fda6167097b3",
@@ -344,7 +358,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7681: Fix isolate_objects ignoring hide_select/hide_viewport (#7710)",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "2f5d107ff1bc"
     },
     {
       "sha": "28d4c8fd41d4",
@@ -356,7 +371,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7743 : Fix clone opening UI and selection method",
-      "pr_author": "KarimJerbi"
+      "pr_author": "KarimJerbi",
+      "merged_head": "ebae8158fc78"
     },
     {
       "sha": "eb4f37ccc7d2",
@@ -368,7 +384,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix JSON formatting in launch.json and add \"justMyCode\":false to allow for breakpoints in Linux",
-      "pr_author": "falken10vdl"
+      "pr_author": "falken10vdl",
+      "merged_head": "2b8d9e923d9b"
     },
     {
       "sha": "9160ca0c8318",
@@ -379,7 +396,8 @@
       "pr": 7777,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "74600376022a"
     },
     {
       "sha": "85b9e09e2af7",
@@ -391,7 +409,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Closes #7780 - Add ALT+Click to unhide stuff",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "60ccd3ab7e03"
     },
     {
       "sha": "b03d84f4847c",
@@ -403,7 +422,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Closes #7765: Default IFC file path to relative and auto-convert on blend save",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "6b9dbebcccb9"
     },
     {
       "sha": "b4ebd78b6269",
@@ -415,7 +435,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Manual drawing reference",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "3409c656ca91"
     },
     {
       "sha": "d9267ff13da9",
@@ -427,7 +448,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7799: Fix elements hidden when activating plan drawings",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "3d99ff709cfd"
     },
     {
       "sha": "41559b232fc2",
@@ -439,7 +461,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Replaced the old profiler function with the ifcopenshell.util profiler",
-      "pr_author": "paragforwork"
+      "pr_author": "paragforwork",
+      "merged_head": "1acce3986759"
     },
     {
       "sha": "c1e182527dfa",
@@ -451,7 +474,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7784: Fix drawing names with special chars in sheets",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "45c64e1b4a5f"
     },
     {
       "sha": "35fe4e87b70a",
@@ -463,7 +487,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Grid issues",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "ec0f47c6b725"
     },
     {
       "sha": "5eb1910c2298",
@@ -475,7 +500,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7838: Fix slab layer direction and thickness offset",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "ae1c5444c31e"
     },
     {
       "sha": "b126083c7fe4",
@@ -487,7 +513,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fixed missing definition resulting in USD support not being built",
-      "pr_author": "rares-radu"
+      "pr_author": "rares-radu",
+      "merged_head": "e8fa73c8164c"
     },
     {
       "sha": "6bf3207dfb54",
@@ -499,7 +526,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Documentation guide for Spaces basic modelling",
-      "pr_author": "jazzific"
+      "pr_author": "jazzific",
+      "merged_head": "91ebb8148e96"
     },
     {
       "sha": "8cfcd2c62940",
@@ -511,7 +539,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7840: Auto-create body context when adding drawing",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "d71b9c9c8cf6"
     },
     {
       "sha": "ea43ffd1b035",
@@ -523,7 +552,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix PermissionError deleting locked HDF5 cache on Windows",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "46640722b405"
     },
     {
       "sha": "3404ecbdd648",
@@ -535,7 +565,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "closes #3804: Add S_K split support for profile-based elements",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "f229ad5fd060"
     },
     {
       "sha": "d7b0258cc280",
@@ -547,7 +578,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7827 wall joint regression on ATPATH connectionsFix",
-      "pr_author": "dipayansardar73-decode"
+      "pr_author": "dipayansardar73-decode",
+      "merged_head": "16f379f2d1c9"
     },
     {
       "sha": "6347c690e0cb",
@@ -559,7 +591,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix: DetermFix: Deterministic and layered SVG annotation sort order (Resolves #6608)inistic and layered SVG annotation sort order (Resolves #6…",
-      "pr_author": "dipayansardar73-decode"
+      "pr_author": "dipayansardar73-decode",
+      "merged_head": "5130e40fc5ff"
     },
     {
       "sha": "ad53863a9cba",
@@ -571,7 +604,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Center IfcOpeningElement bbox on 3D cursor",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "9d0cc5ab3f5a"
     },
     {
       "sha": "ac3024e9c991",
@@ -583,7 +617,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "* Fix #3742: Remove coplanar boundary lines between adjacent same-mat…",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "5a1723f52478"
     },
     {
       "sha": "747afc1d91e1",
@@ -595,7 +630,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Helps with #7853: Switch representation in bulk on selected objects",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "72813d3f4146"
     },
     {
       "sha": "6e5e48c5c9d7",
@@ -607,7 +643,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Helps with #7853: Select objects by RepresentationType from panel",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "f59942c453e6"
     },
     {
       "sha": "24aedcbb1f02",
@@ -619,7 +656,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai, add license tagging for IFC elements",
-      "pr_author": "brunopostle"
+      "pr_author": "brunopostle",
+      "merged_head": "a072c72666a4"
     },
     {
       "sha": "bb3db319b1ee",
@@ -631,7 +669,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai, drawing sheets show git tag revision history in titleblocks",
-      "pr_author": "brunopostle"
+      "pr_author": "brunopostle",
+      "merged_head": "f105c6f1fa3b"
     },
     {
       "sha": "ed0825866895",
@@ -643,7 +682,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "fix(ifctester): add setuptools to venv pip install for Python 3.12+ compatibility",
-      "pr_author": "falken10vdl"
+      "pr_author": "falken10vdl",
+      "merged_head": "8f5d499f39c4"
     },
     {
       "sha": "4032aaf48984",
@@ -655,7 +695,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Repair IfcClash order",
-      "pr_author": "JocelinBirling"
+      "pr_author": "JocelinBirling",
+      "merged_head": "9338bcebfdb0"
     },
     {
       "sha": "016500e7cdf2",
@@ -667,7 +708,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Concatenate selections",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "7e3a9e4a75fa"
     },
     {
       "sha": "8fa6d34866af",
@@ -679,7 +721,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7948: Fix duplicate not applying openings to geometry",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "bd934d9b8ec3"
     },
     {
       "sha": "1022b00300f2",
@@ -691,7 +734,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "738110bed79b"
     },
     {
       "sha": "b621deaad210",
@@ -702,7 +746,8 @@
       "pr": 7968,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "7f3cb8c32d3b"
     },
     {
       "sha": "0f73f8e22148",
@@ -714,7 +759,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #7969: Preserve local view on aggregate mode exit",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "cc1b4a06e4c6"
     },
     {
       "sha": "9eb27b379005",
@@ -726,7 +772,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "closes #5382: Add update_sheet_schedule_sizes to SheetBuilder",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "ebea19d4c260"
     },
     {
       "sha": "c5d2be366979",
@@ -738,7 +785,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "The is a proposal include an **effort estimate** in the commit messag…",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "c7ff18d0736a"
     },
     {
       "sha": "c59d03dd524f",
@@ -750,7 +798,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Use get class properties instead of get class",
-      "pr_author": "c-mellueh"
+      "pr_author": "c-mellueh",
+      "merged_head": "8b7348ac7d0c"
     },
     {
       "sha": "a0acecce05e3",
@@ -761,7 +810,8 @@
       "pr": 7987,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "182e7a4dfa6f"
     },
     {
       "sha": "3d5eb9b12f30",
@@ -773,7 +823,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Ensuring that Entity name is a string",
-      "pr_author": "isma3lMB"
+      "pr_author": "isma3lMB",
+      "merged_head": "ef1e534d2619"
     },
     {
       "sha": "39b0541703f9",
@@ -785,7 +836,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Closes #7984: Resize sheet drawings from upper-left corner",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "dcb38f3ce0ef"
     },
     {
       "sha": "0178f24b95e2",
@@ -797,7 +849,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Closes #7877:Add scale to reference view-title from SVG class",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "0b71ffea32f5"
     },
     {
       "sha": "c54d4d3abc0d",
@@ -809,7 +862,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Closes #7691: Enable bim.measure_tool in edit mode",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "565ae33c171c"
     },
     {
       "sha": "f69432199c7b",
@@ -820,7 +874,8 @@
       "pr": 8028,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "28646449ee6f"
     },
     {
       "sha": "1387c971b405",
@@ -831,7 +886,8 @@
       "pr": 8029,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "7d96bc127161"
     },
     {
       "sha": "2dbc37432a85",
@@ -843,7 +899,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Closes #6621: Fix IfcRelAssignsToProduct on duplicate",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "00900e1ace9b"
     },
     {
       "sha": "305d73fffd36",
@@ -855,7 +912,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Add export option to DebugActiveDrawing",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "647a1f44eec3"
     },
     {
       "sha": "941fb4f8910d",
@@ -866,7 +924,8 @@
       "pr": 8058,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "246ba90e573b"
     },
     {
       "sha": "43005d31f6b7",
@@ -878,7 +937,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix #8046 - Entity xs:restriction name crashes with AttributeError on…",
-      "pr_author": "bsmithuk"
+      "pr_author": "bsmithuk",
+      "merged_head": "5cbb32193d55"
     },
     {
       "sha": "3fcfcb250124",
@@ -889,7 +949,8 @@
       "pr": 8075,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "f0b9850ad900"
     },
     {
       "sha": "bd7c0fc2a641",
@@ -900,7 +961,8 @@
       "pr": 8076,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "e7eee598f6ef"
     },
     {
       "sha": "a5b1fa747ea4",
@@ -912,7 +974,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Parametric dimensions",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "1c9d45da1d2d"
     },
     {
       "sha": "0aa4f6ddabd5",
@@ -924,7 +987,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix closing edge for IfcPolyline in convert_curve_to_mesh",
-      "pr_author": "falken10vdl"
+      "pr_author": "falken10vdl",
+      "merged_head": "70476b4263a8"
     },
     {
       "sha": "7c5ab0c7fbb8",
@@ -936,7 +1000,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Use builder.polyline that is schema-aware for create_polyline_from_loop",
-      "pr_author": "falken10vdl"
+      "pr_author": "falken10vdl",
+      "merged_head": "d4354ce9949c"
     },
     {
       "sha": "05105d7af265",
@@ -947,7 +1012,8 @@
       "pr": 8094,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "cf6ecc83d832"
     },
     {
       "sha": "bf7ac9645357",
@@ -959,7 +1025,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix remove_drawing crash on corrupted drawing",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "d538542fb1c8"
     },
     {
       "sha": "22f9c281152a",
@@ -970,7 +1037,8 @@
       "pr": 8126,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "908a59fc316f"
     },
     {
       "sha": "a42d44814bfd",
@@ -982,7 +1050,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Implements default direction of IfcAxis2PlacementLinear.Axis and RefDirection",
-      "pr_author": "RickBrice"
+      "pr_author": "RickBrice",
+      "merged_head": "b75a689bffac"
     },
     {
       "sha": "aa98d7f8e099",
@@ -994,7 +1063,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Add CAD-style cross selection as the default for Bonsai tools",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "9f5e4d3949c4"
     },
     {
       "sha": "7329c1d292d9",
@@ -1006,7 +1076,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "fix(ifctester): allow IFCLOGICAL properties with UNKNOWN value to pass existence check",
-      "pr_author": "gernotluidolt"
+      "pr_author": "gernotluidolt",
+      "merged_head": "d22a737426ea"
     },
     {
       "sha": "9c02e903bd8a",
@@ -1018,7 +1089,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Add per-drawing render overrides (status_render module)",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "0716e5038ebb"
     },
     {
       "sha": "88ab8ade53cc",
@@ -1030,7 +1102,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Place IfcSpatialZone in its spatial parent's collection instead of Unsorted",
-      "pr_author": "carlopav"
+      "pr_author": "carlopav",
+      "merged_head": "29b12af0777d"
     },
     {
       "sha": "4efcd61d329e",
@@ -1041,7 +1114,8 @@
       "pr": 8181,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "6d45b0034144"
     },
     {
       "sha": "bc7e6919d7c5",
@@ -1052,7 +1126,8 @@
       "pr": 8189,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "c76c07fca53c"
     },
     {
       "sha": "bf7a0aa2670b",
@@ -1064,7 +1139,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Preserve custom opening geometry via a type-level Reference template",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "c0b7f37fa016"
     },
     {
       "sha": "74f18ed5a22a",
@@ -1076,7 +1152,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Dev notes system",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "8ece3790aaf7"
     },
     {
       "sha": "486ba4578766",
@@ -1088,7 +1165,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix stale object reference crash in measure tool snapping",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "3248cc75804c"
     },
     {
       "sha": "0b7b34be4f62",
@@ -1100,7 +1178,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Debug drawing faster failure search",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "9283d866610f"
     },
     {
       "sha": "20cf5c6f907f",
@@ -1112,7 +1191,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Make LAYER2 parametric wall tools IFC-class agnostic",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "e7fe85c62375"
     },
     {
       "sha": "31e152690f90",
@@ -1123,7 +1203,8 @@
       "pr": 8239,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "1309c2e70b93"
     },
     {
       "sha": "89d4d7807f11",
@@ -1135,7 +1216,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Additional selection and deselection tools",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "be8595e9a323"
     },
     {
       "sha": "50aea07f9e78",
@@ -1147,7 +1229,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Linked file features",
-      "pr_author": "theoryshaw"
+      "pr_author": "theoryshaw",
+      "merged_head": "ee43ed552630"
     },
     {
       "sha": "43a9da5381c5",
@@ -1158,7 +1241,8 @@
       "pr": 8246,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "39cff86add91"
     },
     {
       "sha": "503f0e9858d9",
@@ -1169,7 +1253,8 @@
       "pr": 8247,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "b7afad226d25"
     },
     {
       "sha": "b3690fe4ef66",
@@ -1181,7 +1266,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Selector: accept case-insensitive TRUE/FALSE in filter queries (#6116)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "2aecc817cf4d"
     },
     {
       "sha": "6ea9797ccda0",
@@ -1193,7 +1279,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "IfcDiff: compare container and aggregate by GlobalId (#4110)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "c897ba202d3e"
     },
     {
       "sha": "21e2da0c0cdb",
@@ -1204,7 +1291,8 @@
       "pr": 8250,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "f933b08315cf"
     },
     {
       "sha": "578f2c2ba62c",
@@ -1216,7 +1304,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "832eaeb31917"
     },
     {
       "sha": "c804c92ec98b",
@@ -1227,7 +1316,8 @@
       "pr": 8252,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "8ac076f1f343"
     },
     {
       "sha": "09dbd917668d",
@@ -1239,7 +1329,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "IfcTester: fix predefinedType restrictions that include USERDEFINED (#7855, #7856)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "070348b96f7d"
     },
     {
       "sha": "7900feca5808",
@@ -1250,7 +1341,8 @@
       "pr": 8254,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "62ed77743c59"
     },
     {
       "sha": "e36b1dfa4def",
@@ -1261,7 +1353,8 @@
       "pr": 8256,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "695c3a506c0c"
     },
     {
       "sha": "bea6fc0a2b78",
@@ -1273,7 +1366,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "IfcClash: default NotRequired clash set keys instead of asserting (#8224)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "a4b5f55c0577"
     },
     {
       "sha": "3723ff18bb1f",
@@ -1285,7 +1379,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "root.reassign_class: raise a clear error when no class is applicable (#8210)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "46d8d9b79293"
     },
     {
       "sha": "39e2df08f3eb",
@@ -1296,7 +1391,8 @@
       "pr": 8259,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "ce8527d9f90d"
     },
     {
       "sha": "45f480c01765",
@@ -1307,7 +1403,8 @@
       "pr": 8260,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "3bb14e5700b8"
     },
     {
       "sha": "8cb22c09de9e",
@@ -1319,7 +1416,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: skip fully off-screen edges in 2D proximity snap (#8187)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "83b2b89166c4"
     },
     {
       "sha": "e9bc8225d666",
@@ -1331,7 +1429,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Selector: fix material != and NULL filtering (#6787)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "1d6afde7e084"
     },
     {
       "sha": "6f6b31234a8c",
@@ -1342,7 +1441,8 @@
       "pr": 8265,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "f3137a43db0d"
     },
     {
       "sha": "33ca04957a3e",
@@ -1354,7 +1454,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "util.cost: add calculate_total_applied_value (#5912)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "af2a9f3692fa"
     },
     {
       "sha": "3cafc5de6c52",
@@ -1365,7 +1466,8 @@
       "pr": 8267,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "fe33788477f3"
     },
     {
       "sha": "21827f63a5e5",
@@ -1377,7 +1479,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Selector: length formatters pass non-numeric values through (#5297)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "9a34ee680a94"
     },
     {
       "sha": "78bbbbf136ab",
@@ -1389,7 +1492,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: don't crash TAB when EDIT is not in the mode enum (#8066)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "4f6173f8b73f"
     },
     {
       "sha": "1a93442cc5d0",
@@ -1401,7 +1505,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: accept comma decimals in dimension input (#8262)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "11ac192c8de8"
     },
     {
       "sha": "3651e745a531",
@@ -1413,7 +1518,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: fail profile detection cleanly on discontinuous loops (#8072)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "78ee14b07d2d"
     },
     {
       "sha": "fddc18ab4df4",
@@ -1425,7 +1531,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: OverrideModeSetObject must survive direct execution (#8042)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "5b8e1d5e1251"
     },
     {
       "sha": "bfd6f783b47b",
@@ -1437,7 +1544,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: report incompatible aggregates instead of crashing (#7983)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "7ab1893fd04c"
     },
     {
       "sha": "bc763cdf13e3",
@@ -1449,7 +1557,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: keep an explicit denominator in custom drawing scales (#7957)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "fa0466559e7d"
     },
     {
       "sha": "ef1088816bcf",
@@ -1461,7 +1570,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "win: use exit /b in build-deps.cmd so the console stays open (#7884)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "c7d8fa90a263"
     },
     {
       "sha": "26905b51bec6",
@@ -1473,7 +1583,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: coerce non-string enum values when importing quick favorites (#7773)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "19376379e31f"
     },
     {
       "sha": "8e0d043e8f5e",
@@ -1485,7 +1596,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "ifcpatch: add console script entry point (#6436)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "dbdc683fb870"
     },
     {
       "sha": "dd324252d138",
@@ -1496,7 +1608,8 @@
       "pr": 8283,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "21e5134c2d2d"
     },
     {
       "sha": "484c3205df7d",
@@ -1508,7 +1621,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "ifc4d: MSP2Ifc tolerates optional task elements (#5556)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "330959870b0e"
     },
     {
       "sha": "db1495343b2c",
@@ -1520,7 +1634,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: don't assert on non-surface item styles in swept disk loader (#8194)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "99e9412a2cf9"
     },
     {
       "sha": "1ba6a7c3aa1b",
@@ -1531,7 +1646,8 @@
       "pr": 8287,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "ec59259f1863"
     },
     {
       "sha": "68cd69ed222b",
@@ -1543,7 +1659,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "spatial.assign_container: clear error for non-containable products (#8084)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "2c3a0277f6f0"
     },
     {
       "sha": "79c2abd1de46",
@@ -1555,7 +1672,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: guess_false_origin tolerates a file without a project (#7350)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "714df2487a1a"
     },
     {
       "sha": "ef72c172369e",
@@ -1567,7 +1685,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "util.selector: set_element_value accepts a trailing index like get_element_value (#4687)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "cb5b598ece7d"
     },
     {
       "sha": "bb103141b13b",
@@ -1578,7 +1697,8 @@
       "pr": 8296,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "39bd1356d480"
     },
     {
       "sha": "df053882be75",
@@ -1590,7 +1710,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "pset.edit_pset: support updating IfcPropertyListValue properties (#5195)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "9e2308d5908b"
     },
     {
       "sha": "3c731d3af4b9",
@@ -1602,7 +1723,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: apply georeferencing offset to imported drawing cameras (#8205)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "b6c54fa841b1"
     },
     {
       "sha": "475e522c2728",
@@ -1613,7 +1735,8 @@
       "pr": 8306,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "ff9b3c9901e8"
     },
     {
       "sha": "f77a57b1173b",
@@ -1625,7 +1748,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "util.placement: pad 2D RefDirection without in-place resize (#6256)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "5fa2795ab900"
     },
     {
       "sha": "ec6eb6aadd30",
@@ -1636,7 +1760,8 @@
       "pr": 8311,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "64c58d282fbc"
     },
     {
       "sha": "93ea7feb95a0",
@@ -1648,7 +1773,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: skip linework paths without a d attribute (#6876)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "0a518561f3d0"
     },
     {
       "sha": "c07e1f56889d",
@@ -1660,7 +1786,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: don't crash editing a non-extrusion slab (#6283)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "65177a4d31bc"
     },
     {
       "sha": "16d0c7ebcfbf",
@@ -1672,7 +1799,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Fix get_part_of_product crash and IFC2X3 typo (#8081)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "1fa61db0492e"
     },
     {
       "sha": "74bc4faaf5eb",
@@ -1684,7 +1812,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Skip quantity takeoff for elements with empty geometry (#7147)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "73360ab92163"
     },
     {
       "sha": "7262bee3a5ab",
@@ -1696,7 +1825,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Retain linked aggregates when duplicating an aggregate (#8233)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "c3b82027a600"
     },
     {
       "sha": "67793e7437be",
@@ -1707,7 +1837,8 @@
       "pr": 8321,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "6130a520208c"
     },
     {
       "sha": "59be82f82965",
@@ -1719,7 +1850,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "bonsai(pset): bind schema module directly so pset UI survives add-on reload (#8236)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "4d96bae3cc1e"
     },
     {
       "sha": "dd14792500b0",
@@ -1731,7 +1863,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "util.selector: match boolean properties by True/False spelling (#8100)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "97d984d51f8d"
     },
     {
       "sha": "1d6ff289c706",
@@ -1743,7 +1876,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "bonsai(material): keep the layer panel in stored order so a wall flip does not reorder it (#8240)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "54361e30103c"
     },
     {
       "sha": "411eb29e9cc9",
@@ -1755,7 +1889,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "project(append_asset): reuse an existing IfcClassification instead of duplicating it (#7150)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "e97bef05b038"
     },
     {
       "sha": "ed185edd7a5f",
@@ -1767,7 +1902,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "bonsai(classification): report a clear error when adding a manual reference with no classification (#7506)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "38987be4b25f"
     },
     {
       "sha": "2f1490841c6a",
@@ -1779,7 +1915,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "bonsai(drawing): persist drawing camera zoom and crop on save (#8205)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "d013762f05d8"
     },
     {
       "sha": "8a81560057b2",
@@ -1791,7 +1928,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "bonsai(bcf): store viewpoints in global coordinates on georeferenced models (#8205)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "e432bf10d625"
     },
     {
       "sha": "b1b447b48dc3",
@@ -1803,7 +1941,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "bonsai(drawing): plan drawings for spatial containers without a building storey",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "88290c93095a"
     },
     {
       "sha": "5a1e15711be7",
@@ -1815,7 +1954,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "847c6662458d"
     },
     {
       "sha": "840d7327cbaf",
@@ -1827,7 +1967,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "bonsai(model): TAB on a wall enters IFC Item Mode again (#8330)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "f9f14a533da2"
     },
     {
       "sha": "f7e77caaaa9e",
@@ -1839,7 +1980,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: don't crash the task time editor on malformed IfcDuration (#3091)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "c4d63e865fda"
     },
     {
       "sha": "8b4f2fc12645",
@@ -1851,7 +1993,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "util.representation + Bonsai: fix two nested mapped-item transform bugs (#3019)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "879e67e644f5"
     },
     {
       "sha": "7fa92f8f2906",
@@ -1863,7 +2006,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: recover extrusions from OCCT-duplicated verts, tessellate only when truly not an extrusion (#2851)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "b0d7cb50e7a2"
     },
     {
       "sha": "cf6eb41531c6",
@@ -1875,7 +2019,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: round length attributes to model precision on write (#3129)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "3459e7e8dfa3"
     },
     {
       "sha": "ca711c5748a7",
@@ -1887,7 +2032,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "bonsai(drawing): make viewport annotation text size resolution independent (#3353, #3683)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "5ded24443eb0"
     },
     {
       "sha": "933120b4860f",
@@ -1899,7 +2045,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: don't crash Add Bend on parallel/collinear MEP segments (#3932)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "8143f11fce26"
     },
     {
       "sha": "24cdc8b8f2fe",
@@ -1911,7 +2058,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: import representations that mix polygons and curves (#4606)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "2979c2c0756c"
     },
     {
       "sha": "4ff155ecb71f",
@@ -1922,7 +2070,8 @@
       "pr": 8341,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "29da911431c2"
     },
     {
       "sha": "8bfd5a85023a",
@@ -1933,7 +2082,8 @@
       "pr": 8342,
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
-      "note": "not in PR index (closed, merged upstream, or private)"
+      "note": "not in PR index (closed, merged upstream, or private)",
+      "merged_head": "42de34c6fed5"
     },
     {
       "sha": "83a1cfabcb6d",
@@ -1945,7 +2095,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: sync storey placement on Load Spatial Structure + stop re-import resetting elevations to 0 (#4048, #8545)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "deca7dc4eea8"
     },
     {
       "sha": "cab577cefb29",
@@ -1957,7 +2108,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "geometry.add_representation: keep loose edges (curves) when a mesh also has faces (#4593)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "9bc7c3e83516"
     },
     {
       "sha": "530cce48098d",
@@ -1969,7 +2121,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: relaunch the clipping-plane refresh modal after a .blend reload (#4641)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "7038ba686bd1"
     },
     {
       "sha": "55c2d4bca8a8",
@@ -1981,7 +2134,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: fix DXF export dropping/scrambling polylines with integer or scientific coordinates (#4703)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "31442341af83"
     },
     {
       "sha": "273e38c2db7a",
@@ -1993,7 +2147,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: give Create Element and Annotation tools stable toolbar-popup shortcuts (#4694)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "578b891578d0"
     },
     {
       "sha": "66ba74f424fd",
@@ -2005,7 +2160,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: apply the drawing Include filter to IfcSpace elements (#4785)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "23f0a9c94840"
     },
     {
       "sha": "bdd881c0dc75",
@@ -2017,7 +2173,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "project.append_asset: migrate library asset to project schema on cross-schema append (#4766)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "219713d9ec5e"
     },
     {
       "sha": "8ec336f7ec03",
@@ -2029,7 +2186,8 @@
       "confidence": "exact",
       "evidence": "merge subject names pr-<n>/ remote",
       "title": "Bonsai: preserve IfcStyledItem when regenerating a wall body (#4790)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "153cb16d12b9"
     },
     {
       "sha": "1591d3b280c0",
@@ -2169,7 +2327,8 @@
       "confidence": "exact",
       "evidence": "owner/branch BIMvoice/fix-6508-geography-element-qto matched PR index",
       "title": "ifc5d: add base-quantity rule for IfcGeographicElement (#6508)",
-      "pr_author": "BIMvoice"
+      "pr_author": "BIMvoice",
+      "merged_head": "e6ceeb3d87cb"
     },
     {
       "sha": "15837cb920c9",
@@ -2245,7 +2404,8 @@
       "confidence": "exact",
       "evidence": "owner/branch falken10vdl/clipboard-module matched PR index",
       "title": "First version clipboard module. 3 modes available (RENAME, DUPLICATE, DESTINATION)",
-      "pr_author": "falken10vdl"
+      "pr_author": "falken10vdl",
+      "merged_head": "c509309fca9c"
     },
     {
       "sha": "4ebcfcbe654a",
