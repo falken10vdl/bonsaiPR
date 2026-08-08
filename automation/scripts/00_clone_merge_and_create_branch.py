@@ -474,6 +474,35 @@ def _conflicting_paths():
     return [f.strip() for f in result.stdout.strip().split("\n") if f.strip()]
 
 
+def _publisher_owner():
+    return os.getenv("GITHUB_OWNER", "falken10vdl")
+
+
+def _publisher_repo():
+    return os.getenv("GITHUB_REPO", "bonsaiPR")
+
+
+def _publisher_block():
+    """Who produced this manifest (RFC-001 s6).
+
+    Identity is the whole basis of the anti-gaming rule in s9: the aggregate
+    counts distinct *publishers*, so a manifest that cannot say who made it
+    either cannot be counted or has to be trusted on the strength of the URL it
+    was fetched from. Defaults to the release target, which is the repository a
+    peer would already be pointing at.
+    """
+    owner, repo = _publisher_owner(), _publisher_repo()
+    return {
+        "id": os.getenv("BONSAIPR_PUBLISHER_ID", "").strip() or owner,
+        "instance": f"https://github.com/{owner}/{repo}",
+        "contact": (
+            os.getenv("BONSAIPR_PUBLISHER_CONTACT", "").strip()
+            or (CURATION.maintainer and f"https://github.com/{CURATION.maintainer}")
+            or None
+        ),
+    }
+
+
 def write_pinned(reports_dir, order_suffix, pinned):
     """Persist which PRs were built at a curator-validated commit.
 
@@ -610,6 +639,10 @@ def write_state_snapshot(
         base=SOURCE_BASE_BRANCH,
         base_commit=base_commit,
         total_prs=total_prs,
+        publisher=_publisher_block(),
+        profile=CURATION.manifest_block(
+            f"https://github.com/{_publisher_owner()}/{_publisher_repo()}"
+        ),
     )
 
     prev_state = pr_state.load_state(state_path)

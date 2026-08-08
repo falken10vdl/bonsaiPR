@@ -51,6 +51,7 @@ import sys
 import json
 import argparse
 import datetime
+import urllib.request
 import subprocess
 from collections import defaultdict
 
@@ -72,6 +73,7 @@ LOCAL_PUBLISHER = "local"
 CANONICAL_ORDER = "asc"
 
 DEFAULT_REPORTS_REL = os.path.join("automation", "reports")
+DEFAULT_PEERS_REL = os.path.join("federation", "peers.json")
 
 
 # --------------------------------------------------------------------------- #
@@ -92,6 +94,10 @@ class Source:
         self.profile = profile
         self.order = order
         self.state = state or {}
+        # 'anchor' = an everything-build. Fetched, but excluded from adoption
+        # counts: including a PR is not a curatorial act when you include all.
+        self.role = "curator"
+        self.url = None
 
     @property
     def prs(self):
@@ -103,6 +109,76 @@ class Source:
 
     def __repr__(self):
         return f"<Source {self.id} publisher={self.publisher} prs={len(self.prs)}>"
+
+
+def load_peers(path):
+    """Read federation/peers.json. Missing file = local-only aggregation."""
+    if not path or not os.path.exists(path):
+        return []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return (json.load(f) or {}).get("peers") or []
+    except (OSError, ValueError) as e:
+        print(f"⚠️  Could not read peers file: {e}", file=sys.stderr)
+        return []
+
+
+def _http_json(url, timeout=30):
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "bonsaiPR-federate", "Accept": "application/json"}
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.loads(r.read().decode("utf-8"))
+
+
+def load_peer_sources(peers, timeout=30):
+    """Fetch each peer's per-order manifests over plain HTTP.
+
+    Pull, not push: there is no server, and every peer is just files in a public
+    git repo (RFC-001 s2). A peer that is unreachable, mid-push or serving
+    something unparseable is skipped with a warning - one broken peer must never
+    take down everyone else's aggregate.
+
+    The publisher identity comes from the MANIFEST, not from peers.json, with the
+    peer entry used only as a fallback. A peer list is a statement about where to
+    look; letting it also assert who lives there would make the subscription able
+    to relabel someone else's build.
+    """
+    sources = []
+    for peer in peers:
+        base = (peer.get("reports_base") or "").rstrip("/")
+        if not base:
+            continue
+        pid = peer.get("id") or "unknown"
+        for suffix in peer.get("orders") or list(pr_state.ORDER_SUFFIXES):
+            url = f"{base}/state.{suffix}.json"
+            try:
+                state = _http_json(url, timeout=timeout)
+            except Exception as e:  # network, HTTP, JSON - all equally "skip it"
+                print(f"  ⚠️  {pid}/{suffix}: {type(e).__name__} {e}")
+                continue
+            if not state or not state.get("prs"):
+                print(f"  ⚠️  {pid}/{suffix}: no PRs in manifest")
+                continue
+            declared = (state.get("publisher") or {}).get("id")
+            profile = (state.get("profile") or {}).get("name") or "(unknown)"
+            sources.append(
+                Source(
+                    sid=f"{pid}/{suffix}",
+                    publisher=declared or pid,
+                    profile=profile,
+                    order=pr_state.ORDER_NAME_BY_SUFFIX.get(suffix, suffix),
+                    state=state,
+                )
+            )
+            sources[-1].role = peer.get("role") or "curator"
+            sources[-1].url = url
+            print(
+                f"  ✅ {pid}/{suffix}: {len(state['prs'])} PRs, profile "
+                f"{profile}, base {(state.get('base_commit') or '?')[:10]}"
+                + ("" if declared else "  (schema 1 — no publisher block)")
+            )
+    return sources
 
 
 def load_local_sources(reports_dir, synthetic=True):
@@ -336,12 +412,19 @@ def aggregate(sources, events_by_order=None, stamps_by_order=None,
 
     signals = {}
     for src in sources:
+        # RFC-001 §9: an everything-build including a PR is the ABSENCE of a
+        # curatorial decision. Anchors are aggregated for merge outcomes but must
+        # not inflate adoption, or the anchor alone would make every PR look
+        # universally wanted.
+        counts_as_adoption = getattr(src, "role", "curator") != "anchor"
         for num, rec in src.prs.items():
             entry = signals.setdefault(
                 num,
                 {
                     "merged_by": set(),
                     "blocked_by": set(),
+                    "selected_by": set(),
+                    "bases": set(),
                     "status_by_source": {},
                     "title": rec.get("title"),
                     "author": rec.get("author"),
@@ -351,6 +434,9 @@ def aggregate(sources, events_by_order=None, stamps_by_order=None,
             entry["status_by_source"][src.id] = rec.get("status")
             bucket = "merged_by" if rec.get("status") == pr_state.STATUS_MERGED else "blocked_by"
             entry[bucket].add(src.publisher)
+            if counts_as_adoption:
+                entry["selected_by"].add(src.publisher)
+            entry["bases"].add((src.state.get("base_commit") or "unknown")[:10])
             # Display fields come from whichever source saw it last; they are
             # informational and never participate in a comparison.
             for k in ("title", "author", "url"):
@@ -360,13 +446,26 @@ def aggregate(sources, events_by_order=None, stamps_by_order=None,
     out = {}
     for num in sorted(signals, key=int):
         e = signals[num]
+        # RFC-001 §9 counts PUBLISHERS, not builds — so a publisher running three
+        # merge orders casts one vote, not three. Collapse to the best outcome
+        # they achieved: if any of their orders merged it, that publisher ships
+        # it, and appearing in both columns at once (which is what per-source
+        # counting produced) describes nothing anyone can act on.
         merged = sorted(e["merged_by"])
-        blocked = sorted(e["blocked_by"])
+        blocked = sorted(e["blocked_by"] - e["merged_by"])
         seen = len(set(merged) | set(blocked))
         pr_events = lineage_events.get(num, [])
         rec = {
             "merged_by": merged,
             "blocked_by": blocked,
+            # Deliberate selection by a non-anchor publisher. This is the signal
+            # §3.4 says is worthless until curation is selective — it is finally
+            # meaningful now that a real allowlist profile publishes.
+            "selected_by": sorted(e["selected_by"]),
+            # §8.1: every signal above is relative to a base commit. Publishers on
+            # different bases are not directly comparable — a 17-PR swing can be
+            # base drift alone — so the spread travels with the count.
+            "bases": sorted(e["bases"]),
             "publishers_seen": seen,
             "stable": seen >= 2 and not blocked,
             "divergence": bool(merged and blocked),
@@ -653,14 +752,39 @@ def main(argv=None):
     ap.add_argument("--out", default=os.path.join(root, "federation"))
     ap.add_argument("--top", type=int, default=15)
     ap.add_argument(
+        "--peers", default=os.path.join(root, DEFAULT_PEERS_REL),
+        help="peers.json; when it exists, aggregate the federation instead of "
+             "this checkout's own merge orders",
+    )
+    ap.add_argument(
+        "--local", action="store_true",
+        help="ignore peers.json and aggregate only local state files",
+    )
+    ap.add_argument(
         "--real-publishers",
         action="store_true",
         help="do NOT promote merge orders to publishers (phase 0 output becomes trivial)",
     )
     args = ap.parse_args(argv)
 
-    synthetic = not args.real_publishers
-    sources, events, stamps, rivals = _collect(args.reports, args.repo, synthetic)
+    peers = [] if args.local else load_peers(args.peers)
+    federated = bool(peers)
+
+    if federated:
+        print(f"Fetching manifests from {len(peers)} peer(s)…")
+        sources = load_peer_sources(peers)
+        if not sources:
+            print("❌ No peer manifests could be fetched.", file=sys.stderr)
+            return 1
+        # Streak/churn/rivals are derived from THIS checkout's local history;
+        # peers publish snapshots, not their event logs, so those signals stay
+        # local-only rather than being silently attributed to the federation.
+        events, stamps, rivals = {}, {}, {}
+        synthetic = False
+        print()
+    else:
+        synthetic = not args.real_publishers
+        sources, events, stamps, rivals = _collect(args.reports, args.repo, synthetic)
     if not sources:
         print(f"❌ No state.<order>.json snapshots under {args.reports}", file=sys.stderr)
         return 1
