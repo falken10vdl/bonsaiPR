@@ -440,6 +440,15 @@ def get_open_prs():
 # values consumed positionally at its only call site.
 PR_RIVALS = {}
 
+# PR number -> the curator-validated sha built instead of the PR's current tip,
+# when the tip would not merge. Surfaced in the report and the manifest: a build
+# that quietly ships an older commit than the PR points at is the kind of thing
+# nobody can detect from the outside.
+PR_PINNED = {}
+# PR number -> its head sha at build time, so the report can show what was built
+# alongside what the PR now points at.
+_pr_tip_shas = {}
+
 
 def _files_changed_by_last_merge():
     """Paths the merge just committed brought in, relative to the branch tip."""
@@ -495,24 +504,35 @@ def write_rivals(reports_dir, order_suffix, rivals):
         return None
 
 
-def _state_pr(pr):
+def _state_pr(pr, merged_sha=None):
     """Shape a live GitHub PR dict the way pr_state.build_state expects.
 
     build_state was written for `02_upload`, which reconstructs these fields by
     parsing its own rendered report. Stage 0 has them natively, so this is just
     a translation - no parsing round-trip.
+
+    `head` records THE COMMIT THIS BUILD MERGED, which is not always the PR's
+    current tip: a pinned fallback builds an earlier, validated commit. Recording
+    the tip regardless would assert that the tip merges when it demonstrably does
+    not - the reverse of the truth, and unfalsifiable from the outside. When the
+    two differ the record says so explicitly and carries both.
     """
     head = pr.get("head") or {}
-    sha = (head.get("sha") or "").strip()
-    return {
+    tip = (head.get("sha") or "").strip()
+    built = (merged_sha or tip or "").strip()
+    rec = {
         "line": f"- **PR #{pr['number']}**: {pr.get('title') or ''}",
         # 7-char to match the shas the report-parsing path produces; _sha_eq is
         # tolerant of either, but keeping one convention avoids phantom deltas.
-        "last_commit": {"sha": sha[:7]} if sha else None,
+        "last_commit": {"sha": built[:7]} if built else None,
         "author": (pr.get("user") or {}).get("login"),
         "branch": head.get("ref"),
         "url": pr.get("html_url"),
     }
+    if merged_sha and tip and not merged_sha.startswith(tip[:7]):
+        rec["pinned"] = True
+        rec["tip"] = tip[:7]
+    return rec
 
 
 def write_state_snapshot(
@@ -543,13 +563,13 @@ def write_state_snapshot(
             if test_results.get(pr["number"]) is True
             else failed_against_base
         )
-        target.append(_state_pr(pr))
+        target.append(_state_pr(pr, PR_PINNED.get(pr["number"])))
 
     new_state = pr_state.build_state(
-        applied_prs=[_state_pr(p) for p in applied or []],
+        applied_prs=[_state_pr(p, PR_PINNED.get(p["number"])) for p in applied or []],
         failed_prs=failed_against_base,
         skipped_conflict_prs=conflict_with_others,
-        skipped_draft_prs=[_state_pr(p) for p in skipped or []],
+        skipped_draft_prs=[_state_pr(p, PR_PINNED.get(p["number"])) for p in skipped or []],
         merge_order=merge_order,
         base=SOURCE_BASE_BRANCH,
         base_commit=base_commit,
@@ -580,6 +600,8 @@ def apply_prs_to_branch(branch_name, prs):
     # Reported at the end: a PR whose head has broken is a nudge worth sending.
     pinned_fallbacks = {}
     PR_RIVALS.clear()
+    PR_PINNED.clear()
+    _pr_tip_shas.clear()
 
     try:
         os.chdir(work_dir)
@@ -656,6 +678,8 @@ def apply_prs_to_branch(branch_name, prs):
             pr_head_ref = pr["head"]["ref"]
             pr_head_repo = pr["head"]["repo"]["clone_url"]
             pr_head_sha = pr["head"].get("sha")
+            if pr_head_sha:
+                _pr_tip_shas[pr_number] = pr_head_sha
 
             # Additional safety check for required fields
             if not pr_head_ref or not pr_head_repo:
@@ -729,6 +753,7 @@ def apply_prs_to_branch(branch_name, prs):
                                 f"does not merge; used curator-validated {pinned[:7]}"
                             )
                             pinned_fallbacks[pr_number] = pinned
+                            PR_PINNED[pr_number] = pinned
                             merge_result = retry
                         else:
                             subprocess.run(
@@ -1311,6 +1336,30 @@ def generate_report(
             f.write(f"- Success Rate: {success_rate}%\n\n")
         else:
             f.write(f"- Success Rate: N/A\n\n")
+        if PR_PINNED:
+            # Anyone testing this build is testing an older commit than the PR
+            # currently points at, and the PR's author almost certainly does not
+            # know their head stopped merging. Both facts belong in the report,
+            # not only in a CI log nobody reads.
+            f.write(
+                f"\n## 📌 Built at a curator-validated commit ({len(PR_PINNED)})\n\n"
+            )
+            f.write(
+                "These PRs no longer merge at their current head, so this build used the\n"
+                "commit the curation last validated. **You are testing an older version of\n"
+                "these PRs than the branch now contains** — and their authors may not know\n"
+                "the head has broken.\n\n"
+            )
+            f.write("| PR | Built commit | Current head |\n")
+            f.write("|----|--------------|--------------|\n")
+            for n, sha in sorted(PR_PINNED.items()):
+                tip = _pr_tip_shas.get(n, "unknown")
+                f.write(
+                    f"| [#{n}](https://github.com/{upstream_repo}/pull/{n}) "
+                    f"| `{sha[:10]}` | `{tip[:10]}` |\n"
+                )
+            f.write("\n")
+
         f.write(
             f"Note: PRs were merged in {merge_order} order ({order_desc}).\n"
         )
