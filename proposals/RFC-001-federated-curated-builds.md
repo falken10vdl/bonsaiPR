@@ -951,8 +951,8 @@ falken10vdl to change how the canonical instance runs.
 | **1** ✅ | Profile format + `load_profile()` + `.env` compat shim. Canonical instance expressible as `everything`. **Done — `bonsaipr_profile.py`, `profiles/everything.json`; notes in [§12.4](#s12-4).** | small change at `00_clone_…py:41-62` |
 | **1.1** ✅ | Record the *winning* PR number when a merge conflict skips a PR, so `rivals` becomes computable. Discovered in phase 0 ([§12](#s12)); cheap now, unrecoverable retroactively. **Done — `reports/rivals.<order>.json`.** | small change at `00_clone_…py` |
 | **1.5** | `distill` ([§5](#s5)) — attribution ladder, provenance file, residue clustering, harvested conflict resolutions. Run against `Ryan_build-0.8.6-…` as the first real input. | phase 1 |
-| **2** | Manifest schema 2 (`publisher` / `profile` blocks) + `peers.json` + real cross-publisher aggregation. | small change at `02_upload_…py:1118` |
-| **3** | Per-profile `index.json` feeds. | `update_index_json.py` |
+| **2** ✅ | Manifest schema 2 (`publisher` / `profile` blocks) + `peers.json` + real cross-publisher aggregation. **Done.** | small change at `02_upload_…py:1118` |
+| **3** ✅ | Per-profile `index.json` feeds. **Done — `profiles/<name>/index.json`, id stays `bonsaiPR` so curations remain alternatives rather than companions.** | `update_index_json.py` |
 | **4** | Maintainer digest — optionally as a bot comment or a status check on the upstream PR. | upstream buy-in |
 | **5** | Attestations and profile-level smoke results ([§8.2](#s8-2)). | curator opt-in |
 

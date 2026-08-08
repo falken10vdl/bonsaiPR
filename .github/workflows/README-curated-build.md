@@ -248,7 +248,39 @@ its author — not before.
 
 ---
 
-## 7. Joining the federation
+## 7. Subscribing to a curated build in Blender
+
+A full run publishes two feeds:
+
+| feed | URL | advertises |
+|---|---|---|
+| root | `.../bonsaiPR/main/index.json` | "BonsaiPR" — whatever this instance builds |
+| curated | `.../bonsaiPR/main/profiles/<name>/index.json` | "BonsaiPR · `<name>`" |
+
+Both point at the same release. The difference is what the subscriber can tell:
+once instances build *different* curations, "BonsaiPR" stops identifying
+anything, and a per-profile feed makes subscribing a choice between curations
+rather than a bet on how someone configured theirs.
+
+To subscribe, add the curated URL as a remote repository — the steps are the
+same as the root feed in the project README:
+
+```
+https://raw.githubusercontent.com/OpeningDesign/bonsaiPR/main/profiles/openingdesign/index.json
+```
+
+> ⚠️ **One at a time.** The extension id stays `bonsaiPR` in every feed, on
+> purpose: curated builds are the same Python module, so they are *alternatives*,
+> not companions. The existing "enable Bonsai **or** BonsaiPR, never both" rule
+> applies between two curations as well. Distinct ids would wrongly imply they
+> can coexist.
+
+The root `index.json` keeps its URL and keeps working, so existing subscribers
+are never moved.
+
+---
+
+## 8. Joining the federation
 
 Once your instance publishes reports, others add you to their `peers.json` and
 your curation starts contributing to the aggregate. Your reports are already at
