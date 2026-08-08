@@ -654,23 +654,31 @@ useless without knowing *who* built it, *from what base*, and *under which curat
     "contact": "https://github.com/theoryshaw"
   },
   "profile": {
-    "name": "architecture-production",
-    "url": "https://github.com/theoryshaw/bonsaiPR/blob/main/profiles/architecture-production.json",
-    "digest": "sha256:1f3a…",
-    "selected": 41
+    "name": "openingdesign",
+    "mode": "allowlist",
+    "selected": 160,
+    "pinned_prs": 160,
+    "digest": "sha256:9e34c87a…",
+    "base_branch": "v0.8.0",
+    "base_commit": "644b92263d1da7559bdc9f05607121fb8c4723d7",
+    "url": "https://github.com/OpeningDesign/bonsaiPR/blob/main/profiles/openingdesign.json"
   },
-  "build": {
-    "id": "v0.8.6-alpha2607301845",
-    "order": "ascending",
-    "base": "v0.8.0",
-    "base_commit": "8deefe497cca8b9fd41e29e809ec0d0ad9478169",
-    "generated_at": "2026-07-30T18:58:24Z"
-  },
+  "merge_order": "recorded",
+  "base": "v0.8.0",
+  "base_commit": "644b92263d1da7559bdc9f05607121fb8c4723d7",
+  "generated_at": "2026-08-08T21:49:50Z",
+  "release": { "tag": "v0.8.6-alpha2608081329", "url": "https://github.com/…" },
 
   "counts": { "merged": 38, "failed": 2, "skipped_conflict": 1, "skipped_draft": 0, "total": 41 },
   "prs": { "7123": { "status": "merged", "head": "8f09b96", "…": "…" } }
 }
 ```
+
+The build fields stay **flat** rather than nesting under a `build` object, which an
+earlier draft of this section proposed. Nesting would have relocated `merge_order`,
+`base` and `generated_at`, breaking every schema-1 reader for no gain; keeping them
+where they are makes schema 2 purely additive, which is what lets a peer running either
+version be aggregated without special-casing.
 
 Everything under `counts` and `prs` is exactly what `build_state()` emits today.
 `build.base_commit` is already captured — it is printed in the report header as
@@ -702,14 +710,14 @@ different peer lists.
       "id": "falken10vdl",
       "display_name": "BonsaiPR (canonical)",
       "reports_base": "https://raw.githubusercontent.com/falken10vdl/bonsaiPR/main/automation/reports/",
-      "profiles": ["everything"],
+      "orders": ["asc", "desc", "upd"],
       "role": "anchor"
     },
     {
       "id": "theoryshaw",
       "display_name": "Architectural production",
       "reports_base": "https://raw.githubusercontent.com/theoryshaw/bonsaiPR/main/automation/reports/",
-      "profiles": ["architecture-production"],
+      "orders": ["rec"],
       "role": "curator"
     }
   ]
@@ -758,6 +766,13 @@ math — a signal that gets over-read is worse than no signal.
 | `excluded_by` | distinct publishers who deliberately excluded it, counting only non-stale exclusions ([§4.2](#s4-2)) | someone saw it and said no | that it is broken |
 | `objections` | those exclusions' reasons, grouped by `why` category and recurrence | *why* they said no — see [§8.3](#s8-3) | consensus; two people can object for opposite reasons |
 | `lost_to` | PRs that curators explicitly `prefer` over this one | a curatorial choice between two options | a judgment on this PR's quality |
+| `bases` | the distinct base commits the publishers built on | whether the answers are even comparable | agreement, when the spread is wide |
+
+**`streak`, `churn` and `rivals` are local-only under federation.** Peers publish
+snapshots, not their event logs, so a federated aggregate has no history for anyone but
+itself. Deriving them from a single fetched snapshot would be inventing a past nobody
+sent. Making them federated means peers publishing `events.<order>.jsonl` too — a real
+extension, not a gap to paper over.
 
 `streak` is derivable from data already being logged. `rivals` is **not** — see
 [§12](#s12); the reports record that a conflict occurred and which orders a PR merges
