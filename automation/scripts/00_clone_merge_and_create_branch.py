@@ -474,6 +474,36 @@ def _conflicting_paths():
     return [f.strip() for f in result.stdout.strip().split("\n") if f.strip()]
 
 
+def write_pinned(reports_dir, order_suffix, pinned):
+    """Persist which PRs were built at a curator-validated commit.
+
+    A sidecar for the same reason `rivals` is one: stage 2 owns the manifest for
+    a full run and reconstructs its records by parsing the rendered report, so
+    anything stage 0 knows and the report does not carry is lost. Without this
+    the manifest records each PR's current tip as what was built - asserting that
+    a commit merges when the build proved it does not.
+    """
+    if not pinned:
+        return None
+    path = os.path.join(reports_dir, f"pinned.{order_suffix}.json")
+    payload = {
+        "schema": 1,
+        "generated_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "order": order_suffix,
+        "pinned": {str(k): v for k, v in sorted(pinned.items())},
+    }
+    try:
+        os.makedirs(os.path.abspath(reports_dir), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, sort_keys=True, ensure_ascii=False)
+            f.write("\n")
+        print(f"📌 Recorded {len(pinned)} pinned build commit(s) -> {path}")
+        return path
+    except OSError as e:
+        print(f"⚠️  Could not write pinned file: {e}")
+        return None
+
+
 def write_rivals(reports_dir, order_suffix, rivals):
     """Persist the loser -> [winners] map for one merge order.
 
@@ -1756,11 +1786,9 @@ def main():
     # Apply PRs to new branch
     applied, failed, skipped = apply_prs_to_branch(branch_name, prs)
     # Persist who-lost-to-whom while it still exists (RFC-001 phase 1.1).
-    write_rivals(
-        REPORTS_DIR,
-        pr_state.ORDER_SUFFIX_BY_NAME.get(merge_order_str, merge_order_str),
-        PR_RIVALS,
-    )
+    _order_suffix = pr_state.ORDER_SUFFIX_BY_NAME.get(merge_order_str, merge_order_str)
+    write_rivals(REPORTS_DIR, _order_suffix, PR_RIVALS)
+    write_pinned(REPORTS_DIR, _order_suffix, PR_PINNED)
     # Push branch to fork BEFORE running individual PR tests
     push_branch_to_fork(branch_name)
     # Clean up old branches after successfully pushing new one

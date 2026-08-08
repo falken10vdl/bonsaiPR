@@ -1140,6 +1140,31 @@ def generate_release_body(
                 ),
             )
 
+            # Stage 0 knows which PRs were built at a curator-validated commit
+            # rather than at their current tip; the rendered report this function
+            # parses does not carry it per-record, so it arrives by sidecar. Left
+            # unapplied, every pinned PR would be recorded as built at a tip that
+            # the build proved does not merge.
+            pinned_path = os.path.join(REPORTS_DIR, f"pinned.{order_suffix}.json")
+            if os.path.exists(pinned_path):
+                try:
+                    with open(pinned_path, "r", encoding="utf-8") as pf:
+                        pinned_map = (json.load(pf) or {}).get("pinned") or {}
+                    for num, built in pinned_map.items():
+                        rec = new_state["prs"].get(str(num))
+                        if not rec:
+                            continue
+                        rec["tip"] = rec.get("head")
+                        rec["head"] = built[:7]
+                        rec["pinned"] = True
+                    if pinned_map:
+                        print(
+                            f"📌 Manifest marks {len(pinned_map)} PR(s) as built at a "
+                            f"curator-validated commit"
+                        )
+                except (OSError, ValueError) as e:
+                    print(f"⚠️  Could not apply pinned commits to the manifest: {e}")
+
             # Previous run's committed snapshot for THIS order (working-tree copy;
             # git history holds older ones). Absent on the very first run.
             prev_state = pr_state.load_state(state_path)
