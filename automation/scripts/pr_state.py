@@ -96,6 +96,14 @@ def _pr_record(pr, status):
     if status == STATUS_FAILED and pr.get("reason"):
         # Informational only; a reason change alone never triggers a transition.
         rec["reason"] = pr["reason"]
+    if pr.get("pinned"):
+        # This PR was built at an earlier, curator-validated commit because its
+        # current tip would not merge. `head` is what was built; `tip` is what
+        # the PR points at now. Without both, "merged" reads as a statement
+        # about the tip - which is exactly what is NOT true here.
+        rec["pinned"] = True
+        if pr.get("tip"):
+            rec["tip"] = pr["tip"]
     return num, rec
 
 
