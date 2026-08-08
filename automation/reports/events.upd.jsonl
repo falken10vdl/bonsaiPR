@@ -1941,3 +1941,7 @@
 {"ts": "2026-08-08T18:05:14Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-08-08T18:26:09Z", "order": "by-updated", "pr": 9254, "event": "status", "from": "merged", "to": "skipped_conflict"}
 {"ts": "2026-08-08T18:26:09Z", "order": "by-updated", "pr": 9255, "event": "updated", "status": "merged", "from_head": "618f142", "to_head": "bab4ca6"}
+{"ts": "2026-08-08T20:05:28Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-08T20:05:28Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-08T20:05:28Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-08T20:26:16Z", "order": "by-updated", "pr": 9281, "event": "added", "to": "merged"}

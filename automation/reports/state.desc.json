@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 545,
+    "merged": 546,
     "skipped_conflict": 121,
     "skipped_draft": 54,
-    "total": 850
+    "total": 851
   },
-  "generated_at": "2026-08-08T17:48:33Z",
+  "generated_at": "2026-08-08T19:48:28Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6939,11 +6939,19 @@
       "status": "merged",
       "title": "build(deps): bump ty from 0.0.63 to 0.0.66",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9280"
+    },
+    "9281": {
+      "author": "RobertSigmundsson",
+      "branch": "fix/unit-scale-prefix-exponent",
+      "head": "799aae2",
+      "status": "merged",
+      "title": "Fix #9278: raise SI prefix to the length exponent in calculate_unit_scale for prefixed SQUARE_METRE/CUBIC_METRE",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9281"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608081912",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608081912"
+    "tag": "v0.8.6-alpha2608082112",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608082112"
   },
   "schema": 1
 }
