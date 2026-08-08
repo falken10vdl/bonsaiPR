@@ -1693,3 +1693,7 @@
 {"ts": "2026-08-08T07:11:42Z", "order": "ascending", "pr": 9105, "event": "status", "from": "failed", "to": "skipped_conflict"}
 {"ts": "2026-08-08T07:11:42Z", "order": "ascending", "pr": 9113, "event": "status", "from": "failed", "to": "skipped_conflict"}
 {"ts": "2026-08-08T07:11:42Z", "order": "ascending", "pr": 9116, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-08-08T13:11:30Z", "order": "ascending", "pr": 8139, "event": "updated", "status": "skipped_draft", "from_head": "af58eaf", "to_head": "02481b3"}
+{"ts": "2026-08-08T13:11:30Z", "order": "ascending", "pr": 8652, "event": "status", "from": "skipped_conflict", "to": "failed"}
+{"ts": "2026-08-08T13:11:30Z", "order": "ascending", "pr": 8653, "event": "status", "from": "skipped_conflict", "to": "failed"}
+{"ts": "2026-08-08T13:11:30Z", "order": "ascending", "pr": 8658, "event": "status", "from": "skipped_conflict", "to": "failed"}
