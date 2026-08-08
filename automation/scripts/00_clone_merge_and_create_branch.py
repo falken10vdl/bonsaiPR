@@ -568,16 +568,22 @@ def _state_pr(pr, merged_sha=None):
 def write_state_snapshot(
     applied, failed, skipped, test_results, merge_order, total_prs, base_commit=None
 ):
-    """Write state.<order>.json + append events.<order>.jsonl from stage 0.
+    """Write state.<order>.json, events.<order>.jsonl and delta.<order>.md.
 
-    Normally `02_upload_to_falken10vdl.py` owns this, because it also renders the
-    run-to-run delta into the release body. But a curated instance may only want
-    the *manifest* - the thing federation actually consumes (RFC-001 s6) - without
-    building and releasing four platform zips to get it.
+    Stage 0 is the sole owner of the manifest. It was not always: stage 2 wrote
+    it for a full run by reconstructing the four PR buckets from its own rendered
+    report, while stage 0 wrote it for a manifest-only run from the data it
+    already had. One artefact, two producers, differing fidelity - which
+    published three untruths before this was consolidated:
 
-    Opt-in via BONSAIPR_WRITE_STATE so the two never both write in one run: if
-    stage 0 wrote the snapshot, stage 2's delta would diff it against itself and
-    the release body would lose its "changes since last build" section.
+      * base_commit missing entirely (branch name only)
+      * pinned builds recorded at the PR's tip, asserting that a commit merges
+        when the build had just proved it does not
+      * both fixed in stage 0 first, where they did not run for a full build
+
+    Stage 2 still needs the run-to-run delta for the release body, so that is
+    rendered here and handed over as `delta.<order>.md` rather than recomputed
+    from a second snapshot.
     """
     test_results = test_results or {}
     suffix = pr_state.ORDER_SUFFIX_BY_NAME.get(merge_order, merge_order)
@@ -607,10 +613,23 @@ def write_state_snapshot(
     )
 
     prev_state = pr_state.load_state(state_path)
+    delta_md = ""
     if prev_state:
         delta = pr_state.compute_delta(prev_state, new_state, strict_order=True)
         pr_state.append_events(events_path, pr_state.delta_to_events(delta))
+        delta_md = pr_state.render_delta_md(delta)
     pr_state.write_state(new_state, state_path)
+
+    # Handed to stage 2 for the release body. Written even when empty, so its
+    # absence means "stage 0 did not run / is older" rather than "no changes" -
+    # stage 2 falls back to its own computation only in the former case.
+    try:
+        with open(
+            os.path.join(REPORTS_DIR, f"delta.{suffix}.md"), "w", encoding="utf-8"
+        ) as f:
+            f.write(delta_md)
+    except OSError as e:
+        print(f"⚠️  Could not write delta summary: {e}")
     print(
         f"🧾 Wrote manifest {os.path.basename(state_path)} "
         f"({new_state['counts']['merged']} merged of {new_state['counts']['total']})"
@@ -1833,21 +1852,21 @@ def main():
         pr_conflict_data,
         merge_order=merge_order_str,
     )
-    # Manifest, when stage 2 is not going to run (see write_state_snapshot).
-    if os.getenv("BONSAIPR_WRITE_STATE", "").strip().lower() in ("1", "true", "yes"):
-        try:
-            write_state_snapshot(
-                applied,
-                failed,
-                skipped,
-                failed_pr_test_results,
-                merge_order_str,
-                len(prs),
-                base_commit=source_commit_hash,
-            )
-        except Exception as e:
-            # A manifest is downstream of the build, never a reason to fail one.
-            print(f"⚠️  Could not write state snapshot: {e}")
+    # The manifest, always. Stage 0 owns it whether or not stage 2 runs, because
+    # stage 0 is the only place that knows what was actually built.
+    try:
+        write_state_snapshot(
+            applied,
+            failed,
+            skipped,
+            failed_pr_test_results,
+            merge_order_str,
+            len(prs),
+            base_commit=source_commit_hash,
+        )
+    except Exception as e:
+        # A manifest is downstream of the build, never a reason to fail one.
+        print(f"⚠️  Could not write state snapshot: {e}")
     print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
     print(
         f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}"

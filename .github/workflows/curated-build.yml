@@ -5,8 +5,8 @@
 # PRs its profile selects — which is what makes it a distinct federation
 # publisher rather than a second copy of the same answer.
 #
-# Manual-first on purpose: the schedule below is commented out. Run it by hand
-# from the Actions tab until a full run has been seen to work end to end.
+# Scheduled hourly for the manifest and daily for a full build; also runnable by
+# hand from the Actions tab.
 #
 # Setup: see .github/workflows/README-curated-build.md
 
@@ -25,9 +25,17 @@ on:
         default: full
         type: choice
         options: [full, manifest-only]
-  # Enable once a manual run has succeeded. Every 6 hours:
-  # schedule:
-  #   - cron: "0 */6 * * *"
+  # `inputs` is EMPTY on a schedule trigger — dispatch defaults do not apply. The
+  # env block below therefore falls back to SCHEDULED_* rather than reading
+  # inputs directly; without that, a cron run would build with no profile at all
+  # (i.e. every open PR, unpinned) and publish it as a release.
+  schedule:
+    # Hourly manifest: cheap, no release, and it is what builds the run-to-run
+    # history federation aggregates. Nothing else produces that history.
+    - cron: "20 * * * *"
+    # Daily full build. Releases are pruned to the most recent 30, so daily keeps
+    # a month of installable builds; hourly would keep 30 hours of them.
+    - cron: "40 3 * * *"
 
 concurrency:
   # Two overlapping runs would fight over the same force-pushed build branch.
@@ -42,7 +50,14 @@ jobs:
     timeout-minutes: 330
 
     env:
-      BONSAIPR_PROFILE: ${{ inputs.profile }}
+      # Resolve once, here, because `inputs` is empty on a schedule trigger and
+      # every later reference would silently become "".
+      PROFILE: ${{ inputs.profile || vars.BONSAIPR_SCHEDULED_PROFILE || 'openingdesign' }}
+      # Hourly cron = manifest only; daily cron = full build; dispatch = whatever
+      # was chosen.
+      STAGES: ${{ inputs.stages || (github.event.schedule == '40 3 * * *' && 'full' || 'manifest-only') }}
+
+      BONSAIPR_PROFILE: ${{ inputs.profile || vars.BONSAIPR_SCHEDULED_PROFILE || 'openingdesign' }}
 
       # Where releases and the extension index are published.
       GITHUB_OWNER: ${{ vars.BONSAIPR_OWNER || 'OpeningDesign' }}
@@ -107,7 +122,7 @@ jobs:
         # Fail before doing 40 minutes of merging if the curation is malformed.
         working-directory: automation/scripts
         run: |
-          python bonsaipr_profile.py show "$BONSAIPR_PROFILE"
+          python bonsaipr_profile.py show "$PROFILE"
 
       - name: Configure git
         run: |
@@ -120,10 +135,6 @@ jobs:
       - name: Run the pipeline
         env:
           GITHUB_TOKEN: ${{ secrets.BONSAIPR_TOKEN }}
-          # Stage 0 writes state.<order>.json itself when stage 2 will not run.
-          # Never set for `full`, or stage 2 would diff the snapshot against
-          # itself and the release body would lose its delta section.
-          BONSAIPR_WRITE_STATE: ${{ inputs.stages == 'manifest-only' && '1' || '' }}
           # The checkout step already put the automation at the exact commit
           # this run was launched from; main.py's self-pull would be redundant.
           BONSAIPR_SKIP_SELF_PULL: "1"
@@ -132,10 +143,11 @@ jobs:
           # NOT BASE_CLONE_DIR — stage 0 clones into it, and pre-creating it
           # makes the script take its "update existing repo" path instead.
           mkdir -p "$(dirname "$BASE_CLONE_DIR")" "$BUILD_BASE_DIR" "$WORKING_DIR" "$REPORT_PATH"
-          if [ "${{ inputs.stages }}" = "manifest-only" ]; then
-            # Stage 0 alone produces everything federation consumes: the report,
-            # state.<order>.json and rivals.<order>.json. Stages 1-2 only add
-            # installable zips and a release.
+          echo "profile=$PROFILE  stages=$STAGES"
+          if [ "$STAGES" = "manifest-only" ]; then
+            # Stage 0 produces everything federation consumes — report,
+            # state/events/rivals/pinned — and owns the manifest either way.
+            # Stages 1-2 only add installable zips and a release.
             cd ../scripts && python 00_clone_merge_and_create_branch.py
           else
             python main.py
@@ -158,7 +170,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: curated-build-${{ inputs.profile }}
+          name: curated-build-${{ github.run_id }}
           retention-days: 14
           path: |
             automation/reports/

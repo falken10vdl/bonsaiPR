@@ -51,6 +51,13 @@ REPORTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "re
 _ORDER_SUFFIX = pr_state.ORDER_SUFFIX_BY_NAME
 
 
+class _StageZeroOwnsManifest(Exception):
+    """Raised to skip this function's legacy manifest write.
+
+    Not an error: it means stage 0 already wrote state/events/delta for this run,
+    so there is nothing here to recompute."""
+
+
 def _reports_publish_branch(repo_dir):
     """Branch the report/state files are committed to (for building blob links).
 
@@ -1119,6 +1126,25 @@ def generate_release_body(
             order_suffix = _ORDER_SUFFIX.get(merge_order, "asc")
             state_path = os.path.join(REPORTS_DIR, f"state.{order_suffix}.json")
             events_path = os.path.join(REPORTS_DIR, f"events.{order_suffix}.jsonl")
+            delta_path = os.path.join(REPORTS_DIR, f"delta.{order_suffix}.md")
+
+            # Stage 0 owns the manifest — it is the only place that knows what was
+            # actually built (which commit per PR, which base, which rivals). It
+            # hands the rendered delta over here rather than this function
+            # reconstructing a second snapshot by parsing its own report, which is
+            # what used to produce two versions of one artefact that disagreed.
+            #
+            # The fallback below is the legacy path, kept for a stage 0 that
+            # predates this: absence of the file means "nobody wrote it", not
+            # "nothing changed" — stage 0 writes it even when the delta is empty.
+            if os.path.exists(delta_path):
+                with open(delta_path, "r", encoding="utf-8") as df:
+                    delta_summary_section = df.read().strip()
+                print(
+                    f"📎 Using the manifest and delta written by stage 0 "
+                    f"({os.path.basename(state_path)})"
+                )
+                raise _StageZeroOwnsManifest
 
             new_state = pr_state.build_state(
                 applied_prs=applied_prs,
@@ -1180,6 +1206,8 @@ def generate_release_body(
             # Overwrite the snapshot; the commit step turns git history into the
             # durable run-to-run diff record.
             pr_state.write_state(new_state, state_path)
+        except _StageZeroOwnsManifest:
+            pass
         except Exception as e:
             import traceback
 
