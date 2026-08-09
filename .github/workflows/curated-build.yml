@@ -114,9 +114,28 @@ jobs:
                       /usr/local/share/boost "$AGENT_TOOLSDIRECTORY" || true
           echo "after:"; df -h / | tail -1
 
+      # 3.13 is installed FIRST so the later 3.11 wins the bare `python` name,
+      # which is what the pipeline scripts and requirements.txt expect. Stage 1
+      # shells out to `python3.13` by name to build the Blender 5.1 variants.
+      # Without it those three targets fail with `python3.13: not found` and the
+      # run still exits 0 — a release missing 3 of its 7 zips, published green.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
+      - name: Verify both interpreters
+        # Fail here, loudly, rather than three-quarters of the way through a
+        # 20-minute build. Also guards the ordering above: swap the two steps
+        # and this still passes, but `python` becomes 3.13 — so check both.
+        run: |
+          python --version
+          python -c 'import sys; assert sys.version_info[:2] == (3, 11), sys.version'
+          python3.13 --version
+          pip3.13 --version
 
       - name: Set up Node
         # Stage 1 runs `npm install` while packaging the add-on.

@@ -80,6 +80,15 @@ both statements, not routine.
   six closed PRs among the casualties of advancing. Filtered, the replay
   reproduces the pipeline's pin count exactly, which is the check that makes it
   trustworthy.
+- **Every full build published a release missing 3 of its 7 zips, green.** The
+  runner installs Python 3.11; stage 1 shells out to `python3.13` by name for the
+  Blender 5.1 variants, which failed with `python3.13: not found` on all three
+  targets. `build_addons()` returned `len(addon_files) > 0` — one zip is enough —
+  so the run exited 0, the release went out, and the feed was updated. Found only
+  because a release had 5 assets where a doc said 7, and the curator knew the
+  missing ones were the py313 set. The interpreter is now installed and a partial
+  build fails the run; the deeper lesson is that a *count* of expected artefacts
+  is worth having, because "some output exists" is not a success condition.
 - **A number that flatters the design deserves the most scrutiny, not the least.**
   The 81 was attractive — it reframed the feature — and so it went into three
   documents without anyone testing it. The user's own "that isn't really new
