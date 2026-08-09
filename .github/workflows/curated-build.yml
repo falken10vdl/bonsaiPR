@@ -5,8 +5,11 @@
 # PRs its profile selects — which is what makes it a distinct federation
 # publisher rather than a second copy of the same answer.
 #
-# Scheduled hourly for the manifest and daily for a full build; also runnable by
-# hand from the Actions tab.
+# Run by hand from the Actions tab. Nothing here is on a timer, deliberately:
+# a release, a build branch, and the record of what a curation currently holds
+# are all statements a curator makes, and sampling at the curator's own cadence
+# measures what they actually experience rather than what happened at 3am
+# between two runs nobody looked at.
 #
 # Setup: see .github/workflows/README-curated-build.md
 
@@ -25,17 +28,16 @@ on:
         default: full
         type: choice
         options: [full, manifest-only]
+      push_branch:
+        description: "Publish the build branch to the IfcOpenShell fork?"
+        required: true
+        default: auto
+        type: choice
+        options: [auto, "yes", "no"]
   # `inputs` is EMPTY on a schedule trigger — dispatch defaults do not apply. The
   # env block below therefore falls back to SCHEDULED_* rather than reading
   # inputs directly; without that, a cron run would build with no profile at all
   # (i.e. every open PR, unpinned) and publish it as a release.
-  schedule:
-    # Hourly manifest: cheap, no release, and it is what builds the run-to-run
-    # history federation aggregates. Nothing else produces that history.
-    - cron: "20 * * * *"
-    # Daily full build. Releases are pruned to the most recent 30, so daily keeps
-    # a month of installable builds; hourly would keep 30 hours of them.
-    - cron: "40 3 * * *"
 
 concurrency:
   # Two overlapping runs would fight over the same force-pushed build branch.
@@ -52,12 +54,23 @@ jobs:
     env:
       # Resolve once, here, because `inputs` is empty on a schedule trigger and
       # every later reference would silently become "".
-      PROFILE: ${{ inputs.profile || vars.BONSAIPR_SCHEDULED_PROFILE || 'openingdesign' }}
+      PROFILE: ${{ inputs.profile || vars.BONSAIPR_DEFAULT_PROFILE || 'openingdesign' }}
       # Hourly cron = manifest only; daily cron = full build; dispatch = whatever
       # was chosen.
-      STAGES: ${{ inputs.stages || (github.event.schedule == '40 3 * * *' && 'full' || 'manifest-only') }}
+      STAGES: ${{ inputs.stages || 'manifest-only' }}
 
-      BONSAIPR_PROFILE: ${{ inputs.profile || vars.BONSAIPR_SCHEDULED_PROFILE || 'openingdesign' }}
+      # Publish the build branch only when something will link to it — a full
+      # run makes a release whose body points at the branch, a manifest-only run
+      # points at nothing. `auto` follows that; yes/no override it for the
+      # deliberate case (e.g. just re-distilled a personal build and want a
+      # branch others can check out).
+      BONSAIPR_PUSH_BRANCH: >-
+        ${{ (inputs.push_branch == 'yes' && '1')
+         || (inputs.push_branch == 'no'  && '0')
+         || ((inputs.stages || 'manifest-only') == 'full' && '1')
+         || '0' }}
+
+      BONSAIPR_PROFILE: ${{ inputs.profile || vars.BONSAIPR_DEFAULT_PROFILE || 'openingdesign' }}
 
       # Where releases and the extension index are published.
       GITHUB_OWNER: ${{ vars.BONSAIPR_OWNER || 'OpeningDesign' }}
@@ -143,7 +156,7 @@ jobs:
           # NOT BASE_CLONE_DIR — stage 0 clones into it, and pre-creating it
           # makes the script take its "update existing repo" path instead.
           mkdir -p "$(dirname "$BASE_CLONE_DIR")" "$BUILD_BASE_DIR" "$WORKING_DIR" "$REPORT_PATH"
-          echo "profile=$PROFILE  stages=$STAGES"
+          echo "profile=$PROFILE  stages=$STAGES  push_branch=$BONSAIPR_PUSH_BRANCH"
           if [ "$STAGES" = "manifest-only" ]; then
             # Stage 0 produces everything federation consumes — report,
             # state/events/rivals/pinned — and owns the manifest either way.

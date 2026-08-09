@@ -1224,6 +1224,26 @@ def cleanup_old_branches():
         print(f"⚠️ Error during branch cleanup: {e}")
 
 
+def should_push_branch():
+    """Whether to publish the build branch to the fork.
+
+    The branch is worth publishing when someone will follow a link to it — a
+    release body and a report both point at it, and PR authors are invited to
+    check it out and test their work alongside everyone else's.
+
+    Nothing points at the branch from a manifest-only run: there is no release,
+    and the manifest itself references PRs and commits rather than the branch.
+    Pushing one anyway means a force-pushed branch per run, which at an hourly
+    cadence churns the fork's branch list through a day and a half of history
+    that nobody asked for and nobody reads.
+
+    Default is unchanged (push), so the canonical instance behaves exactly as
+    before. Set BONSAIPR_PUSH_BRANCH=0 to suppress it.
+    """
+    v = os.getenv("BONSAIPR_PUSH_BRANCH", "").strip().lower()
+    return v not in ("0", "false", "no")
+
+
 def push_branch_to_fork(branch_name):
     """Push the new branch to the fork"""
     original_dir = os.getcwd()
@@ -1799,7 +1819,10 @@ def main():
         finally:
             os.chdir(original_dir)
         # Push branch to fork (even if empty)
-        push_branch_to_fork(branch_name)
+        if should_push_branch():
+            push_branch_to_fork(branch_name)
+        else:
+            print(f"⏭️  Branch {branch_name} kept local (BONSAIPR_PUSH_BRANCH=0)")
         # Print current branch for verification
         os.chdir(work_dir)
         result = subprocess.run(
@@ -1829,6 +1852,10 @@ def main():
         print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
         print(
             f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}"
+            if should_push_branch()
+            else f"✅ Branch created locally: {branch_name} (not published)"
+        if should_push_branch()
+        else f"✅ Branch created locally: {branch_name} (not published)"
         )
         print(f"📊 Report saved: {report_path}")
         print(
@@ -1842,9 +1869,15 @@ def main():
     write_rivals(REPORTS_DIR, _order_suffix, PR_RIVALS)
     write_pinned(REPORTS_DIR, _order_suffix, PR_PINNED)
     # Push branch to fork BEFORE running individual PR tests
-    push_branch_to_fork(branch_name)
-    # Clean up old branches after successfully pushing new one
-    cleanup_old_branches()
+    if should_push_branch():
+        push_branch_to_fork(branch_name)
+        # Clean up old branches after successfully pushing new one
+        cleanup_old_branches()
+    else:
+        print(
+            f"⏭️  Branch {branch_name} kept local — nothing links to it on this "
+            f"run (BONSAIPR_PUSH_BRANCH=0)"
+        )
     # Print current branch for verification
     os.chdir(work_dir)
     result = subprocess.run(
@@ -1903,6 +1936,8 @@ def main():
     print(f"\n🎉 Weekly BonsaiPR branch creation completed!")
     print(
         f"✅ Branch created: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}"
+        if should_push_branch()
+        else f"✅ Branch created locally: {branch_name} (not published)"
     )
     print(f"📊 Report saved: {report_path}")
     print(
