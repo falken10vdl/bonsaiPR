@@ -1,7 +1,7 @@
 # RFC-001 — federated curated builds
 
 **Branch:** `feat/rfc-001-federation` · **PR:** falken10vdl/bonsaiPR#11 (draft)
-**Status as of:** 2026-08-08
+**Status as of:** 2026-08-09
 
 The **engineering log for this subsystem** — permanent, and rewritten as things
 change, rather than a branch note deleted when its PR merges. Federation will
@@ -32,11 +32,19 @@ bit us, and what is still open.
 | — | manifest consolidated onto stage 0 | done |
 | 4 / 5 | maintainer digest / attestations | **need buy-in — nothing to build until someone asks** |
 
-Live instance: `OpeningDesign/bonsaiPR`, profile `openingdesign` (160 PRs, 160 pins,
-pinned base `644b92263d`). Scheduled hourly (`manifest-only`) and daily (`full`).
-Latest: **128 of 129 merged**, 11 via pinned fallback. Publishes
-`state.rec.json`, `events.rec.jsonl`, `rivals.rec.json`, `pinned.rec.json`,
-`delta.rec.md`, and a curated Blender feed at `profiles/openingdesign/index.json`.
+Live instance: `OpeningDesign/bonsaiPR`, profile `openingdesign` (160 PRs, 160
+pins, pinned base `644b92263d`). Latest run: **128 of 129 merged**, 11 of them
+via pinned fallback. Publishes `state.rec.json`, `events.rec.jsonl`,
+`rivals.rec.json`, `pinned.rec.json`, `delta.rec.md`, and a curated Blender feed
+at `profiles/openingdesign/index.json`.
+
+**Nothing runs on a timer, and that is deliberate.** An hourly manifest was tried
+and removed: `streak.builds` is an artifact of run frequency rather than a
+property of a change, `streak.days` measures elapsed time and does not need
+frequent sampling, and every run commits report files back to the repo. Sampling
+at the curator's own cadence also measures what the curator actually experiences.
+A `full` run additionally publishes a release and force-pushes a build branch —
+both statements, not routine.
 
 ---
 
@@ -54,6 +62,13 @@ Latest: **128 of 129 merged**, 11 via pinned fallback. Publishes
 - **`git merge` writes conflict output to stdout, not stderr.** The pipeline logs
   `stderr`, so an ordinary conflict shows as `❌ Failed to apply PR #N:` with
   nothing after the colon. Empty means conflict, not "no information".
+- **`inputs` is empty on a `schedule` trigger.** Dispatch defaults do not apply,
+  so `${{ inputs.stages }}` is `""` on a cron run and every expression built on
+  it silently takes the else branch. Uncommenting a schedule would have built
+  *every* open PR, unpinned, and published it as a release. The schedule has
+  since been removed, but the trap is waiting for whoever adds one back: resolve
+  profile and stages once in `env`, with fallbacks, and never read `inputs`
+  further down.
 - **Every change must land in two places**: `falken10vdl/bonsaiPR`
   (`feat/rfc-001-federation`, for PR #11) and `OpeningDesign/bonsaiPR` (`main`,
   which is what actually runs). The fork also drifts on its own because its own

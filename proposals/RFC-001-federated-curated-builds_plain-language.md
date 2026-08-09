@@ -181,12 +181,12 @@ The design doesn't pretend it can stop a determined bad actor from publishing a 
 
 ## 9. What's actually been built so far
 
-This is no longer a proposal on paper. As of early August 2026 a **second curated build is running in public**, publishing its choices on a schedule, and the pooling tool combines it with the original everything-build automatically.
+This is no longer a proposal on paper. As of early August 2026 a **second curated build is running in public**, publishing its choices, and the pooling tool combines it with the original everything-build automatically.
 
 Concretely, what exists:
 
-- **A working curated build.** One curator's personal build was automatically converted into a published profile of 160 chosen changes, and that profile now builds itself hourly without anyone touching it. The most recent build folded in **128 of the 129 chosen changes that are still open** — up from 117 before the starting-point fix in [§6](#6-the-discovery-nobody-expected-most-broken-changes-arent-broken).
-- **Downloadable results.** The build produces installable versions for Windows, macOS and Linux, published under the curation's own name so a subscriber knows which selection they're installing rather than just whose computer produced it.
+- **A working curated build.** One curator's personal build was automatically converted into a published profile of 160 chosen changes, and that profile can be rebuilt on demand to record which changes still fit. The most recent build folded in **128 of the 129 chosen changes that are still open** — up from 117 before the starting-point fix in [§6](#6-the-discovery-nobody-expected-most-broken-changes-arent-broken).
+- **Downloadable results, published on purpose.** The build can produce installable versions for Windows, macOS and Linux, under the curation's own name so a subscriber knows which selection they're installing rather than just whose computer produced it. Nothing here happens on a timer. Rebuilding the record and publishing a version are both things a curator chooses to do — the second especially, since it says "this selection is worth installing." An interesting side effect: because the record only updates when the curator builds, it measures what that curator actually experiences, rather than what happened at 3am between two runs nobody looked at.
 - **Pooling across two publishers, automatically.** The tool fetches both publishers' published records and combines them. **Seventeen changes currently disagree** — sixteen that the curated build can carry and the standard build cannot, one the other way. That disagreement is precisely the information the whole system exists to surface.
 
 Running it also surfaced lessons worth recording, because they say something about the state of this kind of software generally.

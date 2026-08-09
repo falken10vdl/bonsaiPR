@@ -70,6 +70,7 @@ python bonsaipr_profile.py check <name>
 
 | name | default |
 |---|---|
+| `BONSAIPR_DEFAULT_PROFILE` | `openingdesign` |
 | `BONSAIPR_OWNER` | `OpeningDesign` |
 | `BONSAIPR_REPO` | `bonsaiPR` |
 | `BONSAIPR_FORK_OWNER` | `OpeningDesign` |
@@ -93,15 +94,27 @@ your profile merges at all before spending an hour on packaging.
 
 Once that succeeds, run again with `full`.
 
-The workflow is scheduled: **hourly `manifest-only`** (builds the run-to-run
-history federation aggregates — nothing else produces it, and it cannot be
-back-filled) and **daily `full`** (releases prune to the most recent 30, so daily
-keeps a month of installable builds where hourly would keep 30 hours).
+**Nothing is scheduled.** Every run is started by hand, deliberately.
 
-`inputs` is empty on a schedule trigger, so profile and stages are resolved in the
-workflow's `env` block with cron-aware defaults. Change the profile a cron uses by
-setting the `BONSAIPR_SCHEDULED_PROFILE` repository variable — not by editing the
-dispatch defaults, which schedules ignore.
+The obvious objection is that the run-to-run history federation aggregates
+cannot be back-filled, so surely it should accrue on a timer. It is worth less
+than it sounds. `streak.days` measures elapsed time, which passes whether or not
+you build — sampling monthly still shows a change has held for three months.
+`streak.builds` is an artifact of how often you run, not a property of the
+change. Only short-lived flapping is genuinely better caught by frequent
+sampling, and a flap that resolves itself before anyone looks is thin evidence.
+
+Against that, every run commits report files to this repo, so an hourly cadence
+means two dozen commits a day of churn in your own history.
+
+There is also a better reason than cost: **sampling at your own cadence measures
+what you actually experience.** "This change flapped between my builds" is a
+more meaningful statement than "it flapped at 3am between two runs nobody looked
+at."
+
+If you later want some automation, daily is a far better trade than hourly — add
+a `schedule:` trigger and note that `inputs` is empty on it, so `PROFILE` and
+`STAGES` must keep their fallbacks.
 
 ---
 
@@ -115,6 +128,13 @@ dispatch defaults, which schedules ignore.
 - **Selected PRs that closed are reported, not silently dropped.** Stage 0 prints
   which of your selected PRs are no longer open. That is your signal that the
   profile has drifted and wants regenerating.
+- **The build branch is published only when something links to it.** A `full` run
+  makes a release whose body points at the branch, so it is pushed to your
+  IfcOpenShell fork. A `manifest-only` run points at nothing, so it is not —
+  otherwise every run leaves another force-pushed branch in a list nobody reads,
+  and cleanup keeps only the most recent 30. Override per run with the **push_branch** dispatch input
+  (`yes`/`no`); `BONSAIPR_PUSH_BRANCH=0` does it permanently. Unset means push,
+  so the canonical instance is unaffected.
 - **Disk is the likeliest failure.** The workflow reclaims ~20 GB before
   starting; if a `full` run still fails on space, use `manifest-only`, which
   needs far less.
