@@ -180,15 +180,23 @@ to apply.
 merges — a PR that applied cleanly when written conflicts months later because
 the base moved under it. Measured on the `openingdesign` curation:
 
-| base | date | PRs landing | vs pinned |
+| base | date | in isolation | replayed in order |
 |---|---|---:|---|
-| pinned `644b92263d` | 2026-07-07 | **158/160** | — |
-| `6ca8c8ac94` | 2026-07-15 | 151/160 | +0 / −7 |
-| tip `048242783e` | 2026-08-05 | 141/160 | +0 / −17 |
+| pinned `644b92263d` | 2026-07-07 | **127/129** | 117 head, 11 pinned, 1 dropped |
+| `89523999b3` | 2026-07-25 | 116/129 | 114 head, 3 pinned, 12 dropped |
+| tip `f05dd4aea5` | 2026-08-09 | 116/129 | 114 head, 3 pinned, 12 dropped |
 
-Advancing gained *nothing* and cost up to 17 PRs. That asymmetry is specific to
-an allowlist profile: every selected PR predates the pin, so a newer base can
-only take PRs away.
+Advancing frees 8 pinned PRs and costs 12 — a net loss of 11 from the build, and
+seven of the eight it frees are only 0–2 commits behind anyway. The `+0` the
+isolation column reports for every candidate is not a finding; that mode cannot
+see stack interactions at all. This asymmetry is specific to an allowlist
+profile: every selected PR predates the pin, so a newer base can mostly only take
+PRs away.
+
+Note the denominator is **129, not 156**: closed PRs keep a fetchable
+`refs/pull/<n>/head` but never enter a build, and scoring them inflates every
+figure here. The advisor filters them out using the state snapshot the pipeline
+publishes each run.
 
 **What it costs.** The build stops receiving upstream fixes, and rebase debt
 compounds. Pinning and never looking is how a distribution rots. Pinning *while

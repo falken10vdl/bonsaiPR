@@ -263,22 +263,23 @@ Notes on the design:
   **upstream drift — not PR quality — is what breaks most merges.** A PR that applied
   cleanly when written conflicts months later because the base moved under it.
 
-  Measured on the `openingdesign` curation (160 PRs) with `base_advisor.py`, against
-  successive `v0.8.0` commits:
+  Measured with `base_advisor.py` on the `openingdesign` curation — 156 selected, of
+  which the **129 still open** are what the build considers — against successive
+  `v0.8.0` commits:
 
   | base | date | PRs landing | vs pinned |
   |---|---|---:|---|
-  | pinned `644b92263d` | 2026-07-07 | **158/160** | — |
-  | `6ca8c8ac94` | 2026-07-15 | 151/160 | +0 / **−7** |
-  | `e52e5e2e58` | 2026-07-20 | 144/160 | +0 / **−14** |
-  | tip `048242783e` | 2026-08-05 | 141/160 | +0 / **−17** |
+  | pinned `644b92263d` | 2026-07-07 | **127/129** | — |
+  | `89523999b3` | 2026-07-25 | 116/129 | +0 / **−11** |
+  | `e077390e3d` | 2026-08-01 | 116/129 | +0 / **−11** |
+  | tip `f05dd4aea5` | 2026-08-09 | 116/129 | +0 / **−11** |
 
   Note the `+0` in every row — but read it carefully, because it is the weaker half
   of this table. Those figures come from the advisor's default mode, which merges each
   PR onto the base **on its own**. It cannot see a PR that merges onto the base
   perfectly and then collides with a PR merged before it, which is the mechanism
-  behind every pinned PR in this curation: 158/160 merge in isolation while nine still
-  need a pinned fallback in the real build. So `+0` means *this mode cannot tell*,
+  behind every pinned PR in this curation: 127/129 merge in isolation while eleven
+  still need a pinned fallback in the real build. So `+0` means *this mode cannot tell*,
   not *no benefit*. `base_advisor.py --in-stack` replays the curation in order and
   reports the number that actually matters — PRs moving from `pinned` to `head`.
 
@@ -286,19 +287,32 @@ Notes on the design:
 
   | base | date | at head | pinned | dropped |
   |---|---|---:|---:|---:|
-  | pinned `644b92263d` | 2026-07-07 | 145 | **14** | 1 |
-  | `89523999b3` | 2026-07-25 | 139 | 3 | 18 |
-  | tip `f05dd4aea5` | 2026-08-09 | 139 | 3 | 18 |
+  | pinned `644b92263d` | 2026-07-07 | 117 | **11** | 1 |
+  | tip `f05dd4aea5` | 2026-08-09 | 114 | 3 | 12 |
 
-  Advancing frees **11 pins** — a real gain the default mode reported as `+0`. It is
+  Those first-row figures are the build's own: the run that produced them published
+  128 merged PRs, 11 pinned and 1 conflicting. Reproducing the pipeline's pin count
+  exactly is the check that makes the second row worth reading.
+
+  Advancing frees **8 pins** — a real gain the default mode reported as `+0`. It is
   still not worth taking: a pinned PR is in the build at an older commit, a dropped
-  one is absent, and the trade is 11 pins freed against 17 PRs leaving the build.
-  Note also that every base from 2026-07-25 onward scores identically, so there is no
-  such thing as a cheaper partial advance — if a curation advances at all, it should
-  advance to the tip.
+  one is absent, so the trade is 8 pins freed against 11 PRs net leaving the build.
+  Every base from 2026-07-25 onward scores identically, so there is no such thing as
+  a cheaper partial advance — if a curation advances at all, it should advance to the
+  tip.
 
-  The `−17` is measured correctly either way, and on those numbers advancing still
-  cost this curation up to 17 PRs — roughly 17 lost per month of drift. That asymmetry is
+  The pins being freed are also worth almost nothing: seven of the eight are 0–2
+  commits behind their head. Only one (#8083, at 27) represents real drift, and it is
+  the curator's own PR. **Scoring must be restricted to PRs the build actually
+  considers.** `refs/pull/<n>/head` keeps resolving after a PR closes, so an earlier
+  version of this measurement scored 156 selected PRs while the build considered 129,
+  and reported 18 dropped where 6 were closed PRs that were never in the build.
+
+  Restricted to the 129 PRs the build considers, the isolation table above reads
+  127/129 at the pin and 116/129 at every later candidate: a loss of **11**, the same
+  eleven in every row. So the shape of the original finding survives — advancing costs
+  this curation about eleven PRs, roughly a month's worth of drift — while the
+  headline figures were inflated by closed PRs. That asymmetry is
   specific to an `allowlist` profile, and it is why pinning is close to free there:
   every selected PR predates the pin, so a newer base can only take PRs away. The
   usual objection — "you will miss newly-opened PRs" — only applies when *adding* one
@@ -1120,7 +1134,7 @@ run is started by hand ([§11](#s11) originally assumed a schedule; see below).
 
 | | |
 |---|---|
-| curation | `openingdesign` — 160 PRs distilled from a hand-built branch, 160 pins, base pinned to `644b92263d` |
+| curation | `openingdesign` — 156 PRs distilled from a hand-built branch (129 still open), 156 pins, base pinned to `644b92263d` |
 | latest build | **128 of 129** open selected PRs merged, 11 via pinned fallback |
 | publishes | `state.rec.json` (schema 2), `events`, `rivals`, `pinned`, an archived report, a release, and a curated Blender feed |
 | federation | two publishers aggregated over HTTP; **17 PRs diverge** — 16 the curation carries that the anchor cannot, 1 the reverse |
