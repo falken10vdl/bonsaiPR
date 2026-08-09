@@ -50,6 +50,26 @@ both statements, not routine.
 
 ## Things that cost real time
 
+- **A commit's sha does not survive being moved; its patch-id does.** This is one
+  bug that surfaced twice in an hour, in two different files, and both times the
+  wrong answer looked plausible enough to publish:
+  - *Behind head* used `rev-list pin..tip`, which assumes the pin is an ancestor
+    of the head. On a force-pushed branch it is not, so the count silently became
+    "length of the branch" — #8083 read 47, which happened to be its exact commit
+    count. Nine of eleven pinned PRs turned out to be rebased.
+  - `attribute()` only ever matched merge subjects, so every cherry-picked commit
+    fell through to residue and was reported as the curator's own unshared work.
+    That produced **81**, which reached RFC-001 as the headline justification for
+    phase 1.5. The real number is 6; 75 were already on open PRs.
+
+  The same file already used `git cherry` — patch-id — to detect upstream
+  absorption. The knowledge was present and applied on one side of the ladder
+  only. When comparing commits across branches, ask first whether a rebase or a
+  cherry-pick would break the comparison.
+- **A number that flatters the design deserves the most scrutiny, not the least.**
+  The 81 was attractive — it reframed the feature — and so it went into three
+  documents without anyone testing it. The user's own "that isn't really new
+  work, it's usually work pushed to a PR and then cherry-picked" is what broke it.
 - **`FETCH_HEAD` is overwritten by the next fetch.** Bit me twice, and both
   times produced *confidently wrong* results rather than an error — a worktree
   built on a PR head instead of `v0.8.0`, and a merge of the wrong branch into a
@@ -128,8 +148,10 @@ different merge order. Neither would have been caught by exit codes.
   anchor. Adoption signals (`selected_by`, `excluded_by`, `objections`) stay
   near-meaningless until somebody else publishes a selective profile — §3.4's
   caveat, still unresolved by anything built so far.
-- **A pinned commit that has been force-pushed away.** Handled with a warning, never
-  actually observed.
+- **A pinned commit that has been force-pushed away.** Handled with a warning. No
+  longer hypothetical in the milder form: 9 of 11 pins sit on branches that have
+  since been rebased, so the pin is no longer an ancestor of the head even though
+  the object still exists. Losing the object outright is still unobserved.
 - **Blender installing the curated feed.** The feed is published and well-formed; no
   one has subscribed to it and installed from it.
 

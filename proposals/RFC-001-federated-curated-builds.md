@@ -428,7 +428,8 @@ to name the commit it was taken against.)
 | — attributed once the PR index is consulted | **160** | **100%** |
 | first-parent non-merge commits | 94 | |
 | — already absorbed upstream | 13 | dropped, not attributed |
-| — **residue** | **81** | the curator's own unpublished work |
+| — **cherry-picked off an open PR** | **75** | 53 patch-identical, 22 same subject with adapted content |
+| — **residue** | **6** | the curator's own unpublished work |
 | first-parent merges needing a textual hand-resolution | **1** | |
 | off-path **ancestry resolutions** | **7** | see [§5.3](#s5-3) |
 
@@ -583,7 +584,7 @@ against a payoff nobody has been able to reproduce.
 
 ### <a id="s5-4"></a>5.4 Residue handling, and the privacy default
 
-The 81 residue commits are clustered into candidate patch series — contiguous runs in
+The 6 residue commits are clustered into candidate patch series — contiguous runs in
 first-parent order with overlapping file sets — and each cluster is presented for a
 human decision:
 
@@ -987,8 +988,9 @@ be written and run today against data already in the repo.
 
 Phase 1.5 is arguably the one that settles whether *anyone will participate*, and it has
 its own standalone payoff regardless of federation: even if no one ever publishes a
-manifest, surfacing 81 commits of a curator's unsubmitted feature work is worth the
-build on its own.
+manifest, reconstructing a complete provenance map for a branch nobody documented —
+which of its commits are already upstream, which were lifted off open PRs, and which
+never left the machine — is worth the build on its own.
 
 ---
 
@@ -1243,7 +1245,10 @@ same PR for the same stated reason is a design principle being discovered rather
 decreed, and it costs nobody a meeting.
 
 The measurement in [§5.1](#s5-1) is the part I would point at first. A single poweruser branch
-turned out to be 100% mechanically attributable to open PRs, and to contain 81 commits
-of real feature work that upstream has never seen. Whatever happens
+turned out to be 100% mechanically attributable to open PRs, and to carry 75 commits
+lifted off open PRs plus 6 that upstream has never seen. The first figure was
+originally reported as 81 commits of unseen work; that was an artefact of matching
+commits by sha, which a cherry-pick does not preserve. Whatever happens
 to the federation idea, that branch — and every branch like it — is holding
-information the project could be using today.
+information the project could be using today: not a hoard of hidden features, but an
+exact record of which proposed changes one practitioner found necessary to run.

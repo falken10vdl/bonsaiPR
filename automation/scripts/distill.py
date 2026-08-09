@@ -77,6 +77,11 @@ RE_OWNER_BRANCH = re.compile(r"['\"](?:remotes/)?([A-Za-z0-9][\w.-]*)/(\S+?)['\"
 # `Merge PR #7940 (Concatenate_selections) to resolve build conflicts`
 RE_HASH_NUM = re.compile(r"#(\d+)")
 
+# `refs/remotes/pr/8353` (a mirror of refs/pull/*/head) or the pipeline's own
+# `refs/remotes/pr-8353/<branch>`.
+RE_PR_REF = re.compile(r"^refs/remotes/pr[-/](\d+)(?:/|$)")
+PR_REF_GLOBS = ("refs/remotes/pr/*", "refs/remotes/pr-*/*")
+
 
 # --------------------------------------------------------------------------- #
 # git
@@ -148,6 +153,88 @@ def upstream_absorbed(repo, base, branch):
         if line.startswith("- "):
             absorbed.add(line[2:].strip())
     return absorbed
+
+
+def patch_id(repo, sha):
+    """Content hash of a commit's diff. Survives cherry-pick, rebase and squash.
+
+    `git show | git patch-id --stable` rather than plumbing: patch-id already
+    ignores the commit header, blob hashes and line numbers, which is exactly the
+    set of things that change when a commit is moved.
+    """
+    show = subprocess.run(
+        ["git", "show", "--format=%H", sha], cwd=repo, capture_output=True,
+        text=True, encoding="utf-8", errors="replace",
+    )
+    if show.returncode != 0 or not show.stdout.strip():
+        return None
+    pid = subprocess.run(
+        ["git", "patch-id", "--stable"], cwd=repo, input=show.stdout,
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+    )
+    parts = pid.stdout.split()
+    return parts[0] if parts else None
+
+
+def pr_commit_index(repo, base, globs=PR_REF_GLOBS):
+    """subject -> [(sha, pr_number)] over every commit on an open PR head.
+
+    One `git log` pass across the mirrored PR refs - ~28k commits upstream, which
+    is seconds. Computing a patch-id for all of them would not be, so the subject
+    narrows the field to a handful and the patch-id only has to confirm.
+
+    Empty when no PR refs are mirrored. That is a real state, not an error: a
+    clone without them cannot tell a cherry-pick from original work, and the
+    caller has to report the difference rather than assume the flattering answer.
+    """
+    args = ["log", "--source", "--format=%H" + NUL + "%S" + NUL + "%s" + REC]
+    args += ["--glob=" + g for g in globs]
+    args += ["--not", base]
+    out = git(args, repo)
+    index = defaultdict(list)
+    for chunk in out.split(REC):
+        parts = chunk.strip("\n").split(NUL)
+        if len(parts) < 3:
+            continue
+        sha, ref, subject = parts[0].strip(), parts[1].strip(), parts[2].strip()
+        m = RE_PR_REF.match(ref)
+        if m and subject:
+            index[subject].append((sha, m.group(1)))
+    return index
+
+
+def attribute_cherry_pick(repo, commit, index, cache):
+    """Attribute a non-merge commit to the PR it was cherry-picked from.
+
+    Nothing above this rung can see these. `attribute()` reads merge subjects,
+    and a cherry-pick is not a merge - it is a new sha carrying someone else's
+    patch. Before this rung existed every such commit fell through to residue and
+    was reported as the curator's own unshared work: on the reference branch that
+    mislabelled 75 of 81 commits, and the 81 was quoted in RFC-001 as the headline
+    justification for the feature.
+
+    Patch-id is what survives the move, so an identical patch is exact. A commit
+    that keeps its subject but not its diff is the ordinary result of picking onto
+    a different base - the hunks get conflict-adjusted - so it is probable rather
+    than exact: the same work, adapted.
+    """
+    candidates = index.get(commit["subject"])
+    if not candidates:
+        return None, None, None
+
+    mine = patch_id(repo, commit["sha"])
+    if mine:
+        for sha, pr in candidates:
+            if sha not in cache:
+                cache[sha] = patch_id(repo, sha)
+            if cache[sha] and cache[sha] == mine:
+                return pr, EXACT, f"patch-identical to {sha[:12]} on PR #{pr}"
+
+    prs = sorted({pr for _, pr in candidates}, key=int)
+    shown = ", ".join("#" + p for p in prs[:3])
+    if len(prs) > 3:
+        shown += f" and {len(prs) - 3} more"
+    return prs[0], PROBABLE, f"subject matches {shown}, content adapted"
 
 
 def files_of_commit(repo, sha):
@@ -375,6 +462,10 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
     residue = []
     probable = []
     unattributed_merges = []
+    cherry_picked = []
+
+    cherry_index = pr_commit_index(repo, base)
+    pid_cache = {}
 
     for c in commits:
         pr, confidence, evidence = attribute(c, by_owner_branch)
@@ -410,8 +501,29 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
         elif c["sha"] in absorbed:
             row["classification"] = "absorbed-upstream"
         else:
-            row["classification"] = "residue"
-            residue.append(c)
+            cpr, cconf, cev = attribute_cherry_pick(repo, c, cherry_index, pid_cache)
+            if cpr:
+                row.update(
+                    {
+                        "pr": int(cpr),
+                        "confidence": cconf,
+                        "evidence": cev,
+                        "classification": "cherry-picked",
+                    }
+                )
+                rec = by_num.get(cpr)
+                if rec:
+                    row["title"] = rec.get("title")
+                    row["pr_author"] = rec.get("author")
+                # Deliberately NOT added to order_seq or validated. Taking one
+                # commit off a PR is not evidence the curator wanted the whole
+                # PR merged - it is often the opposite, someone lifting a single
+                # fix out of a branch they did not want. Promoting these to
+                # selections would silently widen the profile.
+                cherry_picked.append(row)
+            else:
+                row["classification"] = "residue"
+                residue.append(c)
         provenance.append(row)
 
     clusters = cluster_residue(repo, residue) if residue else []
@@ -461,6 +573,14 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
         "validated": validated,
         "provenance": provenance,
         "residue": residue,
+        "cherry_picked": cherry_picked,
+        # Whether residue could be checked against open PRs at all. Without the
+        # refs, "original work" degrades to "not a merge and not upstream yet",
+        # which is what produced the 81 figure.
+        "cherry_index": {
+            "available": bool(cherry_index),
+            "subjects": len(cherry_index),
+        },
         "clusters": clusters,
         "probable": probable,
         "unattributed_merges": unattributed_merges,
@@ -561,7 +681,12 @@ def render(result, top=12):
         f"  attributed to a PR     {r['attributed_merges']}"
         f"  ({r['attribution_rate']*100:.1f}%)"
     )
-    out.append(f"  residue (curator's own){len(r['residue']):>4}")
+    idx = r.get("cherry_index") or {}
+    if idx.get("available"):
+        out.append(f"  cherry-picked from a PR{len(r.get('cherry_picked') or []):>4}")
+        out.append(f"  residue (curator's own){len(r['residue']):>4}")
+    else:
+        out.append(f"  residue (UNVERIFIED)   {len(r['residue']):>4}")
     out.append(f"  absorbed upstream      {len(r['absorbed'])}")
     out.append(f"  textual hand-resolutions {len(r['resolutions'])}")
     out.append(f"  ancestry resolutions   {len(r.get('ancestry_resolutions') or [])}")
@@ -572,6 +697,39 @@ def render(result, top=12):
             "  ⚠️  Attribution below 50%. This branch is probably too unstructured "
             "to distil usefully — see RFC-001 §5.6."
         )
+        out.append("")
+
+    if not idx.get("available"):
+        out.append(
+            "  ⚠️  No PR refs mirrored, so cherry-picks cannot be told from original"
+        )
+        out.append(
+            "      work and the residue count is an upper bound, likely a large"
+        )
+        out.append(
+            "      overcount. Run: git fetch <remote> '+refs/pull/*/head:refs/remotes/pr/*'"
+        )
+        out.append("")
+
+    if r.get("cherry_picked"):
+        exact = sum(1 for x in r["cherry_picked"] if x.get("confidence") == EXACT)
+        out.append(f"## Cherry-picked from open PRs ({len(r['cherry_picked'])})")
+        out.append("")
+        out.append(
+            f"  {exact} patch-identical, {len(r['cherry_picked']) - exact} same subject"
+        )
+        out.append(
+            "  with adapted content. Already shared — not the curator's unshared work,"
+        )
+        out.append(
+            "  and not added to the profile: lifting one commit off a PR is not a"
+        )
+        out.append("  request to merge the whole thing.")
+        out.append("")
+        for row in r["cherry_picked"][:top]:
+            out.append(f"  #{row['pr']:<6} {row['sha']}  {row['subject'][:66]}")
+        if len(r["cherry_picked"]) > top:
+            out.append(f"  … {len(r['cherry_picked']) - top} more")
         out.append("")
 
     if r["probable"]:

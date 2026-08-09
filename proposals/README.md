@@ -36,8 +36,8 @@ hand-maintained build branches powerusers already keep.
 
 **Why it might matter even if the federation idea goes nowhere:** measuring one real
 poweruser branch found that 100% of its 160 integration merges are mechanically
-attributable to open PRs, and that it carries 81 commits of the curator's own feature
-work — much of which upstream has never seen.
+attributable to open PRs, that 75 of its remaining commits were cherry-picked off open
+PRs, and that 6 are the curator's own work upstream has never seen.
 
 **Open questions needing a decision:** whether the peer list is canonical or
 per-curator; whether the canonical instance should build a fourth "recorded" merge
