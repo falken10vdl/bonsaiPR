@@ -474,6 +474,33 @@ def _conflicting_paths():
     return [f.strip() for f in result.stdout.strip().split("\n") if f.strip()]
 
 
+def _commits_behind(pinned_sha, tip_sha):
+    """How many commits the built commit is behind the PR's current head.
+
+    "Pinned" alone does not say whether to care. One commit behind is usually a
+    typo fix; forty is a PR that has moved on without you. Both objects are in
+    the clone already — the pinned one was fetched to merge it, the tip when the
+    PR branch was fetched — so this costs one rev-list and no network.
+
+    Returns None when either commit is unavailable (a force-push can orphan the
+    pinned one), so the caller can leave the cell blank rather than print a
+    number it cannot stand behind.
+    """
+    if not pinned_sha or not tip_sha:
+        return None
+    result = subprocess.run(
+        ["git", "-C", work_dir, "rev-list", "--count", f"{pinned_sha}..{tip_sha}"],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        return None
+    try:
+        return int(result.stdout.strip())
+    except ValueError:
+        return None
+
+
 def _publisher_owner():
     return os.getenv("GITHUB_OWNER", "falken10vdl")
 
@@ -1445,27 +1472,15 @@ def generate_report(
         else:
             f.write(f"- Success Rate: N/A\n\n")
         if PR_PINNED:
-            # The merged-PRs table already shows the commit each PR was built at
-            # and marks these with 📌, so this is not a second copy of that data.
-            # It exists because a table of 128 rows cannot carry a call to
-            # action, and there is one here: each of these PRs no longer merges
-            # at its head, which is true for everyone building it, not just for
-            # this curation — and the author probably does not know.
-            f.write(f"\n## 📌 Running on validated commits ({len(PR_PINNED)})\n\n")
+            # A count here rather than a section: the merged table now carries
+            # every fact the old section did — built commit, how far behind, and
+            # a link to the head — so repeating it was two places to drift apart.
+            # What a 128-row table cannot do is be noticed while skimming, which
+            # is the one job left for this line.
             f.write(
-                "These PRs no longer merge at their current head, so this build used the\n"
-                "last commit the curation validated. Two consequences:\n\n"
-                "- **You are testing an older version of these PRs** than the branch now holds.\n"
-                "- **Their authors may not know their head has broken.** A note on the PR is\n"
-                "  more useful than a silent workaround here.\n\n"
+                f"- Built at a validated commit (head no longer merges): "
+                f"{len(PR_PINNED)} — marked 📌 below\n\n"
             )
-            for n, sha in sorted(PR_PINNED.items()):
-                tip = _pr_tip_shas.get(n, "unknown")
-                f.write(
-                    f"- [#{n}](https://github.com/{upstream_repo}/pull/{n}) — "
-                    f"built `{sha[:10]}`, head is now `{tip[:10]}`\n"
-                )
-            f.write("\n")
 
         f.write(
             f"Note: PRs were merged in {merge_order} order ({order_desc}).\n"
@@ -1704,15 +1719,25 @@ def generate_report(
                 f.write(
                     "📌 marks a PR built at an earlier commit this curation had "
                     "validated, because its current head no longer merges. "
-                    "**Last commit** is always what this build actually merged.\n\n"
+                    "**Last commit** is always what this build actually merged, and "
+                    "**Behind head** is how many commits that trails the PR's current "
+                    "head — click it to see what is missing.\n\n"
+                    "Two consequences worth acting on: you are testing an older version "
+                    "of these PRs than the branch now holds, and their authors may not "
+                    "know their head has stopped merging — which is true for everyone "
+                    "building them, not just for this curation.\n\n"
                 )
             stability_header = " Order stability |" if show_stability else ""
             stability_rule = "-----------------|" if show_stability else ""
+            # Only worth a column when something is actually pinned; otherwise it
+            # is an empty column on every row of a 128-row table.
+            behind_header = " Behind head |" if PR_PINNED else ""
+            behind_rule = "-------------|" if PR_PINNED else ""
             f.write(
-                f"| PR | Title | Author | Branch | Created | Last commit |{stability_header}\n"
+                f"| PR | Title | Author | Branch | Created | Last commit |{behind_header}{stability_header}\n"
             )
             f.write(
-                f"|----|-------|--------|--------|---------|-------------|{stability_rule}\n"
+                f"|----|-------|--------|--------|---------|-------------|{behind_rule}{stability_rule}\n"
             )
             for pr in sorted(applied_prs, key=_sort_key, reverse=reverse_sort):
                 pr_link = f"[#{pr['number']}]({pr['html_url']})"
@@ -1732,11 +1757,22 @@ def generate_report(
                         last_commit += " 📌"
                 else:
                     last_commit = ""
+                # How far the built commit trails the PR's head, linked to that
+                # head so the reader can go and look at what they are missing.
+                behind = ""
+                if PR_PINNED:
+                    tip_sha = _pr_tip_shas.get(pr['number'])
+                    n = _commits_behind(pinned_sha, tip_sha)
+                    if n is None:
+                        behind = " |"
+                    else:
+                        tip_url = f"https://github.com/{upstream_repo}/commit/{tip_sha}"
+                        behind = f" [{n}]({tip_url}) |"
                 stability = (
                     f" {_stability_cell(pr['number'])} |" if show_stability else ""
                 )
                 f.write(
-                    f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {created} | {last_commit} |{stability}\n"
+                    f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {created} | {last_commit} |{behind}{stability}\n"
                 )
             f.write("\n")
         f.write(f"## Developer Instructions\n\n")

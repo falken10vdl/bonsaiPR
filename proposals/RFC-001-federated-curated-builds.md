@@ -233,10 +233,20 @@ Notes on the design:
   reference is federated and needs phase 2 to fetch; until then only the local part
   resolves, with a warning, rather than silently building something other than what
   the file asks for.
-- **`pin`** freezes a PR at a known-good head SHA. This is what makes a curated build
-  a *stable product* rather than something that silently changes under the user when a
-  contributor force-pushes. It is also, deliberately, a strong quality signal — a
-  curator who pins is saying "I tested this exact commit." One caveat: if the contributor
+- **`pin` is a fallback, not a freeze.** It records a head SHA the curator validated;
+  the build tries each PR's *current* head first and drops back to the pin only when
+  that head will not merge. An earlier draft of this section specified a freeze, and
+  that is the wrong design: a frozen curation is reproducible and stagnant, never
+  receiving the fixes its contributors are making. Pinning nothing is the opposite
+  failure — on the first real build it cost 12 PRs, 11 of which merged fine at the
+  commit the curator had actually validated.
+
+  The fallback also produces a signal for free. A PR that no longer merges at its head
+  is broken for *everyone* building it, not just for this curation, and its author
+  usually does not know; the build report names those PRs and how many commits behind
+  the built commit is, which is a nudge queue rather than a silent workaround. It
+  remains a quality signal too — a curator who pins is saying "I tested this exact
+  commit." One caveat: if the contributor
   rebases or force-pushes their PR branch, the old SHA becomes orphaned — no longer
   fetchable from any public ref, and impossible to verify even in principle. This is
   distinct from a PR simply advancing (where the old SHA remains reachable as an

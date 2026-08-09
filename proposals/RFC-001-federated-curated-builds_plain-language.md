@@ -138,7 +138,7 @@ Two refinements came out of using this:
 
 **The starting point and the changes have to move together.** Pinning the starting point but letting the individual changes drift forward — or the reverse — is worse than doing neither. Old changes on new ground is the worst combination of all. They have to stay consistent, which is exactly why a Linux distribution ships a coherent *set* of versions rather than the newest of everything.
 
-**When a change breaks, fall back rather than dropping it.** If a contributor's latest version no longer fits, the build quietly uses the last version the curator had verified — and reports that it did so. The build keeps working, *and* the report doubles as a list of contributors worth telling that their work has stopped fitting. In practice this took one real build from 117 changes included to 128.
+**When a change breaks, fall back rather than dropping it.** If a contributor's latest version no longer fits, the build quietly uses the last version the curator had verified — and says so in its report, along with how far behind that version now is. The build keeps working, *and* the report doubles as a list of contributors worth telling that their work has stopped fitting. That distance matters: on the current build the range is 11 commits behind (a couple of small fixes, safe to leave) to 517 (a change that has moved on substantially without you). In practice this took one real build from 117 changes included to 128.
 
 ---
 
