@@ -32,8 +32,8 @@ bit us, and what is still open.
 | — | manifest consolidated onto stage 0 | done |
 | 4 / 5 | maintainer digest / attestations | **need buy-in — nothing to build until someone asks** |
 
-Live instance: `OpeningDesign/bonsaiPR`, profile `openingdesign` (160 PRs, 160
-pins, pinned base `644b92263d`). Latest run: **128 of 129 merged**, 11 of them
+Live instance: `OpeningDesign/bonsaiPR`, profile `openingdesign` (156 PRs, 156
+pins, 129 of them still open, pinned base `644b92263d`). Latest run: **128 of 129 merged**, 11 of them
 via pinned fallback. Publishes `state.rec.json`, `events.rec.jsonl`,
 `rivals.rec.json`, `pinned.rec.json`, `delta.rec.md`, and a curated Blender feed
 at `profiles/openingdesign/index.json`.
@@ -67,14 +67,19 @@ both statements, not routine.
   only. When comparing commits across branches, ask first whether a rebase or a
   cherry-pick would break the comparison.
 - **"Does this PR merge?" has two different answers.** `base_advisor.py` merged
-  each PR onto the base *alone* and reported 158/160 — while the real build
-  needed a pinned fallback for nine of them, because they collide with PRs
+  each PR onto the base *alone* and reported 127/129 — while the real build
+  needed a pinned fallback for eleven of them, because they collide with PRs
   merged earlier in the same run. Its docstring said it answered "how many of my
   selected PRs actually merge?", which is how it came to be quoted in RFC §6 as
   evidence that advancing the base gains nothing. It cannot see a stack
   interaction, so `+0` there means *unknown*, not *zero*. `--in-stack` replays
   the curation in order (`merge-tree` chained through `commit-tree`, no worktree)
-  and is the mode to decide on.
+  and is the mode to decide on. It also has to score only PRs the build
+  considers: `refs/pull/<n>/head` resolves long after a PR closes, so the first
+  version scored 156 selected PRs against a build universe of 129 and reported
+  six closed PRs among the casualties of advancing. Filtered, the replay
+  reproduces the pipeline's pin count exactly, which is the check that makes it
+  trustworthy.
 - **A number that flatters the design deserves the most scrutiny, not the least.**
   The 81 was attractive — it reframed the feature — and so it went into three
   documents without anyone testing it. The user's own "that isn't really new

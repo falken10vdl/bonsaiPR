@@ -86,6 +86,34 @@ def fetch_pr_heads(repo, numbers, remote="origin", batch=25, quiet=False):
     return got
 
 
+DEFAULT_PR_INDEX = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "reports", "state.asc.json"
+)
+
+
+def open_pr_numbers(path=DEFAULT_PR_INDEX):
+    """PR numbers the pipeline currently considers, or None if unknown.
+
+    `refs/pull/<n>/head` keeps resolving long after a PR closes, so fetching by
+    number happily produces heads for PRs the build will never look at. Scoring
+    those inflates every figure this tool prints: on the reference profile 27 of
+    156 selected PRs were closed, and six of them showed up in an "advancing
+    would drop these" list for PRs that were not in the build to begin with.
+
+    The pipeline's own state snapshot is the authority on what is open, and it
+    is committed every run, so this costs no API call.
+    """
+    if not path or not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, ValueError):
+        return None
+    nums = {int(n) for n in (data.get("prs") or {})}
+    return nums or None
+
+
 def cleanup_refs(repo):
     """Remove the temporary refs. Always call this; they are not the user's."""
     listing = git(["for-each-ref", "--format=delete %(refname)", "refs/baseadv/"], repo)
@@ -321,6 +349,11 @@ def main(argv=None):
         help="evaluate this commit-ish (repeatable); overrides --candidates",
     )
     ap.add_argument(
+        "--include-closed", action="store_true",
+        help="score every selected PR, including ones that have closed since "
+             "(they still have a fetchable head, but the build ignores them)",
+    )
+    ap.add_argument(
         "--in-stack", action="store_true",
         help="replay the curation in order instead of testing each PR against "
              "the base alone — slower, but the question the build actually asks",
@@ -344,6 +377,22 @@ def main(argv=None):
         return 1
 
     print(f"profile {profile.name}: {len(numbers)} selected PRs")
+
+    if not args.include_closed:
+        live = open_pr_numbers()
+        if live is None:
+            print(
+                "  ⚠️  no PR state snapshot found, so closed PRs cannot be "
+                "filtered out; figures will include PRs the build never sees"
+            )
+        else:
+            skipped = [n for n in numbers if n not in live]
+            numbers = [n for n in numbers if n in live]
+            if skipped:
+                print(
+                    f"  {len(skipped)} selected PR(s) are closed and not built; "
+                    f"scoring the remaining {len(numbers)}"
+                )
     git(["fetch", "-q", args.remote, profile.base_branch], args.repo)
 
     try:
