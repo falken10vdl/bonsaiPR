@@ -41,6 +41,7 @@
   - [12.2 The anti-gaming rule, demonstrated](#s12-2)
   - [12.3 What phase 0 changed about the plan](#s12-3)
   - [12.4 Phase 1 results](#s12-4)
+  - [12.5 Phases 1.5 – 3, and what running it publicly changed](#s12-5)
 - [13. Risks and open questions](#s13)
 - [14. Summary](#s14)
 
@@ -965,7 +966,7 @@ falken10vdl to change how the canonical instance runs.
 | **0** ✅ | `federate.py` run over the existing `state.{asc,desc,upd}.json` as three synthetic publishers. Proves the signal math and the rendering against real data. **Done — results in [§12](#s12).** | nothing |
 | **1** ✅ | Profile format + `load_profile()` + `.env` compat shim. Canonical instance expressible as `everything`. **Done — `bonsaipr_profile.py`, `profiles/everything.json`; notes in [§12.4](#s12-4).** | small change at `00_clone_…py:41-62` |
 | **1.1** ✅ | Record the *winning* PR number when a merge conflict skips a PR, so `rivals` becomes computable. Discovered in phase 0 ([§12](#s12)); cheap now, unrecoverable retroactively. **Done — `reports/rivals.<order>.json`.** | small change at `00_clone_…py` |
-| **1.5** | `distill` ([§5](#s5)) — attribution ladder, provenance file, residue clustering, harvested conflict resolutions. Run against `Ryan_build-0.8.6-…` as the first real input. | phase 1 |
+| **1.5** ✅ | `distill` ([§5](#s5)) — attribution ladder, provenance file, residue clustering, harvested conflict resolutions. **Done — 100% attribution against `Ryan_build-0.8.6-…`; results in [§5.1](#s5-1) and [§12.5](#s12-5).** | phase 1 |
 | **2** ✅ | Manifest schema 2 (`publisher` / `profile` blocks) + `peers.json` + real cross-publisher aggregation. **Done.** | small change at `02_upload_…py:1118` |
 | **3** ✅ | Per-profile `index.json` feeds. **Done — `profiles/<name>/index.json`, id stays `bonsaiPR` so curations remain alternatives rather than companions.** | `update_index_json.py` |
 | **4** | Maintainer digest — optionally as a bot comment or a status check on the upstream PR. | upstream buy-in |
@@ -1075,6 +1076,55 @@ report format in the same pass. [§6](#s6)'s manifest can absorb it later.
 **Nothing here is retroactive.** Rival pairings start accumulating on the next real
 build run; every run before that lost them permanently, which was the argument for
 landing phase 1.1 early rather than when a later phase wanted the signal.
+
+### <a id="s12-5"></a>12.5 Phases 1.5 – 3, and what running it publicly changed
+
+`OpeningDesign/bonsaiPR` has been a live second publisher since 2026-08-07. Every
+run is started by hand ([§11](#s11) originally assumed a schedule; see below).
+
+| | |
+|---|---|
+| curation | `openingdesign` — 160 PRs distilled from a hand-built branch, 160 pins, base pinned to `644b92263d` |
+| latest build | **128 of 129** open selected PRs merged, 11 via pinned fallback |
+| publishes | `state.rec.json` (schema 2), `events`, `rivals`, `pinned`, an archived report, a release, and a curated Blender feed |
+| federation | two publishers aggregated over HTTP; **17 PRs diverge** — 16 the curation carries that the anchor cannot, 1 the reverse |
+
+**What running it publicly changed about the design:**
+
+- **Seven latent faults surfaced the moment a second operator existed** — a
+  hard-coded home directory, a hard-coded release URL, a directory-existence
+  check, a pagination test against the filtered count, a fresh clone that never
+  checked out the base branch, a merge-order label falling through to `[upd]`,
+  and manifest fields missing on one of two write paths. None had ever been
+  wrong on the canonical instance. **Two produced a completely green build that
+  was silently incorrect** (129 PRs merged onto a v0.7.0 tree; a correct build
+  labelled as a different merge order), which is the strongest argument in this
+  document for publishing a detailed manifest rather than a pass/fail.
+
+- **One artefact must have one writer.** `state.<order>.json` was produced by
+  stage 0 for a manifest run and rebuilt by stage 2 from its own rendered report
+  for a full one. Three published untruths came out of that — a missing
+  `base_commit`, and pinned builds recorded at the PR's tip, i.e. asserting a
+  commit merges when the build had just proved otherwise. Stage 0 now owns it and
+  hands stage 2 a rendered delta.
+
+- **Every step toward a more deliberate build makes the record more specific.**
+  Pin the base and the PRs float; pin the PRs and the record still describes the
+  tip. Each new capability silently invalidated a statement that had been true.
+  The manifest's `pinned`/`tip` pair and `base_commit` exist because of this, and
+  phase 4 should expect the same.
+
+- **Nothing runs on a timer, which was not the original plan.** An hourly
+  manifest was tried and removed: `streak.builds` is an artifact of run frequency
+  rather than a property of a PR, `streak.days` measures elapsed time and does
+  not need frequent sampling, and every run commits report files. Sampling at the
+  curator's own cadence also measures what that curator actually experiences.
+
+**Still unresolved, and it is the one that matters:** there is one genuine
+curator and one anchor. [§3.4](#s3-4)'s caveat stands — `selected_by`,
+`excluded_by` and `objections` remain close to meaningless until a second
+*selective* profile publishes. Everything built so far proves the arithmetic and
+the plumbing; none of it proves anyone will curate.
 
 ---
 

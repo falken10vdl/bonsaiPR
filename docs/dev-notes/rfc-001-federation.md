@@ -69,6 +69,13 @@ both statements, not routine.
   since been removed, but the trap is waiting for whoever adds one back: resolve
   profile and stages once in `env`, with fallbacks, and never read `inputs`
   further down.
+- **An unasserted `str.replace` that matches nothing fails silently.** Three fixes
+  in the report code were committed without ever being applied: the merged table
+  kept showing PR tips, the "Fork Repository" line kept 404-ing, and one edit
+  landed in the wrong one of four tables that share a column name. Each looked
+  done in the diff. Assert the match, or use an exact edit, and then verify the
+  string is in the file — presence is still not proof it is in the *right* place,
+  which is what the wrong-table case shows.
 - **Every change must land in two places**: `falken10vdl/bonsaiPR`
   (`feat/rfc-001-federation`, for PR #11) and `OpeningDesign/bonsaiPR` (`main`,
   which is what actually runs). The fork also drifts on its own because its own
