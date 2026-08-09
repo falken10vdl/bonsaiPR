@@ -1439,26 +1439,25 @@ def generate_report(
         else:
             f.write(f"- Success Rate: N/A\n\n")
         if PR_PINNED:
-            # Anyone testing this build is testing an older commit than the PR
-            # currently points at, and the PR's author almost certainly does not
-            # know their head stopped merging. Both facts belong in the report,
-            # not only in a CI log nobody reads.
-            f.write(
-                f"\n## 📌 Built at a curator-validated commit ({len(PR_PINNED)})\n\n"
-            )
+            # The merged-PRs table already shows the commit each PR was built at
+            # and marks these with 📌, so this is not a second copy of that data.
+            # It exists because a table of 128 rows cannot carry a call to
+            # action, and there is one here: each of these PRs no longer merges
+            # at its head, which is true for everyone building it, not just for
+            # this curation — and the author probably does not know.
+            f.write(f"\n## 📌 Running on validated commits ({len(PR_PINNED)})\n\n")
             f.write(
                 "These PRs no longer merge at their current head, so this build used the\n"
-                "commit the curation last validated. **You are testing an older version of\n"
-                "these PRs than the branch now contains** — and their authors may not know\n"
-                "the head has broken.\n\n"
+                "last commit the curation validated. Two consequences:\n\n"
+                "- **You are testing an older version of these PRs** than the branch now holds.\n"
+                "- **Their authors may not know their head has broken.** A note on the PR is\n"
+                "  more useful than a silent workaround here.\n\n"
             )
-            f.write("| PR | Built commit | Current head |\n")
-            f.write("|----|--------------|--------------|\n")
             for n, sha in sorted(PR_PINNED.items()):
                 tip = _pr_tip_shas.get(n, "unknown")
                 f.write(
-                    f"| [#{n}](https://github.com/{upstream_repo}/pull/{n}) "
-                    f"| `{sha[:10]}` | `{tip[:10]}` |\n"
+                    f"- [#{n}](https://github.com/{upstream_repo}/pull/{n}) — "
+                    f"built `{sha[:10]}`, head is now `{tip[:10]}`\n"
                 )
             f.write("\n")
 
@@ -1549,10 +1548,17 @@ def generate_report(
                 pr_link = f"[#{pr_number}]({pr['html_url']})"
                 author = _cell(pr['user']['login'])
                 branch = _cell(pr.get('head', {}).get('ref', 'unknown'))
-                last_sha = pr.get('head', {}).get('sha', '')
+                # The commit THIS BUILD merged, which is not always the PR's
+                # current tip: a pinned fallback builds an earlier, validated
+                # commit. Showing the tip here would present a commit that does
+                # not merge as though it were in the build.
+                pinned_sha = PR_PINNED.get(pr['number'])
+                last_sha = pinned_sha or pr.get('head', {}).get('sha', '')
                 if last_sha:
                     last_commit_url = f"https://github.com/{upstream_repo}/commit/{last_sha}"
                     last_commit = f"[{last_sha[:7]}]({last_commit_url})"
+                    if pinned_sha:
+                        last_commit += " 📌"
                 else:
                     last_commit = ""
                 # First-detected date and base commit from tracking
