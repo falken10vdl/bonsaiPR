@@ -130,7 +130,7 @@ This was measured directly. Taking one curator's set of 160 chosen changes and t
 | one week later | 151 |
 | one month later (the newest available) | 141 |
 
-Roughly **seventeen changes lost per month of drift** — and notably, moving to a newer starting point gained *nothing*. Not a single change fit better on newer ground.
+Roughly **seventeen changes lost per month of drift**. The first version of this measurement also reported that moving to newer ground gained *nothing* — not one change fitting better. That turned out to be a limitation of how it was measured rather than a fact: each change was being tested against the starting point *on its own*, when the real build fits them one after another, each onto the result of the last. Tested the way the build actually works, moving forward does help — it frees **eleven** changes that currently have to fall back to an older version. It still isn't worth doing here, because the same move drops seventeen changes out of the build altogether, and a change included at an older version is far better than one that is missing.
 
 The fix is straightforward: let a curator **pin** their starting point, rather than always being dragged to the newest one. A curated build then keeps working without asking every contributor to constantly redo their work. The cost is real but different — a pinned build stops receiving the program's own fixes, so the pin has to be moved forward deliberately, and there's a tool that reports exactly what moving it would cost.
 
