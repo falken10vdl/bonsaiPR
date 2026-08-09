@@ -66,6 +66,15 @@ both statements, not routine.
   absorption. The knowledge was present and applied on one side of the ladder
   only. When comparing commits across branches, ask first whether a rebase or a
   cherry-pick would break the comparison.
+- **"Does this PR merge?" has two different answers.** `base_advisor.py` merged
+  each PR onto the base *alone* and reported 158/160 — while the real build
+  needed a pinned fallback for nine of them, because they collide with PRs
+  merged earlier in the same run. Its docstring said it answered "how many of my
+  selected PRs actually merge?", which is how it came to be quoted in RFC §6 as
+  evidence that advancing the base gains nothing. It cannot see a stack
+  interaction, so `+0` there means *unknown*, not *zero*. `--in-stack` replays
+  the curation in order (`merge-tree` chained through `commit-tree`, no worktree)
+  and is the mode to decide on.
 - **A number that flatters the design deserves the most scrutiny, not the least.**
   The 81 was attractive — it reframed the feature — and so it went into three
   documents without anyone testing it. The user's own "that isn't really new

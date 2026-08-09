@@ -273,8 +273,32 @@ Notes on the design:
   | `e52e5e2e58` | 2026-07-20 | 144/160 | +0 / **−14** |
   | tip `048242783e` | 2026-08-05 | 141/160 | +0 / **−17** |
 
-  Note the `+0` in every row: advancing the base gained this curation *nothing* and
-  cost it up to 17 PRs — roughly 17 lost per month of drift. That asymmetry is
+  Note the `+0` in every row — but read it carefully, because it is the weaker half
+  of this table. Those figures come from the advisor's default mode, which merges each
+  PR onto the base **on its own**. It cannot see a PR that merges onto the base
+  perfectly and then collides with a PR merged before it, which is the mechanism
+  behind every pinned PR in this curation: 158/160 merge in isolation while nine still
+  need a pinned fallback in the real build. So `+0` means *this mode cannot tell*,
+  not *no benefit*. `base_advisor.py --in-stack` replays the curation in order and
+  reports the number that actually matters — PRs moving from `pinned` to `head`.
+
+  Replayed in order, the picture is different in detail and the same in conclusion:
+
+  | base | date | at head | pinned | dropped |
+  |---|---|---:|---:|---:|
+  | pinned `644b92263d` | 2026-07-07 | 145 | **14** | 1 |
+  | `89523999b3` | 2026-07-25 | 139 | 3 | 18 |
+  | tip `f05dd4aea5` | 2026-08-09 | 139 | 3 | 18 |
+
+  Advancing frees **11 pins** — a real gain the default mode reported as `+0`. It is
+  still not worth taking: a pinned PR is in the build at an older commit, a dropped
+  one is absent, and the trade is 11 pins freed against 17 PRs leaving the build.
+  Note also that every base from 2026-07-25 onward scores identically, so there is no
+  such thing as a cheaper partial advance — if a curation advances at all, it should
+  advance to the tip.
+
+  The `−17` is measured correctly either way, and on those numbers advancing still
+  cost this curation up to 17 PRs — roughly 17 lost per month of drift. That asymmetry is
   specific to an `allowlist` profile, and it is why pinning is close to free there:
   every selected PR predates the pin, so a newer base can only take PRs away. The
   usual objection — "you will miss newly-opened PRs" — only applies when *adding* one

@@ -11,13 +11,24 @@ building without asking every contributor to rebase - at the cost of not
 receiving upstream fixes until the pin advances.
 
 That trade is only worth making with numbers, and the numbers change every day
-as upstream moves. This answers, for a given profile:
+as upstream moves. There are two different questions here, and mixing them up
+has already produced one wrong recommendation:
 
-    at THIS base, how many of my selected PRs actually merge?
+    default    at THIS base, how many of my selected PRs merge onto the base
+               ON THEIR OWN?
+    --in-stack at THIS base, how many land when merged IN ORDER, each onto the
+               result of the last - which is what the build does?
 
-It never rebases, merges, or writes to the repository: every answer comes from
-`git merge-tree --write-tree`, which performs a real three-way merge into the
-object store and touches no working tree.
+The default is fast and answers the narrower question. It cannot see a PR that
+merges onto the base perfectly but collides with another PR merged before it -
+and that is not a corner case: on the reference profile 158/160 PRs merge in
+isolation while nine still need a pinned fallback in the real build. So a `+0`
+in the default mode's "gained" column means "this mode cannot tell", not "no
+benefit". Use `--in-stack` before deciding to move a base.
+
+Neither mode rebases, checks out, or writes a ref: `merge-tree --write-tree`
+merges into the object store, and `--in-stack` chains the results with
+`commit-tree`, so an entire build replays with no working tree.
 
 Reading the output
 ------------------
@@ -25,12 +36,15 @@ The interesting column is not the total, it is what moving the pin would cost.
 "Advance the base" is cheap when a newer candidate loses nothing, and expensive
 when it drops PRs the curation exists to carry. Contributors rebasing is what
 makes a newer base cheap again - so a persistent loss column is a list of PRs
-worth nudging, not a reason to stay pinned forever.
+worth nudging, not a reason to stay pinned forever. In `--in-stack` mode the
+column that matters is PRs moving from `pinned` to `head`: those are the ones an
+advance actually frees.
 
 CLI
 ---
     python base_advisor.py --profile NAME --repo DIR [--candidates N]
     python base_advisor.py --profile NAME --repo DIR --at <commit> [--at <commit>]
+    python base_advisor.py --profile NAME --repo DIR --in-stack
 """
 
 import os
@@ -88,6 +102,125 @@ def merges_clean(repo, base, ref):
         cwd=repo, capture_output=True, text=True,
     )
     return r.returncode == 0
+
+
+def merge_into(repo, head, ref, message):
+    """Merge `ref` into commit `head`, returning the new commit, or None.
+
+    `merge-tree --write-tree` writes the merged tree into the object store, and
+    `commit-tree` wraps it into a real merge commit — so a whole build can be
+    replayed with no worktree, no checkout and no refs.
+    """
+    r = subprocess.run(
+        ["git", "merge-tree", "--write-tree", head, ref],
+        cwd=repo, capture_output=True, text=True,
+    )
+    if r.returncode != 0:
+        return None
+    tree = r.stdout.split("\n", 1)[0].strip()
+    if not tree:
+        return None
+    parent = git(["rev-parse", ref], repo).strip()
+    out = git(
+        ["commit-tree", tree, "-p", head, "-p", parent, "-m", message],
+        repo, check=True,
+    ).strip()
+    return out or None
+
+
+def evaluate_in_stack(repo, bases, refs, order, pins):
+    """Replay the curation at each base, accumulating as the pipeline does.
+
+    `merges_clean` asks whether a PR merges onto the *base* by itself. That is a
+    different question from the one the build answers, and the gap is not
+    academic: on the reference profile 158/160 PRs merge onto the base in
+    isolation, while nine of them still need a pinned fallback because they
+    collide with PRs merged before them. An in-isolation score cannot see a
+    stack interaction at all, so its "gained" column reads +0 whether or not
+    advancing the base would actually help.
+
+    This mirrors stage 0 instead: merge in order, try each PR's head first, fall
+    back to its pinned commit, and skip it if neither applies.
+    """
+    # fetch_pr_heads yields ref names as strings; the order and pins are ints.
+    available = {str(x) for x in refs}
+    result = {}
+    for label, sha in bases:
+        head = sha
+        landed, pinned_use, dropped = set(), set(), set()
+        for n in order:
+            if str(n) not in available:
+                continue
+            nxt = merge_into(repo, head, f"refs/baseadv/{n}", f"pr {n}")
+            if nxt:
+                head = nxt
+                landed.add(n)
+                continue
+            pin = pins.get(int(n))
+            nxt = merge_into(repo, head, pin, f"pr {n} (pinned)") if pin else None
+            if nxt:
+                head = nxt
+                pinned_use.add(n)
+            else:
+                dropped.add(n)
+        result[sha] = {
+            "landed": landed, "pinned": pinned_use, "dropped": dropped,
+        }
+        print(
+            f"  {label:>8} {sha[:10]}  {len(landed):>4} at head, "
+            f"{len(pinned_use)} pinned, {len(dropped)} dropped"
+        )
+    return result
+
+
+def render_in_stack(bases, results, refs, repo):
+    lines = ["", "=" * 68, "Base advisor — in-stack replay", "=" * 68, ""]
+    lines.append("  Merged in curation order, each PR onto the result of the last —")
+    lines.append("  the same question the build asks. 'pinned' PRs merge only at an")
+    lines.append("  earlier validated commit; 'dropped' merge at neither.")
+    lines.append("")
+    for label, sha in bases:
+        r = results[sha]
+        when = git(["log", "-1", "--format=%ci", sha], repo).strip()[:16]
+        lines.append(
+            f"  {label:>8}  {sha[:10]}  {when}   "
+            f"{len(r['landed']):>3} head  {len(r['pinned']):>2} pinned  "
+            f"{len(r['dropped']):>2} dropped"
+        )
+    lines.append("")
+
+    first = bases[0][1]
+    if len(bases) > 1:
+        base_r = results[first]
+        lines.append(f"  Relative to {bases[0][0]} ({first[:10]}):")
+        for label, sha in bases[1:]:
+            r = results[sha]
+            freed = sorted(base_r["pinned"] & r["landed"], key=int)
+            newly_pinned = sorted(base_r["landed"] & r["pinned"], key=int)
+            newly_dropped = sorted(
+                (base_r["landed"] | base_r["pinned"]) & r["dropped"], key=int
+            )
+            lines.append(
+                f"    -> {label:<6} {sha[:10]}   "
+                f"{len(freed)} unpinned / {len(newly_pinned)} newly pinned / "
+                f"{len(newly_dropped)} newly dropped"
+            )
+            for name, group in (
+                ("unpinned", freed), ("newly pinned", newly_pinned),
+                ("newly dropped", newly_dropped),
+            ):
+                if group:
+                    lines.append(
+                        f"         {name}: " + " ".join("#" + str(n) for n in group[:12])
+                        + (" …" if len(group) > 12 else "")
+                    )
+        lines.append("")
+    lines.append(
+        "  A PR that moves from 'pinned' to 'head' is one the advance actually"
+    )
+    lines.append("  frees. That is the number the in-isolation mode cannot report.")
+    lines.append("")
+    return "\n".join(lines)
 
 
 def candidate_bases(repo, branch, pinned, count=4):
@@ -187,6 +320,11 @@ def main(argv=None):
         "--at", action="append", default=[],
         help="evaluate this commit-ish (repeatable); overrides --candidates",
     )
+    ap.add_argument(
+        "--in-stack", action="store_true",
+        help="replay the curation in order instead of testing each PR against "
+             "the base alone — slower, but the question the build actually asks",
+    )
     args = ap.parse_args(argv)
 
     try:
@@ -230,8 +368,16 @@ def main(argv=None):
             return 1
         print()
 
-        results = evaluate(args.repo, bases, refs)
-        print(render(bases, results, refs, args.repo))
+        if args.in_stack:
+            recorded = [int(n) for n in (profile.data.get("order_seq") or [])]
+            order = recorded + [n for n in numbers if n not in set(recorded)]
+            results = evaluate_in_stack(
+                args.repo, bases, refs, order, profile.pins
+            )
+            print(render_in_stack(bases, results, refs, args.repo))
+        else:
+            results = evaluate(args.repo, bases, refs)
+            print(render(bases, results, refs, args.repo))
     finally:
         # Never leave scratch refs in someone's repository.
         cleanup_refs(args.repo)

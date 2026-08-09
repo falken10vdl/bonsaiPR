@@ -206,11 +206,20 @@ leaving both alone.
 ```bash
 cd automation/scripts
 python base_advisor.py --profile openingdesign --repo /path/to/IfcOpenShell
+python base_advisor.py --profile openingdesign --repo /path/to/IfcOpenShell --in-stack
 ```
 
 Read-only: it evaluates candidate bases with `git merge-tree`, never checks
 anything out, and deletes its own scratch refs. **The "lost" column is your task
 list** — those are the PRs that stop merging if you advance.
+
+**Run both modes.** The default merges each PR onto the base alone; `--in-stack`
+replays them in curation order, each onto the result of the last, which is what
+the build does. The difference is not cosmetic: a PR can merge onto every
+candidate base perfectly and still need a pin because it collides with a PR
+merged before it. In default mode those PRs are invisible, so its "gained"
+column reads `+0` whether or not advancing would free them. **Decide on the
+`--in-stack` numbers**; use the default only for the cheap "lost" list.
 
 **Step 2 — split the list by who owns it.** Your own PRs you can rebase today.
 Other people's you cannot. On the first run of this exercise, 8 of 11 blockers
