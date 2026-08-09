@@ -1712,3 +1712,5 @@
 {"ts": "2026-08-09T08:12:00Z", "order": "ascending", "pr": 9139, "event": "status", "from": "skipped_conflict", "to": "merged"}
 {"ts": "2026-08-09T08:12:00Z", "order": "ascending", "pr": 9161, "event": "status", "from": "skipped_conflict", "to": "merged"}
 {"ts": "2026-08-09T08:12:00Z", "order": "ascending", "pr": 9281, "event": "removed", "from": "merged"}
+{"ts": "2026-08-09T10:10:54Z", "order": "ascending", "pr": 8139, "event": "updated", "status": "skipped_draft", "from_head": "02481b3", "to_head": "9665302"}
+{"ts": "2026-08-09T10:10:54Z", "order": "ascending", "pr": 8600, "event": "status", "from": "skipped_conflict", "to": "merged"}

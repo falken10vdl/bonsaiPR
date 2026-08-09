@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 545,
-    "skipped_conflict": 121,
+    "merged": 544,
+    "skipped_conflict": 122,
     "skipped_draft": 54,
     "total": 850
   },
-  "generated_at": "2026-08-09T08:48:50Z",
+  "generated_at": "2026-08-09T10:48:05Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "e9fffc2",
+      "head": "17c4d8f",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -1743,7 +1743,7 @@
       "author": "BIMvoice",
       "branch": "fix-4934-presentation-layer-stale-id",
       "head": "bca2e6d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix \"Instance not found\" crash when removing a stale presentation layer",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8384"
     },
@@ -6942,8 +6942,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608091012",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608091012"
+    "tag": "v0.8.6-alpha2608091211",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608091211"
   },
   "schema": 1
 }

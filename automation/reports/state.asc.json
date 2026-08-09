@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 549,
-    "skipped_conflict": 117,
+    "merged": 550,
+    "skipped_conflict": 116,
     "skipped_draft": 54,
     "total": 850
   },
-  "generated_at": "2026-08-09T08:12:00Z",
+  "generated_at": "2026-08-09T10:10:54Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "02481b3",
+      "head": "9665302",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -2948,7 +2948,7 @@
       "author": "theoryshaw",
       "branch": "fix-decoration-no-scene-camera",
       "head": "c87e0a9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: skip drawing decorations when the scene has no active camera",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8600"
     },
@@ -6942,8 +6942,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608090935",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608090935"
+    "tag": "v0.8.6-alpha2608091135",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608091135"
   },
   "schema": 1
 }

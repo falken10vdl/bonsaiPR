@@ -1950,3 +1950,7 @@
 {"ts": "2026-08-09T09:05:27Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-08-09T09:26:10Z", "order": "by-updated", "pr": 8139, "event": "updated", "status": "skipped_draft", "from_head": "02481b3", "to_head": "e9fffc2"}
 {"ts": "2026-08-09T09:26:10Z", "order": "by-updated", "pr": 9281, "event": "removed", "from": "merged"}
+{"ts": "2026-08-09T11:04:25Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-09T11:04:25Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-09T11:04:25Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-09T11:25:08Z", "order": "by-updated", "pr": 8139, "event": "updated", "status": "skipped_draft", "from_head": "e9fffc2", "to_head": "17c4d8f"}
