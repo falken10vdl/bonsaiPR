@@ -81,40 +81,69 @@ release target it also needs *Contents: read and write* for the release upload.
 
 ---
 
-## 4. First run
+## 4. Running a build
 
-Actions → **Curated build** → *Run workflow*. Pick your profile and start with
-**`manifest-only`**.
+Actions → **Curated build** → *Run workflow*. Three inputs:
 
-`manifest-only` runs stage 0 only: clone, merge the profile's PRs, and write the
-report plus `state.<order>.json` and `rivals.<order>.json`. That is *everything
-federation consumes* — stages 1–2 only add installable zips and a GitHub
-release. It is also much faster, so it is the honest way to find out whether
-your profile merges at all before spending an hour on packaging.
+| input | options | meaning |
+|---|---|---|
+| **profile** | a name from `profiles/` | which curation to build |
+| **stages** | `manifest-only` · `full` | how much of the pipeline to run |
+| **push_branch** | `auto` · `yes` · `no` | whether to publish the build branch |
 
-Once that succeeds, run again with `full`.
+### Which mode, and when
 
-**Nothing is scheduled.** Every run is started by hand, deliberately.
+| | `manifest-only` | `full` |
+|---|---|---|
+| runs | stage 0 | stages 0–2 |
+| takes | a few minutes | considerably longer (packaging dominates) |
+| produces | report, `state`/`events`/`rivals`/`pinned`, curated feed data | all of that, plus seven platform zips, a GitHub release, and the report archived to `automation/reports/archive/` |
+| pushes a build branch | no | yes |
+| use it when | you want the record refreshed — after PRs move, or before aggregating | a release is warranted: you have re-distilled, advanced the base, or otherwise reached a point where the curation is worth handing to someone |
+
+**Start with `manifest-only`.** It answers "does my curation still build?" without
+spending an hour on packaging, and it is everything the federation actually
+consumes. Run `full` when the answer is yes *and* the result is worth publishing.
+
+`push_branch: auto` follows the stage — pushed for `full`, not for
+`manifest-only`. Override with `yes` when you want a branch others can check out
+without making a release, which is most often just after re-distilling.
+
+### Where the output goes
+
+| artefact | where it lands | how long it lasts |
+|---|---|---|
+| manifest, events, rivals, pins | committed to `automation/reports/` | permanent |
+| build report | workflow artifact | 14 days |
+| build report (`full` only) | `automation/reports/archive/<tag>.md`, and attached to the release | permanent |
+| installable zips (`full` only) | GitHub release | last 30 releases |
+| build branch (when pushed) | your IfcOpenShell fork | last 30 branches |
+
+Note the asymmetry: a `manifest-only` report is **not** archived, so it survives
+only as an expiring artifact. If you want a permanently readable report, that is
+a reason to run `full`.
+
+### Why nothing is scheduled
+
+Every run is started by hand, deliberately.
 
 The obvious objection is that the run-to-run history federation aggregates
-cannot be back-filled, so surely it should accrue on a timer. It is worth less
-than it sounds. `streak.days` measures elapsed time, which passes whether or not
-you build — sampling monthly still shows a change has held for three months.
-`streak.builds` is an artifact of how often you run, not a property of the
-change. Only short-lived flapping is genuinely better caught by frequent
-sampling, and a flap that resolves itself before anyone looks is thin evidence.
-
-Against that, every run commits report files to this repo, so an hourly cadence
-means two dozen commits a day of churn in your own history.
+cannot be back-filled, so it should accrue on a timer. That is worth less than
+it sounds: `streak.days` measures elapsed time, which passes whether or not you
+build, and `streak.builds` is an artifact of how often you run rather than a
+property of the change. Only short-lived flapping is genuinely better caught by
+frequent sampling, and a flap that resolves before anyone looks is thin
+evidence. Against that, every run commits report files here, so an hourly
+cadence meant two dozen commits a day of churn.
 
 There is also a better reason than cost: **sampling at your own cadence measures
-what you actually experience.** "This change flapped between my builds" is a
-more meaningful statement than "it flapped at 3am between two runs nobody looked
-at."
+what you actually experience.** "This changed between my builds" says more than
+"it changed at 3am between two runs nobody looked at."
 
-If you later want some automation, daily is a far better trade than hourly — add
-a `schedule:` trigger and note that `inputs` is empty on it, so `PROFILE` and
-`STAGES` must keep their fallbacks.
+If you later want automation, daily is a far better trade than hourly. Add a
+`schedule:` trigger and note that `inputs` is empty on it — `PROFILE`, `STAGES`
+and `BONSAIPR_PUSH_BRANCH` must keep their fallbacks, or a cron run will build
+every open PR unpinned and release it.
 
 ---
 
@@ -128,13 +157,6 @@ a `schedule:` trigger and note that `inputs` is empty on it, so `PROFILE` and
 - **Selected PRs that closed are reported, not silently dropped.** Stage 0 prints
   which of your selected PRs are no longer open. That is your signal that the
   profile has drifted and wants regenerating.
-- **The build branch is published only when something links to it.** A `full` run
-  makes a release whose body points at the branch, so it is pushed to your
-  IfcOpenShell fork. A `manifest-only` run points at nothing, so it is not —
-  otherwise every run leaves another force-pushed branch in a list nobody reads,
-  and cleanup keeps only the most recent 30. Override per run with the **push_branch** dispatch input
-  (`yes`/`no`); `BONSAIPR_PUSH_BRANCH=0` does it permanently. Unset means push,
-  so the canonical instance is unaffected.
 - **Disk is the likeliest failure.** The workflow reclaims ~20 GB before
   starting; if a `full` run still fails on space, use `manifest-only`, which
   needs far less.
