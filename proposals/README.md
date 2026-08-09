@@ -16,6 +16,11 @@ stays valid even after it is accepted, rejected, or superseded.
 
 ## RFC-001 — [Federated Curated Builds](RFC-001-federated-curated-builds.md)
 
+📄 **Non-technical summary:** [RFC-001 — Plain-Language Version](RFC-001-federated-curated-builds_plain-language.md).
+Same idea without the jargon; the one to hand someone who has ten minutes. Kept
+current alongside the work.
+
+
 **Status:** Draft · **phases 0–3 implemented** — see falken10vdl/bonsaiPR#11 and
 `docs/dev-notes/rfc-001-federation.md`
 

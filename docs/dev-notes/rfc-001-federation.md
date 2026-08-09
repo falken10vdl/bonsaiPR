@@ -139,6 +139,7 @@ gives it a durable split from the RFC:
 | | answers | changes |
 |---|---|---|
 | `proposals/RFC-001-…` | what we agreed, and why | frozen; superseded by a new RFC, not rewritten |
+| `proposals/RFC-001-federated-curated-builds_plain-language.md` | the same idea for a non-technical reader | updated whenever a number here is re-measured |
 | this note | what to know before touching it | rewritten continuously |
 | `README-curated-build.md` | how to operate an instance | rewritten as the workflow changes |
 
