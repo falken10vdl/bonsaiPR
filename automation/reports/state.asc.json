@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 548,
-    "skipped_conflict": 119,
+    "merged": 549,
+    "skipped_conflict": 117,
     "skipped_draft": 54,
-    "total": 851
+    "total": 850
   },
-  "generated_at": "2026-08-08T19:11:06Z",
+  "generated_at": "2026-08-09T08:12:00Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2948,7 +2948,7 @@
       "author": "theoryshaw",
       "branch": "fix-decoration-no-scene-camera",
       "head": "c87e0a9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: skip drawing decorations when the scene has no active camera",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8600"
     },
@@ -4052,7 +4052,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6428-sheet-item-position",
       "head": "3a0e8cc",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: position drawings on sheets without leaving Blender",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8804"
     },
@@ -6075,7 +6075,7 @@
       "author": "yekose",
       "branch": "fix/occt-interface-export",
       "head": "f644b8f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "cmake: wrap the OpenCASCADE interface paths in BUILD_INTERFACE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9139"
     },
@@ -6243,7 +6243,7 @@
       "author": "BIMvoice",
       "branch": "fix/api-empty-aggregate-corruption",
       "head": "2ac6e0b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "api: stop three functions writing invalid IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9161"
     },
@@ -6939,19 +6939,11 @@
       "status": "merged",
       "title": "build(deps): bump ty from 0.0.63 to 0.0.66",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9280"
-    },
-    "9281": {
-      "author": "RobertSigmundsson",
-      "branch": "fix/unit-scale-prefix-exponent",
-      "head": "799aae2",
-      "status": "merged",
-      "title": "Fix #9278: raise SI prefix to the length exponent in calculate_unit_scale for prefixed SQUARE_METRE/CUBIC_METRE",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9281"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608082035",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608082035"
+    "tag": "v0.8.6-alpha2608090935",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608090935"
   },
   "schema": 1
 }

@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 546,
+    "merged": 545,
     "skipped_conflict": 121,
     "skipped_draft": 54,
-    "total": 851
+    "total": 850
   },
-  "generated_at": "2026-08-08T19:48:28Z",
+  "generated_at": "2026-08-09T08:48:50Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -955,7 +955,7 @@
     "8139": {
       "author": "Moult",
       "branch": "ifcviewer-wgpu",
-      "head": "02481b3",
+      "head": "e9fffc2",
       "status": "skipped_draft",
       "title": "Ifcviewer wgpu",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
@@ -6939,19 +6939,11 @@
       "status": "merged",
       "title": "build(deps): bump ty from 0.0.63 to 0.0.66",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9280"
-    },
-    "9281": {
-      "author": "RobertSigmundsson",
-      "branch": "fix/unit-scale-prefix-exponent",
-      "head": "799aae2",
-      "status": "merged",
-      "title": "Fix #9278: raise SI prefix to the length exponent in calculate_unit_scale for prefixed SQUARE_METRE/CUBIC_METRE",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9281"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608082112",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608082112"
+    "tag": "v0.8.6-alpha2608091012",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608091012"
   },
   "schema": 1
 }
