@@ -474,6 +474,51 @@ def _conflicting_paths():
     return [f.strip() for f in result.stdout.strip().split("\n") if f.strip()]
 
 
+def _patch_ids(rev_range_args):
+    """Patch-ids for a set of commits. None if the range cannot be walked."""
+    listing = subprocess.run(
+        ["git", "-C", work_dir, "rev-list"] + rev_range_args,
+        capture_output=True, text=True,
+    )
+    if listing.returncode != 0:
+        return None
+    ids = set()
+    for sha in listing.stdout.split():
+        show = subprocess.run(
+            ["git", "-C", work_dir, "show", "--format=%H", sha],
+            capture_output=True, text=True, errors="replace",
+        )
+        if show.returncode != 0 or not show.stdout.strip():
+            continue
+        pid = subprocess.run(
+            ["git", "-C", work_dir, "patch-id", "--stable"],
+            input=show.stdout, capture_output=True, text=True, errors="replace",
+        )
+        parts = pid.stdout.split()
+        if parts:
+            ids.add(parts[0])
+    return ids
+
+
+def _commits_behind_rebased(pinned_sha, tip_sha, base_ref):
+    """Behind-count for a branch that was rebased since we pinned it.
+
+    After a force-push the pin is no longer an ancestor of the head, so every
+    commit on the branch counts as "new" and `rev-list` degrades into reporting
+    the branch's length. #8083 read 47 that way — which was also its total commit
+    count, the tell that the number meant nothing.
+
+    Patch-id is what survives a rebase, so the honest count is patches on the head
+    that are not in the pin. On #8083: 47 commits, but only 27 new patches — the
+    other 20 are work this build already contains under different shas.
+    """
+    mine = _patch_ids([f"{base_ref}..{tip_sha}"])
+    theirs = _patch_ids([f"{base_ref}..{pinned_sha}"])
+    if mine is None or theirs is None:
+        return None
+    return len(mine - theirs)
+
+
 def _commits_behind(pinned_sha, tip_sha):
     """How many commits the built commit is behind the PR's current head.
 
@@ -493,7 +538,26 @@ def _commits_behind(pinned_sha, tip_sha):
     # and a plain `pin..tip` counts all of them — measuring other people's churn
     # rather than this PR's progress. On one real branch that was the difference
     # between 517 and 47, and 517 is the answer to a question nobody asked.
+    # A rebase rewrites every sha, so `pin..tip` sees no shared history and counts
+    # the whole branch. Nine of eleven pins on the reference profile are in this
+    # state; it is the normal case, not an edge case.
+    ancestor = subprocess.run(
+        ["git", "-C", work_dir, "merge-base", "--is-ancestor", pinned_sha, tip_sha],
+        capture_output=True, text=True,
+    )
+    if ancestor.returncode not in (0, 1):
+        return None  # a commit is missing; nothing honest to report
+    rebased = ancestor.returncode == 1
+
     for base_ref in (f"upstream/{SOURCE_BASE_BRANCH}", SOURCE_BASE_BRANCH):
+        exists = subprocess.run(
+            ["git", "-C", work_dir, "rev-parse", "--verify", "--quiet", base_ref],
+            capture_output=True, text=True,
+        )
+        if exists.returncode != 0:
+            continue
+        if rebased:
+            return _commits_behind_rebased(pinned_sha, tip_sha, base_ref)
         result = subprocess.run(
             ["git", "-C", work_dir, "rev-list", "--count",
              f"{pinned_sha}..{tip_sha}", "--not", base_ref],
@@ -1729,9 +1793,12 @@ def generate_report(
                     "📌 marks a PR built at an earlier commit this curation had "
                     "validated, because its current head no longer merges. "
                     "**Last commit** is always what this build actually merged, and "
-                    "**Behind head** is how many of the PR's *own* commits it trails "
-                    "its current head by — upstream merged into the branch is not "
-                    "counted. Click it to see what is missing.\n\n"
+                    "**Behind head** is how much of the PR's *own* new work this "
+                    "build is missing — upstream merged into the branch is not "
+                    "counted, and if the branch was rebased since we pinned it the "
+                    "count is of new *patches*, so re-applied work is not counted "
+                    "twice. `0` means rebased but unchanged in substance. Click it "
+                    "to see what is missing.\n\n"
                     "Two consequences worth acting on: you are testing an older version "
                     "of these PRs than the branch now holds, and their authors may not "
                     "know their head has stopped merging — which is true for everyone "
