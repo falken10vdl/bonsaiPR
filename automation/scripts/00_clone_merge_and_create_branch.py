@@ -488,17 +488,26 @@ def _commits_behind(pinned_sha, tip_sha):
     """
     if not pinned_sha or not tip_sha:
         return None
-    result = subprocess.run(
-        ["git", "-C", work_dir, "rev-list", "--count", f"{pinned_sha}..{tip_sha}"],
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0:
-        return None
-    try:
-        return int(result.stdout.strip())
-    except ValueError:
-        return None
+    # Exclude anything already reachable from the base. A PR branch that merges
+    # upstream into itself drags in every upstream commit since its last merge,
+    # and a plain `pin..tip` counts all of them — measuring other people's churn
+    # rather than this PR's progress. On one real branch that was the difference
+    # between 517 and 47, and 517 is the answer to a question nobody asked.
+    for base_ref in (f"upstream/{SOURCE_BASE_BRANCH}", SOURCE_BASE_BRANCH):
+        result = subprocess.run(
+            ["git", "-C", work_dir, "rev-list", "--count",
+             f"{pinned_sha}..{tip_sha}", "--not", base_ref],
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode == 0:
+            try:
+                return int(result.stdout.strip())
+            except ValueError:
+                return None
+    # No usable base ref means no honest answer; a blank cell beats the
+    # unfiltered count, which would silently overstate by an order of magnitude.
+    return None
 
 
 def _publisher_owner():
@@ -1720,8 +1729,9 @@ def generate_report(
                     "📌 marks a PR built at an earlier commit this curation had "
                     "validated, because its current head no longer merges. "
                     "**Last commit** is always what this build actually merged, and "
-                    "**Behind head** is how many commits that trails the PR's current "
-                    "head — click it to see what is missing.\n\n"
+                    "**Behind head** is how many of the PR's *own* commits it trails "
+                    "its current head by — upstream merged into the branch is not "
+                    "counted. Click it to see what is missing.\n\n"
                     "Two consequences worth acting on: you are testing an older version "
                     "of these PRs than the branch now holds, and their authors may not "
                     "know their head has stopped merging — which is true for everyone "
