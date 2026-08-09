@@ -32,6 +32,7 @@ import re
 import glob
 import sys
 import time
+import json
 from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
@@ -540,6 +541,7 @@ def build_addons(target_platforms=None):
     # Change to the bonsaiPR directory and run make for each platform
     original_cwd = os.getcwd()
     successful_builds = 0
+    failed_targets = []
 
     try:
         os.chdir(bonsaiPR_src)
@@ -578,6 +580,7 @@ def build_addons(target_platforms=None):
                         if result.stdout:
                             log_message(f"Make output for {platform} ({pyversion}): {result.stdout}")
                     else:
+                        failed_targets.append(f"{pyversion}/{platform}")
                         log_message(f"Build failed for {platform} ({pyversion}) with return code: {result.returncode}", "ERROR")
                         if result.stderr:
                             log_message(f"Make error for {platform} ({pyversion}): {result.stderr}", "ERROR")
@@ -585,6 +588,7 @@ def build_addons(target_platforms=None):
                             log_message(f"Make output for {platform} ({pyversion}): {result.stdout}")
 
                 except Exception as e:
+                    failed_targets.append(f"{pyversion}/{platform}")
                     log_message(f"Error building {platform} ({pyversion}): {e}", "ERROR")
     
     except Exception as e:
@@ -611,7 +615,33 @@ def build_addons(target_platforms=None):
     else:
         log_message("Dist directory not created after build", "ERROR")
 
+    if failed_targets:
+        log_message(
+            f"{len(failed_targets)} of {successful_builds + len(failed_targets)} "
+            f"targets FAILED: {', '.join(failed_targets)}", "ERROR"
+        )
+
+    # Record the outcome next to the zips so stage 2 and the report can state it
+    # rather than inferring completeness from whatever happens to be on disk.
+    try:
+        with open(os.path.join(BUILD_BASE_DIR, "build_targets.json"), "w",
+                  encoding="utf-8") as f:
+            json.dump({
+                "built": successful_builds,
+                "failed": failed_targets,
+                "zips": sorted(os.path.basename(a) for a in addon_files),
+            }, f, indent=2)
+    except OSError as e:
+        log_message(f"Could not write build_targets.json: {e}", "WARNING")
+
     log_message("Addon build process completed")
+    # A partial build is a failure by default. Returning true on "at least one
+    # zip exists" is how three py313 targets could fail on every full build
+    # while the run stayed green and published a release missing 3 of its 7
+    # artefacts — invisible to anyone not reading the log. Set
+    # BONSAIPR_ALLOW_PARTIAL_BUILD=1 to publish anyway, deliberately.
+    if failed_targets and os.getenv("BONSAIPR_ALLOW_PARTIAL_BUILD") != "1":
+        return False
     return len(addon_files) > 0
 
 def find_existing_report():
@@ -855,7 +885,23 @@ def main():
         if build_ok:
             log_message("BonsaiPR addon build process completed successfully")
         else:
-            log_message("BonsaiPR addon build process finished but NO zip files were produced", "ERROR")
+            # Distinguish the two failures: nothing built at all, versus some
+            # targets built and others did not. The second used to pass.
+            detail = "NO zip files were produced"
+            try:
+                with open(os.path.join(BUILD_BASE_DIR, "build_targets.json"),
+                          encoding="utf-8") as f:
+                    rec = json.load(f)
+                if rec.get("failed"):
+                    detail = (
+                        f"{len(rec['failed'])} target(s) failed to build "
+                        f"({', '.join(rec['failed'])}); refusing to publish a "
+                        f"partial release. Set BONSAIPR_ALLOW_PARTIAL_BUILD=1 "
+                        f"to override"
+                    )
+            except (OSError, ValueError):
+                pass
+            log_message(f"BonsaiPR addon build process failed: {detail}", "ERROR")
             sys.exit(1)
 
     except Exception as e:

@@ -97,7 +97,7 @@ Actions → **Curated build** → *Run workflow*. Three inputs:
 |---|---|---|
 | runs | stage 0 | stages 0–2 |
 | takes | a few minutes | considerably longer (packaging dominates) |
-| produces | report, `state`/`events`/`rivals`/`pinned`, curated feed data | all of that, plus seven platform zips, a GitHub release, and the report archived to `automation/reports/archive/` |
+| produces | report, `state`/`events`/`rivals`/`pinned`, curated feed data | all of that, plus seven platform zips (4 × py311 for Blender 4.x, 3 × py313 for Blender 5.1 — no Intel macOS), a GitHub release, and the report archived to `automation/reports/archive/` |
 | pushes a build branch | no | yes |
 | use it when | you want the record refreshed — after PRs move, or before aggregating | a release is warranted: you have re-distilled, advanced the base, or otherwise reached a point where the curation is worth handing to someone |
 
@@ -117,6 +117,14 @@ without making a release, which is most often just after re-distilling.
 | build report | workflow artifact | 14 days |
 | build report (`full` only) | `automation/reports/archive/<tag>.md`, and attached to the release | permanent |
 | installable zips (`full` only) | GitHub release | last 30 releases |
+
+**A partial build now fails the run.** Stage 1 used to return success if *any*
+zip existed, so the three py313 targets could fail on every full build — the
+runner had no `python3.13` — and still publish a release missing 3 of its 7
+artefacts, with Blender 5.1 users silently unserved. If a target fails, the run
+stops before publishing; `BONSAIPR_ALLOW_PARTIAL_BUILD=1` overrides it
+deliberately. `build_targets.json` in the build directory records what built and
+what did not.
 | build branch (when pushed) | your IfcOpenShell fork | last 30 branches |
 
 Note the asymmetry: a `manifest-only` report is **not** archived, so it survives
