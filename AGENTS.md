@@ -23,7 +23,7 @@ describes, fix the note first.
 
 | | |
 |---|---|
-| `proposals/` | design proposals (RFC-NNN). The argument and the evidence. |
+| `proposals/` | design proposals (RFC-NNN), each with a plain-language companion. The argument and the evidence. |
 | `docs/dev-notes/` | working notes for unmerged/ongoing work. Volatile by design. |
 | `automation/scripts/` | the pipeline: stage 0 merge, 1 build, 2 release, plus tooling |
 | `profiles/` | curations — which PRs a build selects, and on what base |
@@ -45,6 +45,10 @@ describes, fix the note first.
   cheap experiment over a confident paragraph.
 - **Never point `BASE_CLONE_DIR` at a repository anyone works in.** Stage 0
   checks out, resets, deletes branches, and force-pushes.
+- **A re-measured number has more than one home.** Figures quoted in an RFC are
+  usually also quoted in its plain-language companion and sometimes in a dev
+  note. Correcting one and not the others leaves the most-read document holding
+  the wrong number — which has already happened once here.
 - **Report signals honestly.** If a signal cannot be computed, emit it as
   *unavailable* rather than zero — consumers must be able to tell "none" from
   "unknown".
