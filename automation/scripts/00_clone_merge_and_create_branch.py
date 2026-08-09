@@ -1416,9 +1416,15 @@ def generate_report(
         f.write(f"IfcOpenShell source commit: {commit_hash}\n")
         order_desc = pr_state.order_meta(merge_order)["short"]
         f.write(f"Merge Order: {merge_order} ({order_desc})\n")
-        f.write(
-            f"Fork Repository: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}\n\n"
-        )
+        if should_push_branch():
+            f.write(
+                f"Fork Repository: https://github.com/{fork_owner}/{fork_repo}/tree/{branch_name}\n\n"
+            )
+        else:
+            # Linking to a branch that was never pushed gives the reader a 404
+            # and no way to tell whether the build failed or the branch simply
+            # was not published.
+            f.write(f"Build branch: {branch_name} (built locally, not published)\n\n")
         f.write(f"## Summary\n")
         total_prs = len(applied_prs) + len(failed_prs) + len(skipped_prs)
         f.write(f"- Total PRs processed: {total_prs}\n")
@@ -1632,8 +1638,18 @@ def generate_report(
             )
             f.write(
                 "These PRs merge cleanly against the base on their own, but conflict with "
-                "another PR already merged in this release. They may appear in the companion "
-                "release built in the opposite order.\n\n"
+                "another PR already merged in this release."
+                + (
+                    # A profile pinning one order produces one build, so there is
+                    # no companion for the PR to turn up in. Promising one here
+                    # contradicts the note above and sends the reader looking for
+                    # a release that was never made.
+                    " This curation builds a single order, so there is no companion "
+                    "release — they are simply absent from it.\n\n"
+                    if merge_order == "recorded"
+                    else " They may appear in the companion release built in the "
+                    "opposite order.\n\n"
+                )
             )
             merges_under_header = " Merges under |" if show_stability else ""
             merges_under_rule = "--------------|" if show_stability else ""
