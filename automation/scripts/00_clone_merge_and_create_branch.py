@@ -1548,17 +1548,10 @@ def generate_report(
                 pr_link = f"[#{pr_number}]({pr['html_url']})"
                 author = _cell(pr['user']['login'])
                 branch = _cell(pr.get('head', {}).get('ref', 'unknown'))
-                # The commit THIS BUILD merged, which is not always the PR's
-                # current tip: a pinned fallback builds an earlier, validated
-                # commit. Showing the tip here would present a commit that does
-                # not merge as though it were in the build.
-                pinned_sha = PR_PINNED.get(pr['number'])
-                last_sha = pinned_sha or pr.get('head', {}).get('sha', '')
+                last_sha = pr.get('head', {}).get('sha', '')
                 if last_sha:
                     last_commit_url = f"https://github.com/{upstream_repo}/commit/{last_sha}"
                     last_commit = f"[{last_sha[:7]}]({last_commit_url})"
-                    if pinned_sha:
-                        last_commit += " 📌"
                 else:
                     last_commit = ""
                 # First-detected date and base commit from tracking
@@ -1691,6 +1684,12 @@ def generate_report(
             f.write("\n")
         if applied_prs:
             f.write(f"## ✅ Successfully Merged PRs ({len(applied_prs)})\n\n")
+            if PR_PINNED:
+                f.write(
+                    "📌 marks a PR built at an earlier commit this curation had "
+                    "validated, because its current head no longer merges. "
+                    "**Last commit** is always what this build actually merged.\n\n"
+                )
             stability_header = " Order stability |" if show_stability else ""
             stability_rule = "-----------------|" if show_stability else ""
             f.write(
@@ -1704,10 +1703,17 @@ def generate_report(
                 author = _cell(pr['user']['login'])
                 branch = _cell(pr.get('head', {}).get('ref', 'unknown'))
                 created = _cell(pr['created_at'][:10])
-                last_sha = pr.get('head', {}).get('sha', '')
+                # The commit THIS BUILD merged, which is not always the PR's
+                # current tip: a pinned fallback builds an earlier, validated
+                # commit. Showing the tip would present a commit that does not
+                # merge as though it were in the build.
+                pinned_sha = PR_PINNED.get(pr['number'])
+                last_sha = pinned_sha or pr.get('head', {}).get('sha', '')
                 if last_sha:
                     last_commit_url = f"https://github.com/{upstream_repo}/commit/{last_sha}"
                     last_commit = f"[{last_sha[:7]}]({last_commit_url})"
+                    if pinned_sha:
+                        last_commit += " 📌"
                 else:
                     last_commit = ""
                 stability = (
