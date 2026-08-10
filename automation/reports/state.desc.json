@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 132,
+    "failed": 130,
     "merged": 545,
-    "skipped_conflict": 119,
+    "skipped_conflict": 121,
     "skipped_draft": 53,
     "total": 849
   },
-  "generated_at": "2026-08-10T03:50:11Z",
+  "generated_at": "2026-08-10T05:49:37Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1619,8 +1619,7 @@
       "author": "BIMvoice",
       "branch": "fix-4800-camera-context",
       "head": "cc3e134",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: store the drawing camera outside the Body context so viewers don't show boxes (#4800)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8356"
     },
@@ -1636,8 +1635,7 @@
       "author": "BIMvoice",
       "branch": "fix-5221-schedule-font-scope",
       "head": "b22055d",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: scope schedule/document styles on a sheet so they keep their own font (#5221)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8361"
     },
@@ -6936,8 +6934,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608100513",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608100513"
+    "tag": "v0.8.6-alpha2608100712",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608100712"
   },
   "schema": 1
 }
