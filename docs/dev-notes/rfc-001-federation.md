@@ -175,8 +175,13 @@ different merge order. Neither would have been caught by exit codes.
   longer hypothetical in the milder form: 9 of 11 pins sit on branches that have
   since been rebased, so the pin is no longer an ancestor of the head even though
   the object still exists. Losing the object outright is still unobserved.
-- **Blender installing the curated feed.** The feed is published and well-formed; no
-  one has subscribed to it and installed from it.
+- ~~**Blender installing the curated feed.**~~ **Done, 2026-08-09.** Added as a
+  remote repository from
+  `raw.githubusercontent.com/OpeningDesign/bonsaiPR/main/profiles/openingdesign/index.json`
+  and installed successfully. That closes the last consumer-side unknown: the
+  feed is not just well-formed, it is one Blender actually accepts. Note the
+  release it points at was the first to carry the py313 variants at all — every
+  earlier one served Blender 4.x only, silently.
 
 ---
 
