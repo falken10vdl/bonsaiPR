@@ -4,10 +4,10 @@
     "failed": 130,
     "merged": 550,
     "skipped_conflict": 116,
-    "skipped_draft": 54,
-    "total": 850
+    "skipped_draft": 53,
+    "total": 849
   },
-  "generated_at": "2026-08-09T14:11:28Z",
+  "generated_at": "2026-08-10T03:12:55Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -951,14 +951,6 @@
       "status": "merged",
       "title": "Fix remove_drawing crash on corrupted drawing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8123"
-    },
-    "8139": {
-      "author": "Moult",
-      "branch": "ifcviewer-wgpu",
-      "head": "3d15500",
-      "status": "skipped_draft",
-      "title": "Ifcviewer wgpu",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8139"
     },
     "8145": {
       "author": "RickBrice",
@@ -6942,8 +6934,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608091535",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608091535"
+    "tag": "v0.8.6-alpha2608100435",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608100435"
   },
   "schema": 1
 }
