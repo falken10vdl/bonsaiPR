@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 543,
-    "skipped_conflict": 124,
+    "merged": 528,
+    "skipped_conflict": 139,
     "skipped_draft": 53,
     "total": 850
   },
-  "generated_at": "2026-08-10T23:51:18Z",
+  "generated_at": "2026-08-11T01:50:24Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -557,7 +557,7 @@
       "author": "rares-radu",
       "branch": "v0.8.0",
       "head": "e8fa73c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fixed missing definition resulting in USD support not being built",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7851"
     },
@@ -695,7 +695,7 @@
       "author": "brunopostle",
       "branch": "bonsai-license",
       "head": "a072c72",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai, add license tagging for IFC elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7917"
     },
@@ -852,7 +852,7 @@
       "author": "theoryshaw",
       "branch": "reference-drawing-view-title-scale",
       "head": "0b71ffe",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Closes #7877:Add scale to reference view-title from SVG class",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8007"
     },
@@ -1016,7 +1016,7 @@
       "author": "theoryshaw",
       "branch": "fix-snap-stale-object-reference",
       "head": "3248cc7",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix stale object reference crash in measure tool snapping",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
     },
@@ -1090,7 +1090,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcclash-notrequired-keys-8224",
       "head": "b6626db",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "IfcClash: default NotRequired clash set keys instead of asserting (#8224)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8257"
     },
@@ -1170,7 +1170,7 @@
       "author": "BIMvoice",
       "branch": "fix/mode-set-object-exec-8042",
       "head": "f6b8788",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: OverrideModeSetObject must survive direct execution (#8042)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8273"
     },
@@ -1330,7 +1330,7 @@
       "author": "BIMvoice",
       "branch": "fix-remove-drawing-no-document-6518",
       "head": "c6b01d5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: remove_drawing tolerates a drawing with no document (#6518)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8312"
     },
@@ -1643,7 +1643,7 @@
       "author": "BIMvoice",
       "branch": "fix-6568-optional-collada-msys",
       "head": "31a39eb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "win/msys2: make the OpenCOLLADA dependency build skippable via COLLADA_SUPPORT (#6568)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8369"
     },
@@ -1840,7 +1840,7 @@
       "author": "BIMvoice",
       "branch": "fix-7092-work",
       "head": "8e5cc66",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #7092: copy independent profile defs when duplicating a material profile set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8404"
     },
@@ -2020,7 +2020,7 @@
       "author": "BIMvoice",
       "branch": "fix-7786-open-curve-arc",
       "head": "fb19f24",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop emitting a trailing segment on an open arc curve (#7786)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8438"
     },
@@ -2298,7 +2298,7 @@
       "author": "BIMvoice",
       "branch": "bv-7835-examples-build-convert",
       "head": "6b84ff0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "build: decouple the OpenCascade examples from BUILD_CONVERT (#7835)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8478"
     },
@@ -2553,7 +2553,7 @@
       "author": "BIMvoice",
       "branch": "fix-6904-occ-iterator-leak",
       "head": "4a71ebd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell: fix geom.iterator memory growth on the OCC path (#6904)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8520"
     },
@@ -2707,7 +2707,7 @@
       "author": "BIMvoice",
       "branch": "ship-3381-circle-profile",
       "head": "6f59d0b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: support circle profiles when editing an extrusion profile (#3381)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8544"
     },
@@ -2851,7 +2851,7 @@
       "author": "BIMvoice",
       "branch": "fix-2415-geom-app-select-occt-compat",
       "head": "63f2ebb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix geom.app viewer selection crash on current pythonocc-core (#2415)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8588"
     },
@@ -3005,7 +3005,7 @@
       "author": "BIMvoice",
       "branch": "fix-4067-svg-curve-hlr",
       "head": "2357a39",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai: add opt-in exact-geometry hidden line removal for smoother SVG curves (#4067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8615"
     },
@@ -3157,7 +3157,7 @@
       "author": "BIMvoice",
       "branch": "fix-6663-linked-aggregate-duplicate",
       "head": "99b2aef",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #6663: keep a duplicated nested aggregate inside its parent aggregate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8638"
     },
@@ -3717,7 +3717,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "eb6f3b0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -6942,8 +6942,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608110113",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608110113"
+    "tag": "v0.8.6-alpha2608110312",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608110312"
   },
   "schema": 1
 }
