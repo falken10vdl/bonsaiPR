@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 130,
-    "merged": 543,
-    "skipped_conflict": 124,
+    "merged": 544,
+    "skipped_conflict": 123,
     "skipped_draft": 53,
     "total": 850
   },
-  "generated_at": "2026-08-11T03:50:21Z",
+  "generated_at": "2026-08-11T05:50:10Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -3717,7 +3717,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "eb6f3b0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -6942,8 +6942,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608110513",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608110513"
+    "tag": "v0.8.6-alpha2608110712",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608110712"
   },
   "schema": 1
 }
