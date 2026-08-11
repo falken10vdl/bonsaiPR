@@ -1996,3 +1996,7 @@
 {"ts": "2026-08-11T02:28:22Z", "order": "by-updated", "pr": 8795, "event": "status", "from": "failed", "to": "skipped_conflict"}
 {"ts": "2026-08-11T02:28:22Z", "order": "by-updated", "pr": 8874, "event": "status", "from": "failed", "to": "skipped_conflict"}
 {"ts": "2026-08-11T02:28:22Z", "order": "by-updated", "pr": 8889, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-08-11T04:07:58Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-11T04:07:58Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-11T04:07:58Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-11T04:28:37Z", "order": "by-updated", "pr": 8548, "event": "updated", "status": "merged", "from_head": "31b6f6c", "to_head": "cc6897a"}
