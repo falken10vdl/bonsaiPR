@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 130,
-    "merged": 540,
-    "skipped_conflict": 126,
+    "failed": 134,
+    "merged": 538,
+    "skipped_conflict": 125,
     "skipped_draft": 53,
-    "total": 849
+    "total": 850
   },
-  "generated_at": "2026-08-10T06:27:20Z",
+  "generated_at": "2026-08-11T00:31:56Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -152,7 +152,7 @@
       "author": "theoryshaw",
       "branch": "fix_6931",
       "head": "5285df1",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "proposed fix for #6931",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/6933"
     },
@@ -915,7 +915,7 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "053d8e9",
+      "head": "cb775b7",
       "status": "merged",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
@@ -1210,7 +1210,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -1490,7 +1490,7 @@
       "author": "BIMvoice",
       "branch": "fix-3129-storey-elevation-precision",
       "head": "3459e7e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: round length attributes to model precision on write (#3129)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8337"
     },
@@ -1775,7 +1775,7 @@
       "author": "BIMvoice",
       "branch": "fix-7112-save-custom-psets",
       "head": "83c3e71",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix \"Save Pset As Template\" on IFC4X3 custom psets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8391"
     },
@@ -3495,7 +3495,7 @@
       "author": "BIMvoice",
       "branch": "bv-2438-door-panel-pset-edit",
       "head": "b45d19d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: mark predefined property sets as read only in the pset editor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8708"
     },
@@ -3603,7 +3603,8 @@
       "author": "BIMvoice",
       "branch": "fix-7462-bulk-add-pset",
       "head": "9ef27ad",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: apply a new Pset/Qto to the whole selection, not just the active object",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8728"
     },
@@ -3979,7 +3980,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-6400-unit-change-warning",
       "head": "248fb3e",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: warn before a unit change that would silently rescale the model",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8795"
     },
@@ -4440,7 +4442,8 @@
       "author": "BIMvoice",
       "branch": "feat/selector-ref-structure-key-7806",
       "head": "cde40a5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Selector: add referenced_structures value key (#7806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8874"
     },
@@ -4520,7 +4523,8 @@
       "author": "BIMvoice",
       "branch": "8885-unit-name-guard",
       "head": "da0a315",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: load projects with a nameless LENGTHUNIT instead of crashing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8889"
     },
@@ -5048,7 +5052,7 @@
       "author": "BIMvoice",
       "branch": "fix/6616-cost-schedule-property-candidates",
       "head": "32c58f4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc5d: allow cost schedule Property column to list candidate quantity names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8976"
     },
@@ -5778,7 +5782,7 @@
       "author": "BIMvoice",
       "branch": "fix/classification-change-level-hasreferences-crash",
       "head": "a76e1f5",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stop the classification level browser crashing on empty and IFC2X3 libraries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9094"
     },
@@ -5914,7 +5918,7 @@
       "author": "BIMvoice",
       "branch": "ifc5d-wrong-number-audit",
       "head": "f8b1fcb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: fix four wrong-number defects in cost export, cost import and weight quantities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
     },
@@ -6139,7 +6143,7 @@
       "author": "BIMvoice",
       "branch": "fix/optional-attr-none-crashes-batch1",
       "head": "b05b03d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util/api: fix two crashes reading unset optional attrs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9148"
     },
@@ -6195,7 +6199,7 @@
       "author": "BIMvoice",
       "branch": "fix/bonsai-optional-attr-crashes-audit2",
       "head": "844e296",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix nine crashes on valid IFC files",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9156"
     },
@@ -6679,7 +6683,7 @@
       "author": "BIMvoice",
       "branch": "fix-9235-gross-side-area-baked-openings",
       "head": "25f938c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: wall side areas wrong for baked openings and Y-oriented walls (#9235, #9237)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9236"
     },
@@ -6931,11 +6935,19 @@
       "status": "merged",
       "title": "build(deps): bump ty from 0.0.63 to 0.0.66",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9280"
+    },
+    "9284": {
+      "author": "RickBrice",
+      "branch": "rab_units",
+      "head": "d506f06",
+      "status": "merged",
+      "title": "Support per-property/quantity units of measure in the Pset/Qto editor",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9284"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608100750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608100750"
+    "tag": "v0.8.6-alpha2608110152",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608110152"
   },
   "schema": 1
 }
