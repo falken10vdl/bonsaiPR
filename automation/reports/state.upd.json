@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 130,
+    "failed": 132,
     "merged": 538,
     "skipped_conflict": 129,
-    "skipped_draft": 53,
-    "total": 850
+    "skipped_draft": 56,
+    "total": 855
   },
-  "generated_at": "2026-08-11T06:28:14Z",
+  "generated_at": "2026-08-14T22:31:44Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1061,14 +1061,6 @@
       "status": "merged",
       "title": "Selector: accept case-insensitive TRUE/FALSE in filter queries (#6116)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8248"
-    },
-    "8249": {
-      "author": "BIMvoice",
-      "branch": "fix/ifcdiff-relationships-4110",
-      "head": "38611e3",
-      "status": "merged",
-      "title": "IfcDiff: compare container and aggregate by GlobalId (#4110)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8249"
     },
     "8251": {
       "author": "BIMvoice",
@@ -6043,7 +6035,8 @@
       "author": "BIMvoice",
       "branch": "docstring-audit-batch-a85b",
       "head": "90cd1a1",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "util: fix seven :param: entries that name arguments the functions do not have",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9135"
     },
@@ -6467,7 +6460,8 @@
       "author": "BIMvoice",
       "branch": "fix/sequence-create-baseline-non-planned",
       "head": "1f69e00",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "sequence.create_baseline: raise on non-PLANNED",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9191"
     },
@@ -6939,11 +6933,59 @@
       "status": "merged",
       "title": "Support per-property/quantity units of measure in the Pset/Qto editor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9284"
+    },
+    "9287": {
+      "author": "RickBrice",
+      "branch": "rab_bSDD_PickListForAllowedValues",
+      "head": "cffb933",
+      "status": "merged",
+      "title": "Gets the pick list for bSDD properties with Allowed Values working",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9287"
+    },
+    "9288": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/postcss-8.5.26",
+      "head": "df51dab",
+      "status": "merged",
+      "title": "build(deps-dev): bump postcss from 8.5.22 to 8.5.26 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9288"
+    },
+    "9295": {
+      "author": "BIMvoice",
+      "branch": "fix-9294-projectlibrary-units",
+      "head": "62fd8ce",
+      "status": "skipped_draft",
+      "title": "ifcgeom: IfcProjectLibrary breaks unit detection (#9294)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9295"
+    },
+    "9296": {
+      "author": "BIMvoice",
+      "branch": "fix-ifcdiff-correctness-bugs",
+      "head": "cb7008a",
+      "status": "skipped_draft",
+      "title": "ifcdiff: seven silent under-reporting defects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9296"
+    },
+    "9297": {
+      "author": "BIMvoice",
+      "branch": "fix-diff-panel-relationships",
+      "head": "2e0b0c2",
+      "status": "skipped_draft",
+      "title": "Bonsai: Diff panel silently skips attribute and geometry checks",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9297"
+    },
+    "9300": {
+      "author": "theoryshaw",
+      "branch": "fix-loadbearing-pset-templates",
+      "head": "49d43a4",
+      "status": "merged",
+      "title": "Fix malformed LoadBearing property templates in IFC4 psets",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9300"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608110751",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608110751"
+    "tag": "v0.8.6-alpha2608142353",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608142353"
   },
   "schema": 1
 }
