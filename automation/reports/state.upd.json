@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 132,
+    "failed": 134,
     "merged": 538,
     "skipped_conflict": 129,
     "skipped_draft": 56,
-    "total": 855
+    "total": 857
   },
-  "generated_at": "2026-08-15T01:30:05Z",
+  "generated_at": "2026-08-15T04:30:35Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6981,11 +6981,29 @@
       "status": "merged",
       "title": "build(deps): bump ty from 0.0.63 to 0.0.70",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9303"
+    },
+    "9304": {
+      "author": "DesertSpringsCivil",
+      "branch": "review/pr1-foundation",
+      "head": "5f3986c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Saikei: horizontal alignment authoring foundation for Bonsai (+ alignment API fixes)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9304"
+    },
+    "9305": {
+      "author": "DesertSpringsCivil",
+      "branch": "fix/win-runtime-plugin-collection",
+      "head": "588557a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "win: collect underscore-prefixed runtime plugin DLLs in build artifacts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9305"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608150252",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608150252"
+    "tag": "v0.8.6-alpha2608150552",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608150552"
   },
   "schema": 1
 }
