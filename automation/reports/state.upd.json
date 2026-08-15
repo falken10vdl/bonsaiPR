@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 855
   },
-  "generated_at": "2026-08-14T22:31:44Z",
+  "generated_at": "2026-08-15T01:30:05Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6910,22 +6910,6 @@
       "title": "Add scripts entrypoints",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9277"
     },
-    "9279": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ruff-0.16.1",
-      "head": "5bba21a",
-      "status": "merged",
-      "title": "build(deps): bump ruff from 0.16.0 to 0.16.1",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9279"
-    },
-    "9280": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ty-0.0.66",
-      "head": "4c9e2ad",
-      "status": "merged",
-      "title": "build(deps): bump ty from 0.0.63 to 0.0.66",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9280"
-    },
     "9284": {
       "author": "RickBrice",
       "branch": "rab_units",
@@ -6981,11 +6965,27 @@
       "status": "merged",
       "title": "Fix malformed LoadBearing property templates in IFC4 psets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9300"
+    },
+    "9302": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.16.2",
+      "head": "bf39f7b",
+      "status": "merged",
+      "title": "build(deps): bump ruff from 0.16.0 to 0.16.2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9302"
+    },
+    "9303": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.70",
+      "head": "bb37abf",
+      "status": "merged",
+      "title": "build(deps): bump ty from 0.0.63 to 0.0.70",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9303"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608142353",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608142353"
+    "tag": "v0.8.6-alpha2608150252",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608150252"
   },
   "schema": 1
 }
