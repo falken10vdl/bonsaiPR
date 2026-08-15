@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 134,
-    "merged": 545,
+    "failed": 131,
+    "merged": 547,
     "skipped_conflict": 123,
     "skipped_draft": 57,
-    "total": 859
+    "total": 858
   },
-  "generated_at": "2026-08-15T15:53:44Z",
+  "generated_at": "2026-08-15T17:52:18Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1158,14 +1158,6 @@
       "title": "Bonsai: fail profile detection cleanly on discontinuous loops (#8072)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8271"
     },
-    "8273": {
-      "author": "BIMvoice",
-      "branch": "fix/mode-set-object-exec-8042",
-      "head": "f6b8788",
-      "status": "merged",
-      "title": "Bonsai: OverrideModeSetObject must survive direct execution (#8042)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8273"
-    },
     "8274": {
       "author": "BIMvoice",
       "branch": "fix/aggregate-error-report-7983",
@@ -2191,8 +2183,7 @@
       "author": "BIMvoice",
       "branch": "fix-2509-gltf-diffuse-albedo",
       "head": "4b03258",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "serializers: glTF baseColorFactor should be the surface colour, not diffuse*factor (#2509)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8466"
     },
@@ -2218,8 +2209,7 @@
       "author": "BIMvoice",
       "branch": "fix-806-mirrored-normals",
       "head": "0d96909",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "ifcgeom: fix inverted normals on mirrored MappedRepresentations (#806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8469"
     },
@@ -2227,8 +2217,7 @@
       "author": "BIMvoice",
       "branch": "bv-1231-svg-storey-global-z",
       "head": "2bfcd89",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "serializers: SVG cut plane from storey global placement, not Elevation attribute (#1231)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8471"
     },
@@ -4575,9 +4564,9 @@
     "8900": {
       "author": "BIMvoice",
       "branch": "8603-batch-underlay-state",
-      "head": "28119d5",
+      "head": "a1ef20f",
       "status": "skipped_draft",
-      "title": "Bonsai: fix batch-printed drawings rendering the previous drawing's underlay",
+      "title": "Bonsai: sync_render_visibility must tag the depsgraph",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8900"
     },
     "8902": {
@@ -7018,8 +7007,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608151715",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151715"
+    "tag": "v0.8.6-alpha2608151913",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151913"
   },
   "schema": 1
 }

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 132,
-    "merged": 541,
+    "failed": 134,
+    "merged": 538,
     "skipped_conflict": 129,
     "skipped_draft": 57,
-    "total": 859
+    "total": 858
   },
-  "generated_at": "2026-08-15T16:33:08Z",
+  "generated_at": "2026-08-15T18:32:07Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1158,14 +1158,6 @@
       "title": "Bonsai: fail profile detection cleanly on discontinuous loops (#8072)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8271"
     },
-    "8273": {
-      "author": "BIMvoice",
-      "branch": "fix/mode-set-object-exec-8042",
-      "head": "f6b8788",
-      "status": "merged",
-      "title": "Bonsai: OverrideModeSetObject must survive direct execution (#8042)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8273"
-    },
     "8274": {
       "author": "BIMvoice",
       "branch": "fix/aggregate-error-report-7983",
@@ -1929,7 +1921,8 @@
       "author": "BIMvoice",
       "branch": "fix-5357-clash-result-order",
       "head": "5c16f93",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcGeomTree: keep clash_intersection_many results in set_a, set_b order (#5357)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8424"
     },
@@ -2092,7 +2085,8 @@
       "author": "BIMvoice",
       "branch": "fix-6742-csg-cylinder",
       "head": "b8d1f3c",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: import IfcRightCircularCylinder CSG geometry (#6742)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8450"
     },
@@ -4573,9 +4567,9 @@
     "8900": {
       "author": "BIMvoice",
       "branch": "8603-batch-underlay-state",
-      "head": "28119d5",
+      "head": "a1ef20f",
       "status": "skipped_draft",
-      "title": "Bonsai: fix batch-printed drawings rendering the previous drawing's underlay",
+      "title": "Bonsai: sync_render_visibility must tag the depsgraph",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8900"
     },
     "8902": {
@@ -6983,7 +6977,7 @@
     "9304": {
       "author": "DesertSpringsCivil",
       "branch": "review/pr1-foundation",
-      "head": "5f3986c",
+      "head": "92ec44e",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Saikei: horizontal alignment authoring foundation for Bonsai (+ alignment API fixes)",
@@ -7016,8 +7010,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608151754",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151754"
+    "tag": "v0.8.6-alpha2608151953",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151953"
   },
   "schema": 1
 }

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 131,
-    "merged": 553,
+    "failed": 134,
+    "merged": 550,
     "skipped_conflict": 118,
     "skipped_draft": 57,
     "total": 859
   },
-  "generated_at": "2026-08-15T15:14:30Z",
+  "generated_at": "2026-08-15T17:12:40Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -980,7 +980,7 @@
     "8171": {
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
-      "head": "0716e50",
+      "head": "3fddc35",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add per-drawing render overrides (status_render module)",
@@ -3825,7 +3825,8 @@
       "author": "BIMvoice",
       "branch": "fix-790-gltf-group-node-names",
       "head": "df0af3a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "GltfSerializer: fix hierarchy group node names, add opt-in --gltf-extras",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8771"
     },
@@ -3842,7 +3843,8 @@
       "author": "BIMvoice",
       "branch": "fix-2639-bbox-substitution",
       "head": "fb7aa40",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: add bbox-substitution-threshold to substitute overly dense geometry with bounding boxes (#2639)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8773"
     },
@@ -3901,7 +3903,8 @@
       "author": "BIMvoice",
       "branch": "fix-6102-nested-site-local-placement",
       "head": "d760057",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fix --site-local-placement breaking relative positions with nested IfcSites",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8784"
     },
@@ -4572,7 +4575,7 @@
     "8900": {
       "author": "BIMvoice",
       "branch": "8603-batch-underlay-state",
-      "head": "28119d5",
+      "head": "a1ef20f",
       "status": "skipped_draft",
       "title": "Bonsai: fix batch-printed drawings rendering the previous drawing's underlay",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8900"
@@ -7015,8 +7018,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608151635",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151635"
+    "tag": "v0.8.6-alpha2608151835",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151835"
   },
   "schema": 1
 }
