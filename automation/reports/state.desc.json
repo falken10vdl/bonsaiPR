@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 131,
-    "merged": 547,
+    "failed": 134,
+    "merged": 545,
     "skipped_conflict": 123,
     "skipped_draft": 57,
-    "total": 858
+    "total": 859
   },
-  "generated_at": "2026-08-15T17:52:18Z",
+  "generated_at": "2026-08-15T19:53:02Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -915,7 +915,7 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "cb775b7",
+      "head": "253a6c5",
       "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
@@ -2183,7 +2183,8 @@
       "author": "BIMvoice",
       "branch": "fix-2509-gltf-diffuse-albedo",
       "head": "4b03258",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: glTF baseColorFactor should be the surface colour, not diffuse*factor (#2509)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8466"
     },
@@ -2209,7 +2210,8 @@
       "author": "BIMvoice",
       "branch": "fix-806-mirrored-normals",
       "head": "0d96909",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fix inverted normals on mirrored MappedRepresentations (#806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8469"
     },
@@ -2217,7 +2219,8 @@
       "author": "BIMvoice",
       "branch": "bv-1231-svg-storey-global-z",
       "head": "2bfcd89",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "serializers: SVG cut plane from storey global placement, not Elevation attribute (#1231)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8471"
     },
@@ -6974,7 +6977,7 @@
     "9304": {
       "author": "DesertSpringsCivil",
       "branch": "review/pr1-foundation",
-      "head": "5f3986c",
+      "head": "92ec44e",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Saikei: horizontal alignment authoring foundation for Bonsai (+ alignment API fixes)",
@@ -7004,11 +7007,19 @@
       "status": "skipped_draft",
       "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9308"
+    },
+    "9311": {
+      "author": "theoryshaw",
+      "branch": "fix-drawing-linework-cache-and-degenerate-polygon",
+      "head": "bf07cc0",
+      "status": "merged",
+      "title": "fix(drawing): harden linework generation against bad cache and degene…",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9311"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608151913",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151913"
+    "tag": "v0.8.6-alpha2608152114",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608152114"
   },
   "schema": 1
 }

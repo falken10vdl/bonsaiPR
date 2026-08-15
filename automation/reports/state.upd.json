@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 134,
-    "merged": 538,
+    "merged": 539,
     "skipped_conflict": 129,
     "skipped_draft": 57,
-    "total": 858
+    "total": 859
   },
-  "generated_at": "2026-08-15T18:32:07Z",
+  "generated_at": "2026-08-15T20:32:27Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -915,7 +915,7 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "cb775b7",
+      "head": "253a6c5",
       "status": "merged",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
@@ -7007,11 +7007,19 @@
       "status": "skipped_draft",
       "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9308"
+    },
+    "9311": {
+      "author": "theoryshaw",
+      "branch": "fix-drawing-linework-cache-and-degenerate-polygon",
+      "head": "bf07cc0",
+      "status": "merged",
+      "title": "fix(drawing): harden linework generation against bad cache and degene…",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9311"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608151953",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151953"
+    "tag": "v0.8.6-alpha2608152154",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608152154"
   },
   "schema": 1
 }

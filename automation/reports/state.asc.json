@@ -7,7 +7,7 @@
     "skipped_draft": 57,
     "total": 859
   },
-  "generated_at": "2026-08-15T17:12:40Z",
+  "generated_at": "2026-08-15T19:13:53Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1157,14 +1157,6 @@
       "status": "merged",
       "title": "Bonsai: fail profile detection cleanly on discontinuous loops (#8072)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8271"
-    },
-    "8273": {
-      "author": "BIMvoice",
-      "branch": "fix/mode-set-object-exec-8042",
-      "head": "f6b8788",
-      "status": "merged",
-      "title": "Bonsai: OverrideModeSetObject must survive direct execution (#8042)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8273"
     },
     "8274": {
       "author": "BIMvoice",
@@ -4577,7 +4569,7 @@
       "branch": "8603-batch-underlay-state",
       "head": "a1ef20f",
       "status": "skipped_draft",
-      "title": "Bonsai: fix batch-printed drawings rendering the previous drawing's underlay",
+      "title": "Bonsai: sync_render_visibility must tag the depsgraph",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8900"
     },
     "8902": {
@@ -6985,7 +6977,7 @@
     "9304": {
       "author": "DesertSpringsCivil",
       "branch": "review/pr1-foundation",
-      "head": "5f3986c",
+      "head": "92ec44e",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Saikei: horizontal alignment authoring foundation for Bonsai (+ alignment API fixes)",
@@ -7015,11 +7007,19 @@
       "status": "skipped_draft",
       "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9308"
+    },
+    "9311": {
+      "author": "theoryshaw",
+      "branch": "fix-drawing-linework-cache-and-degenerate-polygon",
+      "head": "bf07cc0",
+      "status": "merged",
+      "title": "fix(drawing): harden linework generation against bad cache and degene…",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9311"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608151835",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151835"
+    "tag": "v0.8.6-alpha2608152035",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608152035"
   },
   "schema": 1
 }
