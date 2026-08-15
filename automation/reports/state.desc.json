@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 134,
-    "merged": 544,
+    "merged": 545,
     "skipped_conflict": 123,
-    "skipped_draft": 56,
-    "total": 857
+    "skipped_draft": 57,
+    "total": 859
   },
-  "generated_at": "2026-08-15T05:52:02Z",
+  "generated_at": "2026-08-15T15:53:44Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -980,7 +980,7 @@
     "8171": {
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
-      "head": "0716e50",
+      "head": "3fddc35",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add per-drawing render overrides (status_render module)",
@@ -6999,11 +6999,27 @@
       "status": "failed",
       "title": "win: collect underscore-prefixed runtime plugin DLLs in build artifacts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9305"
+    },
+    "9307": {
+      "author": "theoryshaw",
+      "branch": "fix-8603-underlay-render-visibility",
+      "head": "dfb1a81",
+      "status": "merged",
+      "title": "Fix #8603: drawing underlay renders the previously active drawing's objects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9307"
+    },
+    "9308": {
+      "author": "BIMvoice",
+      "branch": "fix-9299-aggregate-delete-segfault",
+      "head": "47f4eff",
+      "status": "skipped_draft",
+      "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9308"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608150713",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608150713"
+    "tag": "v0.8.6-alpha2608151715",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151715"
   },
   "schema": 1
 }

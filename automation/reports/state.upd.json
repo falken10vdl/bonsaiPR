@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 134,
-    "merged": 538,
+    "failed": 132,
+    "merged": 541,
     "skipped_conflict": 129,
-    "skipped_draft": 56,
-    "total": 857
+    "skipped_draft": 57,
+    "total": 859
   },
-  "generated_at": "2026-08-15T06:30:57Z",
+  "generated_at": "2026-08-15T16:33:08Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -980,7 +980,7 @@
     "8171": {
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
-      "head": "0716e50",
+      "head": "3fddc35",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add per-drawing render overrides (status_render module)",
@@ -1929,8 +1929,7 @@
       "author": "BIMvoice",
       "branch": "fix-5357-clash-result-order",
       "head": "5c16f93",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "IfcGeomTree: keep clash_intersection_many results in set_a, set_b order (#5357)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8424"
     },
@@ -2093,8 +2092,7 @@
       "author": "BIMvoice",
       "branch": "fix-6742-csg-cylinder",
       "head": "b8d1f3c",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "ifcgeom: import IfcRightCircularCylinder CSG geometry (#6742)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8450"
     },
@@ -6999,11 +6997,27 @@
       "status": "failed",
       "title": "win: collect underscore-prefixed runtime plugin DLLs in build artifacts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9305"
+    },
+    "9307": {
+      "author": "theoryshaw",
+      "branch": "fix-8603-underlay-render-visibility",
+      "head": "dfb1a81",
+      "status": "merged",
+      "title": "Fix #8603: drawing underlay renders the previously active drawing's objects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9307"
+    },
+    "9308": {
+      "author": "BIMvoice",
+      "branch": "fix-9299-aggregate-delete-segfault",
+      "head": "47f4eff",
+      "status": "skipped_draft",
+      "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9308"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608150753",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608150753"
+    "tag": "v0.8.6-alpha2608151754",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151754"
   },
   "schema": 1
 }

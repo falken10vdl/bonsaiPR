@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 134,
-    "merged": 549,
+    "failed": 131,
+    "merged": 553,
     "skipped_conflict": 118,
-    "skipped_draft": 56,
-    "total": 857
+    "skipped_draft": 57,
+    "total": 859
   },
-  "generated_at": "2026-08-15T05:12:52Z",
+  "generated_at": "2026-08-15T15:14:30Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3825,8 +3825,7 @@
       "author": "BIMvoice",
       "branch": "fix-790-gltf-group-node-names",
       "head": "df0af3a",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "GltfSerializer: fix hierarchy group node names, add opt-in --gltf-extras",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8771"
     },
@@ -3843,8 +3842,7 @@
       "author": "BIMvoice",
       "branch": "fix-2639-bbox-substitution",
       "head": "fb7aa40",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "ifcgeom: add bbox-substitution-threshold to substitute overly dense geometry with bounding boxes (#2639)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8773"
     },
@@ -3903,8 +3901,7 @@
       "author": "BIMvoice",
       "branch": "fix-6102-nested-site-local-placement",
       "head": "d760057",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "ifcgeom: fix --site-local-placement breaking relative positions with nested IfcSites",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8784"
     },
@@ -6999,11 +6996,27 @@
       "status": "failed",
       "title": "win: collect underscore-prefixed runtime plugin DLLs in build artifacts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9305"
+    },
+    "9307": {
+      "author": "theoryshaw",
+      "branch": "fix-8603-underlay-render-visibility",
+      "head": "dfb1a81",
+      "status": "merged",
+      "title": "Fix #8603: drawing underlay renders the previously active drawing's objects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9307"
+    },
+    "9308": {
+      "author": "BIMvoice",
+      "branch": "fix-9299-aggregate-delete-segfault",
+      "head": "47f4eff",
+      "status": "skipped_draft",
+      "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9308"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608150635",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608150635"
+    "tag": "v0.8.6-alpha2608151635",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608151635"
   },
   "schema": 1
 }
