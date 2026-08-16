@@ -1756,3 +1756,4 @@
 {"ts": "2026-08-15T23:13:54Z", "order": "ascending", "pr": 9304, "event": "updated", "status": "failed", "from_head": "92ec44e", "to_head": "a24acae"}
 {"ts": "2026-08-16T01:12:46Z", "order": "ascending", "pr": 9312, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-08-16T05:13:10Z", "order": "ascending", "pr": 9296, "event": "updated", "status": "skipped_draft", "from_head": "cb7008a", "to_head": "e61868d"}
+{"ts": "2026-08-16T07:12:51Z", "order": "ascending", "pr": 9296, "event": "status", "from": "skipped_draft", "to": "skipped_conflict"}

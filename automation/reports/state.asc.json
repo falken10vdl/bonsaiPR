@@ -3,11 +3,11 @@
   "counts": {
     "failed": 134,
     "merged": 550,
-    "skipped_conflict": 119,
-    "skipped_draft": 57,
+    "skipped_conflict": 120,
+    "skipped_draft": 56,
     "total": 860
   },
-  "generated_at": "2026-08-16T05:13:10Z",
+  "generated_at": "2026-08-16T07:12:51Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6938,8 +6938,8 @@
       "author": "BIMvoice",
       "branch": "fix-ifcdiff-correctness-bugs",
       "head": "e61868d",
-      "status": "skipped_draft",
-      "title": "ifcdiff: seven silent under-reporting defects",
+      "status": "skipped_conflict",
+      "title": "ifcdiff: six silent under-reporting defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9296"
     },
     "9297": {
@@ -7026,8 +7026,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608160635",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608160635"
+    "tag": "v0.8.6-alpha2608160835",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608160835"
   },
   "schema": 1
 }
