@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 134,
-    "merged": 545,
-    "skipped_conflict": 124,
-    "skipped_draft": 57,
+    "merged": 544,
+    "skipped_conflict": 126,
+    "skipped_draft": 56,
     "total": 860
   },
-  "generated_at": "2026-08-16T01:51:36Z",
+  "generated_at": "2026-08-16T05:51:53Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -2521,7 +2521,7 @@
       "author": "BIMvoice",
       "branch": "feat-8412-ifcdiff-signature",
       "head": "e0dcc52",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcDiff: optional content-signature matching to track real changes (#8412)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8518"
     },
@@ -5530,7 +5530,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcdiff-class-change-detection",
       "head": "05c5434",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcdiff: report an element whose IFC class changed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9064"
     },
@@ -6937,9 +6937,9 @@
     "9296": {
       "author": "BIMvoice",
       "branch": "fix-ifcdiff-correctness-bugs",
-      "head": "cb7008a",
-      "status": "skipped_draft",
-      "title": "ifcdiff: seven silent under-reporting defects",
+      "head": "e61868d",
+      "status": "merged",
+      "title": "ifcdiff: six silent under-reporting defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9296"
     },
     "9297": {
@@ -7026,8 +7026,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608160313",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608160313"
+    "tag": "v0.8.6-alpha2608160714",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608160714"
   },
   "schema": 1
 }

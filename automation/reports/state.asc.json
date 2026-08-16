@@ -7,7 +7,7 @@
     "skipped_draft": 57,
     "total": 860
   },
-  "generated_at": "2026-08-16T01:12:46Z",
+  "generated_at": "2026-08-16T05:13:10Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6937,7 +6937,7 @@
     "9296": {
       "author": "BIMvoice",
       "branch": "fix-ifcdiff-correctness-bugs",
-      "head": "cb7008a",
+      "head": "e61868d",
       "status": "skipped_draft",
       "title": "ifcdiff: seven silent under-reporting defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9296"
@@ -7026,8 +7026,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608160235",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608160235"
+    "tag": "v0.8.6-alpha2608160635",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608160635"
   },
   "schema": 1
 }
