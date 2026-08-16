@@ -3,11 +3,11 @@
   "counts": {
     "failed": 134,
     "merged": 545,
-    "skipped_conflict": 123,
+    "skipped_conflict": 124,
     "skipped_draft": 57,
-    "total": 859
+    "total": 860
   },
-  "generated_at": "2026-08-15T21:52:23Z",
+  "generated_at": "2026-08-15T23:52:34Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6084,7 +6084,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcdiff-bsdd-falsy-params",
       "head": "d7f9a76",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bsdd, ifcdiff: respect explicitly passed falsy params",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9143"
     },
@@ -6977,7 +6977,7 @@
     "9304": {
       "author": "DesertSpringsCivil",
       "branch": "review/pr1-foundation",
-      "head": "92ec44e",
+      "head": "a24acae",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Saikei: horizontal alignment authoring foundation for Bonsai (+ alignment API fixes)",
@@ -7015,11 +7015,19 @@
       "status": "merged",
       "title": "fix(drawing): harden linework generation against bad cache and degene…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9311"
+    },
+    "9312": {
+      "author": "ProductOfAmerica",
+      "branch": "ifcdiff-container-aggregate-globalid",
+      "head": "aa7e6ff",
+      "status": "merged",
+      "title": "ifcdiff: compare container and aggregate by GlobalId, not by instance",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9312"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608152313",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608152313"
+    "tag": "v0.8.6-alpha2608160114",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608160114"
   },
   "schema": 1
 }
