@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 137,
-    "merged": 542,
+    "merged": 544,
     "skipped_conflict": 126,
-    "skipped_draft": 56,
-    "total": 861
+    "skipped_draft": 57,
+    "total": 864
   },
-  "generated_at": "2026-08-16T23:54:38Z",
+  "generated_at": "2026-08-17T18:09:52Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -980,7 +980,7 @@
     "8171": {
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
-      "head": "3fddc35",
+      "head": "4d031f1",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add per-drawing render overrides (status_render module)",
@@ -7034,11 +7034,35 @@
       "status": "merged",
       "title": "CAD Join: keep the side of the edge you clicked, and remove edges in between",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9316"
+    },
+    "9318": {
+      "author": "theoryshaw",
+      "branch": "fix_bringtofront_svg_namespace_9317",
+      "head": "176561b",
+      "status": "merged",
+      "title": "Fix EPset_Drawing.BringToFront not applying to merged cut geometry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9318"
+    },
+    "9320": {
+      "author": "theoryshaw",
+      "branch": "fix_drawing_camera_rebuild",
+      "head": "dff9e7d",
+      "status": "merged",
+      "title": "Fix reflected plan drawings rebuilding their camera on every create_drawing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9320"
+    },
+    "9323": {
+      "author": "john-rogers",
+      "branch": "fix/clear-linked-query-on-unload",
+      "head": "430b437",
+      "status": "skipped_draft",
+      "title": "Bonsai: clear stale linked element queries on unload",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9323"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2608170114",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608170114"
+    "tag": "v0.9.0-alpha2608171926",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608171926"
   },
   "schema": 1
 }
