@@ -7,7 +7,7 @@
     "skipped_draft": 57,
     "total": 864
   },
-  "generated_at": "2026-08-17T18:09:52Z",
+  "generated_at": "2026-08-17T23:04:22Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -2947,7 +2947,7 @@
     "8607": {
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
-      "head": "d5e6c19",
+      "head": "4f0e572",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add copy attribute to selection for boundaries",
@@ -7061,8 +7061,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2608171926",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608171926"
+    "tag": "v0.9.0-alpha2608180026",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608180026"
   },
   "schema": 1
 }
