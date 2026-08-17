@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 134,
-    "merged": 544,
+    "failed": 137,
+    "merged": 542,
     "skipped_conflict": 126,
     "skipped_draft": 56,
-    "total": 860
+    "total": 861
   },
-  "generated_at": "2026-08-16T07:51:49Z",
+  "generated_at": "2026-08-16T23:54:38Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6561,14 +6561,6 @@
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
     },
-    "9209": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/docker/login-action-4.5.2",
-      "head": "09ceb64",
-      "status": "merged",
-      "title": "build(deps): bump docker/login-action from 4 to 4.5.2",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9209"
-    },
     "9210": {
       "author": "theoryshaw",
       "branch": "occurrence-representations",
@@ -6961,17 +6953,19 @@
     "9302": {
       "author": "dependabot[bot]",
       "branch": "dependabot/pip/ruff-0.16.2",
-      "head": "bf39f7b",
-      "status": "merged",
-      "title": "build(deps): bump ruff from 0.16.0 to 0.16.2",
+      "head": "a18f0aa",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bump ruff from 0.16.0 to 0.16.3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9302"
     },
     "9303": {
       "author": "dependabot[bot]",
       "branch": "dependabot/pip/ty-0.0.70",
-      "head": "bb37abf",
-      "status": "merged",
-      "title": "build(deps): bump ty from 0.0.63 to 0.0.70",
+      "head": "5ab268d",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bump ty from 0.0.63 to 0.0.71",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9303"
     },
     "9304": {
@@ -7023,11 +7017,28 @@
       "status": "merged",
       "title": "ifcdiff: compare container and aggregate by GlobalId, not by instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9312"
+    },
+    "9315": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/src/opencdeserver/api/app/python-jose-3.4.0",
+      "head": "c7d7193",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bump python-jose from 3.3.0 to 3.4.0 in /src/opencdeserver/api/app",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9315"
+    },
+    "9316": {
+      "author": "theoryshaw",
+      "branch": "cad_join_clicked_side_9314",
+      "head": "68c8218",
+      "status": "merged",
+      "title": "CAD Join: keep the side of the edge you clicked, and remove edges in between",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9316"
     }
   },
   "release": {
-    "tag": "v0.8.6-alpha2608160913",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.6-alpha2608160913"
+    "tag": "v0.9.0-alpha2608170114",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608170114"
   },
   "schema": 1
 }
