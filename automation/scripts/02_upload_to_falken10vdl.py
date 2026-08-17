@@ -322,6 +322,26 @@ def get_release_tag(timestamp=None):
     return f"v{version}-alpha{timestamp}"
 
 
+def parse_version_from_tag(tag_name):
+    """Extract semantic version (X.Y.Z) from tags like vX.Y.Z-alphaYYMMDDHHMM."""
+    if not tag_name:
+        return None
+    m = re.match(r"^v([\d.]+)-alpha\d+", tag_name)
+    return m.group(1) if m else None
+
+
+def normalize_asset_name(original_filename, timestamp_10=None, target_version=None):
+    """Normalize addon zip naming to bonsaiPR_pyXXX-<version>-alpha<timestamp>-<platform>.zip."""
+    pattern = r"^(bonsaiPR_py\d+-)([\d.]+)(?:-alpha)?(\d{6,10})(-[^.]+\.zip)$"
+    m = re.match(pattern, original_filename)
+    if not m:
+        return original_filename
+
+    version = target_version or m.group(2)
+    stamp = timestamp_10 or m.group(3)
+    return f"{m.group(1)}{version}-alpha{stamp}{m.group(4)}"
+
+
 def find_report_file():
     """Find the latest README report file - searches for most recent file within last hour"""
     version, pyversion, _ = get_version_info()
@@ -1040,21 +1060,16 @@ def generate_release_body(
                     else:
                         failed_prs.append(current_pr)
 
-        # Generate available downloads based on actual files with HHMM timestamp
+        # Generate available downloads based on normalized asset names.
+        target_version = parse_version_from_tag(tag_name)
         downloads_section = "## 📦 Available Downloads\n\n"
         for addon_file in addon_files:
             original_filename = os.path.basename(addon_file)
-
-            # Apply same renaming logic as upload section to get the final filename with HHMM
-            pattern = r"(bonsaiPR_py\d+-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)"
-            match = re.match(pattern, original_filename)
-
-            if match and timestamp_from_readme:
-                renamed_filename = (
-                    f"{match.group(1)}{timestamp_from_readme}{match.group(3)}"
-                )
-            else:
-                renamed_filename = original_filename
+            renamed_filename = normalize_asset_name(
+                original_filename,
+                timestamp_10=timestamp_from_readme,
+                target_version=target_version,
+            )
 
             if "windows" in renamed_filename.lower():
                 platform = "Windows (x64)"
@@ -1532,13 +1547,8 @@ def upload_to_falken10vdl():
     )
     ts_short = ts_full[:6]  # YYMMDD only
 
-    # Extract version from the first addon asset filename (handles py311, py313, etc.)
-    version = "unknown"
-    if addon_files:
-        first_asset = os.path.basename(addon_files[0])
-        m = re.match(r"bonsaiPR_py\d+-([\d.]+)", first_asset)
-        if m:
-            version = m.group(1)
+    # Release naming should follow the Git tag version (single source of truth).
+    version = parse_version_from_tag(tag_name) or "unknown"
 
     # Fetch the latest commit hash from the branch using the GitHub API
     branch_short_hash = "unknown"
@@ -1616,29 +1626,21 @@ def upload_to_falken10vdl():
     # Upload addon files with updated timestamp (YYMMDD -> YYMMDDHHMM from README)
     success_count = 0
 
+    tag_version = parse_version_from_tag(tag_name)
+
     for addon_file in addon_files:
         original_name = os.path.basename(addon_file)
-
-        # Replace the old YYMMDD format with YYMMDDHHMM format from README
-        # Pattern: bonsaiPR_pyXXX-0.8.5-alpha251214-linux-x64.zip -> bonsaiPR_pyXXX-0.8.5-alpha2512142235-linux-x64.zip
-        import re
-
-        # Match: bonsaiPR_pyXXX-VERSION-alphaYYMMDD-platform.zip (handles py311, py313, etc.)
-        pattern = r"(bonsaiPR_py\d+-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)"
-
-        match = re.match(pattern, original_name)
-        if match and timestamp_from_readme:
-            asset_name = f"{match.group(1)}{timestamp_from_readme}{match.group(3)}"
+        asset_name = normalize_asset_name(
+            original_name,
+            timestamp_10=timestamp_from_readme,
+            target_version=tag_version,
+        )
+        if asset_name != original_name:
             print(f"Renaming asset: {original_name} -> {asset_name}")
+        elif not timestamp_from_readme:
+            print(f"⚠️ No timestamp from README, using original: {asset_name}")
         else:
-            # Fallback: use original name if pattern doesn't match or no timestamp found
-            asset_name = original_name
-            if not timestamp_from_readme:
-                print(f"⚠️ No timestamp from README, using original: {asset_name}")
-            else:
-                print(
-                    f"⚠️ Could not parse filename pattern, using original: {asset_name}"
-                )
+            print(f"⚠️ Could not normalize filename, using original: {asset_name}")
 
         if upload_asset_to_release(release_id, addon_file, asset_name):
             success_count += 1
@@ -1670,18 +1672,16 @@ def upload_to_falken10vdl():
     # Use the actual asset names as uploaded to GitHub (renamed if needed)
     # Build a list of the actual uploaded file paths (with correct names)
     uploaded_files = []
+    tag_version = parse_version_from_tag(tag_name)
     for addon_file in addon_files:
         original_name = os.path.basename(addon_file)
-        pattern = r"(bonsaiPR_py\d+-[\d.]+(?:-alpha)?)(\d{6})(-[^.]+\.zip)"
-        match = re.match(pattern, original_name)
-        if match and timestamp_from_readme:
-            asset_name = f"{match.group(1)}{timestamp_from_readme}{match.group(3)}"
-            # The file on disk is still addon_file, but the asset on GitHub is asset_name
-            # For hash/size, use the local file; for URL, use asset_name
-            # We'll pass a tuple (local_path, asset_name)
-            uploaded_files.append((addon_file, asset_name))
-        else:
-            uploaded_files.append((addon_file, original_name))
+        asset_name = normalize_asset_name(
+            original_name,
+            timestamp_10=timestamp_from_readme,
+            target_version=tag_version,
+        )
+        # The file on disk is still addon_file, but the asset on GitHub is asset_name.
+        uploaded_files.append((addon_file, asset_name))
 
     # Call update_index_json with correct asset names
     # Patch update_index_json to accept (local_path, asset_name) tuples
