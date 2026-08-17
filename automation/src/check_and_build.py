@@ -20,6 +20,29 @@ import datetime
 import logging
 from pathlib import Path
 
+
+DEFAULT_FULL_BUILD_TIMEOUT_SECONDS = 21600  # 6 hours
+
+
+def get_full_build_timeout_seconds():
+    """Return full-build timeout from env, with validation and safe fallback."""
+    raw = os.getenv("BONSAIPR_FULL_BUILD_TIMEOUT_SECONDS", "").strip()
+    if not raw:
+        return DEFAULT_FULL_BUILD_TIMEOUT_SECONDS
+
+    try:
+        timeout = int(raw)
+        if timeout <= 0:
+            raise ValueError("timeout must be > 0")
+        return timeout
+    except ValueError:
+        logging.warning(
+            "Invalid BONSAIPR_FULL_BUILD_TIMEOUT_SECONDS=%r; using default %s seconds",
+            raw,
+            DEFAULT_FULL_BUILD_TIMEOUT_SECONDS,
+        )
+        return DEFAULT_FULL_BUILD_TIMEOUT_SECONDS
+
 def setup_logging():
     """Set up logging for the check-and-build process"""
     logs_dir = os.path.join(os.path.dirname(__file__), '..', 'logs')
@@ -74,20 +97,31 @@ def check_for_changes():
 def run_full_build():
     """Run the complete build automation"""
     main_script = os.path.join(os.path.dirname(__file__), 'main.py')
+    timeout_seconds = get_full_build_timeout_seconds()
+    timeout_hours = timeout_seconds / 3600
 
     logging.info("🚀 Starting full build process...")
+    logging.info(
+        "⏱️ Full build timeout: %.2f hours (%s seconds)",
+        timeout_hours,
+        timeout_seconds,
+    )
 
     try:
         result = subprocess.run(
             [sys.executable, main_script],
             cwd=os.path.dirname(__file__),
-            timeout=7200  # 2 hour timeout for full build
+            timeout=timeout_seconds,
         )
 
         return result.returncode == 0
 
     except subprocess.TimeoutExpired:
-        logging.error("⏰ Full build timed out after 2 hours")
+        logging.error(
+            "⏰ Full build timed out after %.2f hours (%s seconds)",
+            timeout_hours,
+            timeout_seconds,
+        )
         return False
     except Exception as e:
         logging.error(f"💥 Error during build: {e}")
