@@ -7,7 +7,7 @@
     "skipped_draft": 57,
     "total": 864
   },
-  "generated_at": "2026-08-17T23:04:22Z",
+  "generated_at": "2026-08-18T02:02:16Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -5207,7 +5207,7 @@
     "9005": {
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
-      "head": "9cd0f83",
+      "head": "9b28444",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Auto-detect space height + IFC-direct space generation",
@@ -6605,7 +6605,7 @@
     "9221": {
       "author": "CyrilWaechter",
       "branch": "auto-generate-ifc-based-space-boundaries",
-      "head": "61a0baf",
+      "head": "243f13d",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Replace blender based space boundary generation with IFC based",
@@ -6614,7 +6614,7 @@
     "9225": {
       "author": "CyrilWaechter",
       "branch": "auto-container-regen",
-      "head": "aede574",
+      "head": "adf01be",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Use space's own container for regeneration instead of requiring default",
@@ -6623,7 +6623,7 @@
     "9226": {
       "author": "CyrilWaechter",
       "branch": "fix-8043-boundary-loop-closing-edge",
-      "head": "766a25d",
+      "head": "c34a6dd",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: close IfcPolyline loops by appending the closing edge",
@@ -6688,7 +6688,7 @@
     "9243": {
       "author": "CyrilWaechter",
       "branch": "space-regeneration-sloped-roof-clipped-extrusion",
-      "head": "4e5607b",
+      "head": "0e084f2",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
@@ -7061,8 +7061,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2608180026",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608180026"
+    "tag": "v0.9.0-alpha2608180324",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608180324"
   },
   "schema": 1
 }
