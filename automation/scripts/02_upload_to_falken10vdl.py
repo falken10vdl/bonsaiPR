@@ -43,9 +43,19 @@ BONSAI_BASE_TAG = "v0.8.0"
 # Committed snapshots/event logs live in automation/reports (this file is in
 # automation/scripts).
 REPORTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "reports")
-# Maps the parsed "Merge Order:" value to the [asc]/[desc]/[upd] tag suffix so
-# each order gets its own diff lineage (never diff ascending vs by-updated).
-_ORDER_SUFFIX = {"ascending": "asc", "descending": "desc", "by-updated": "upd"}
+# Maps the parsed "Merge Order:" value to its tag suffix so each order gets its
+# own diff lineage (never diff ascending vs by-updated). Sourced from pr_state
+# rather than restated here: the two copies had to agree, and a new order
+# (`recorded`, RFC-001 s5.3) is exactly the kind of change that would have been
+# added to one and not the other.
+_ORDER_SUFFIX = pr_state.ORDER_SUFFIX_BY_NAME
+
+
+class _StageZeroOwnsManifest(Exception):
+    """Raised to skip this function's legacy manifest write.
+
+    Not an error: it means stage 0 already wrote state/events/delta for this run,
+    so there is nothing here to recompute."""
 
 
 def _reports_publish_branch(repo_dir):
@@ -770,12 +780,20 @@ def generate_release_body(
         merge_order = (
             "ascending"  # default; overridden if report contains "Merge Order:"
         )
+        # The commit the PRs were merged onto. Mandatory in the manifest once a
+        # profile can pin a base (RFC-001 §8.1): "#7798 merged" means different
+        # things at bases a month apart, so an aggregate that cannot see this is
+        # comparing things that are not comparable.
+        base_commit = None
 
         for idx, line in enumerate(lines):
             line = line.strip()
             if line.startswith("Merge Order:"):
                 # e.g. "Merge Order: ascending (lowest → highest PR#)"
                 merge_order = line.split(":", 1)[1].strip().split("(")[0].strip()
+            elif line.startswith("IfcOpenShell source commit:"):
+                value = line.split(":", 1)[1].strip()
+                base_commit = value if value and value != "unknown" else None
             elif line.startswith("- Total PRs processed:"):
                 total_prs = int(line.split(":")[1].strip())
             elif line.startswith("- Successfully merged:"):
@@ -1093,19 +1111,13 @@ def generate_release_body(
 
         success_rate = (successfully_merged / total_prs * 100) if total_prs > 0 else 0
 
-        # Build the merge-order banner
-        if merge_order == "ascending":
-            order_emoji = "⬆️"
-            order_label = "ascending — lowest PR# merged first"
-            companion_order = "descending or by-updated"
-        elif merge_order == "descending":
-            order_emoji = "⬇️"
-            order_label = "descending — highest PR# merged first"
-            companion_order = "ascending or by-updated"
-        else:  # by-updated
-            order_emoji = "🕒"
-            order_label = "by last update — most recently updated PR merged first"
-            companion_order = "ascending or descending"
+        # Build the merge-order banner (metadata lives in pr_state.ORDER_META)
+        _meta = pr_state.order_meta(merge_order)
+        order_emoji = _meta["emoji"]
+        order_label = _meta["label"]
+        companion_order = pr_state.companion_orders(
+            merge_order, ["ascending", "descending", "by-updated"]
+        )
         order_title = merge_order.replace("-", " ").title()
         merge_order_banner = (
             f"## {order_emoji} Merge Order: {order_title}\n\n"
@@ -1129,6 +1141,25 @@ def generate_release_body(
             order_suffix = _ORDER_SUFFIX.get(merge_order, "asc")
             state_path = os.path.join(REPORTS_DIR, f"state.{order_suffix}.json")
             events_path = os.path.join(REPORTS_DIR, f"events.{order_suffix}.jsonl")
+            delta_path = os.path.join(REPORTS_DIR, f"delta.{order_suffix}.md")
+
+            # Stage 0 owns the manifest — it is the only place that knows what was
+            # actually built (which commit per PR, which base, which rivals). It
+            # hands the rendered delta over here rather than this function
+            # reconstructing a second snapshot by parsing its own report, which is
+            # what used to produce two versions of one artefact that disagreed.
+            #
+            # The fallback below is the legacy path, kept for a stage 0 that
+            # predates this: absence of the file means "nobody wrote it", not
+            # "nothing changed" — stage 0 writes it even when the delta is empty.
+            if os.path.exists(delta_path):
+                with open(delta_path, "r", encoding="utf-8") as df:
+                    delta_summary_section = df.read().strip()
+                print(
+                    f"📎 Using the manifest and delta written by stage 0 "
+                    f"({os.path.basename(state_path)})"
+                )
+                raise _StageZeroOwnsManifest
 
             new_state = pr_state.build_state(
                 applied_prs=applied_prs,
@@ -1137,6 +1168,7 @@ def generate_release_body(
                 skipped_draft_prs=skipped_draft_prs,
                 merge_order=merge_order,
                 base=BONSAI_BASE_TAG,
+                base_commit=base_commit,
                 total_prs=total_prs,
                 # Stamp the release this snapshot describes, so the NEXT run's
                 # report can link each "Merges under" order at the exact build
@@ -1148,6 +1180,31 @@ def generate_release_body(
                     else None
                 ),
             )
+
+            # Stage 0 knows which PRs were built at a curator-validated commit
+            # rather than at their current tip; the rendered report this function
+            # parses does not carry it per-record, so it arrives by sidecar. Left
+            # unapplied, every pinned PR would be recorded as built at a tip that
+            # the build proved does not merge.
+            pinned_path = os.path.join(REPORTS_DIR, f"pinned.{order_suffix}.json")
+            if os.path.exists(pinned_path):
+                try:
+                    with open(pinned_path, "r", encoding="utf-8") as pf:
+                        pinned_map = (json.load(pf) or {}).get("pinned") or {}
+                    for num, built in pinned_map.items():
+                        rec = new_state["prs"].get(str(num))
+                        if not rec:
+                            continue
+                        rec["tip"] = rec.get("head")
+                        rec["head"] = built[:7]
+                        rec["pinned"] = True
+                    if pinned_map:
+                        print(
+                            f"📌 Manifest marks {len(pinned_map)} PR(s) as built at a "
+                            f"curator-validated commit"
+                        )
+                except (OSError, ValueError) as e:
+                    print(f"⚠️  Could not apply pinned commits to the manifest: {e}")
 
             # Previous run's committed snapshot for THIS order (working-tree copy;
             # git history holds older ones). Absent on the very first run.
@@ -1164,6 +1221,8 @@ def generate_release_body(
             # Overwrite the snapshot; the commit step turns git history into the
             # durable run-to-run diff record.
             pr_state.write_state(new_state, state_path)
+        except _StageZeroOwnsManifest:
+            pass
         except Exception as e:
             import traceback
 
@@ -1567,23 +1626,14 @@ def upload_to_falken10vdl():
         except Exception as e:
             print(f"Warning: Could not fetch branch commit hash: {e}")
 
-    if merge_order == "ascending":
-        order_suffix = "asc"
-    elif merge_order == "descending":
-        order_suffix = "desc"
-    else:
-        order_suffix = "upd"
+    order_suffix = pr_state.order_meta(merge_order)["suffix"]
     release_name = (
         f"BonsaiPR v{version}-alpha{ts_short}-{branch_short_hash} [{order_suffix}]"
     )
 
     # Build release body with source commit and branch information
-    if merge_order == "ascending":
-        order_label_header = "ascending (lowest → highest PR#)"
-    elif merge_order == "descending":
-        order_label_header = "descending (highest → lowest PR#)"
-    else:
-        order_label_header = "by-updated (most recently updated PR first)"
+    _hdr = pr_state.order_meta(merge_order)
+    order_label_header = f"{merge_order} ({_hdr['short']})"
     release_body_header = (
         f"IfcOpenShell source commit (before PR merging): {commit_link}\n"
     )
@@ -1767,8 +1817,26 @@ def upload_to_falken10vdl():
     try:
         repo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
         index_rel_path = os.path.relpath(index_path, repo_dir)
-        # Stage index.json
-        subprocess.run(["git", "add", index_rel_path], cwd=repo_dir, check=True)
+        to_stage = [index_rel_path]
+
+        # RFC-001 §10: also publish the feed under the curation's own name, so a
+        # subscriber picks a curation rather than picking whoever configured
+        # theirs the way they wanted. The root index.json keeps working and keeps
+        # its URL — existing subscribers are not moved.
+        profile_name = os.getenv("BONSAIPR_PROFILE", "").strip()
+        if profile_name:
+            try:
+                from update_index_json import write_profile_feed
+            except ImportError:
+                from automation.scripts.update_index_json import write_profile_feed
+            feed = write_profile_feed(
+                index_path, profile_name, owner=GITHUB_OWNER, repo=GITHUB_REPO
+            )
+            if feed:
+                to_stage.append(os.path.relpath(feed, repo_dir))
+
+        # Stage index.json (and the curated feed, when there is one)
+        subprocess.run(["git", "add"] + to_stage, cwd=repo_dir, check=True)
         # Commit with a standard message
         subprocess.run(
             ["git", "commit", "-m", f"Update index.json for release {tag_name}"],

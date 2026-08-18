@@ -26,12 +26,24 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ── Configuration ─────────────────────────────────────────────────────────────
+# Default to the repository this script lives in (automation/scripts/../..).
+# The previous default was one machine's absolute path, which meant every other
+# instance failed here before reaching any of the work.
 BONSAI_PR_REPO_DIR = os.getenv(
     "BONSAI_PR_REPO_DIR",
-    "/home/falken10vdl/bonsaiPRDevel/bonsaiPR"
+    str(Path(__file__).resolve().parent.parent.parent),
 )
 REMOTE = "origin"
 BRANCH = os.getenv("BONSAI_PR_BRANCH", "main")
+
+# CI checks the repository out at an exact commit before running anything, so
+# pulling is at best redundant and at worst swaps the automation underneath a
+# run that has already started.
+SKIP_SELF_PULL = os.getenv("BONSAIPR_SKIP_SELF_PULL", "").strip().lower() in (
+    "1",
+    "true",
+    "yes",
+)
 
 # ── Logging ───────────────────────────────────────────────────────────────────
 logs_dir = Path(__file__).parent.parent / "logs"
@@ -91,6 +103,13 @@ def main() -> int:
     logging.info(f"Remote     : {REMOTE}")
     logging.info(f"Branch     : {BRANCH}")
     logging.info("=" * 60)
+
+    if SKIP_SELF_PULL:
+        logging.info(
+            "BONSAIPR_SKIP_SELF_PULL set - the automation is already at the "
+            "commit it was launched from; nothing to pull."
+        )
+        return 0
 
     if not check_repo_exists(BONSAI_PR_REPO_DIR):
         return 1

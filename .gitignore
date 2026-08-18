@@ -5,3 +5,7 @@ automation/.env
 automation/logs/*
 !automation/logs/.gitkeep
 *.tmp.*
+# Generated aggregates are derived and regenerate in seconds; peers.json is
+# configuration — who this instance subscribes to — and must be committed.
+federation/*
+!federation/peers.json
