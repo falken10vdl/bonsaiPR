@@ -2102,3 +2102,7 @@
 {"ts": "2026-08-18T02:41:17Z", "order": "by-updated", "pr": 9225, "event": "updated", "status": "failed", "from_head": "aede574", "to_head": "adf01be"}
 {"ts": "2026-08-18T02:41:17Z", "order": "by-updated", "pr": 9226, "event": "updated", "status": "failed", "from_head": "766a25d", "to_head": "c34a6dd"}
 {"ts": "2026-08-18T02:41:17Z", "order": "by-updated", "pr": 9243, "event": "updated", "status": "failed", "from_head": "4e5607b", "to_head": "0e084f2"}
+{"ts": "2026-08-18T12:22:00Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-18T12:22:00Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-18T12:22:00Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-18T12:42:59Z", "order": "by-updated", "pr": 9325, "event": "added", "to": "skipped_draft"}

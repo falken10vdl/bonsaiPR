@@ -4,10 +4,10 @@
     "failed": 137,
     "merged": 550,
     "skipped_conflict": 120,
-    "skipped_draft": 57,
-    "total": 864
+    "skipped_draft": 58,
+    "total": 865
   },
-  "generated_at": "2026-08-18T01:23:34Z",
+  "generated_at": "2026-08-18T11:24:12Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7058,11 +7058,19 @@
       "status": "skipped_draft",
       "title": "Bonsai: clear stale linked element queries on unload",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9323"
+    },
+    "9325": {
+      "author": "theseyan",
+      "branch": "sayan/bindgen-1",
+      "head": "8f900f6",
+      "status": "skipped_draft",
+      "title": "C API binding generation (+ WASM/TS)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9325"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2608180245",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608180245"
+    "tag": "v0.9.0-alpha2608181245",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608181245"
   },
   "schema": 1
 }
