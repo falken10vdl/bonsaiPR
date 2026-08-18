@@ -1,5 +1,5 @@
 {
-  "base": "v0.8.0",
+  "base": "v0.9.0",
   "counts": {
     "failed": 137,
     "merged": 550,
@@ -7,7 +7,7 @@
     "skipped_draft": 58,
     "total": 865
   },
-  "generated_at": "2026-08-18T13:23:24Z",
+  "generated_at": "2026-08-18T15:25:17Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7062,15 +7062,15 @@
     "9325": {
       "author": "theseyan",
       "branch": "sayan/bindgen-1",
-      "head": "371fe33",
+      "head": "f9bfc46",
       "status": "skipped_draft",
-      "title": "C API binding generation (+ WASM/TS)",
+      "title": "C/TS API binding generation (GSoC 2026)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9325"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2608181445",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608181445"
+    "tag": "v0.9.0-alpha2608181645",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2608181645"
   },
   "schema": 1
 }
