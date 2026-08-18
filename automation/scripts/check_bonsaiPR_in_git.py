@@ -36,6 +36,18 @@ BRANCH = os.getenv("BONSAI_PR_BRANCH", "main")
 # ── Logging ───────────────────────────────────────────────────────────────────
 logs_dir = Path(__file__).parent.parent / "logs"
 logs_dir.mkdir(parents=True, exist_ok=True)
+MAX_SYNC_LOGS = 50
+
+
+def prune_sync_logs(directory: Path) -> None:
+    """Keep only the newest repository-sync logs."""
+    log_files = sorted(
+        directory.glob("check_bonsaiPR_in_git_*.log"),
+        key=lambda path: path.stat().st_mtime,
+        reverse=True,
+    )
+    for old_log in log_files[MAX_SYNC_LOGS:]:
+        old_log.unlink(missing_ok=True)
 
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 log_file = logs_dir / f"check_bonsaiPR_in_git_{timestamp}.log"
@@ -48,6 +60,7 @@ logging.basicConfig(
         logging.StreamHandler(sys.stdout),
     ],
 )
+prune_sync_logs(logs_dir)
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
