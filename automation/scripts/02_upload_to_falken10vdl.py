@@ -23,7 +23,7 @@ FORK_OWNER = os.getenv("FORK_OWNER", GITHUB_OWNER)
 FORK_REPO = os.getenv("FORK_REPO", "IfcOpenShell")
 SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
 SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
-SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.9.0")
+SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.8.0")
 
 # Use token in URLs for authenticated Git operations
 bonsaiPR_repo_url = (
