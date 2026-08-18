@@ -47,30 +47,14 @@ GITHUB_OWNER = os.getenv("GITHUB_OWNER", "falken10vdl")
 GITHUB_REPO = os.getenv("GITHUB_REPO", "bonsaiPR")
 SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
 SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
+SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.8.0")
 
 # No exclusions - copy all files and directories
 
 def get_version_info():
     """Get version information for naming - includes hour+minute for on-demand builds"""
-    import requests
-    import re
     current_datetime = datetime.now().strftime('%y%m%d%H%M')
-    version = "unknown"
-    try:
-        api_url = f"https://api.github.com/repos/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/releases"
-        resp = requests.get(api_url, timeout=10)
-        if resp.ok:
-            releases = resp.json()
-            for rel in releases:
-                # Look for tag_name like bonsai-0.8.5-alpha2512300458
-                m = re.match(r'bonsai-([\d.]+)-alpha', rel.get('tag_name', ''))
-                if m:
-                    version = m.group(1)
-                    break
-    except Exception as e:
-        print(f"Warning: Could not fetch version from releases: {e}")
-    if version == "unknown":
-        version = "0.0.0"  # fallback default
+    version = SOURCE_BASE_BRANCH.removeprefix("v")
     pyversion = "py311"
     return version, pyversion, current_datetime
 
@@ -301,6 +285,34 @@ def fix_makefile_paths():
         if 'bonsaiPR-translations.git' in content:
             content = content.replace('bonsaiPR-translations.git', 'bonsai-translations.git')
             fixes_applied.append("Repository URL fix: bonsaiPR-translations.git -> bonsai-translations.git")
+
+        build_version, _, _ = get_version_info()
+        version_pattern = r'^VERSION:=.*$'
+        content, version_replacements = re.subn(
+            version_pattern,
+            f'VERSION:={build_version}',
+            content,
+            flags=re.MULTILINE,
+        )
+        if version_replacements:
+            fixes_applied.append(f"Version fix: VERSION -> {build_version}")
+
+        derived_version_fixes = {
+            "VERSION_BASE:=$(shell sed -E 's/[[:alpha:]]+[0-9]+$$//' ../../VERSION)": "VERSION_BASE:=$(shell echo $(VERSION) | sed -E 's/[[:alpha:]]+[0-9]+$$//')",
+            "VERSION_PYTHON:=$(shell sed 's/alpha/a/' ../../VERSION)": "VERSION_PYTHON:=$(shell echo $(VERSION) | sed 's/alpha/a/')",
+        }
+        for old_value, new_value in derived_version_fixes.items():
+            if old_value in content:
+                content = content.replace(old_value, new_value)
+                fixes_applied.append("Version fix: derived version uses VERSION")
+        content, semver_replacements = re.subn(
+            r'^VERSION_SEMVER:=.*$',
+            r"VERSION_SEMVER:=$(shell echo $(VERSION) | sed -E 's/([[:alpha:]]+)([0-9]+)$$/-\\1\\2/')",
+            content,
+            flags=re.MULTILINE,
+        )
+        if semver_replacements:
+            fixes_applied.append("Version fix: semantic version uses VERSION")
         
         # Ensure proper tab indentation for Makefile conditional blocks
         # Fix common indentation issues in ifeq/else/endif blocks
@@ -536,6 +548,8 @@ def build_addons(target_platforms=None):
     # the asset filename's 10-digit timestamp (first 6 digits = YYMMDD).
     build_version_date = datetime.now().strftime('%y%m%d')
     log_message(f"Locked build VERSION_DATE to: {build_version_date}")
+    build_version, _, _ = get_version_info()
+    log_message(f"Locked build VERSION to: {build_version}")
 
     # Change to the bonsaiPR directory and run make for each platform
     original_cwd = os.getcwd()
@@ -566,7 +580,7 @@ def build_addons(target_platforms=None):
                 # Pass VERSION_DATE explicitly so the zip's blender_manifest.toml is stamped
                 # with the same date used in the asset filename (prevents midnight-crossing
                 # version mismatches like "remote: 0.8.6-alpha260523, archive: 0.8.6-alpha260524").
-                make_cmd = ['make', 'dist', f'PLATFORM={platform}', f'PYVERSION={pyversion}', f'VERSION_DATE={build_version_date}'] + py_config['extra_make_vars']
+                make_cmd = ['make', 'dist', f'PLATFORM={platform}', f'PYVERSION={pyversion}', f'VERSION={build_version}', f'VERSION_DATE={build_version_date}'] + py_config['extra_make_vars']
                 log_message(f"Running command: {' '.join(make_cmd)}")
 
                 try:
