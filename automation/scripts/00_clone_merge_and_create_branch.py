@@ -270,10 +270,18 @@ def setup_repository():
             # Reset to clean state
             _run_git(["git", "reset", "--hard", "HEAD"])
             _run_git(["git", "clean", "-fd"])
-            _run_git(["git", "checkout", SOURCE_BASE_BRANCH])
 
             # Update from upstream
             _run_git(["git", "fetch", "upstream"])
+            _run_git(
+                [
+                    "git",
+                    "checkout",
+                    "-B",
+                    SOURCE_BASE_BRANCH,
+                    f"upstream/{SOURCE_BASE_BRANCH}",
+                ]
+            )
             _run_git(["git", "reset", "--hard", f"upstream/{SOURCE_BASE_BRANCH}"])
 
             # Update the origin remote URL to use token for authentication
