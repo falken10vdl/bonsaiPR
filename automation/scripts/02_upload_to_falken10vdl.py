@@ -23,6 +23,7 @@ FORK_OWNER = os.getenv("FORK_OWNER", GITHUB_OWNER)
 FORK_REPO = os.getenv("FORK_REPO", "IfcOpenShell")
 SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
 SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
+SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.9.0")
 
 # Use token in URLs for authenticated Git operations
 bonsaiPR_repo_url = (
@@ -39,7 +40,6 @@ VERSIONED_TAG_PATTERN = re.compile(
 # import resolves.
 import pr_state
 
-BONSAI_BASE_TAG = "v0.8.0"
 # Committed snapshots/event logs live in automation/reports (this file is in
 # automation/scripts).
 REPORTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "reports")
@@ -664,7 +664,7 @@ def create_or_update_readme():
                     f.write(f"- **Total PRs Processed**: {total_prs}\n")
                     f.write(f"- **Successfully Merged**: {successfully_merged}\n")
                     f.write(
-                        f"- **Failed to Merge (conflicts with base v0.8.0)**: {base_conflicts}\n"
+                        f"- **Failed to Merge (conflicts with base {SOURCE_BASE_BRANCH})**: {base_conflicts}\n"
                     )
                     f.write(
                         f"- **Skipped (conflicts with other PRs)**: {pr_conflicts}\n"
@@ -784,7 +784,7 @@ def generate_release_body(
                 failed_to_merge = int(line.split(":")[1].strip())
             elif line.startswith("- Skipped (draft/repo issues):"):
                 skipped_count = int(line.split(":")[1].strip())
-            elif line.startswith("- Failed to Merge (conflicts with base v0.8.0):"):
+            elif line.startswith(f"- Failed to Merge (conflicts with base {SOURCE_BASE_BRANCH}):"):
                 failed_conflict_with_base = int(line.split(":")[1].strip())
             elif line.startswith("- Skipped (conflicts with other PRs):"):
                 failed_conflict_with_others = int(line.split(":")[1].strip())
@@ -1136,7 +1136,7 @@ def generate_release_body(
                 skipped_conflict_prs=skipped_conflict_prs,
                 skipped_draft_prs=skipped_draft_prs,
                 merge_order=merge_order,
-                base=BONSAI_BASE_TAG,
+                base=SOURCE_BASE_BRANCH,
                 total_prs=total_prs,
                 # Stamp the release this snapshot describes, so the NEXT run's
                 # report can link each "Merges under" order at the exact build

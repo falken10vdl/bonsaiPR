@@ -73,7 +73,7 @@ If a collaborator wants to run the same automation from their own Linux machine 
      - `FORK_REPO=IfcOpenShell`
      - `SOURCE_REPO_OWNER=IfcOpenShell`
      - `SOURCE_REPO_NAME=IfcOpenShell`
-     - `SOURCE_BASE_BRANCH=v0.8.0`
+     - `SOURCE_BASE_BRANCH=v0.9.0`
    - Set local filesystem paths for that machine:
      - `BASE_CLONE_DIR=/home/theoryshaw/bonsaiPRDevel/IfcOpenShell`
      - `BUILD_BASE_DIR=/home/theoryshaw/bonsaiPRDevel/bonsaiPR-build`
@@ -88,7 +88,7 @@ If a collaborator wants to run the same automation from their own Linux machine 
        FORK_REPO=IfcOpenShell
        SOURCE_REPO_OWNER=IfcOpenShell
        SOURCE_REPO_NAME=IfcOpenShell
-       SOURCE_BASE_BRANCH=v0.8.0
+       SOURCE_BASE_BRANCH=v0.9.0
 
        BASE_CLONE_DIR=/home/theoryshaw/bonsaiPRDevel/IfcOpenShell
        WORKING_DIR=/home/theoryshaw/bonsaiPRDevel/MergingPR

@@ -26,7 +26,7 @@ GITHUB_TOKEN = os.getenv(
 )  # Set your GitHub token in environment variables
 SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
 SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
-SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.8.0")
+SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.9.0")
 
 upstream_repo_url = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}.git"
 # Use token in the fork URL for authenticated operations

@@ -30,7 +30,7 @@ IfcOpenShell source commit: abc123def456
 - Failed to merge: 10
 - Skipped (draft/repo issues): 5
 
-- Failed to Merge (conflicts with base v0.8.0): 8
+- Failed to Merge (conflicts with base v0.9.0): 8
 - Skipped (conflicts with other PRs): 2
 - Failed to Merge (unknown): 0
 - Success Rate: 60.0%
@@ -76,7 +76,7 @@ Branch: weekly-build-0.8.4-alpha260117-1030
 - Failed to merge: 5
 - Skipped (draft/repo issues): 5
 
-- Failed to Merge (conflicts with base v0.8.0): 5
+- Failed to Merge (conflicts with base v0.9.0): 5
 - Skipped (conflicts with other PRs): 0
 - Failed to Merge (unknown): 0
 - Success Rate: 80.0%
