@@ -94,24 +94,7 @@ KNOWN_CONFLICT_RESOLUTIONS = {
 def get_branch_and_report_names():
     # Include hour-minute for multiple builds per day
     current_datetime = datetime.now().strftime("%y%m%d%H%M")
-
-    # Fetch latest version from IfcOpenShell GitHub releases
-    version = "unknown"
-    try:
-        api_url = f"https://api.github.com/repos/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/releases"
-        resp = requests.get(api_url, timeout=10)
-        if resp.ok:
-            releases = resp.json()
-            for rel in releases:
-                # Look for tag_name like bonsai-0.8.5-alpha2512300458
-                m = re.match(r"bonsai-([\d.]+)-alpha", rel.get("tag_name", ""))
-                if m:
-                    version = m.group(1)
-                    break
-    except Exception as e:
-        print(f"Warning: Could not fetch version from releases: {e}")
-    if version == "unknown":
-        version = "0.0.0"  # fallback default
+    version = SOURCE_BASE_BRANCH.removeprefix("v")
 
     pyversion = "py311"
     branch_name = f"build-{version}-alpha{current_datetime}"

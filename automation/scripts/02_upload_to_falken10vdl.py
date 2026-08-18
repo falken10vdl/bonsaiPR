@@ -85,49 +85,15 @@ def get_reports_path():
 
 def get_branch_name():
     """Generate branch name with timestamp for on-demand builds"""
-    import requests
-    import re
-
     current_datetime = datetime.now().strftime("%y%m%d%H%M")
-    version = "unknown"
-    try:
-        api_url = f"https://api.github.com/repos/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/releases"
-        resp = requests.get(api_url, timeout=10)
-        if resp.ok:
-            releases = resp.json()
-            for rel in releases:
-                m = re.match(r"bonsai-([\d.]+)-alpha", rel.get("tag_name", ""))
-                if m:
-                    version = m.group(1)
-                    break
-    except Exception as e:
-        print(f"Warning: Could not fetch version from releases: {e}")
-    if version == "unknown":
-        version = "0.0.0"  # fallback default
+    version = SOURCE_BASE_BRANCH.removeprefix("v")
     return f"build-{version}-alpha{current_datetime}"
 
 
 def get_version_info():
     """Get version information for naming - includes hour+minute for on-demand builds"""
-    import requests
-    import re
-
     current_datetime = datetime.now().strftime("%y%m%d%H%M")
-    version = "unknown"
-    try:
-        api_url = f"https://api.github.com/repos/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/releases"
-        resp = requests.get(api_url, timeout=10)
-        if resp.ok:
-            releases = resp.json()
-            for rel in releases:
-                m = re.match(r"bonsai-([\d.]+)-alpha", rel.get("tag_name", ""))
-                if m:
-                    version = m.group(1)
-                    break
-    except Exception as e:
-        print(f"Warning: Could not fetch version from releases: {e}")
-    if version == "unknown":
-        version = "0.0.0"  # fallback default
+    version = SOURCE_BASE_BRANCH.removeprefix("v")
     pyversion = "py311"
     return version, pyversion, current_datetime
 
@@ -298,26 +264,9 @@ def cleanup_old_tags():
 
 def get_release_tag(timestamp=None):
     """Generate release tag with timestamp for on-demand builds"""
-    import requests
-    import re
-
     if timestamp is None:
         timestamp = datetime.now().strftime("%y%m%d%H%M")
-    version = "unknown"
-    try:
-        api_url = f"https://api.github.com/repos/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}/releases"
-        resp = requests.get(api_url, timeout=10)
-        if resp.ok:
-            releases = resp.json()
-            for rel in releases:
-                m = re.match(r"bonsai-([\d.]+)-alpha", rel.get("tag_name", ""))
-                if m:
-                    version = m.group(1)
-                    break
-    except Exception as e:
-        print(f"Warning: Could not fetch version from releases: {e}")
-    if version == "unknown":
-        version = "0.0.0"  # fallback default
+    version = SOURCE_BASE_BRANCH.removeprefix("v")
     pyversion = "py311"
     return f"v{version}-alpha{timestamp}"
 
