@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 137,
+    "failed": 138,
     "merged": 539,
     "skipped_conflict": 132,
     "skipped_draft": 58,
-    "total": 866
+    "total": 867
   },
-  "generated_at": "2026-08-19T02:16:05Z",
+  "generated_at": "2026-08-19T05:17:16Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7074,11 +7074,20 @@
       "status": "merged",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
+    },
+    "9330": {
+      "author": "sboddy",
+      "branch": "fix-3742-cross-coplanar-classification",
+      "head": "d4273b5",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Add cross-coplanar and material/style-change edge classification",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9330"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608190339",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608190339"
+    "tag": "v0.8.0-alpha2608190639",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608190639"
   },
   "schema": 1
 }
