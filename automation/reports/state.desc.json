@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 138,
+    "failed": 140,
     "merged": 545,
     "skipped_conflict": 126,
     "skipped_draft": 58,
-    "total": 867
+    "total": 869
   },
-  "generated_at": "2026-08-19T04:38:17Z",
+  "generated_at": "2026-08-19T06:38:18Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7083,11 +7083,29 @@
       "status": "failed",
       "title": "Add cross-coplanar and material/style-change edge classification",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9330"
+    },
+    "9331": {
+      "author": "BIMvoice",
+      "branch": "fix-9328-writer-soversion",
+      "head": "0b6fdb8",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Set VERSION and SOVERSION on geometry_serializer",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9331"
+    },
+    "9332": {
+      "author": "BIMvoice",
+      "branch": "fix-9329-load-post-resilience",
+      "head": "cf44bc9",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Isolate load_post steps from each other's errors",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9332"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608190601",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608190601"
+    "tag": "v0.8.0-alpha2608190801",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608190801"
   },
   "schema": 1
 }

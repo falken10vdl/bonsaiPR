@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 138,
+    "failed": 139,
     "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 58,
-    "total": 867
+    "total": 868
   },
-  "generated_at": "2026-08-19T04:00:06Z",
+  "generated_at": "2026-08-19T06:00:06Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7083,11 +7083,20 @@
       "status": "failed",
       "title": "Add cross-coplanar and material/style-change edge classification",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9330"
+    },
+    "9331": {
+      "author": "BIMvoice",
+      "branch": "fix-9328-writer-soversion",
+      "head": "0b6fdb8",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Set VERSION and SOVERSION on geometry_serializer",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9331"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608190523",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608190523"
+    "tag": "v0.8.0-alpha2608190723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608190723"
   },
   "schema": 1
 }
