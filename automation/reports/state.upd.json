@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 139,
+    "failed": 140,
     "merged": 539,
-    "skipped_conflict": 132,
+    "skipped_conflict": 133,
     "skipped_draft": 58,
-    "total": 868
+    "total": 870
   },
-  "generated_at": "2026-08-19T19:18:09Z",
+  "generated_at": "2026-08-19T23:21:02Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -597,7 +597,7 @@
       "author": "theoryshaw",
       "branch": "Fix_PermissionError",
       "head": "4664072",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix PermissionError deleting locked HDF5 cache on Windows",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7870"
     },
@@ -884,7 +884,7 @@
       "author": "theoryshaw",
       "branch": "dims_with_multiple_customunits",
       "head": "e511673",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "closes #8060: add multiple customunits to the dimensions string.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8061"
     },
@@ -892,7 +892,7 @@
       "author": "theoryshaw",
       "branch": "BIM_Dimension_SuppressZeroFeet",
       "head": "f588752",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bim dimension suppress zero feet",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8062"
     },
@@ -900,7 +900,7 @@
       "author": "theoryshaw",
       "branch": "ordinate_dimensioning",
       "head": "bea4f2c",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Ordinate dimensioning",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8064"
     },
@@ -916,7 +916,7 @@
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
       "head": "253a6c5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
     },
@@ -1016,7 +1016,7 @@
       "author": "theoryshaw",
       "branch": "fix-snap-stale-object-reference",
       "head": "3248cc7",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix stale object reference crash in measure tool snapping",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
     },
@@ -1098,7 +1098,7 @@
       "author": "BIMvoice",
       "branch": "fix/raycast-none-verts-8187",
       "head": "a5ce824",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: skip fully off-screen edges in 2D proximity snap (#8187)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8261"
     },
@@ -1362,7 +1362,7 @@
       "author": "BIMvoice",
       "branch": "fix-8233-duplicate-linked-aggregate",
       "head": "c3b8202",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Retain linked aggregates when duplicating an aggregate (#8233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8319"
     },
@@ -3595,7 +3595,7 @@
       "author": "BIMvoice",
       "branch": "bv-2918-dimension-text-annotation",
       "head": "26c81af",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a real linked TEXT annotation for dimension labels",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8730"
     },
@@ -3708,7 +3708,7 @@
     "8751": {
       "author": "brunopostle",
       "branch": "feat/ifcparse-fuzz-harness",
-      "head": "f47e332",
+      "head": "e49c47f",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add opt-in libFuzzer harness for IfcParse::IfcFile",
@@ -3995,7 +3995,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6427-multiline-text",
       "head": "0483114",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: real multiline entry for text annotations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8799"
     },
@@ -5024,7 +5024,7 @@
       "author": "BIMvoice",
       "branch": "6707-circle-center-snap",
       "head": "64db917",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a Circle Center snap point for round n-gon end caps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8975"
     },
@@ -5200,7 +5200,7 @@
       "author": "carlopav",
       "branch": "bonsai-snap-nearest-solid",
       "head": "7a541f4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: snap to the nearest solid, not the nearest object origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9004"
     },
@@ -5418,7 +5418,7 @@
       "author": "theoryshaw",
       "branch": "select_assigned_annotations_9030",
       "head": "1a443ac",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
     },
@@ -7092,11 +7092,28 @@
       "status": "failed",
       "title": "Isolate load_post steps from each other's errors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9332"
+    },
+    "9335": {
+      "author": "brunopostle",
+      "branch": "fix/ifcviewer-system-wgpu-native",
+      "head": "5d0f9bb",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcviewer: support linking system-packaged wgpu-native and zstd",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9335"
+    },
+    "9337": {
+      "author": "brunoperdigao",
+      "branch": "snap-gpu-detection",
+      "head": "414e81f",
+      "status": "merged",
+      "title": "Snap gpu detection",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9337"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608192040",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608192040"
+    "tag": "v0.8.0-alpha2608200041",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608200041"
   },
   "schema": 1
 }

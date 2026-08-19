@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 139,
+    "failed": 140,
     "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 58,
-    "total": 868
+    "total": 869
   },
-  "generated_at": "2026-08-19T18:00:25Z",
+  "generated_at": "2026-08-19T22:01:57Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3708,7 +3708,7 @@
     "8751": {
       "author": "brunopostle",
       "branch": "feat/ifcparse-fuzz-harness",
-      "head": "f47e332",
+      "head": "e49c47f",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add opt-in libFuzzer harness for IfcParse::IfcFile",
@@ -7092,11 +7092,20 @@
       "status": "failed",
       "title": "Isolate load_post steps from each other's errors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9332"
+    },
+    "9335": {
+      "author": "brunopostle",
+      "branch": "fix/ifcviewer-system-wgpu-native",
+      "head": "5d0f9bb",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcviewer: support linking system-packaged wgpu-native and zstd",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9335"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608191923",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608191923"
+    "tag": "v0.8.0-alpha2608192323",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608192323"
   },
   "schema": 1
 }
