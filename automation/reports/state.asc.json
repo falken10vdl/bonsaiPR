@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 140,
+    "failed": 139,
     "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 58,
-    "total": 869
+    "total": 868
   },
-  "generated_at": "2026-08-19T10:00:47Z",
+  "generated_at": "2026-08-19T16:02:05Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6953,20 +6953,11 @@
     "9302": {
       "author": "dependabot[bot]",
       "branch": "dependabot/pip/ruff-0.16.2",
-      "head": "a18f0aa",
+      "head": "9e8b2d1",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "Bump ruff from 0.16.0 to 0.16.3",
+      "title": "build(deps): bump ruff from 0.16.0 to 0.16.3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9302"
-    },
-    "9303": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ty-0.0.70",
-      "head": "5ab268d",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bump ty from 0.0.63 to 0.0.71",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9303"
     },
     "9304": {
       "author": "DesertSpringsCivil",
@@ -7104,8 +7095,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608191123",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608191123"
+    "tag": "v0.8.0-alpha2608191723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608191723"
   },
   "schema": 1
 }
