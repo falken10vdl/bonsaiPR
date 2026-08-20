@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 146,
-    "merged": 538,
+    "merged": 537,
     "skipped_conflict": 127,
-    "skipped_draft": 58,
-    "total": 869
+    "skipped_draft": 56,
+    "total": 866
   },
-  "generated_at": "2026-08-20T01:17:25Z",
+  "generated_at": "2026-08-20T17:24:15Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -667,14 +667,6 @@
       "status": "merged",
       "title": "Center IfcOpeningElement bbox on 3D cursor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7899"
-    },
-    "7908": {
-      "author": "theoryshaw",
-      "branch": "fix-3742-coplanar-bonsai-projection_2",
-      "head": "5a1723f",
-      "status": "merged",
-      "title": "* Fix #3742: Remove coplanar boundary lines between adjacent same-mat…",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7908"
     },
     "7915": {
       "author": "theoryshaw",
@@ -4520,14 +4512,6 @@
       "title": "Bonsai: setting an active type fails silently on a stale enum (#8850, #9238)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
     },
-    "8891": {
-      "author": "sboddy",
-      "branch": "fix-3742-coplanar-bonsai-projection_2_sjb",
-      "head": "44a8451",
-      "status": "skipped_draft",
-      "title": "Fix contained-pair and multi-neighbour cases in remove_coplanar_boundary_lines",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8891"
-    },
     "8894": {
       "author": "BIMvoice",
       "branch": "8848-classify-placement-reset",
@@ -4535,14 +4519,6 @@
       "status": "merged",
       "title": "Bonsai: preserve world position when classifying a mesh object as IfcElement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8894"
-    },
-    "8895": {
-      "author": "sboddy",
-      "branch": "fix-3742-coplanar-svgfill-arrangement",
-      "head": "5080bfb",
-      "status": "skipped_draft",
-      "title": "Coplanar surface boundary lines via a real 2D planar arrangement (alt. to #7908)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8895"
     },
     "8897": {
       "author": "BIMvoice",
@@ -5270,7 +5246,7 @@
     "9021": {
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
-      "head": "d911f18",
+      "head": "9ad30c8",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
@@ -7075,7 +7051,7 @@
     "9330": {
       "author": "sboddy",
       "branch": "fix-3742-cross-coplanar-classification",
-      "head": "d4273b5",
+      "head": "7412f5c",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Add cross-coplanar and material/style-change edge classification",
@@ -7110,8 +7086,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608200240",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608200240"
+    "tag": "v0.8.0-alpha2608201844",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608201844"
   },
   "schema": 1
 }

@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 146,
-    "merged": 546,
+    "merged": 545,
     "skipped_conflict": 119,
     "skipped_draft": 58,
-    "total": 869
+    "total": 868
   },
-  "generated_at": "2026-08-20T00:00:16Z",
+  "generated_at": "2026-08-20T16:04:17Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -667,14 +667,6 @@
       "status": "merged",
       "title": "Center IfcOpeningElement bbox on 3D cursor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7899"
-    },
-    "7908": {
-      "author": "theoryshaw",
-      "branch": "fix-3742-coplanar-bonsai-projection_2",
-      "head": "5a1723f",
-      "status": "merged",
-      "title": "* Fix #3742: Remove coplanar boundary lines between adjacent same-mat…",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7908"
     },
     "7915": {
       "author": "theoryshaw",
@@ -7075,7 +7067,7 @@
     "9330": {
       "author": "sboddy",
       "branch": "fix-3742-cross-coplanar-classification",
-      "head": "d4273b5",
+      "head": "7412f5c",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Add cross-coplanar and material/style-change edge classification",
@@ -7110,8 +7102,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608200123",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608200123"
+    "tag": "v0.8.0-alpha2608201723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608201723"
   },
   "schema": 1
 }
