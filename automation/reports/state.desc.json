@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 146,
+    "failed": 144,
     "merged": 539,
     "skipped_conflict": 125,
-    "skipped_draft": 56,
-    "total": 866
+    "skipped_draft": 57,
+    "total": 865
   },
-  "generated_at": "2026-08-20T19:40:31Z",
+  "generated_at": "2026-08-20T22:40:32Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1005,15 +1005,6 @@
       "status": "failed",
       "title": "Dev notes system",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8201"
-    },
-    "8206": {
-      "author": "theoryshaw",
-      "branch": "fix-snap-stale-object-reference",
-      "head": "3248cc7",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Fix stale object reference crash in measure tool snapping",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
     },
     "8228": {
       "author": "theoryshaw",
@@ -5177,15 +5168,6 @@
       "title": "Bonsai: recut a voided host from the body it displays, not the first representation in its context",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9002"
     },
-    "9004": {
-      "author": "carlopav",
-      "branch": "bonsai-snap-nearest-solid",
-      "head": "7a541f4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bonsai: snap to the nearest solid, not the nearest object origin",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9004"
-    },
     "9005": {
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
@@ -7083,11 +7065,19 @@
       "status": "failed",
       "title": "ifcviewer: support linking system-packaged wgpu-native and zstd",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9335"
+    },
+    "9340": {
+      "author": "carlopav",
+      "branch": "bonsai-cad-intersect-perf",
+      "head": "219c4d1",
+      "status": "skipped_draft",
+      "title": "Bonsai: reduce CPU cost of the proximity snap path",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9340"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608202103",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608202103"
+    "tag": "v0.8.0-alpha2608210002",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608210002"
   },
   "schema": 1
 }
