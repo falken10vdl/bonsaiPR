@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 140,
-    "merged": 551,
-    "skipped_conflict": 120,
+    "failed": 146,
+    "merged": 546,
+    "skipped_conflict": 119,
     "skipped_draft": 58,
     "total": 869
   },
-  "generated_at": "2026-08-19T22:01:57Z",
+  "generated_at": "2026-08-20T00:00:16Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -597,7 +597,8 @@
       "author": "theoryshaw",
       "branch": "Fix_PermissionError",
       "head": "4664072",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix PermissionError deleting locked HDF5 cache on Windows",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7870"
     },
@@ -916,7 +917,8 @@
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
       "head": "253a6c5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
     },
@@ -1016,7 +1018,8 @@
       "author": "theoryshaw",
       "branch": "fix-snap-stale-object-reference",
       "head": "3248cc7",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix stale object reference crash in measure tool snapping",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
     },
@@ -1098,7 +1101,8 @@
       "author": "BIMvoice",
       "branch": "fix/raycast-none-verts-8187",
       "head": "a5ce824",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: skip fully off-screen edges in 2D proximity snap (#8187)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8261"
     },
@@ -5024,7 +5028,8 @@
       "author": "BIMvoice",
       "branch": "6707-circle-center-snap",
       "head": "64db917",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: add a Circle Center snap point for round n-gon end caps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8975"
     },
@@ -5200,7 +5205,8 @@
       "author": "carlopav",
       "branch": "bonsai-snap-nearest-solid",
       "head": "7a541f4",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: snap to the nearest solid, not the nearest object origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9004"
     },
@@ -7104,8 +7110,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608192323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608192323"
+    "tag": "v0.8.0-alpha2608200123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608200123"
   },
   "schema": 1
 }
