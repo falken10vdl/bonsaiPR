@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 866
   },
-  "generated_at": "2026-08-20T16:43:31Z",
+  "generated_at": "2026-08-20T19:40:31Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -5246,7 +5246,7 @@
     "9021": {
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
-      "head": "8285e62",
+      "head": "2739df8",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
@@ -7086,8 +7086,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608201805",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608201805"
+    "tag": "v0.8.0-alpha2608202103",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608202103"
   },
   "schema": 1
 }
