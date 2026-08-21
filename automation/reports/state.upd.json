@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 143,
+    "failed": 144,
     "merged": 537,
     "skipped_conflict": 127,
     "skipped_draft": 57,
-    "total": 864
+    "total": 865
   },
-  "generated_at": "2026-08-21T11:18:28Z",
+  "generated_at": "2026-08-21T16:19:11Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7064,11 +7064,20 @@
       "status": "skipped_draft",
       "title": "Bonsai: reduce CPU cost of the proximity snap path",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9340"
+    },
+    "9341": {
+      "author": "Moult",
+      "branch": "fix/occt-shared-linkage",
+      "head": "4bfbf6b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ci: build OCCT shared on Linux so plug-ins share one OCCT instance",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9341"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608211240",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608211240"
+    "tag": "v0.8.0-alpha2608211741",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608211741"
   },
   "schema": 1
 }
