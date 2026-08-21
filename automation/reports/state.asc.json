@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 145,
+    "failed": 144,
     "merged": 545,
     "skipped_conflict": 119,
     "skipped_draft": 57,
-    "total": 866
+    "total": 865
   },
-  "generated_at": "2026-08-20T22:01:48Z",
+  "generated_at": "2026-08-21T00:00:31Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1005,15 +1005,6 @@
       "status": "failed",
       "title": "Dev notes system",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8201"
-    },
-    "8206": {
-      "author": "theoryshaw",
-      "branch": "fix-snap-stale-object-reference",
-      "head": "3248cc7",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Fix stale object reference crash in measure tool snapping",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8206"
     },
     "8228": {
       "author": "theoryshaw",
@@ -7042,7 +7033,7 @@
     "9330": {
       "author": "sboddy",
       "branch": "fix-3742-cross-coplanar-classification",
-      "head": "7412f5c",
+      "head": "d4e5a04",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Add cross-coplanar and material/style-change edge classification",
@@ -7085,8 +7076,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608202323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608202323"
+    "tag": "v0.8.0-alpha2608210123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608210123"
   },
   "schema": 1
 }

@@ -7,7 +7,7 @@
     "skipped_draft": 57,
     "total": 865
   },
-  "generated_at": "2026-08-20T22:40:32Z",
+  "generated_at": "2026-08-21T00:39:04Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7033,7 +7033,7 @@
     "9330": {
       "author": "sboddy",
       "branch": "fix-3742-cross-coplanar-classification",
-      "head": "7412f5c",
+      "head": "d4e5a04",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Add cross-coplanar and material/style-change edge classification",
@@ -7076,8 +7076,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608210002",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608210002"
+    "tag": "v0.8.0-alpha2608210201",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608210201"
   },
   "schema": 1
 }
