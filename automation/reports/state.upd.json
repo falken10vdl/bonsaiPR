@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 144,
+    "failed": 143,
     "merged": 537,
     "skipped_conflict": 127,
     "skipped_draft": 57,
-    "total": 865
+    "total": 864
   },
-  "generated_at": "2026-08-21T03:17:29Z",
+  "generated_at": "2026-08-21T07:18:29Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1079,15 +1079,6 @@
       "status": "skipped_conflict",
       "title": "root.reassign_class: raise a clear error when no class is applicable (#8210)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8258"
-    },
-    "8261": {
-      "author": "BIMvoice",
-      "branch": "fix/raycast-none-verts-8187",
-      "head": "a5ce824",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bonsai: skip fully off-screen edges in 2D proximity snap (#8187)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8261"
     },
     "8263": {
       "author": "BIMvoice",
@@ -7076,8 +7067,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608210439",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608210439"
+    "tag": "v0.8.0-alpha2608210840",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608210840"
   },
   "schema": 1
 }
