@@ -5582,3 +5582,5 @@
 {"ts": "2026-08-22T01:00:24Z", "order": "ascending", "pr": 9343, "event": "added", "to": "failed"}
 {"ts": "2026-08-22T01:00:24Z", "order": "ascending", "pr": 9344, "event": "added", "to": "failed"}
 {"ts": "2026-08-22T01:00:24Z", "order": "ascending", "pr": 9345, "event": "added", "to": "failed"}
+{"ts": "2026-08-22T12:01:20Z", "order": "ascending", "pr": 9331, "event": "removed", "from": "failed"}
+{"ts": "2026-08-22T12:01:20Z", "order": "ascending", "pr": 9343, "event": "updated", "status": "failed", "from_head": "5312abb", "to_head": "170ef1b"}

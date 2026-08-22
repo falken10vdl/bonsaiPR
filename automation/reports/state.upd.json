@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 146,
+    "failed": 145,
     "merged": 537,
     "skipped_conflict": 127,
     "skipped_draft": 57,
-    "total": 867
+    "total": 866
   },
-  "generated_at": "2026-08-22T10:18:23Z",
+  "generated_at": "2026-08-22T13:17:51Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7021,15 +7021,6 @@
       "title": "Add cross-coplanar and material/style-change edge classification",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9330"
     },
-    "9331": {
-      "author": "BIMvoice",
-      "branch": "fix-9328-writer-soversion",
-      "head": "0b6fdb8",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Set VERSION and SOVERSION on geometry_serializer",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9331"
-    },
     "9332": {
       "author": "BIMvoice",
       "branch": "fix-9329-load-post-resilience",
@@ -7068,7 +7059,7 @@
     "9343": {
       "author": "dependabot[bot]",
       "branch": "dependabot/github_actions/actions/checkout-7",
-      "head": "5312abb",
+      "head": "170ef1b",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "build(deps): bump actions/checkout from 6 to 7",
@@ -7094,8 +7085,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608221140",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608221140"
+    "tag": "v0.8.0-alpha2608221440",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608221440"
   },
   "schema": 1
 }
