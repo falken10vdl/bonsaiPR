@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 144,
+    "failed": 146,
     "merged": 545,
     "skipped_conflict": 119,
     "skipped_draft": 57,
-    "total": 865
+    "total": 867
   },
-  "generated_at": "2026-08-21T23:01:13Z",
+  "generated_at": "2026-08-22T01:00:24Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6905,15 +6905,6 @@
       "title": "Fix malformed LoadBearing property templates in IFC4 psets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9300"
     },
-    "9302": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ruff-0.16.2",
-      "head": "9e8b2d1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump ruff from 0.16.0 to 0.16.3",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9302"
-    },
     "9304": {
       "author": "DesertSpringsCivil",
       "branch": "review/pr1-foundation",
@@ -7073,11 +7064,38 @@
       "status": "failed",
       "title": "ci: build OCCT shared on Linux so plug-ins share one OCCT instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9341"
+    },
+    "9343": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/actions/checkout-7",
+      "head": "5312abb",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump actions/checkout from 6 to 7",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9343"
+    },
+    "9344": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.16.3",
+      "head": "e99b0ab",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump ruff from 0.16.0 to 0.16.3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9344"
+    },
+    "9345": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/actions/setup-python-7",
+      "head": "4517784",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump actions/setup-python from 6 to 7",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9345"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608220023",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608220023"
+    "tag": "v0.8.0-alpha2608220223",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608220223"
   },
   "schema": 1
 }
