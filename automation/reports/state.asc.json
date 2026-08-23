@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 145,
-    "merged": 545,
+    "failed": 146,
+    "merged": 544,
     "skipped_conflict": 119,
     "skipped_draft": 57,
     "total": 866
   },
-  "generated_at": "2026-08-23T13:01:05Z",
+  "generated_at": "2026-08-23T15:00:31Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -853,7 +853,8 @@
       "author": "theoryshaw",
       "branch": "measure_in_edit_mode",
       "head": "565ae33",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Closes #7691: Enable bim.measure_tool in edit mode",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8012"
     },
@@ -6999,7 +7000,7 @@
     "9325": {
       "author": "theseyan",
       "branch": "sayan/bindgen-1",
-      "head": "f9bfc46",
+      "head": "7932d43",
       "status": "skipped_draft",
       "title": "C/TS API binding generation (GSoC 2026)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9325"
@@ -7085,8 +7086,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608231423",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608231423"
+    "tag": "v0.8.0-alpha2608231623",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608231623"
   },
   "schema": 1
 }
