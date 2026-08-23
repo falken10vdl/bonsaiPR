@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 145,
-    "merged": 537,
-    "skipped_conflict": 127,
+    "merged": 536,
+    "skipped_conflict": 128,
     "skipped_draft": 57,
     "total": 866
   },
-  "generated_at": "2026-08-23T03:21:08Z",
+  "generated_at": "2026-08-23T05:16:18Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -4722,7 +4722,7 @@
       "author": "BIMvoice",
       "branch": "fix-5611-roof-skylight-cut",
       "head": "8db33cd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: cut and align skylights/windows on parametric roofs to the sloped face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8930"
     },
@@ -5123,7 +5123,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-door-body-context-missing",
       "head": "a48ed52",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: create the Model/Body context when authoring a door into an imported IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8995"
     },
@@ -6480,7 +6480,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-window-body-context-missing",
       "head": "da0d880",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: creating a window in an imported IFC crashes (#8081)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9201"
     },
@@ -7085,8 +7085,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608230440",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608230440"
+    "tag": "v0.8.0-alpha2608230639",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608230639"
   },
   "schema": 1
 }
