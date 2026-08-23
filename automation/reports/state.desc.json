@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 146,
+    "failed": 147,
     "merged": 538,
     "skipped_conflict": 125,
     "skipped_draft": 57,
-    "total": 866
+    "total": 867
   },
-  "generated_at": "2026-08-23T15:39:19Z",
+  "generated_at": "2026-08-23T17:40:15Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7083,11 +7083,20 @@
       "status": "failed",
       "title": "build(deps): bump actions/setup-python from 6 to 7",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9345"
+    },
+    "9349": {
+      "author": "sboddy",
+      "branch": "fix-9348-single-instance-openings",
+      "head": "f432a7e",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix silent geometry loss for sole occurrence of a typed opening",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9349"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608231701",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608231701"
+    "tag": "v0.8.0-alpha2608231902",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608231902"
   },
   "schema": 1
 }
