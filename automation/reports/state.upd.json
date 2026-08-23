@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 145,
-    "merged": 536,
+    "failed": 146,
+    "merged": 535,
     "skipped_conflict": 128,
     "skipped_draft": 57,
     "total": 866
   },
-  "generated_at": "2026-08-23T05:16:18Z",
+  "generated_at": "2026-08-23T14:18:23Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -853,7 +853,8 @@
       "author": "theoryshaw",
       "branch": "measure_in_edit_mode",
       "head": "565ae33",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Closes #7691: Enable bim.measure_tool in edit mode",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8012"
     },
@@ -7085,8 +7086,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608230639",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608230639"
+    "tag": "v0.8.0-alpha2608231540",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608231540"
   },
   "schema": 1
 }
