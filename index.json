@@ -7,7 +7,7 @@
       "id": "bonsaiPR",
       "name": "BonsaiPR",
       "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
-      "version": "0.8.0-alpha260822",
+      "version": "0.8.0-alpha260823",
       "type": "add-on",
       "maintainer": "falken10vdl <falken10vdl@gmail.com>",
       "license": [
@@ -46,16 +46,16 @@
       "python_versions": [
         "3.11"
       ],
-      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608222040/bonsaiPR_py311-0.8.0-alpha2608222040-linux-x64.zip",
-      "archive_size": 153799797,
-      "archive_hash": "sha256:4774c64169bf1ad313568d6e4d4163457badb27c9bb28bccdfa3e7dd91a3a4df"
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608230323/bonsaiPR_py311-0.8.0-alpha2608230323-linux-x64.zip",
+      "archive_size": 153821755,
+      "archive_hash": "sha256:30462eba381180d61c5d2380141af80c6f0135b0dd75a07961ba44464bce4faa"
     },
     {
       "schema_version": "1.0.0",
       "id": "bonsaiPR",
       "name": "BonsaiPR",
       "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
-      "version": "0.8.0-alpha260822",
+      "version": "0.8.0-alpha260823",
       "type": "add-on",
       "maintainer": "falken10vdl <falken10vdl@gmail.com>",
       "license": [
@@ -94,16 +94,16 @@
       "python_versions": [
         "3.11"
       ],
-      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608222040/bonsaiPR_py311-0.8.0-alpha2608222040-macos-x64.zip",
-      "archive_size": 143878885,
-      "archive_hash": "sha256:42fb2896407f6b82e53cd7d67c36969d392fa00e36ad3e6daa658361c39b8fa9"
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608230323/bonsaiPR_py311-0.8.0-alpha2608230323-macos-x64.zip",
+      "archive_size": 143900812,
+      "archive_hash": "sha256:8a465c24b39ef81adc1cc90ed57f838a0e0e0c57d924847c2a2f04b49cdc973c"
     },
     {
       "schema_version": "1.0.0",
       "id": "bonsaiPR",
       "name": "BonsaiPR",
       "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
-      "version": "0.8.0-alpha260822",
+      "version": "0.8.0-alpha260823",
       "type": "add-on",
       "maintainer": "falken10vdl <falken10vdl@gmail.com>",
       "license": [
@@ -142,16 +142,16 @@
       "python_versions": [
         "3.11"
       ],
-      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608222040/bonsaiPR_py311-0.8.0-alpha2608222040-macos-arm64.zip",
-      "archive_size": 138487439,
-      "archive_hash": "sha256:5f22a672bcf418da5944cff93be1f0078cb0509549d0227815fd48f8e77c4c12"
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608230323/bonsaiPR_py311-0.8.0-alpha2608230323-macos-arm64.zip",
+      "archive_size": 138509467,
+      "archive_hash": "sha256:ba8c73ff59c8b124657df280622fefe91a6bce2af24d806ab6c9f9fae3c29844"
     },
     {
       "schema_version": "1.0.0",
       "id": "bonsaiPR",
       "name": "BonsaiPR",
       "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
-      "version": "0.8.0-alpha260822",
+      "version": "0.8.0-alpha260823",
       "type": "add-on",
       "maintainer": "falken10vdl <falken10vdl@gmail.com>",
       "license": [
@@ -190,16 +190,16 @@
       "python_versions": [
         "3.11"
       ],
-      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608222040/bonsaiPR_py311-0.8.0-alpha2608222040-windows-x64.zip",
-      "archive_size": 124622428,
-      "archive_hash": "sha256:270cb19f56b0251025f97c287f19f01a5c2aa70e6381fc08706d5526935078b0"
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608230323/bonsaiPR_py311-0.8.0-alpha2608230323-windows-x64.zip",
+      "archive_size": 124643739,
+      "archive_hash": "sha256:c229641ad74ff0908eeded6c77f34ba74de234524827b319aa327028b07cce20"
     },
     {
       "schema_version": "1.0.0",
       "id": "bonsaiPR",
       "name": "BonsaiPR",
       "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
-      "version": "0.8.0-alpha260822",
+      "version": "0.8.0-alpha260823",
       "type": "add-on",
       "maintainer": "falken10vdl <falken10vdl@gmail.com>",
       "license": [
@@ -238,16 +238,16 @@
       "python_versions": [
         "3.13"
       ],
-      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608222040/bonsaiPR_py313-0.8.0-alpha2608222040-linux-x64.zip",
-      "archive_size": 153310928,
-      "archive_hash": "sha256:345b31860ddb077be40bb522baedaceba85a634dd82f41876e586877a44b8970"
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608230323/bonsaiPR_py313-0.8.0-alpha2608230323-linux-x64.zip",
+      "archive_size": 153332826,
+      "archive_hash": "sha256:6b368075b8f4840f895e6c5d49db422990558cd2b18566bdaca9510dd0196123"
     },
     {
       "schema_version": "1.0.0",
       "id": "bonsaiPR",
       "name": "BonsaiPR",
       "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
-      "version": "0.8.0-alpha260822",
+      "version": "0.8.0-alpha260823",
       "type": "add-on",
       "maintainer": "falken10vdl <falken10vdl@gmail.com>",
       "license": [
@@ -286,16 +286,16 @@
       "python_versions": [
         "3.13"
       ],
-      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608222040/bonsaiPR_py313-0.8.0-alpha2608222040-macos-arm64.zip",
-      "archive_size": 138440800,
-      "archive_hash": "sha256:0a56eeac78e37bb05d877ddb3798ff33f449861fc0cc9bbb3ca7e1eb73f74981"
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608230323/bonsaiPR_py313-0.8.0-alpha2608230323-macos-arm64.zip",
+      "archive_size": 138462727,
+      "archive_hash": "sha256:9f6f0154e01f794d2f6c451f93888f29a31efa80d10c5cf18cbc8fa6b647916b"
     },
     {
       "schema_version": "1.0.0",
       "id": "bonsaiPR",
       "name": "BonsaiPR",
       "tagline": "On-demand Bonsai builds with merged PRs for IfcOpenShell.",
-      "version": "0.8.0-alpha260822",
+      "version": "0.8.0-alpha260823",
       "type": "add-on",
       "maintainer": "falken10vdl <falken10vdl@gmail.com>",
       "license": [
@@ -334,9 +334,9 @@
       "python_versions": [
         "3.13"
       ],
-      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608222040/bonsaiPR_py313-0.8.0-alpha2608222040-windows-x64.zip",
-      "archive_size": 124432207,
-      "archive_hash": "sha256:ce8913435d612e6263026c368006ccef81dd07c884ecb241806c139846834022"
+      "archive_url": "https://github.com/falken10vdl/bonsaiPR/releases/download/v0.8.0-alpha2608230323/bonsaiPR_py313-0.8.0-alpha2608230323-windows-x64.zip",
+      "archive_size": 124453448,
+      "archive_hash": "sha256:19cac0db078cf4043bbec06edfa83fd245ccadb5b45de280da40a433da91b738"
     }
   ]
 }
