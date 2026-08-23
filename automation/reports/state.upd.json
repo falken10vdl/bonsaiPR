@@ -4,10 +4,10 @@
     "failed": 147,
     "merged": 535,
     "skipped_conflict": 128,
-    "skipped_draft": 57,
-    "total": 867
+    "skipped_draft": 58,
+    "total": 868
   },
-  "generated_at": "2026-08-23T20:17:41Z",
+  "generated_at": "2026-08-23T23:20:02Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7092,11 +7092,19 @@
       "status": "failed",
       "title": "Fix silent geometry loss for sole occurrence of a typed opening",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9349"
+    },
+    "9351": {
+      "author": "carlopav",
+      "branch": "bonsai/schedule-cell-borders",
+      "head": "7c4848f",
+      "status": "skipped_draft",
+      "title": "Bonsai: draw the cell borders a schedule's spreadsheet declares",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9351"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608232140",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608232140"
+    "tag": "v0.8.0-alpha2608240042",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608240042"
   },
   "schema": 1
 }
