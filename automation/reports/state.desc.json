@@ -7,7 +7,7 @@
     "skipped_draft": 57,
     "total": 867
   },
-  "generated_at": "2026-08-23T17:40:15Z",
+  "generated_at": "2026-08-23T19:39:21Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7087,7 +7087,7 @@
     "9349": {
       "author": "sboddy",
       "branch": "fix-9348-single-instance-openings",
-      "head": "f432a7e",
+      "head": "9094094",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix silent geometry loss for sole occurrence of a typed opening",
@@ -7095,8 +7095,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608231902",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608231902"
+    "tag": "v0.8.0-alpha2608232101",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608232101"
   },
   "schema": 1
 }
