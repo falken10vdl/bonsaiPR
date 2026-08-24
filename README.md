@@ -2,6 +2,9 @@
 
 On-demand builds of Bonsai with merged pull requests from the IfcOpenShell repository.
 
+> **Want to install a curated build, or publish your own?**
+> [`docs/TUTORIAL.md`](docs/TUTORIAL.md) walks through both, end to end.
+
 ## About
 
 BonsaiPR provides **on-demand builds** that include the latest community contributions from IfcOpenShell. Each build:

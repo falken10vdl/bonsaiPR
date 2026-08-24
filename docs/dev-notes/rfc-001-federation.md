@@ -30,6 +30,7 @@ bit us, and what is still open.
 | 3 | per-profile `index.json` feeds | done |
 | — | pin fallback: build a validated commit when a PR's head breaks | done |
 | — | manifest consolidated onto stage 0 | done |
+| — | `docs/TUTORIAL.md` — curator + subscriber walkthrough | done |
 | 4 / 5 | maintainer digest / attestations | **need buy-in — nothing to build until someone asks** |
 
 Live instance: `OpeningDesign/bonsaiPR`, profile `openingdesign` (156 PRs, 156
@@ -89,6 +90,11 @@ both statements, not routine.
   missing ones were the py313 set. The interpreter is now installed and a partial
   build fails the run; the deeper lesson is that a *count* of expected artefacts
   is worth having, because "some output exists" is not a success condition.
+- **A regex can be dead code and still read correctly in a diff.** A patch meant
+  to write a backslash-b escape wrote a literal backspace byte (0x08) into the pattern instead,
+  so the new attribution rung compiled cleanly and matched nothing. The diff
+  looked right; `repr()` of the compiled pattern is what showed it. Test a regex
+  against its inputs — reviewing it is not enough.
 - **A number that flatters the design deserves the most scrutiny, not the least.**
   The 81 was attractive — it reframed the feature — and so it went into three
   documents without anyone testing it. The user's own "that isn't really new
@@ -167,7 +173,11 @@ different merge order. Neither would have been caught by exit codes.
 
 ## Untested
 
-- **A second *curator*.** The federation aggregates two publishers, but one is an
+- **A second *publishing* curator.** One has now appeared partially: an outside
+  poweruser (osarch, 2026-08-22) keeps a hand-built `integration` branch and has
+  run `distill` against it, which found two real usability defects — see the
+  attribution rung and the PR-index warning above. They build locally and publish
+  nothing, so the federation still aggregates two publishers, one of them an
   anchor. Adoption signals (`selected_by`, `excluded_by`, `objections`) stay
   near-meaningless until somebody else publishes a selective profile — §3.4's
   caveat, still unresolved by anything built so far.

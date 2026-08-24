@@ -512,16 +512,30 @@ first:
 |---|---|---|---|
 | 1 | merge subject matches `pr-(\d+)/` | PR N | exact |
 | 2 | merge subject names `owner/branch`, resolved via GitHub `head.label` | PR N | exact |
-| 3 | merge subject contains `(#NNNN)` | PR N | probable |
-| 4 | commit patch-id matches a commit in an open PR | PR N | exact |
-| 5 | commit patch-id matches a PR's *combined* diff (squashed cherry-pick) | PR N | exact |
-| 6 | `git cherry` finds an equivalent already in base | drop — absorbed upstream | exact |
-| 7 | none of the above | residue | — |
+| 3 | merge subject opens `Merge PR #NNNN` | PR N | exact |
+| 4 | merge subject contains `#NNNN` anywhere | PR N | probable |
+| 5 | commit patch-id matches a commit on an open PR head | PR N | exact |
+| 6 | commit shares a subject with an open PR commit, patch differs | PR N | probable |
+| 7 | `git cherry` finds an equivalent already in base | drop — absorbed upstream | exact |
+| 8 | none of the above | residue | — |
+| — | *commit patch-id matches a PR's **combined** diff (squashed cherry-pick)* | *not implemented* | — |
 
-Steps 4–5 cost nothing extra: BonsaiPR already fetches every open PR every run, so the
-patch-id index is a by-product of work the pipeline does anyway. Step 5 exists because a
-squashed cherry-pick's patch-id matches the PR's *combined* diff and no individual
-commit in it — naive matching misses those entirely.
+Rung 3 was added after the first outside curator ran this: a build script that writes
+`Merge PR #9330 (unchanged @ d4e5a04fd9) into integration` produced four attributions
+that all landed on rung 4 and were flagged "verify these". Anchoring at the start of the
+subject is what separates the two — `Merge PR #N` as the opening words states which PR
+is being merged, while `#N` elsewhere may equally be an issue the commit fixes.
+
+Rungs 5–6 cost little extra: candidates are narrowed by subject first, so only a handful
+of patch-ids are ever computed. They exist because a cherry-pick rewrites the sha, and
+without them every picked commit falls to residue and is reported as the curator's own
+unshared work — which is exactly what happened, at a scale of 75 commits out of 81
+([§12.5](#s12-5)).
+
+The squashed-cherry-pick case is **not implemented**. A squash's patch-id matches the
+PR's *combined* diff and no individual commit in it, so subject-narrowed matching misses
+it; closing that gap means computing combined diffs per PR, which the current index does
+not do.
 
 **`distill` must not emit exclusions.** A PR absent from a build branch was, in almost
 every case, never considered — not rejected. Recording those 445 absences as
