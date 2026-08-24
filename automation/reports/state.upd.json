@@ -7,7 +7,7 @@
     "skipped_draft": 58,
     "total": 868
   },
-  "generated_at": "2026-08-23T23:20:02Z",
+  "generated_at": "2026-08-24T01:17:44Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1085,7 +1085,7 @@
       "author": "BIMvoice",
       "branch": "fix/add-reference-image-kwarg-8130",
       "head": "537ab95",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: drop stale kwarg when invoking add_reference_image (#8130)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
     },
@@ -1909,7 +1909,7 @@
       "author": "BIMvoice",
       "branch": "fix-5881-remove-sheet-confirm",
       "head": "f365c66",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: confirm before removing a sheet, which deletes files from disk (#5881)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8425"
     },
@@ -3999,7 +3999,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6423-axis-linework",
       "head": "d2a08d3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: draw element Axis reference lines in drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8802"
     },
@@ -4141,7 +4141,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6980-annotation-phase-classes",
       "head": "76d3531",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: carry annotation status/phase classes onto text labels too",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8827"
     },
@@ -4779,7 +4779,7 @@
       "author": "BIMvoice",
       "branch": "feat-5872-simplify-section-markers",
       "head": "e6d6a14",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: option to hide the sheet reference on section/elevation markers",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8938"
     },
@@ -5398,7 +5398,7 @@
       "author": "BIMvoice",
       "branch": "feat-9033-drawing-status-classes",
       "head": "0241a87",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a Status Classes toggle to drawings (#9033)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9051"
     },
@@ -7103,8 +7103,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608240042",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608240042"
+    "tag": "v0.8.0-alpha2608240240",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608240240"
   },
   "schema": 1
 }
