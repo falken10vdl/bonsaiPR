@@ -74,6 +74,12 @@ PROBABLE = "probable"
 RE_PR_REMOTE = re.compile(r"['\"]?(?:remotes/)?pr-(\d+)/")
 # `Merge remote-tracking branch 'remotes/BIMvoice/fix-6508-geography-element-qto'`
 RE_OWNER_BRANCH = re.compile(r"['\"](?:remotes/)?([A-Za-z0-9][\w.-]*)/(\S+?)['\"]")
+# `Merge PR #9330 (unchanged @ d4e5a04fd9) into integration` - the shape a
+# hand-rolled merge script writes. Anchored at the start of the subject, which
+# is what separates it from the bare-#NNNN rung below: "Merge PR #N" as the
+# opening words states which PR is being merged, while a #N anywhere else may
+# just as easily be an issue the commit fixes.
+RE_MERGE_PR = re.compile(r"^Merge\s+PR\s*#(\d+)")
 # `Merge PR #7940 (Concatenate_selections) to resolve build conflicts`
 RE_HASH_NUM = re.compile(r"#(\d+)")
 
@@ -386,6 +392,10 @@ def attribute(commit, by_owner_branch):
             if pr:
                 return pr, EXACT, f"owner/branch {owner}/{branch} matched PR index"
 
+        m = RE_MERGE_PR.match(subject)
+        if m:
+            return m.group(1), EXACT, "subject opens with 'Merge PR #<n>'"
+
         m = RE_HASH_NUM.search(subject)
         if m:
             # Weakest rung: "#7940" in a subject usually means the PR, but it can
@@ -453,6 +463,12 @@ def cluster_residue(repo, residue, max_gap=3):
 
 def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
     by_num, by_owner_branch = load_pr_index(pr_index_path)
+    # The default path is relative to *this file*, so running distill.py from a
+    # download directory resolves it to somewhere that does not exist and every
+    # attribution silently loses its title, its author, and the owner/branch
+    # rung. That is a wrong answer dressed as a working run - it has already
+    # caught two people, one of them the author of this comment.
+    pr_index_ok = bool(by_num)
     commits = first_parent_history(repo, base, branch)
     absorbed = upstream_absorbed(repo, base, branch)
 
@@ -573,6 +589,11 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
         "validated": validated,
         "provenance": provenance,
         "residue": residue,
+        "pr_index": {
+            "available": pr_index_ok,
+            "path": os.path.abspath(pr_index_path) if pr_index_path else None,
+            "prs": len(by_num),
+        },
         "cherry_picked": cherry_picked,
         # Whether residue could be checked against open PRs at all. Without the
         # refs, "original work" degrades to "not a merge and not upstream yet",
@@ -696,6 +717,28 @@ def render(result, top=12):
         out.append(
             "  ⚠️  Attribution below 50%. This branch is probably too unstructured "
             "to distil usefully — see RFC-001 §5.6."
+        )
+        out.append("")
+
+    pri = r.get("pr_index") or {}
+    if pri and not pri.get("available"):
+        out.append(
+            "  ⚠️  No PR index loaded, so attributions carry no title or author,"
+        )
+        out.append(
+            "      the owner/branch rung is disabled, and every attributed PR is"
+        )
+        out.append(
+            "      marked 'not in PR index'. The default path is relative to"
+        )
+        out.append(
+            "      distill.py itself, so running it from outside a bonsaiPR clone"
+        )
+        out.append(f"      misses it. Looked in: {pri.get('path')}")
+        out.append("      Fix with --pr-index, e.g.:")
+        out.append(
+            "        curl -O https://raw.githubusercontent.com/falken10vdl/"
+            "bonsaiPR/main/automation/reports/state.asc.json"
         )
         out.append("")
 
