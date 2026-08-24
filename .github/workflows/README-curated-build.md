@@ -5,6 +5,10 @@ PR — which is what makes you a distinct publisher under
 [RFC-001](../../proposals/RFC-001-federated-curated-builds.md) instead of a
 second copy of the canonical answer.
 
+**New here?** Start with [`docs/TUTORIAL.md`](../../docs/TUTORIAL.md) — a
+step-by-step walkthrough from both sides, installing a curated build and
+publishing one. This file is the reference you graduate to.
+
 The canonical instance at `falken10vdl/bonsaiPR` builds all ~847 open PRs. A
 curated instance builds only what its profile selects. Two builds of *everything*
 agree trivially and tell you nothing; two builds of different curations that
@@ -117,6 +121,7 @@ without making a release, which is most often just after re-distilling.
 | build report | workflow artifact | 14 days |
 | build report (`full` only) | `automation/reports/archive/<tag>.md`, and attached to the release | permanent |
 | installable zips (`full` only) | GitHub release | last 30 releases |
+| build branch (when pushed) | your IfcOpenShell fork | last 30 branches |
 
 **A partial build now fails the run.** Stage 1 used to return success if *any*
 zip existed, so the three py313 targets could fail on every full build — the
@@ -125,7 +130,6 @@ artefacts, with Blender 5.1 users silently unserved. If a target fails, the run
 stops before publishing; `BONSAIPR_ALLOW_PARTIAL_BUILD=1` overrides it
 deliberately. `build_targets.json` in the build directory records what built and
 what did not.
-| build branch (when pushed) | your IfcOpenShell fork | last 30 branches |
 
 Note the asymmetry: a `manifest-only` report is **not** archived, so it survives
 only as an expiring artifact. If you want a permanently readable report, that is

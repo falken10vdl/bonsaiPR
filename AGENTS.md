@@ -24,6 +24,7 @@ describes, fix the note first.
 | | |
 |---|---|
 | `proposals/` | design proposals (RFC-NNN), each with a plain-language companion. The argument and the evidence. |
+| `docs/TUTORIAL.md` | end-to-end walkthrough, curator and subscriber. The front door. |
 | `docs/dev-notes/` | working notes for unmerged/ongoing work. Volatile by design. |
 | `automation/scripts/` | the pipeline: stage 0 merge, 1 build, 2 release, plus tooling |
 | `profiles/` | curations — which PRs a build selects, and on what base |
