@@ -4,10 +4,10 @@
     "failed": 147,
     "merged": 535,
     "skipped_conflict": 128,
-    "skipped_draft": 58,
-    "total": 868
+    "skipped_draft": 59,
+    "total": 869
   },
-  "generated_at": "2026-08-24T09:19:11Z",
+  "generated_at": "2026-08-24T16:21:55Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7100,11 +7100,19 @@
       "status": "skipped_draft",
       "title": "Bonsai: scheduler: draw the cell borders a schedule's spreadsheet declares",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9351"
+    },
+    "9354": {
+      "author": "BIMvoice",
+      "branch": "feat-ifctester-report-redesign",
+      "head": "221a3e7",
+      "status": "skipped_draft",
+      "title": "ifctester: redesign the HTML report",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9354"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608241040",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608241040"
+    "tag": "v0.8.0-alpha2608241742",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608241742"
   },
   "schema": 1
 }
