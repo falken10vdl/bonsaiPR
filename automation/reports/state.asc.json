@@ -7,7 +7,7 @@
     "skipped_draft": 60,
     "total": 870
   },
-  "generated_at": "2026-08-25T20:02:04Z",
+  "generated_at": "2026-08-25T22:01:47Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7111,7 +7111,7 @@
     "9359": {
       "author": "RickBrice",
       "branch": "rab_0.9.0_build_fixes",
-      "head": "7bbe5fd",
+      "head": "f5c968c",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Modifications to build C++ with Visual Studio 2026 and the v145 toolset.",
@@ -7119,8 +7119,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608252123",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608252123"
+    "tag": "v0.8.0-alpha2608252323",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608252323"
   },
   "schema": 1
 }
