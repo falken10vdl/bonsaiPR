@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 145,
-    "merged": 536,
+    "failed": 146,
+    "merged": 535,
     "skipped_conflict": 128,
     "skipped_draft": 60,
     "total": 869
   },
-  "generated_at": "2026-08-25T15:21:35Z",
+  "generated_at": "2026-08-25T17:20:38Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -3814,7 +3814,8 @@
       "author": "BIMvoice",
       "branch": "fix-2639-bbox-substitution",
       "head": "fb7aa40",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: add bbox-substitution-threshold to substitute overly dense geometry with bounding boxes (#2639)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8773"
     },
@@ -7109,8 +7110,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608251642",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608251642"
+    "tag": "v0.8.0-alpha2608251842",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608251842"
   },
   "schema": 1
 }

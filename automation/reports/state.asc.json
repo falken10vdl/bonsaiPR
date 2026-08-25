@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 147,
+    "failed": 146,
     "merged": 544,
     "skipped_conflict": 119,
     "skipped_draft": 60,
-    "total": 870
+    "total": 869
   },
-  "generated_at": "2026-08-25T14:01:53Z",
+  "generated_at": "2026-08-25T16:01:36Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7066,15 +7066,6 @@
       "title": "build(deps): bump actions/checkout from 6 to 7",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9343"
     },
-    "9344": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ruff-0.16.3",
-      "head": "e99b0ab",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump ruff from 0.16.0 to 0.16.3",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9344"
-    },
     "9345": {
       "author": "dependabot[bot]",
       "branch": "dependabot/github_actions/actions/setup-python-7",
@@ -7119,8 +7110,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608251523",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608251523"
+    "tag": "v0.8.0-alpha2608251723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608251723"
   },
   "schema": 1
 }
