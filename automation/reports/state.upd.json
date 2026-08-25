@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 147,
-    "merged": 535,
+    "failed": 145,
+    "merged": 536,
     "skipped_conflict": 128,
     "skipped_draft": 60,
-    "total": 870
+    "total": 869
   },
-  "generated_at": "2026-08-25T13:19:59Z",
+  "generated_at": "2026-08-25T15:21:35Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -3814,8 +3814,7 @@
       "author": "BIMvoice",
       "branch": "fix-2639-bbox-substitution",
       "head": "fb7aa40",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "ifcgeom: add bbox-substitution-threshold to substitute overly dense geometry with bounding boxes (#2639)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8773"
     },
@@ -7066,15 +7065,6 @@
       "title": "build(deps): bump actions/checkout from 6 to 7",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9343"
     },
-    "9344": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ruff-0.16.3",
-      "head": "e99b0ab",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump ruff from 0.16.0 to 0.16.3",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9344"
-    },
     "9345": {
       "author": "dependabot[bot]",
       "branch": "dependabot/github_actions/actions/setup-python-7",
@@ -7119,8 +7109,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608251441",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608251441"
+    "tag": "v0.8.0-alpha2608251642",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608251642"
   },
   "schema": 1
 }
