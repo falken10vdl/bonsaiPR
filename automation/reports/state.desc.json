@@ -4,10 +4,10 @@
     "failed": 147,
     "merged": 538,
     "skipped_conflict": 125,
-    "skipped_draft": 59,
-    "total": 869
+    "skipped_draft": 60,
+    "total": 870
   },
-  "generated_at": "2026-08-25T10:40:51Z",
+  "generated_at": "2026-08-25T12:40:38Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7108,11 +7108,19 @@
       "status": "skipped_draft",
       "title": "ifctester: redesign the HTML report",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9354"
+    },
+    "9358": {
+      "author": "BIMvoice",
+      "branch": "docs-drawing-stylesheet-guide",
+      "head": "d00cb75",
+      "status": "skipped_draft",
+      "title": "docs: document drawing stylesheets and the override pattern",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9358"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608251203",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608251203"
+    "tag": "v0.8.0-alpha2608251401",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608251401"
   },
   "schema": 1
 }
