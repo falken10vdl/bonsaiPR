@@ -7,7 +7,7 @@
     "skipped_draft": 59,
     "total": 869
   },
-  "generated_at": "2026-08-25T01:19:30Z",
+  "generated_at": "2026-08-25T03:19:34Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7060,7 +7060,7 @@
     "9343": {
       "author": "dependabot[bot]",
       "branch": "dependabot/github_actions/actions/checkout-7",
-      "head": "170ef1b",
+      "head": "7875877",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "build(deps): bump actions/checkout from 6 to 7",
@@ -7078,7 +7078,7 @@
     "9345": {
       "author": "dependabot[bot]",
       "branch": "dependabot/github_actions/actions/setup-python-7",
-      "head": "4517784",
+      "head": "17a0aac",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "build(deps): bump actions/setup-python from 6 to 7",
@@ -7111,8 +7111,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608250241",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608250241"
+    "tag": "v0.8.0-alpha2608250440",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608250440"
   },
   "schema": 1
 }
