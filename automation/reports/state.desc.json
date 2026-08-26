@@ -4,10 +4,10 @@
     "failed": 147,
     "merged": 538,
     "skipped_conflict": 125,
-    "skipped_draft": 60,
-    "total": 870
+    "skipped_draft": 61,
+    "total": 871
   },
-  "generated_at": "2026-08-26T00:39:47Z",
+  "generated_at": "2026-08-26T06:40:18Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7116,11 +7116,19 @@
       "status": "failed",
       "title": "Modifications to build C++ with Visual Studio 2026 and the v145 toolset.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9359"
+    },
+    "9360": {
+      "author": "BIMvoice",
+      "branch": "fix-link-ifc-silent-failure",
+      "head": "a9b72f3",
+      "status": "skipped_draft",
+      "title": "Bonsai: fix Link IFC silently failing to build its cache",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9360"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608260202",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608260202"
+    "tag": "v0.8.0-alpha2608260802",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608260802"
   },
   "schema": 1
 }

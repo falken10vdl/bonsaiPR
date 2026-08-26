@@ -4,10 +4,10 @@
     "failed": 147,
     "merged": 535,
     "skipped_conflict": 128,
-    "skipped_draft": 60,
-    "total": 870
+    "skipped_draft": 62,
+    "total": 872
   },
-  "generated_at": "2026-08-26T01:18:39Z",
+  "generated_at": "2026-08-26T07:19:44Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7116,11 +7116,27 @@
       "status": "failed",
       "title": "Modifications to build C++ with Visual Studio 2026 and the v145 toolset.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9359"
+    },
+    "9360": {
+      "author": "BIMvoice",
+      "branch": "fix-link-ifc-silent-failure",
+      "head": "a9b72f3",
+      "status": "skipped_draft",
+      "title": "Bonsai: fix Link IFC silently failing to build its cache",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9360"
+    },
+    "9361": {
+      "author": "BIMvoice",
+      "branch": "fix-material-hatch-classes",
+      "head": "fbfae40",
+      "status": "skipped_draft",
+      "title": "Bonsai: style elements with no material, and a question on hatch class names",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9361"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608260240",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608260240"
+    "tag": "v0.8.0-alpha2608260841",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608260841"
   },
   "schema": 1
 }
