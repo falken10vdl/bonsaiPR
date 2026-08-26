@@ -4,10 +4,10 @@
     "failed": 147,
     "merged": 538,
     "skipped_conflict": 125,
-    "skipped_draft": 61,
-    "total": 871
+    "skipped_draft": 62,
+    "total": 872
   },
-  "generated_at": "2026-08-26T06:40:18Z",
+  "generated_at": "2026-08-26T08:41:02Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7124,11 +7124,19 @@
       "status": "skipped_draft",
       "title": "Bonsai: fix Link IFC silently failing to build its cache",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9360"
+    },
+    "9361": {
+      "author": "BIMvoice",
+      "branch": "fix-material-hatch-classes",
+      "head": "fbfae40",
+      "status": "skipped_draft",
+      "title": "Bonsai: style elements with no material, and a question on hatch class names",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9361"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608260802",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608260802"
+    "tag": "v0.8.0-alpha2608261002",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608261002"
   },
   "schema": 1
 }

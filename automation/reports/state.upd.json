@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 147,
-    "merged": 535,
+    "merged": 536,
     "skipped_conflict": 128,
     "skipped_draft": 62,
-    "total": 872
+    "total": 873
   },
-  "generated_at": "2026-08-26T07:19:44Z",
+  "generated_at": "2026-08-26T09:20:39Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7132,11 +7132,19 @@
       "status": "skipped_draft",
       "title": "Bonsai: style elements with no material, and a question on hatch class names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9361"
+    },
+    "9362": {
+      "author": "falken10vdl",
+      "branch": "blend-alpha-channel-in-diffuse-mode",
+      "head": "95e9cd1",
+      "status": "merged",
+      "title": "Blend alpha channel in diffuse mode",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9362"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608260841",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608260841"
+    "tag": "v0.8.0-alpha2608261042",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608261042"
   },
   "schema": 1
 }
