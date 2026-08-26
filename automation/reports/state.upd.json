@@ -7,7 +7,7 @@
     "skipped_draft": 60,
     "total": 870
   },
-  "generated_at": "2026-08-25T23:21:01Z",
+  "generated_at": "2026-08-26T01:18:39Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7111,16 +7111,16 @@
     "9359": {
       "author": "RickBrice",
       "branch": "rab_0.9.0_build_fixes",
-      "head": "6b6407d",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "head": "a5f488d",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Modifications to build C++ with Visual Studio 2026 and the v145 toolset.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9359"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608260043",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608260043"
+    "tag": "v0.8.0-alpha2608260240",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608260240"
   },
   "schema": 1
 }
