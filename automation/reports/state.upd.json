@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 144,
+    "failed": 143,
     "merged": 534,
     "skipped_conflict": 128,
     "skipped_draft": 62,
-    "total": 868
+    "total": 867
   },
-  "generated_at": "2026-08-26T16:21:27Z",
+  "generated_at": "2026-08-26T18:20:33Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7065,15 +7065,6 @@
       "title": "docs: document drawing stylesheets and the override pattern",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9358"
     },
-    "9359": {
-      "author": "RickBrice",
-      "branch": "rab_0.9.0_build_fixes",
-      "head": "a5f488d",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Modifications to build C++ with Visual Studio 2026 and the v145 toolset.",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9359"
-    },
     "9360": {
       "author": "BIMvoice",
       "branch": "fix-link-ifc-silent-failure",
@@ -7100,8 +7091,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608261742",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608261742"
+    "tag": "v0.8.0-alpha2608261942",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608261942"
   },
   "schema": 1
 }
