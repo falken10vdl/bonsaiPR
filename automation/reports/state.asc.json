@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 147,
-    "merged": 544,
+    "failed": 144,
+    "merged": 543,
     "skipped_conflict": 119,
     "skipped_draft": 62,
-    "total": 872
+    "total": 868
   },
-  "generated_at": "2026-08-26T08:01:13Z",
+  "generated_at": "2026-08-26T10:01:50Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6682,14 +6682,6 @@
       "title": "ifctester: fix bounded property restriction checks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9250"
     },
-    "9251": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/socket.io-parser-4.2.7",
-      "head": "cede64f",
-      "status": "merged",
-      "title": "build(deps): bump socket.io-parser from 4.2.6 to 4.2.7 in /src/ifctester/webapp",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9251"
-    },
     "9254": {
       "author": "BIMvoice",
       "branch": "perf/9247-append-asset-queue",
@@ -6866,14 +6858,6 @@
       "title": "Gets the pick list for bSDD properties with Allowed Values working",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9287"
     },
-    "9288": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/postcss-8.5.26",
-      "head": "df51dab",
-      "status": "merged",
-      "title": "build(deps-dev): bump postcss from 8.5.22 to 8.5.26 in /src/ifctester/webapp",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9288"
-    },
     "9295": {
       "author": "BIMvoice",
       "branch": "fix-9294-projectlibrary-units",
@@ -6955,15 +6939,6 @@
       "status": "skipped_conflict",
       "title": "ifcdiff: compare container and aggregate by GlobalId, not by instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9312"
-    },
-    "9315": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/src/opencdeserver/api/app/python-jose-3.4.0",
-      "head": "c7d7193",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bump python-jose from 3.3.0 to 3.4.0 in /src/opencdeserver/api/app",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9315"
     },
     "9316": {
       "author": "theoryshaw",
@@ -7057,24 +7032,6 @@
       "title": "ci: build OCCT shared on Linux so plug-ins share one OCCT instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9341"
     },
-    "9343": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/actions/checkout-7",
-      "head": "7875877",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump actions/checkout from 6 to 7",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9343"
-    },
-    "9345": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/actions/setup-python-7",
-      "head": "17a0aac",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump actions/setup-python from 6 to 7",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9345"
-    },
     "9349": {
       "author": "sboddy",
       "branch": "fix-9348-single-instance-openings",
@@ -7132,11 +7089,19 @@
       "status": "skipped_draft",
       "title": "Bonsai: style elements with no material, and a question on hatch class names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9361"
+    },
+    "9362": {
+      "author": "falken10vdl",
+      "branch": "blend-alpha-channel-in-diffuse-mode",
+      "head": "95e9cd1",
+      "status": "merged",
+      "title": "Blend alpha channel in diffuse mode",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9362"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608260923",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608260923"
+    "tag": "v0.8.0-alpha2608261123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608261123"
   },
   "schema": 1
 }
