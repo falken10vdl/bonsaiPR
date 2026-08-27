@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 143,
+    "failed": 144,
     "merged": 544,
     "skipped_conflict": 119,
     "skipped_draft": 62,
-    "total": 868
+    "total": 869
   },
-  "generated_at": "2026-08-27T16:01:10Z",
+  "generated_at": "2026-08-27T19:02:06Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7096,11 +7096,20 @@
       "status": "merged",
       "title": "Draw reference image",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9365"
+    },
+    "9366": {
+      "author": "jameshickman",
+      "branch": "fedora-rpm-packaging-v090",
+      "head": "abc34ee",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Add Fedora/RHEL RPM packaging support",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9366"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608271723",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608271723"
+    "tag": "v0.8.0-alpha2608272023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608272023"
   },
   "schema": 1
 }
