@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 144,
+    "failed": 146,
     "merged": 544,
     "skipped_conflict": 119,
     "skipped_draft": 62,
-    "total": 869
+    "total": 871
   },
-  "generated_at": "2026-08-27T19:02:06Z",
+  "generated_at": "2026-08-27T22:02:35Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7105,11 +7105,29 @@
       "status": "failed",
       "title": "Add Fedora/RHEL RPM packaging support",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9366"
+    },
+    "9367": {
+      "author": "sboddy",
+      "branch": "fix/schema-logger-thread-safety-race",
+      "head": "2ce0f7a",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix data races in schema singleton init and logger causing crashes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9367"
+    },
+    "9368": {
+      "author": "sboddy",
+      "branch": "fix/svg-serializer-skip-failed-elements",
+      "head": "4700ad9",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "svg_serializer: skip elements that fail geometry conversion",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9368"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608272023",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608272023"
+    "tag": "v0.8.0-alpha2608272323",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608272323"
   },
   "schema": 1
 }
