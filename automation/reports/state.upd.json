@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 143,
-    "merged": 534,
+    "merged": 535,
     "skipped_conflict": 128,
     "skipped_draft": 62,
-    "total": 867
+    "total": 868
   },
-  "generated_at": "2026-08-27T02:18:43Z",
+  "generated_at": "2026-08-27T15:20:57Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7088,11 +7088,19 @@
       "status": "merged",
       "title": "Blend alpha channel in diffuse mode",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9362"
+    },
+    "9365": {
+      "author": "falken10vdl",
+      "branch": "draw-reference-image",
+      "head": "3940759",
+      "status": "merged",
+      "title": "Draw reference image",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9365"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608270340",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608270340"
+    "tag": "v0.8.0-alpha2608271642",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608271642"
   },
   "schema": 1
 }
