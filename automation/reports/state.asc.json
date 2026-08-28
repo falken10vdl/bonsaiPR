@@ -7,7 +7,7 @@
     "skipped_draft": 62,
     "total": 872
   },
-  "generated_at": "2026-08-28T04:01:02Z",
+  "generated_at": "2026-08-28T06:00:43Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6967,7 +6967,7 @@
     "9323": {
       "author": "john-rogers",
       "branch": "fix/clear-linked-query-on-unload",
-      "head": "430b437",
+      "head": "b7cadfa",
       "status": "skipped_draft",
       "title": "Bonsai: clear stale linked element queries on unload",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9323"
@@ -7134,8 +7134,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608280523",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608280523"
+    "tag": "v0.8.0-alpha2608280723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608280723"
   },
   "schema": 1
 }
