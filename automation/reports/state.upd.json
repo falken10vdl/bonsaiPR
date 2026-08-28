@@ -3,11 +3,11 @@
   "counts": {
     "failed": 146,
     "merged": 535,
-    "skipped_conflict": 128,
+    "skipped_conflict": 129,
     "skipped_draft": 62,
-    "total": 871
+    "total": 872
   },
-  "generated_at": "2026-08-28T01:19:16Z",
+  "generated_at": "2026-08-28T03:21:25Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1975,7 +1975,7 @@
       "author": "BIMvoice",
       "branch": "fix-7289-sheet-unique-ids",
       "head": "e20098f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: uniquify referenced SVG ids on a sheet so text does not garble (#7289)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8437"
     },
@@ -4611,7 +4611,7 @@
       "author": "BIMvoice",
       "branch": "feat-2956-document-revision-history",
       "head": "f02fbff",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell.util, Bonsai: expose a document's superseded revision history",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8915"
     },
@@ -5020,7 +5020,7 @@
       "author": "BIMvoice",
       "branch": "7312-safer-css-scoping",
       "head": "45569b0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: parse sheet CSS with a comment and string aware scanner",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8979"
     },
@@ -7123,11 +7123,19 @@
       "status": "failed",
       "title": "svg_serializer: skip elements that fail geometry conversion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9368"
+    },
+    "9370": {
+      "author": "theoryshaw",
+      "branch": "fix-sheet-presentation-attr-ids",
+      "head": "94ae947",
+      "status": "merged",
+      "title": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock (#9369)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9370"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608280241",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608280241"
+    "tag": "v0.8.0-alpha2608280441",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608280441"
   },
   "schema": 1
 }
