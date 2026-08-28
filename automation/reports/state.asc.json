@@ -7,7 +7,7 @@
     "skipped_draft": 62,
     "total": 871
   },
-  "generated_at": "2026-08-27T22:02:35Z",
+  "generated_at": "2026-08-28T00:00:33Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7109,7 +7109,7 @@
     "9367": {
       "author": "sboddy",
       "branch": "fix/schema-logger-thread-safety-race",
-      "head": "2ce0f7a",
+      "head": "632e3a2",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix data races in schema singleton init and logger causing crashes",
@@ -7118,7 +7118,7 @@
     "9368": {
       "author": "sboddy",
       "branch": "fix/svg-serializer-skip-failed-elements",
-      "head": "4700ad9",
+      "head": "e5cf83d",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "svg_serializer: skip elements that fail geometry conversion",
@@ -7126,8 +7126,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608272323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608272323"
+    "tag": "v0.8.0-alpha2608280123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608280123"
   },
   "schema": 1
 }
