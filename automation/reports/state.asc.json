@@ -3,11 +3,11 @@
   "counts": {
     "failed": 146,
     "merged": 544,
-    "skipped_conflict": 119,
+    "skipped_conflict": 120,
     "skipped_draft": 62,
-    "total": 871
+    "total": 872
   },
-  "generated_at": "2026-08-28T02:00:57Z",
+  "generated_at": "2026-08-28T04:01:02Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7123,11 +7123,19 @@
       "status": "failed",
       "title": "svg_serializer: skip elements that fail geometry conversion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9368"
+    },
+    "9370": {
+      "author": "theoryshaw",
+      "branch": "fix-sheet-presentation-attr-ids",
+      "head": "94ae947",
+      "status": "skipped_conflict",
+      "title": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock (#9369)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9370"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608280323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608280323"
+    "tag": "v0.8.0-alpha2608280523",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608280523"
   },
   "schema": 1
 }

@@ -5611,3 +5611,4 @@
 {"ts": "2026-08-27T22:02:35Z", "order": "ascending", "pr": 9368, "event": "added", "to": "failed"}
 {"ts": "2026-08-28T00:00:33Z", "order": "ascending", "pr": 9367, "event": "updated", "status": "failed", "from_head": "2ce0f7a", "to_head": "632e3a2"}
 {"ts": "2026-08-28T00:00:33Z", "order": "ascending", "pr": 9368, "event": "updated", "status": "failed", "from_head": "4700ad9", "to_head": "e5cf83d"}
+{"ts": "2026-08-28T04:01:02Z", "order": "ascending", "pr": 9370, "event": "added", "to": "skipped_conflict"}
