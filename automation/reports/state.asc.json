@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 146,
+    "failed": 147,
     "merged": 544,
     "skipped_conflict": 120,
     "skipped_draft": 62,
-    "total": 872
+    "total": 873
   },
-  "generated_at": "2026-08-28T06:00:43Z",
+  "generated_at": "2026-08-28T10:01:29Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7131,11 +7131,20 @@
       "status": "skipped_conflict",
       "title": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock (#9369)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9370"
+    },
+    "9371": {
+      "author": "aothms",
+      "branch": "address-quadratic-inverse-handling",
+      "head": "2222c0f",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Address quadratic inverse handling",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9371"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608280723",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608280723"
+    "tag": "v0.8.0-alpha2608281123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608281123"
   },
   "schema": 1
 }
