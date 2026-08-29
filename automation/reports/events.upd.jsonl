@@ -2519,3 +2519,7 @@
 {"ts": "2026-08-29T00:59:12Z", "order": "upd", "pr": 8938, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-08-29T00:59:12Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-08-29T01:20:34Z", "order": "by-updated", "pr": 9374, "event": "added", "to": "failed"}
+{"ts": "2026-08-29T03:58:26Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-29T03:58:26Z", "order": "upd", "pr": 8938, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-29T03:58:26Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-08-29T04:19:45Z", "order": "by-updated", "pr": 7003, "event": "updated", "status": "failed", "from_head": "4ffc70e", "to_head": "f3e3d10"}

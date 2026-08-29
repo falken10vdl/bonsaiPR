@@ -7,7 +7,7 @@
     "skipped_draft": 62,
     "total": 874
   },
-  "generated_at": "2026-08-29T01:20:34Z",
+  "generated_at": "2026-08-29T04:19:45Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -159,7 +159,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "4ffc70e",
+      "head": "f3e3d10",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add true object mirroring operator",
@@ -7152,8 +7152,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608290242",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608290242"
+    "tag": "v0.8.0-alpha2608290541",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608290541"
   },
   "schema": 1
 }
