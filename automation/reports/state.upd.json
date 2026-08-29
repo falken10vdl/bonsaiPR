@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 148,
+    "failed": 150,
     "merged": 535,
     "skipped_conflict": 129,
     "skipped_draft": 62,
-    "total": 874
+    "total": 876
   },
-  "generated_at": "2026-08-29T04:19:45Z",
+  "generated_at": "2026-08-29T18:19:45Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7149,11 +7149,29 @@
       "status": "failed",
       "title": "build(deps): bump gersemi from 0.28.0 to 0.28.1",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9374"
+    },
+    "9378": {
+      "author": "P4A-KLFSBK",
+      "branch": "svg-release-storey-hlr-v9",
+      "head": "70ca81d",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Release per-storey HLR data after drawing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9378"
+    },
+    "9379": {
+      "author": "P4A-KLFSBK",
+      "branch": "svg-fix-section-hlr-double-free-v9",
+      "head": "6d6e060",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix double free of section HLR state",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608290541",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608290541"
+    "tag": "v0.8.0-alpha2608291941",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608291941"
   },
   "schema": 1
 }
