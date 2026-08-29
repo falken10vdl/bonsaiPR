@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 147,
+    "failed": 148,
     "merged": 538,
     "skipped_conflict": 126,
     "skipped_draft": 62,
-    "total": 873
+    "total": 874
   },
-  "generated_at": "2026-08-28T17:40:42Z",
+  "generated_at": "2026-08-29T00:40:58Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7140,11 +7140,20 @@
       "status": "failed",
       "title": "Address quadratic inverse handling",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9371"
+    },
+    "9374": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/gersemi-0.28.1",
+      "head": "0247b34",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump gersemi from 0.28.0 to 0.28.1",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9374"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608281902",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608281902"
+    "tag": "v0.8.0-alpha2608290203",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608290203"
   },
   "schema": 1
 }
