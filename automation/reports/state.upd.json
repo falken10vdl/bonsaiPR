@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 150,
-    "merged": 535,
+    "failed": 149,
+    "merged": 533,
     "skipped_conflict": 129,
-    "skipped_draft": 64,
-    "total": 878
+    "skipped_draft": 62,
+    "total": 873
   },
-  "generated_at": "2026-08-30T09:18:55Z",
+  "generated_at": "2026-08-30T12:19:36Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -2166,15 +2166,6 @@
       "status": "failed",
       "title": "serializers: glTF baseColorFactor should be the surface colour, not diffuse*factor (#2509)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8466"
-    },
-    "8467": {
-      "author": "BIMvoice",
-      "branch": "fix-4846-obj-mtllib",
-      "head": "aca6224",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: emit mtllib in OBJ output so materials are linked (#4846)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8467"
     },
     "8468": {
       "author": "BIMvoice",
@@ -4823,14 +4814,6 @@
       "title": "validate_stub: resolve property/staticmethod wrappers deterministically",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8946"
     },
-    "8948": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-ifctester-org-branch-filter",
-      "head": "0bc1710",
-      "status": "merged",
-      "title": "ci-ifctester-org: restrict publish trigger to v0.8.0 branch",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8948"
-    },
     "8949": {
       "author": "BIMvoice",
       "branch": "fix/extractelements-docstring-selector-syntax",
@@ -4902,14 +4885,6 @@
       "status": "merged",
       "title": "ifc5d: make the cost schedule CSV delimiter configurable",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8961"
-    },
-    "8962": {
-      "author": "BIMvoice",
-      "branch": "fix/ifcconvert-unicode-escape-enum",
-      "head": "ca1d227",
-      "status": "merged",
-      "title": "IfcConvert: fix --unicode=escape referencing a removed enumerator",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8962"
     },
     "8963": {
       "author": "BIMvoice",
@@ -7167,27 +7142,11 @@
       "status": "failed",
       "title": "Fix double free of section HLR state",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
-    },
-    "9381": {
-      "author": "BIMvoice",
-      "branch": "fix-6032-halfspacesolid-nullcheck",
-      "head": "80bcfff",
-      "status": "skipped_draft",
-      "title": "ifcparse: guard express::base::as<T>() on unresolved references",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9381"
-    },
-    "9382": {
-      "author": "BIMvoice",
-      "branch": "fix-9364-wheel-shared-libs",
-      "head": "0a02a83",
-      "status": "skipped_draft",
-      "title": "Ship the split shared libraries in the Python wheel",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9382"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608301040",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301040"
+    "tag": "v0.8.0-alpha2608301341",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301341"
   },
   "schema": 1
 }
