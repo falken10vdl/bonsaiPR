@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 149,
+    "failed": 148,
     "merged": 542,
     "skipped_conflict": 120,
-    "skipped_draft": 64,
-    "total": 875
+    "skipped_draft": 69,
+    "total": 879
   },
-  "generated_at": "2026-08-30T13:00:51Z",
+  "generated_at": "2026-08-30T15:01:19Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -3675,15 +3675,6 @@
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
-    "8751": {
-      "author": "brunopostle",
-      "branch": "feat/ifcparse-fuzz-harness",
-      "head": "e49c47f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Add opt-in libFuzzer harness for IfcParse::IfcFile",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8751"
-    },
     "8752": {
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
@@ -7158,11 +7149,51 @@
       "status": "skipped_draft",
       "title": "ifctester: install setuptools for the no-isolation wheel build",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9384"
+    },
+    "9385": {
+      "author": "BIMvoice",
+      "branch": "fix-v09-lint-drift",
+      "head": "b2c92a1",
+      "status": "skipped_draft",
+      "title": "lint: restore black and ruff compliance on v0.9.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9385"
+    },
+    "9386": {
+      "author": "BIMvoice",
+      "branch": "fix-ifcdiff-by-guid-v09",
+      "head": "20b9f7a",
+      "status": "skipped_draft",
+      "title": "ifcdiff: resolve elements by GlobalId with by_guid on v0.9.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9386"
+    },
+    "9387": {
+      "author": "BIMvoice",
+      "branch": "fix-sql-derived-attr-v09",
+      "head": "6039aae",
+      "status": "skipped_draft",
+      "title": "sql: handle derived attributes in sqlite_entity.__getattr__",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9387"
+    },
+    "9388": {
+      "author": "BIMvoice",
+      "branch": "fix-ids-tuple-filter-v09",
+      "head": "027c481",
+      "status": "skipped_draft",
+      "title": "ifctester: chained facet filters ignore tuple results on v0.9.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9388"
+    },
+    "9389": {
+      "author": "BIMvoice",
+      "branch": "fix-assign-unit-dimensions-v09",
+      "head": "85e035e",
+      "status": "skipped_draft",
+      "title": "api/unit: leave derived Dimensions unset when creating IfcSIUnit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9389"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608301423",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301423"
+    "tag": "v0.8.0-alpha2608301623",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301623"
   },
   "schema": 1
 }

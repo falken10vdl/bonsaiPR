@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 148,
-    "merged": 533,
+    "failed": 145,
+    "merged": 532,
     "skipped_conflict": 129,
-    "skipped_draft": 69,
+    "skipped_draft": 73,
     "total": 879
   },
-  "generated_at": "2026-08-30T14:18:46Z",
+  "generated_at": "2026-08-30T16:19:17Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -1896,15 +1896,6 @@
       "title": "Bonsai: drop the connection at the moved endpoint when resizing an axis (#7975)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8423"
     },
-    "8424": {
-      "author": "BIMvoice",
-      "branch": "fix-5357-clash-result-order",
-      "head": "5c16f93",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "IfcGeomTree: keep clash_intersection_many results in set_a, set_b order (#5357)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8424"
-    },
     "8425": {
       "author": "BIMvoice",
       "branch": "fix-5881-remove-sheet-confirm",
@@ -1945,15 +1936,6 @@
       "status": "failed",
       "title": "Bonsai: stop deleting user-created Level (Section) annotations (#7450, #9215)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8432"
-    },
-    "8433": {
-      "author": "BIMvoice",
-      "branch": "fix-8013-surfaceoflinearextrusion-depth",
-      "head": "f7eb96a",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: use the real extrusion depth for IfcSurfaceOfLinearExtrusion (#8013)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8433"
     },
     "8434": {
       "author": "BIMvoice",
@@ -2247,14 +2229,6 @@
       "status": "failed",
       "title": "serializers: don't abort the whole SVG drawing when one element's HLR fails (#4130, #3849)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8477"
-    },
-    "8478": {
-      "author": "BIMvoice",
-      "branch": "bv-7835-examples-build-convert",
-      "head": "6b84ff0",
-      "status": "merged",
-      "title": "build: decouple the OpenCascade examples from BUILD_CONVERT (#7835)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8478"
     },
     "8479": {
       "author": "BIMvoice",
@@ -4060,15 +4034,6 @@
       "status": "skipped_conflict",
       "title": "Bonsai: guard set_objects_selection against excluded or hidden collections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8813"
-    },
-    "8814": {
-      "author": "BIMvoice",
-      "branch": "5880-hybrid-opening-fallback",
-      "head": "bd27cf3",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: fall back to unopened geometry when convert_openings() cleanly fails",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8814"
     },
     "8815": {
       "author": "BIMvoice",
@@ -7182,18 +7147,50 @@
       "title": "ifctester: chained facet filters ignore tuple results on v0.9.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9388"
     },
-    "9389": {
+    "9390": {
       "author": "BIMvoice",
-      "branch": "fix-assign-unit-dimensions-v09",
-      "head": "85e035e",
+      "branch": "v09r/fix-5357-clash-result-order",
+      "head": "4209ad8",
       "status": "skipped_draft",
-      "title": "api/unit: leave derived Dimensions unset when creating IfcSIUnit",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9389"
+      "title": "IfcGeomTree: keep clash_intersection_many result order",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9390"
+    },
+    "9391": {
+      "author": "BIMvoice",
+      "branch": "v09r/bv-7835-examples-build-convert",
+      "head": "296620b",
+      "status": "skipped_draft",
+      "title": "build: decouple OpenCascade examples from BUILD_CONVERT",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9391"
+    },
+    "9392": {
+      "author": "BIMvoice",
+      "branch": "v09r/fix-8013-surfaceoflinearextrusion-depth",
+      "head": "8543910",
+      "status": "skipped_draft",
+      "title": "ifcgeom: use real depth for SurfaceOfLinearExtrusion",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9392"
+    },
+    "9393": {
+      "author": "BIMvoice",
+      "branch": "v09r/5880-hybrid-opening-fallback",
+      "head": "1bf58ae",
+      "status": "skipped_draft",
+      "title": "ifcgeom: fall back when convert_openings cleanly fails",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9393"
+    },
+    "9394": {
+      "author": "BIMvoice",
+      "branch": "fix-derived-none-wrapper-v09",
+      "head": "622873f",
+      "status": "skipped_draft",
+      "title": "ifcwrap: keep the derived marker when None is assigned to a derived attribute",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9394"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608301541",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301541"
+    "tag": "v0.8.0-alpha2608301741",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301741"
   },
   "schema": 1
 }
