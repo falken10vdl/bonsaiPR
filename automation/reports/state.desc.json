@@ -7,7 +7,7 @@
     "skipped_draft": 73,
     "total": 879
   },
-  "generated_at": "2026-08-30T15:40:04Z",
+  "generated_at": "2026-08-30T17:40:02Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7147,14 +7147,6 @@
       "title": "ifctester: chained facet filters ignore tuple results on v0.9.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9388"
     },
-    "9389": {
-      "author": "BIMvoice",
-      "branch": "fix-assign-unit-dimensions-v09",
-      "head": "85e035e",
-      "status": "skipped_draft",
-      "title": "api/unit: leave derived Dimensions unset when creating IfcSIUnit",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9389"
-    },
     "9390": {
       "author": "BIMvoice",
       "branch": "v09r/fix-5357-clash-result-order",
@@ -7186,11 +7178,19 @@
       "status": "skipped_draft",
       "title": "ifcgeom: fall back when convert_openings cleanly fails",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9393"
+    },
+    "9394": {
+      "author": "BIMvoice",
+      "branch": "fix-derived-none-wrapper-v09",
+      "head": "622873f",
+      "status": "skipped_draft",
+      "title": "ifcwrap: keep the derived marker when None is assigned to a derived attribute",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9394"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608301702",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301702"
+    "tag": "v0.8.0-alpha2608301901",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301901"
   },
   "schema": 1
 }

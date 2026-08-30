@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 145,
+    "failed": 156,
     "merged": 532,
     "skipped_conflict": 129,
-    "skipped_draft": 73,
+    "skipped_draft": 62,
     "total": 879
   },
-  "generated_at": "2026-08-30T16:19:17Z",
+  "generated_at": "2026-08-30T18:19:53Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -2149,15 +2149,6 @@
       "title": "serializers: glTF baseColorFactor should be the surface colour, not diffuse*factor (#2509)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8466"
     },
-    "8468": {
-      "author": "BIMvoice",
-      "branch": "fix-5109-xml-material-ids",
-      "head": "e7237b3",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "serializers: emit a stable id for nested materials in XML (#5109)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8468"
-    },
     "8469": {
       "author": "BIMvoice",
       "branch": "fix-806-mirrored-normals",
@@ -3756,15 +3747,6 @@
       "status": "failed",
       "title": "GltfSerializer: fix hierarchy group node names, add opt-in --gltf-extras",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8771"
-    },
-    "8772": {
-      "author": "BIMvoice",
-      "branch": "fix-418-nonmanifold-opening-facesets",
-      "head": "cad1eec",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: keep one copy of repeated faces in faceset helper duplicate removal",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8772"
     },
     "8773": {
       "author": "BIMvoice",
@@ -7103,7 +7085,8 @@
       "author": "BIMvoice",
       "branch": "fix-choco-subprocess-strings",
       "head": "c81f95b",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "choco: pass subprocess commands as argument lists",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9383"
     },
@@ -7111,7 +7094,8 @@
       "author": "BIMvoice",
       "branch": "fix-ifctester-org-setuptools",
       "head": "9ea36ee",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifctester: install setuptools for the no-isolation wheel build",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9384"
     },
@@ -7119,7 +7103,8 @@
       "author": "BIMvoice",
       "branch": "fix-v09-lint-drift",
       "head": "b2c92a1",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "lint: restore black and ruff compliance on v0.9.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9385"
     },
@@ -7127,7 +7112,8 @@
       "author": "BIMvoice",
       "branch": "fix-ifcdiff-by-guid-v09",
       "head": "20b9f7a",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcdiff: resolve elements by GlobalId with by_guid on v0.9.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9386"
     },
@@ -7135,7 +7121,8 @@
       "author": "BIMvoice",
       "branch": "fix-sql-derived-attr-v09",
       "head": "6039aae",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "sql: handle derived attributes in sqlite_entity.__getattr__",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9387"
     },
@@ -7143,7 +7130,8 @@
       "author": "BIMvoice",
       "branch": "fix-ids-tuple-filter-v09",
       "head": "027c481",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifctester: chained facet filters ignore tuple results on v0.9.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9388"
     },
@@ -7151,7 +7139,8 @@
       "author": "BIMvoice",
       "branch": "v09r/fix-5357-clash-result-order",
       "head": "4209ad8",
-      "status": "skipped_draft",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcGeomTree: keep clash_intersection_many result order",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9390"
     },
@@ -7159,7 +7148,8 @@
       "author": "BIMvoice",
       "branch": "v09r/bv-7835-examples-build-convert",
       "head": "296620b",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "build: decouple OpenCascade examples from BUILD_CONVERT",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9391"
     },
@@ -7167,7 +7157,8 @@
       "author": "BIMvoice",
       "branch": "v09r/fix-8013-surfaceoflinearextrusion-depth",
       "head": "8543910",
-      "status": "skipped_draft",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: use real depth for SurfaceOfLinearExtrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9392"
     },
@@ -7175,7 +7166,8 @@
       "author": "BIMvoice",
       "branch": "v09r/5880-hybrid-opening-fallback",
       "head": "1bf58ae",
-      "status": "skipped_draft",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fall back when convert_openings cleanly fails",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9393"
     },
@@ -7183,14 +7175,33 @@
       "author": "BIMvoice",
       "branch": "fix-derived-none-wrapper-v09",
       "head": "622873f",
-      "status": "skipped_draft",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcwrap: keep the derived marker when None is assigned to a derived attribute",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9394"
+    },
+    "9395": {
+      "author": "BIMvoice",
+      "branch": "v09r/fix-5109-xml-material-ids",
+      "head": "f04f04f",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "serializers: emit a stable id for nested materials in XML (#5109)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9395"
+    },
+    "9396": {
+      "author": "BIMvoice",
+      "branch": "v09r/fix-418-nonmanifold-opening-facesets",
+      "head": "2aa1579",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcgeom: keep one copy of repeated faces in faceset helper duplicate removal",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9396"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608301741",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301741"
+    "tag": "v0.8.0-alpha2608301941",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301941"
   },
   "schema": 1
 }
