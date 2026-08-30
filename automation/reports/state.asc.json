@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 150,
-    "merged": 544,
+    "failed": 149,
+    "merged": 542,
     "skipped_conflict": 120,
-    "skipped_draft": 62,
-    "total": 876
+    "skipped_draft": 64,
+    "total": 875
   },
-  "generated_at": "2026-08-30T11:01:28Z",
+  "generated_at": "2026-08-30T13:00:51Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2166,15 +2166,6 @@
       "status": "failed",
       "title": "serializers: glTF baseColorFactor should be the surface colour, not diffuse*factor (#2509)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8466"
-    },
-    "8467": {
-      "author": "BIMvoice",
-      "branch": "fix-4846-obj-mtllib",
-      "head": "aca6224",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: emit mtllib in OBJ output so materials are linked (#4846)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8467"
     },
     "8468": {
       "author": "BIMvoice",
@@ -4823,14 +4814,6 @@
       "title": "validate_stub: resolve property/staticmethod wrappers deterministically",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8946"
     },
-    "8948": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-ifctester-org-branch-filter",
-      "head": "0bc1710",
-      "status": "merged",
-      "title": "ci-ifctester-org: restrict publish trigger to v0.8.0 branch",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8948"
-    },
     "8949": {
       "author": "BIMvoice",
       "branch": "fix/extractelements-docstring-selector-syntax",
@@ -4902,14 +4885,6 @@
       "status": "merged",
       "title": "ifc5d: make the cost schedule CSV delimiter configurable",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8961"
-    },
-    "8962": {
-      "author": "BIMvoice",
-      "branch": "fix/ifcconvert-unicode-escape-enum",
-      "head": "ca1d227",
-      "status": "merged",
-      "title": "IfcConvert: fix --unicode=escape referencing a removed enumerator",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8962"
     },
     "8963": {
       "author": "BIMvoice",
@@ -7167,11 +7142,27 @@
       "status": "failed",
       "title": "Fix double free of section HLR state",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
+    },
+    "9383": {
+      "author": "BIMvoice",
+      "branch": "fix-choco-subprocess-strings",
+      "head": "c81f95b",
+      "status": "skipped_draft",
+      "title": "choco: pass subprocess commands as argument lists",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9383"
+    },
+    "9384": {
+      "author": "BIMvoice",
+      "branch": "fix-ifctester-org-setuptools",
+      "head": "9ea36ee",
+      "status": "skipped_draft",
+      "title": "ifctester: install setuptools for the no-isolation wheel build",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9384"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608301223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301223"
+    "tag": "v0.8.0-alpha2608301423",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301423"
   },
   "schema": 1
 }

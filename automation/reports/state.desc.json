@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 150,
-    "merged": 538,
+    "failed": 148,
+    "merged": 536,
     "skipped_conflict": 126,
-    "skipped_draft": 62,
-    "total": 876
+    "skipped_draft": 69,
+    "total": 879
   },
-  "generated_at": "2026-08-30T11:40:20Z",
+  "generated_at": "2026-08-30T13:39:59Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -2167,15 +2167,6 @@
       "title": "serializers: glTF baseColorFactor should be the surface colour, not diffuse*factor (#2509)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8466"
     },
-    "8467": {
-      "author": "BIMvoice",
-      "branch": "fix-4846-obj-mtllib",
-      "head": "aca6224",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: emit mtllib in OBJ output so materials are linked (#4846)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8467"
-    },
     "8468": {
       "author": "BIMvoice",
       "branch": "fix-5109-xml-material-ids",
@@ -3684,15 +3675,6 @@
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
-    "8751": {
-      "author": "brunopostle",
-      "branch": "feat/ifcparse-fuzz-harness",
-      "head": "e49c47f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Add opt-in libFuzzer harness for IfcParse::IfcFile",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8751"
-    },
     "8752": {
       "author": "BIMvoice",
       "branch": "bonsai-3406-convert-to-type",
@@ -4823,14 +4805,6 @@
       "title": "validate_stub: resolve property/staticmethod wrappers deterministically",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8946"
     },
-    "8948": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-ifctester-org-branch-filter",
-      "head": "0bc1710",
-      "status": "merged",
-      "title": "ci-ifctester-org: restrict publish trigger to v0.8.0 branch",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8948"
-    },
     "8949": {
       "author": "BIMvoice",
       "branch": "fix/extractelements-docstring-selector-syntax",
@@ -4902,14 +4876,6 @@
       "status": "merged",
       "title": "ifc5d: make the cost schedule CSV delimiter configurable",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8961"
-    },
-    "8962": {
-      "author": "BIMvoice",
-      "branch": "fix/ifcconvert-unicode-escape-enum",
-      "head": "ca1d227",
-      "status": "merged",
-      "title": "IfcConvert: fix --unicode=escape referencing a removed enumerator",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8962"
     },
     "8963": {
       "author": "BIMvoice",
@@ -7167,11 +7133,67 @@
       "status": "failed",
       "title": "Fix double free of section HLR state",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
+    },
+    "9383": {
+      "author": "BIMvoice",
+      "branch": "fix-choco-subprocess-strings",
+      "head": "c81f95b",
+      "status": "skipped_draft",
+      "title": "choco: pass subprocess commands as argument lists",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9383"
+    },
+    "9384": {
+      "author": "BIMvoice",
+      "branch": "fix-ifctester-org-setuptools",
+      "head": "9ea36ee",
+      "status": "skipped_draft",
+      "title": "ifctester: install setuptools for the no-isolation wheel build",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9384"
+    },
+    "9385": {
+      "author": "BIMvoice",
+      "branch": "fix-v09-lint-drift",
+      "head": "b2c92a1",
+      "status": "skipped_draft",
+      "title": "lint: restore black and ruff compliance on v0.9.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9385"
+    },
+    "9386": {
+      "author": "BIMvoice",
+      "branch": "fix-ifcdiff-by-guid-v09",
+      "head": "20b9f7a",
+      "status": "skipped_draft",
+      "title": "ifcdiff: resolve elements by GlobalId with by_guid on v0.9.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9386"
+    },
+    "9387": {
+      "author": "BIMvoice",
+      "branch": "fix-sql-derived-attr-v09",
+      "head": "6039aae",
+      "status": "skipped_draft",
+      "title": "sql: handle derived attributes in sqlite_entity.__getattr__",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9387"
+    },
+    "9388": {
+      "author": "BIMvoice",
+      "branch": "fix-ids-tuple-filter-v09",
+      "head": "027c481",
+      "status": "skipped_draft",
+      "title": "ifctester: chained facet filters ignore tuple results on v0.9.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9388"
+    },
+    "9389": {
+      "author": "BIMvoice",
+      "branch": "fix-assign-unit-dimensions-v09",
+      "head": "85e035e",
+      "status": "skipped_draft",
+      "title": "api/unit: leave derived Dimensions unset when creating IfcSIUnit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9389"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608301302",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301302"
+    "tag": "v0.8.0-alpha2608301501",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301501"
   },
   "schema": 1
 }
