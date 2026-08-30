@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 157,
+    "failed": 159,
     "merged": 546,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 879
+    "total": 881
   },
-  "generated_at": "2026-08-30T19:01:44Z",
+  "generated_at": "2026-08-30T21:01:43Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7198,11 +7198,29 @@
       "status": "failed",
       "title": "ifcgeom: keep one copy of repeated faces in faceset helper duplicate removal",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9396"
+    },
+    "9397": {
+      "author": "BIMvoice",
+      "branch": "docker-arm64-readme-v09",
+      "head": "7c0c5d7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "docker: document a native linux/arm64 build environment",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9397"
+    },
+    "9399": {
+      "author": "P4A-KLFSBK",
+      "branch": "docker-build-shared-v9",
+      "head": "412aa39",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Build shared in the docker dev environment",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9399"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608302023",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608302023"
+    "tag": "v0.8.0-alpha2608302223",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608302223"
   },
   "schema": 1
 }

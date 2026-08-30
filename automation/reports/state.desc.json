@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 158,
+    "failed": 159,
     "merged": 540,
     "skipped_conflict": 126,
     "skipped_draft": 56,
-    "total": 880
+    "total": 881
   },
-  "generated_at": "2026-08-30T19:41:20Z",
+  "generated_at": "2026-08-30T21:42:24Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7207,11 +7207,20 @@
       "status": "failed",
       "title": "docker: document a native linux/arm64 build environment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9397"
+    },
+    "9399": {
+      "author": "P4A-KLFSBK",
+      "branch": "docker-build-shared-v9",
+      "head": "412aa39",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Build shared in the docker dev environment",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9399"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608302102",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608302102"
+    "tag": "v0.8.0-alpha2608302302",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608302302"
   },
   "schema": 1
 }
