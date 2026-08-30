@@ -4,10 +4,10 @@
     "failed": 150,
     "merged": 535,
     "skipped_conflict": 129,
-    "skipped_draft": 62,
-    "total": 876
+    "skipped_draft": 64,
+    "total": 878
   },
-  "generated_at": "2026-08-30T06:19:27Z",
+  "generated_at": "2026-08-30T09:18:55Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7167,11 +7167,27 @@
       "status": "failed",
       "title": "Fix double free of section HLR state",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
+    },
+    "9381": {
+      "author": "BIMvoice",
+      "branch": "fix-6032-halfspacesolid-nullcheck",
+      "head": "80bcfff",
+      "status": "skipped_draft",
+      "title": "ifcparse: guard express::base::as<T>() on unresolved references",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9381"
+    },
+    "9382": {
+      "author": "BIMvoice",
+      "branch": "fix-9364-wheel-shared-libs",
+      "head": "0a02a83",
+      "status": "skipped_draft",
+      "title": "Ship the split shared libraries in the Python wheel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9382"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608300741",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608300741"
+    "tag": "v0.8.0-alpha2608301040",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301040"
   },
   "schema": 1
 }
