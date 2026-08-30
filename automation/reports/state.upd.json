@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 156,
-    "merged": 532,
+    "failed": 159,
+    "merged": 537,
     "skipped_conflict": 129,
-    "skipped_draft": 62,
-    "total": 879
+    "skipped_draft": 56,
+    "total": 881
   },
-  "generated_at": "2026-08-30T18:19:53Z",
+  "generated_at": "2026-08-30T20:21:10Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6743,7 +6743,7 @@
       "author": "BIMvoice",
       "branch": "fix-9270-unsaved-ifc-warning",
       "head": "0f04bbc",
-      "status": "skipped_draft",
+      "status": "merged",
       "title": "Bonsai: warn before saving the .blend drops unsaved IFC edits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9276"
     },
@@ -6775,7 +6775,8 @@
       "author": "BIMvoice",
       "branch": "fix-9294-projectlibrary-units",
       "head": "62fd8ce",
-      "status": "skipped_draft",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: IfcProjectLibrary breaks unit detection (#9294)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9295"
     },
@@ -6791,7 +6792,7 @@
       "author": "BIMvoice",
       "branch": "fix-diff-panel-relationships",
       "head": "2e0b0c2",
-      "status": "skipped_draft",
+      "status": "merged",
       "title": "Bonsai: Diff panel silently skips attribute and geometry checks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9297"
     },
@@ -6833,7 +6834,7 @@
       "author": "BIMvoice",
       "branch": "fix-9299-aggregate-delete-segfault",
       "head": "47f4eff",
-      "status": "skipped_draft",
+      "status": "merged",
       "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9308"
     },
@@ -6974,7 +6975,7 @@
       "author": "BIMvoice",
       "branch": "docs-drawing-stylesheet-guide",
       "head": "d00cb75",
-      "status": "skipped_draft",
+      "status": "merged",
       "title": "docs: document drawing stylesheets and the override pattern",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9358"
     },
@@ -6982,7 +6983,7 @@
       "author": "BIMvoice",
       "branch": "fix-link-ifc-silent-failure",
       "head": "a9b72f3",
-      "status": "skipped_draft",
+      "status": "merged",
       "title": "Bonsai: fix Link IFC silently failing to build its cache",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9360"
     },
@@ -7197,11 +7198,29 @@
       "status": "failed",
       "title": "ifcgeom: keep one copy of repeated faces in faceset helper duplicate removal",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9396"
+    },
+    "9397": {
+      "author": "BIMvoice",
+      "branch": "docker-arm64-readme-v09",
+      "head": "7c0c5d7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "docker: document a native linux/arm64 build environment",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9397"
+    },
+    "9399": {
+      "author": "P4A-KLFSBK",
+      "branch": "docker-build-shared-v9",
+      "head": "412aa39",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Build shared in the docker dev environment",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9399"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608301941",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608301941"
+    "tag": "v0.8.0-alpha2608302142",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608302142"
   },
   "schema": 1
 }
