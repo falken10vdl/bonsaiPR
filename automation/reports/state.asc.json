@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 160,
+    "failed": 158,
     "merged": 549,
     "skipped_conflict": 121,
     "skipped_draft": 56,
-    "total": 886
+    "total": 884
   },
-  "generated_at": "2026-08-31T12:03:31Z",
+  "generated_at": "2026-08-31T15:03:40Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7163,15 +7163,6 @@
       "title": "ifcgeom: fall back when convert_openings cleanly fails",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9393"
     },
-    "9394": {
-      "author": "BIMvoice",
-      "branch": "fix-derived-none-wrapper-v09",
-      "head": "622873f",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcwrap: keep the derived marker when None is assigned to a derived attribute",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9394"
-    },
     "9395": {
       "author": "BIMvoice",
       "branch": "v09r/fix-5109-xml-material-ids",
@@ -7217,15 +7208,6 @@
       "title": "Bonsai: keep commented out facets when editing a filter query",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9401"
     },
-    "9402": {
-      "author": "BIMvoice",
-      "branch": "fix-pset-wrapped-data-v09",
-      "head": "cb40147",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bonsai: drop the last wrapped_data use, it is gone on v0.9.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9402"
-    },
     "9403": {
       "author": "BIMvoice",
       "branch": "fix-9373-stale-pset-data",
@@ -7260,8 +7242,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608311323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608311323"
+    "tag": "v0.8.0-alpha2608311623",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608311623"
   },
   "schema": 1
 }
