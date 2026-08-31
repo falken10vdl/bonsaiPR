@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 158,
-    "merged": 545,
+    "failed": 159,
+    "merged": 544,
     "skipped_conflict": 126,
     "skipped_draft": 56,
     "total": 885
   },
-  "generated_at": "2026-08-31T19:05:33Z",
+  "generated_at": "2026-08-31T21:44:10Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -3953,7 +3953,8 @@
       "author": "BIMvoice",
       "branch": "ifcparse-954-x2-surrogates",
       "head": "afd7b81",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcparse: combine UTF-16 surrogate pairs in \\X2\\ escapes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8805"
     },
@@ -7032,7 +7033,7 @@
       "author": "sboddy",
       "branch": "fix/svg-serializer-skip-failed-elements",
       "head": "e5cf83d",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "svg_serializer: skip elements that fail geometry conversion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9368"
@@ -7067,7 +7068,7 @@
       "author": "P4A-KLFSBK",
       "branch": "svg-fix-section-hlr-double-free-v9",
       "head": "6d6e060",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix double free of section HLR state",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
@@ -7250,8 +7251,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608312018",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608312018"
+    "tag": "v0.8.0-alpha2608312304",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608312304"
   },
   "schema": 1
 }
