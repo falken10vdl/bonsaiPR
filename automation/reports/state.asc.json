@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 160,
-    "merged": 546,
-    "skipped_conflict": 120,
+    "failed": 161,
+    "merged": 547,
+    "skipped_conflict": 121,
     "skipped_draft": 56,
-    "total": 882
+    "total": 885
   },
-  "generated_at": "2026-08-31T03:03:11Z",
+  "generated_at": "2026-08-31T06:05:02Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7225,11 +7225,36 @@
       "status": "failed",
       "title": "Bonsai: keep commented out facets when editing a filter query",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9401"
+    },
+    "9402": {
+      "author": "BIMvoice",
+      "branch": "fix-pset-wrapped-data-v09",
+      "head": "cb40147",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: drop the last wrapped_data use, it is gone on v0.9.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9402"
+    },
+    "9403": {
+      "author": "BIMvoice",
+      "branch": "fix-9373-stale-pset-data",
+      "head": "e8b8870",
+      "status": "merged",
+      "title": "Bonsai: stop pset panels crashing on a stale or absent definition id",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9403"
+    },
+    "9404": {
+      "author": "BIMvoice",
+      "branch": "fix-9376-earthworkscut-qto",
+      "head": "9b52949",
+      "status": "skipped_conflict",
+      "title": "ifc5d: evaluate IfcEarthworksCut quantities against the host, not the subtraction solid (#9376)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9404"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608310423",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608310423"
+    "tag": "v0.8.0-alpha2608310723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608310723"
   },
   "schema": 1
 }
