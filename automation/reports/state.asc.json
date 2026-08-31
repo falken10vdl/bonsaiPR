@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 159,
+    "failed": 160,
     "merged": 546,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 881
+    "total": 882
   },
-  "generated_at": "2026-08-30T21:01:43Z",
+  "generated_at": "2026-08-31T03:03:11Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7216,11 +7216,20 @@
       "status": "failed",
       "title": "Build shared in the docker dev environment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9399"
+    },
+    "9401": {
+      "author": "theoryshaw",
+      "branch": "filter_query_comments_9400",
+      "head": "31d9cc2",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: keep commented out facets when editing a filter query",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9401"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608302223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608302223"
+    "tag": "v0.8.0-alpha2608310423",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608310423"
   },
   "schema": 1
 }
