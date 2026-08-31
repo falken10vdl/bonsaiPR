@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 158,
-    "merged": 544,
+    "merged": 545,
     "skipped_conflict": 126,
     "skipped_draft": 56,
-    "total": 884
+    "total": 885
   },
-  "generated_at": "2026-08-31T15:45:02Z",
+  "generated_at": "2026-08-31T19:05:33Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -2641,7 +2641,7 @@
     "8548": {
       "author": "theoryshaw",
       "branch": "placement-storey-elevation",
-      "head": "cc6897a",
+      "head": "724021a",
       "status": "merged",
       "title": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8548"
@@ -3953,8 +3953,7 @@
       "author": "BIMvoice",
       "branch": "ifcparse-954-x2-surrogates",
       "head": "afd7b81",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "ifcparse: combine UTF-16 surrogate pairs in \\X2\\ escapes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8805"
     },
@@ -7033,7 +7032,7 @@
       "author": "sboddy",
       "branch": "fix/svg-serializer-skip-failed-elements",
       "head": "e5cf83d",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "svg_serializer: skip elements that fail geometry conversion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9368"
@@ -7068,7 +7067,7 @@
       "author": "P4A-KLFSBK",
       "branch": "svg-fix-section-hlr-double-free-v9",
       "head": "6d6e060",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Fix double free of section HLR state",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
@@ -7175,7 +7174,7 @@
     "9396": {
       "author": "BIMvoice",
       "branch": "v09r/fix-418-nonmanifold-opening-facesets",
-      "head": "2aa1579",
+      "head": "65da4db",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: keep one copy of repeated faces in faceset helper duplicate removal",
@@ -7239,11 +7238,20 @@
       "status": "merged",
       "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9406"
+    },
+    "9408": {
+      "author": "RickBrice",
+      "branch": "rab-loft-with-section-raking",
+      "head": "0b745c4",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Honour IfcAxis2PlacementLinear Axis/RefDirection in the loft builder",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9408"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608311704",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608311704"
+    "tag": "v0.8.0-alpha2608312018",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608312018"
   },
   "schema": 1
 }

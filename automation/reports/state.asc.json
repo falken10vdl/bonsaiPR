@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 158,
+    "failed": 159,
     "merged": 549,
     "skipped_conflict": 121,
     "skipped_draft": 56,
-    "total": 884
+    "total": 885
   },
-  "generated_at": "2026-08-31T15:03:40Z",
+  "generated_at": "2026-08-31T18:15:56Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -2641,7 +2641,7 @@
     "8548": {
       "author": "theoryshaw",
       "branch": "placement-storey-elevation",
-      "head": "cc6897a",
+      "head": "724021a",
       "status": "merged",
       "title": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8548"
@@ -7175,7 +7175,7 @@
     "9396": {
       "author": "BIMvoice",
       "branch": "v09r/fix-418-nonmanifold-opening-facesets",
-      "head": "2aa1579",
+      "head": "65da4db",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: keep one copy of repeated faces in faceset helper duplicate removal",
@@ -7219,7 +7219,7 @@
     "9404": {
       "author": "BIMvoice",
       "branch": "fix-9376-earthworkscut-qto",
-      "head": "9b52949",
+      "head": "265f1a0",
       "status": "skipped_conflict",
       "title": "ifc5d: evaluate IfcEarthworksCut quantities against the host, not the subtraction solid (#9376)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9404"
@@ -7239,11 +7239,20 @@
       "status": "merged",
       "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9406"
+    },
+    "9408": {
+      "author": "RickBrice",
+      "branch": "rab-loft-with-section-raking",
+      "head": "0b745c4",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Honour IfcAxis2PlacementLinear Axis/RefDirection in the loft builder",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9408"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608311623",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608311623"
+    "tag": "v0.8.0-alpha2608311923",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608311923"
   },
   "schema": 1
 }

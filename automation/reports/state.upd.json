@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 885
   },
-  "generated_at": "2026-08-31T16:25:53Z",
+  "generated_at": "2026-08-31T19:46:07Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -2641,7 +2641,7 @@
     "8548": {
       "author": "theoryshaw",
       "branch": "placement-storey-elevation",
-      "head": "cc6897a",
+      "head": "724021a",
       "status": "merged",
       "title": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8548"
@@ -7251,8 +7251,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608311746",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608311746"
+    "tag": "v0.8.0-alpha2608312106",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608312106"
   },
   "schema": 1
 }
