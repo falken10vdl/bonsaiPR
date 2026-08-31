@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 161,
-    "merged": 547,
+    "merged": 549,
     "skipped_conflict": 121,
     "skipped_draft": 56,
-    "total": 885
+    "total": 887
   },
-  "generated_at": "2026-08-31T06:05:02Z",
+  "generated_at": "2026-08-31T09:03:35Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7250,11 +7250,27 @@
       "status": "skipped_conflict",
       "title": "ifc5d: evaluate IfcEarthworksCut quantities against the host, not the subtraction solid (#9376)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9404"
+    },
+    "9405": {
+      "author": "BIMvoice",
+      "branch": "fix-9352-query-comparison",
+      "head": "1451286",
+      "status": "merged",
+      "title": "Bonsai: keep the comparison operator when a query facet round-trips",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9405"
+    },
+    "9406": {
+      "author": "BIMvoice",
+      "branch": "fix-9353-window-attrs-own-geometry",
+      "head": "9198c24",
+      "status": "merged",
+      "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9406"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608310723",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608310723"
+    "tag": "v0.8.0-alpha2608311023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608311023"
   },
   "schema": 1
 }

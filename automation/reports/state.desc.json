@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 161,
-    "merged": 543,
+    "merged": 544,
     "skipped_conflict": 126,
     "skipped_draft": 56,
-    "total": 886
+    "total": 887
   },
-  "generated_at": "2026-08-31T06:49:06Z",
+  "generated_at": "2026-08-31T09:44:20Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7258,11 +7258,19 @@
       "status": "merged",
       "title": "Bonsai: keep the comparison operator when a query facet round-trips",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9405"
+    },
+    "9406": {
+      "author": "BIMvoice",
+      "branch": "fix-9353-window-attrs-own-geometry",
+      "head": "9198c24",
+      "status": "merged",
+      "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9406"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608310806",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608310806"
+    "tag": "v0.8.0-alpha2608311104",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608311104"
   },
   "schema": 1
 }
