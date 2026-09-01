@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 157,
+    "failed": 159,
     "merged": 542,
     "skipped_conflict": 125,
     "skipped_draft": 58,
-    "total": 882
+    "total": 884
   },
-  "generated_at": "2026-09-01T18:43:27Z",
+  "generated_at": "2026-09-01T21:44:30Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7222,11 +7222,29 @@
       "status": "failed",
       "title": "bsdd: make the include_test_dictionaries default a real boolean",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9416"
+    },
+    "9420": {
+      "author": "BIMvoice",
+      "branch": "fix-9419-layer-assigned-items",
+      "head": "3163714",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "append_asset: fill IfcPresentationLayerAssignment.AssignedItems across appended assets (#9419)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9420"
+    },
+    "9421": {
+      "author": "BIMvoice",
+      "branch": "fix-9419-orphan-placements",
+      "head": "32bbcca",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "geometry: stop stranding copied placement ancestors on removal (#9419)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9421"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609012004",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609012004"
+    "tag": "v0.8.0-alpha2609012304",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609012304"
   },
   "schema": 1
 }
