@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 162,
-    "merged": 544,
-    "skipped_conflict": 126,
-    "skipped_draft": 59,
-    "total": 891
+    "failed": 157,
+    "merged": 542,
+    "skipped_conflict": 125,
+    "skipped_draft": 58,
+    "total": 882
   },
-  "generated_at": "2026-09-01T15:44:24Z",
+  "generated_at": "2026-09-01T18:43:27Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6755,22 +6755,6 @@
       "title": "Add scripts entrypoints",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9277"
     },
-    "9284": {
-      "author": "RickBrice",
-      "branch": "rab_units",
-      "head": "d506f06",
-      "status": "skipped_conflict",
-      "title": "Support per-property/quantity units of measure in the Pset/Qto editor",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9284"
-    },
-    "9287": {
-      "author": "RickBrice",
-      "branch": "rab_bSDD_PickListForAllowedValues",
-      "head": "cffb933",
-      "status": "merged",
-      "title": "Gets the pick list for bSDD properties with Allowed Values working",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9287"
-    },
     "9295": {
       "author": "BIMvoice",
       "branch": "fix-9294-projectlibrary-units",
@@ -6796,14 +6780,6 @@
       "title": "Bonsai: Diff panel silently skips attribute and geometry checks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9297"
     },
-    "9300": {
-      "author": "theoryshaw",
-      "branch": "fix-loadbearing-pset-templates",
-      "head": "49d43a4",
-      "status": "merged",
-      "title": "Fix malformed LoadBearing property templates in IFC4 psets",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9300"
-    },
     "9304": {
       "author": "DesertSpringsCivil",
       "branch": "review/pr1-foundation",
@@ -6812,15 +6788,6 @@
       "status": "failed",
       "title": "Saikei: horizontal alignment authoring foundation for Bonsai (+ alignment API fixes)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9304"
-    },
-    "9305": {
-      "author": "DesertSpringsCivil",
-      "branch": "fix/win-runtime-plugin-collection",
-      "head": "588557a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "win: collect underscore-prefixed runtime plugin DLLs in build artifacts",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9305"
     },
     "9307": {
       "author": "theoryshaw",
@@ -7046,15 +7013,6 @@
       "title": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock (#9369)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9370"
     },
-    "9371": {
-      "author": "aothms",
-      "branch": "address-quadratic-inverse-handling",
-      "head": "2222c0f",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Address quadratic inverse handling",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9371"
-    },
     "9378": {
       "author": "P4A-KLFSBK",
       "branch": "svg-release-storey-hlr-v9",
@@ -7172,15 +7130,6 @@
       "title": "serializers: emit a stable id for nested materials in XML (#5109)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9395"
     },
-    "9396": {
-      "author": "BIMvoice",
-      "branch": "v09r/fix-418-nonmanifold-opening-facesets",
-      "head": "65da4db",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: keep one copy of repeated faces in faceset helper duplicate removal",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9396"
-    },
     "9397": {
       "author": "BIMvoice",
       "branch": "docker-arm64-readme-v09",
@@ -7240,15 +7189,6 @@
       "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9406"
     },
-    "9408": {
-      "author": "RickBrice",
-      "branch": "rab-loft-with-section-raking",
-      "head": "2f7a679",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Honour IfcAxis2PlacementLinear Axis/RefDirection in the loft builder",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9408"
-    },
     "9413": {
       "author": "BIMvoice",
       "branch": "ifctester-strict-xsd-patterns",
@@ -7282,28 +7222,11 @@
       "status": "failed",
       "title": "bsdd: make the include_test_dictionaries default a real boolean",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9416"
-    },
-    "9417": {
-      "author": "BIMvoice",
-      "branch": "fix-9371-hybrid-kernel-dispatch",
-      "head": "697b6ec",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "geom: cache hybrid kernel component resolution to remove per-construction plugin rescans (#9371)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9417"
-    },
-    "9418": {
-      "author": "BIMvoice",
-      "branch": "proto-9417-python-kernel-object",
-      "head": "95888f6",
-      "status": "skipped_draft",
-      "title": "geom: expose a reusable kernel object to Python (prototype for #9417 discussion)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9418"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609011704",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609011704"
+    "tag": "v0.8.0-alpha2609012004",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609012004"
   },
   "schema": 1
 }

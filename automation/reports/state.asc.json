@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 162,
+    "failed": 164,
     "merged": 549,
-    "skipped_conflict": 121,
+    "skipped_conflict": 119,
     "skipped_draft": 59,
     "total": 891
   },
-  "generated_at": "2026-09-01T15:03:39Z",
+  "generated_at": "2026-09-01T18:03:15Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6759,7 +6759,8 @@
       "author": "RickBrice",
       "branch": "rab_units",
       "head": "d506f06",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Support per-property/quantity units of measure in the Pset/Qto editor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9284"
     },
@@ -6767,7 +6768,8 @@
       "author": "RickBrice",
       "branch": "rab_bSDD_PickListForAllowedValues",
       "head": "cffb933",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Gets the pick list for bSDD properties with Allowed Values working",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9287"
     },
@@ -7302,8 +7304,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609011623",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609011623"
+    "tag": "v0.8.0-alpha2609011923",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609011923"
   },
   "schema": 1
 }
