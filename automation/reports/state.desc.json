@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 160,
+    "failed": 161,
     "merged": 544,
     "skipped_conflict": 126,
     "skipped_draft": 58,
-    "total": 888
+    "total": 889
   },
-  "generated_at": "2026-09-01T06:42:33Z",
+  "generated_at": "2026-09-01T09:43:51Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7273,11 +7273,20 @@
       "status": "skipped_draft",
       "title": "ifctester webapp: reorder facets within applicability and requirements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9415"
+    },
+    "9416": {
+      "author": "BIMvoice",
+      "branch": "fix-bsdd-string-default",
+      "head": "6e40ab6",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "bsdd: make the include_test_dictionaries default a real boolean",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9416"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609010803",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609010803"
+    "tag": "v0.8.0-alpha2609011104",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609011104"
   },
   "schema": 1
 }

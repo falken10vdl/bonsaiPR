@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 160,
+    "failed": 162,
     "merged": 541,
     "skipped_conflict": 129,
     "skipped_draft": 58,
-    "total": 888
+    "total": 890
   },
-  "generated_at": "2026-09-01T07:23:18Z",
+  "generated_at": "2026-09-01T10:24:53Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7273,11 +7273,29 @@
       "status": "skipped_draft",
       "title": "ifctester webapp: reorder facets within applicability and requirements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9415"
+    },
+    "9416": {
+      "author": "BIMvoice",
+      "branch": "fix-bsdd-string-default",
+      "head": "6e40ab6",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "bsdd: make the include_test_dictionaries default a real boolean",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9416"
+    },
+    "9417": {
+      "author": "BIMvoice",
+      "branch": "fix-9371-hybrid-kernel-dispatch",
+      "head": "697b6ec",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "geom: cache hybrid kernel component resolution to remove per-construction plugin rescans (#9371)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9417"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609010843",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609010843"
+    "tag": "v0.8.0-alpha2609011144",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609011144"
   },
   "schema": 1
 }

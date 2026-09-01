@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 159,
+    "failed": 161,
     "merged": 549,
     "skipped_conflict": 121,
-    "skipped_draft": 57,
-    "total": 886
+    "skipped_draft": 58,
+    "total": 889
   },
-  "generated_at": "2026-09-01T06:02:48Z",
+  "generated_at": "2026-09-01T09:03:30Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7253,14 +7253,40 @@
       "author": "BIMvoice",
       "branch": "ifctester-strict-xsd-patterns",
       "head": "ca805d7",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifctester: apply strict XSD pattern semantics and warn on non-portable patterns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9413"
+    },
+    "9414": {
+      "author": "BIMvoice",
+      "branch": "webapp-pattern-playground",
+      "head": "e25ef8f",
+      "status": "skipped_draft",
+      "title": "ifctester webapp: Pattern Playground with real ifctester verdicts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9414"
+    },
+    "9415": {
+      "author": "BIMvoice",
+      "branch": "webapp-facet-reorder",
+      "head": "a768d4a",
+      "status": "skipped_draft",
+      "title": "ifctester webapp: reorder facets within applicability and requirements",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9415"
+    },
+    "9416": {
+      "author": "BIMvoice",
+      "branch": "fix-bsdd-string-default",
+      "head": "6e40ab6",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "bsdd: make the include_test_dictionaries default a real boolean",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9416"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609010723",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609010723"
+    "tag": "v0.8.0-alpha2609011023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609011023"
   },
   "schema": 1
 }
