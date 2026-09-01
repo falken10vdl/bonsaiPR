@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 885
   },
-  "generated_at": "2026-08-31T21:44:10Z",
+  "generated_at": "2026-09-01T00:41:40Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7243,7 +7243,7 @@
     "9408": {
       "author": "RickBrice",
       "branch": "rab-loft-with-section-raking",
-      "head": "0b745c4",
+      "head": "2f7a679",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Honour IfcAxis2PlacementLinear Axis/RefDirection in the loft builder",
@@ -7251,8 +7251,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2608312304",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2608312304"
+    "tag": "v0.8.0-alpha2609010203",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609010203"
   },
   "schema": 1
 }
