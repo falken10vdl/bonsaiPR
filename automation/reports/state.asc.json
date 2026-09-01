@@ -4,10 +4,10 @@
     "failed": 159,
     "merged": 549,
     "skipped_conflict": 121,
-    "skipped_draft": 56,
-    "total": 885
+    "skipped_draft": 57,
+    "total": 886
   },
-  "generated_at": "2026-09-01T00:02:20Z",
+  "generated_at": "2026-09-01T06:02:48Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7248,11 +7248,19 @@
       "status": "failed",
       "title": "Honour IfcAxis2PlacementLinear Axis/RefDirection in the loft builder",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9408"
+    },
+    "9413": {
+      "author": "BIMvoice",
+      "branch": "ifctester-strict-xsd-patterns",
+      "head": "ca805d7",
+      "status": "skipped_draft",
+      "title": "ifctester: apply strict XSD pattern semantics and warn on non-portable patterns",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9413"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609010123",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609010123"
+    "tag": "v0.8.0-alpha2609010723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609010723"
   },
   "schema": 1
 }

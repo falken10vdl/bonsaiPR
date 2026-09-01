@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 159,
+    "failed": 160,
     "merged": 544,
     "skipped_conflict": 126,
-    "skipped_draft": 56,
-    "total": 885
+    "skipped_draft": 58,
+    "total": 888
   },
-  "generated_at": "2026-09-01T00:41:40Z",
+  "generated_at": "2026-09-01T06:42:33Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7248,11 +7248,36 @@
       "status": "failed",
       "title": "Honour IfcAxis2PlacementLinear Axis/RefDirection in the loft builder",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9408"
+    },
+    "9413": {
+      "author": "BIMvoice",
+      "branch": "ifctester-strict-xsd-patterns",
+      "head": "ca805d7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifctester: apply strict XSD pattern semantics and warn on non-portable patterns",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9413"
+    },
+    "9414": {
+      "author": "BIMvoice",
+      "branch": "webapp-pattern-playground",
+      "head": "e25ef8f",
+      "status": "skipped_draft",
+      "title": "ifctester webapp: Pattern Playground with real ifctester verdicts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9414"
+    },
+    "9415": {
+      "author": "BIMvoice",
+      "branch": "webapp-facet-reorder",
+      "head": "a768d4a",
+      "status": "skipped_draft",
+      "title": "ifctester webapp: reorder facets within applicability and requirements",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9415"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609010203",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609010203"
+    "tag": "v0.8.0-alpha2609010803",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609010803"
   },
   "schema": 1
 }
