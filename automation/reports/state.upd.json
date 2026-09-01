@@ -4,10 +4,10 @@
     "failed": 162,
     "merged": 541,
     "skipped_conflict": 129,
-    "skipped_draft": 58,
-    "total": 890
+    "skipped_draft": 59,
+    "total": 891
   },
-  "generated_at": "2026-09-01T10:24:53Z",
+  "generated_at": "2026-09-01T13:24:46Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7291,11 +7291,19 @@
       "status": "failed",
       "title": "geom: cache hybrid kernel component resolution to remove per-construction plugin rescans (#9371)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9417"
+    },
+    "9418": {
+      "author": "BIMvoice",
+      "branch": "proto-9417-python-kernel-object",
+      "head": "95888f6",
+      "status": "skipped_draft",
+      "title": "geom: expose a reusable kernel object to Python (prototype for #9417 discussion)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9418"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609011144",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609011144"
+    "tag": "v0.8.0-alpha2609011444",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609011444"
   },
   "schema": 1
 }

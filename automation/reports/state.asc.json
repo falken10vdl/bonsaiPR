@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 161,
+    "failed": 162,
     "merged": 549,
     "skipped_conflict": 121,
-    "skipped_draft": 58,
-    "total": 889
+    "skipped_draft": 59,
+    "total": 891
   },
-  "generated_at": "2026-09-01T09:03:30Z",
+  "generated_at": "2026-09-01T12:03:18Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7282,11 +7282,28 @@
       "status": "failed",
       "title": "bsdd: make the include_test_dictionaries default a real boolean",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9416"
+    },
+    "9417": {
+      "author": "BIMvoice",
+      "branch": "fix-9371-hybrid-kernel-dispatch",
+      "head": "697b6ec",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "geom: cache hybrid kernel component resolution to remove per-construction plugin rescans (#9371)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9417"
+    },
+    "9418": {
+      "author": "BIMvoice",
+      "branch": "proto-9417-python-kernel-object",
+      "head": "95888f6",
+      "status": "skipped_draft",
+      "title": "geom: expose a reusable kernel object to Python (prototype for #9417 discussion)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9418"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609011023",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609011023"
+    "tag": "v0.8.0-alpha2609011323",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609011323"
   },
   "schema": 1
 }
