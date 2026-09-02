@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 160,
-    "merged": 542,
+    "failed": 161,
+    "merged": 543,
     "skipped_conflict": 125,
-    "skipped_draft": 58,
-    "total": 885
+    "skipped_draft": 59,
+    "total": 888
   },
-  "generated_at": "2026-09-02T00:42:40Z",
+  "generated_at": "2026-09-02T10:45:29Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7249,11 +7249,36 @@
       "status": "failed",
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9422"
+    },
+    "9424": {
+      "author": "BIMvoice",
+      "branch": "fix-9423-schema-plugin-diagnostic",
+      "head": "33e696c",
+      "status": "skipped_draft",
+      "title": "ifcopenshell: explain a missing schema plugin instead of a bare No schema named error (#9423)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9424"
+    },
+    "9425": {
+      "author": "BIMvoice",
+      "branch": "fix/schedule-import-path-validation-9409",
+      "head": "b43a656",
+      "status": "merged",
+      "title": "Bonsai: report a clear error when a schedule import path is not a file (#9409)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9425"
+    },
+    "9427": {
+      "author": "BIMvoice",
+      "branch": "packaging-runtime-plugin-collection",
+      "head": "1f6766e",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "packaging: collect underscore-prefixed runtime plugins in every pipeline",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9427"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609020203",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609020203"
+    "tag": "v0.8.0-alpha2609021204",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609021204"
   },
   "schema": 1
 }

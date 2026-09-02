@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 160,
-    "merged": 539,
+    "failed": 161,
+    "merged": 540,
     "skipped_conflict": 128,
     "skipped_draft": 58,
-    "total": 885
+    "total": 887
   },
-  "generated_at": "2026-09-02T01:22:53Z",
+  "generated_at": "2026-09-02T11:26:40Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7249,11 +7249,28 @@
       "status": "failed",
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9422"
+    },
+    "9425": {
+      "author": "BIMvoice",
+      "branch": "fix/schedule-import-path-validation-9409",
+      "head": "b43a656",
+      "status": "merged",
+      "title": "Bonsai: report a clear error when a schedule import path is not a file (#9409)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9425"
+    },
+    "9427": {
+      "author": "BIMvoice",
+      "branch": "packaging-runtime-plugin-collection",
+      "head": "1f6766e",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "packaging: collect underscore-prefixed runtime plugins in every pipeline",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9427"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609020243",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609020243"
+    "tag": "v0.8.0-alpha2609021246",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609021246"
   },
   "schema": 1
 }
