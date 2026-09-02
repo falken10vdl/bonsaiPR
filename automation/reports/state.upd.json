@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 162,
-    "merged": 541,
+    "merged": 542,
     "skipped_conflict": 128,
     "skipped_draft": 58,
-    "total": 889
+    "total": 890
   },
-  "generated_at": "2026-09-02T20:24:22Z",
+  "generated_at": "2026-09-02T23:26:30Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7283,11 +7283,19 @@
       "status": "failed",
       "title": "Bonsai: ALT+Click Select Type reveals, frames and isolates the type (#9438)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9439"
+    },
+    "9441": {
+      "author": "theoryshaw",
+      "branch": "fix-9440-relative-save-path",
+      "head": "dcac3dc",
+      "status": "merged",
+      "title": "Bonsai: resolve IFC save path to absolute before writing (fixes relative-path save failure)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9441"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609022144",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609022144"
+    "tag": "v0.8.0-alpha2609030046",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609030046"
   },
   "schema": 1
 }
