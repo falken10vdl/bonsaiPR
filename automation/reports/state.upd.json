@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 161,
+    "failed": 162,
     "merged": 541,
     "skipped_conflict": 128,
     "skipped_draft": 58,
-    "total": 888
+    "total": 889
   },
-  "generated_at": "2026-09-02T17:25:28Z",
+  "generated_at": "2026-09-02T20:24:22Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7274,11 +7274,20 @@
       "status": "failed",
       "title": "fix(cgal): bound conic segments by mesher-angular-deflection",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9437"
+    },
+    "9439": {
+      "author": "theoryshaw",
+      "branch": "select_type_isolate_9438",
+      "head": "0908b8e",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: ALT+Click Select Type reveals, frames and isolates the type (#9438)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9439"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609021845",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609021845"
+    "tag": "v0.8.0-alpha2609022144",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609022144"
   },
   "schema": 1
 }
