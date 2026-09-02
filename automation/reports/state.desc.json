@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 161,
-    "merged": 543,
+    "failed": 159,
+    "merged": 544,
     "skipped_conflict": 125,
-    "skipped_draft": 59,
-    "total": 888
+    "skipped_draft": 58,
+    "total": 886
   },
-  "generated_at": "2026-09-02T10:45:29Z",
+  "generated_at": "2026-09-02T14:08:31Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7049,42 +7049,6 @@
       "title": "ifctester: install setuptools for the no-isolation wheel build",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9384"
     },
-    "9385": {
-      "author": "BIMvoice",
-      "branch": "fix-v09-lint-drift",
-      "head": "b2c92a1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "lint: restore black and ruff compliance on v0.9.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9385"
-    },
-    "9386": {
-      "author": "BIMvoice",
-      "branch": "fix-ifcdiff-by-guid-v09",
-      "head": "20b9f7a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifcdiff: resolve elements by GlobalId with by_guid on v0.9.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9386"
-    },
-    "9387": {
-      "author": "BIMvoice",
-      "branch": "fix-sql-derived-attr-v09",
-      "head": "6039aae",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "sql: handle derived attributes in sqlite_entity.__getattr__",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9387"
-    },
-    "9388": {
-      "author": "BIMvoice",
-      "branch": "fix-ids-tuple-filter-v09",
-      "head": "027c481",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifctester: chained facet filters ignore tuple results on v0.9.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9388"
-    },
     "9390": {
       "author": "BIMvoice",
       "branch": "v09r/fix-5357-clash-result-order",
@@ -7250,14 +7214,6 @@
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9422"
     },
-    "9424": {
-      "author": "BIMvoice",
-      "branch": "fix-9423-schema-plugin-diagnostic",
-      "head": "33e696c",
-      "status": "skipped_draft",
-      "title": "ifcopenshell: explain a missing schema plugin instead of a bare No schema named error (#9423)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9424"
-    },
     "9425": {
       "author": "BIMvoice",
       "branch": "fix/schedule-import-path-validation-9409",
@@ -7274,11 +7230,37 @@
       "status": "failed",
       "title": "packaging: collect underscore-prefixed runtime plugins in every pipeline",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9427"
+    },
+    "9428": {
+      "author": "BIMvoice",
+      "branch": "fix-9426-slab-empty-polyline",
+      "head": "e0c0dd6",
+      "status": "merged",
+      "title": "Bonsai: drawing a slab with an empty polyline crashes (#9426)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9428"
+    },
+    "9429": {
+      "author": "BIMvoice",
+      "branch": "fix-9380-face-info-ownership",
+      "head": "f7e898c",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "serializers: give face_info ownership semantics so it cannot be shallow copied (#9380)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9429"
+    },
+    "9430": {
+      "author": "aothms",
+      "branch": "address-tests",
+      "head": "9670d3f",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Address tests",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9430"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609021204",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609021204"
+    "tag": "v0.8.0-alpha2609021506",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609021506"
   },
   "schema": 1
 }
