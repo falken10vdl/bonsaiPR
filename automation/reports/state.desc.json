@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 159,
+    "failed": 160,
     "merged": 542,
     "skipped_conflict": 125,
     "skipped_draft": 58,
-    "total": 884
+    "total": 885
   },
-  "generated_at": "2026-09-01T21:44:30Z",
+  "generated_at": "2026-09-02T00:42:40Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7240,11 +7240,20 @@
       "status": "failed",
       "title": "geometry: stop stranding copied placement ancestors on removal (#9419)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9421"
+    },
+    "9422": {
+      "author": "PahlawanJoey",
+      "branch": "fix/extract-elements-v090",
+      "head": "7619384",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9422"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609012304",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609012304"
+    "tag": "v0.8.0-alpha2609020203",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609020203"
   },
   "schema": 1
 }
