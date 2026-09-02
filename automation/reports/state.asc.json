@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 158,
+    "failed": 160,
     "merged": 549,
     "skipped_conflict": 120,
     "skipped_draft": 58,
-    "total": 885
+    "total": 887
   },
-  "generated_at": "2026-09-02T13:04:42Z",
+  "generated_at": "2026-09-02T16:03:39Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7247,11 +7247,29 @@
       "status": "failed",
       "title": "serializers: give face_info ownership semantics so it cannot be shallow copied (#9380)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9429"
+    },
+    "9434": {
+      "author": "BIMvoice",
+      "branch": "unskip-ids-minimal-test",
+      "head": "182e65a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifctester: re-enable the minimal IDS validation test (#9430 follow-up)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9434"
+    },
+    "9435": {
+      "author": "Andrej730",
+      "branch": "ci-ifcwrap-standalone-ccache",
+      "head": "db42ddc",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ci-ifcwrap-standalone: use ccache",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9435"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609021423",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609021423"
+    "tag": "v0.8.0-alpha2609021723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609021723"
   },
   "schema": 1
 }

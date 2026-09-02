@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 159,
+    "failed": 161,
     "merged": 541,
     "skipped_conflict": 128,
     "skipped_draft": 58,
-    "total": 886
+    "total": 888
   },
-  "generated_at": "2026-09-02T15:02:29Z",
+  "generated_at": "2026-09-02T17:25:28Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -4731,7 +4731,7 @@
     "8942": {
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-choco-subprocess-args",
-      "head": "3aa40f2",
+      "head": "7429305",
       "status": "merged",
       "title": "Fix ci-bonsai-choco: subprocess calls given bare multi-word strings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8942"
@@ -7248,19 +7248,37 @@
       "title": "serializers: give face_info ownership semantics so it cannot be shallow copied (#9380)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9429"
     },
-    "9432": {
-      "author": "Andrej730",
-      "branch": "submit-fixes",
-      "head": "5de6982",
+    "9434": {
+      "author": "BIMvoice",
+      "branch": "unskip-ids-minimal-test",
+      "head": "182e65a",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "Submit various fixes",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9432"
+      "title": "ifctester: re-enable the minimal IDS validation test (#9430 follow-up)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9434"
+    },
+    "9436": {
+      "author": "BIMvoice",
+      "branch": "fix-mep-transition-circle-tessellation",
+      "head": "7b77210",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: fix stale MEP transition test expectation baked against the OpenCascade mesher",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9436"
+    },
+    "9437": {
+      "author": "BIMvoice",
+      "branch": "fix-cgal-conic-angular-deflection",
+      "head": "6821b50",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "fix(cgal): bound conic segments by mesher-angular-deflection",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9437"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609021612",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609021612"
+    "tag": "v0.8.0-alpha2609021845",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609021845"
   },
   "schema": 1
 }
