@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 163,
+    "failed": 164,
     "merged": 542,
     "skipped_conflict": 128,
     "skipped_draft": 58,
-    "total": 891
+    "total": 892
   },
-  "generated_at": "2026-09-03T05:23:08Z",
+  "generated_at": "2026-09-03T08:24:27Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7300,11 +7300,20 @@
       "status": "failed",
       "title": "packaging: fail the build when runtime plugins are missing from the artifact",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9442"
+    },
+    "9443": {
+      "author": "BIMvoice",
+      "branch": "test-package-wasm-normalised-version",
+      "head": "6e9d111",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "test_package: build the WASM wheel URL with the normalised version",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9443"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609030643",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609030643"
+    "tag": "v0.8.0-alpha2609030944",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609030944"
   },
   "schema": 1
 }

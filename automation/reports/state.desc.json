@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 162,
+    "failed": 164,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 58,
-    "total": 890
+    "total": 892
   },
-  "generated_at": "2026-09-03T04:42:34Z",
+  "generated_at": "2026-09-03T07:43:14Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -975,7 +975,7 @@
     "8171": {
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
-      "head": "4d031f1",
+      "head": "ad9d368",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add per-drawing render overrides (status_render module)",
@@ -7291,11 +7291,29 @@
       "status": "merged",
       "title": "Bonsai: resolve IFC save path to absolute before writing (fixes relative-path save failure)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9441"
+    },
+    "9442": {
+      "author": "BIMvoice",
+      "branch": "packaging-plugin-guard",
+      "head": "8c3f794",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "packaging: fail the build when runtime plugins are missing from the artifact",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9442"
+    },
+    "9443": {
+      "author": "BIMvoice",
+      "branch": "test-package-wasm-normalised-version",
+      "head": "6e9d111",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "test_package: build the WASM wheel URL with the normalised version",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9443"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609030603",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609030603"
+    "tag": "v0.8.0-alpha2609030903",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609030903"
   },
   "schema": 1
 }
