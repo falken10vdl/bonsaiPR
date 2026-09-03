@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 164,
+    "failed": 165,
     "merged": 550,
     "skipped_conflict": 120,
     "skipped_draft": 58,
-    "total": 892
+    "total": 893
   },
-  "generated_at": "2026-09-03T07:02:54Z",
+  "generated_at": "2026-09-03T15:04:11Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7309,11 +7309,20 @@
       "status": "failed",
       "title": "test_package: build the WASM wheel URL with the normalised version",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9443"
+    },
+    "9444": {
+      "author": "Andrej730",
+      "branch": "ci-cmake-fixes",
+      "head": "7fa7f25",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Submit various fixes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9444"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609030823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609030823"
+    "tag": "v0.8.0-alpha2609031623",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609031623"
   },
   "schema": 1
 }
