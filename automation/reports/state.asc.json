@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 164,
+    "failed": 165,
     "merged": 550,
     "skipped_conflict": 120,
     "skipped_draft": 58,
-    "total": 892
+    "total": 893
   },
-  "generated_at": "2026-09-04T13:03:26Z",
+  "generated_at": "2026-09-04T16:04:10Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7309,11 +7309,20 @@
       "status": "failed",
       "title": "test_package: build the WASM wheel URL with the normalised version",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9443"
+    },
+    "9448": {
+      "author": "theoryshaw",
+      "branch": "representation_item_stale_ids_9447",
+      "head": "02f2b60",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: guard stale representation item ids in the Representation Items panel (#9447)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9448"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609041423",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609041423"
+    "tag": "v0.8.0-alpha2609041723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609041723"
   },
   "schema": 1
 }
