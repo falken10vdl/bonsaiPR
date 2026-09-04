@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 164,
+    "failed": 165,
     "merged": 550,
     "skipped_conflict": 120,
     "skipped_draft": 58,
-    "total": 892
+    "total": 893
   },
-  "generated_at": "2026-09-03T18:03:21Z",
+  "generated_at": "2026-09-04T09:35:25Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7309,11 +7309,20 @@
       "status": "failed",
       "title": "test_package: build the WASM wheel URL with the normalised version",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9443"
+    },
+    "9446": {
+      "author": "Andrej730",
+      "branch": "mathutils-tests",
+      "head": "3ba9047",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcopenshell-python: move `mathutils` related tests to Bonsai",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9446"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609031923",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609031923"
+    "tag": "v0.8.0-alpha2609041023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609041023"
   },
   "schema": 1
 }
