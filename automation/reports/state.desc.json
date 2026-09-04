@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 165,
+    "failed": 166,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 58,
-    "total": 893
+    "total": 894
   },
-  "generated_at": "2026-09-04T16:44:20Z",
+  "generated_at": "2026-09-04T19:43:26Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7318,11 +7318,20 @@
       "status": "failed",
       "title": "Bonsai: guard stale representation item ids in the Representation Items panel (#9447)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9448"
+    },
+    "9449": {
+      "author": "RickBrice",
+      "branch": "fix/ids-entity-filter-tuple-narrowing",
+      "head": "8a0ef5a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ids: normalise Entity.filter() to always return a list",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9449"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609041805",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609041805"
+    "tag": "v0.8.0-alpha2609042104",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609042104"
   },
   "schema": 1
 }
