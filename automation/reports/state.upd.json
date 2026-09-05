@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 166,
+    "failed": 169,
     "merged": 542,
     "skipped_conflict": 128,
     "skipped_draft": 58,
-    "total": 894
+    "total": 897
   },
-  "generated_at": "2026-09-04T20:24:18Z",
+  "generated_at": "2026-09-05T01:23:10Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7327,11 +7327,38 @@
       "status": "failed",
       "title": "ids: normalise Entity.filter() to always return a list",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9449"
+    },
+    "9450": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.16.5",
+      "head": "c7e9249",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump ruff from 0.16.4 to 0.16.5",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9450"
+    },
+    "9451": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.77",
+      "head": "cf8d3eb",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump ty from 0.0.74 to 0.0.77",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9451"
+    },
+    "9452": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/hendrikmuhs/ccache-action-1.2.24",
+      "head": "e0fd6d4",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump hendrikmuhs/ccache-action from 1.2.23 to 1.2.24",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9452"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609042144",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609042144"
+    "tag": "v0.8.0-alpha2609050243",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609050243"
   },
   "schema": 1
 }
