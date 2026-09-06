@@ -7,7 +7,7 @@
     "skipped_draft": 58,
     "total": 897
   },
-  "generated_at": "2026-09-06T07:02:39Z",
+  "generated_at": "2026-09-06T10:02:34Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7251,7 +7251,7 @@
     "9437": {
       "author": "BIMvoice",
       "branch": "fix-cgal-conic-angular-deflection",
-      "head": "6821b50",
+      "head": "e8b471a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "fix(cgal): bound conic segments by mesher-angular-deflection",
@@ -7357,8 +7357,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609060823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609060823"
+    "tag": "v0.8.0-alpha2609061123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609061123"
   },
   "schema": 1
 }

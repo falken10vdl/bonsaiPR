@@ -4,10 +4,10 @@
     "failed": 169,
     "merged": 542,
     "skipped_conflict": 128,
-    "skipped_draft": 59,
-    "total": 898
+    "skipped_draft": 58,
+    "total": 897
   },
-  "generated_at": "2026-09-06T08:22:33Z",
+  "generated_at": "2026-09-06T11:22:32Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7251,7 +7251,7 @@
     "9437": {
       "author": "BIMvoice",
       "branch": "fix-cgal-conic-angular-deflection",
-      "head": "6821b50",
+      "head": "e8b471a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "fix(cgal): bound conic segments by mesher-angular-deflection",
@@ -7354,19 +7354,11 @@
       "status": "failed",
       "title": "ci: run on every pull request again (fixes the merge block in #9453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9454"
-    },
-    "9455": {
-      "author": "FrogsInSpace",
-      "branch": "fix/cgal-triangulation-border-halfedges",
-      "head": "4f0b1b4",
-      "status": "skipped_draft",
-      "title": "Fix border-half-edge bugs in `CgalShape::Triangulate()`",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9455"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609060943",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609060943"
+    "tag": "v0.8.0-alpha2609061243",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609061243"
   },
   "schema": 1
 }
