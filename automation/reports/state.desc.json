@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 170,
+    "failed": 169,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 58,
-    "total": 898
+    "total": 897
   },
-  "generated_at": "2026-09-06T04:42:55Z",
+  "generated_at": "2026-09-06T07:42:23Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7031,15 +7031,6 @@
       "title": "Fix double free of section HLR state",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
     },
-    "9383": {
-      "author": "BIMvoice",
-      "branch": "fix-choco-subprocess-strings",
-      "head": "c81f95b",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "choco: pass subprocess commands as argument lists",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9383"
-    },
     "9384": {
       "author": "BIMvoice",
       "branch": "fix-ifctester-org-setuptools",
@@ -7257,15 +7248,6 @@
       "title": "ifctester: re-enable the minimal IDS validation test (#9430 follow-up)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9434"
     },
-    "9436": {
-      "author": "BIMvoice",
-      "branch": "fix-mep-transition-circle-tessellation",
-      "head": "7b77210",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bonsai: fix stale MEP transition test expectation baked against the OpenCascade mesher",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9436"
-    },
     "9437": {
       "author": "BIMvoice",
       "branch": "fix-cgal-conic-angular-deflection",
@@ -7363,11 +7345,20 @@
       "status": "failed",
       "title": "Gpu snap to v0.9.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9453"
+    },
+    "9454": {
+      "author": "BIMvoice",
+      "branch": "ci-pull-request-no-paths-filter",
+      "head": "3e7f1a3",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ci: run on every pull request again (fixes the merge block in #9453)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9454"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609060604",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609060604"
+    "tag": "v0.8.0-alpha2609060903",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609060903"
   },
   "schema": 1
 }
