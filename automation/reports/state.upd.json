@@ -7,7 +7,7 @@
     "skipped_draft": 58,
     "total": 897
   },
-  "generated_at": "2026-09-06T11:22:32Z",
+  "generated_at": "2026-09-07T13:26:27Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6541,7 +6541,7 @@
     "9241": {
       "author": "BIMvoice",
       "branch": "fix/black-drift-referent-names",
-      "head": "362dc32",
+      "head": "761641b",
       "status": "merged",
       "title": "tests: fix black drift blocking unrelated commits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9241"
@@ -7181,7 +7181,7 @@
     "9420": {
       "author": "BIMvoice",
       "branch": "fix-9419-layer-assigned-items",
-      "head": "3163714",
+      "head": "620f84f",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "append_asset: fill IfcPresentationLayerAssignment.AssignedItems across appended assets (#9419)",
@@ -7190,7 +7190,7 @@
     "9421": {
       "author": "BIMvoice",
       "branch": "fix-9419-orphan-placements",
-      "head": "32bbcca",
+      "head": "3725bac",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "geometry: stop stranding copied placement ancestors on removal (#9419)",
@@ -7357,8 +7357,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609061243",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609061243"
+    "tag": "v0.8.0-alpha2609071446",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609071446"
   },
   "schema": 1
 }
