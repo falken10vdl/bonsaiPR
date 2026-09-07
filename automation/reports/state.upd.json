@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 169,
+    "failed": 170,
     "merged": 542,
-    "skipped_conflict": 129,
+    "skipped_conflict": 128,
     "skipped_draft": 58,
     "total": 898
   },
-  "generated_at": "2026-09-07T19:25:08Z",
+  "generated_at": "2026-09-07T22:26:19Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6865,7 +6865,7 @@
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
       "head": "694abc7",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -7355,18 +7355,19 @@
       "title": "ci: run on every pull request again (fixes the merge block in #9453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9454"
     },
-    "9457": {
-      "author": "brunoperdigao",
-      "branch": "v0.8.0",
-      "head": "f9d252b",
-      "status": "merged",
-      "title": "Snap GPU fix",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9457"
+    "9458": {
+      "author": "gostak-dd",
+      "branch": "fix-aggregate-initializer-precedence",
+      "head": "c68d8fe",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix operator precedence in EXPRESS aggregate initializer repetition",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9458"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609072045",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609072045"
+    "tag": "v0.8.0-alpha2609072345",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609072345"
   },
   "schema": 1
 }

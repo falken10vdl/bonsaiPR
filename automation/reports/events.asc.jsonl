@@ -5742,3 +5742,4 @@
 {"ts": "2026-09-07T12:04:36Z", "order": "ascending", "pr": 9421, "event": "updated", "status": "failed", "from_head": "32bbcca", "to_head": "3725bac"}
 {"ts": "2026-09-07T18:03:35Z", "order": "ascending", "pr": 9422, "event": "updated", "status": "failed", "from_head": "7619384", "to_head": "4db3eaa"}
 {"ts": "2026-09-07T18:03:35Z", "order": "ascending", "pr": 9457, "event": "added", "to": "skipped_conflict"}
+{"ts": "2026-09-07T21:03:39Z", "order": "ascending", "pr": 9457, "event": "removed", "from": "skipped_conflict"}

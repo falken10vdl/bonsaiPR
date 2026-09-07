@@ -3,11 +3,11 @@
   "counts": {
     "failed": 169,
     "merged": 550,
-    "skipped_conflict": 121,
+    "skipped_conflict": 120,
     "skipped_draft": 58,
-    "total": 898
+    "total": 897
   },
-  "generated_at": "2026-09-07T18:03:35Z",
+  "generated_at": "2026-09-07T21:03:39Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7354,19 +7354,11 @@
       "status": "failed",
       "title": "ci: run on every pull request again (fixes the merge block in #9453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9454"
-    },
-    "9457": {
-      "author": "brunoperdigao",
-      "branch": "v0.8.0",
-      "head": "f9d252b",
-      "status": "skipped_conflict",
-      "title": "Snap GPU fix",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9457"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609071923",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609071923"
+    "tag": "v0.8.0-alpha2609072223",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609072223"
   },
   "schema": 1
 }
