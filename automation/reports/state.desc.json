@@ -3,11 +3,11 @@
   "counts": {
     "failed": 169,
     "merged": 545,
-    "skipped_conflict": 125,
+    "skipped_conflict": 126,
     "skipped_draft": 58,
-    "total": 897
+    "total": 898
   },
-  "generated_at": "2026-09-07T15:44:26Z",
+  "generated_at": "2026-09-07T18:44:03Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6865,7 +6865,7 @@
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
       "head": "694abc7",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -7199,7 +7199,7 @@
     "9422": {
       "author": "PahlawanJoey",
       "branch": "fix/extract-elements-v090",
-      "head": "7619384",
+      "head": "4db3eaa",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
@@ -7354,11 +7354,19 @@
       "status": "failed",
       "title": "ci: run on every pull request again (fixes the merge block in #9453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9454"
+    },
+    "9457": {
+      "author": "brunoperdigao",
+      "branch": "v0.8.0",
+      "head": "f9d252b",
+      "status": "merged",
+      "title": "Snap GPU fix",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9457"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609071704",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609071704"
+    "tag": "v0.8.0-alpha2609072004",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609072004"
   },
   "schema": 1
 }

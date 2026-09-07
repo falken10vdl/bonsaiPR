@@ -7,7 +7,7 @@
     "skipped_draft": 58,
     "total": 898
   },
-  "generated_at": "2026-09-07T16:25:52Z",
+  "generated_at": "2026-09-07T19:25:08Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7199,7 +7199,7 @@
     "9422": {
       "author": "PahlawanJoey",
       "branch": "fix/extract-elements-v090",
-      "head": "7619384",
+      "head": "4db3eaa",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
@@ -7365,8 +7365,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609071745",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609071745"
+    "tag": "v0.8.0-alpha2609072045",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609072045"
   },
   "schema": 1
 }

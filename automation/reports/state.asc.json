@@ -3,11 +3,11 @@
   "counts": {
     "failed": 169,
     "merged": 550,
-    "skipped_conflict": 120,
+    "skipped_conflict": 121,
     "skipped_draft": 58,
-    "total": 897
+    "total": 898
   },
-  "generated_at": "2026-09-07T15:03:34Z",
+  "generated_at": "2026-09-07T18:03:35Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7199,7 +7199,7 @@
     "9422": {
       "author": "PahlawanJoey",
       "branch": "fix/extract-elements-v090",
-      "head": "7619384",
+      "head": "4db3eaa",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
@@ -7354,11 +7354,19 @@
       "status": "failed",
       "title": "ci: run on every pull request again (fixes the merge block in #9453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9454"
+    },
+    "9457": {
+      "author": "brunoperdigao",
+      "branch": "v0.8.0",
+      "head": "f9d252b",
+      "status": "skipped_conflict",
+      "title": "Snap GPU fix",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9457"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609071623",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609071623"
+    "tag": "v0.8.0-alpha2609071923",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609071923"
   },
   "schema": 1
 }
