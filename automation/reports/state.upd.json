@@ -3,11 +3,11 @@
   "counts": {
     "failed": 169,
     "merged": 542,
-    "skipped_conflict": 128,
+    "skipped_conflict": 129,
     "skipped_draft": 58,
-    "total": 897
+    "total": 898
   },
-  "generated_at": "2026-09-07T13:26:27Z",
+  "generated_at": "2026-09-07T16:25:52Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -6865,7 +6865,7 @@
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
       "head": "694abc7",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -7354,11 +7354,19 @@
       "status": "failed",
       "title": "ci: run on every pull request again (fixes the merge block in #9453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9454"
+    },
+    "9457": {
+      "author": "brunoperdigao",
+      "branch": "v0.8.0",
+      "head": "f9d252b",
+      "status": "merged",
+      "title": "Snap GPU fix",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9457"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609071446",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609071446"
+    "tag": "v0.8.0-alpha2609071745",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609071745"
   },
   "schema": 1
 }
