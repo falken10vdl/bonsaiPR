@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 169,
+    "failed": 170,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 58,
-    "total": 897
+    "total": 898
   },
-  "generated_at": "2026-09-07T21:44:17Z",
+  "generated_at": "2026-09-08T00:43:09Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7354,11 +7354,20 @@
       "status": "failed",
       "title": "ci: run on every pull request again (fixes the merge block in #9453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9454"
+    },
+    "9458": {
+      "author": "gostak-dd",
+      "branch": "fix-aggregate-initializer-precedence",
+      "head": "c68d8fe",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix operator precedence in EXPRESS aggregate initializer repetition",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9458"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609072304",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609072304"
+    "tag": "v0.8.0-alpha2609080204",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609080204"
   },
   "schema": 1
 }
