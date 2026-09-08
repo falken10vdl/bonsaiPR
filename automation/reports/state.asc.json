@@ -4,10 +4,10 @@
     "failed": 170,
     "merged": 550,
     "skipped_conflict": 120,
-    "skipped_draft": 58,
-    "total": 898
+    "skipped_draft": 59,
+    "total": 899
   },
-  "generated_at": "2026-09-08T00:03:06Z",
+  "generated_at": "2026-09-08T05:03:05Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7363,11 +7363,19 @@
       "status": "failed",
       "title": "Fix operator precedence in EXPRESS aggregate initializer repetition",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9458"
+    },
+    "9459": {
+      "author": "BIMvoice",
+      "branch": "docs/9456-fill-empty-ifc-concepts",
+      "head": "ff92cbf",
+      "status": "skipped_draft",
+      "title": "docs: write the five empty IFC concept sections (#9456)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9459"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609080123",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609080123"
+    "tag": "v0.8.0-alpha2609080623",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609080623"
   },
   "schema": 1
 }
