@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 172,
+    "failed": 174,
     "merged": 542,
     "skipped_conflict": 128,
     "skipped_draft": 59,
-    "total": 901
+    "total": 903
   },
-  "generated_at": "2026-09-09T18:29:06Z",
+  "generated_at": "2026-09-09T21:30:51Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7375,7 +7375,7 @@
     "9463": {
       "author": "aothms",
       "branch": "tfk-fix-to_string-on-eof-marker-token",
-      "head": "d265856",
+      "head": "b5e4b46",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix to_string() on eof marker token",
@@ -7389,11 +7389,29 @@
       "status": "failed",
       "title": "Bonsai: preserve drawing cameras per viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9464"
+    },
+    "9465": {
+      "author": "brunopostle",
+      "branch": "docs-selector-quoting-rule",
+      "head": "493dc55",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Document the quoting rule in the selector syntax",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9465"
+    },
+    "9466": {
+      "author": "brunopostle",
+      "branch": "selector-unquoted-decimal",
+      "head": "f7937aa",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Accept an unquoted decimal in a selector value",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9466"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609091948",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091948"
+    "tag": "v0.8.0-alpha2609092248",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609092248"
   },
   "schema": 1
 }
