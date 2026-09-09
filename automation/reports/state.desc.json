@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 170,
+    "failed": 171,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 59,
-    "total": 899
+    "total": 900
   },
-  "generated_at": "2026-09-08T05:43:10Z",
+  "generated_at": "2026-09-09T08:46:06Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7371,11 +7371,20 @@
       "status": "skipped_draft",
       "title": "docs: write the five empty IFC concept sections (#9456)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9459"
+    },
+    "9460": {
+      "author": "Moult",
+      "branch": "inverse-index-delta",
+      "head": "f05b7b8",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: stop re-sorting the inverse index on every read after a write",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9460"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609080704",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609080704"
+    "tag": "v0.8.0-alpha2609091005",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091005"
   },
   "schema": 1
 }
