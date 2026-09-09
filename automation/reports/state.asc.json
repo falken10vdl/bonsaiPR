@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 172,
+    "failed": 171,
     "merged": 550,
     "skipped_conflict": 120,
     "skipped_draft": 59,
-    "total": 901
+    "total": 900
   },
-  "generated_at": "2026-09-09T11:04:27Z",
+  "generated_at": "2026-09-09T14:06:08Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7310,24 +7310,6 @@
       "title": "ids: normalise Entity.filter() to always return a list",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9449"
     },
-    "9450": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ruff-0.16.5",
-      "head": "c7e9249",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump ruff from 0.16.4 to 0.16.5",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9450"
-    },
-    "9451": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ty-0.0.77",
-      "head": "cf8d3eb",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump ty from 0.0.74 to 0.0.77",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9451"
-    },
     "9452": {
       "author": "dependabot[bot]",
       "branch": "dependabot/github_actions/hendrikmuhs/ccache-action-1.2.24",
@@ -7389,11 +7371,20 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: stop scanning the whole inverse index when deleting an instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9461"
+    },
+    "9463": {
+      "author": "aothms",
+      "branch": "tfk-fix-to_string-on-eof-marker-token",
+      "head": "d265856",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix to_string() on eof marker token",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9463"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609091223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091223"
+    "tag": "v0.8.0-alpha2609091523",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091523"
   },
   "schema": 1
 }

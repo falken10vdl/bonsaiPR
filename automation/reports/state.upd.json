@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 170,
+    "failed": 171,
     "merged": 542,
     "skipped_conflict": 128,
     "skipped_draft": 59,
-    "total": 899
+    "total": 900
   },
-  "generated_at": "2026-09-09T12:28:26Z",
+  "generated_at": "2026-09-09T15:31:00Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7233,7 +7233,7 @@
     "9429": {
       "author": "BIMvoice",
       "branch": "fix-9380-face-info-ownership",
-      "head": "f7e898c",
+      "head": "ad88884",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: give face_info ownership semantics so it cannot be shallow copied (#9380)",
@@ -7371,11 +7371,20 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: stop scanning the whole inverse index when deleting an instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9461"
+    },
+    "9463": {
+      "author": "aothms",
+      "branch": "tfk-fix-to_string-on-eof-marker-token",
+      "head": "d265856",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix to_string() on eof marker token",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9463"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609091347",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091347"
+    "tag": "v0.8.0-alpha2609091649",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091649"
   },
   "schema": 1
 }
