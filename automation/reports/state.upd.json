@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 171,
+    "failed": 172,
     "merged": 542,
     "skipped_conflict": 128,
     "skipped_draft": 59,
-    "total": 900
+    "total": 901
   },
-  "generated_at": "2026-09-09T15:31:00Z",
+  "generated_at": "2026-09-09T18:29:06Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7380,11 +7380,20 @@
       "status": "failed",
       "title": "Fix to_string() on eof marker token",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9463"
+    },
+    "9464": {
+      "author": "franklincg",
+      "branch": "money-agent-6432-multiple-drawings",
+      "head": "8e3d424",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: preserve drawing cameras per viewport",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9464"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609091649",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091649"
+    "tag": "v0.8.0-alpha2609091948",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091948"
   },
   "schema": 1
 }

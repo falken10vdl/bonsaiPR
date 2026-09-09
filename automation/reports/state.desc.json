@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 171,
+    "failed": 172,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 59,
-    "total": 900
+    "total": 901
   },
-  "generated_at": "2026-09-09T14:48:31Z",
+  "generated_at": "2026-09-09T17:46:57Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7233,7 +7233,7 @@
     "9429": {
       "author": "BIMvoice",
       "branch": "fix-9380-face-info-ownership",
-      "head": "f7e898c",
+      "head": "ad88884",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: give face_info ownership semantics so it cannot be shallow copied (#9380)",
@@ -7380,11 +7380,20 @@
       "status": "failed",
       "title": "Fix to_string() on eof marker token",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9463"
+    },
+    "9464": {
+      "author": "franklincg",
+      "branch": "money-agent-6432-multiple-drawings",
+      "head": "8e3d424",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: preserve drawing cameras per viewport",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9464"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609091607",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091607"
+    "tag": "v0.8.0-alpha2609091906",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091906"
   },
   "schema": 1
 }
