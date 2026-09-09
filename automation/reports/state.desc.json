@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 171,
+    "failed": 172,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 59,
-    "total": 900
+    "total": 901
   },
-  "generated_at": "2026-09-09T08:46:06Z",
+  "generated_at": "2026-09-09T11:46:07Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7380,11 +7380,20 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: stop re-sorting the inverse index on every read after a write",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9460"
+    },
+    "9461": {
+      "author": "Moult",
+      "branch": "inverse-index-remove-source",
+      "head": "9384423",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: stop scanning the whole inverse index when deleting an instance",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9461"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609091005",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091005"
+    "tag": "v0.8.0-alpha2609091305",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609091305"
   },
   "schema": 1
 }
