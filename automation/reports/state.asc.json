@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 172,
+    "failed": 171,
     "merged": 550,
     "skipped_conflict": 120,
     "skipped_draft": 59,
-    "total": 901
+    "total": 900
   },
-  "generated_at": "2026-09-10T02:03:52Z",
+  "generated_at": "2026-09-10T08:04:31Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7372,15 +7372,6 @@
       "title": "Bonsai: preserve drawing cameras per viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9464"
     },
-    "9465": {
-      "author": "brunopostle",
-      "branch": "docs-selector-quoting-rule",
-      "head": "493dc55",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Document the quoting rule in the selector syntax",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9465"
-    },
     "9469": {
       "author": "theoryshaw",
       "branch": "pr/remove-drawing-stale-data-id",
@@ -7392,8 +7383,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609100323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609100323"
+    "tag": "v0.8.0-alpha2609100923",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609100923"
   },
   "schema": 1
 }
