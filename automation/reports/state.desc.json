@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 174,
+    "failed": 172,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 59,
-    "total": 903
+    "total": 901
   },
-  "generated_at": "2026-09-09T20:47:14Z",
+  "generated_at": "2026-09-09T23:48:02Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7354,24 +7354,6 @@
       "title": "docs: write the five empty IFC concept sections (#9456)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9459"
     },
-    "9460": {
-      "author": "Moult",
-      "branch": "inverse-index-delta",
-      "head": "f05b7b8",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: stop re-sorting the inverse index on every read after a write",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9460"
-    },
-    "9461": {
-      "author": "Moult",
-      "branch": "inverse-index-remove-source",
-      "head": "9384423",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: stop scanning the whole inverse index when deleting an instance",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9461"
-    },
     "9463": {
       "author": "aothms",
       "branch": "tfk-fix-to_string-on-eof-marker-token",
@@ -7399,19 +7381,19 @@
       "title": "Document the quoting rule in the selector syntax",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9465"
     },
-    "9466": {
-      "author": "brunopostle",
-      "branch": "selector-unquoted-decimal",
-      "head": "f7937aa",
+    "9469": {
+      "author": "theoryshaw",
+      "branch": "pr/remove-drawing-stale-data-id",
+      "head": "4a9cba7",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "Accept an unquoted decimal in a selector value",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9466"
+      "title": "Bonsai: find a sheet's drawing by path when its data-id is stale",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9469"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609092206",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609092206"
+    "tag": "v0.8.0-alpha2609100106",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609100106"
   },
   "schema": 1
 }

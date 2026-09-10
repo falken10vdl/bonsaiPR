@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 173,
+    "failed": 171,
     "merged": 550,
     "skipped_conflict": 120,
     "skipped_draft": 59,
-    "total": 902
+    "total": 900
   },
-  "generated_at": "2026-09-09T20:05:25Z",
+  "generated_at": "2026-09-09T23:05:33Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7354,28 +7354,10 @@
       "title": "docs: write the five empty IFC concept sections (#9456)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9459"
     },
-    "9460": {
-      "author": "Moult",
-      "branch": "inverse-index-delta",
-      "head": "f05b7b8",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: stop re-sorting the inverse index on every read after a write",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9460"
-    },
-    "9461": {
-      "author": "Moult",
-      "branch": "inverse-index-remove-source",
-      "head": "9384423",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: stop scanning the whole inverse index when deleting an instance",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9461"
-    },
     "9463": {
       "author": "aothms",
       "branch": "tfk-fix-to_string-on-eof-marker-token",
-      "head": "d265856",
+      "head": "b5e4b46",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix to_string() on eof marker token",
@@ -7401,8 +7383,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609092123",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609092123"
+    "tag": "v0.8.0-alpha2609100023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609100023"
   },
   "schema": 1
 }

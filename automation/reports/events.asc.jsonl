@@ -5753,3 +5753,6 @@
 {"ts": "2026-09-09T17:05:19Z", "order": "ascending", "pr": 9429, "event": "updated", "status": "failed", "from_head": "f7e898c", "to_head": "ad88884"}
 {"ts": "2026-09-09T17:05:19Z", "order": "ascending", "pr": 9464, "event": "added", "to": "failed"}
 {"ts": "2026-09-09T20:05:25Z", "order": "ascending", "pr": 9465, "event": "added", "to": "failed"}
+{"ts": "2026-09-09T23:05:33Z", "order": "ascending", "pr": 9460, "event": "removed", "from": "failed"}
+{"ts": "2026-09-09T23:05:33Z", "order": "ascending", "pr": 9461, "event": "removed", "from": "failed"}
+{"ts": "2026-09-09T23:05:33Z", "order": "ascending", "pr": 9463, "event": "updated", "status": "failed", "from_head": "d265856", "to_head": "b5e4b46"}
