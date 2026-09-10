@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 171,
+    "failed": 172,
     "merged": 550,
     "skipped_conflict": 120,
     "skipped_draft": 59,
-    "total": 900
+    "total": 901
   },
-  "generated_at": "2026-09-09T23:05:33Z",
+  "generated_at": "2026-09-10T02:03:52Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7380,11 +7380,20 @@
       "status": "failed",
       "title": "Document the quoting rule in the selector syntax",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9465"
+    },
+    "9469": {
+      "author": "theoryshaw",
+      "branch": "pr/remove-drawing-stale-data-id",
+      "head": "4a9cba7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: find a sheet's drawing by path when its data-id is stale",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9469"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609100023",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609100023"
+    "tag": "v0.8.0-alpha2609100323",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609100323"
   },
   "schema": 1
 }
