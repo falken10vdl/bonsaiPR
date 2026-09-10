@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 170,
+    "failed": 171,
     "merged": 550,
     "skipped_conflict": 120,
     "skipped_draft": 59,
-    "total": 899
+    "total": 900
   },
-  "generated_at": "2026-09-10T11:04:54Z",
+  "generated_at": "2026-09-10T17:05:18Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7371,11 +7371,20 @@
       "status": "failed",
       "title": "Bonsai: find a sheet's drawing by path when its data-id is stale",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9469"
+    },
+    "9472": {
+      "author": "franklincg",
+      "branch": "money-agent-6422-svg-overlay",
+      "head": "f16794e",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: preview drawing SVG in camera viewport",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9472"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609101223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609101223"
+    "tag": "v0.8.0-alpha2609101823",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609101823"
   },
   "schema": 1
 }
