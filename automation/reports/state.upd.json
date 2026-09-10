@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 171,
+    "failed": 170,
     "merged": 542,
     "skipped_conflict": 128,
     "skipped_draft": 59,
-    "total": 900
+    "total": 899
   },
-  "generated_at": "2026-09-10T09:29:10Z",
+  "generated_at": "2026-09-10T12:29:05Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7349,19 +7349,10 @@
     "9459": {
       "author": "BIMvoice",
       "branch": "docs/9456-fill-empty-ifc-concepts",
-      "head": "ff92cbf",
+      "head": "3676302",
       "status": "skipped_draft",
       "title": "docs: write the five empty IFC concept sections (#9456)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9459"
-    },
-    "9463": {
-      "author": "aothms",
-      "branch": "tfk-fix-to_string-on-eof-marker-token",
-      "head": "d5a5640",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Fix to_string() on eof marker token",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9463"
     },
     "9464": {
       "author": "franklincg",
@@ -7383,8 +7374,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609101047",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609101047"
+    "tag": "v0.8.0-alpha2609101347",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609101347"
   },
   "schema": 1
 }
