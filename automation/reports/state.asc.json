@@ -7,7 +7,7 @@
     "skipped_draft": 59,
     "total": 901
   },
-  "generated_at": "2026-09-11T14:05:02Z",
+  "generated_at": "2026-09-11T17:04:39Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7366,7 +7366,7 @@
     "9472": {
       "author": "franklincg",
       "branch": "money-agent-6422-svg-overlay",
-      "head": "f16794e",
+      "head": "f1c0eaa",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: preview drawing SVG in camera viewport",
@@ -7392,8 +7392,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609111523",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609111523"
+    "tag": "v0.8.0-alpha2609111823",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609111823"
   },
   "schema": 1
 }
