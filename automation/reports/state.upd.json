@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 172,
+    "failed": 173,
     "merged": 542,
     "skipped_conflict": 128,
     "skipped_draft": 59,
-    "total": 901
+    "total": 902
   },
-  "generated_at": "2026-09-11T18:28:51Z",
+  "generated_at": "2026-09-11T22:29:52Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7375,7 +7375,7 @@
     "9473": {
       "author": "Moult",
       "branch": "open-perf",
-      "head": "e853382",
+      "head": "1e0c2f9",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: faster, leaner open(): reader inlining, dense tables, in-place references, fewer allocations, lazy loading, parallel parsing",
@@ -7389,11 +7389,20 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: inline the file reader accessors and pre-size the inverse index",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9474"
+    },
+    "9478": {
+      "author": "theoryshaw",
+      "branch": "update_current_style_reload_9477",
+      "head": "0583c97",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: reload external styles from .blend in update_current_style",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9478"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609111947",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609111947"
+    "tag": "v0.8.0-alpha2609112347",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609112347"
   },
   "schema": 1
 }
