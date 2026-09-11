@@ -7,7 +7,7 @@
     "skipped_draft": 59,
     "total": 901
   },
-  "generated_at": "2026-09-11T12:28:57Z",
+  "generated_at": "2026-09-11T15:31:27Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7260,7 +7260,7 @@
     "9441": {
       "author": "theoryshaw",
       "branch": "fix-9440-relative-save-path",
-      "head": "dcac3dc",
+      "head": "5095086",
       "status": "merged",
       "title": "Bonsai: resolve IFC save path to absolute before writing (fixes relative-path save failure)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9441"
@@ -7366,7 +7366,7 @@
     "9472": {
       "author": "franklincg",
       "branch": "money-agent-6422-svg-overlay",
-      "head": "f16794e",
+      "head": "f1c0eaa",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: preview drawing SVG in camera viewport",
@@ -7392,8 +7392,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609111347",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609111347"
+    "tag": "v0.8.0-alpha2609111648",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609111648"
   },
   "schema": 1
 }

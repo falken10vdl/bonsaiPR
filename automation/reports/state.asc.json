@@ -7,7 +7,7 @@
     "skipped_draft": 59,
     "total": 901
   },
-  "generated_at": "2026-09-11T11:04:40Z",
+  "generated_at": "2026-09-11T14:05:02Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7260,7 +7260,7 @@
     "9441": {
       "author": "theoryshaw",
       "branch": "fix-9440-relative-save-path",
-      "head": "dcac3dc",
+      "head": "5095086",
       "status": "merged",
       "title": "Bonsai: resolve IFC save path to absolute before writing (fixes relative-path save failure)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9441"
@@ -7375,7 +7375,7 @@
     "9473": {
       "author": "Moult",
       "branch": "open-perf",
-      "head": "707bdf6",
+      "head": "e853382",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: faster, leaner open(): reader inlining, dense tables, in-place references, fewer allocations, lazy loading, parallel parsing",
@@ -7392,8 +7392,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609111223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609111223"
+    "tag": "v0.8.0-alpha2609111523",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609111523"
   },
   "schema": 1
 }

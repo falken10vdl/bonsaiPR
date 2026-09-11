@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 172,
+    "failed": 173,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 59,
-    "total": 901
+    "total": 902
   },
-  "generated_at": "2026-09-11T11:46:05Z",
+  "generated_at": "2026-09-11T14:46:56Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7260,7 +7260,7 @@
     "9441": {
       "author": "theoryshaw",
       "branch": "fix-9440-relative-save-path",
-      "head": "dcac3dc",
+      "head": "5095086",
       "status": "merged",
       "title": "Bonsai: resolve IFC save path to absolute before writing (fixes relative-path save failure)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9441"
@@ -7389,11 +7389,20 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: inline the file reader accessors and pre-size the inverse index",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9474"
+    },
+    "9475": {
+      "author": "Andrej730",
+      "branch": "win-python-port",
+      "head": "50bc3ff",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Port `run-cmake.bat`, `build/install-ifcopenshell.bat` to Python",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9475"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609111305",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609111305"
+    "tag": "v0.8.0-alpha2609111606",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609111606"
   },
   "schema": 1
 }
