@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 171,
+    "failed": 170,
     "merged": 550,
     "skipped_conflict": 120,
     "skipped_draft": 59,
-    "total": 900
+    "total": 899
   },
-  "generated_at": "2026-09-10T17:05:18Z",
+  "generated_at": "2026-09-11T08:04:49Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1609,15 +1609,6 @@
       "status": "merged",
       "title": "win/msys2: make the OpenCOLLADA dependency build skippable via COLLADA_SUPPORT (#6568)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8369"
-    },
-    "8370": {
-      "author": "BIMvoice",
-      "branch": "fix-8050-iterator-race",
-      "head": "6c7b33c",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: clone mapped items before in place mutation to fix nondeterministic multithreaded geometry (#8050)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8370"
     },
     "8371": {
       "author": "BIMvoice",
@@ -7383,8 +7374,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609101823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609101823"
+    "tag": "v0.8.0-alpha2609110923",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609110923"
   },
   "schema": 1
 }

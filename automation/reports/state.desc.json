@@ -7,7 +7,7 @@
     "skipped_draft": 59,
     "total": 900
   },
-  "generated_at": "2026-09-10T17:47:10Z",
+  "generated_at": "2026-09-11T08:46:26Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -1609,15 +1609,6 @@
       "status": "merged",
       "title": "win/msys2: make the OpenCOLLADA dependency build skippable via COLLADA_SUPPORT (#6568)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8369"
-    },
-    "8370": {
-      "author": "BIMvoice",
-      "branch": "fix-8050-iterator-race",
-      "head": "6c7b33c",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: clone mapped items before in place mutation to fix nondeterministic multithreaded geometry (#8050)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8370"
     },
     "8371": {
       "author": "BIMvoice",
@@ -7380,11 +7371,20 @@
       "status": "failed",
       "title": "Bonsai: preview drawing SVG in camera viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9472"
+    },
+    "9473": {
+      "author": "Moult",
+      "branch": "open-perf",
+      "head": "fa99244",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: faster, leaner open(): reader inlining, dense tables, in-place references, fewer allocations, lazy loading",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9473"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609101906",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609101906"
+    "tag": "v0.8.0-alpha2609111005",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609111005"
   },
   "schema": 1
 }
