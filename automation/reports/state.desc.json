@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 173,
+    "failed": 174,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 59,
-    "total": 902
+    "total": 903
   },
-  "generated_at": "2026-09-12T11:44:39Z",
+  "generated_at": "2026-09-12T14:45:31Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7398,11 +7398,20 @@
       "status": "failed",
       "title": "Bonsai: reload external styles from .blend in update_current_style",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9478"
+    },
+    "9479": {
+      "author": "brunopostle",
+      "branch": "reallow-bonsai-without-brickschema",
+      "head": "eabe2e4",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Reallow Bonsai without brickschema",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9479"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609121304",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609121304"
+    "tag": "v0.8.0-alpha2609121604",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609121604"
   },
   "schema": 1
 }
