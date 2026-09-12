@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 174,
+    "failed": 175,
     "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 59,
-    "total": 903
+    "total": 904
   },
-  "generated_at": "2026-09-12T14:45:31Z",
+  "generated_at": "2026-09-12T17:45:02Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7407,11 +7407,20 @@
       "status": "failed",
       "title": "Reallow Bonsai without brickschema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9479"
+    },
+    "9483": {
+      "author": "theoryshaw",
+      "branch": "radial_arrays",
+      "head": "74fbfd9",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: add radial and helical arrays to bim.add_array",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9483"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609121604",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609121604"
+    "tag": "v0.8.0-alpha2609121904",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609121904"
   },
   "schema": 1
 }
