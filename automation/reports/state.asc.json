@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 175,
-    "merged": 550,
+    "failed": 179,
+    "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 59,
-    "total": 904
+    "total": 909
   },
-  "generated_at": "2026-09-12T17:03:56Z",
+  "generated_at": "2026-09-12T23:04:41Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7416,11 +7416,55 @@
       "status": "failed",
       "title": "Bonsai: add radial and helical arrays to bim.add_array",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9483"
+    },
+    "9484": {
+      "author": "brunopostle",
+      "branch": "ifcpatch-general-arrangement-drawings",
+      "head": "caf2957",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcpatch: add GenerateGeneralArrangementDrawings recipe",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9484"
+    },
+    "9485": {
+      "author": "brunopostle",
+      "branch": "bonsai-drawings-active-drawing-guard",
+      "head": "6668f18",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "bonsai: don't raise when the active drawing has been removed",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9485"
+    },
+    "9486": {
+      "author": "brunopostle",
+      "branch": "bonsai-patch-empty-output-path",
+      "head": "a4c42aa",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "bonsai: don't write a patched model when no output path was given",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9486"
+    },
+    "9487": {
+      "author": "brunopostle",
+      "branch": "bonsai-patch-stale-references",
+      "head": "f5de769",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "bonsai: clear stale references after patching the loaded model",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9487"
+    },
+    "9489": {
+      "author": "theoryshaw",
+      "branch": "dev-environment-runtime-libraries",
+      "head": "35bbfa6",
+      "status": "merged",
+      "title": "dev_environment.py: copy the runtime libraries next to the wrapper",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9489"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609121823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609121823"
+    "tag": "v0.8.0-alpha2609130023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609130023"
   },
   "schema": 1
 }
