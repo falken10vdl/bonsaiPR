@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 179,
+    "failed": 180,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 59,
-    "total": 909
+    "total": 910
   },
-  "generated_at": "2026-09-13T13:45:41Z",
+  "generated_at": "2026-09-13T16:46:07Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7460,11 +7460,20 @@
       "status": "merged",
       "title": "dev_environment.py: copy the runtime libraries next to the wrapper",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9489"
+    },
+    "9491": {
+      "author": "theoryshaw",
+      "branch": "fix_unit_scale_on_blend_load",
+      "head": "9c3af02",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: set unit scale when a project is loaded from a .blend (#9490)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9491"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609131505",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609131505"
+    "tag": "v0.8.0-alpha2609131805",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609131805"
   },
   "schema": 1
 }
