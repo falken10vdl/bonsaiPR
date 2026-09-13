@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 179,
+    "failed": 180,
     "merged": 543,
     "skipped_conflict": 128,
     "skipped_draft": 59,
-    "total": 909
+    "total": 910
   },
-  "generated_at": "2026-09-13T11:27:32Z",
+  "generated_at": "2026-09-13T14:27:51Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7375,7 +7375,7 @@
     "9473": {
       "author": "Moult",
       "branch": "open-perf",
-      "head": "1e0c2f9",
+      "head": "db71cb3",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: faster, leaner open(): reader inlining, dense tables, in-place references, fewer allocations, lazy loading, parallel parsing",
@@ -7460,11 +7460,20 @@
       "status": "merged",
       "title": "dev_environment.py: copy the runtime libraries next to the wrapper",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9489"
+    },
+    "9491": {
+      "author": "theoryshaw",
+      "branch": "fix_unit_scale_on_blend_load",
+      "head": "9c3af02",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: set unit scale when a project is loaded from a .blend (#9490)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9491"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609131246",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609131246"
+    "tag": "v0.8.0-alpha2609131546",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609131546"
   },
   "schema": 1
 }

@@ -7,7 +7,7 @@
     "skipped_draft": 59,
     "total": 909
   },
-  "generated_at": "2026-09-13T10:45:40Z",
+  "generated_at": "2026-09-13T13:45:41Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7375,7 +7375,7 @@
     "9473": {
       "author": "Moult",
       "branch": "open-perf",
-      "head": "1e0c2f9",
+      "head": "db71cb3",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: faster, leaner open(): reader inlining, dense tables, in-place references, fewer allocations, lazy loading, parallel parsing",
@@ -7463,8 +7463,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609131205",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609131205"
+    "tag": "v0.8.0-alpha2609131505",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609131505"
   },
   "schema": 1
 }
