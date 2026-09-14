@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 181,
+    "failed": 183,
     "merged": 543,
     "skipped_conflict": 128,
     "skipped_draft": 59,
-    "total": 911
+    "total": 913
   },
-  "generated_at": "2026-09-14T15:33:36Z",
+  "generated_at": "2026-09-14T18:31:16Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7478,11 +7478,29 @@
       "status": "failed",
       "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9494"
+    },
+    "9498": {
+      "author": "CyrilWaechter",
+      "branch": "ci-report-required-checks",
+      "head": "e710133",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Report required CI checks for skipped paths",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9498"
+    },
+    "9499": {
+      "author": "CyrilWaechter",
+      "branch": "ci-bonsai-pr-tests",
+      "head": "cc4d0c7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Add Bonsai tests to pull requests",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9499"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609141651",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609141651"
+    "tag": "v0.8.0-alpha2609141949",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609141949"
   },
   "schema": 1
 }

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 181,
+    "failed": 182,
     "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 59,
-    "total": 911
+    "total": 912
   },
-  "generated_at": "2026-09-14T14:05:32Z",
+  "generated_at": "2026-09-14T17:05:33Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7478,11 +7478,20 @@
       "status": "failed",
       "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9494"
+    },
+    "9497": {
+      "author": "CyrilWaechter",
+      "branch": "fix-null-surface-style-load",
+      "head": "a638b41",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Handle null Styles when loading surface styles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9497"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609141523",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609141523"
+    "tag": "v0.8.0-alpha2609141823",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609141823"
   },
   "schema": 1
 }
