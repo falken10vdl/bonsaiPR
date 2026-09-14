@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 182,
+    "failed": 181,
     "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 59,
-    "total": 912
+    "total": 911
   },
-  "generated_at": "2026-09-14T11:04:53Z",
+  "generated_at": "2026-09-14T14:05:32Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7301,15 +7301,6 @@
       "title": "ids: normalise Entity.filter() to always return a list",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9449"
     },
-    "9452": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/hendrikmuhs/ccache-action-1.2.24",
-      "head": "e0fd6d4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump hendrikmuhs/ccache-action from 1.2.23 to 1.2.24",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9452"
-    },
     "9453": {
       "author": "brunoperdigao",
       "branch": "gpu-snap-v0.9.0",
@@ -7482,7 +7473,7 @@
     "9494": {
       "author": "theoryshaw",
       "branch": "svg_class_per_value",
-      "head": "68f47d8",
+      "head": "aa737ce",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
@@ -7490,8 +7481,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609141223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609141223"
+    "tag": "v0.8.0-alpha2609141523",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609141523"
   },
   "schema": 1
 }
