@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 183,
+    "failed": 182,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 59,
-    "total": 913
+    "total": 912
   },
-  "generated_at": "2026-09-14T05:46:28Z",
+  "generated_at": "2026-09-14T08:46:35Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7487,20 +7487,11 @@
       "status": "failed",
       "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9494"
-    },
-    "9495": {
-      "author": "Moult",
-      "branch": "cleanup/guess-file-type-std-filesystem",
-      "head": "6f486a9",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcparse: use std::filesystem in guess_file_type()",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9495"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609140705",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609140705"
+    "tag": "v0.8.0-alpha2609141005",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609141005"
   },
   "schema": 1
 }
