@@ -7,7 +7,7 @@
     "skipped_draft": 59,
     "total": 913
   },
-  "generated_at": "2026-09-14T18:31:16Z",
+  "generated_at": "2026-09-14T21:31:54Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7455,7 +7455,7 @@
     "9492": {
       "author": "Moult",
       "branch": "open-perf-v2",
-      "head": "f24e9a6",
+      "head": "17ec5d4",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: faster, smaller open(): one tokenizer, references in the slots, lazy loading, parallel and paged parsing",
@@ -7499,8 +7499,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609141949",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609141949"
+    "tag": "v0.8.0-alpha2609142248",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609142248"
   },
   "schema": 1
 }

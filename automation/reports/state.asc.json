@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 182,
+    "failed": 183,
     "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 59,
-    "total": 912
+    "total": 913
   },
-  "generated_at": "2026-09-14T17:05:33Z",
+  "generated_at": "2026-09-14T20:05:18Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7479,19 +7479,28 @@
       "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9494"
     },
-    "9497": {
+    "9498": {
       "author": "CyrilWaechter",
-      "branch": "fix-null-surface-style-load",
-      "head": "a638b41",
+      "branch": "ci-report-required-checks",
+      "head": "e710133",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "Handle null Styles when loading surface styles",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9497"
+      "title": "Report required CI checks for skipped paths",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9498"
+    },
+    "9499": {
+      "author": "CyrilWaechter",
+      "branch": "ci-bonsai-pr-tests",
+      "head": "cc4d0c7",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Add Bonsai tests to pull requests",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9499"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609141823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609141823"
+    "tag": "v0.8.0-alpha2609142123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609142123"
   },
   "schema": 1
 }
