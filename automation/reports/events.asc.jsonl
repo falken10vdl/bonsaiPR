@@ -5788,3 +5788,4 @@
 {"ts": "2026-09-14T05:04:41Z", "order": "ascending", "pr": 9495, "event": "added", "to": "failed"}
 {"ts": "2026-09-14T08:04:43Z", "order": "ascending", "pr": 9044, "event": "updated", "status": "skipped_conflict", "from_head": "1abe07c", "to_head": "25b2b4a"}
 {"ts": "2026-09-14T08:04:43Z", "order": "ascending", "pr": 9495, "event": "removed", "from": "failed"}
+{"ts": "2026-09-14T11:04:53Z", "order": "ascending", "pr": 9492, "event": "updated", "status": "failed", "from_head": "1317b7e", "to_head": "f24e9a6"}
