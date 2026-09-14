@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 182,
+    "failed": 183,
     "merged": 543,
     "skipped_conflict": 128,
     "skipped_draft": 59,
-    "total": 912
+    "total": 913
   },
-  "generated_at": "2026-09-14T03:30:13Z",
+  "generated_at": "2026-09-14T06:29:11Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -5253,7 +5253,7 @@
     "9044": {
       "author": "BIMvoice",
       "branch": "fix/7000-mats-category-selector",
-      "head": "1abe07c",
+      "head": "25b2b4a",
       "status": "merged",
       "title": "util.selector: resolve mats.Category via the material set item",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9044"
@@ -7487,11 +7487,20 @@
       "status": "failed",
       "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9494"
+    },
+    "9495": {
+      "author": "Moult",
+      "branch": "cleanup/guess-file-type-std-filesystem",
+      "head": "6f486a9",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcparse: use std::filesystem in guess_file_type()",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9495"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609140448",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609140448"
+    "tag": "v0.8.0-alpha2609140747",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609140747"
   },
   "schema": 1
 }
