@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 180,
+    "failed": 181,
     "merged": 543,
     "skipped_conflict": 128,
     "skipped_draft": 59,
-    "total": 910
+    "total": 911
   },
-  "generated_at": "2026-09-13T21:31:18Z",
+  "generated_at": "2026-09-14T00:38:05Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7381,15 +7381,6 @@
       "title": "[AI-generated, unverified] ifcparse: faster, leaner open(): reader inlining, dense tables, in-place references, fewer allocations, lazy loading, parallel parsing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9473"
     },
-    "9474": {
-      "author": "Moult",
-      "branch": "open-perf-reader",
-      "head": "0795930",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: inline the file reader accessors and pre-size the inverse index",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9474"
-    },
     "9478": {
       "author": "theoryshaw",
       "branch": "update_current_style_reload_9477",
@@ -7469,11 +7460,29 @@
       "status": "failed",
       "title": "Bonsai: set unit scale when a project is loaded from a .blend (#9490)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9491"
+    },
+    "9492": {
+      "author": "Moult",
+      "branch": "open-perf-v2",
+      "head": "1317b7e",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: faster, smaller open(): one tokenizer, references in the slots, lazy loading, parallel and paged parsing",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9492"
+    },
+    "9493": {
+      "author": "theoryshaw",
+      "branch": "join_cut_material_layers",
+      "head": "6f0a349",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: key cut linework on the material of the cut, not the layer set",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9493"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609132248",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609132248"
+    "tag": "v0.8.0-alpha2609140156",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609140156"
   },
   "schema": 1
 }
