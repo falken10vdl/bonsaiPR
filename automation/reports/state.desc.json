@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 183,
+    "failed": 182,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 60,
-    "total": 914
+    "total": 913
   },
-  "generated_at": "2026-09-15T12:49:22Z",
+  "generated_at": "2026-09-15T15:48:51Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7301,15 +7301,6 @@
       "title": "ids: normalise Entity.filter() to always return a list",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9449"
     },
-    "9454": {
-      "author": "BIMvoice",
-      "branch": "ci-pull-request-no-paths-filter",
-      "head": "3e7f1a3",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ci: run on every pull request again (fixes the merge block in #9453)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9454"
-    },
     "9458": {
       "author": "gostak-dd",
       "branch": "fix-aggregate-initializer-precedence",
@@ -7507,8 +7498,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609151407",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609151407"
+    "tag": "v0.8.0-alpha2609151707",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609151707"
   },
   "schema": 1
 }
