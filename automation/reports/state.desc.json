@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 182,
+    "failed": 184,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 60,
-    "total": 913
+    "total": 915
   },
-  "generated_at": "2026-09-15T15:48:51Z",
+  "generated_at": "2026-09-15T19:48:06Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7495,11 +7495,29 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcopenshell-python: decide remove_deep2 containment in C++ without materializing inverses",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9502"
+    },
+    "9505": {
+      "author": "RickBrice",
+      "branch": "rab-infra-project-templates",
+      "head": "f476d0d",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Adds project templates for IFC4x3 Road and Bridge",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9505"
+    },
+    "9507": {
+      "author": "theoryshaw",
+      "branch": "save_blend_retry_on_lock_9506",
+      "head": "fd7d8dc",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: retry the .blend save in save_project when the file is briefly locked (#9506)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9507"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609151707",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609151707"
+    "tag": "v0.8.0-alpha2609152106",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609152106"
   },
   "schema": 1
 }

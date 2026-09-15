@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 182,
+    "failed": 183,
     "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 60,
-    "total": 913
+    "total": 914
   },
-  "generated_at": "2026-09-15T15:06:23Z",
+  "generated_at": "2026-09-15T19:05:44Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7495,11 +7495,20 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcopenshell-python: decide remove_deep2 containment in C++ without materializing inverses",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9502"
+    },
+    "9505": {
+      "author": "RickBrice",
+      "branch": "rab-infra-project-templates",
+      "head": "f476d0d",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Adds project templates for IFC4x3 Road and Bridge",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9505"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609151623",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609151623"
+    "tag": "v0.8.0-alpha2609152023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609152023"
   },
   "schema": 1
 }
