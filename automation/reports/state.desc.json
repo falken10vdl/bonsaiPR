@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 183,
+    "failed": 182,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 60,
-    "total": 914
+    "total": 913
   },
-  "generated_at": "2026-09-14T23:49:01Z",
+  "generated_at": "2026-09-15T02:47:14Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7301,15 +7301,6 @@
       "title": "ids: normalise Entity.filter() to always return a list",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9449"
     },
-    "9453": {
-      "author": "brunoperdigao",
-      "branch": "gpu-snap-v0.9.0",
-      "head": "72cf499",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Gpu snap to v0.9.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9453"
-    },
     "9454": {
       "author": "BIMvoice",
       "branch": "ci-pull-request-no-paths-filter",
@@ -7507,8 +7498,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609150106",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609150106"
+    "tag": "v0.8.0-alpha2609150405",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609150405"
   },
   "schema": 1
 }
