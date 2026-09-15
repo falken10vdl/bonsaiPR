@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 183,
+    "failed": 182,
     "merged": 543,
     "skipped_conflict": 128,
-    "skipped_draft": 59,
+    "skipped_draft": 60,
     "total": 913
   },
-  "generated_at": "2026-09-14T21:31:54Z",
+  "generated_at": "2026-09-15T00:31:05Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7301,15 +7301,6 @@
       "title": "ids: normalise Entity.filter() to always return a list",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9449"
     },
-    "9453": {
-      "author": "brunoperdigao",
-      "branch": "gpu-snap-v0.9.0",
-      "head": "72cf499",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Gpu snap to v0.9.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9453"
-    },
     "9454": {
       "author": "BIMvoice",
       "branch": "ci-pull-request-no-paths-filter",
@@ -7496,11 +7487,19 @@
       "status": "failed",
       "title": "Add Bonsai tests to pull requests",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9499"
+    },
+    "9500": {
+      "author": "EstebanDugueperoux2",
+      "branch": "feat/UseConanV0.9.0",
+      "head": "fb6752d",
+      "status": "skipped_draft",
+      "title": "feat: Use conan instead of custom python scripts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609142248",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609142248"
+    "tag": "v0.8.0-alpha2609150149",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609150149"
   },
   "schema": 1
 }

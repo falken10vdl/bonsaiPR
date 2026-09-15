@@ -4,10 +4,10 @@
     "failed": 183,
     "merged": 546,
     "skipped_conflict": 125,
-    "skipped_draft": 59,
-    "total": 913
+    "skipped_draft": 60,
+    "total": 914
   },
-  "generated_at": "2026-09-14T20:47:21Z",
+  "generated_at": "2026-09-14T23:49:01Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7455,7 +7455,7 @@
     "9492": {
       "author": "Moult",
       "branch": "open-perf-v2",
-      "head": "f24e9a6",
+      "head": "17ec5d4",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: faster, smaller open(): one tokenizer, references in the slots, lazy loading, parallel and paged parsing",
@@ -7496,11 +7496,19 @@
       "status": "failed",
       "title": "Add Bonsai tests to pull requests",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9499"
+    },
+    "9500": {
+      "author": "EstebanDugueperoux2",
+      "branch": "feat/UseConanV0.9.0",
+      "head": "fb6752d",
+      "status": "skipped_draft",
+      "title": "feat: Use conan instead of custom python scripts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609142206",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609142206"
+    "tag": "v0.8.0-alpha2609150106",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609150106"
   },
   "schema": 1
 }
