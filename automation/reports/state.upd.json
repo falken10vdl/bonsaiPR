@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 183,
-    "merged": 543,
-    "skipped_conflict": 128,
+    "merged": 542,
+    "skipped_conflict": 129,
     "skipped_draft": 60,
     "total": 914
   },
-  "generated_at": "2026-09-15T20:31:47Z",
+  "generated_at": "2026-09-15T23:39:17Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -5839,7 +5839,7 @@
       "author": "BIMvoice",
       "branch": "fix/get-quantities-complex-verbose-keyerror",
       "head": "a8c3c30",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util.element: fix KeyError in get_quantities(verbose=True), the twin of a fix already applied to get_properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9126"
     },
@@ -7507,8 +7507,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609152149",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609152149"
+    "tag": "v0.8.0-alpha2609160054",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609160054"
   },
   "schema": 1
 }
