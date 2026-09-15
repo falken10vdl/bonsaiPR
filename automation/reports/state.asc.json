@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 182,
+    "failed": 183,
     "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 60,
-    "total": 913
+    "total": 914
   },
-  "generated_at": "2026-09-15T05:04:41Z",
+  "generated_at": "2026-09-15T09:05:25Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7495,11 +7495,20 @@
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
+    },
+    "9502": {
+      "author": "Moult",
+      "branch": "remove-deep2-containment",
+      "head": "4efa21c",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcopenshell-python: decide remove_deep2 containment in C++ without materializing inverses",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9502"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609150623",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609150623"
+    "tag": "v0.8.0-alpha2609151023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609151023"
   },
   "schema": 1
 }
