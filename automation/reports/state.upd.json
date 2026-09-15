@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 183,
+    "failed": 182,
     "merged": 543,
     "skipped_conflict": 128,
     "skipped_draft": 60,
-    "total": 914
+    "total": 913
   },
-  "generated_at": "2026-09-15T10:31:03Z",
+  "generated_at": "2026-09-15T13:32:42Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7301,15 +7301,6 @@
       "title": "ids: normalise Entity.filter() to always return a list",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9449"
     },
-    "9454": {
-      "author": "BIMvoice",
-      "branch": "ci-pull-request-no-paths-filter",
-      "head": "3e7f1a3",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ci: run on every pull request again (fixes the merge block in #9453)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9454"
-    },
     "9458": {
       "author": "gostak-dd",
       "branch": "fix-aggregate-initializer-precedence",
@@ -7499,7 +7490,7 @@
     "9502": {
       "author": "Moult",
       "branch": "remove-deep2-containment",
-      "head": "4efa21c",
+      "head": "ba070e0",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcopenshell-python: decide remove_deep2 containment in C++ without materializing inverses",
@@ -7507,8 +7498,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609151149",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609151149"
+    "tag": "v0.8.0-alpha2609151450",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609151450"
   },
   "schema": 1
 }

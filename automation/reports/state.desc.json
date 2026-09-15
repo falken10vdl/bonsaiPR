@@ -7,7 +7,7 @@
     "skipped_draft": 60,
     "total": 914
   },
-  "generated_at": "2026-09-15T09:47:54Z",
+  "generated_at": "2026-09-15T12:49:22Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7499,7 +7499,7 @@
     "9502": {
       "author": "Moult",
       "branch": "remove-deep2-containment",
-      "head": "4efa21c",
+      "head": "ba070e0",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcopenshell-python: decide remove_deep2 containment in C++ without materializing inverses",
@@ -7507,8 +7507,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609151106",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609151106"
+    "tag": "v0.8.0-alpha2609151407",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609151407"
   },
   "schema": 1
 }
