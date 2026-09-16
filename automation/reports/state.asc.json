@@ -4,10 +4,10 @@
     "failed": 184,
     "merged": 551,
     "skipped_conflict": 120,
-    "skipped_draft": 60,
-    "total": 915
+    "skipped_draft": 61,
+    "total": 916
   },
-  "generated_at": "2026-09-16T14:06:15Z",
+  "generated_at": "2026-09-16T17:05:36Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7513,11 +7513,19 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: make deleting and creating instances work on RocksDB-backed files",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9508"
+    },
+    "9512": {
+      "author": "BIMvoice",
+      "branch": "fix-mep-transition-representationtype-typo",
+      "head": "af02ce1",
+      "status": "skipped_draft",
+      "title": "shape_builder: write a valid RepresentationType for MEP transitions",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9512"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609161523",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609161523"
+    "tag": "v0.8.0-alpha2609161823",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609161823"
   },
   "schema": 1
 }
