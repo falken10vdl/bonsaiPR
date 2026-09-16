@@ -7,7 +7,7 @@
     "skipped_draft": 60,
     "total": 915
   },
-  "generated_at": "2026-09-16T11:48:17Z",
+  "generated_at": "2026-09-16T14:49:31Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7508,7 +7508,7 @@
     "9508": {
       "author": "Moult",
       "branch": "rocksdb-editing",
-      "head": "4433d8b",
+      "head": "78b7285",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: make deleting and creating instances work on RocksDB-backed files",
@@ -7516,8 +7516,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609161306",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609161306"
+    "tag": "v0.8.0-alpha2609161607",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609161607"
   },
   "schema": 1
 }
