@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 183,
-    "merged": 551,
-    "skipped_conflict": 120,
+    "failed": 184,
+    "merged": 550,
+    "skipped_conflict": 121,
     "skipped_draft": 60,
-    "total": 914
+    "total": 915
   },
-  "generated_at": "2026-09-15T22:07:26Z",
+  "generated_at": "2026-09-16T01:07:01Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -440,7 +440,7 @@
       "author": "falken10vdl",
       "branch": "vscode-dev-env-fix-for-linux",
       "head": "2b8d9e9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix JSON formatting in launch.json and add \"justMyCode\":false to allow for breakpoints in Linux",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7769"
     },
@@ -7504,11 +7504,20 @@
       "status": "failed",
       "title": "Bonsai: retry the .blend save in save_project when the file is briefly locked (#9506)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9507"
+    },
+    "9508": {
+      "author": "Moult",
+      "branch": "rocksdb-editing",
+      "head": "4433d8b",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: make deleting and creating instances work on RocksDB-backed files",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9508"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609152323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609152323"
+    "tag": "v0.8.0-alpha2609160223",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609160223"
   },
   "schema": 1
 }

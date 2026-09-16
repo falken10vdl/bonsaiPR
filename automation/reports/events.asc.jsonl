@@ -5806,3 +5806,5 @@
 {"ts": "2026-09-15T22:07:26Z", "order": "ascending", "pr": 9473, "event": "removed", "from": "failed"}
 {"ts": "2026-09-15T22:07:26Z", "order": "ascending", "pr": 9492, "event": "updated", "status": "failed", "from_head": "788d257", "to_head": "5f4ecdc"}
 {"ts": "2026-09-15T22:07:26Z", "order": "ascending", "pr": 9507, "event": "added", "to": "failed"}
+{"ts": "2026-09-16T01:07:01Z", "order": "ascending", "pr": 7769, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-09-16T01:07:01Z", "order": "ascending", "pr": 9508, "event": "added", "to": "failed"}

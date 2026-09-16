@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 183,
-    "merged": 545,
-    "skipped_conflict": 126,
+    "failed": 184,
+    "merged": 546,
+    "skipped_conflict": 125,
     "skipped_draft": 60,
-    "total": 914
+    "total": 915
   },
-  "generated_at": "2026-09-15T22:53:40Z",
+  "generated_at": "2026-09-16T01:49:31Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -3887,7 +3887,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6426-text-sizes",
       "head": "aa588ce",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add 1.3 mm and 1.5 mm annotation text sizes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8797"
     },
@@ -7504,11 +7504,20 @@
       "status": "failed",
       "title": "Bonsai: retry the .blend save in save_project when the file is briefly locked (#9506)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9507"
+    },
+    "9508": {
+      "author": "Moult",
+      "branch": "rocksdb-editing",
+      "head": "4433d8b",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: make deleting and creating instances work on RocksDB-backed files",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9508"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609160008",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609160008"
+    "tag": "v0.8.0-alpha2609160308",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609160308"
   },
   "schema": 1
 }
