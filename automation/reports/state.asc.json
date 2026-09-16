@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 184,
-    "merged": 550,
-    "skipped_conflict": 121,
+    "merged": 551,
+    "skipped_conflict": 120,
     "skipped_draft": 60,
     "total": 915
   },
-  "generated_at": "2026-09-16T01:07:01Z",
+  "generated_at": "2026-09-16T04:04:53Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -440,7 +440,7 @@
       "author": "falken10vdl",
       "branch": "vscode-dev-env-fix-for-linux",
       "head": "2b8d9e9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix JSON formatting in launch.json and add \"justMyCode\":false to allow for breakpoints in Linux",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7769"
     },
@@ -7516,8 +7516,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609160223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609160223"
+    "tag": "v0.8.0-alpha2609160523",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609160523"
   },
   "schema": 1
 }
