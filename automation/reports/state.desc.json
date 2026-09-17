@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 188,
+    "failed": 184,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 61,
-    "total": 920
+    "total": 916
   },
-  "generated_at": "2026-09-17T09:48:09Z",
+  "generated_at": "2026-09-17T12:48:11Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7469,15 +7469,6 @@
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
     },
-    "9502": {
-      "author": "Moult",
-      "branch": "remove-deep2-containment",
-      "head": "eb7d11a",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcopenshell-python: decide remove_deep2 containment in C++ without materializing inverses",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9502"
-    },
     "9505": {
       "author": "RickBrice",
       "branch": "rab-infra-project-templates",
@@ -7495,15 +7486,6 @@
       "status": "failed",
       "title": "Bonsai: retry the .blend save in save_project when the file is briefly locked (#9506)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9507"
-    },
-    "9508": {
-      "author": "Moult",
-      "branch": "rocksdb-editing",
-      "head": "3647dda",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: make deleting and creating instances work on RocksDB-backed files",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9508"
     },
     "9512": {
       "author": "BIMvoice",
@@ -7531,28 +7513,10 @@
       "title": "Bonsai: fuse underside clip solids into one UNION tool (#9516)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9517"
     },
-    "9518": {
-      "author": "Moult",
-      "branch": "fix/shared-occt-all-platforms",
-      "head": "25c1170",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Build OpenCASCADE shared on every platform, and test the packages for it",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9518"
-    },
-    "9519": {
-      "author": "Moult",
-      "branch": "fix/wasm-ifcparse-boost-headers",
-      "head": "8db682a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Fix v0.9.0 head build regressions on wasm, Windows and macOS",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9519"
-    },
     "9520": {
       "author": "Moult",
       "branch": "bytype-lazy-erase",
-      "head": "95af68d",
+      "head": "65722ba",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: stop scanning a type's instance list when deleting an instance",
@@ -7560,8 +7524,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609171106",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609171106"
+    "tag": "v0.8.0-alpha2609171406",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609171406"
   },
   "schema": 1
 }
