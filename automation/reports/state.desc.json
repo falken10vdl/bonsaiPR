@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 184,
+    "failed": 186,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 61,
-    "total": 916
+    "total": 918
   },
-  "generated_at": "2026-09-17T12:48:11Z",
+  "generated_at": "2026-09-17T22:51:59Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7464,7 +7464,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "fb6752d",
+      "head": "b467451",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7521,11 +7521,29 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: stop scanning a type's instance list when deleting an instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9520"
+    },
+    "9523": {
+      "author": "theoryshaw",
+      "branch": "extend_to_cursor_base_levels_7950",
+      "head": "88fa46b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "fix(bonsai): extend walls to cursor from any base level",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
+    },
+    "9525": {
+      "author": "Moult",
+      "branch": "ci-bonsai-daily-drop-py312",
+      "head": "cb6d64a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "bonsai: drop py312 from the daily and release builds",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9525"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609171406",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609171406"
+    "tag": "v0.8.0-alpha2609180008",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180008"
   },
   "schema": 1
 }
