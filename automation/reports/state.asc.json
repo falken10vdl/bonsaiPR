@@ -7,7 +7,7 @@
     "skipped_draft": 61,
     "total": 918
   },
-  "generated_at": "2026-09-17T03:04:44Z",
+  "generated_at": "2026-09-17T06:04:55Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -6895,15 +6895,6 @@
       "title": "Bonsai: reduce CPU cost of the proximity snap path",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9340"
     },
-    "9341": {
-      "author": "Moult",
-      "branch": "fix/occt-shared-linkage",
-      "head": "7845f8e",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ci: build OCCT shared on Linux so plug-ins share one OCCT instance",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9341"
-    },
     "9349": {
       "author": "sboddy",
       "branch": "fix-9348-single-instance-openings",
@@ -7539,11 +7530,20 @@
       "status": "failed",
       "title": "Bonsai: fuse underside clip solids into one UNION tool (#9516)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9517"
+    },
+    "9518": {
+      "author": "Moult",
+      "branch": "fix/shared-occt-all-platforms",
+      "head": "d4de6e4",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Build OpenCASCADE shared on every platform, and test the packages for it",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9518"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609170423",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609170423"
+    "tag": "v0.8.0-alpha2609170723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609170723"
   },
   "schema": 1
 }

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 186,
+    "failed": 187,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 61,
-    "total": 918
+    "total": 919
   },
-  "generated_at": "2026-09-17T03:47:31Z",
+  "generated_at": "2026-09-17T06:47:26Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -6895,15 +6895,6 @@
       "title": "Bonsai: reduce CPU cost of the proximity snap path",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9340"
     },
-    "9341": {
-      "author": "Moult",
-      "branch": "fix/occt-shared-linkage",
-      "head": "7845f8e",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ci: build OCCT shared on Linux so plug-ins share one OCCT instance",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9341"
-    },
     "9349": {
       "author": "sboddy",
       "branch": "fix-9348-single-instance-openings",
@@ -7481,7 +7472,7 @@
     "9502": {
       "author": "Moult",
       "branch": "remove-deep2-containment",
-      "head": "ba070e0",
+      "head": "eb7d11a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcopenshell-python: decide remove_deep2 containment in C++ without materializing inverses",
@@ -7508,7 +7499,7 @@
     "9508": {
       "author": "Moult",
       "branch": "rocksdb-editing",
-      "head": "221ef96",
+      "head": "3647dda",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: make deleting and creating instances work on RocksDB-backed files",
@@ -7539,11 +7530,29 @@
       "status": "failed",
       "title": "Bonsai: fuse underside clip solids into one UNION tool (#9516)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9517"
+    },
+    "9518": {
+      "author": "Moult",
+      "branch": "fix/shared-occt-all-platforms",
+      "head": "72cc2c6",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Build OpenCASCADE shared on every platform, and test the packages for it",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9518"
+    },
+    "9519": {
+      "author": "Moult",
+      "branch": "fix/wasm-ifcparse-boost-headers",
+      "head": "1ca0045",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "cmake: give the wasm IfcParse its Boost headers back",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9519"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609170505",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609170505"
+    "tag": "v0.8.0-alpha2609170805",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609170805"
   },
   "schema": 1
 }
