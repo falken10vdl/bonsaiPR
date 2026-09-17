@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 184,
-    "merged": 551,
-    "skipped_conflict": 120,
+    "failed": 185,
+    "merged": 550,
+    "skipped_conflict": 121,
     "skipped_draft": 61,
-    "total": 916
+    "total": 917
   },
-  "generated_at": "2026-09-16T17:05:36Z",
+  "generated_at": "2026-09-17T00:08:58Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1109,7 +1109,7 @@
       "author": "BIMvoice",
       "branch": "fix/format-length-non-numeric-5297",
       "head": "9889fbc",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Selector: length formatters pass non-numeric values through (#5297)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8268"
     },
@@ -7521,11 +7521,20 @@
       "status": "skipped_draft",
       "title": "shape_builder: write a valid RepresentationType for MEP transitions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9512"
+    },
+    "9515": {
+      "author": "theoryshaw",
+      "branch": "roof_footprint_flatten_9514",
+      "head": "e6f3b5b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: flatten roof footprint instead of failing, keep path preview, direct_profile_edit support",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9515"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609161823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609161823"
+    "tag": "v0.8.0-alpha2609170123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609170123"
   },
   "schema": 1
 }
