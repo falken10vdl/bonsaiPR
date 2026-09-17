@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 186,
+    "failed": 188,
     "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 61,
-    "total": 918
+    "total": 920
   },
-  "generated_at": "2026-09-17T06:04:55Z",
+  "generated_at": "2026-09-17T09:05:22Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7472,7 +7472,7 @@
     "9502": {
       "author": "Moult",
       "branch": "remove-deep2-containment",
-      "head": "ba070e0",
+      "head": "eb7d11a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcopenshell-python: decide remove_deep2 containment in C++ without materializing inverses",
@@ -7499,7 +7499,7 @@
     "9508": {
       "author": "Moult",
       "branch": "rocksdb-editing",
-      "head": "221ef96",
+      "head": "3647dda",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: make deleting and creating instances work on RocksDB-backed files",
@@ -7534,16 +7534,34 @@
     "9518": {
       "author": "Moult",
       "branch": "fix/shared-occt-all-platforms",
-      "head": "d4de6e4",
+      "head": "25c1170",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Build OpenCASCADE shared on every platform, and test the packages for it",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9518"
+    },
+    "9519": {
+      "author": "Moult",
+      "branch": "fix/wasm-ifcparse-boost-headers",
+      "head": "8db682a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix v0.9.0 head build regressions on wasm, Windows and macOS",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9519"
+    },
+    "9520": {
+      "author": "Moult",
+      "branch": "bytype-lazy-erase",
+      "head": "95af68d",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: stop scanning a type's instance list when deleting an instance",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9520"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609170723",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609170723"
+    "tag": "v0.8.0-alpha2609171023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609171023"
   },
   "schema": 1
 }

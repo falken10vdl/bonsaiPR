@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 187,
+    "failed": 188,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 61,
-    "total": 919
+    "total": 920
   },
-  "generated_at": "2026-09-17T06:47:26Z",
+  "generated_at": "2026-09-17T09:48:09Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7534,7 +7534,7 @@
     "9518": {
       "author": "Moult",
       "branch": "fix/shared-occt-all-platforms",
-      "head": "72cc2c6",
+      "head": "25c1170",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Build OpenCASCADE shared on every platform, and test the packages for it",
@@ -7543,16 +7543,25 @@
     "9519": {
       "author": "Moult",
       "branch": "fix/wasm-ifcparse-boost-headers",
-      "head": "1ca0045",
+      "head": "8db682a",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "cmake: give the wasm IfcParse its Boost headers back",
+      "title": "Fix v0.9.0 head build regressions on wasm, Windows and macOS",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9519"
+    },
+    "9520": {
+      "author": "Moult",
+      "branch": "bytype-lazy-erase",
+      "head": "95af68d",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: stop scanning a type's instance list when deleting an instance",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9520"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609170805",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609170805"
+    "tag": "v0.8.0-alpha2609171106",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609171106"
   },
   "schema": 1
 }
