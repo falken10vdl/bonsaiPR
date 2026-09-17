@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 185,
-    "merged": 550,
-    "skipped_conflict": 121,
+    "failed": 186,
+    "merged": 551,
+    "skipped_conflict": 120,
     "skipped_draft": 61,
-    "total": 917
+    "total": 918
   },
-  "generated_at": "2026-09-17T00:08:58Z",
+  "generated_at": "2026-09-17T03:04:44Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -1109,7 +1109,7 @@
       "author": "BIMvoice",
       "branch": "fix/format-length-non-numeric-5297",
       "head": "9889fbc",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Selector: length formatters pass non-numeric values through (#5297)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8268"
     },
@@ -7428,7 +7428,7 @@
     "9492": {
       "author": "Moult",
       "branch": "open-perf-v2",
-      "head": "8623e90",
+      "head": "f0e08d8",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: faster, smaller open(): one tokenizer, references in the slots, lazy loading, parallel and paged parsing",
@@ -7508,7 +7508,7 @@
     "9508": {
       "author": "Moult",
       "branch": "rocksdb-editing",
-      "head": "78b7285",
+      "head": "221ef96",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: make deleting and creating instances work on RocksDB-backed files",
@@ -7530,11 +7530,20 @@
       "status": "failed",
       "title": "Bonsai: flatten roof footprint instead of failing, keep path preview, direct_profile_edit support",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9515"
+    },
+    "9517": {
+      "author": "theoryshaw",
+      "branch": "underside_union_clip_9516",
+      "head": "093396c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: fuse underside clip solids into one UNION tool (#9516)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9517"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609170123",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609170123"
+    "tag": "v0.8.0-alpha2609170423",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609170423"
   },
   "schema": 1
 }
