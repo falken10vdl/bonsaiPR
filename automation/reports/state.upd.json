@@ -7,7 +7,7 @@
     "skipped_draft": 61,
     "total": 919
   },
-  "generated_at": "2026-09-17T23:35:52Z",
+  "generated_at": "2026-09-18T02:29:35Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7452,15 +7452,6 @@
       "title": "Report required CI checks for skipped paths",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9498"
     },
-    "9499": {
-      "author": "CyrilWaechter",
-      "branch": "ci-bonsai-pr-tests",
-      "head": "cc4d0c7",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Add Bonsai tests to pull requests",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9499"
-    },
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
@@ -7540,19 +7531,28 @@
       "title": "build(deps): bump devalue from 5.8.1 to 5.9.2 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9526"
     },
-    "9527": {
+    "9528": {
       "author": "Moult",
-      "branch": "ci/bonsai-pr-tests",
-      "head": "8792a6f",
+      "branch": "fix/ifctester-wheel-build-isolation",
+      "head": "941854c",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "ci: run Bonsai's test suites against pull requests",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9527"
+      "title": "ifctester: build the webapp wheel in isolation",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9528"
+    },
+    "9529": {
+      "author": "Moult",
+      "branch": "chore/python-dependency-groups",
+      "head": "054d327",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Move dev and type-check requirements into pyproject dependency groups",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9529"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609180052",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180052"
+    "tag": "v0.8.0-alpha2609180348",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180348"
   },
   "schema": 1
 }
