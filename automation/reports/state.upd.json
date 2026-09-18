@@ -7,7 +7,7 @@
     "skipped_draft": 61,
     "total": 917
   },
-  "generated_at": "2026-09-18T05:33:35Z",
+  "generated_at": "2026-09-18T08:30:02Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7230,15 +7230,6 @@
       "title": "ifctester: re-enable the minimal IDS validation test (#9430 follow-up)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9434"
     },
-    "9437": {
-      "author": "BIMvoice",
-      "branch": "fix-cgal-conic-angular-deflection",
-      "head": "e8b471a",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "fix(cgal): bound conic segments by mesher-angular-deflection",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9437"
-    },
     "9439": {
       "author": "theoryshaw",
       "branch": "select_type_isolate_9438",
@@ -7455,7 +7446,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "b467451",
+      "head": "477c64f",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7530,11 +7521,20 @@
       "status": "failed",
       "title": "build(deps): bump devalue from 5.8.1 to 5.9.2 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9526"
+    },
+    "9532": {
+      "author": "Moult",
+      "branch": "fix/bonsai-linked-model-slice-tests",
+      "head": "a699850",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "bonsai: fix the linked-model slice tests and the IfcJSON export",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9532"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609180651",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180651"
+    "tag": "v0.8.0-alpha2609180947",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180947"
   },
   "schema": 1
 }
