@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 190,
-    "merged": 539,
+    "failed": 192,
+    "merged": 538,
     "skipped_conflict": 125,
     "skipped_draft": 56,
-    "total": 910
+    "total": 911
   },
-  "generated_at": "2026-09-18T20:33:50Z",
+  "generated_at": "2026-09-18T23:35:43Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -5418,15 +5418,6 @@
       "title": "util.selector: match boolean properties by True/False",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9070"
     },
-    "9072": {
-      "author": "BIMvoice",
-      "branch": "fix-aggregate-unassign-object-wrong-guard-var",
-      "head": "3b48bb0",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "core.aggregate: guard the value actually used in unassign_object",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9072"
-    },
     "9073": {
       "author": "BIMvoice",
       "branch": "fix-nest-unassign-object-wrong-guard-var",
@@ -6062,14 +6053,6 @@
       "status": "merged",
       "title": "docs: fix seven broken api docstring examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9162"
-    },
-    "9163": {
-      "author": "BIMvoice",
-      "branch": "docs/api-examples-schema-sweep",
-      "head": "455d1f7",
-      "status": "merged",
-      "title": "docs: fix ten API examples that cannot run",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9163"
     },
     "9164": {
       "author": "BIMvoice",
@@ -7385,7 +7368,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "02ff854",
+      "head": "767654b",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7479,11 +7462,38 @@
       "status": "failed",
       "title": "fixes ifcclash add_collision_objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9536"
+    },
+    "9537": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/gersemi-0.29.1",
+      "head": "5e60ed9",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump gersemi from 0.28.1 to 0.29.1",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9537"
+    },
+    "9538": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.16.7",
+      "head": "5aa8327",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump ruff from 0.16.6 to 0.16.7",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9538"
+    },
+    "9539": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.81",
+      "head": "59d6c7b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump ty from 0.0.79 to 0.0.81",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9539"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609182150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609182150"
+    "tag": "v0.8.0-alpha2609190053",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190053"
   },
   "schema": 1
 }

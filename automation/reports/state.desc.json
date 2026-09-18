@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 190,
-    "merged": 542,
-    "skipped_conflict": 122,
+    "failed": 189,
+    "merged": 540,
+    "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 910
+    "total": 908
   },
-  "generated_at": "2026-09-18T19:49:58Z",
+  "generated_at": "2026-09-18T22:52:24Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2439,7 +2439,7 @@
       "author": "BIMvoice",
       "branch": "fix-6904-occ-iterator-leak",
       "head": "4a71ebd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell: fix geom.iterator memory growth on the OCC path (#6904)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8520"
     },
@@ -5418,15 +5418,6 @@
       "title": "util.selector: match boolean properties by True/False",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9070"
     },
-    "9072": {
-      "author": "BIMvoice",
-      "branch": "fix-aggregate-unassign-object-wrong-guard-var",
-      "head": "3b48bb0",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "core.aggregate: guard the value actually used in unassign_object",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9072"
-    },
     "9073": {
       "author": "BIMvoice",
       "branch": "fix-nest-unassign-object-wrong-guard-var",
@@ -6062,14 +6053,6 @@
       "status": "merged",
       "title": "docs: fix seven broken api docstring examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9162"
-    },
-    "9163": {
-      "author": "BIMvoice",
-      "branch": "docs/api-examples-schema-sweep",
-      "head": "455d1f7",
-      "status": "merged",
-      "title": "docs: fix ten API examples that cannot run",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9163"
     },
     "9164": {
       "author": "BIMvoice",
@@ -7385,7 +7368,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "66e7a78",
+      "head": "767654b",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7482,8 +7465,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609182107",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609182107"
+    "tag": "v0.8.0-alpha2609190007",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190007"
   },
   "schema": 1
 }

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 189,
-    "merged": 546,
+    "failed": 190,
+    "merged": 545,
     "skipped_conflict": 118,
     "skipped_draft": 56,
     "total": 909
   },
-  "generated_at": "2026-09-18T19:06:19Z",
+  "generated_at": "2026-09-18T22:06:29Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -5418,15 +5418,6 @@
       "title": "util.selector: match boolean properties by True/False",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9070"
     },
-    "9072": {
-      "author": "BIMvoice",
-      "branch": "fix-aggregate-unassign-object-wrong-guard-var",
-      "head": "3b48bb0",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "core.aggregate: guard the value actually used in unassign_object",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9072"
-    },
     "9073": {
       "author": "BIMvoice",
       "branch": "fix-nest-unassign-object-wrong-guard-var",
@@ -6067,7 +6058,8 @@
       "author": "BIMvoice",
       "branch": "docs/api-examples-schema-sweep",
       "head": "455d1f7",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "docs: fix ten API examples that cannot run",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9163"
     },
@@ -7385,7 +7377,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "66e7a78",
+      "head": "767654b",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7470,11 +7462,20 @@
       "status": "failed",
       "title": "nix: package every shared library once and only the OCCT toolkits in use",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9534"
+    },
+    "9536": {
+      "author": "RickBrice",
+      "branch": "rab_clash_crash",
+      "head": "364fd3a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "fixes ifcclash add_collision_objects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9536"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609182023",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609182023"
+    "tag": "v0.8.0-alpha2609182323",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609182323"
   },
   "schema": 1
 }
