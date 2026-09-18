@@ -3186,3 +3186,17 @@
 {"ts": "2026-09-18T17:33:27Z", "order": "by-updated", "pr": 2312, "event": "removed", "from": "skipped_draft"}
 {"ts": "2026-09-18T17:33:27Z", "order": "by-updated", "pr": 9500, "event": "updated", "status": "skipped_draft", "from_head": "2f945b9", "to_head": "66e7a78"}
 {"ts": "2026-09-18T17:33:27Z", "order": "by-updated", "pr": 9535, "event": "removed", "from": "failed"}
+{"ts": "2026-09-18T20:12:32Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-18T20:12:32Z", "order": "upd", "pr": 8938, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-18T20:12:32Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-18T20:12:32Z", "order": "upd", "pr": 9010, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-18T20:33:50Z", "order": "by-updated", "pr": 8251, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-09-18T20:33:50Z", "order": "by-updated", "pr": 8278, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-09-18T20:33:50Z", "order": "by-updated", "pr": 8598, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-09-18T20:33:50Z", "order": "by-updated", "pr": 9118, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-09-18T20:33:50Z", "order": "by-updated", "pr": 9126, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-09-18T20:33:50Z", "order": "by-updated", "pr": 9176, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-09-18T20:33:50Z", "order": "by-updated", "pr": 9459, "event": "status", "from": "skipped_draft", "to": "failed"}
+{"ts": "2026-09-18T20:33:50Z", "order": "by-updated", "pr": 9500, "event": "updated", "status": "skipped_draft", "from_head": "66e7a78", "to_head": "02ff854"}
+{"ts": "2026-09-18T20:33:50Z", "order": "by-updated", "pr": 9512, "event": "status", "from": "skipped_draft", "to": "failed"}
+{"ts": "2026-09-18T20:33:50Z", "order": "by-updated", "pr": 9536, "event": "added", "to": "failed"}

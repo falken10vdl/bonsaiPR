@@ -1,23 +1,15 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 184,
-    "merged": 548,
-    "skipped_conflict": 119,
-    "skipped_draft": 60,
-    "total": 911
+    "failed": 189,
+    "merged": 546,
+    "skipped_conflict": 118,
+    "skipped_draft": 56,
+    "total": 909
   },
-  "generated_at": "2026-09-18T16:06:07Z",
+  "generated_at": "2026-09-18T19:06:19Z",
   "merge_order": "ascending",
   "prs": {
-    "1201": {
-      "author": "Noranius",
-      "branch": "SelectionRepresentationContext",
-      "head": "8f09b96",
-      "status": "skipped_draft",
-      "title": "Selection representation context",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/1201"
-    },
     "2093": {
       "author": "ilkinkavi",
       "branch": "v0.7.0",
@@ -33,14 +25,6 @@
       "status": "skipped_draft",
       "title": "Topic/ignore contexts setting",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/2236"
-    },
-    "2312": {
-      "author": "skinkie",
-      "branch": "deprecated_fixes",
-      "head": "233c875",
-      "status": "skipped_draft",
-      "title": "Deprecated fixes",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/2312"
     },
     "2476": {
       "author": "cvillagrasa",
@@ -5775,8 +5759,9 @@
     "9118": {
       "author": "BIMvoice",
       "branch": "fix/cost-unitbasis-leak",
-      "head": "68a9949",
-      "status": "merged",
+      "head": "c981726",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "cost: stop edit_cost_value orphaning the old UnitBasis into the file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9118"
     },
@@ -5823,8 +5808,9 @@
     "9126": {
       "author": "BIMvoice",
       "branch": "fix/get-quantities-complex-verbose-keyerror",
-      "head": "a8c3c30",
-      "status": "merged",
+      "head": "7e1c707",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "util.element: fix KeyError in get_quantities(verbose=True), the twin of a fix already applied to get_properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9126"
     },
@@ -6176,8 +6162,9 @@
     "9176": {
       "author": "BIMvoice",
       "branch": "fix/edit-pset-untemplated-list-crash",
-      "head": "da3e48e",
-      "status": "skipped_conflict",
+      "head": "da8ffcf",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "pset.edit_pset: fix untemplated list-value crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
     },
@@ -7256,7 +7243,8 @@
       "author": "BIMvoice",
       "branch": "docs/9456-fill-empty-ifc-concepts",
       "head": "3676302",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "docs: write the five empty IFC concept sections (#9456)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9459"
     },
@@ -7397,7 +7385,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "9aadcff",
+      "head": "66e7a78",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7424,7 +7412,8 @@
       "author": "BIMvoice",
       "branch": "fix-mep-transition-representationtype-typo",
       "head": "af02ce1",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "shape_builder: write a valid RepresentationType for MEP transitions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9512"
     },
@@ -7484,8 +7473,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609181723",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609181723"
+    "tag": "v0.8.0-alpha2609182023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609182023"
   },
   "schema": 1
 }

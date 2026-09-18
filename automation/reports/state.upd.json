@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 184,
-    "merged": 541,
-    "skipped_conflict": 126,
-    "skipped_draft": 58,
-    "total": 909
+    "failed": 190,
+    "merged": 539,
+    "skipped_conflict": 125,
+    "skipped_draft": 56,
+    "total": 910
   },
-  "generated_at": "2026-09-18T17:33:27Z",
+  "generated_at": "2026-09-18T20:33:50Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1029,7 +1029,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-empty-numeric-4112",
       "head": "9f8dce0",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
     },
@@ -1149,7 +1149,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "c6bb892",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -2810,7 +2810,7 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "027fae4",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -5759,8 +5759,9 @@
     "9118": {
       "author": "BIMvoice",
       "branch": "fix/cost-unitbasis-leak",
-      "head": "68a9949",
-      "status": "merged",
+      "head": "c981726",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "cost: stop edit_cost_value orphaning the old UnitBasis into the file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9118"
     },
@@ -5807,8 +5808,9 @@
     "9126": {
       "author": "BIMvoice",
       "branch": "fix/get-quantities-complex-verbose-keyerror",
-      "head": "a8c3c30",
-      "status": "merged",
+      "head": "7e1c707",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "util.element: fix KeyError in get_quantities(verbose=True), the twin of a fix already applied to get_properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9126"
     },
@@ -6160,8 +6162,9 @@
     "9176": {
       "author": "BIMvoice",
       "branch": "fix/edit-pset-untemplated-list-crash",
-      "head": "da3e48e",
-      "status": "merged",
+      "head": "da8ffcf",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "pset.edit_pset: fix untemplated list-value crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
     },
@@ -7240,7 +7243,8 @@
       "author": "BIMvoice",
       "branch": "docs/9456-fill-empty-ifc-concepts",
       "head": "3676302",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "docs: write the five empty IFC concept sections (#9456)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9459"
     },
@@ -7381,7 +7385,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "66e7a78",
+      "head": "02ff854",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7408,7 +7412,8 @@
       "author": "BIMvoice",
       "branch": "fix-mep-transition-representationtype-typo",
       "head": "af02ce1",
-      "status": "skipped_draft",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "shape_builder: write a valid RepresentationType for MEP transitions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9512"
     },
@@ -7465,11 +7470,20 @@
       "status": "failed",
       "title": "nix: package every shared library once and only the OCCT toolkits in use",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9534"
+    },
+    "9536": {
+      "author": "RickBrice",
+      "branch": "rab_clash_crash",
+      "head": "364fd3a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "fixes ifcclash add_collision_objects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9536"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609181850",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609181850"
+    "tag": "v0.8.0-alpha2609182150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609182150"
   },
   "schema": 1
 }
