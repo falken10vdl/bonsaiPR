@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 187,
+    "failed": 185,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 61,
-    "total": 919
+    "total": 917
   },
-  "generated_at": "2026-09-18T01:47:03Z",
+  "generated_at": "2026-09-18T04:50:47Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7530,29 +7530,11 @@
       "status": "failed",
       "title": "build(deps): bump devalue from 5.8.1 to 5.9.2 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9526"
-    },
-    "9528": {
-      "author": "Moult",
-      "branch": "fix/ifctester-wheel-build-isolation",
-      "head": "941854c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifctester: build the webapp wheel in isolation",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9528"
-    },
-    "9529": {
-      "author": "Moult",
-      "branch": "chore/python-dependency-groups",
-      "head": "054d327",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Move dev and type-check requirements into pyproject dependency groups",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9529"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609180305",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180305"
+    "tag": "v0.8.0-alpha2609180609",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180609"
   },
   "schema": 1
 }

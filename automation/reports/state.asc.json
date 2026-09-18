@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 186,
+    "failed": 185,
     "merged": 551,
     "skipped_conflict": 120,
     "skipped_draft": 61,
-    "total": 918
+    "total": 917
   },
-  "generated_at": "2026-09-18T01:04:55Z",
+  "generated_at": "2026-09-18T04:04:47Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -7530,20 +7530,11 @@
       "status": "failed",
       "title": "build(deps): bump devalue from 5.8.1 to 5.9.2 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9526"
-    },
-    "9528": {
-      "author": "Moult",
-      "branch": "fix/ifctester-wheel-build-isolation",
-      "head": "941854c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifctester: build the webapp wheel in isolation",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9528"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609180223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180223"
+    "tag": "v0.8.0-alpha2609180523",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180523"
   },
   "schema": 1
 }
