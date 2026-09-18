@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 185,
+    "failed": 183,
     "merged": 546,
     "skipped_conflict": 125,
     "skipped_draft": 61,
-    "total": 917
+    "total": 915
   },
-  "generated_at": "2026-09-18T07:46:47Z",
+  "generated_at": "2026-09-18T10:49:05Z",
   "merge_order": "descending",
   "prs": {
     "1201": {
@@ -7230,15 +7230,6 @@
       "title": "ifctester: re-enable the minimal IDS validation test (#9430 follow-up)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9434"
     },
-    "9437": {
-      "author": "BIMvoice",
-      "branch": "fix-cgal-conic-angular-deflection",
-      "head": "e8b471a",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "fix(cgal): bound conic segments by mesher-angular-deflection",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9437"
-    },
     "9439": {
       "author": "theoryshaw",
       "branch": "select_type_isolate_9438",
@@ -7443,19 +7434,10 @@
       "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9494"
     },
-    "9498": {
-      "author": "CyrilWaechter",
-      "branch": "ci-report-required-checks",
-      "head": "e710133",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Report required CI checks for skipped paths",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9498"
-    },
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "3bae0d3",
+      "head": "1a357fe",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7533,8 +7515,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609180905",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180905"
+    "tag": "v0.8.0-alpha2609181206",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609181206"
   },
   "schema": 1
 }

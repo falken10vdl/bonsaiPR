@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 185,
+    "failed": 183,
     "merged": 543,
     "skipped_conflict": 128,
     "skipped_draft": 61,
-    "total": 917
+    "total": 915
   },
-  "generated_at": "2026-09-18T08:30:02Z",
+  "generated_at": "2026-09-18T11:32:06Z",
   "merge_order": "by-updated",
   "prs": {
     "1201": {
@@ -7434,19 +7434,10 @@
       "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9494"
     },
-    "9498": {
-      "author": "CyrilWaechter",
-      "branch": "ci-report-required-checks",
-      "head": "e710133",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Report required CI checks for skipped paths",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9498"
-    },
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "477c64f",
+      "head": "1a357fe",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7521,20 +7512,11 @@
       "status": "failed",
       "title": "build(deps): bump devalue from 5.8.1 to 5.9.2 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9526"
-    },
-    "9532": {
-      "author": "Moult",
-      "branch": "fix/bonsai-linked-model-slice-tests",
-      "head": "a699850",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "bonsai: fix the linked-model slice tests and the IfcJSON export",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9532"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609180947",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609180947"
+    "tag": "v0.8.0-alpha2609181250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609181250"
   },
   "schema": 1
 }
