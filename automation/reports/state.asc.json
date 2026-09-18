@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 183,
-    "merged": 551,
-    "skipped_conflict": 120,
+    "failed": 184,
+    "merged": 548,
+    "skipped_conflict": 119,
     "skipped_draft": 61,
-    "total": 915
+    "total": 912
   },
-  "generated_at": "2026-09-18T10:05:20Z",
+  "generated_at": "2026-09-18T13:11:00Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -5445,8 +5445,9 @@
     "9072": {
       "author": "BIMvoice",
       "branch": "fix-aggregate-unassign-object-wrong-guard-var",
-      "head": "a771db8",
-      "status": "merged",
+      "head": "3b48bb0",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "core.aggregate: guard the value actually used in unassign_object",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9072"
     },
@@ -5721,14 +5722,6 @@
       "status": "merged",
       "title": "util.sequence: is_day_in_work_time ignored Start whenever Finish was also set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9106"
-    },
-    "9107": {
-      "author": "BIMvoice",
-      "branch": "fix/reassign-class-drops-falsy-attributes",
-      "head": "fb882ae",
-      "status": "merged",
-      "title": "util.schema: reassign_class silently dropped falsy-but-set attribute values",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9107"
     },
     "9108": {
       "author": "BIMvoice",
@@ -6196,14 +6189,6 @@
       "title": "pset.edit_pset: fix untemplated list-value crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
     },
-    "9177": {
-      "author": "BIMvoice",
-      "branch": "fix/unassign-representation-none-crash",
-      "head": "f5b36d7",
-      "status": "merged",
-      "title": "geometry.unassign_representation: fix None crash",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9177"
-    },
     "9178": {
       "author": "BIMvoice",
       "branch": "fix/validate-sqlite-guard",
@@ -6227,14 +6212,6 @@
       "status": "merged",
       "title": "file: raise AttributeError for bad rocksdb attr",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9180"
-    },
-    "9181": {
-      "author": "BIMvoice",
-      "branch": "fix/bcf-v3-missing-extensions-xml",
-      "head": "7470218",
-      "status": "merged",
-      "title": "bcf: fix v3 crash on missing extensions.xml",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9181"
     },
     "9182": {
       "author": "BIMvoice",
@@ -6434,7 +6411,7 @@
       "author": "BIMvoice",
       "branch": "fix/9207-shared-product-representation",
       "head": "bf1ca12",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "geometry.unassign_representation: stop destroying shared geometry (#9207)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9212"
     },
@@ -7151,15 +7128,6 @@
       "title": "ifctester webapp: reorder facets within applicability and requirements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9415"
     },
-    "9416": {
-      "author": "BIMvoice",
-      "branch": "fix-bsdd-string-default",
-      "head": "6e40ab6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "bsdd: make the include_test_dictionaries default a real boolean",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9416"
-    },
     "9420": {
       "author": "BIMvoice",
       "branch": "fix-9419-layer-assigned-items",
@@ -7437,7 +7405,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "1a357fe",
+      "head": "2f945b9",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7512,11 +7480,20 @@
       "status": "failed",
       "title": "build(deps): bump devalue from 5.8.1 to 5.9.2 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9526"
+    },
+    "9534": {
+      "author": "Moult",
+      "branch": "ci/nix-package-occt-once",
+      "head": "c1c1ca5",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "nix: package every shared library once and only the OCCT toolkits in use",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9534"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609181123",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609181123"
+    "tag": "v0.8.0-alpha2609181423",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609181423"
   },
   "schema": 1
 }
