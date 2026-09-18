@@ -4,10 +4,10 @@
     "failed": 184,
     "merged": 548,
     "skipped_conflict": 119,
-    "skipped_draft": 61,
-    "total": 912
+    "skipped_draft": 60,
+    "total": 911
   },
-  "generated_at": "2026-09-18T13:11:00Z",
+  "generated_at": "2026-09-18T16:06:07Z",
   "merge_order": "ascending",
   "prs": {
     "1201": {
@@ -115,14 +115,6 @@
       "status": "skipped_draft",
       "title": "Install headers under CMAKE_INSTALL_INCLUDEDIR/ifcopenshell",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/5698"
-    },
-    "643": {
-      "author": "atibaut",
-      "branch": "v0.6.0",
-      "head": "aded71c",
-      "status": "skipped_draft",
-      "title": "*nix script build-all.py improved: solves the Issues #637 (segmentation fault 11) for Mac OS X",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/643"
     },
     "6437": {
       "author": "jes-r",
@@ -7405,7 +7397,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "2f945b9",
+      "head": "9aadcff",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7492,8 +7484,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609181423",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609181423"
+    "tag": "v0.8.0-alpha2609181723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609181723"
   },
   "schema": 1
 }

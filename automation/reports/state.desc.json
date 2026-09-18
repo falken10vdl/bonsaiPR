@@ -1,23 +1,15 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 185,
+    "failed": 184,
     "merged": 544,
     "skipped_conflict": 123,
-    "skipped_draft": 61,
-    "total": 913
+    "skipped_draft": 58,
+    "total": 909
   },
-  "generated_at": "2026-09-18T13:54:49Z",
+  "generated_at": "2026-09-18T16:49:12Z",
   "merge_order": "descending",
   "prs": {
-    "1201": {
-      "author": "Noranius",
-      "branch": "SelectionRepresentationContext",
-      "head": "8f09b96",
-      "status": "skipped_draft",
-      "title": "Selection representation context",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/1201"
-    },
     "2093": {
       "author": "ilkinkavi",
       "branch": "v0.7.0",
@@ -33,14 +25,6 @@
       "status": "skipped_draft",
       "title": "Topic/ignore contexts setting",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/2236"
-    },
-    "2312": {
-      "author": "skinkie",
-      "branch": "deprecated_fixes",
-      "head": "233c875",
-      "status": "skipped_draft",
-      "title": "Deprecated fixes",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/2312"
     },
     "2476": {
       "author": "cvillagrasa",
@@ -115,14 +99,6 @@
       "status": "skipped_draft",
       "title": "Install headers under CMAKE_INSTALL_INCLUDEDIR/ifcopenshell",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/5698"
-    },
-    "643": {
-      "author": "atibaut",
-      "branch": "v0.6.0",
-      "head": "aded71c",
-      "status": "skipped_draft",
-      "title": "*nix script build-all.py improved: solves the Issues #637 (segmentation fault 11) for Mac OS X",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/643"
     },
     "6437": {
       "author": "jes-r",
@@ -7405,7 +7381,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "2f945b9",
+      "head": "66e7a78",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7489,20 +7465,11 @@
       "status": "failed",
       "title": "nix: package every shared library once and only the OCCT toolkits in use",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9534"
-    },
-    "9535": {
-      "author": "Andrej730",
-      "branch": "win-python-port",
-      "head": "8f4a72d",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Update build scripts",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9535"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609181512",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609181512"
+    "tag": "v0.8.0-alpha2609181807",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609181807"
   },
   "schema": 1
 }
