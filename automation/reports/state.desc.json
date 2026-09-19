@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 189,
+    "failed": 190,
     "merged": 540,
-    "skipped_conflict": 123,
+    "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 908
+    "total": 906
   },
-  "generated_at": "2026-09-18T22:52:24Z",
+  "generated_at": "2026-09-19T01:47:47Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -797,7 +797,7 @@
       "author": "isma3lMB",
       "branch": "v0.8.0",
       "head": "ef1e534",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Ensuring that Entity name is a string",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7993"
     },
@@ -873,14 +873,6 @@
       "status": "merged",
       "title": "Ordinate dimensioning",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8064"
-    },
-    "8065": {
-      "author": "bsmithuk",
-      "branch": "v0.8.0",
-      "head": "5cbb321",
-      "status": "skipped_conflict",
-      "title": "Fix #8046 - Entity xs:restriction name crashes with AttributeError on…",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8065"
     },
     "8083": {
       "author": "theoryshaw",
@@ -1200,14 +1192,6 @@
       "status": "merged",
       "title": "spatial.assign_container: clear error for non-containable products (#8084)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8291"
-    },
-    "8292": {
-      "author": "BIMvoice",
-      "branch": "fix-ifctester-restriction-entity-8046",
-      "head": "34eb84d",
-      "status": "merged",
-      "title": "ifctester: entity requirement as xs:restriction no longer crashes on fail (#8046)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8292"
     },
     "8293": {
       "author": "BIMvoice",
@@ -2439,7 +2423,7 @@
       "author": "BIMvoice",
       "branch": "fix-6904-occ-iterator-leak",
       "head": "4a71ebd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell: fix geom.iterator memory growth on the OCC path (#6904)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8520"
     },
@@ -6014,14 +5998,6 @@
       "title": "ifcfm: fix four COBie export crashes on valid IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9157"
     },
-    "9158": {
-      "author": "BIMvoice",
-      "branch": "fix/ifcbimtester-crash-guards",
-      "head": "339cc93",
-      "status": "merged",
-      "title": "ifcbimtester: fix eight crashes in step definitions",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9158"
-    },
     "9159": {
       "author": "BIMvoice",
       "branch": "audit-bonsai-enum-dispatch-a112",
@@ -7439,10 +7415,10 @@
     "9526": {
       "author": "dependabot[bot]",
       "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/devalue-5.9.2",
-      "head": "3ece4e1",
+      "head": "5a72cc6",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "build(deps): bump devalue from 5.8.1 to 5.9.2 in /src/ifctester/webapp",
+      "title": "build(deps): bump devalue from 5.8.1 to 5.9.4 in /src/ifctester/webapp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9526"
     },
     "9534": {
@@ -7462,11 +7438,20 @@
       "status": "failed",
       "title": "fixes ifcclash add_collision_objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9536"
+    },
+    "9537": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/gersemi-0.29.1",
+      "head": "9f0654c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump gersemi from 0.28.1 to 0.29.1",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9537"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609190007",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190007"
+    "tag": "v0.8.0-alpha2609190306",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190306"
   },
   "schema": 1
 }

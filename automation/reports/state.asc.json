@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 190,
-    "merged": 545,
-    "skipped_conflict": 118,
+    "failed": 192,
+    "merged": 544,
+    "skipped_conflict": 117,
     "skipped_draft": 56,
     "total": 909
   },
-  "generated_at": "2026-09-18T22:06:29Z",
+  "generated_at": "2026-09-19T01:05:47Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -874,14 +874,6 @@
       "title": "Ordinate dimensioning",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8064"
     },
-    "8065": {
-      "author": "bsmithuk",
-      "branch": "v0.8.0",
-      "head": "5cbb321",
-      "status": "merged",
-      "title": "Fix #8046 - Entity xs:restriction name crashes with AttributeError on…",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8065"
-    },
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
@@ -1200,14 +1192,6 @@
       "status": "merged",
       "title": "spatial.assign_container: clear error for non-containable products (#8084)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8291"
-    },
-    "8292": {
-      "author": "BIMvoice",
-      "branch": "fix-ifctester-restriction-entity-8046",
-      "head": "34eb84d",
-      "status": "skipped_conflict",
-      "title": "ifctester: entity requirement as xs:restriction no longer crashes on fail (#8046)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8292"
     },
     "8293": {
       "author": "BIMvoice",
@@ -6054,15 +6038,6 @@
       "title": "docs: fix seven broken api docstring examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9162"
     },
-    "9163": {
-      "author": "BIMvoice",
-      "branch": "docs/api-examples-schema-sweep",
-      "head": "455d1f7",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "docs: fix ten API examples that cannot run",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9163"
-    },
     "9164": {
       "author": "BIMvoice",
       "branch": "fix/cost-item-quantity-empty-aggregate",
@@ -7471,11 +7446,38 @@
       "status": "failed",
       "title": "fixes ifcclash add_collision_objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9536"
+    },
+    "9537": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/gersemi-0.29.1",
+      "head": "5e60ed9",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump gersemi from 0.28.1 to 0.29.1",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9537"
+    },
+    "9538": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.16.7",
+      "head": "5aa8327",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump ruff from 0.16.6 to 0.16.7",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9538"
+    },
+    "9539": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.81",
+      "head": "59d6c7b",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump ty from 0.0.79 to 0.0.81",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9539"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609182323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609182323"
+    "tag": "v0.8.0-alpha2609190223",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190223"
   },
   "schema": 1
 }

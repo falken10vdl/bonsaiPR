@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 192,
-    "merged": 538,
-    "skipped_conflict": 125,
+    "failed": 187,
+    "merged": 535,
+    "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 911
+    "total": 901
   },
-  "generated_at": "2026-09-18T23:35:43Z",
+  "generated_at": "2026-09-19T02:30:02Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -797,7 +797,7 @@
       "author": "isma3lMB",
       "branch": "v0.8.0",
       "head": "ef1e534",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Ensuring that Entity name is a string",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7993"
     },
@@ -873,14 +873,6 @@
       "status": "merged",
       "title": "Ordinate dimensioning",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8064"
-    },
-    "8065": {
-      "author": "bsmithuk",
-      "branch": "v0.8.0",
-      "head": "5cbb321",
-      "status": "skipped_conflict",
-      "title": "Fix #8046 - Entity xs:restriction name crashes with AttributeError on…",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8065"
     },
     "8083": {
       "author": "theoryshaw",
@@ -1200,14 +1192,6 @@
       "status": "merged",
       "title": "spatial.assign_container: clear error for non-containable products (#8084)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8291"
-    },
-    "8292": {
-      "author": "BIMvoice",
-      "branch": "fix-ifctester-restriction-entity-8046",
-      "head": "34eb84d",
-      "status": "merged",
-      "title": "ifctester: entity requirement as xs:restriction no longer crashes on fail (#8046)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8292"
     },
     "8293": {
       "author": "BIMvoice",
@@ -2660,14 +2644,6 @@
       "status": "skipped_conflict",
       "title": "Fix ci: test_get_class_relations calls the wrong bSDD client method",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8557"
-    },
-    "8560": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-project-geomslice-skiphidden",
-      "head": "a197a1b",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily: get_linked_element_geom_slice hidden-face index space",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8560"
     },
     "8566": {
       "author": "BIMvoice",
@@ -5450,14 +5426,6 @@
       "title": "api.georeference: apply the IFC2X3 pset value types the loop computes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9076"
     },
-    "9077": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-project-geomslice-skiphidden-v2",
-      "head": "f967e1c",
-      "status": "merged",
-      "title": "Bonsai: fix linked-element geometry slice index space for hidden faces",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9077"
-    },
     "9078": {
       "author": "BIMvoice",
       "branch": "fix/ifcsverchok-multi-class-overwrite-remaining",
@@ -6013,14 +5981,6 @@
       "status": "merged",
       "title": "ifcfm: fix four COBie export crashes on valid IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9157"
-    },
-    "9158": {
-      "author": "BIMvoice",
-      "branch": "fix/ifcbimtester-crash-guards",
-      "head": "339cc93",
-      "status": "merged",
-      "title": "ifcbimtester: fix eight crashes in step definitions",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9158"
     },
     "9159": {
       "author": "BIMvoice",
@@ -7267,15 +7227,6 @@
       "title": "Bonsai: reload external styles from .blend in update_current_style",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9478"
     },
-    "9479": {
-      "author": "brunopostle",
-      "branch": "reallow-bonsai-without-brickschema",
-      "head": "eabe2e4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Reallow Bonsai without brickschema",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9479"
-    },
     "9483": {
       "author": "theoryshaw",
       "branch": "radial_arrays",
@@ -7436,15 +7387,6 @@
       "title": "fix(bonsai): extend walls to cursor from any base level",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
     },
-    "9526": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/devalue-5.9.2",
-      "head": "3ece4e1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump devalue from 5.8.1 to 5.9.2 in /src/ifctester/webapp",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9526"
-    },
     "9534": {
       "author": "Moult",
       "branch": "ci/nix-package-occt-once",
@@ -7462,38 +7404,11 @@
       "status": "failed",
       "title": "fixes ifcclash add_collision_objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9536"
-    },
-    "9537": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/gersemi-0.29.1",
-      "head": "5e60ed9",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump gersemi from 0.28.1 to 0.29.1",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9537"
-    },
-    "9538": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ruff-0.16.7",
-      "head": "5aa8327",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump ruff from 0.16.6 to 0.16.7",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9538"
-    },
-    "9539": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ty-0.0.81",
-      "head": "59d6c7b",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump ty from 0.0.79 to 0.0.81",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9539"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609190053",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190053"
+    "tag": "v0.8.0-alpha2609190348",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190348"
   },
   "schema": 1
 }
