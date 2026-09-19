@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 186,
+    "failed": 184,
     "merged": 538,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 900
+    "total": 898
   },
-  "generated_at": "2026-09-19T04:46:57Z",
+  "generated_at": "2026-09-19T07:46:44Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7377,29 +7377,11 @@
       "status": "failed",
       "title": "nix: package every shared library once and only the OCCT toolkits in use",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9534"
-    },
-    "9536": {
-      "author": "RickBrice",
-      "branch": "rab_clash_crash",
-      "head": "364fd3a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "fixes ifcclash add_collision_objects",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9536"
-    },
-    "9542": {
-      "author": "Moult",
-      "branch": "fix/ifctester-webapp-security-bumps",
-      "head": "b2323ea",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifctester: bump vite, postcss and socket.io-parser in the webapp lockfile",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9542"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609190605",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190605"
+    "tag": "v0.8.0-alpha2609190905",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190905"
   },
   "schema": 1
 }
