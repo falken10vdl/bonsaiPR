@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 184,
+    "failed": 183,
     "merged": 538,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 898
+    "total": 897
   },
-  "generated_at": "2026-09-19T07:46:44Z",
+  "generated_at": "2026-09-19T10:46:57Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7102,15 +7102,6 @@
       "title": "serializers: give face_info ownership semantics so it cannot be shallow copied (#9380)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9429"
     },
-    "9434": {
-      "author": "BIMvoice",
-      "branch": "unskip-ids-minimal-test",
-      "head": "182e65a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifctester: re-enable the minimal IDS validation test (#9430 follow-up)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9434"
-    },
     "9439": {
       "author": "theoryshaw",
       "branch": "select_type_isolate_9438",
@@ -7380,8 +7371,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609190905",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190905"
+    "tag": "v0.8.0-alpha2609191205",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609191205"
   },
   "schema": 1
 }
