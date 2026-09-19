@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 183,
+    "failed": 186,
     "merged": 535,
     "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 897
+    "total": 900
   },
-  "generated_at": "2026-09-19T11:29:22Z",
+  "generated_at": "2026-09-19T14:29:00Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7137,15 +7137,6 @@
       "title": "test_package: build the WASM wheel URL with the normalised version",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9443"
     },
-    "9448": {
-      "author": "theoryshaw",
-      "branch": "representation_item_stale_ids_9447",
-      "head": "02f2b60",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bonsai: guard stale representation item ids in the Representation Items panel (#9447)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9448"
-    },
     "9458": {
       "author": "gostak-dd",
       "branch": "fix-aggregate-initializer-precedence",
@@ -7368,11 +7359,47 @@
       "status": "failed",
       "title": "nix: package every shared library once and only the OCCT toolkits in use",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9534"
+    },
+    "9543": {
+      "author": "brunopostle",
+      "branch": "fix/eigen5-findpackage",
+      "head": "02b24f6",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "cmake: accept Eigen 5 in FindEigen3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9543"
+    },
+    "9544": {
+      "author": "brunopostle",
+      "branch": "fix/core-lib-underscore-names",
+      "head": "37c8e9c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "cmake: use underscores in the core shared library names (#9328)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9544"
+    },
+    "9545": {
+      "author": "brunopostle",
+      "branch": "fix/libxml2-version-empty",
+      "head": "79be613",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "cmake: fix empty LibXml2_VERSION with CMake's FindLibXml2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9545"
+    },
+    "9546": {
+      "author": "Moult",
+      "branch": "fix/bonsai-representation-items-refresh",
+      "head": "9501622",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: rebuild the representation items list when its source changes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9546"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609191247",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609191247"
+    "tag": "v0.8.0-alpha2609191547",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609191547"
   },
   "schema": 1
 }
