@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 190,
-    "merged": 540,
+    "failed": 186,
+    "merged": 538,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 906
+    "total": 900
   },
-  "generated_at": "2026-09-19T01:47:47Z",
+  "generated_at": "2026-09-19T04:46:57Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2644,14 +2644,6 @@
       "status": "skipped_conflict",
       "title": "Fix ci: test_get_class_relations calls the wrong bSDD client method",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8557"
-    },
-    "8560": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-project-geomslice-skiphidden",
-      "head": "a197a1b",
-      "status": "merged",
-      "title": "Fix ci-bonsai-daily: get_linked_element_geom_slice hidden-face index space",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8560"
     },
     "8566": {
       "author": "BIMvoice",
@@ -5434,14 +5426,6 @@
       "title": "api.georeference: apply the IFC2X3 pset value types the loop computes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9076"
     },
-    "9077": {
-      "author": "BIMvoice",
-      "branch": "fix/ci-bonsai-project-geomslice-skiphidden-v2",
-      "head": "f967e1c",
-      "status": "merged",
-      "title": "Bonsai: fix linked-element geometry slice index space for hidden faces",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9077"
-    },
     "9078": {
       "author": "BIMvoice",
       "branch": "fix/ifcsverchok-multi-class-overwrite-remaining",
@@ -7041,15 +7025,6 @@
       "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9406"
     },
-    "9413": {
-      "author": "BIMvoice",
-      "branch": "ifctester-strict-xsd-patterns",
-      "head": "ca805d7",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifctester: apply strict XSD pattern semantics and warn on non-portable patterns",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9413"
-    },
     "9414": {
       "author": "BIMvoice",
       "branch": "webapp-pattern-playground",
@@ -7180,15 +7155,6 @@
       "title": "Bonsai: guard stale representation item ids in the Representation Items panel (#9447)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9448"
     },
-    "9449": {
-      "author": "RickBrice",
-      "branch": "fix/ids-entity-filter-tuple-narrowing",
-      "head": "8a0ef5a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ids: normalise Entity.filter() to always return a list",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9449"
-    },
     "9458": {
       "author": "gostak-dd",
       "branch": "fix-aggregate-initializer-precedence",
@@ -7242,15 +7208,6 @@
       "status": "failed",
       "title": "Bonsai: reload external styles from .blend in update_current_style",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9478"
-    },
-    "9479": {
-      "author": "brunopostle",
-      "branch": "reallow-bonsai-without-brickschema",
-      "head": "eabe2e4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Reallow Bonsai without brickschema",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9479"
     },
     "9483": {
       "author": "theoryshaw",
@@ -7412,15 +7369,6 @@
       "title": "fix(bonsai): extend walls to cursor from any base level",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
     },
-    "9526": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/devalue-5.9.2",
-      "head": "5a72cc6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump devalue from 5.8.1 to 5.9.4 in /src/ifctester/webapp",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9526"
-    },
     "9534": {
       "author": "Moult",
       "branch": "ci/nix-package-occt-once",
@@ -7439,19 +7387,19 @@
       "title": "fixes ifcclash add_collision_objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9536"
     },
-    "9537": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/gersemi-0.29.1",
-      "head": "9f0654c",
+    "9542": {
+      "author": "Moult",
+      "branch": "fix/ifctester-webapp-security-bumps",
+      "head": "b2323ea",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "build(deps): bump gersemi from 0.28.1 to 0.29.1",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9537"
+      "title": "ifctester: bump vite, postcss and socket.io-parser in the webapp lockfile",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9542"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609190306",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190306"
+    "tag": "v0.8.0-alpha2609190605",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190605"
   },
   "schema": 1
 }

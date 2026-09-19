@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 187,
+    "failed": 186,
     "merged": 535,
     "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 901
+    "total": 900
   },
-  "generated_at": "2026-09-19T02:30:02Z",
+  "generated_at": "2026-09-19T05:29:47Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7025,15 +7025,6 @@
       "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9406"
     },
-    "9413": {
-      "author": "BIMvoice",
-      "branch": "ifctester-strict-xsd-patterns",
-      "head": "ca805d7",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifctester: apply strict XSD pattern semantics and warn on non-portable patterns",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9413"
-    },
     "9414": {
       "author": "BIMvoice",
       "branch": "webapp-pattern-playground",
@@ -7163,15 +7154,6 @@
       "status": "failed",
       "title": "Bonsai: guard stale representation item ids in the Representation Items panel (#9447)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9448"
-    },
-    "9449": {
-      "author": "RickBrice",
-      "branch": "fix/ids-entity-filter-tuple-narrowing",
-      "head": "8a0ef5a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ids: normalise Entity.filter() to always return a list",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9449"
     },
     "9458": {
       "author": "gostak-dd",
@@ -7404,11 +7386,20 @@
       "status": "failed",
       "title": "fixes ifcclash add_collision_objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9536"
+    },
+    "9542": {
+      "author": "Moult",
+      "branch": "fix/ifctester-webapp-security-bumps",
+      "head": "b2323ea",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifctester: bump vite, postcss and socket.io-parser in the webapp lockfile",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9542"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609190348",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190348"
+    "tag": "v0.8.0-alpha2609190647",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609190647"
   },
   "schema": 1
 }
