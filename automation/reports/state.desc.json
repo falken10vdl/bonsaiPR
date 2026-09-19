@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 186,
+    "failed": 184,
     "merged": 538,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 900
+    "total": 898
   },
-  "generated_at": "2026-09-19T13:46:29Z",
+  "generated_at": "2026-09-19T16:46:21Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7360,15 +7360,6 @@
       "title": "nix: package every shared library once and only the OCCT toolkits in use",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9534"
     },
-    "9543": {
-      "author": "brunopostle",
-      "branch": "fix/eigen5-findpackage",
-      "head": "02b24f6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "cmake: accept Eigen 5 in FindEigen3",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9543"
-    },
     "9544": {
       "author": "brunopostle",
       "branch": "fix/core-lib-underscore-names",
@@ -7377,15 +7368,6 @@
       "status": "failed",
       "title": "cmake: use underscores in the core shared library names (#9328)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9544"
-    },
-    "9545": {
-      "author": "brunopostle",
-      "branch": "fix/libxml2-version-empty",
-      "head": "79be613",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "cmake: fix empty LibXml2_VERSION with CMake's FindLibXml2",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9545"
     },
     "9546": {
       "author": "Moult",
@@ -7398,8 +7380,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609191505",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609191505"
+    "tag": "v0.8.0-alpha2609191805",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609191805"
   },
   "schema": 1
 }
