@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 183,
-    "merged": 541,
+    "failed": 188,
+    "merged": 536,
     "skipped_conflict": 117,
     "skipped_draft": 56,
     "total": 897
   },
-  "generated_at": "2026-09-20T07:04:43Z",
+  "generated_at": "2026-09-20T10:04:53Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -5397,8 +5397,9 @@
     "9073": {
       "author": "BIMvoice",
       "branch": "fix-nest-unassign-object-wrong-guard-var",
-      "head": "f3d1835",
-      "status": "merged",
+      "head": "8ea9ed3",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "core.nest: guard the value actually used, and add Nest.get_relating_object",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9073"
     },
@@ -6057,8 +6058,9 @@
     "9170": {
       "author": "BIMvoice",
       "branch": "fix/cascade-schedule-ifc2x3-crash",
-      "head": "f8e0ab5",
-      "status": "merged",
+      "head": "6c347e6",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "sequence: fix cascade_schedule crash on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9170"
     },
@@ -6122,24 +6124,27 @@
     "9179": {
       "author": "BIMvoice",
       "branch": "fix/express-missing-rules-file",
-      "head": "a50d79e",
-      "status": "merged",
+      "head": "3200928",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "express: fail clean when rules are missing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9179"
     },
     "9180": {
       "author": "BIMvoice",
       "branch": "fix/rocksdb-attr-error",
-      "head": "dedfd9e",
-      "status": "merged",
+      "head": "cc8c8eb",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "file: raise AttributeError for bad rocksdb attr",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9180"
     },
     "9182": {
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-optimise-unset-attr",
-      "head": "c907129",
-      "status": "merged",
+      "head": "cb4dd66",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcpatch: fix Optimise crash on unset attribute",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9182"
     },
@@ -7371,8 +7376,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609200823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609200823"
+    "tag": "v0.8.0-alpha2609201123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609201123"
   },
   "schema": 1
 }

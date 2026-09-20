@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 189,
+    "failed": 188,
     "merged": 533,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 898
+    "total": 897
   },
-  "generated_at": "2026-09-20T07:46:34Z",
+  "generated_at": "2026-09-20T10:46:39Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7373,20 +7373,11 @@
       "status": "failed",
       "title": "cmake: use underscores in the core shared library names (#9328)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9544"
-    },
-    "9549": {
-      "author": "Moult",
-      "branch": "fix/cmake-nlohmann-json-version",
-      "head": "8dbd7a8",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "cmake: read the nlohmann_json version from multi-header and 3.11+ installations",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9549"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609200905",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609200905"
+    "tag": "v0.8.0-alpha2609201205",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609201205"
   },
   "schema": 1
 }
