@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 901
   },
-  "generated_at": "2026-09-20T13:05:23Z",
+  "generated_at": "2026-09-20T17:05:51Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -6133,7 +6133,7 @@
     "9180": {
       "author": "BIMvoice",
       "branch": "fix/rocksdb-attr-error",
-      "head": "cc8c8eb",
+      "head": "b3ec754",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "file: raise AttributeError for bad rocksdb attr",
@@ -7412,8 +7412,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609201423",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609201423"
+    "tag": "v0.8.0-alpha2609201823",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609201823"
   },
   "schema": 1
 }
