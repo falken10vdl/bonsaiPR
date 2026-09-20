@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 184,
+    "failed": 183,
     "merged": 541,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 898
+    "total": 897
   },
-  "generated_at": "2026-09-20T04:05:27Z",
+  "generated_at": "2026-09-20T07:04:43Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7368,20 +7368,11 @@
       "status": "failed",
       "title": "cmake: use underscores in the core shared library names (#9328)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9544"
-    },
-    "9547": {
-      "author": "Moult",
-      "branch": "chore/dev-environment-scripts",
-      "head": "08e7292",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Dev environment scripts: editable installs for Python, fix the binaries copy for Bonsai",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9547"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609200523",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609200523"
+    "tag": "v0.8.0-alpha2609200823",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609200823"
   },
   "schema": 1
 }
