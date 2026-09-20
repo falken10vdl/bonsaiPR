@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 192,
-    "merged": 536,
+    "failed": 194,
+    "merged": 533,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 901
+    "total": 900
   },
-  "generated_at": "2026-09-20T17:05:51Z",
+  "generated_at": "2026-09-20T20:05:43Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -6396,8 +6396,9 @@
     "9228": {
       "author": "theoryshaw",
       "branch": "dev-environment-detect-python",
-      "head": "3321d7d",
-      "status": "merged",
+      "head": "6411562",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "dev_environment.py: detect Blender's bundled Python from disk",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
     },
@@ -6428,8 +6429,9 @@
     "9240": {
       "author": "theoryshaw",
       "branch": "dev-environment-locked-file",
-      "head": "f7fa4b9",
-      "status": "merged",
+      "head": "ae39925",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "dev_environment.py: survive a locked file while symlinking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
     },
@@ -7241,14 +7243,6 @@
       "title": "bonsai: clear stale references after patching the loaded model",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9487"
     },
-    "9489": {
-      "author": "theoryshaw",
-      "branch": "dev-environment-runtime-libraries",
-      "head": "35bbfa6",
-      "status": "merged",
-      "title": "dev_environment.py: copy the runtime libraries next to the wrapper",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9489"
-    },
     "9491": {
       "author": "theoryshaw",
       "branch": "fix_unit_scale_on_blend_load",
@@ -7412,8 +7406,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609201823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609201823"
+    "tag": "v0.8.0-alpha2609202123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609202123"
   },
   "schema": 1
 }
