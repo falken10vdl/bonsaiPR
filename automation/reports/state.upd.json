@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 188,
+    "failed": 192,
     "merged": 530,
     "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 897
+    "total": 901
   },
-  "generated_at": "2026-09-20T11:29:03Z",
+  "generated_at": "2026-09-20T14:30:32Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7373,11 +7373,47 @@
       "status": "failed",
       "title": "cmake: use underscores in the core shared library names (#9328)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9544"
+    },
+    "9550": {
+      "author": "Moult",
+      "branch": "feat/bonsaiviewer-stable-release",
+      "head": "0b50f17",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai Viewer: stable release workflow, user installation docs, and the macOS packaging fix",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9550"
+    },
+    "9551": {
+      "author": "Moult",
+      "branch": "ci/docs-single-domain",
+      "head": "ffc58d5",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ci: publish the unstable docs as subdirectories of docs.bonsaibim.org",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9551"
+    },
+    "9552": {
+      "author": "Moult",
+      "branch": "chore/ruff-format",
+      "head": "779eead",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Replace black with ruff format",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9552"
+    },
+    "9553": {
+      "author": "Moult",
+      "branch": "chore/ruff-reformat",
+      "head": "d927251",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Reformat Python with ruff format",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9553"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609201247",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609201247"
+    "tag": "v0.8.0-alpha2609201548",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609201548"
   },
   "schema": 1
 }
