@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 900
   },
-  "generated_at": "2026-09-21T02:05:27Z",
+  "generated_at": "2026-09-21T09:06:05Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7371,20 +7371,11 @@
     "9552": {
       "author": "Moult",
       "branch": "chore/ruff-format",
-      "head": "a171f1c",
+      "head": "b594118",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "Replace black with ruff format",
+      "title": "Replace black with ruff format, and reformat",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9552"
-    },
-    "9553": {
-      "author": "Moult",
-      "branch": "chore/ruff-reformat",
-      "head": "aa2d06a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Reformat Python with ruff format",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9553"
     },
     "9555": {
       "author": "theoryshaw",
@@ -7403,11 +7394,20 @@
       "status": "failed",
       "title": "Bonsai: put back sheet files renamed in a session that was not saved",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9557"
+    },
+    "9559": {
+      "author": "aothms",
+      "branch": "pr-9325-rebased-v0.9.0",
+      "head": "1721410",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "C/TS API binding generation (GSoC 2026) - rebased",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9559"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609210323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609210323"
+    "tag": "v0.8.0-alpha2609211023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609211023"
   },
   "schema": 1
 }

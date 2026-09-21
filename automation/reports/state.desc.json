@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 194,
+    "failed": 195,
     "merged": 530,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 900
+    "total": 901
   },
-  "generated_at": "2026-09-21T02:48:21Z",
+  "generated_at": "2026-09-21T09:50:39Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7368,24 +7368,6 @@
       "title": "cmake: use underscores in the core shared library names (#9328)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9544"
     },
-    "9552": {
-      "author": "Moult",
-      "branch": "chore/ruff-format",
-      "head": "a171f1c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Replace black with ruff format",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9552"
-    },
-    "9553": {
-      "author": "Moult",
-      "branch": "chore/ruff-reformat",
-      "head": "aa2d06a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Reformat Python with ruff format",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9553"
-    },
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
@@ -7403,11 +7385,38 @@
       "status": "failed",
       "title": "Bonsai: put back sheet files renamed in a session that was not saved",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9557"
+    },
+    "9559": {
+      "author": "aothms",
+      "branch": "pr-9325-rebased-v0.9.0",
+      "head": "1721410",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "C/TS API binding generation (GSoC 2026) - rebased",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9559"
+    },
+    "9560": {
+      "author": "Moult",
+      "branch": "chore/blame-ignore-ruff-reformat",
+      "head": "3a43549",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Ignore the ruff reformat in git blame",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9560"
+    },
+    "9561": {
+      "author": "Moult",
+      "branch": "fix/bonsaiviewer-docs-logo",
+      "head": "f37c44c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai Viewer docs: use the Bonsai Viewer logo, and trim the installation intro",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9561"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609210406",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609210406"
+    "tag": "v0.8.0-alpha2609211107",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609211107"
   },
   "schema": 1
 }
