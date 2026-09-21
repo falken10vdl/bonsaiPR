@@ -5909,3 +5909,8 @@
 {"ts": "2026-09-20T23:08:45Z", "order": "ascending", "pr": 9550, "event": "removed", "from": "failed"}
 {"ts": "2026-09-20T23:08:45Z", "order": "ascending", "pr": 9555, "event": "added", "to": "failed"}
 {"ts": "2026-09-20T23:08:45Z", "order": "ascending", "pr": 9557, "event": "added", "to": "failed"}
+{"ts": "2026-09-21T02:05:27Z", "order": "ascending", "pr": 8348, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-09-21T02:05:27Z", "order": "ascending", "pr": 9551, "event": "removed", "from": "failed"}
+{"ts": "2026-09-21T02:05:27Z", "order": "ascending", "pr": 9552, "event": "updated", "status": "failed", "from_head": "779eead", "to_head": "a171f1c"}
+{"ts": "2026-09-21T02:05:27Z", "order": "ascending", "pr": 9553, "event": "updated", "status": "failed", "from_head": "d927251", "to_head": "aa2d06a"}
+{"ts": "2026-09-21T02:05:27Z", "order": "ascending", "pr": 9557, "event": "updated", "status": "failed", "from_head": "cdb985d", "to_head": "7ec1db5"}

@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 195,
-    "merged": 532,
-    "skipped_conflict": 118,
+    "failed": 194,
+    "merged": 533,
+    "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 901
+    "total": 900
   },
-  "generated_at": "2026-09-20T23:08:45Z",
+  "generated_at": "2026-09-21T02:05:27Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -1485,7 +1485,7 @@
       "author": "BIMvoice",
       "branch": "fix-4703-dxf-transform",
       "head": "3144234",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix DXF export dropping/scrambling polylines with integer or scientific coordinates (#4703)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8348"
     },
@@ -7368,19 +7368,10 @@
       "title": "cmake: use underscores in the core shared library names (#9328)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9544"
     },
-    "9551": {
-      "author": "Moult",
-      "branch": "ci/docs-single-domain",
-      "head": "ffc58d5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ci: publish the unstable docs as subdirectories of docs.bonsaibim.org",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9551"
-    },
     "9552": {
       "author": "Moult",
       "branch": "chore/ruff-format",
-      "head": "779eead",
+      "head": "a171f1c",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Replace black with ruff format",
@@ -7389,7 +7380,7 @@
     "9553": {
       "author": "Moult",
       "branch": "chore/ruff-reformat",
-      "head": "d927251",
+      "head": "aa2d06a",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Reformat Python with ruff format",
@@ -7407,7 +7398,7 @@
     "9557": {
       "author": "theoryshaw",
       "branch": "restore_moved_sheet_files",
-      "head": "cdb985d",
+      "head": "7ec1db5",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: put back sheet files renamed in a session that was not saved",
@@ -7415,8 +7406,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609210023",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609210023"
+    "tag": "v0.8.0-alpha2609210323",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609210323"
   },
   "schema": 1
 }
