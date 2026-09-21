@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 195,
-    "merged": 530,
+    "merged": 529,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 901
+    "total": 900
   },
-  "generated_at": "2026-09-21T12:49:22Z",
+  "generated_at": "2026-09-21T17:50:05Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2346,14 +2346,6 @@
       "status": "skipped_conflict",
       "title": "Door/Opening documentation improvement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8509"
-    },
-    "8510": {
-      "author": "sboddy",
-      "branch": "enhance-claude",
-      "head": "87c56c0",
-      "status": "merged",
-      "title": "Claude specific file, automatically read on opening the repo",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8510"
     },
     "8511": {
       "author": "BIMvoice",
@@ -7415,8 +7407,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609211407",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609211407"
+    "tag": "v0.8.0-alpha2609211907",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609211907"
   },
   "schema": 1
 }
