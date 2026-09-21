@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 194,
+    "failed": 195,
     "merged": 533,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 900
+    "total": 901
   },
-  "generated_at": "2026-09-21T09:06:05Z",
+  "generated_at": "2026-09-21T12:06:10Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7368,15 +7368,6 @@
       "title": "cmake: use underscores in the core shared library names (#9328)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9544"
     },
-    "9552": {
-      "author": "Moult",
-      "branch": "chore/ruff-format",
-      "head": "b594118",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Replace black with ruff format, and reformat",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9552"
-    },
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
@@ -7398,16 +7389,34 @@
     "9559": {
       "author": "aothms",
       "branch": "pr-9325-rebased-v0.9.0",
-      "head": "1721410",
+      "head": "b6c1b7d",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "C/TS API binding generation (GSoC 2026) - rebased",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9559"
+    },
+    "9560": {
+      "author": "Moult",
+      "branch": "chore/blame-ignore-ruff-reformat",
+      "head": "3a43549",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Ignore the ruff reformat in git blame",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9560"
+    },
+    "9561": {
+      "author": "Moult",
+      "branch": "fix/bonsaiviewer-docs-logo",
+      "head": "f37c44c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai Viewer docs: use the Bonsai Viewer logo, and trim the installation intro",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9561"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609211023",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609211023"
+    "tag": "v0.8.0-alpha2609211323",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609211323"
   },
   "schema": 1
 }
