@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 195,
-    "merged": 532,
+    "failed": 196,
+    "merged": 531,
     "skipped_conflict": 117,
     "skipped_draft": 56,
     "total": 900
   },
-  "generated_at": "2026-09-22T01:06:08Z",
+  "generated_at": "2026-09-22T14:08:00Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -4117,14 +4117,6 @@
       "title": "Bonsai: load texture UV maps by default so textured IFCs actually render (#6702)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8841"
     },
-    "8842": {
-      "author": "BIMvoice",
-      "branch": "bonsai-ojt001-cleanup-recipe",
-      "head": "01bd6cb",
-      "status": "merged",
-      "title": "ifcpatch: FixDoubleTypedPredefinedType recipe to clean OJT001 double-typing in existing files",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8842"
-    },
     "8844": {
       "author": "BIMvoice",
       "branch": "sweep-46-geom-normal-index",
@@ -7404,11 +7396,20 @@
       "status": "failed",
       "title": "Bonsai Viewer docs: use the Bonsai Viewer logo, and trim the installation intro",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9561"
+    },
+    "9564": {
+      "author": "Andrej730",
+      "branch": "win-python-port",
+      "head": "14b3bb5",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Update build scripts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9564"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609220223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609220223"
+    "tag": "v0.8.0-alpha2609221523",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609221523"
   },
   "schema": 1
 }
