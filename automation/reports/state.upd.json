@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 900
   },
-  "generated_at": "2026-09-21T18:34:25Z",
+  "generated_at": "2026-09-22T02:31:38Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7363,7 +7363,7 @@
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
-      "head": "b50140f",
+      "head": "b4ea720",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
@@ -7407,8 +7407,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609211951",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609211951"
+    "tag": "v0.8.0-alpha2609220349",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609220349"
   },
   "schema": 1
 }
