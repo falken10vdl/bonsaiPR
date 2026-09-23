@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 199,
+    "failed": 198,
     "merged": 529,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 904
+    "total": 903
   },
-  "generated_at": "2026-09-23T12:53:00Z",
+  "generated_at": "2026-09-23T15:53:20Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7363,7 +7363,7 @@
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
-      "head": "b4ea720",
+      "head": "a968459",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
@@ -7414,15 +7414,6 @@
       "title": "Set active object when activating a BCF viewpoint",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9567"
     },
-    "9573": {
-      "author": "aothms",
-      "branch": "tfk-split-trees",
-      "head": "d0dd11e",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Split the two tree algos in to UB and BVH",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9573"
-    },
     "9576": {
       "author": "aothms",
       "branch": "aothms-patch-1",
@@ -7443,8 +7434,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609231408",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231408"
+    "tag": "v0.8.0-alpha2609231709",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231709"
   },
   "schema": 1
 }
