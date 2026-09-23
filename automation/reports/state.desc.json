@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 195,
+    "failed": 197,
     "merged": 529,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 900
+    "total": 902
   },
-  "generated_at": "2026-09-22T17:50:36Z",
+  "generated_at": "2026-09-23T00:52:27Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7404,11 +7404,29 @@
       "status": "failed",
       "title": "Bonsai Viewer docs: use the Bonsai Viewer logo, and trim the installation intro",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9561"
+    },
+    "9567": {
+      "author": "RickBrice",
+      "branch": "rab_bcf_active_object",
+      "head": "69f1da1",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Set active object when activating a BCF viewpoint",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9567"
+    },
+    "9569": {
+      "author": "theoryshaw",
+      "branch": "docs-selector-multivalue",
+      "head": "c0b9320",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Document selector multi-value and regex behaviour",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9569"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609221908",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609221908"
+    "tag": "v0.8.0-alpha2609230209",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609230209"
   },
   "schema": 1
 }

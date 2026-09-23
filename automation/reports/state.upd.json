@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 195,
+    "failed": 196,
     "merged": 526,
     "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 900
+    "total": 901
   },
-  "generated_at": "2026-09-22T18:35:53Z",
+  "generated_at": "2026-09-23T01:36:36Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7404,11 +7404,20 @@
       "status": "failed",
       "title": "Bonsai Viewer docs: use the Bonsai Viewer logo, and trim the installation intro",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9561"
+    },
+    "9567": {
+      "author": "RickBrice",
+      "branch": "rab_bcf_active_object",
+      "head": "69f1da1",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Set active object when activating a BCF viewpoint",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9567"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609221951",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609221951"
+    "tag": "v0.8.0-alpha2609230253",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609230253"
   },
   "schema": 1
 }
