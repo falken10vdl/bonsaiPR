@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 196,
+    "failed": 197,
     "merged": 526,
     "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 901
+    "total": 902
   },
-  "generated_at": "2026-09-23T01:36:36Z",
+  "generated_at": "2026-09-23T10:35:35Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7413,11 +7413,20 @@
       "status": "failed",
       "title": "Set active object when activating a BCF viewpoint",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9567"
+    },
+    "9573": {
+      "author": "aothms",
+      "branch": "tfk-split-trees",
+      "head": "8b78fbc",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Split the two tree algos in to UB and BVH",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9573"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609230253",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609230253"
+    "tag": "v0.8.0-alpha2609231151",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231151"
   },
   "schema": 1
 }

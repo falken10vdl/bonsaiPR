@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 196,
-    "merged": 531,
-    "skipped_conflict": 118,
+    "failed": 197,
+    "merged": 532,
+    "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 901
+    "total": 902
   },
-  "generated_at": "2026-09-23T00:08:56Z",
+  "generated_at": "2026-09-23T09:07:19Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -3964,7 +3964,7 @@
       "author": "BIMvoice",
       "branch": "issue-7178-clash-feet-units",
       "head": "e6489c2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix clash pin drifting away when a false origin is active",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8816"
     },
@@ -7413,11 +7413,20 @@
       "status": "failed",
       "title": "Set active object when activating a BCF viewpoint",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9567"
+    },
+    "9573": {
+      "author": "aothms",
+      "branch": "tfk-split-trees",
+      "head": "1f0f3ee",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Split the two tree algos in to UB and BVH",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9573"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609230123",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609230123"
+    "tag": "v0.8.0-alpha2609231023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231023"
   },
   "schema": 1
 }

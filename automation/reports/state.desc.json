@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 902
   },
-  "generated_at": "2026-09-23T00:52:27Z",
+  "generated_at": "2026-09-23T09:50:57Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7414,19 +7414,19 @@
       "title": "Set active object when activating a BCF viewpoint",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9567"
     },
-    "9569": {
-      "author": "theoryshaw",
-      "branch": "docs-selector-multivalue",
-      "head": "c0b9320",
-      "reason": "Fails to merge against base (problem with PR itself)",
+    "9573": {
+      "author": "aothms",
+      "branch": "tfk-split-trees",
+      "head": "a6f8ec3",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Document selector multi-value and regex behaviour",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9569"
+      "title": "Split the two tree algos in to UB and BVH",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9573"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609230209",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609230209"
+    "tag": "v0.8.0-alpha2609231108",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231108"
   },
   "schema": 1
 }
