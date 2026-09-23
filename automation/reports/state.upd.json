@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 197,
+    "failed": 199,
     "merged": 526,
     "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 902
+    "total": 904
   },
-  "generated_at": "2026-09-23T10:35:35Z",
+  "generated_at": "2026-09-23T13:38:28Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7417,16 +7417,34 @@
     "9573": {
       "author": "aothms",
       "branch": "tfk-split-trees",
-      "head": "8b78fbc",
+      "head": "dc908fa",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Split the two tree algos in to UB and BVH",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9573"
+    },
+    "9576": {
+      "author": "aothms",
+      "branch": "aothms-patch-1",
+      "head": "78079f6",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Change LDFLAGS for dynamic library linking",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9576"
+    },
+    "9577": {
+      "author": "aothms",
+      "branch": "aothms-patch-2",
+      "head": "9d2b080",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Update LDFLAGS for macOS dynamic linking",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9577"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609231151",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231151"
+    "tag": "v0.8.0-alpha2609231454",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231454"
   },
   "schema": 1
 }
