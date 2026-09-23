@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 198,
+    "failed": 200,
     "merged": 529,
     "skipped_conflict": 120,
     "skipped_draft": 56,
-    "total": 903
+    "total": 905
   },
-  "generated_at": "2026-09-23T15:53:20Z",
+  "generated_at": "2026-09-23T18:52:07Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7431,11 +7431,29 @@
       "status": "failed",
       "title": "Update LDFLAGS for macOS dynamic linking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9577"
+    },
+    "9580": {
+      "author": "aothms",
+      "branch": "tfk-ifcview-ifcconvert-serializer",
+      "head": "dbc4472",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcview ifcconvert serializer",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
+    },
+    "9581": {
+      "author": "RickBrice",
+      "branch": "rab_pbde_fix",
+      "head": "7fbe3a5",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Load IfcPointByDistanceExpression items in point representations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9581"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609231709",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231709"
+    "tag": "v0.8.0-alpha2609232008",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609232008"
   },
   "schema": 1
 }

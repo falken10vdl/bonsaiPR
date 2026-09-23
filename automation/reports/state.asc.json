@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 198,
+    "failed": 199,
     "merged": 532,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 903
+    "total": 904
   },
-  "generated_at": "2026-09-23T15:08:12Z",
+  "generated_at": "2026-09-23T18:07:39Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7363,7 +7363,7 @@
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
-      "head": "b4ea720",
+      "head": "a968459",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
@@ -7431,11 +7431,20 @@
       "status": "failed",
       "title": "Update LDFLAGS for macOS dynamic linking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9577"
+    },
+    "9580": {
+      "author": "aothms",
+      "branch": "tfk-ifcview-ifcconvert-serializer",
+      "head": "dbc4472",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcview ifcconvert serializer",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609231623",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231623"
+    "tag": "v0.8.0-alpha2609231923",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231923"
   },
   "schema": 1
 }
