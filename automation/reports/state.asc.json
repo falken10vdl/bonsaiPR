@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 199,
+    "failed": 200,
     "merged": 532,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 904
+    "total": 905
   },
-  "generated_at": "2026-09-23T18:07:39Z",
+  "generated_at": "2026-09-23T21:07:45Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7440,11 +7440,20 @@
       "status": "failed",
       "title": "ifcview ifcconvert serializer",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
+    },
+    "9581": {
+      "author": "RickBrice",
+      "branch": "rab_pbde_fix",
+      "head": "7fbe3a5",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Load IfcPointByDistanceExpression items in point representations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9581"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609231923",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609231923"
+    "tag": "v0.8.0-alpha2609232223",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609232223"
   },
   "schema": 1
 }
