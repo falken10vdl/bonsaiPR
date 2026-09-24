@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 201,
-    "merged": 529,
+    "failed": 202,
+    "merged": 528,
     "skipped_conflict": 120,
     "skipped_draft": 57,
     "total": 907
   },
-  "generated_at": "2026-09-24T15:54:11Z",
+  "generated_at": "2026-09-24T18:52:23Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -3006,14 +3006,6 @@
       "status": "merged",
       "title": "Bonsai: embed bundled fonts in exported drawing SVGs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8637"
-    },
-    "8638": {
-      "author": "BIMvoice",
-      "branch": "fix-6663-linked-aggregate-duplicate",
-      "head": "99b2aef",
-      "status": "merged",
-      "title": "Fix #6663: keep a duplicated nested aggregate inside its parent aggregate",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8638"
     },
     "8640": {
       "author": "BIMvoice",
@@ -7466,11 +7458,20 @@
       "status": "failed",
       "title": "ifcparse: parse instances and build the lazy index in parallel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9587"
+    },
+    "9589": {
+      "author": "theoryshaw",
+      "branch": "v09/fix-9588-add-aggregate-linked-aggregates",
+      "head": "c8b6633",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Collect whole aggregates in bim.add_aggregate",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9589"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609241710",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241710"
+    "tag": "v0.8.0-alpha2609242008",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609242008"
   },
   "schema": 1
 }
