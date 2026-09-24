@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 201,
+    "failed": 202,
     "merged": 525,
     "skipped_conflict": 123,
     "skipped_draft": 57,
-    "total": 906
+    "total": 907
   },
-  "generated_at": "2026-09-24T19:37:44Z",
+  "generated_at": "2026-09-24T22:38:45Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7370,24 +7370,6 @@
       "title": "C/TS API binding generation (GSoC 2026) - rebased",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9559"
     },
-    "9560": {
-      "author": "Moult",
-      "branch": "chore/blame-ignore-ruff-reformat",
-      "head": "3a43549",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Ignore the ruff reformat in git blame",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9560"
-    },
-    "9561": {
-      "author": "Moult",
-      "branch": "fix/bonsaiviewer-docs-logo",
-      "head": "f37c44c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bonsai Viewer docs: use the Bonsai Viewer logo, and trim the installation intro",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9561"
-    },
     "9567": {
       "author": "RickBrice",
       "branch": "rab_bcf_active_object",
@@ -7458,11 +7440,38 @@
       "status": "failed",
       "title": "Collect whole aggregates in bim.add_aggregate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9589"
+    },
+    "9592": {
+      "author": "aothms",
+      "branch": "fix-json-serializer-on-pset-without-name",
+      "head": "a69e74f",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix json serializer on pset without name",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9592"
+    },
+    "9593": {
+      "author": "RickBrice",
+      "branch": "rab_polyline_tool_180_fix",
+      "head": "790ad21",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Fix typed 180 degree polyline angle direction",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9593"
+    },
+    "9594": {
+      "author": "Moult",
+      "branch": "fix/geom-tree-kwargs",
+      "head": "34f3cbb",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcopenshell-python: explicit signatures for tree.clash_intersection_many and select_ray",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9594"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609242053",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609242053"
+    "tag": "v0.8.0-alpha2609242354",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609242354"
   },
   "schema": 1
 }

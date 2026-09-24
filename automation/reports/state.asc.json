@@ -7,7 +7,7 @@
     "skipped_draft": 57,
     "total": 907
   },
-  "generated_at": "2026-09-24T18:07:52Z",
+  "generated_at": "2026-09-24T21:08:05Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7424,15 +7424,6 @@
       "title": "ifcview ifcconvert serializer",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
     },
-    "9581": {
-      "author": "RickBrice",
-      "branch": "rab_pbde_fix",
-      "head": "7fbe3a5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Load IfcPointByDistanceExpression items in point representations",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9581"
-    },
     "9584": {
       "author": "aothms",
       "branch": "fix-two-orientation-issues-9570-9571",
@@ -7467,11 +7458,20 @@
       "status": "failed",
       "title": "Collect whole aggregates in bim.add_aggregate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9589"
+    },
+    "9592": {
+      "author": "aothms",
+      "branch": "fix-json-serializer-on-pset-without-name",
+      "head": "a69e74f",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix json serializer on pset without name",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9592"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609241923",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241923"
+    "tag": "v0.8.0-alpha2609242223",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609242223"
   },
   "schema": 1
 }
