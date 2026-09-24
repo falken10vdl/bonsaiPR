@@ -3383,3 +3383,9 @@
 {"ts": "2026-09-23T22:16:40Z", "order": "upd", "pr": 8938, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-09-23T22:16:40Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-09-23T22:16:40Z", "order": "upd", "pr": 9010, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-24T10:17:36Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-24T10:17:36Z", "order": "upd", "pr": 8938, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-24T10:17:36Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-24T10:17:36Z", "order": "upd", "pr": 9010, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-24T10:38:51Z", "order": "by-updated", "pr": 9534, "event": "removed", "from": "failed"}
+{"ts": "2026-09-24T10:38:51Z", "order": "by-updated", "pr": 9580, "event": "updated", "status": "failed", "from_head": "dbc4472", "to_head": "b2efa8c"}

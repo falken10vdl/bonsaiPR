@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 905
   },
-  "generated_at": "2026-09-23T21:52:34Z",
+  "generated_at": "2026-09-24T09:51:22Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7435,7 +7435,7 @@
     "9580": {
       "author": "aothms",
       "branch": "tfk-ifcview-ifcconvert-serializer",
-      "head": "dbc4472",
+      "head": "b2efa8c",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcview ifcconvert serializer",
@@ -7452,8 +7452,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609232308",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609232308"
+    "tag": "v0.8.0-alpha2609241108",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241108"
   },
   "schema": 1
 }

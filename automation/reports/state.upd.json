@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 200,
+    "failed": 199,
     "merged": 526,
     "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 905
+    "total": 904
   },
-  "generated_at": "2026-09-23T22:38:29Z",
+  "generated_at": "2026-09-24T10:38:51Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7342,15 +7342,6 @@
       "title": "fix(bonsai): extend walls to cursor from any base level",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
     },
-    "9534": {
-      "author": "Moult",
-      "branch": "ci/nix-package-occt-once",
-      "head": "c1c1ca5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "nix: package every shared library once and only the OCCT toolkits in use",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9534"
-    },
     "9544": {
       "author": "brunopostle",
       "branch": "fix/core-lib-underscore-names",
@@ -7435,7 +7426,7 @@
     "9580": {
       "author": "aothms",
       "branch": "tfk-ifcview-ifcconvert-serializer",
-      "head": "dbc4472",
+      "head": "b2efa8c",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcview ifcconvert serializer",
@@ -7452,8 +7443,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609232353",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609232353"
+    "tag": "v0.8.0-alpha2609241152",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241152"
   },
   "schema": 1
 }
