@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 199,
+    "failed": 201,
     "merged": 532,
     "skipped_conflict": 117,
-    "skipped_draft": 56,
-    "total": 904
+    "skipped_draft": 57,
+    "total": 907
   },
-  "generated_at": "2026-09-24T12:07:15Z",
+  "generated_at": "2026-09-24T15:08:54Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7247,10 +7247,10 @@
     "9492": {
       "author": "Moult",
       "branch": "open-perf-v2",
-      "head": "f0e08d8",
+      "head": "d1b4205",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: faster, smaller open(): one tokenizer, references in the slots, lazy loading, parallel and paged parsing",
+      "title": "[AI-generated, unverified] ifcparse: faster, smaller open(): one tokenizer, references in the slots, lazy loading, paged parsing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9492"
     },
     "9493": {
@@ -7327,7 +7327,7 @@
     "9520": {
       "author": "Moult",
       "branch": "bytype-lazy-erase",
-      "head": "65722ba",
+      "head": "5256a31",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: stop scanning a type's instance list when deleting an instance",
@@ -7440,11 +7440,37 @@
       "status": "failed",
       "title": "Load IfcPointByDistanceExpression items in point representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9581"
+    },
+    "9584": {
+      "author": "aothms",
+      "branch": "fix-two-orientation-issues-9570-9571",
+      "head": "07c6dd0",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix two orientation issues #9570 #9571",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9584"
+    },
+    "9585": {
+      "author": "Moult",
+      "branch": "perf/ifcparse-bytype-sort-threads",
+      "head": "0221fdd",
+      "status": "skipped_draft",
+      "title": "[AI-generated, unverified] ifcparse: sort the type lists on the threads the file open was given",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9585"
+    },
+    "9587": {
+      "author": "Moult",
+      "branch": "perf/ifcparse-parallel-parse",
+      "head": "49097a8",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcparse: parse instances and build the lazy index in parallel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9587"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609241323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241323"
+    "tag": "v0.8.0-alpha2609241623",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241623"
   },
   "schema": 1
 }

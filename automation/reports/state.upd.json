@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 200,
+    "failed": 201,
     "merged": 526,
     "skipped_conflict": 123,
     "skipped_draft": 57,
-    "total": 906
+    "total": 907
   },
-  "generated_at": "2026-09-24T13:38:26Z",
+  "generated_at": "2026-09-24T16:39:36Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7247,10 +7247,10 @@
     "9492": {
       "author": "Moult",
       "branch": "open-perf-v2",
-      "head": "f0e08d8",
+      "head": "d1b4205",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: faster, smaller open(): one tokenizer, references in the slots, lazy loading, parallel and paged parsing",
+      "title": "[AI-generated, unverified] ifcparse: faster, smaller open(): one tokenizer, references in the slots, lazy loading, paged parsing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9492"
     },
     "9493": {
@@ -7327,7 +7327,7 @@
     "9520": {
       "author": "Moult",
       "branch": "bytype-lazy-erase",
-      "head": "9d4ae31",
+      "head": "5256a31",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: stop scanning a type's instance list when deleting an instance",
@@ -7453,15 +7453,24 @@
     "9585": {
       "author": "Moult",
       "branch": "perf/ifcparse-bytype-sort-threads",
-      "head": "2146a40",
+      "head": "0221fdd",
       "status": "skipped_draft",
       "title": "[AI-generated, unverified] ifcparse: sort the type lists on the threads the file open was given",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9585"
+    },
+    "9587": {
+      "author": "Moult",
+      "branch": "perf/ifcparse-parallel-parse",
+      "head": "49097a8",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcparse: parse instances and build the lazy index in parallel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9587"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609241452",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241452"
+    "tag": "v0.8.0-alpha2609241755",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241755"
   },
   "schema": 1
 }
