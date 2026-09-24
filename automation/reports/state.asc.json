@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 200,
+    "failed": 199,
     "merged": 532,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 905
+    "total": 904
   },
-  "generated_at": "2026-09-24T09:07:06Z",
+  "generated_at": "2026-09-24T12:07:15Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7342,15 +7342,6 @@
       "title": "fix(bonsai): extend walls to cursor from any base level",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
     },
-    "9534": {
-      "author": "Moult",
-      "branch": "ci/nix-package-occt-once",
-      "head": "c1c1ca5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "nix: package every shared library once and only the OCCT toolkits in use",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9534"
-    },
     "9544": {
       "author": "brunopostle",
       "branch": "fix/core-lib-underscore-names",
@@ -7452,8 +7443,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609241023",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241023"
+    "tag": "v0.8.0-alpha2609241323",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241323"
   },
   "schema": 1
 }

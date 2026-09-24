@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 199,
+    "failed": 200,
     "merged": 526,
     "skipped_conflict": 123,
-    "skipped_draft": 56,
-    "total": 904
+    "skipped_draft": 57,
+    "total": 906
   },
-  "generated_at": "2026-09-24T10:38:51Z",
+  "generated_at": "2026-09-24T13:38:26Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7327,7 +7327,7 @@
     "9520": {
       "author": "Moult",
       "branch": "bytype-lazy-erase",
-      "head": "65722ba",
+      "head": "9d4ae31",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: stop scanning a type's instance list when deleting an instance",
@@ -7440,11 +7440,28 @@
       "status": "failed",
       "title": "Load IfcPointByDistanceExpression items in point representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9581"
+    },
+    "9584": {
+      "author": "aothms",
+      "branch": "fix-two-orientation-issues-9570-9571",
+      "head": "07c6dd0",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix two orientation issues #9570 #9571",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9584"
+    },
+    "9585": {
+      "author": "Moult",
+      "branch": "perf/ifcparse-bytype-sort-threads",
+      "head": "2146a40",
+      "status": "skipped_draft",
+      "title": "[AI-generated, unverified] ifcparse: sort the type lists on the threads the file open was given",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9585"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609241152",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241152"
+    "tag": "v0.8.0-alpha2609241452",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241452"
   },
   "schema": 1
 }

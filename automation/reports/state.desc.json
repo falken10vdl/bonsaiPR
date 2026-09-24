@@ -4,10 +4,10 @@
     "failed": 200,
     "merged": 529,
     "skipped_conflict": 120,
-    "skipped_draft": 56,
-    "total": 905
+    "skipped_draft": 57,
+    "total": 906
   },
-  "generated_at": "2026-09-24T09:51:22Z",
+  "generated_at": "2026-09-24T12:51:18Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7327,7 +7327,7 @@
     "9520": {
       "author": "Moult",
       "branch": "bytype-lazy-erase",
-      "head": "65722ba",
+      "head": "9d4ae31",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: stop scanning a type's instance list when deleting an instance",
@@ -7341,15 +7341,6 @@
       "status": "failed",
       "title": "fix(bonsai): extend walls to cursor from any base level",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
-    },
-    "9534": {
-      "author": "Moult",
-      "branch": "ci/nix-package-occt-once",
-      "head": "c1c1ca5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "nix: package every shared library once and only the OCCT toolkits in use",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9534"
     },
     "9544": {
       "author": "brunopostle",
@@ -7449,11 +7440,28 @@
       "status": "failed",
       "title": "Load IfcPointByDistanceExpression items in point representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9581"
+    },
+    "9584": {
+      "author": "aothms",
+      "branch": "fix-two-orientation-issues-9570-9571",
+      "head": "ee07456",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix two orientation issues #9570 #9571",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9584"
+    },
+    "9585": {
+      "author": "Moult",
+      "branch": "perf/ifcparse-bytype-sort-threads",
+      "head": "2146a40",
+      "status": "skipped_draft",
+      "title": "[AI-generated, unverified] ifcparse: sort the type lists on the threads the file open was given",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9585"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609241108",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241108"
+    "tag": "v0.8.0-alpha2609241408",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609241408"
   },
   "schema": 1
 }
