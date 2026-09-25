@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 198,
+    "failed": 199,
     "merged": 531,
     "skipped_conflict": 117,
     "skipped_draft": 57,
-    "total": 903
+    "total": 904
   },
-  "generated_at": "2026-09-25T11:06:33Z",
+  "generated_at": "2026-09-25T14:08:36Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7307,15 +7307,6 @@
       "title": "Bonsai: fuse underside clip solids into one UNION tool (#9516)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9517"
     },
-    "9520": {
-      "author": "Moult",
-      "branch": "bytype-lazy-erase",
-      "head": "00dfa34",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: stop scanning a type's instance list when deleting an instance",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9520"
-    },
     "9523": {
       "author": "theoryshaw",
       "branch": "extend_to_cursor_base_levels_7950",
@@ -7391,7 +7382,7 @@
     "9585": {
       "author": "Moult",
       "branch": "perf/ifcparse-bytype-sort-threads",
-      "head": "2128cdc",
+      "head": "db15f44",
       "status": "skipped_draft",
       "title": "[AI-generated, unverified] ifcparse: sort the type lists on the threads the file open was given",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9585"
@@ -7399,7 +7390,7 @@
     "9587": {
       "author": "Moult",
       "branch": "perf/ifcparse-parallel-parse",
-      "head": "f21b662",
+      "head": "582df2b",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcparse: parse instances and build the lazy index in parallel",
@@ -7431,11 +7422,29 @@
       "status": "failed",
       "title": "Ignore clash task in docs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9598"
+    },
+    "9601": {
+      "author": "Andrej730",
+      "branch": "remove-oce-use-old-cmake-vars",
+      "head": "db173ad",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Remove OCE and the use of the old cmake vars",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9601"
+    },
+    "9602": {
+      "author": "Moult",
+      "branch": "perf/ifcparse-remove-from-big-lists",
+      "head": "be6cb00",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: erase a deleted instance from the aggregates that name it in place",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9602"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609251223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251223"
+    "tag": "v0.8.0-alpha2609251523",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251523"
   },
   "schema": 1
 }

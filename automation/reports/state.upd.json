@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 197,
+    "failed": 198,
     "merged": 525,
     "skipped_conflict": 123,
     "skipped_draft": 57,
-    "total": 902
+    "total": 903
   },
-  "generated_at": "2026-09-25T12:34:23Z",
+  "generated_at": "2026-09-25T15:38:42Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7422,11 +7422,20 @@
       "status": "failed",
       "title": "Ignore clash task in docs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9598"
+    },
+    "9602": {
+      "author": "Moult",
+      "branch": "perf/ifcparse-remove-from-big-lists",
+      "head": "be6cb00",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: erase a deleted instance from the aggregates that name it in place",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9602"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609251351",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251351"
+    "tag": "v0.8.0-alpha2609251654",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251654"
   },
   "schema": 1
 }
