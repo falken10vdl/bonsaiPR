@@ -3420,3 +3420,8 @@
 {"ts": "2026-09-24T22:38:45Z", "order": "by-updated", "pr": 9592, "event": "added", "to": "failed"}
 {"ts": "2026-09-24T22:38:45Z", "order": "by-updated", "pr": 9593, "event": "added", "to": "failed"}
 {"ts": "2026-09-24T22:38:45Z", "order": "by-updated", "pr": 9594, "event": "added", "to": "failed"}
+{"ts": "2026-09-25T01:13:49Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-25T01:13:49Z", "order": "upd", "pr": 8938, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-25T01:13:49Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-25T01:13:49Z", "order": "upd", "pr": 9010, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-25T01:35:01Z", "order": "by-updated", "pr": 9594, "event": "updated", "status": "failed", "from_head": "34f3cbb", "to_head": "064545a"}

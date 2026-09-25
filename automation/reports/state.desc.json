@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 203,
+    "failed": 202,
     "merged": 528,
     "skipped_conflict": 120,
     "skipped_draft": 57,
-    "total": 908
+    "total": 907
   },
-  "generated_at": "2026-09-24T21:53:08Z",
+  "generated_at": "2026-09-25T00:50:30Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7370,24 +7370,6 @@
       "title": "C/TS API binding generation (GSoC 2026) - rebased",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9559"
     },
-    "9560": {
-      "author": "Moult",
-      "branch": "chore/blame-ignore-ruff-reformat",
-      "head": "3a43549",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Ignore the ruff reformat in git blame",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9560"
-    },
-    "9561": {
-      "author": "Moult",
-      "branch": "fix/bonsaiviewer-docs-logo",
-      "head": "f37c44c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bonsai Viewer docs: use the Bonsai Viewer logo, and trim the installation intro",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9561"
-    },
     "9567": {
       "author": "RickBrice",
       "branch": "rab_bcf_active_object",
@@ -7476,11 +7458,20 @@
       "status": "failed",
       "title": "Fix typed 180 degree polyline angle direction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9593"
+    },
+    "9594": {
+      "author": "Moult",
+      "branch": "fix/geom-tree-kwargs",
+      "head": "064545a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcopenshell-python: explicit signatures for tree.clash_intersection_many and select_ray",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9594"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609242309",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609242309"
+    "tag": "v0.8.0-alpha2609250208",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609250208"
   },
   "schema": 1
 }

@@ -7,7 +7,7 @@
     "skipped_draft": 57,
     "total": 907
   },
-  "generated_at": "2026-09-24T22:38:45Z",
+  "generated_at": "2026-09-25T01:35:01Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7462,7 +7462,7 @@
     "9594": {
       "author": "Moult",
       "branch": "fix/geom-tree-kwargs",
-      "head": "34f3cbb",
+      "head": "064545a",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcopenshell-python: explicit signatures for tree.clash_intersection_many and select_ray",
@@ -7470,8 +7470,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609242354",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609242354"
+    "tag": "v0.8.0-alpha2609250251",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609250251"
   },
   "schema": 1
 }
