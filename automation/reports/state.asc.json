@@ -7,7 +7,7 @@
     "skipped_draft": 57,
     "total": 903
   },
-  "generated_at": "2026-09-25T08:07:00Z",
+  "generated_at": "2026-09-25T11:06:33Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7236,15 +7236,6 @@
       "title": "Bonsai: set unit scale when a project is loaded from a .blend (#9490)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9491"
     },
-    "9492": {
-      "author": "Moult",
-      "branch": "open-perf-v2",
-      "head": "95da08e",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: faster, smaller open(): one tokenizer, references in the slots, lazy loading, paged parsing",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9492"
-    },
     "9493": {
       "author": "theoryshaw",
       "branch": "join_cut_material_layers",
@@ -7319,7 +7310,7 @@
     "9520": {
       "author": "Moult",
       "branch": "bytype-lazy-erase",
-      "head": "5256a31",
+      "head": "00dfa34",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: stop scanning a type's instance list when deleting an instance",
@@ -7400,7 +7391,7 @@
     "9585": {
       "author": "Moult",
       "branch": "perf/ifcparse-bytype-sort-threads",
-      "head": "0221fdd",
+      "head": "2128cdc",
       "status": "skipped_draft",
       "title": "[AI-generated, unverified] ifcparse: sort the type lists on the threads the file open was given",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9585"
@@ -7408,7 +7399,7 @@
     "9587": {
       "author": "Moult",
       "branch": "perf/ifcparse-parallel-parse",
-      "head": "156ff28",
+      "head": "f21b662",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcparse: parse instances and build the lazy index in parallel",
@@ -7431,11 +7422,20 @@
       "status": "failed",
       "title": "Fix typed 180 degree polyline angle direction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9593"
+    },
+    "9598": {
+      "author": "aothms",
+      "branch": "fix-cpp-docs",
+      "head": "eb575c0",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Ignore clash task in docs",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9598"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609250923",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609250923"
+    "tag": "v0.8.0-alpha2609251223",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251223"
   },
   "schema": 1
 }
