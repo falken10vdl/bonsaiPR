@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 199,
-    "merged": 528,
+    "failed": 197,
+    "merged": 529,
     "skipped_conflict": 120,
     "skipped_draft": 57,
-    "total": 904
+    "total": 903
   },
-  "generated_at": "2026-09-25T14:53:25Z",
+  "generated_at": "2026-09-25T17:51:14Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -4182,8 +4182,7 @@
       "author": "BIMvoice",
       "branch": "sweep-1308-svg-data-area",
       "head": "2c6db3d",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "SvgSerializer: emit machine-readable space area attribute; fix double-escaped area label (#1308)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8856"
     },
@@ -7423,15 +7422,6 @@
       "title": "Ignore clash task in docs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9598"
     },
-    "9601": {
-      "author": "Andrej730",
-      "branch": "remove-oce-use-old-cmake-vars",
-      "head": "db173ad",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Remove OCE and the use of the old cmake vars",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9601"
-    },
     "9602": {
       "author": "Moult",
       "branch": "perf/ifcparse-remove-from-big-lists",
@@ -7443,8 +7433,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609251609",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251609"
+    "tag": "v0.8.0-alpha2609251908",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251908"
   },
   "schema": 1
 }

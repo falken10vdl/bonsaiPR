@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 199,
+    "failed": 198,
     "merged": 531,
     "skipped_conflict": 117,
     "skipped_draft": 57,
-    "total": 904
+    "total": 903
   },
-  "generated_at": "2026-09-25T14:08:36Z",
+  "generated_at": "2026-09-25T17:07:04Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7423,15 +7423,6 @@
       "title": "Ignore clash task in docs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9598"
     },
-    "9601": {
-      "author": "Andrej730",
-      "branch": "remove-oce-use-old-cmake-vars",
-      "head": "db173ad",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Remove OCE and the use of the old cmake vars",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9601"
-    },
     "9602": {
       "author": "Moult",
       "branch": "perf/ifcparse-remove-from-big-lists",
@@ -7443,8 +7434,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609251523",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251523"
+    "tag": "v0.8.0-alpha2609251823",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251823"
   },
   "schema": 1
 }
