@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 202,
+    "failed": 199,
     "merged": 525,
     "skipped_conflict": 123,
     "skipped_draft": 57,
-    "total": 907
+    "total": 904
   },
-  "generated_at": "2026-09-25T04:34:23Z",
+  "generated_at": "2026-09-25T09:35:40Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7239,7 +7239,7 @@
     "9492": {
       "author": "Moult",
       "branch": "open-perf-v2",
-      "head": "d1b4205",
+      "head": "95da08e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: faster, smaller open(): one tokenizer, references in the slots, lazy loading, paged parsing",
@@ -7388,15 +7388,6 @@
       "title": "Change LDFLAGS for dynamic library linking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9576"
     },
-    "9577": {
-      "author": "aothms",
-      "branch": "aothms-patch-2",
-      "head": "9d2b080",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Update LDFLAGS for macOS dynamic linking",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9577"
-    },
     "9580": {
       "author": "aothms",
       "branch": "tfk-ifcview-ifcconvert-serializer",
@@ -7405,15 +7396,6 @@
       "status": "failed",
       "title": "ifcview ifcconvert serializer",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
-    },
-    "9584": {
-      "author": "aothms",
-      "branch": "fix-two-orientation-issues-9570-9571",
-      "head": "07c6dd0",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Fix two orientation issues #9570 #9571",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9584"
     },
     "9585": {
       "author": "Moult",
@@ -7426,7 +7408,7 @@
     "9587": {
       "author": "Moult",
       "branch": "perf/ifcparse-parallel-parse",
-      "head": "49097a8",
+      "head": "156ff28",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcparse: parse instances and build the lazy index in parallel",
@@ -7441,15 +7423,6 @@
       "title": "Collect whole aggregates in bim.add_aggregate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9589"
     },
-    "9592": {
-      "author": "aothms",
-      "branch": "fix-json-serializer-on-pset-without-name",
-      "head": "a69e74f",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Fix json serializer on pset without name",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9592"
-    },
     "9593": {
       "author": "RickBrice",
       "branch": "rab_polyline_tool_180_fix",
@@ -7459,19 +7432,19 @@
       "title": "Fix typed 180 degree polyline angle direction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9593"
     },
-    "9594": {
-      "author": "Moult",
-      "branch": "fix/geom-tree-kwargs",
-      "head": "064545a",
+    "9598": {
+      "author": "aothms",
+      "branch": "fix-cpp-docs",
+      "head": "eb575c0",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "[AI-generated, unverified] ifcopenshell-python: explicit signatures for tree.clash_intersection_many and select_ray",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9594"
+      "title": "Ignore clash task in docs",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9598"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609250551",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609250551"
+    "tag": "v0.8.0-alpha2609251051",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251051"
   },
   "schema": 1
 }
