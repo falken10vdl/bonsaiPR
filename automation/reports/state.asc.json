@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 203,
+    "failed": 202,
     "merged": 531,
     "skipped_conflict": 117,
     "skipped_draft": 57,
-    "total": 908
+    "total": 907
   },
-  "generated_at": "2026-09-25T00:07:05Z",
+  "generated_at": "2026-09-25T03:06:53Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7462,25 +7462,16 @@
     "9594": {
       "author": "Moult",
       "branch": "fix/geom-tree-kwargs",
-      "head": "34f3cbb",
+      "head": "064545a",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcopenshell-python: explicit signatures for tree.clash_intersection_many and select_ray",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9594"
-    },
-    "9597": {
-      "author": "Moult",
-      "branch": "fix/bonsai-ifcopenshell-rdflib-sqlalchemy",
-      "head": "1770ace",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] bonsai: install ifcopenshell-rdflib-sqlalchemy as the Brick store",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9597"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609250123",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609250123"
+    "tag": "v0.8.0-alpha2609250423",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609250423"
   },
   "schema": 1
 }

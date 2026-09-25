@@ -5954,3 +5954,5 @@
 {"ts": "2026-09-25T00:07:05Z", "order": "ascending", "pr": 9593, "event": "added", "to": "failed"}
 {"ts": "2026-09-25T00:07:05Z", "order": "ascending", "pr": 9594, "event": "added", "to": "failed"}
 {"ts": "2026-09-25T00:07:05Z", "order": "ascending", "pr": 9597, "event": "added", "to": "failed"}
+{"ts": "2026-09-25T03:06:53Z", "order": "ascending", "pr": 9594, "event": "updated", "status": "failed", "from_head": "34f3cbb", "to_head": "064545a"}
+{"ts": "2026-09-25T03:06:53Z", "order": "ascending", "pr": 9597, "event": "removed", "from": "failed"}
