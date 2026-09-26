@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 905
   },
-  "generated_at": "2026-09-26T13:06:24Z",
+  "generated_at": "2026-09-26T16:06:31Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7185,7 +7185,7 @@
     "9483": {
       "author": "theoryshaw",
       "branch": "radial_arrays",
-      "head": "74fbfd9",
+      "head": "7db2754",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: add radial and helical arrays to bim.add_array",
@@ -7453,8 +7453,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609261423",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609261423"
+    "tag": "v0.8.0-alpha2609261723",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609261723"
   },
   "schema": 1
 }
