@@ -4,10 +4,10 @@
     "failed": 200,
     "merged": 528,
     "skipped_conflict": 120,
-    "skipped_draft": 57,
-    "total": 905
+    "skipped_draft": 56,
+    "total": 904
   },
-  "generated_at": "2026-09-25T23:50:56Z",
+  "generated_at": "2026-09-26T02:51:12Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7379,14 +7379,6 @@
       "title": "ifcview ifcconvert serializer",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
     },
-    "9585": {
-      "author": "Moult",
-      "branch": "perf/ifcparse-bytype-sort-threads",
-      "head": "db15f44",
-      "status": "skipped_draft",
-      "title": "[AI-generated, unverified] ifcparse: sort the type lists on the threads the file open was given",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9585"
-    },
     "9587": {
       "author": "Moult",
       "branch": "perf/ifcparse-parallel-parse",
@@ -7452,8 +7444,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609260108",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609260108"
+    "tag": "v0.8.0-alpha2609260407",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609260407"
   },
   "schema": 1
 }
