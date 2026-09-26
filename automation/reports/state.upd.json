@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 198,
+    "failed": 200,
     "merged": 525,
     "skipped_conflict": 123,
     "skipped_draft": 57,
-    "total": 903
+    "total": 905
   },
-  "generated_at": "2026-09-25T18:35:46Z",
+  "generated_at": "2026-09-26T00:35:13Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7431,11 +7431,29 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: erase a deleted instance from the aggregates that name it in place",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9602"
+    },
+    "9603": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.16.8",
+      "head": "97426fc",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump ruff from 0.16.7 to 0.16.8",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9603"
+    },
+    "9604": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.83",
+      "head": "b6924ee",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "build(deps): bump ty from 0.0.81 to 0.0.83",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9604"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609251952",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609251952"
+    "tag": "v0.8.0-alpha2609260152",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609260152"
   },
   "schema": 1
 }
