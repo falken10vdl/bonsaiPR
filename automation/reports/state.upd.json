@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 907
   },
-  "generated_at": "2026-09-27T09:33:02Z",
+  "generated_at": "2026-09-27T12:36:05Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7454,25 +7454,25 @@
     "9605": {
       "author": "Moult",
       "branch": "fix/ifcopenshell-python-remove-deep2-shared-references",
-      "head": "a5a0ae2",
+      "head": "b64f2bb",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, maintainer-reviewed] ifcopenshell-python: keep what a kept subgraph member still references in remove_deep2",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9605"
     },
-    "9606": {
+    "9608": {
       "author": "Moult",
-      "branch": "refactor/ifcwrap-is-referenced-only-in",
-      "head": "ddd950f",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "branch": "fix/bonsai-brick-store-from-upstream",
+      "head": "809a23a",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "[AI-generated, unverified] ifcwrap: add _is_referenced_only_in, keeping _all_inverses_within as its alias",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9606"
+      "title": "[AI-generated, unverified] bonsai: take the Brick SQLAlchemy store from upstream again",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9608"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609271049",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271049"
+    "tag": "v0.8.0-alpha2609271351",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271351"
   },
   "schema": 1
 }

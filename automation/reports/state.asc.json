@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 906
   },
-  "generated_at": "2026-09-27T08:06:11Z",
+  "generated_at": "2026-09-27T11:06:19Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7454,7 +7454,7 @@
     "9605": {
       "author": "Moult",
       "branch": "fix/ifcopenshell-python-remove-deep2-shared-references",
-      "head": "a5a0ae2",
+      "head": "efcf183",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, maintainer-reviewed] ifcopenshell-python: keep what a kept subgraph member still references in remove_deep2",
@@ -7462,8 +7462,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609270923",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609270923"
+    "tag": "v0.8.0-alpha2609271223",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271223"
   },
   "schema": 1
 }
