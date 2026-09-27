@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 905
   },
-  "generated_at": "2026-09-27T02:32:07Z",
+  "generated_at": "2026-09-27T05:32:06Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7328,7 +7328,7 @@
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
-      "head": "a968459",
+      "head": "c10c752",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
@@ -7337,7 +7337,7 @@
     "9557": {
       "author": "theoryshaw",
       "branch": "restore_moved_sheet_files",
-      "head": "7ec1db5",
+      "head": "6896b9a",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Bonsai: put back sheet files renamed in a session that was not saved",
@@ -7453,8 +7453,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609270349",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609270349"
+    "tag": "v0.8.0-alpha2609270649",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609270649"
   },
   "schema": 1
 }
