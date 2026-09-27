@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 906
   },
-  "generated_at": "2026-09-27T17:06:25Z",
+  "generated_at": "2026-09-27T20:07:51Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -960,7 +960,7 @@
     "8200": {
       "author": "theoryshaw",
       "branch": "opening-template-on-type",
-      "head": "c0b7f37",
+      "head": "a9efabb",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Preserve custom opening geometry via a type-level Reference template",
@@ -7053,7 +7053,7 @@
     "9422": {
       "author": "PahlawanJoey",
       "branch": "fix/extract-elements-v090",
-      "head": "993ccca",
+      "head": "6784ff3",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
@@ -7462,8 +7462,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609271823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271823"
+    "tag": "v0.8.0-alpha2609272123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609272123"
   },
   "schema": 1
 }
