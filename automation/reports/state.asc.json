@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 905
   },
-  "generated_at": "2026-09-26T16:06:31Z",
+  "generated_at": "2026-09-27T01:06:10Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -6664,7 +6664,7 @@
     "9304": {
       "author": "DesertSpringsCivil",
       "branch": "review/pr1-foundation",
-      "head": "665d847",
+      "head": "199810b",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Saikei: horizontal alignment authoring foundation for Bonsai (+ alignment API fixes)",
@@ -7453,8 +7453,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609261723",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609261723"
+    "tag": "v0.8.0-alpha2609270223",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609270223"
   },
   "schema": 1
 }
