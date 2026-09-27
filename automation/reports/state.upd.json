@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 203,
-    "merged": 525,
-    "skipped_conflict": 123,
+    "failed": 202,
+    "merged": 519,
+    "skipped_conflict": 129,
     "skipped_draft": 56,
-    "total": 907
+    "total": 906
   },
-  "generated_at": "2026-09-27T12:36:05Z",
+  "generated_at": "2026-09-27T15:50:40Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -135,7 +135,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "f3e3d10",
+      "head": "8a74add",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add true object mirroring operator",
@@ -3897,7 +3897,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7369-drawing-class-leak",
       "head": "a6e2a97",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop merged cut linework leaking classes onto disjoint pieces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8807"
     },
@@ -4659,7 +4659,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-choco-subprocess-args",
       "head": "7429305",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix ci-bonsai-choco: subprocess calls given bare multi-word strings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8942"
     },
@@ -6423,7 +6423,7 @@
       "author": "BIMvoice",
       "branch": "fix/black-drift-referent-names",
       "head": "761641b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "tests: fix black drift blocking unrelated commits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9241"
     },
@@ -7012,7 +7012,7 @@
       "author": "BIMvoice",
       "branch": "fix-9353-window-attrs-own-geometry",
       "head": "9198c24",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9406"
     },
@@ -7080,7 +7080,7 @@
       "author": "BIMvoice",
       "branch": "fix-9426-slab-empty-polyline",
       "head": "e0c0dd6",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: drawing a slab with an empty polyline crashes (#9426)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9428"
     },
@@ -7106,7 +7106,7 @@
       "author": "theoryshaw",
       "branch": "fix-9440-relative-save-path",
       "head": "5095086",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: resolve IFC save path to absolute before writing (fixes relative-path save failure)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9441"
     },
@@ -7347,7 +7347,7 @@
       "author": "aothms",
       "branch": "pr-9325-rebased-v0.9.0",
       "head": "b6c1b7d",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "C/TS API binding generation (GSoC 2026) - rebased",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9559"
@@ -7374,7 +7374,7 @@
       "author": "aothms",
       "branch": "tfk-ifcview-ifcconvert-serializer",
       "head": "b2efa8c",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "ifcview ifcconvert serializer",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
@@ -7392,7 +7392,7 @@
       "author": "Moult",
       "branch": "perf/ifcparse-parallel-parse",
       "head": "582df2b",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "ifcparse: parse instances and build the lazy index in parallel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9587"
@@ -7428,7 +7428,7 @@
       "author": "Moult",
       "branch": "perf/ifcparse-remove-from-big-lists",
       "head": "be6cb00",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: erase a deleted instance from the aggregates that name it in place",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9602"
@@ -7451,28 +7451,19 @@
       "title": "build(deps): bump ty from 0.0.81 to 0.0.83",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9604"
     },
-    "9605": {
+    "9609": {
       "author": "Moult",
-      "branch": "fix/ifcopenshell-python-remove-deep2-shared-references",
-      "head": "b64f2bb",
+      "branch": "perf/ifcparse-bytype-vector-by-schema-index",
+      "head": "063909e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "[AI-generated, maintainer-reviewed] ifcopenshell-python: keep what a kept subgraph member still references in remove_deep2",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9605"
-    },
-    "9608": {
-      "author": "Moult",
-      "branch": "fix/bonsai-brick-store-from-upstream",
-      "head": "809a23a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] bonsai: take the Brick SQLAlchemy store from upstream again",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9608"
+      "title": "[AI-generated, unverified] ifcparse: keep the by-type lists in a vector indexed by the type's index in the schema",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9609"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609271351",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271351"
+    "tag": "v0.8.0-alpha2609271645",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271645"
   },
   "schema": 1
 }

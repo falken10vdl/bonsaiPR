@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 906
   },
-  "generated_at": "2026-09-27T11:50:15Z",
+  "generated_at": "2026-09-27T14:44:04Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7451,19 +7451,19 @@
       "title": "build(deps): bump ty from 0.0.81 to 0.0.83",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9604"
     },
-    "9605": {
+    "9609": {
       "author": "Moult",
-      "branch": "fix/ifcopenshell-python-remove-deep2-shared-references",
-      "head": "5d560f9",
+      "branch": "perf/ifcparse-bytype-vector-by-schema-index",
+      "head": "063909e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "[AI-generated, maintainer-reviewed] ifcopenshell-python: keep what a kept subgraph member still references in remove_deep2",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9605"
+      "title": "[AI-generated, unverified] ifcparse: keep the by-type lists in a vector indexed by the type's index in the schema",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9609"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609271307",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271307"
+    "tag": "v0.8.0-alpha2609271608",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271608"
   },
   "schema": 1
 }

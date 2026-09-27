@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 202,
+    "failed": 201,
     "merged": 531,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 906
+    "total": 905
   },
-  "generated_at": "2026-09-27T11:06:19Z",
+  "generated_at": "2026-09-27T14:07:12Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7450,20 +7450,11 @@
       "status": "failed",
       "title": "build(deps): bump ty from 0.0.81 to 0.0.83",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9604"
-    },
-    "9605": {
-      "author": "Moult",
-      "branch": "fix/ifcopenshell-python-remove-deep2-shared-references",
-      "head": "efcf183",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, maintainer-reviewed] ifcopenshell-python: keep what a kept subgraph member still references in remove_deep2",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9605"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609271223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271223"
+    "tag": "v0.8.0-alpha2609271523",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271523"
   },
   "schema": 1
 }
