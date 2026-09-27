@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 201,
+    "failed": 202,
     "merged": 531,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 905
+    "total": 906
   },
-  "generated_at": "2026-09-27T14:07:12Z",
+  "generated_at": "2026-09-27T17:06:25Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -135,7 +135,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "f3e3d10",
+      "head": "8a74add",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add true object mirroring operator",
@@ -7053,7 +7053,7 @@
     "9422": {
       "author": "PahlawanJoey",
       "branch": "fix/extract-elements-v090",
-      "head": "4db3eaa",
+      "head": "993ccca",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
@@ -7450,11 +7450,20 @@
       "status": "failed",
       "title": "build(deps): bump ty from 0.0.81 to 0.0.83",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9604"
+    },
+    "9609": {
+      "author": "Moult",
+      "branch": "perf/ifcparse-bytype-vector-by-schema-index",
+      "head": "063909e",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: keep the by-type lists in a vector indexed by the type's index in the schema",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9609"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609271523",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271523"
+    "tag": "v0.8.0-alpha2609271823",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271823"
   },
   "schema": 1
 }

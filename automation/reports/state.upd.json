@@ -2,12 +2,12 @@
   "base": "v0.8.0",
   "counts": {
     "failed": 202,
-    "merged": 519,
-    "skipped_conflict": 129,
+    "merged": 525,
+    "skipped_conflict": 123,
     "skipped_draft": 56,
     "total": 906
   },
-  "generated_at": "2026-09-27T15:50:40Z",
+  "generated_at": "2026-09-27T18:34:22Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -960,7 +960,7 @@
     "8200": {
       "author": "theoryshaw",
       "branch": "opening-template-on-type",
-      "head": "c0b7f37",
+      "head": "a9efabb",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Preserve custom opening geometry via a type-level Reference template",
@@ -3897,7 +3897,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-7369-drawing-class-leak",
       "head": "a6e2a97",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stop merged cut linework leaking classes onto disjoint pieces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8807"
     },
@@ -4659,7 +4659,7 @@
       "author": "BIMvoice",
       "branch": "fix/ci-bonsai-choco-subprocess-args",
       "head": "7429305",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix ci-bonsai-choco: subprocess calls given bare multi-word strings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8942"
     },
@@ -6423,7 +6423,7 @@
       "author": "BIMvoice",
       "branch": "fix/black-drift-referent-names",
       "head": "761641b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "tests: fix black drift blocking unrelated commits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9241"
     },
@@ -7012,7 +7012,7 @@
       "author": "BIMvoice",
       "branch": "fix-9353-window-attrs-own-geometry",
       "head": "9198c24",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9406"
     },
@@ -7053,7 +7053,7 @@
     "9422": {
       "author": "PahlawanJoey",
       "branch": "fix/extract-elements-v090",
-      "head": "4db3eaa",
+      "head": "6790489",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
@@ -7080,7 +7080,7 @@
       "author": "BIMvoice",
       "branch": "fix-9426-slab-empty-polyline",
       "head": "e0c0dd6",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: drawing a slab with an empty polyline crashes (#9426)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9428"
     },
@@ -7106,7 +7106,7 @@
       "author": "theoryshaw",
       "branch": "fix-9440-relative-save-path",
       "head": "5095086",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: resolve IFC save path to absolute before writing (fixes relative-path save failure)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9441"
     },
@@ -7347,7 +7347,7 @@
       "author": "aothms",
       "branch": "pr-9325-rebased-v0.9.0",
       "head": "b6c1b7d",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "C/TS API binding generation (GSoC 2026) - rebased",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9559"
@@ -7374,7 +7374,7 @@
       "author": "aothms",
       "branch": "tfk-ifcview-ifcconvert-serializer",
       "head": "b2efa8c",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcview ifcconvert serializer",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
@@ -7392,7 +7392,7 @@
       "author": "Moult",
       "branch": "perf/ifcparse-parallel-parse",
       "head": "582df2b",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcparse: parse instances and build the lazy index in parallel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9587"
@@ -7428,7 +7428,7 @@
       "author": "Moult",
       "branch": "perf/ifcparse-remove-from-big-lists",
       "head": "be6cb00",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: erase a deleted instance from the aggregates that name it in place",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9602"
@@ -7462,8 +7462,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609271645",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271645"
+    "tag": "v0.8.0-alpha2609271951",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271951"
   },
   "schema": 1
 }

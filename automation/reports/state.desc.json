@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 906
   },
-  "generated_at": "2026-09-27T14:44:04Z",
+  "generated_at": "2026-09-27T17:50:06Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -135,7 +135,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "f3e3d10",
+      "head": "8a74add",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Add true object mirroring operator",
@@ -960,7 +960,7 @@
     "8200": {
       "author": "theoryshaw",
       "branch": "opening-template-on-type",
-      "head": "c0b7f37",
+      "head": "a9efabb",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Preserve custom opening geometry via a type-level Reference template",
@@ -7053,7 +7053,7 @@
     "9422": {
       "author": "PahlawanJoey",
       "branch": "fix/extract-elements-v090",
-      "head": "4db3eaa",
+      "head": "993ccca",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
@@ -7462,8 +7462,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609271608",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271608"
+    "tag": "v0.8.0-alpha2609271907",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609271907"
   },
   "schema": 1
 }
