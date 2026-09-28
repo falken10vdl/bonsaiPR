@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 202,
+    "failed": 203,
     "merged": 531,
     "skipped_conflict": 117,
     "skipped_draft": 56,
-    "total": 906
+    "total": 907
   },
-  "generated_at": "2026-09-28T05:06:17Z",
+  "generated_at": "2026-09-28T08:07:03Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7459,11 +7459,20 @@
       "status": "failed",
       "title": "choco: package Bonsai nightlies as a Blender extension",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9613"
+    },
+    "9614": {
+      "author": "Moult",
+      "branch": "ci/build-windows-locate-vcvars-with-vswhere",
+      "head": "28d9bde",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ci: build Windows ARM64 on the Visual Studio 2026 runner",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9614"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609280623",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609280623"
+    "tag": "v0.8.0-alpha2609280923",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609280923"
   },
   "schema": 1
 }

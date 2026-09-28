@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 203,
-    "merged": 525,
+    "failed": 202,
+    "merged": 526,
     "skipped_conflict": 123,
     "skipped_draft": 56,
     "total": 907
   },
-  "generated_at": "2026-09-28T06:33:32Z",
+  "generated_at": "2026-09-28T09:36:45Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -3083,8 +3083,7 @@
       "author": "brunopostle",
       "branch": "fix/binary-token-uncaught-exception",
       "head": "1156a55",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "IfcParse: don't let a malformed binary token abort the parser",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8660"
     },
@@ -7471,8 +7470,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609280750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609280750"
+    "tag": "v0.8.0-alpha2609281052",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609281052"
   },
   "schema": 1
 }
