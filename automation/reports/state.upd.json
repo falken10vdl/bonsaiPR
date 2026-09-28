@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 202,
-    "merged": 526,
+    "failed": 204,
+    "merged": 525,
     "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 907
+    "total": 908
   },
-  "generated_at": "2026-09-28T09:36:45Z",
+  "generated_at": "2026-09-28T18:39:17Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -3083,7 +3083,8 @@
       "author": "brunopostle",
       "branch": "fix/binary-token-uncaught-exception",
       "head": "1156a55",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "IfcParse: don't let a malformed binary token abort the parser",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8660"
     },
@@ -7467,11 +7468,20 @@
       "status": "failed",
       "title": "ci: build Windows ARM64 on the Visual Studio 2026 runner",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9614"
+    },
+    "9617": {
+      "author": "aothms",
+      "branch": "fix-settings-init-order",
+      "head": "1f7d4a4",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix settings init order",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9617"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609281052",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609281052"
+    "tag": "v0.8.0-alpha2609281953",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609281953"
   },
   "schema": 1
 }

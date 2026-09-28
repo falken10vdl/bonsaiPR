@@ -3559,3 +3559,9 @@
 {"ts": "2026-09-28T09:15:44Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-09-28T09:15:44Z", "order": "upd", "pr": 9010, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-09-28T09:36:45Z", "order": "by-updated", "pr": 8660, "event": "status", "from": "failed", "to": "merged"}
+{"ts": "2026-09-28T18:18:10Z", "order": "upd", "pr": 8677, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-28T18:18:10Z", "order": "upd", "pr": 8938, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-28T18:18:10Z", "order": "upd", "pr": 8959, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-28T18:18:10Z", "order": "upd", "pr": 9010, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-09-28T18:39:17Z", "order": "by-updated", "pr": 8660, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-09-28T18:39:17Z", "order": "by-updated", "pr": 9617, "event": "added", "to": "failed"}
