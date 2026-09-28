@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 202,
+    "failed": 203,
     "merged": 525,
     "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 906
+    "total": 907
   },
-  "generated_at": "2026-09-28T03:34:06Z",
+  "generated_at": "2026-09-28T06:33:32Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7433,22 +7433,13 @@
       "title": "[AI-generated, unverified] ifcparse: erase a deleted instance from the aggregates that name it in place",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9602"
     },
-    "9603": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ruff-0.16.8",
-      "head": "97426fc",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump ruff from 0.16.7 to 0.16.8",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9603"
-    },
     "9604": {
       "author": "dependabot[bot]",
       "branch": "dependabot/pip/ty-0.0.83",
-      "head": "b6924ee",
+      "head": "c7ff297",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "build(deps): bump ty from 0.0.81 to 0.0.83",
+      "title": "build(deps): bump ty from 0.0.81 to 0.0.84",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9604"
     },
     "9609": {
@@ -7459,11 +7450,29 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: keep the by-type lists in a vector indexed by the type's index in the schema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9609"
+    },
+    "9613": {
+      "author": "Moult",
+      "branch": "ci/chocolatey-bonsai-nightly-extension",
+      "head": "795e78c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "choco: package Bonsai nightlies as a Blender extension",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9613"
+    },
+    "9614": {
+      "author": "Moult",
+      "branch": "ci/build-windows-locate-vcvars-with-vswhere",
+      "head": "28d9bde",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ci: build Windows ARM64 on the Visual Studio 2026 runner",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9614"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609280449",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609280449"
+    "tag": "v0.8.0-alpha2609280750",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609280750"
   },
   "schema": 1
 }

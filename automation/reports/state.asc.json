@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 906
   },
-  "generated_at": "2026-09-28T02:05:59Z",
+  "generated_at": "2026-09-28T05:06:17Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7433,22 +7433,13 @@
       "title": "[AI-generated, unverified] ifcparse: erase a deleted instance from the aggregates that name it in place",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9602"
     },
-    "9603": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ruff-0.16.8",
-      "head": "97426fc",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "build(deps): bump ruff from 0.16.7 to 0.16.8",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9603"
-    },
     "9604": {
       "author": "dependabot[bot]",
       "branch": "dependabot/pip/ty-0.0.83",
-      "head": "b6924ee",
+      "head": "c7ff297",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "build(deps): bump ty from 0.0.81 to 0.0.83",
+      "title": "build(deps): bump ty from 0.0.81 to 0.0.84",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9604"
     },
     "9609": {
@@ -7459,11 +7450,20 @@
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: keep the by-type lists in a vector indexed by the type's index in the schema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9609"
+    },
+    "9613": {
+      "author": "Moult",
+      "branch": "ci/chocolatey-bonsai-nightly-extension",
+      "head": "795e78c",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "choco: package Bonsai nightlies as a Blender extension",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9613"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609280323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609280323"
+    "tag": "v0.8.0-alpha2609280623",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609280623"
   },
   "schema": 1
 }
