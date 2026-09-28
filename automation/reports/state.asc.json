@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 908
   },
-  "generated_at": "2026-09-28T17:07:56Z",
+  "generated_at": "2026-09-28T20:08:30Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7472,7 +7472,7 @@
     "9617": {
       "author": "aothms",
       "branch": "fix-settings-init-order",
-      "head": "b7bfb28",
+      "head": "1f7d4a4",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix settings init order",
@@ -7480,8 +7480,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609281823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609281823"
+    "tag": "v0.8.0-alpha2609282123",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609282123"
   },
   "schema": 1
 }
