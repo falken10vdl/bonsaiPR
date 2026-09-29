@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 204,
+    "failed": 202,
     "merged": 525,
     "skipped_conflict": 123,
     "skipped_draft": 56,
-    "total": 908
+    "total": 906
   },
-  "generated_at": "2026-09-28T21:39:52Z",
+  "generated_at": "2026-09-29T01:34:04Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7451,24 +7451,6 @@
       "title": "[AI-generated, unverified] ifcparse: keep the by-type lists in a vector indexed by the type's index in the schema",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9609"
     },
-    "9613": {
-      "author": "Moult",
-      "branch": "ci/chocolatey-bonsai-nightly-extension",
-      "head": "795e78c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "choco: package Bonsai nightlies as a Blender extension",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9613"
-    },
-    "9614": {
-      "author": "Moult",
-      "branch": "ci/build-windows-locate-vcvars-with-vswhere",
-      "head": "28d9bde",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ci: build Windows ARM64 on the Visual Studio 2026 runner",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9614"
-    },
     "9617": {
       "author": "aothms",
       "branch": "fix-settings-init-order",
@@ -7480,8 +7462,8 @@
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609282254",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609282254"
+    "tag": "v0.8.0-alpha2609290251",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609290251"
   },
   "schema": 1
 }
