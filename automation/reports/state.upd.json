@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 202,
-    "merged": 525,
+    "failed": 206,
+    "merged": 521,
     "skipped_conflict": 123,
     "skipped_draft": 56,
     "total": 906
   },
-  "generated_at": "2026-09-29T01:34:04Z",
+  "generated_at": "2026-09-29T04:35:47Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -2362,14 +2362,6 @@
       "status": "merged",
       "title": "Bonsai: guard drawing with no document reference in get_sheet_references (#8036, #7266)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8512"
-    },
-    "8513": {
-      "author": "BIMvoice",
-      "branch": "fix-7261-append-empty-tuple",
-      "head": "a2dd705",
-      "status": "merged",
-      "title": "Guard append_asset against an empty aggregate attribute (#7261)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8513"
     },
     "8514": {
       "author": "BIMvoice",
@@ -6105,32 +6097,14 @@
       "title": "validate: raise cleanly on unsupported sqlite",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9178"
     },
-    "9179": {
-      "author": "BIMvoice",
-      "branch": "fix/express-missing-rules-file",
-      "head": "3200928",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "express: fail clean when rules are missing",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9179"
-    },
     "9180": {
       "author": "BIMvoice",
       "branch": "fix/rocksdb-attr-error",
-      "head": "b3ec754",
+      "head": "d84117e",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "file: raise AttributeError for bad rocksdb attr",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9180"
-    },
-    "9182": {
-      "author": "BIMvoice",
-      "branch": "fix/ifcpatch-optimise-unset-attr",
-      "head": "cb4dd66",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifcpatch: fix Optimise crash on unset attribute",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9182"
     },
     "9183": {
       "author": "BIMvoice",
@@ -6678,14 +6652,6 @@
       "title": "Fix #8603: drawing underlay renders the previously active drawing's objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9307"
     },
-    "9308": {
-      "author": "BIMvoice",
-      "branch": "fix-9299-aggregate-delete-segfault",
-      "head": "47f4eff",
-      "status": "merged",
-      "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9308"
-    },
     "9311": {
       "author": "theoryshaw",
       "branch": "fix-drawing-linework-cache-and-degenerate-polygon",
@@ -6813,7 +6779,7 @@
     "9358": {
       "author": "BIMvoice",
       "branch": "docs-drawing-stylesheet-guide",
-      "head": "d00cb75",
+      "head": "e8bdf5b",
       "status": "merged",
       "title": "docs: document drawing stylesheets and the override pattern",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9358"
@@ -6984,14 +6950,6 @@
       "title": "Bonsai: keep commented out facets when editing a filter query",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9401"
     },
-    "9403": {
-      "author": "BIMvoice",
-      "branch": "fix-9373-stale-pset-data",
-      "head": "e8b8870",
-      "status": "merged",
-      "title": "Bonsai: stop pset panels crashing on a stale or absent definition id",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9403"
-    },
     "9404": {
       "author": "BIMvoice",
       "branch": "fix-9376-earthworkscut-qto",
@@ -7007,14 +6965,6 @@
       "status": "merged",
       "title": "Bonsai: keep the comparison operator when a query facet round-trips",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9405"
-    },
-    "9406": {
-      "author": "BIMvoice",
-      "branch": "fix-9353-window-attrs-own-geometry",
-      "head": "9198c24",
-      "status": "merged",
-      "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9406"
     },
     "9414": {
       "author": "BIMvoice",
@@ -7459,11 +7409,65 @@
       "status": "failed",
       "title": "Fix settings init order",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9617"
+    },
+    "9621": {
+      "author": "BIMvoice",
+      "branch": "v09/fix-9353-window-attrs-own-geometry",
+      "head": "d8f4882",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: editing a window/door no longer overwrites attributes of occurrences owning their own geometry",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9621"
+    },
+    "9622": {
+      "author": "BIMvoice",
+      "branch": "v09/fix-9591-sibling-window-openings",
+      "head": "14a5ef8",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: stop a window edit deleting or moving sibling openings",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9622"
+    },
+    "9623": {
+      "author": "BIMvoice",
+      "branch": "v09/fix-9373-stale-pset-data",
+      "head": "7860037",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: stop pset panels crashing on a stale or absent definition id",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9623"
+    },
+    "9624": {
+      "author": "BIMvoice",
+      "branch": "v09/fix-9299-aggregate-delete-segfault-2",
+      "head": "374623d",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9624"
+    },
+    "9625": {
+      "author": "BIMvoice",
+      "branch": "v09/fix-7261-append-empty-tuple-2",
+      "head": "b2ea33a",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Guard append_asset against an empty aggregate attribute (#7261)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9625"
+    },
+    "9626": {
+      "author": "BIMvoice",
+      "branch": "v09/fix-7102-kilometre-project-thumbnails",
+      "head": "d0e08d2",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: skip type thumbnails that fail to draw",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9626"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609290251",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609290251"
+    "tag": "v0.8.0-alpha2609290552",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609290552"
   },
   "schema": 1
 }
