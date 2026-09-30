@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 155,
-    "merged": 558,
-    "skipped_conflict": 77,
+    "failed": 153,
+    "merged": 560,
+    "skipped_conflict": 78,
     "skipped_draft": 56,
-    "total": 846
+    "total": 847
   },
-  "generated_at": "2026-09-30T10:24:36Z",
+  "generated_at": "2026-09-30T13:52:10Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -1030,7 +1030,7 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-empty-numeric-4112",
       "head": "e2b728c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
     },
@@ -1141,9 +1141,8 @@
     "8278": {
       "author": "BIMvoice",
       "branch": "fix/edit-pset-logical-bool-7475",
-      "head": "c6bb892",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "5f93a7e",
+      "status": "merged",
       "title": "pset.edit_pset: keep booleans for LOGICAL measures (#7475)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
@@ -1350,7 +1349,7 @@
     "8332": {
       "author": "BIMvoice",
       "branch": "qto-segment-length-from-geometry",
-      "head": "a1c7612",
+      "head": "13fa65a",
       "status": "skipped_conflict",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
@@ -1518,7 +1517,7 @@
     "8356": {
       "author": "BIMvoice",
       "branch": "fix-4800-camera-context",
-      "head": "cc3e134",
+      "head": "3e6a321",
       "status": "skipped_conflict",
       "title": "Bonsai: store the drawing camera outside the Body context so viewers don't show boxes (#4800)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8356"
@@ -2673,7 +2672,7 @@
     "8697": {
       "author": "BIMvoice",
       "branch": "fix-2181-mep-junction",
-      "head": "8f4d48a",
+      "head": "469a5a1",
       "status": "merged",
       "title": "Bonsai: add MEP junction fitting operator (tee, wye, cross)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8697"
@@ -2681,7 +2680,7 @@
     "8698": {
       "author": "BIMvoice",
       "branch": "fix-3306-typed-ifc4-stubs",
-      "head": "c17240e",
+      "head": "b9c3d3e",
       "status": "skipped_draft",
       "title": "[Draft/RFC] ifcopenshell-python: generated typed IFC4 stubs for schema-aware by_type()",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8698"
@@ -2960,7 +2959,7 @@
     "8758": {
       "author": "BIMvoice",
       "branch": "bonsai-3941-mep-split-hotkey",
-      "head": "e289777",
+      "head": "1ec6928",
       "status": "merged",
       "title": "Bonsai: wire Shift+K to split pipe/duct segments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8758"
@@ -3278,7 +3277,7 @@
     "8881": {
       "author": "BIMvoice",
       "branch": "6400-display-units-length",
-      "head": "c2f4fe7",
+      "head": "131426b",
       "status": "skipped_conflict",
       "title": "Bonsai: add a display length unit preference (#6400)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8881"
@@ -3334,7 +3333,7 @@
     "8897": {
       "author": "BIMvoice",
       "branch": "8849-linked-space-visibility",
-      "head": "f234a04",
+      "head": "5a069af",
       "status": "merged",
       "title": "Bonsai: exclude IfcSpace from the default linked-model query",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8897"
@@ -3431,7 +3430,7 @@
     "8915": {
       "author": "BIMvoice",
       "branch": "feat-2956-document-revision-history",
-      "head": "f02fbff",
+      "head": "34bc81b",
       "status": "skipped_conflict",
       "title": "ifcopenshell.util, Bonsai: expose a document's superseded revision history",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8915"
@@ -3882,7 +3881,7 @@
     "8995": {
       "author": "BIMvoice",
       "branch": "bonsai-door-body-context-missing",
-      "head": "a48ed52",
+      "head": "1753943",
       "status": "merged",
       "title": "Bonsai: create the Model/Body context when authoring a door into an imported IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8995"
@@ -5566,15 +5565,6 @@
       "title": "Fix double free of section HLR state",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
     },
-    "9384": {
-      "author": "BIMvoice",
-      "branch": "fix-ifctester-org-setuptools",
-      "head": "9ea36ee",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifctester: install setuptools for the no-isolation wheel build",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9384"
-    },
     "9390": {
       "author": "BIMvoice",
       "branch": "v09r/fix-5357-clash-result-order",
@@ -6912,7 +6902,7 @@
     "9738": {
       "author": "BIMvoice",
       "branch": "v09/replace-8648",
-      "head": "4a478d3",
+      "head": "5945426",
       "status": "merged",
       "title": "Bonsai: split multi-material profile sets into per-item shape aspects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9738"
@@ -6932,11 +6922,27 @@
       "status": "merged",
       "title": "Bonsai: search all materials in the material editor",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9743"
+    },
+    "9745": {
+      "author": "aothms",
+      "branch": "integrate-docs",
+      "head": "877fb63",
+      "status": "merged",
+      "title": "Integrate docs",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9745"
+    },
+    "9747": {
+      "author": "Andrej730",
+      "branch": "fix-missing-qt-bonsaiviewer-mac",
+      "head": "2817eb9",
+      "status": "merged",
+      "title": "Fix BonsaiViewer on Mac missing shared objects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9747"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2609301154",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2609301154"
+    "tag": "v0.9.0-alpha2609301522",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2609301522"
   },
   "schema": 1
 }
