@@ -7,7 +7,7 @@
     "skipped_draft": 56,
     "total": 846
   },
-  "generated_at": "2026-09-29T17:37:56Z",
+  "generated_at": "2026-09-29T23:37:22Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7126,15 +7126,6 @@
       "title": "ifcgeom: fall back to unsliced representation when layerset slicing fails (#6607)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9701"
     },
-    "9702": {
-      "author": "aothms",
-      "branch": "try-fix-docs-2",
-      "head": "a629689",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Sphinx/breeze hacks",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9702"
-    },
     "9703": {
       "author": "BIMvoice",
       "branch": "v09/replace-8806",
@@ -7430,11 +7421,20 @@
       "status": "failed",
       "title": "Bonsai: support editing IfcGeometricCurveSet representation items (#6407)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9739"
+    },
+    "9743": {
+      "author": "CyrilWaechter",
+      "branch": "bonsai-material-search-filter",
+      "head": "de49980",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: search all materials in the material editor",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9743"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609291823",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609291823"
+    "tag": "v0.8.0-alpha2609300023",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609300023"
   },
   "schema": 1
 }

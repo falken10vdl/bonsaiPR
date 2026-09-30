@@ -1,13 +1,13 @@
 {
   "base": "v0.8.0",
   "counts": {
-    "failed": 652,
+    "failed": 653,
     "merged": 126,
     "skipped_conflict": 11,
     "skipped_draft": 56,
-    "total": 845
+    "total": 846
   },
-  "generated_at": "2026-09-29T19:52:50Z",
+  "generated_at": "2026-09-30T00:51:36Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7421,11 +7421,20 @@
       "status": "failed",
       "title": "Bonsai: support editing IfcGeometricCurveSet representation items (#6407)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9739"
+    },
+    "9743": {
+      "author": "CyrilWaechter",
+      "branch": "bonsai-material-search-filter",
+      "head": "de49980",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "Bonsai: search all materials in the material editor",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9743"
     }
   },
   "release": {
-    "tag": "v0.8.0-alpha2609292039",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609292039"
+    "tag": "v0.8.0-alpha2609300138",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.8.0-alpha2609300138"
   },
   "schema": 1
 }
