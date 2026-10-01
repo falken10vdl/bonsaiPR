@@ -7,7 +7,7 @@
     "skipped_draft": 60,
     "total": 833
   },
-  "generated_at": "2026-09-30T23:17:52Z",
+  "generated_at": "2026-10-01T07:18:55Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -6772,7 +6772,7 @@
     "9747": {
       "author": "Andrej730",
       "branch": "fix-missing-qt-bonsaiviewer-mac",
-      "head": "0f47086",
+      "head": "d3bbf49",
       "status": "merged",
       "title": "Fix BonsaiViewer on Mac missing shared objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9747"
@@ -6819,8 +6819,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610010050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610010050"
+    "tag": "v0.9.0-alpha2610010850",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610010850"
   },
   "schema": 1
 }
