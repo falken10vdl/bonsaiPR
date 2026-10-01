@@ -5242,3 +5242,7 @@
 {"ts": "2026-10-01T10:19:18Z", "order": "by-updated", "pr": 9749, "event": "status", "from": "skipped_conflict", "to": "merged"}
 {"ts": "2026-10-01T10:19:18Z", "order": "by-updated", "pr": 9750, "event": "status", "from": "merged", "to": "skipped_conflict"}
 {"ts": "2026-10-01T10:19:18Z", "order": "by-updated", "pr": 9761, "event": "added", "to": "merged"}
+{"ts": "2026-10-01T12:04:49Z", "order": "upd", "pr": 8734, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-01T12:04:49Z", "order": "upd", "pr": 8971, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-01T12:04:49Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-01T12:18:10Z", "order": "by-updated", "pr": 9747, "event": "updated", "status": "merged", "from_head": "c197cb8", "to_head": "1a6dfd2"}

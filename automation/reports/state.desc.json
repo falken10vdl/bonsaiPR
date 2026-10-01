@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 138,
-    "merged": 566,
+    "merged": 567,
     "skipped_conflict": 69,
     "skipped_draft": 60,
-    "total": 833
+    "total": 834
   },
-  "generated_at": "2026-10-01T09:49:32Z",
+  "generated_at": "2026-10-01T11:48:30Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -6767,7 +6767,7 @@
     "9747": {
       "author": "Andrej730",
       "branch": "fix-missing-qt-bonsaiviewer-mac",
-      "head": "c197cb8",
+      "head": "1a6dfd2",
       "status": "merged",
       "title": "Fix BonsaiViewer on Mac missing shared objects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9747"
@@ -6811,11 +6811,19 @@
       "status": "merged",
       "title": "Expand wildcard attributes in IfcCsv export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9753"
+    },
+    "9761": {
+      "author": "BIMvoice",
+      "branch": "fix/9760-macos-absolute-install-names",
+      "head": "4dbbaa8",
+      "status": "merged",
+      "title": "nix: rewrite absolute macOS install names",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9761"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610011119",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610011119"
+    "tag": "v0.9.0-alpha2610011319",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610011319"
   },
   "schema": 1
 }
