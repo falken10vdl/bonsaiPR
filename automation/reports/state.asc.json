@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 143,
-    "merged": 564,
+    "merged": 565,
     "skipped_conflict": 66,
     "skipped_draft": 60,
-    "total": 833
+    "total": 834
   },
-  "generated_at": "2026-10-01T13:25:44Z",
+  "generated_at": "2026-10-01T16:19:12Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -6816,11 +6816,19 @@
       "status": "merged",
       "title": "nix: rewrite absolute macOS install names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9761"
+    },
+    "9765": {
+      "author": "theoryshaw",
+      "branch": "strip_text_comments",
+      "head": "77af20c",
+      "status": "merged",
+      "title": "Bonsai: strip HTML comments from annotation text",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9765"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610011450",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610011450"
+    "tag": "v0.9.0-alpha2610011750",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610011750"
   },
   "schema": 1
 }
