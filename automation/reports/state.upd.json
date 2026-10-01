@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 138,
-    "merged": 568,
+    "merged": 569,
     "skipped_conflict": 67,
     "skipped_draft": 60,
-    "total": 833
+    "total": 834
   },
-  "generated_at": "2026-10-01T08:17:06Z",
+  "generated_at": "2026-10-01T10:19:18Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -6776,7 +6776,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8832",
       "head": "19c0559",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Return nan for non-finite shape elevations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9749"
     },
@@ -6784,7 +6784,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8503",
       "head": "51f408b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Return nan for non-manifold mesh volume",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9750"
     },
@@ -6811,11 +6811,19 @@
       "status": "merged",
       "title": "Expand wildcard attributes in IfcCsv export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9753"
+    },
+    "9761": {
+      "author": "BIMvoice",
+      "branch": "fix/9760-macos-absolute-install-names",
+      "head": "4dbbaa8",
+      "status": "merged",
+      "title": "nix: rewrite absolute macOS install names",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9761"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610010948",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610010948"
+    "tag": "v0.9.0-alpha2610011150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610011150"
   },
   "schema": 1
 }
