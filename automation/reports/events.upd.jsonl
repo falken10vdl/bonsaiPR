@@ -5229,3 +5229,6 @@
 {"ts": "2026-09-30T22:18:41Z", "order": "by-updated", "pr": 9420, "event": "updated", "status": "merged", "from_head": "15aac1f", "to_head": "961a7ad"}
 {"ts": "2026-09-30T22:18:41Z", "order": "by-updated", "pr": 9662, "event": "status", "from": "merged", "to": "skipped_conflict"}
 {"ts": "2026-09-30T22:18:41Z", "order": "by-updated", "pr": 9750, "event": "updated", "status": "merged", "from_head": "b7335d4", "to_head": "51f408b"}
+{"ts": "2026-10-01T00:01:35Z", "order": "upd", "pr": 8734, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-01T00:01:35Z", "order": "upd", "pr": 8971, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-01T00:01:35Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}

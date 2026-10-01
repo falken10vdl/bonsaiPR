@@ -7,7 +7,7 @@
     "skipped_draft": 60,
     "total": 833
   },
-  "generated_at": "2026-09-30T21:19:22Z",
+  "generated_at": "2026-09-30T23:17:52Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -4998,8 +4998,8 @@
     "9249": {
       "author": "BIMvoice",
       "branch": "fix-shapely-geoms-crash-sweep",
-      "head": "a820b84",
-      "status": "skipped_conflict",
+      "head": "54c58cf",
+      "status": "merged",
       "title": "Bonsai: guard union_all().geoms crash sites in shapely fills",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9249"
     },
@@ -5733,7 +5733,7 @@
       "author": "theoryshaw",
       "branch": "roof_footprint_flatten_9514",
       "head": "e6f3b5b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: flatten roof footprint instead of failing, keep path preview, direct_profile_edit support",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9515"
     },
@@ -6819,8 +6819,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2609302250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2609302250"
+    "tag": "v0.9.0-alpha2610010050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610010050"
   },
   "schema": 1
 }
