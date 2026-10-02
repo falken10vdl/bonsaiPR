@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 136,
-    "merged": 573,
-    "skipped_conflict": 78,
+    "failed": 125,
+    "merged": 574,
+    "skipped_conflict": 88,
     "skipped_draft": 69,
     "total": 856
   },
-  "generated_at": "2026-10-02T20:50:10Z",
+  "generated_at": "2026-10-02T22:51:05Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -127,9 +127,8 @@
     "6933": {
       "author": "theoryshaw",
       "branch": "fix_6931",
-      "head": "5285df1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "f00c102",
+      "status": "skipped_conflict",
       "title": "proposed fix for #6931",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/6933"
     },
@@ -424,9 +423,8 @@
     "7781": {
       "author": "theoryshaw",
       "branch": "Unhide_with_alt_click",
-      "head": "60ccd3a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "0720333",
+      "status": "skipped_conflict",
       "title": "Closes #7780 - Add ALT+Click to unhide stuff",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7781"
     },
@@ -441,9 +439,8 @@
     "7795": {
       "author": "theoryshaw",
       "branch": "default_relative_path",
-      "head": "6b9dbeb",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "f4ba7a0",
+      "status": "skipped_conflict",
       "title": "Closes #7765: Default IFC file path to relative and auto-convert on blend save",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7795"
     },
@@ -451,8 +448,7 @@
       "author": "theoryshaw",
       "branch": "ManualDrawingReference",
       "head": "3409c65",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Manual drawing reference",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7798"
     },
@@ -517,9 +513,8 @@
     "7839": {
       "author": "theoryshaw",
       "branch": "slab_issues",
-      "head": "ae1c544",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "4ea334e",
+      "status": "merged",
       "title": "Fix #7838: Fix slab layer direction and thickness offset",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7839"
     },
@@ -734,9 +729,8 @@
     "7940": {
       "author": "theoryshaw",
       "branch": "Concatenate_selections",
-      "head": "7e3a9e4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "8bf9cc3",
+      "status": "skipped_conflict",
       "title": "Concatenate selections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7940"
     },
@@ -761,8 +755,7 @@
       "author": "theoryshaw",
       "branch": "inset_section_endpoints",
       "head": "738110b",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
     },
@@ -835,7 +828,7 @@
     "8012": {
       "author": "theoryshaw",
       "branch": "measure_in_edit_mode",
-      "head": "565ae33",
+      "head": "66c2f1a",
       "status": "merged",
       "title": "Closes #7691: Enable bim.measure_tool in edit mode",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8012"
@@ -851,7 +844,7 @@
     "8055": {
       "author": "theoryshaw",
       "branch": "debug-active-drawing-improvements",
-      "head": "647a1f4",
+      "head": "85b1d93",
       "status": "merged",
       "title": "Add export option to DebugActiveDrawing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8055"
@@ -883,9 +876,8 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "253a6c5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "6792157",
+      "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
     },
@@ -966,9 +958,8 @@
     "8200": {
       "author": "theoryshaw",
       "branch": "opening-template-on-type",
-      "head": "a9efabb",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "d0e6fcf",
+      "status": "skipped_conflict",
       "title": "Preserve custom opening geometry via a type-level Reference template",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8200"
     },
@@ -1000,9 +991,8 @@
     "8241": {
       "author": "theoryshaw",
       "branch": "Additional_Selection_and_Deselection_Tools",
-      "head": "03b3d3f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "a45f283",
+      "status": "skipped_conflict",
       "title": "Additional selection and deselection tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8241"
     },
@@ -3776,8 +3766,7 @@
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
       "head": "2739df8",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
     },
@@ -6996,8 +6985,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610022221",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610022221"
+    "tag": "v0.9.0-alpha2610030021",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610030021"
   },
   "schema": 1
 }

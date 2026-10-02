@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 142,
-    "merged": 571,
-    "skipped_conflict": 74,
+    "failed": 131,
+    "merged": 575,
+    "skipped_conflict": 81,
     "skipped_draft": 69,
     "total": 856
   },
-  "generated_at": "2026-10-02T20:20:09Z",
+  "generated_at": "2026-10-02T22:20:02Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -127,9 +127,8 @@
     "6933": {
       "author": "theoryshaw",
       "branch": "fix_6931",
-      "head": "5285df1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "f00c102",
+      "status": "merged",
       "title": "proposed fix for #6931",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/6933"
     },
@@ -424,9 +423,8 @@
     "7781": {
       "author": "theoryshaw",
       "branch": "Unhide_with_alt_click",
-      "head": "60ccd3a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "0720333",
+      "status": "merged",
       "title": "Closes #7780 - Add ALT+Click to unhide stuff",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7781"
     },
@@ -441,9 +439,8 @@
     "7795": {
       "author": "theoryshaw",
       "branch": "default_relative_path",
-      "head": "6b9dbeb",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "f4ba7a0",
+      "status": "merged",
       "title": "Closes #7765: Default IFC file path to relative and auto-convert on blend save",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7795"
     },
@@ -517,9 +514,8 @@
     "7839": {
       "author": "theoryshaw",
       "branch": "slab_issues",
-      "head": "ae1c544",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "4ea334e",
+      "status": "merged",
       "title": "Fix #7838: Fix slab layer direction and thickness offset",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7839"
     },
@@ -734,9 +730,8 @@
     "7940": {
       "author": "theoryshaw",
       "branch": "Concatenate_selections",
-      "head": "7e3a9e4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "8bf9cc3",
+      "status": "merged",
       "title": "Concatenate selections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7940"
     },
@@ -835,9 +830,8 @@
     "8012": {
       "author": "theoryshaw",
       "branch": "measure_in_edit_mode",
-      "head": "565ae33",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "66c2f1a",
+      "status": "merged",
       "title": "Closes #7691: Enable bim.measure_tool in edit mode",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8012"
     },
@@ -852,9 +846,8 @@
     "8055": {
       "author": "theoryshaw",
       "branch": "debug-active-drawing-improvements",
-      "head": "647a1f4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "85b1d93",
+      "status": "merged",
       "title": "Add export option to DebugActiveDrawing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8055"
     },
@@ -969,17 +962,15 @@
       "author": "theoryshaw",
       "branch": "opening-template-on-type",
       "head": "a9efabb",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Preserve custom opening geometry via a type-level Reference template",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8200"
     },
     "8201": {
       "author": "theoryshaw",
       "branch": "dev-notes-system",
-      "head": "8ece379",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "27acac7",
+      "status": "skipped_conflict",
       "title": "Dev notes system",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8201"
     },
@@ -1003,9 +994,8 @@
     "8241": {
       "author": "theoryshaw",
       "branch": "Additional_Selection_and_Deselection_Tools",
-      "head": "03b3d3f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "a45f283",
+      "status": "skipped_conflict",
       "title": "Additional selection and deselection tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8241"
     },
@@ -2295,7 +2285,7 @@
       "author": "BIMvoice",
       "branch": "fix-4050-material-select-unhide-type",
       "head": "f1643b5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai: reveal hidden collections when selecting objects by material (#4050)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8613"
     },
@@ -4868,9 +4858,8 @@
     "9210": {
       "author": "theoryshaw",
       "branch": "occurrence-representations",
-      "head": "d0ebdd5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "c7830cd",
+      "status": "skipped_conflict",
       "title": "Bonsai: normalize occurrence-local representations onto the type (Promote to Type)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9210"
     },
@@ -5126,7 +5115,7 @@
       "author": "BIMvoice",
       "branch": "fix-9270-unsaved-ifc-warning",
       "head": "fb6b98d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: warn before saving the .blend drops unsaved IFC edits",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9276"
     },
@@ -6704,7 +6693,7 @@
       "author": "BIMvoice",
       "branch": "v09/split-9156-unassign-item-style",
       "head": "44afe17",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: guard unassigning a style with no item",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9734"
     },
@@ -7002,8 +6991,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610022150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610022150"
+    "tag": "v0.9.0-alpha2610022350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610022350"
   },
   "schema": 1
 }
