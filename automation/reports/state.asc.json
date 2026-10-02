@@ -3,11 +3,11 @@
   "counts": {
     "failed": 144,
     "merged": 570,
-    "skipped_conflict": 68,
-    "skipped_draft": 66,
-    "total": 848
+    "skipped_conflict": 69,
+    "skipped_draft": 69,
+    "total": 852
   },
-  "generated_at": "2026-10-02T12:18:27Z",
+  "generated_at": "2026-10-02T14:19:14Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -1538,15 +1538,6 @@
       "title": "Bonsai: scope schedule/document styles on a sheet so they keep their own font (#5221)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8361"
     },
-    "8371": {
-      "author": "BIMvoice",
-      "branch": "fix-4029-onlyvalid-terrain",
-      "head": "961c9f2",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "svg: don't gate out drawable non-solid shapes (terrain) from sections in setOnlyValid mode (#4029)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8371"
-    },
     "8372": {
       "author": "BIMvoice",
       "branch": "fix-4128-sklearn-graceful",
@@ -1575,7 +1566,7 @@
     "8377": {
       "author": "BIMvoice",
       "branch": "fix-8106-taxonomy-sweep-approx",
-      "head": "9200ce0",
+      "head": "792ebb2",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Approximate swept solids in the taxonomy layer so cgal stops dropping IfcSweptDiskSolid (#8106)",
@@ -1993,7 +1984,7 @@
     "8474": {
       "author": "BIMvoice",
       "branch": "bv-2629-svg-arc-bounds",
-      "head": "f2db7de",
+      "head": "9e6178a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: SVG bounding box should follow the drawn arc, not the full circle (#2629)",
@@ -4091,7 +4082,7 @@
     "9080": {
       "author": "BIMvoice",
       "branch": "fix/ifccityjson-transform-not-applied",
-      "head": "1532f8b",
+      "head": "8473acd",
       "status": "merged",
       "title": "ifccityjson: apply the CityJSON transform, fixing 1000x geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9080"
@@ -4484,8 +4475,8 @@
     "9140": {
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-missing-project-error",
-      "head": "5b39ec7",
-      "status": "merged",
+      "head": "980132a",
+      "status": "skipped_conflict",
       "title": "ifcpatch: fail clearly when IfcProject is missing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9140"
     },
@@ -4580,7 +4571,7 @@
     "9155": {
       "author": "BIMvoice",
       "branch": "fix/ifc2ca-optional-boundary-stiffness",
-      "head": "1023509",
+      "head": "54fc04e",
       "status": "merged",
       "title": "ifc2ca: guard optional boundary stiffness values",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9155"
@@ -5077,7 +5068,7 @@
     "9266": {
       "author": "BIMvoice",
       "branch": "fix-7468-bsdd-pypi-modules",
-      "head": "b32db4e",
+      "head": "dc7e718",
       "status": "merged",
       "title": "bsdd: dist target ships only one of three modules",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9266"
@@ -5150,7 +5141,7 @@
     "9295": {
       "author": "BIMvoice",
       "branch": "fix-9294-projectlibrary-units",
-      "head": "62fd8ce",
+      "head": "afd56a3",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: IfcProjectLibrary breaks unit detection (#9294)",
@@ -6937,11 +6928,52 @@
       "status": "merged",
       "title": "ifccityjson: accept numeric lod values",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9789"
+    },
+    "9790": {
+      "author": "BIMvoice",
+      "branch": "test/9256-swept-disk-opening",
+      "head": "be5bb94",
+      "status": "merged",
+      "title": "Test swept disk volume with an opening",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9790"
+    },
+    "9791": {
+      "author": "BIMvoice",
+      "branch": "feat/8163-drawing-list-selected-only",
+      "head": "75021e5",
+      "status": "skipped_draft",
+      "title": "Bonsai: add show-selected-only toggles to lists",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9791"
+    },
+    "9792": {
+      "author": "BIMvoice",
+      "branch": "fix/logger-append-stream-destination",
+      "head": "93b06d8",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix logger::append into non-in-memory logger",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9792"
+    },
+    "9793": {
+      "author": "BIMvoice",
+      "branch": "fix/9199-activate-model-skip-blender-objects",
+      "head": "c572219",
+      "status": "skipped_draft",
+      "title": "Bonsai: keep Blender-only objects hidden in activate_model",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9793"
+    },
+    "9794": {
+      "author": "BIMvoice",
+      "branch": "perf/bulk-remove-product",
+      "head": "1543145",
+      "status": "skipped_draft",
+      "title": "Add root.remove_products for bulk removal",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9794"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610021350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021350"
+    "tag": "v0.9.0-alpha2610021550",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021550"
   },
   "schema": 1
 }

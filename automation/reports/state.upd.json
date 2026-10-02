@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 138,
-    "merged": 574,
+    "failed": 140,
+    "merged": 580,
     "skipped_conflict": 69,
-    "skipped_draft": 66,
-    "total": 847
+    "skipped_draft": 69,
+    "total": 858
   },
-  "generated_at": "2026-10-02T13:18:05Z",
+  "generated_at": "2026-10-02T15:19:50Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1566,7 +1566,7 @@
     "8377": {
       "author": "BIMvoice",
       "branch": "fix-8106-taxonomy-sweep-approx",
-      "head": "9200ce0",
+      "head": "792ebb2",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Approximate swept solids in the taxonomy layer so cgal stops dropping IfcSweptDiskSolid (#8106)",
@@ -2878,7 +2878,7 @@
     "8768": {
       "author": "BIMvoice",
       "branch": "fix-556-xml-classification-v2",
-      "head": "371eafb",
+      "head": "ad858ce",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: emit IfcClassification associations in XML output",
@@ -4050,7 +4050,7 @@
     "9075": {
       "author": "BIMvoice",
       "branch": "fix-ifc2ca-point-load-crash",
-      "head": "7e205de",
+      "head": "a30a4b2",
       "status": "merged",
       "title": "ifc2ca: stop point loads crashing the load-case parser",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9075"
@@ -4082,7 +4082,7 @@
     "9080": {
       "author": "BIMvoice",
       "branch": "fix/ifccityjson-transform-not-applied",
-      "head": "1532f8b",
+      "head": "8473acd",
       "status": "merged",
       "title": "ifccityjson: apply the CityJSON transform, fixing 1000x geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9080"
@@ -4571,7 +4571,7 @@
     "9155": {
       "author": "BIMvoice",
       "branch": "fix/ifc2ca-optional-boundary-stiffness",
-      "head": "1023509",
+      "head": "54fc04e",
       "status": "merged",
       "title": "ifc2ca: guard optional boundary stiffness values",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9155"
@@ -6923,11 +6923,101 @@
       "status": "merged",
       "title": "ifccityjson: accept numeric lod values",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9789"
+    },
+    "9790": {
+      "author": "BIMvoice",
+      "branch": "test/9256-swept-disk-opening",
+      "head": "be5bb94",
+      "status": "merged",
+      "title": "Test swept disk volume with an opening",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9790"
+    },
+    "9791": {
+      "author": "BIMvoice",
+      "branch": "feat/8163-drawing-list-selected-only",
+      "head": "75021e5",
+      "status": "skipped_draft",
+      "title": "Bonsai: add show-selected-only toggles to lists",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9791"
+    },
+    "9792": {
+      "author": "BIMvoice",
+      "branch": "fix/logger-append-stream-destination",
+      "head": "93b06d8",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix logger::append into non-in-memory logger",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9792"
+    },
+    "9793": {
+      "author": "BIMvoice",
+      "branch": "fix/9199-activate-model-skip-blender-objects",
+      "head": "c572219",
+      "status": "skipped_draft",
+      "title": "Bonsai: keep Blender-only objects hidden in activate_model",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9793"
+    },
+    "9794": {
+      "author": "BIMvoice",
+      "branch": "perf/bulk-remove-product",
+      "head": "1543145",
+      "status": "skipped_draft",
+      "title": "Add root.remove_products for bulk removal",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9794"
+    },
+    "9795": {
+      "author": "BIMvoice",
+      "branch": "fix/geometry-debug-prints",
+      "head": "6ada039",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Remove leftover debug prints from geometry code",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9795"
+    },
+    "9796": {
+      "author": "BIMvoice",
+      "branch": "fix/edit-qto-pset-template",
+      "head": "33f72f6",
+      "status": "merged",
+      "title": "Fix edit_qto with a user defined template",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9796"
+    },
+    "9797": {
+      "author": "Andrej730",
+      "branch": "macos-libtool-install-names",
+      "head": "cccaa01",
+      "status": "merged",
+      "title": "build-all: fix libtool install names on Mac",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9797"
+    },
+    "9798": {
+      "author": "BIMvoice",
+      "branch": "docs/api-examples-1",
+      "head": "85ce020",
+      "status": "merged",
+      "title": "docs: fix 27 broken api docstring examples",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9798"
+    },
+    "9799": {
+      "author": "BIMvoice",
+      "branch": "docs/api-examples-2",
+      "head": "8f4b6e5",
+      "status": "merged",
+      "title": "docs: fix 13 broken api docstring examples",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9799"
+    },
+    "9800": {
+      "author": "BIMvoice",
+      "branch": "docs/api-examples-3",
+      "head": "5cd5e3e",
+      "status": "merged",
+      "title": "docs: make 26 api docstring examples self-contained",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9800"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610021449",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021449"
+    "tag": "v0.9.0-alpha2610021650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021650"
   },
   "schema": 1
 }
