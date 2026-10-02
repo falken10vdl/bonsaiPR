@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 147,
-    "merged": 569,
-    "skipped_conflict": 67,
+    "failed": 146,
+    "merged": 568,
+    "skipped_conflict": 68,
     "skipped_draft": 66,
-    "total": 849
+    "total": 848
   },
-  "generated_at": "2026-10-02T08:18:47Z",
+  "generated_at": "2026-10-02T10:18:29Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -1985,7 +1985,7 @@
     "8472": {
       "author": "BIMvoice",
       "branch": "bv-5067-serialise-indirect-surface",
-      "head": "d4da778",
+      "head": "c463e64",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: fix inverted normals for indirect curved surfaces in IfcGeom::serialise (#5067)",
@@ -2658,7 +2658,7 @@
     "8712": {
       "author": "BIMvoice",
       "branch": "bv-6623-step-unit-scale",
-      "head": "ab04ce6",
+      "head": "3b3e8f5",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "IfcConvert: fix 1000x scale error in STEP export unit handling",
@@ -3474,7 +3474,7 @@
     "8949": {
       "author": "BIMvoice",
       "branch": "fix/extractelements-docstring-selector-syntax",
-      "head": "7d1dd2b",
+      "head": "a447e97",
       "status": "merged",
       "title": "ifcpatch: fix invalid selector syntax in ExtractElements docstring",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8949"
@@ -4236,8 +4236,8 @@
     "9098": {
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-docstring-argument-mismatches",
-      "head": "5a7e8d5",
-      "status": "merged",
+      "head": "0f06298",
+      "status": "skipped_conflict",
       "title": "ifcpatch: fix wrong docstrings that break copy-pasted examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9098"
     },
@@ -5899,7 +5899,7 @@
     "9624": {
       "author": "BIMvoice",
       "branch": "v09/fix-9299-aggregate-delete-segfault-2",
-      "head": "374623d",
+      "head": "48a1920",
       "status": "merged",
       "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9624"
@@ -6858,15 +6858,6 @@
       "title": "Fix get_volume precision far from the origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9775"
     },
-    "9776": {
-      "author": "BIMvoice",
-      "branch": "fix/9771-create-shape-prefers-body",
-      "head": "9eed27a",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Prefer Body over Axis in create_shape",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9776"
-    },
     "9777": {
       "author": "BIMvoice",
       "branch": "fix/9768-manifold-circle-segments",
@@ -6951,8 +6942,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610020950",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610020950"
+    "tag": "v0.9.0-alpha2610021150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021150"
   },
   "schema": 1
 }

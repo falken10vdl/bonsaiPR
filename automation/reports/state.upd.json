@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 141,
+    "failed": 139,
     "merged": 574,
-    "skipped_conflict": 67,
+    "skipped_conflict": 68,
     "skipped_draft": 66,
-    "total": 848
+    "total": 847
   },
-  "generated_at": "2026-10-02T09:17:08Z",
+  "generated_at": "2026-10-02T11:17:22Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1158,7 +1158,7 @@
       "author": "BIMvoice",
       "branch": "feat-ifcpatch-cli-entrypoint-6436",
       "head": "aef735b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: add console script entry point (#6436)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8281"
     },
@@ -1940,9 +1940,8 @@
     "8456": {
       "author": "BIMvoice",
       "branch": "fix-7822-examples-occ-includes",
-      "head": "63f41d5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "48098ea",
+      "status": "merged",
       "title": "examples: fix missing OpenCASCADE includes on MSVC x64 (#7822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8456"
     },
@@ -2075,7 +2074,7 @@
     "8492": {
       "author": "BIMvoice",
       "branch": "bv-2248-dual-role-representation",
-      "head": "a5bf30a",
+      "head": "3235092",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: warn when a representation is used both directly by a product and as a mapped item (#2248)",
@@ -2658,7 +2657,7 @@
     "8712": {
       "author": "BIMvoice",
       "branch": "bv-6623-step-unit-scale",
-      "head": "ab04ce6",
+      "head": "3b3e8f5",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "IfcConvert: fix 1000x scale error in STEP export unit handling",
@@ -3474,7 +3473,7 @@
     "8949": {
       "author": "BIMvoice",
       "branch": "fix/extractelements-docstring-selector-syntax",
-      "head": "7d1dd2b",
+      "head": "a447e97",
       "status": "merged",
       "title": "ifcpatch: fix invalid selector syntax in ExtractElements docstring",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8949"
@@ -4236,7 +4235,7 @@
     "9098": {
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-docstring-argument-mismatches",
-      "head": "5a7e8d5",
+      "head": "0f06298",
       "status": "merged",
       "title": "ifcpatch: fix wrong docstrings that break copy-pasted examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9098"
@@ -5419,7 +5418,7 @@
     "9392": {
       "author": "BIMvoice",
       "branch": "v09r/fix-8013-surfaceoflinearextrusion-depth",
-      "head": "0ebffb7",
+      "head": "b81ff4e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: use real depth for SurfaceOfLinearExtrusion",
@@ -6925,20 +6924,11 @@
       "status": "failed",
       "title": "Fix manifold half space clipping side",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9786"
-    },
-    "9787": {
-      "author": "aothms",
-      "branch": "manifold-vertex-properties-counts",
-      "head": "43fe982",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Manifold vertex properties counts",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9787"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610021049",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021049"
+    "tag": "v0.9.0-alpha2610021249",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021249"
   },
   "schema": 1
 }
