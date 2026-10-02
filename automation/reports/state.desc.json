@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 140,
-    "merged": 574,
+    "merged": 578,
     "skipped_conflict": 71,
     "skipped_draft": 69,
-    "total": 854
+    "total": 858
   },
-  "generated_at": "2026-10-02T14:49:54Z",
+  "generated_at": "2026-10-02T16:49:33Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -6981,11 +6981,43 @@
       "status": "merged",
       "title": "Fix edit_qto with a user defined template",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9796"
+    },
+    "9797": {
+      "author": "Andrej730",
+      "branch": "macos-libtool-install-names",
+      "head": "cccaa01",
+      "status": "merged",
+      "title": "build-all: fix libtool install names on Mac",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9797"
+    },
+    "9798": {
+      "author": "BIMvoice",
+      "branch": "docs/api-examples-1",
+      "head": "85ce020",
+      "status": "merged",
+      "title": "docs: fix 27 broken api docstring examples",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9798"
+    },
+    "9799": {
+      "author": "BIMvoice",
+      "branch": "docs/api-examples-2",
+      "head": "8f4b6e5",
+      "status": "merged",
+      "title": "docs: fix 13 broken api docstring examples",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9799"
+    },
+    "9800": {
+      "author": "BIMvoice",
+      "branch": "docs/api-examples-3",
+      "head": "5cd5e3e",
+      "status": "merged",
+      "title": "docs: make 26 api docstring examples self-contained",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9800"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610021620",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021620"
+    "tag": "v0.9.0-alpha2610021820",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021820"
   },
   "schema": 1
 }
