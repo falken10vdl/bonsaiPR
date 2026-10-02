@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 139,
+    "failed": 138,
     "merged": 574,
-    "skipped_conflict": 68,
+    "skipped_conflict": 69,
     "skipped_draft": 66,
     "total": 847
   },
-  "generated_at": "2026-10-02T11:17:22Z",
+  "generated_at": "2026-10-02T13:18:05Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1158,7 +1158,7 @@
       "author": "BIMvoice",
       "branch": "feat-ifcpatch-cli-entrypoint-6436",
       "head": "aef735b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: add console script entry point (#6436)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8281"
     },
@@ -1537,15 +1537,6 @@
       "status": "merged",
       "title": "Bonsai: scope schedule/document styles on a sheet so they keep their own font (#5221)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8361"
-    },
-    "8371": {
-      "author": "BIMvoice",
-      "branch": "fix-4029-onlyvalid-terrain",
-      "head": "961c9f2",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "svg: don't gate out drawable non-solid shapes (terrain) from sections in setOnlyValid mode (#4029)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8371"
     },
     "8372": {
       "author": "BIMvoice",
@@ -1957,7 +1948,7 @@
     "8463": {
       "author": "BIMvoice",
       "branch": "harden-4926-serialise-null-handles",
-      "head": "9da138f",
+      "head": "f428a09",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: guard IfcGeom::serialise against null OCCT handles (#4926)",
@@ -1993,7 +1984,7 @@
     "8474": {
       "author": "BIMvoice",
       "branch": "bv-2629-svg-arc-bounds",
-      "head": "f2db7de",
+      "head": "9e6178a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: SVG bounding box should follow the drawn arc, not the full circle (#2629)",
@@ -2002,7 +1993,7 @@
     "8475": {
       "author": "BIMvoice",
       "branch": "bv-2638-svg-storey-section-global-z",
-      "head": "a8cab6a",
+      "head": "d3bbcb9",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: section-height-from-storeys should use global placement Z (#2638)",
@@ -3290,7 +3281,7 @@
       "author": "BIMvoice",
       "branch": "feat-2956-document-revision-history",
       "head": "34bc81b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.util, Bonsai: expose a document's superseded revision history",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8915"
     },
@@ -3465,7 +3456,7 @@
     "8946": {
       "author": "BIMvoice",
       "branch": "fix/validate-stub-flaky-order-dependence",
-      "head": "722fdda",
+      "head": "7feeedd",
       "status": "merged",
       "title": "validate_stub: resolve property/staticmethod wrappers deterministically",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8946"
@@ -3828,7 +3819,7 @@
       "author": "BIMvoice",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
       "head": "fa7ca04",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },
@@ -4236,7 +4227,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-docstring-argument-mismatches",
       "head": "0f06298",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: fix wrong docstrings that break copy-pasted examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9098"
     },
@@ -4484,7 +4475,7 @@
     "9140": {
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-missing-project-error",
-      "head": "5b39ec7",
+      "head": "980132a",
       "status": "merged",
       "title": "ifcpatch: fail clearly when IfcProject is missing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9140"
@@ -5077,7 +5068,7 @@
     "9266": {
       "author": "BIMvoice",
       "branch": "fix-7468-bsdd-pypi-modules",
-      "head": "b32db4e",
+      "head": "dc7e718",
       "status": "merged",
       "title": "bsdd: dist target ships only one of three modules",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9266"
@@ -5150,7 +5141,7 @@
     "9295": {
       "author": "BIMvoice",
       "branch": "fix-9294-projectlibrary-units",
-      "head": "62fd8ce",
+      "head": "afd56a3",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: IfcProjectLibrary breaks unit detection (#9294)",
@@ -5401,7 +5392,7 @@
     "9390": {
       "author": "BIMvoice",
       "branch": "v09r/fix-5357-clash-result-order",
-      "head": "004e8f2",
+      "head": "c14d034",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "IfcGeomTree: keep clash_intersection_many result order",
@@ -6231,7 +6222,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8652",
       "head": "5140cd9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: expose git describe string to titleblock templates",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9668"
     },
@@ -6924,11 +6915,19 @@
       "status": "failed",
       "title": "Fix manifold half space clipping side",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9786"
+    },
+    "9789": {
+      "author": "BIMvoice",
+      "branch": "fix/cityjson-numeric-lod",
+      "head": "b267517",
+      "status": "merged",
+      "title": "ifccityjson: accept numeric lod values",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9789"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610021249",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021249"
+    "tag": "v0.9.0-alpha2610021449",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021449"
   },
   "schema": 1
 }

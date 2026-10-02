@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 146,
-    "merged": 568,
+    "failed": 144,
+    "merged": 570,
     "skipped_conflict": 68,
     "skipped_draft": 66,
     "total": 848
   },
-  "generated_at": "2026-10-02T10:18:29Z",
+  "generated_at": "2026-10-02T12:18:27Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -1940,9 +1940,8 @@
     "8456": {
       "author": "BIMvoice",
       "branch": "fix-7822-examples-occ-includes",
-      "head": "63f41d5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "48098ea",
+      "status": "merged",
       "title": "examples: fix missing OpenCASCADE includes on MSVC x64 (#7822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8456"
     },
@@ -1958,7 +1957,7 @@
     "8463": {
       "author": "BIMvoice",
       "branch": "harden-4926-serialise-null-handles",
-      "head": "9da138f",
+      "head": "f428a09",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: guard IfcGeom::serialise against null OCCT handles (#4926)",
@@ -2003,7 +2002,7 @@
     "8475": {
       "author": "BIMvoice",
       "branch": "bv-2638-svg-storey-section-global-z",
-      "head": "a8cab6a",
+      "head": "d3bbcb9",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: section-height-from-storeys should use global placement Z (#2638)",
@@ -2075,7 +2074,7 @@
     "8492": {
       "author": "BIMvoice",
       "branch": "bv-2248-dual-role-representation",
-      "head": "a5bf30a",
+      "head": "3235092",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: warn when a representation is used both directly by a product and as a mapped item (#2248)",
@@ -3466,7 +3465,7 @@
     "8946": {
       "author": "BIMvoice",
       "branch": "fix/validate-stub-flaky-order-dependence",
-      "head": "722fdda",
+      "head": "7feeedd",
       "status": "merged",
       "title": "validate_stub: resolve property/staticmethod wrappers deterministically",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8946"
@@ -5407,7 +5406,7 @@
     "9390": {
       "author": "BIMvoice",
       "branch": "v09r/fix-5357-clash-result-order",
-      "head": "004e8f2",
+      "head": "c14d034",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "IfcGeomTree: keep clash_intersection_many result order",
@@ -5424,7 +5423,7 @@
     "9392": {
       "author": "BIMvoice",
       "branch": "v09r/fix-8013-surfaceoflinearextrusion-depth",
-      "head": "0ebffb7",
+      "head": "b81ff4e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: use real depth for SurfaceOfLinearExtrusion",
@@ -6931,19 +6930,18 @@
       "title": "Fix manifold half space clipping side",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9786"
     },
-    "9787": {
-      "author": "aothms",
-      "branch": "manifold-vertex-properties-counts",
-      "head": "43fe982",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Manifold vertex properties counts",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9787"
+    "9789": {
+      "author": "BIMvoice",
+      "branch": "fix/cityjson-numeric-lod",
+      "head": "b267517",
+      "status": "merged",
+      "title": "ifccityjson: accept numeric lod values",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9789"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610021150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021150"
+    "tag": "v0.9.0-alpha2610021350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021350"
   },
   "schema": 1
 }
