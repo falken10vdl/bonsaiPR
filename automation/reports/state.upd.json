@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 140,
-    "merged": 572,
+    "failed": 141,
+    "merged": 573,
     "skipped_conflict": 67,
-    "skipped_draft": 63,
-    "total": 842
+    "skipped_draft": 66,
+    "total": 847
   },
-  "generated_at": "2026-10-02T05:16:06Z",
+  "generated_at": "2026-10-02T07:16:45Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1949,7 +1949,7 @@
     "8461": {
       "author": "BIMvoice",
       "branch": "fix-5999-wire-intersection-broadphase",
-      "head": "a71061e",
+      "head": "d47cc47",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: bounding-box broad-phase for the wire self-intersection check (#5999)",
@@ -2003,7 +2003,7 @@
     "8475": {
       "author": "BIMvoice",
       "branch": "bv-2638-svg-storey-section-global-z",
-      "head": "6f250e2",
+      "head": "a8cab6a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: section-height-from-storeys should use global placement Z (#2638)",
@@ -3997,7 +3997,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcdiff-class-change-detection",
       "head": "c7d4e8a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcdiff: report an element whose IFC class changed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9064"
     },
@@ -6336,7 +6336,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8518",
       "head": "2a13172",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcDiff: optional content-signature matching to track real changes (#8412)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9682"
     },
@@ -6865,7 +6865,7 @@
     "9777": {
       "author": "BIMvoice",
       "branch": "fix/9768-manifold-circle-segments",
-      "head": "d4c6216",
+      "head": "f4ce3e7",
       "status": "skipped_draft",
       "title": "Fix manifold arcs at default circle segments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9777"
@@ -6885,11 +6885,52 @@
       "status": "skipped_draft",
       "title": "Allow bare IfcTypeProduct to type any product",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9779"
+    },
+    "9780": {
+      "author": "BIMvoice",
+      "branch": "fix/9742-invert-cull-refresh",
+      "head": "1fefbfd",
+      "status": "skipped_draft",
+      "title": "Refresh the cull after Invert visibility",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9780"
+    },
+    "9781": {
+      "author": "BIMvoice",
+      "branch": "fix/9741-clear-section-planes",
+      "head": "80c3496",
+      "status": "skipped_draft",
+      "title": "Clear section planes when the scene is cleared",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9781"
+    },
+    "9782": {
+      "author": "BIMvoice",
+      "branch": "fix/9610-ifcdiff",
+      "head": "122d16f",
+      "status": "merged",
+      "title": "ifcdiff: fingerprint geometry per axis",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9782"
+    },
+    "9783": {
+      "author": "BIMvoice",
+      "branch": "fix/9762-manifold-mixed-props",
+      "head": "0f1fa05",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix Manifold crash on openings with mixed props",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9783"
+    },
+    "9784": {
+      "author": "BIMvoice",
+      "branch": "fix/plane-angle-unit-fallback",
+      "head": "365b138",
+      "status": "skipped_draft",
+      "title": "Assume radians when no plane angle unit exists",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9784"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610020647",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610020647"
+    "tag": "v0.9.0-alpha2610020848",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610020848"
   },
   "schema": 1
 }
