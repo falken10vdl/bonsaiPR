@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 141,
-    "merged": 571,
+    "failed": 142,
+    "merged": 572,
     "skipped_conflict": 69,
-    "skipped_draft": 65,
-    "total": 846
+    "skipped_draft": 66,
+    "total": 849
   },
-  "generated_at": "2026-10-02T06:47:16Z",
+  "generated_at": "2026-10-02T08:48:03Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -1985,7 +1985,7 @@
     "8472": {
       "author": "BIMvoice",
       "branch": "bv-5067-serialise-indirect-surface",
-      "head": "d4da778",
+      "head": "c463e64",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: fix inverted normals for indirect curved surfaces in IfcGeom::serialise (#5067)",
@@ -2021,7 +2021,7 @@
     "8477": {
       "author": "BIMvoice",
       "branch": "bv-4130-svg-hlr-guard",
-      "head": "26fff69",
+      "head": "eb72975",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: don't abort the whole SVG drawing when one element's HLR fails (#4130, #3849)",
@@ -5894,7 +5894,7 @@
     "9624": {
       "author": "BIMvoice",
       "branch": "v09/fix-9299-aggregate-delete-segfault-2",
-      "head": "374623d",
+      "head": "48a1920",
       "status": "merged",
       "title": "Bonsai: fix segfault when deleting an aggregate with its parts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9624"
@@ -6910,19 +6910,44 @@
       "title": "ifcdiff: fingerprint geometry per axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9782"
     },
-    "9783": {
+    "9784": {
       "author": "BIMvoice",
-      "branch": "fix/9762-manifold-mixed-props",
-      "head": "0f1fa05",
+      "branch": "fix/plane-angle-unit-fallback",
+      "head": "365b138",
+      "status": "skipped_draft",
+      "title": "Assume radians when no plane angle unit exists",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9784"
+    },
+    "9785": {
+      "author": "BIMvoice",
+      "branch": "fix/9283-finish-editing-filling",
+      "head": "2f7e286",
+      "status": "merged",
+      "title": "Bonsai: fix door edit when its type has no shape",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9785"
+    },
+    "9786": {
+      "author": "BIMvoice",
+      "branch": "fix/9767-manifold-halfspace",
+      "head": "f5061d0",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Fix Manifold crash on openings with mixed props",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9783"
+      "title": "Fix manifold half space clipping side",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9786"
+    },
+    "9787": {
+      "author": "aothms",
+      "branch": "manifold-vertex-properties-counts",
+      "head": "43fe982",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Manifold vertex properties counts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9787"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610020819",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610020819"
+    "tag": "v0.9.0-alpha2610021019",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610021019"
   },
   "schema": 1
 }

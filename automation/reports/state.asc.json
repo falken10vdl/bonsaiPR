@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 145,
-    "merged": 568,
+    "failed": 147,
+    "merged": 569,
     "skipped_conflict": 67,
-    "skipped_draft": 65,
-    "total": 845
+    "skipped_draft": 66,
+    "total": 849
   },
-  "generated_at": "2026-10-02T06:18:04Z",
+  "generated_at": "2026-10-02T08:18:47Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -2003,7 +2003,7 @@
     "8475": {
       "author": "BIMvoice",
       "branch": "bv-2638-svg-storey-section-global-z",
-      "head": "6f250e2",
+      "head": "a8cab6a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: section-height-from-storeys should use global placement Z (#2638)",
@@ -2021,7 +2021,7 @@
     "8477": {
       "author": "BIMvoice",
       "branch": "bv-4130-svg-hlr-guard",
-      "head": "26fff69",
+      "head": "eb72975",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: don't abort the whole SVG drawing when one element's HLR fails (#4130, #3849)",
@@ -6870,7 +6870,7 @@
     "9777": {
       "author": "BIMvoice",
       "branch": "fix/9768-manifold-circle-segments",
-      "head": "d4c6216",
+      "head": "f4ce3e7",
       "status": "skipped_draft",
       "title": "Fix manifold arcs at default circle segments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9777"
@@ -6914,11 +6914,45 @@
       "status": "merged",
       "title": "ifcdiff: fingerprint geometry per axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9782"
+    },
+    "9784": {
+      "author": "BIMvoice",
+      "branch": "fix/plane-angle-unit-fallback",
+      "head": "365b138",
+      "status": "skipped_draft",
+      "title": "Assume radians when no plane angle unit exists",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9784"
+    },
+    "9785": {
+      "author": "BIMvoice",
+      "branch": "fix/9283-finish-editing-filling",
+      "head": "2f7e286",
+      "status": "merged",
+      "title": "Bonsai: fix door edit when its type has no shape",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9785"
+    },
+    "9786": {
+      "author": "BIMvoice",
+      "branch": "fix/9767-manifold-halfspace",
+      "head": "f5061d0",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix manifold half space clipping side",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9786"
+    },
+    "9787": {
+      "author": "aothms",
+      "branch": "manifold-vertex-properties-counts",
+      "head": "43fe982",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Manifold vertex properties counts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9787"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610020750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610020750"
+    "tag": "v0.9.0-alpha2610020950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610020950"
   },
   "schema": 1
 }
