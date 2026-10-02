@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 138,
-    "merged": 569,
+    "failed": 140,
+    "merged": 572,
     "skipped_conflict": 67,
-    "skipped_draft": 60,
-    "total": 834
+    "skipped_draft": 63,
+    "total": 842
   },
-  "generated_at": "2026-10-02T00:21:47Z",
+  "generated_at": "2026-10-02T05:16:06Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1994,7 +1994,7 @@
     "8474": {
       "author": "BIMvoice",
       "branch": "bv-2629-svg-arc-bounds",
-      "head": "e6912f8",
+      "head": "f2db7de",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: SVG bounding box should follow the drawn arc, not the full circle (#2629)",
@@ -5428,7 +5428,7 @@
     "9393": {
       "author": "BIMvoice",
       "branch": "v09r/5880-hybrid-opening-fallback",
-      "head": "7223bb9",
+      "head": "e1f2ec0",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: fall back when convert_openings cleanly fails",
@@ -6768,7 +6768,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8832",
       "head": "19c0559",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Return nan for non-finite shape elevations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9749"
     },
@@ -6776,7 +6776,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8503",
       "head": "51f408b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Return nan for non-manifold mesh volume",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9750"
     },
@@ -6819,11 +6819,77 @@
       "status": "merged",
       "title": "Bonsai: strip HTML comments from annotation text",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9765"
+    },
+    "9772": {
+      "author": "BIMvoice",
+      "branch": "fix/9755-select-ray-instance",
+      "head": "88253ef",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Expose the instance of ray intersection results",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9772"
+    },
+    "9773": {
+      "author": "BIMvoice",
+      "branch": "fix/8050-forward-port-8370",
+      "head": "9100da5",
+      "status": "skipped_draft",
+      "title": "Clone mapped curves and loops before mutating",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9773"
+    },
+    "9774": {
+      "author": "BIMvoice",
+      "branch": "fix/9763-space-rounded-walls",
+      "head": "6856544",
+      "status": "merged",
+      "title": "Bonsai: follow curved walls when generating spaces",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9774"
+    },
+    "9775": {
+      "author": "BIMvoice",
+      "branch": "fix/9770-get-volume-far-from-origin",
+      "head": "54c3192",
+      "status": "merged",
+      "title": "Fix get_volume precision far from the origin",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9775"
+    },
+    "9776": {
+      "author": "BIMvoice",
+      "branch": "fix/9771-create-shape-prefers-body",
+      "head": "9eed27a",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Prefer Body over Axis in create_shape",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9776"
+    },
+    "9777": {
+      "author": "BIMvoice",
+      "branch": "fix/9768-manifold-circle-segments",
+      "head": "d4c6216",
+      "status": "skipped_draft",
+      "title": "Fix manifold arcs at default circle segments",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9777"
+    },
+    "9778": {
+      "author": "BIMvoice",
+      "branch": "feat/9377-bind-linked-reference-recipe",
+      "head": "c8936d1",
+      "status": "merged",
+      "title": "Add BindLinkedModels ifcpatch recipe",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9778"
+    },
+    "9779": {
+      "author": "BIMvoice",
+      "branch": "fix/9566-assign-type",
+      "head": "a43b186",
+      "status": "skipped_draft",
+      "title": "Allow bare IfcTypeProduct to type any product",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9779"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610020151",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610020151"
+    "tag": "v0.9.0-alpha2610020647",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610020647"
   },
   "schema": 1
 }

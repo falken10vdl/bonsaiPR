@@ -5261,3 +5261,18 @@
 {"ts": "2026-10-02T00:07:50Z", "order": "upd", "pr": 8971, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-10-02T00:07:50Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-10-02T00:21:47Z", "order": "by-updated", "pr": 9500, "event": "updated", "status": "skipped_draft", "from_head": "b5a7c43", "to_head": "b30f1ef"}
+{"ts": "2026-10-02T05:02:35Z", "order": "upd", "pr": 8734, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-02T05:02:35Z", "order": "upd", "pr": 8971, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-02T05:02:35Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 8474, "event": "updated", "status": "failed", "from_head": "e6912f8", "to_head": "f2db7de"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9393, "event": "updated", "status": "failed", "from_head": "7223bb9", "to_head": "e1f2ec0"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9749, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9750, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9772, "event": "added", "to": "failed"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9773, "event": "added", "to": "skipped_draft"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9774, "event": "added", "to": "merged"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9775, "event": "added", "to": "merged"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9776, "event": "added", "to": "failed"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9777, "event": "added", "to": "skipped_draft"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9778, "event": "added", "to": "merged"}
+{"ts": "2026-10-02T05:16:06Z", "order": "by-updated", "pr": 9779, "event": "added", "to": "skipped_draft"}
