@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-03T16:47:43Z",
+  "generated_at": "2026-10-03T18:48:01Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -718,7 +718,7 @@
     "7940": {
       "author": "theoryshaw",
       "branch": "Concatenate_selections",
-      "head": "8bf9cc3",
+      "head": "83c313a",
       "status": "skipped_conflict",
       "title": "Concatenate selections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7940"
@@ -865,7 +865,7 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "5b8da9e",
+      "head": "77dc5ca",
       "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
@@ -930,7 +930,7 @@
     "8171": {
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
-      "head": "103208f",
+      "head": "2ae5099",
       "status": "skipped_conflict",
       "title": "Add per-drawing render overrides (status_render module)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8171"
@@ -954,7 +954,7 @@
     "8201": {
       "author": "theoryshaw",
       "branch": "dev-notes-system",
-      "head": "27acac7",
+      "head": "ac49058",
       "status": "merged",
       "title": "Dev notes system",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8201"
@@ -978,7 +978,7 @@
     "8241": {
       "author": "theoryshaw",
       "branch": "Additional_Selection_and_Deselection_Tools",
-      "head": "a45f283",
+      "head": "fd1e5d2",
       "status": "skipped_conflict",
       "title": "Additional selection and deselection tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8241"
@@ -986,7 +986,7 @@
     "8242": {
       "author": "theoryshaw",
       "branch": "Linked_File_Features",
-      "head": "c491c7e",
+      "head": "5365819",
       "status": "skipped_conflict",
       "title": "Linked file features",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8242"
@@ -1250,7 +1250,7 @@
     "8319": {
       "author": "BIMvoice",
       "branch": "fix-8233-duplicate-linked-aggregate",
-      "head": "ea3b139",
+      "head": "489f7aa",
       "status": "skipped_conflict",
       "title": "Retain linked aggregates when duplicating an aggregate (#8233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8319"
@@ -6979,8 +6979,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610031819",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031819"
+    "tag": "v0.9.0-alpha2610032020",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610032020"
   },
   "schema": 1
 }

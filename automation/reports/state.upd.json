@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 120,
-    "merged": 571,
-    "skipped_conflict": 97,
+    "merged": 574,
+    "skipped_conflict": 94,
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-03T17:16:40Z",
+  "generated_at": "2026-10-03T19:16:56Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -930,7 +930,7 @@
     "8171": {
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
-      "head": "103208f",
+      "head": "2ae5099",
       "status": "merged",
       "title": "Add per-drawing render overrides (status_render module)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8171"
@@ -986,7 +986,7 @@
     "8242": {
       "author": "theoryshaw",
       "branch": "Linked_File_Features",
-      "head": "c491c7e",
+      "head": "5365819",
       "status": "merged",
       "title": "Linked file features",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8242"
@@ -1091,7 +1091,7 @@
       "author": "BIMvoice",
       "branch": "fix/aggregate-error-report-7983",
       "head": "cb9f26f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: report incompatible aggregates instead of crashing (#7983)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8274"
     },
@@ -1250,8 +1250,8 @@
     "8319": {
       "author": "BIMvoice",
       "branch": "fix-8233-duplicate-linked-aggregate",
-      "head": "ea3b139",
-      "status": "skipped_conflict",
+      "head": "489f7aa",
+      "status": "merged",
       "title": "Retain linked aggregates when duplicating an aggregate (#8233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8319"
     },
@@ -1299,7 +1299,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-camera-bounds-on-save-8205",
       "head": "f9dd32c",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai(drawing): persist drawing camera zoom and crop on save (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8328"
     },
@@ -4521,7 +4521,7 @@
       "author": "BIMvoice",
       "branch": "fix/bonsai-optional-attr-read-guards",
       "head": "d30407e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: guard optional attrs in two read paths",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9153"
     },
@@ -5783,7 +5783,7 @@
       "author": "theoryshaw",
       "branch": "v09/fix-9588-add-aggregate-linked-aggregates",
       "head": "e03ccbc",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Collect whole aggregates in bim.add_aggregate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9589"
     },
@@ -6980,8 +6980,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610031848",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031848"
+    "tag": "v0.9.0-alpha2610032048",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610032048"
   },
   "schema": 1
 }

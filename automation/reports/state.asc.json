@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-03T16:18:28Z",
+  "generated_at": "2026-10-03T18:19:03Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -718,7 +718,7 @@
     "7940": {
       "author": "theoryshaw",
       "branch": "Concatenate_selections",
-      "head": "8bf9cc3",
+      "head": "83c313a",
       "status": "merged",
       "title": "Concatenate selections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7940"
@@ -865,7 +865,7 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "5b8da9e",
+      "head": "77dc5ca",
       "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
@@ -954,8 +954,8 @@
     "8201": {
       "author": "theoryshaw",
       "branch": "dev-notes-system",
-      "head": "27acac7",
-      "status": "skipped_conflict",
+      "head": "ac49058",
+      "status": "merged",
       "title": "Dev notes system",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8201"
     },
@@ -978,15 +978,15 @@
     "8241": {
       "author": "theoryshaw",
       "branch": "Additional_Selection_and_Deselection_Tools",
-      "head": "a45f283",
-      "status": "skipped_conflict",
+      "head": "fd1e5d2",
+      "status": "merged",
       "title": "Additional selection and deselection tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8241"
     },
     "8242": {
       "author": "theoryshaw",
       "branch": "Linked_File_Features",
-      "head": "c491c7e",
+      "head": "5365819",
       "status": "merged",
       "title": "Linked file features",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8242"
@@ -1250,7 +1250,7 @@
     "8319": {
       "author": "BIMvoice",
       "branch": "fix-8233-duplicate-linked-aggregate",
-      "head": "ea3b139",
+      "head": "489f7aa",
       "status": "merged",
       "title": "Retain linked aggregates when duplicating an aggregate (#8233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8319"
@@ -1299,7 +1299,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-camera-bounds-on-save-8205",
       "head": "f9dd32c",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai(drawing): persist drawing camera zoom and crop on save (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8328"
     },
@@ -3054,7 +3054,7 @@
       "author": "BIMvoice",
       "branch": "7901-filter-from-selection",
       "head": "c5a4fe9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: filter from selection, and export/import search filters and colourschemes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8873"
     },
@@ -3142,7 +3142,7 @@
       "author": "BIMvoice",
       "branch": "8850-relating-type-enum",
       "head": "7dc6d31",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: setting an active type fails silently on a stale enum (#8850, #9238)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
     },
@@ -5515,7 +5515,7 @@
       "author": "theoryshaw",
       "branch": "select_type_isolate_9438",
       "head": "3c663e1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: ALT+Click Select Type reveals, frames and isolates the type (#9438)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9439"
     },
@@ -6981,8 +6981,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610031750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031750"
+    "tag": "v0.9.0-alpha2610031950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031950"
   },
   "schema": 1
 }
