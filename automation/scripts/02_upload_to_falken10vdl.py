@@ -23,7 +23,11 @@ FORK_OWNER = os.getenv("FORK_OWNER", GITHUB_OWNER)
 FORK_REPO = os.getenv("FORK_REPO", "IfcOpenShell")
 SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
 SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
-SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.8.0")
+# Must match stage 0: the profile's base.branch decides (it names the release).
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import bonsaipr_profile
+
+SOURCE_BASE_BRANCH = bonsaipr_profile.resolve_base_branch(bonsaipr_profile.load_profile(verbose=False))
 
 # Use token in URLs for authenticated Git operations
 bonsaiPR_repo_url = (

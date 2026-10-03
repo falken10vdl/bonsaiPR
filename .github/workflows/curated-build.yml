@@ -84,7 +84,9 @@ jobs:
       # Upstream being curated.
       SOURCE_REPO_OWNER: IfcOpenShell
       SOURCE_REPO_NAME: IfcOpenShell
-      SOURCE_BASE_BRANCH: v0.8.0
+      # SOURCE_BASE_BRANCH is NOT set here: the profile's base.branch decides,
+      # and "Verify the profile resolves" exports it. Hardcoding it once made a
+      # v0.9.0 profile merge onto v0.8.0 and label the build 0.8, green.
 
       # Runner paths. BASE_CLONE_DIR is checked out, reset, branch-deleted and
       # force-pushed from — it must never point at a repo anyone is working in.
@@ -155,6 +157,9 @@ jobs:
         working-directory: automation/scripts
         run: |
           python bonsaipr_profile.py show "$PROFILE"
+          base=$(python bonsaipr_profile.py base "$PROFILE")
+          echo "Base branch: $base"
+          echo "SOURCE_BASE_BRANCH=$base" >> "$GITHUB_ENV"
 
       - name: Configure git
         run: |

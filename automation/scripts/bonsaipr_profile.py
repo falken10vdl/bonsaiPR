@@ -187,6 +187,10 @@ class Profile:
         base = self.data.get("base") or {}
         self.base_repo = base.get("repo") or "IfcOpenShell/IfcOpenShell"
         self.base_branch = base.get("branch") or "v0.8.0"
+        # Whether the profile itself names its branch, as opposed to falling
+        # back to the default. Only a stated branch can disagree with
+        # SOURCE_BASE_BRANCH; see resolve_base_branch().
+        self.base_branch_stated = bool(base.get("branch"))
         self.base_commit = (base.get("commit") or "").strip() or None
 
         self.mode = (select.get("mode") or MODE_EVERYTHING).strip().lower()
@@ -494,27 +498,57 @@ def load_profile(name=None, profiles_dir=None, env=None, verbose=True):
     return profile
 
 
+def resolve_base_branch(profile, env=None):
+    """The upstream branch a build stands on. Every stage must agree on it.
+
+    A profile that names `base.branch` decides. SOURCE_BASE_BRANCH is honoured
+    when the profile does not name one (the legacy env setup), and must match
+    when it does: the stages used to read only the env var, so a v0.9.0
+    profile run with SOURCE_BASE_BRANCH=v0.8.0 merged onto v0.8.0's tip,
+    labelled the build 0.8, and finished green. Disagreement is an error, not
+    a preference.
+    """
+    env = env if env is not None else os.environ
+    stated = (env.get("SOURCE_BASE_BRANCH") or "").strip() or None
+    if profile.base_branch_stated:
+        if stated and stated != profile.base_branch:
+            raise ProfileError(
+                f"SOURCE_BASE_BRANCH={stated}, but profile '{profile.name}' builds on "
+                f"{profile.base_branch}. Unset SOURCE_BASE_BRANCH (the profile decides) "
+                f"or make the two agree."
+            )
+        return profile.base_branch
+    return stated or profile.base_branch
+
+
 # --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 
 def main(argv=None):
-    try:
-        sys.stdout.reconfigure(encoding="utf-8")
-    except (AttributeError, ValueError):
-        pass
+    for s in (sys.stdout, sys.stderr):
+        try:
+            s.reconfigure(encoding="utf-8")
+        except (AttributeError, ValueError):
+            pass
 
     ap = argparse.ArgumentParser(description="Inspect and validate BonsaiPR profiles")
-    ap.add_argument("command", choices=["show", "check"])
+    ap.add_argument("command", choices=["show", "check", "base"])
     ap.add_argument("name", nargs="?", default=None)
     ap.add_argument("--profiles", default=None)
     args = ap.parse_args(argv)
 
     try:
         profile = load_profile(args.name, profiles_dir=args.profiles, verbose=False)
+        base_branch = resolve_base_branch(profile)
     except ProfileError as e:
         print(f"❌ {e}", file=sys.stderr)
         return 1
+
+    if args.command == "base":
+        # Bare output, for `SOURCE_BASE_BRANCH=$(... base NAME)` in the workflow.
+        print(base_branch)
+        return 0
 
     print(f"{profile.summary()}   [{profile.source}]")
     if profile.description:

@@ -27,7 +27,7 @@ GITHUB_TOKEN = os.getenv(
 )  # Set your GitHub token in environment variables
 SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
 SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
-SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.8.0")
+# SOURCE_BASE_BRANCH is resolved against the profile below, once it is loaded.
 
 upstream_repo_url = f"https://github.com/{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}.git"
 # Use token in the fork URL for authenticated operations
@@ -56,6 +56,9 @@ upstream_repo = f"{SOURCE_REPO_OWNER}/{SOURCE_REPO_NAME}"
 #                runs the old wheel behavior. Default off so we don't drop PRs
 #                whose Python is testable.
 CURATION = bonsaipr_profile.load_profile()
+# The profile's base.branch decides; SOURCE_BASE_BRANCH may only agree with it.
+SOURCE_BASE_BRANCH = bonsaipr_profile.resolve_base_branch(CURATION)
+print(f"🌿 Base branch: {SOURCE_BASE_BRANCH}")
 users = CURATION.users
 excluded_prs = CURATION.excluded_prs
 SKIP_CPP_PRS = CURATION.skip_cpp
