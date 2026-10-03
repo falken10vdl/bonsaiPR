@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 121,
-    "merged": 572,
-    "skipped_conflict": 95,
+    "merged": 571,
+    "skipped_conflict": 96,
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-03T18:19:03Z",
+  "generated_at": "2026-10-03T20:18:48Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -930,8 +930,8 @@
     "8171": {
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
-      "head": "103208f",
-      "status": "skipped_conflict",
+      "head": "2ae5099",
+      "status": "merged",
       "title": "Add per-drawing render overrides (status_render module)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8171"
     },
@@ -2284,7 +2284,7 @@
       "author": "BIMvoice",
       "branch": "fix-4067-svg-curve-hlr",
       "head": "c17196b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai: add opt-in exact-geometry hidden line removal for smoother SVG curves (#4067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8615"
     },
@@ -3374,7 +3374,7 @@
       "author": "BIMvoice",
       "branch": "feat-5729-freestyle-ifc-only",
       "head": "a2bc7db",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add 'IFC Elements Only' preference for Freestyle linework",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8933"
     },
@@ -3864,7 +3864,7 @@
       "author": "BIMvoice",
       "branch": "feat-9033-drawing-status-classes",
       "head": "b3aea3d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add a Status Classes toggle to drawings (#9033)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9051"
     },
@@ -6476,7 +6476,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8827",
       "head": "7c1aa5a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: carry annotation status/phase classes onto text labels too",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9708"
     },
@@ -6981,8 +6981,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610031950",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031950"
+    "tag": "v0.9.0-alpha2610032150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610032150"
   },
   "schema": 1
 }
