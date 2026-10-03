@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Parts of this file were written with an AI coding assistant (Claude Code).
 """
 base_advisor.py - Which base commit lets the most of a curation land?
 
@@ -115,12 +116,30 @@ def open_pr_numbers(path=DEFAULT_PR_INDEX):
 
 
 def cleanup_refs(repo):
-    """Remove the temporary refs. Always call this; they are not the user's."""
+    """Remove the temporary refs. Always call this; they are not the user's.
+
+    The listing goes to git as bytes. In text mode Python writes every "\\n" as
+    "\\r\\n" on Windows, `update-ref --stdin` then reads each ref name with a
+    trailing CR, rejects the whole batch, and deletes nothing - which went
+    unnoticed because the result was never checked. So check it, and say so
+    when refs are left behind rather than leaving them silently.
+    """
     listing = git(["for-each-ref", "--format=delete %(refname)", "refs/baseadv/"], repo)
-    if listing.strip():
-        subprocess.run(
-            ["git", "update-ref", "--stdin"], cwd=repo,
-            input=listing, capture_output=True, text=True,
+    if not listing.strip():
+        return
+    r = subprocess.run(
+        ["git", "update-ref", "--stdin"], cwd=repo,
+        input=listing.encode("utf-8"), capture_output=True,
+    )
+    left = git(["for-each-ref", "--format=%(refname)", "refs/baseadv/"], repo).split()
+    if r.returncode != 0 or left:
+        err = (r.stderr.decode("utf-8", "replace").strip().splitlines() or [""])[0]
+        print(
+            f"  ⚠️  could not remove {len(left)} scratch ref(s) under refs/baseadv/ "
+            f"in {repo}" + (f": {err}" if err else "") + "\n"
+            f"     remove them with: git -C \"{repo}\" for-each-ref "
+            f"--format=\"delete %(refname)\" refs/baseadv/ | git -C \"{repo}\" update-ref --stdin",
+            file=sys.stderr,
         )
 
 
