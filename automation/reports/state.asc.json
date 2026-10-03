@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 131,
-    "merged": 575,
-    "skipped_conflict": 81,
-    "skipped_draft": 69,
+    "failed": 124,
+    "merged": 578,
+    "skipped_conflict": 86,
+    "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-02T22:20:02Z",
+  "generated_at": "2026-10-03T00:19:29Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -447,9 +447,8 @@
     "7798": {
       "author": "theoryshaw",
       "branch": "ManualDrawingReference",
-      "head": "3409c65",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "37982ed",
+      "status": "merged",
       "title": "Manual drawing reference",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7798"
     },
@@ -567,15 +566,6 @@
       "status": "skipped_conflict",
       "title": "Refactor: Use ifcopenshell.util.profiler.Profiler in drawing operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7869"
-    },
-    "7870": {
-      "author": "theoryshaw",
-      "branch": "Fix_PermissionError",
-      "head": "4664072",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Fix PermissionError deleting locked HDF5 cache on Windows",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7870"
     },
     "7871": {
       "author": "theoryshaw",
@@ -755,9 +745,8 @@
     "7965": {
       "author": "theoryshaw",
       "branch": "inset_section_endpoints",
-      "head": "738110b",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "8251c95",
+      "status": "merged",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
     },
@@ -878,9 +867,8 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "253a6c5",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "5b8da9e",
+      "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
     },
@@ -944,9 +932,8 @@
     "8171": {
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
-      "head": "ad9d368",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "103208f",
+      "status": "skipped_conflict",
       "title": "Add per-drawing render overrides (status_render module)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8171"
     },
@@ -961,8 +948,8 @@
     "8200": {
       "author": "theoryshaw",
       "branch": "opening-template-on-type",
-      "head": "a9efabb",
-      "status": "skipped_conflict",
+      "head": "d0e6fcf",
+      "status": "merged",
       "title": "Preserve custom opening geometry via a type-level Reference template",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8200"
     },
@@ -1052,7 +1039,7 @@
       "author": "BIMvoice",
       "branch": "fix/add-reference-image-kwarg-8130",
       "head": "65b08c3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: drop stale kwarg when invoking add_reference_image (#8130)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
     },
@@ -2919,14 +2906,6 @@
       "title": "IfcParse: read back non-finite REALs serialized with a trailing dot",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8792"
     },
-    "8793": {
-      "author": "theoryshaw",
-      "branch": "fix-hybrid-cgal-partial-shell-fallback",
-      "head": "0840428",
-      "status": "skipped_draft",
-      "title": "ifcgeom: defer partial CGAL shells to the next hybrid kernel (fixes #8052)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8793"
-    },
     "8794": {
       "author": "BIMvoice",
       "branch": "2077-centerline-profile",
@@ -3768,9 +3747,8 @@
     "9021": {
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
-      "head": "2739df8",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "f78170a",
+      "status": "skipped_conflict",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
     },
@@ -5221,9 +5199,8 @@
     "9327": {
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
-      "head": "694abc7",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "fd900ca",
+      "status": "merged",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -5818,7 +5795,7 @@
       "author": "RickBrice",
       "branch": "rab_polyline_tool_180_fix",
       "head": "790ad21",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix typed 180 degree polyline angle direction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9593"
     },
@@ -5860,7 +5837,7 @@
       "author": "BIMvoice",
       "branch": "v09/fix-9591-sibling-window-openings",
       "head": "14a5ef8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop a window edit deleting or moving sibling openings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9622"
     },
@@ -6988,11 +6965,27 @@
       "status": "merged",
       "title": "docs: make 26 api docstring examples self-contained",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9800"
+    },
+    "9802": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.16.9",
+      "head": "e1bb433",
+      "status": "merged",
+      "title": "build(deps): bump ruff from 0.16.8 to 0.16.9",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9802"
+    },
+    "9803": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/pyodide-build-0.39.1",
+      "head": "fb143e9",
+      "status": "merged",
+      "title": "build(deps): bump pyodide-build from 0.39.0 to 0.39.1",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9803"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610022350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610022350"
+    "tag": "v0.9.0-alpha2610030150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610030150"
   },
   "schema": 1
 }
