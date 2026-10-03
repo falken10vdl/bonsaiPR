@@ -29,6 +29,18 @@ import bonsaipr_profile
 
 SOURCE_BASE_BRANCH = bonsaipr_profile.resolve_base_branch(bonsaipr_profile.load_profile(verbose=False))
 
+# Optional prefix on the published addon zips, so an instance's builds are told
+# apart from the canonical ones at a glance (e.g. "Frankenstein_" gives
+# Frankenstein_bonsaiPR_py313-0.9.0-alpha2610031945-linux-x64.zip). Applied to
+# the asset name at upload; the files on disk, the README and the extension id
+# are unchanged, and the feed links to the prefixed names. Empty by default.
+ASSET_PREFIX = os.getenv("BONSAIPR_ASSET_PREFIX", "").strip()
+if not re.fullmatch(r"[A-Za-z0-9._-]*", ASSET_PREFIX):
+    raise SystemExit(
+        f"BONSAIPR_ASSET_PREFIX={ASSET_PREFIX!r}: only letters, digits, '.', '_' and '-' "
+        f"are allowed, since it becomes part of every download URL"
+    )
+
 # Use token in URLs for authenticated Git operations
 bonsaiPR_repo_url = (
     f"https://{GITHUB_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO}.git"
@@ -294,15 +306,22 @@ def parse_version_from_tag(tag_name):
 
 
 def normalize_asset_name(original_filename, timestamp_10=None, target_version=None):
-    """Normalize addon zip naming to bonsaiPR_pyXXX-<version>-alpha<timestamp>-<platform>.zip."""
+    """Normalize addon zip naming to [ASSET_PREFIX]bonsaiPR_pyXXX-<version>-alpha<timestamp>-<platform>.zip.
+
+    Idempotent: a name that already carries the prefix (re-rendering an existing
+    release's notes reads the published, prefixed names back) gets it once, not twice.
+    """
+    name = original_filename
+    if ASSET_PREFIX and name.startswith(ASSET_PREFIX):
+        name = name[len(ASSET_PREFIX):]
     pattern = r"^(bonsaiPR_py\d+-)([\d.]+)(?:-alpha)?(\d{6,10})(-[^.]+\.zip)$"
-    m = re.match(pattern, original_filename)
+    m = re.match(pattern, name)
     if not m:
-        return original_filename
+        return f"{ASSET_PREFIX}{name}"
 
     version = target_version or m.group(2)
     stamp = timestamp_10 or m.group(3)
-    return f"{m.group(1)}{version}-alpha{stamp}{m.group(4)}"
+    return f"{ASSET_PREFIX}{m.group(1)}{version}-alpha{stamp}{m.group(4)}"
 
 
 def find_report_file():
@@ -1724,7 +1743,7 @@ def upload_to_falken10vdl():
             with open(local_path, "rb") as f:
                 hashval = hashlib.sha256(f.read()).hexdigest()
             # Extract version from filename: bonsaiPR_pyXXX-0.8.5-alpha260116-platform.zip
-            m = re.match(r"bonsaiPR_py\d+-([\d.]+-alpha\d{6})", asset_name)
+            m = re.search(r"bonsaiPR_py\d+-([\d.]+-alpha\d{6})", asset_name)
             if m:
                 version_str = m.group(1)
             else:
@@ -1733,7 +1752,7 @@ def upload_to_falken10vdl():
                     asset_name.split("-")[1] if "-" in asset_name else "unknown"
                 )
                 # try to include alpha+digits if possible
-                m2 = re.match(r"bonsaiPR_py\d+-([\d.]+-alpha\d+)", asset_name)
+                m2 = re.search(r"bonsaiPR_py\d+-([\d.]+-alpha\d+)", asset_name)
                 if m2:
                     version_str = m2.group(1)
             file_info[(plat, pyver)] = {

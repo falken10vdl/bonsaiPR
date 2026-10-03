@@ -79,6 +79,7 @@ python bonsaipr_profile.py check <name>
 | `BONSAIPR_REPO` | `bonsaiPR` |
 | `BONSAIPR_FORK_OWNER` | `OpeningDesign` |
 | `BONSAIPR_FORK_REPO` | `IfcOpenShell` |
+| `BONSAIPR_ASSET_PREFIX` | *(empty)*: prefix on the published zips, e.g. `Frankenstein_` gives `Frankenstein_bonsaiPR_py313-0.9.0-alpha…-linux-x64.zip`. The feed links to the prefixed names; the extension id stays `bonsaiPR`. |
 
 A fine-grained PAT needs, on both forks: *Contents: read and write*. On the
 release target it also needs *Contents: read and write* for the release upload.

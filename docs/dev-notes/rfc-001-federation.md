@@ -136,6 +136,15 @@ both statements, not routine.
   commit from `state.asc.json`, so a curated instance's commits carried the
   canonical counts (578 merged for a run that merged 110); it now uses the
   snapshot actually staged, asc first.
+- **The base decides what can be built, not stage 1.** Stage 1 kept its own
+  target list (py311 on linux/macos/macosm1/win, py313 without macos). v0.9.0
+  dropped Intel macOS, so a full v0.9.0 run would have asked `make` for
+  py311/macos, been refused, and, under the partial-build rule, failed after
+  ~40 minutes. falken's canonical v0.9.0 builds hit the same refusal without
+  that rule and publish 6 zips where the list promises 7. Stage 1 now narrows
+  its list to the Makefile's `SUPPORTED_PYVERSIONS`/`SUPPORTED_PLATFORMS` and
+  records what it skipped in `build_targets.json` (`skipped_unsupported`):
+  7 zips on v0.8.0, 6 on v0.9.0.
 - **On Windows, text-mode stdin turns `\n` into `\r\n`.** `base_advisor.py`
   piped its `delete refs/baseadv/<n>` list to `git update-ref --stdin` with
   `text=True`; git read every ref name with a trailing CR, rejected the batch,

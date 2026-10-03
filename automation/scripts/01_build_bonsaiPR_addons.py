@@ -507,6 +507,50 @@ def clean_old_bonsai_files():
     else:
         log_message("No old 'bonsai_' files found to clean up")
 
+def makefile_supported_targets(makefile_path):
+    """SUPPORTED_PYVERSIONS and SUPPORTED_PLATFORMS as the base's own Makefile declares them.
+
+    The base decides what it can build: v0.8.0 supports py311/py312/py313 on
+    linux/macos/macosm1/win, v0.9.0 dropped Intel macOS. A hardcoded target list
+    asked v0.9.0 for py311/macos, which its Makefile rejects, and the partial-build
+    rule then failed the whole run. Returns None for a list the Makefile does not
+    declare, meaning "no restriction known".
+    """
+    found = {"PYVERSIONS": None, "PLATFORMS": None}
+    try:
+        with open(makefile_path, "r", encoding="utf-8", errors="replace") as f:
+            for line in f:
+                m = re.match(r"^SUPPORTED_(PYVERSIONS|PLATFORMS)\s*:?=\s*(.*?)\s*$", line)
+                if m and found[m.group(1)] is None:
+                    found[m.group(1)] = set(m.group(2).split())
+    except OSError as e:
+        log_message(f"Could not read {makefile_path} for supported targets: {e}", "WARNING")
+    return found["PYVERSIONS"], found["PLATFORMS"]
+
+
+def select_platforms(py_config, target_platforms, supported_pyversions, supported_platforms):
+    """(platforms to build, ["pyXXX/platform" skipped as unsupported]) for one pyversion.
+
+    Narrows the requested platforms (all of this pyversion's, if none requested)
+    to what the base's Makefile supports. A None restriction means unknown, and
+    narrows nothing.
+    """
+    pyversion = py_config['pyversion']
+    if target_platforms:
+        # Filter requested platforms against what this pyversion supports
+        platforms = [p for p in target_platforms if p in py_config['all_platforms']]
+    else:
+        platforms = list(py_config['all_platforms'])
+    if supported_pyversions is not None and pyversion not in supported_pyversions:
+        return [], [f"{pyversion}/{p}" for p in platforms]
+    if supported_platforms is None:
+        return platforms, []
+    return (
+        [p for p in platforms if p in supported_platforms],
+        [f"{pyversion}/{p}" for p in platforms if p not in supported_platforms],
+    )
+
+
 def build_addons(target_platforms=None):
     """Build multi-platform addon zip files using makefile
     
@@ -556,10 +600,19 @@ def build_addons(target_platforms=None):
     build_version, _, _ = get_version_info()
     log_message(f"Locked build VERSION to: {build_version}")
 
+    supported_pyversions, supported_platforms = makefile_supported_targets(makefile_path)
+    log_message(
+        f"Base Makefile supports pyversions={sorted(supported_pyversions) if supported_pyversions else 'unknown'} "
+        f"platforms={sorted(supported_platforms) if supported_platforms else 'unknown'}"
+    )
+
     # Change to the bonsaiPR directory and run make for each platform
     original_cwd = os.getcwd()
     successful_builds = 0
     failed_targets = []
+    # Targets this list would ask for but the base's Makefile does not support.
+    # Not attempted, so not failures - but recorded, so a missing zip is explained.
+    skipped_targets = []
 
     try:
         os.chdir(bonsaiPR_src)
@@ -567,11 +620,12 @@ def build_addons(target_platforms=None):
 
         for py_config in py_configs:
             pyversion = py_config['pyversion']
-            if target_platforms:
-                # Filter requested platforms against what this pyversion supports
-                platforms = [p for p in target_platforms if p in py_config['all_platforms']]
-            else:
-                platforms = py_config['all_platforms']
+            platforms, skipped = select_platforms(
+                py_config, target_platforms, supported_pyversions, supported_platforms
+            )
+            if skipped:
+                skipped_targets += skipped
+                log_message(f"Not supported by this base's Makefile, skipping: {', '.join(skipped)}")
 
             if not platforms:
                 log_message(f"No applicable platforms for {pyversion}, skipping")
@@ -647,6 +701,7 @@ def build_addons(target_platforms=None):
             json.dump({
                 "built": successful_builds,
                 "failed": failed_targets,
+                "skipped_unsupported": skipped_targets,
                 "zips": sorted(os.path.basename(a) for a in addon_files),
             }, f, indent=2)
     except OSError as e:
