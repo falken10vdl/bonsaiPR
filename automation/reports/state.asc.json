@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 124,
+    "failed": 125,
     "merged": 578,
-    "skipped_conflict": 86,
+    "skipped_conflict": 85,
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-03T00:19:29Z",
+  "generated_at": "2026-10-03T02:17:57Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -5200,7 +5200,8 @@
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
       "head": "fd900ca",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -5795,7 +5796,7 @@
       "author": "RickBrice",
       "branch": "rab_polyline_tool_180_fix",
       "head": "790ad21",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix typed 180 degree polyline angle direction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9593"
     },
@@ -6984,8 +6985,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610030150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610030150"
+    "tag": "v0.9.0-alpha2610030350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610030350"
   },
   "schema": 1
 }

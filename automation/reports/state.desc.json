@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 122,
+    "failed": 123,
     "merged": 575,
-    "skipped_conflict": 91,
+    "skipped_conflict": 90,
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-03T00:50:17Z",
+  "generated_at": "2026-10-03T02:46:40Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -5199,7 +5199,8 @@
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
       "head": "fd900ca",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -6982,8 +6983,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610030220",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610030220"
+    "tag": "v0.9.0-alpha2610030418",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610030418"
   },
   "schema": 1
 }
