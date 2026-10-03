@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 124,
-    "merged": 573,
-    "skipped_conflict": 91,
+    "failed": 122,
+    "merged": 571,
+    "skipped_conflict": 95,
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-03T03:15:15Z",
+  "generated_at": "2026-10-03T15:20:27Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -964,9 +964,8 @@
     "8228": {
       "author": "theoryshaw",
       "branch": "debug-drawing-faster-failure-search",
-      "head": "9283d86",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "23aaf66",
+      "status": "merged",
       "title": "Debug drawing faster failure search",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8228"
     },
@@ -989,9 +988,8 @@
     "8242": {
       "author": "theoryshaw",
       "branch": "Linked_File_Features",
-      "head": "9fd119b",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "c491c7e",
+      "status": "merged",
       "title": "Linked file features",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8242"
     },
@@ -1303,7 +1301,7 @@
       "author": "BIMvoice",
       "branch": "fix-drawing-camera-bounds-on-save-8205",
       "head": "f9dd32c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai(drawing): persist drawing camera zoom and crop on save (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8328"
     },
@@ -2717,7 +2715,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8049-resilient-drawing-print",
       "head": "eb6a17f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: don't let one bad element abort an entire drawing print",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8734"
     },
@@ -3162,7 +3160,7 @@
       "author": "BIMvoice",
       "branch": "8849-linked-space-visibility",
       "head": "5a069af",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: exclude IfcSpace from the default linked-model query",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8897"
     },
@@ -3306,7 +3304,7 @@
       "author": "BIMvoice",
       "branch": "fix-4774-shapely-fill-flush-edge",
       "head": "46595ad",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: pool all projections for shapely fill cell formation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8923"
     },
@@ -4244,7 +4242,7 @@
       "author": "BIMvoice",
       "branch": "fix/9029-link-ifc-duplicate-on-repeat-click",
       "head": "dfe9c2e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop Link IFC duplicating and reloading when a click is repeated",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9104"
     },
@@ -5276,7 +5274,7 @@
       "author": "BIMvoice",
       "branch": "fix-link-ifc-silent-failure",
       "head": "b9d9e88",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix Link IFC silently failing to build its cache",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9360"
     },
@@ -6984,8 +6982,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610030447",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610030447"
+    "tag": "v0.9.0-alpha2610031652",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031652"
   },
   "schema": 1
 }

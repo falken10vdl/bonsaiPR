@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 123,
-    "merged": 575,
-    "skipped_conflict": 90,
+    "failed": 121,
+    "merged": 574,
+    "skipped_conflict": 93,
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-03T02:46:40Z",
+  "generated_at": "2026-10-03T14:51:20Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -563,7 +563,7 @@
       "author": "dipayansardar73-decode",
       "branch": "refactor-profiler-drawing-7328",
       "head": "7d27a2b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Refactor: Use ifcopenshell.util.profiler.Profiler in drawing operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7869"
     },
@@ -579,7 +579,7 @@
       "author": "dipayansardar73-decode",
       "branch": "fix-collector-none-spatial-selector-7861-7806",
       "head": "712da05",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "feat: fix Bonsai collector crash (#7861) and add spatial_reference selector key (#7806)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7872"
     },
@@ -964,9 +964,8 @@
     "8228": {
       "author": "theoryshaw",
       "branch": "debug-drawing-faster-failure-search",
-      "head": "9283d86",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "23aaf66",
+      "status": "merged",
       "title": "Debug drawing faster failure search",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8228"
     },
@@ -989,9 +988,8 @@
     "8242": {
       "author": "theoryshaw",
       "branch": "Linked_File_Features",
-      "head": "9fd119b",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "c491c7e",
+      "status": "skipped_conflict",
       "title": "Linked file features",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8242"
     },
@@ -6983,8 +6981,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610030418",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610030418"
+    "tag": "v0.9.0-alpha2610031620",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031620"
   },
   "schema": 1
 }
