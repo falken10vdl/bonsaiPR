@@ -125,6 +125,17 @@ both statements, not routine.
   `resolve_base_branch()` decides for every stage: the profile's branch wins,
   the env var may only agree with it, and the workflow exports what the profile
   says instead of hardcoding it.
+- **A sidecar skipped when empty is a stale sidecar.** `write_pinned()` and
+  `write_rivals()` returned early when there was nothing to record, so the
+  previous run's file stayed. The first v0.9.0 run pinned nothing and left
+  `pinned.rec.json` saying 11 PRs were pinned, from a v0.8.0 run in August;
+  the next full run's stage 2 would have recorded those 11 as built at their
+  old v0.8.0 commits, in the published manifest. Both now always write,
+  empty when nothing applies, which `federate.py` already reads as "none"
+  (no file stays "unknown"). Same run: `commit_reports.py` titled every
+  commit from `state.asc.json`, so a curated instance's commits carried the
+  canonical counts (578 merged for a run that merged 110); it now uses the
+  snapshot actually staged, asc first.
 - **On Windows, text-mode stdin turns `\n` into `\r\n`.** `base_advisor.py`
   piped its `delete refs/baseadv/<n>` list to `git update-ref --stdin` with
   `text=True`; git read every ref name with a trailing CR, rejected the batch,

@@ -597,9 +597,14 @@ def write_pinned(reports_dir, order_suffix, pinned):
     anything stage 0 knows and the report does not carry is lost. Without this
     the manifest records each PR's current tip as what was built - asserting that
     a commit merges when the build proved it does not.
+
+    Written on every run, empty when nothing was pinned. It used to be skipped
+    then, which left the previous run's file in place: a v0.9.0 run that pinned
+    nothing still carried 11 entries from a v0.8.0 run, and stage 2 would have
+    recorded those PRs as built at their old v0.8.0 commits. An empty file says
+    "none"; a stale one says something false.
     """
-    if not pinned:
-        return None
+    pinned = pinned or {}
     path = os.path.join(reports_dir, f"pinned.{order_suffix}.json")
     payload = {
         "schema": 1,
@@ -626,9 +631,12 @@ def write_rivals(reports_dir, order_suffix, rivals):
     is parsed out of the rendered report by 02_upload, so extending it means
     touching the report format too. This keeps a production pipeline change
     small, and RFC-001 phase 2's manifest can absorb it later.
+
+    Written on every run, empty when nothing collided, for the same reason as
+    write_pinned(): skipping it would leave the previous run's pairings looking
+    current.
     """
-    if not rivals:
-        return None
+    rivals = rivals or {}
     path = os.path.join(reports_dir, f"rivals.{order_suffix}.json")
     payload = {
         "schema": 1,
