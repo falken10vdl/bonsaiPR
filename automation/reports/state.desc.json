@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 121,
-    "merged": 574,
-    "skipped_conflict": 93,
+    "failed": 119,
+    "merged": 575,
+    "skipped_conflict": 94,
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-03T14:51:20Z",
+  "generated_at": "2026-10-03T16:47:43Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -86,9 +86,8 @@
     "5452": {
       "author": "chiragsingh1711",
       "branch": "light/newUI",
-      "head": "ac18195",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "99958f7",
+      "status": "merged",
       "title": "Radiance Rendering Changes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/5452"
     },
@@ -135,9 +134,8 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "8a74add",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "0016929",
+      "status": "skipped_conflict",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
     },
@@ -6981,8 +6979,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610031620",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031620"
+    "tag": "v0.9.0-alpha2610031819",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031819"
   },
   "schema": 1
 }

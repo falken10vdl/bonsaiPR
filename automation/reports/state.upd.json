@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 122,
+    "failed": 120,
     "merged": 571,
-    "skipped_conflict": 95,
+    "skipped_conflict": 97,
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-03T15:20:27Z",
+  "generated_at": "2026-10-03T17:16:40Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -86,9 +86,8 @@
     "5452": {
       "author": "chiragsingh1711",
       "branch": "light/newUI",
-      "head": "ac18195",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "99958f7",
+      "status": "merged",
       "title": "Radiance Rendering Changes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/5452"
     },
@@ -135,9 +134,8 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "8a74add",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "0016929",
+      "status": "merged",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
     },
@@ -424,7 +422,7 @@
       "author": "theoryshaw",
       "branch": "Unhide_with_alt_click",
       "head": "0720333",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Closes #7780 - Add ALT+Click to unhide stuff",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7781"
     },
@@ -448,7 +446,7 @@
       "author": "theoryshaw",
       "branch": "ManualDrawingReference",
       "head": "37982ed",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Manual drawing reference",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7798"
     },
@@ -645,7 +643,7 @@
       "author": "theoryshaw",
       "branch": "select-by-representation-type",
       "head": "15c1b70",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Helps with #7853: Select objects by RepresentationType from panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7916"
     },
@@ -720,7 +718,7 @@
     "7940": {
       "author": "theoryshaw",
       "branch": "Concatenate_selections",
-      "head": "8bf9cc3",
+      "head": "83c313a",
       "status": "merged",
       "title": "Concatenate selections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7940"
@@ -746,7 +744,7 @@
       "author": "theoryshaw",
       "branch": "inset_section_endpoints",
       "head": "8251c95",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
     },
@@ -867,7 +865,7 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "5b8da9e",
+      "head": "77dc5ca",
       "status": "merged",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
@@ -949,15 +947,15 @@
       "author": "theoryshaw",
       "branch": "opening-template-on-type",
       "head": "d0e6fcf",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Preserve custom opening geometry via a type-level Reference template",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8200"
     },
     "8201": {
       "author": "theoryshaw",
       "branch": "dev-notes-system",
-      "head": "27acac7",
-      "status": "skipped_conflict",
+      "head": "ac49058",
+      "status": "merged",
       "title": "Dev notes system",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8201"
     },
@@ -980,7 +978,7 @@
     "8241": {
       "author": "theoryshaw",
       "branch": "Additional_Selection_and_Deselection_Tools",
-      "head": "a45f283",
+      "head": "fd1e5d2",
       "status": "merged",
       "title": "Additional selection and deselection tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8241"
@@ -1037,7 +1035,7 @@
       "author": "BIMvoice",
       "branch": "fix/add-reference-image-kwarg-8130",
       "head": "65b08c3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: drop stale kwarg when invoking add_reference_image (#8130)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
     },
@@ -1477,7 +1475,7 @@
       "author": "BIMvoice",
       "branch": "fix-4822-print-graceful",
       "head": "f3b4fc2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fail gracefully when the sheet PDF/DXF conversion command is missing or fails (#4822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8354"
     },
@@ -1583,7 +1581,7 @@
       "author": "BIMvoice",
       "branch": "fix-7487-type-mapped-duplicate",
       "head": "bed6467",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix wrong duplicated geometry for type mapped elements (#7487, #7996)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8385"
     },
@@ -1720,7 +1718,7 @@
       "author": "BIMvoice",
       "branch": "fix-7533-duplicate-boolean-remap",
       "head": "5d56ce0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve half space cuts when duplicating an element (#7533)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8417"
     },
@@ -2805,7 +2803,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3302-mirror-joins",
       "head": "6cb8ad7",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: resync mirrored walls' openings so voids follow their door/window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
     },
@@ -3706,7 +3704,7 @@
       "author": "BIMvoice",
       "branch": "fix/host-recut-active-representation",
       "head": "0012c96",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: recut a voided host from its active representation, not its context",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9011"
     },
@@ -3850,7 +3848,7 @@
       "author": "theoryshaw",
       "branch": "select_assigned_annotations_9030",
       "head": "eee6162",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
     },
@@ -4643,7 +4641,7 @@
       "author": "BIMvoice",
       "branch": "fix/geometry-data-representation-type-none",
       "head": "2c88a1d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: guard optional RepresentationType concat",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9172"
     },
@@ -4651,7 +4649,7 @@
       "author": "BIMvoice",
       "branch": "fix/util-optional-material-position-crashes",
       "head": "66ecc30",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "util: fix 2 crashes on unset optional attrs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9173"
     },
@@ -4835,7 +4833,7 @@
       "author": "theoryshaw",
       "branch": "occurrence-representations",
       "head": "c7830cd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: normalize occurrence-local representations onto the type (Promote to Type)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9210"
     },
@@ -5835,7 +5833,7 @@
       "author": "BIMvoice",
       "branch": "v09/fix-9591-sibling-window-openings",
       "head": "14a5ef8",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stop a window edit deleting or moving sibling openings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9622"
     },
@@ -6324,7 +6322,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8799",
       "head": "258980e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: real multiline entry for text annotations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9686"
     },
@@ -6982,8 +6980,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610031652",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031652"
+    "tag": "v0.9.0-alpha2610031848",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610031848"
   },
   "schema": 1
 }
