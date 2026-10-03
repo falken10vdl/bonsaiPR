@@ -37,7 +37,7 @@ REPORTS_DIR = os.path.normpath(
 REPORTS_PATHSPEC = REPORTS_DIR
 
 
-def _git(args, check=False):
+def _git(args, check=False, quiet=False):
     """Run git from the repo containing REPORTS_DIR. Returns (rc, stdout)."""
     result = subprocess.run(
         ["git"] + args,
@@ -45,7 +45,7 @@ def _git(args, check=False):
         capture_output=True,
         text=True,
     )
-    if result.stdout.strip():
+    if result.stdout.strip() and not quiet:
         print(result.stdout.rstrip())
     if result.returncode != 0 and result.stderr.strip():
         print(result.stderr.rstrip(), file=sys.stderr)
@@ -54,14 +54,32 @@ def _git(args, check=False):
     return result.returncode, result.stdout
 
 
+def _snapshot_for_subject():
+    """The state snapshot this commit is about: one that is staged, asc first.
+
+    The subject used to read state.asc.json unconditionally. A curated instance
+    builds only `recorded`, so its commits reported the canonical asc counts
+    (578 merged) for a run that merged 110. Prefer asc when it is part of the
+    commit, so canonical subjects are unchanged; otherwise use whichever state
+    snapshot is.
+    """
+    _rc, out = _git(["diff", "--cached", "--name-only", "--", REPORTS_PATHSPEC], quiet=True)
+    staged = {os.path.basename(p) for p in out.split()}
+    names = [n for n in staged if n.startswith("state.") and n.endswith(".json")]
+    if not names:
+        return "state.asc.json"
+    return "state.asc.json" if "state.asc.json" in names else sorted(names)[0]
+
+
 def _summary_line():
-    """Build a compact commit subject from the latest asc snapshot's counts."""
-    asc = os.path.join(REPORTS_DIR, "state.asc.json")
+    """Build a compact commit subject from the staged snapshot's counts."""
+    name = _snapshot_for_subject()
+    order = name[len("state."):-len(".json")]
     try:
-        with open(asc, "r", encoding="utf-8") as f:
+        with open(os.path.join(REPORTS_DIR, name), "r", encoding="utf-8") as f:
             counts = json.load(f).get("counts", {})
         return (
-            f"reports: build state "
+            f"reports: build state{'' if order == 'asc' else f' [{order}]'} "
             f"({counts.get('merged', '?')} merged, "
             f"{counts.get('failed', '?')} failed, "
             f"{counts.get('skipped_conflict', '?')} skip-conflict)"

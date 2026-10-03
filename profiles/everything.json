@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "name": "everything",
+  "description": "The canonical BonsaiPR curation: every open, non-draft PR that merges. This is what falken10vdl's instance has always built, expressed as a profile so it can be inherited from and diffed against.",
+  "maintainer": "falken10vdl",
+  "base": {
+    "repo": "IfcOpenShell/IfcOpenShell",
+    "branch": "v0.8.0"
+  },
+  "select": {
+    "mode": "everything",
+    "prs": [],
+    "authors": []
+  },
+  "exclude": {
+    "prs": [],
+    "authors": [],
+    "drafts": true,
+    "cpp": false
+  },
+  "orders": ["ascending", "descending", "by-updated"]
+}

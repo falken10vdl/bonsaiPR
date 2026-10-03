@@ -32,6 +32,7 @@ import re
 import glob
 import sys
 import time
+import json
 from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
@@ -47,7 +48,11 @@ GITHUB_OWNER = os.getenv("GITHUB_OWNER", "falken10vdl")
 GITHUB_REPO = os.getenv("GITHUB_REPO", "bonsaiPR")
 SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
 SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
-SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.8.0")
+# Must match stage 0: the profile's base.branch decides (it names the build).
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import bonsaipr_profile
+
+SOURCE_BASE_BRANCH = bonsaipr_profile.resolve_base_branch(bonsaipr_profile.load_profile(verbose=False))
 
 # No exclusions - copy all files and directories
 
@@ -502,6 +507,50 @@ def clean_old_bonsai_files():
     else:
         log_message("No old 'bonsai_' files found to clean up")
 
+def makefile_supported_targets(makefile_path):
+    """SUPPORTED_PYVERSIONS and SUPPORTED_PLATFORMS as the base's own Makefile declares them.
+
+    The base decides what it can build: v0.8.0 supports py311/py312/py313 on
+    linux/macos/macosm1/win, v0.9.0 dropped Intel macOS. A hardcoded target list
+    asked v0.9.0 for py311/macos, which its Makefile rejects, and the partial-build
+    rule then failed the whole run. Returns None for a list the Makefile does not
+    declare, meaning "no restriction known".
+    """
+    found = {"PYVERSIONS": None, "PLATFORMS": None}
+    try:
+        with open(makefile_path, "r", encoding="utf-8", errors="replace") as f:
+            for line in f:
+                m = re.match(r"^SUPPORTED_(PYVERSIONS|PLATFORMS)\s*:?=\s*(.*?)\s*$", line)
+                if m and found[m.group(1)] is None:
+                    found[m.group(1)] = set(m.group(2).split())
+    except OSError as e:
+        log_message(f"Could not read {makefile_path} for supported targets: {e}", "WARNING")
+    return found["PYVERSIONS"], found["PLATFORMS"]
+
+
+def select_platforms(py_config, target_platforms, supported_pyversions, supported_platforms):
+    """(platforms to build, ["pyXXX/platform" skipped as unsupported]) for one pyversion.
+
+    Narrows the requested platforms (all of this pyversion's, if none requested)
+    to what the base's Makefile supports. A None restriction means unknown, and
+    narrows nothing.
+    """
+    pyversion = py_config['pyversion']
+    if target_platforms:
+        # Filter requested platforms against what this pyversion supports
+        platforms = [p for p in target_platforms if p in py_config['all_platforms']]
+    else:
+        platforms = list(py_config['all_platforms'])
+    if supported_pyversions is not None and pyversion not in supported_pyversions:
+        return [], [f"{pyversion}/{p}" for p in platforms]
+    if supported_platforms is None:
+        return platforms, []
+    return (
+        [p for p in platforms if p in supported_platforms],
+        [f"{pyversion}/{p}" for p in platforms if p not in supported_platforms],
+    )
+
+
 def build_addons(target_platforms=None):
     """Build multi-platform addon zip files using makefile
     
@@ -551,9 +600,19 @@ def build_addons(target_platforms=None):
     build_version, _, _ = get_version_info()
     log_message(f"Locked build VERSION to: {build_version}")
 
+    supported_pyversions, supported_platforms = makefile_supported_targets(makefile_path)
+    log_message(
+        f"Base Makefile supports pyversions={sorted(supported_pyversions) if supported_pyversions else 'unknown'} "
+        f"platforms={sorted(supported_platforms) if supported_platforms else 'unknown'}"
+    )
+
     # Change to the bonsaiPR directory and run make for each platform
     original_cwd = os.getcwd()
     successful_builds = 0
+    failed_targets = []
+    # Targets this list would ask for but the base's Makefile does not support.
+    # Not attempted, so not failures - but recorded, so a missing zip is explained.
+    skipped_targets = []
 
     try:
         os.chdir(bonsaiPR_src)
@@ -561,11 +620,12 @@ def build_addons(target_platforms=None):
 
         for py_config in py_configs:
             pyversion = py_config['pyversion']
-            if target_platforms:
-                # Filter requested platforms against what this pyversion supports
-                platforms = [p for p in target_platforms if p in py_config['all_platforms']]
-            else:
-                platforms = py_config['all_platforms']
+            platforms, skipped = select_platforms(
+                py_config, target_platforms, supported_pyversions, supported_platforms
+            )
+            if skipped:
+                skipped_targets += skipped
+                log_message(f"Not supported by this base's Makefile, skipping: {', '.join(skipped)}")
 
             if not platforms:
                 log_message(f"No applicable platforms for {pyversion}, skipping")
@@ -592,6 +652,7 @@ def build_addons(target_platforms=None):
                         if result.stdout:
                             log_message(f"Make output for {platform} ({pyversion}): {result.stdout}")
                     else:
+                        failed_targets.append(f"{pyversion}/{platform}")
                         log_message(f"Build failed for {platform} ({pyversion}) with return code: {result.returncode}", "ERROR")
                         if result.stderr:
                             log_message(f"Make error for {platform} ({pyversion}): {result.stderr}", "ERROR")
@@ -599,6 +660,7 @@ def build_addons(target_platforms=None):
                             log_message(f"Make output for {platform} ({pyversion}): {result.stdout}")
 
                 except Exception as e:
+                    failed_targets.append(f"{pyversion}/{platform}")
                     log_message(f"Error building {platform} ({pyversion}): {e}", "ERROR")
     
     except Exception as e:
@@ -625,7 +687,34 @@ def build_addons(target_platforms=None):
     else:
         log_message("Dist directory not created after build", "ERROR")
 
+    if failed_targets:
+        log_message(
+            f"{len(failed_targets)} of {successful_builds + len(failed_targets)} "
+            f"targets FAILED: {', '.join(failed_targets)}", "ERROR"
+        )
+
+    # Record the outcome next to the zips so stage 2 and the report can state it
+    # rather than inferring completeness from whatever happens to be on disk.
+    try:
+        with open(os.path.join(BUILD_BASE_DIR, "build_targets.json"), "w",
+                  encoding="utf-8") as f:
+            json.dump({
+                "built": successful_builds,
+                "failed": failed_targets,
+                "skipped_unsupported": skipped_targets,
+                "zips": sorted(os.path.basename(a) for a in addon_files),
+            }, f, indent=2)
+    except OSError as e:
+        log_message(f"Could not write build_targets.json: {e}", "WARNING")
+
     log_message("Addon build process completed")
+    # A partial build is a failure by default. Returning true on "at least one
+    # zip exists" is how three py313 targets could fail on every full build
+    # while the run stayed green and published a release missing 3 of its 7
+    # artefacts — invisible to anyone not reading the log. Set
+    # BONSAIPR_ALLOW_PARTIAL_BUILD=1 to publish anyway, deliberately.
+    if failed_targets and os.getenv("BONSAIPR_ALLOW_PARTIAL_BUILD") != "1":
+        return False
     return len(addon_files) > 0
 
 def find_existing_report():
@@ -869,7 +958,23 @@ def main():
         if build_ok:
             log_message("BonsaiPR addon build process completed successfully")
         else:
-            log_message("BonsaiPR addon build process finished but NO zip files were produced", "ERROR")
+            # Distinguish the two failures: nothing built at all, versus some
+            # targets built and others did not. The second used to pass.
+            detail = "NO zip files were produced"
+            try:
+                with open(os.path.join(BUILD_BASE_DIR, "build_targets.json"),
+                          encoding="utf-8") as f:
+                    rec = json.load(f)
+                if rec.get("failed"):
+                    detail = (
+                        f"{len(rec['failed'])} target(s) failed to build "
+                        f"({', '.join(rec['failed'])}); refusing to publish a "
+                        f"partial release. Set BONSAIPR_ALLOW_PARTIAL_BUILD=1 "
+                        f"to override"
+                    )
+            except (OSError, ValueError):
+                pass
+            log_message(f"BonsaiPR addon build process failed: {detail}", "ERROR")
             sys.exit(1)
 
     except Exception as e:

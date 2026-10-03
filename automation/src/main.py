@@ -33,6 +33,22 @@ except ImportError:
 # Make sibling automation scripts importable (pr_state lives in ../scripts).
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 import pr_state
+import bonsaipr_profile
+
+
+def _profile_orders():
+    """Merge orders the active curation asks for, or None to keep old behaviour.
+
+    RFC-001 s4: `orders` is per-profile because a selective profile may have few
+    or no internal conflicts, in which case building ascending, descending AND
+    by-updated is wasted CPU for three near-identical results. A profile naming
+    exactly one order gets one build; anything else retries as it always has.
+    """
+    try:
+        profile = bonsaipr_profile.load_profile(verbose=False)
+    except Exception:  # never let curation config break the orchestrator
+        return None
+    return profile.orders or None
 
 # Committed per-order snapshots + event logs live here.
 REPORTS_DIR = os.path.join(os.path.dirname(__file__), "..", "reports")
@@ -352,7 +368,13 @@ def main():
             logging.warning(f"⚠️ Optional step failed, continuing")
 
     # Check if we should retry with reversed PR order
-    if success_count == total_steps:
+    orders = _profile_orders()
+    if orders is not None and len(orders) <= 1:
+        logging.info(
+            f"📋 Curation asks for a single merge order ({', '.join(orders) or 'default'}); "
+            f"skipping the descending / by-updated retries."
+        )
+    elif success_count == total_steps:
         report_path = get_latest_report_path()
         if report_path and check_for_skipped_conflict_prs(report_path):
             logging.info("\n" + "=" * 60)
