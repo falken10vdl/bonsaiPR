@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 120,
-    "merged": 577,
-    "skipped_conflict": 92,
+    "merged": 578,
+    "skipped_conflict": 91,
     "skipped_draft": 68,
     "total": 857
   },
-  "generated_at": "2026-10-04T20:22:24Z",
+  "generated_at": "2026-10-04T23:24:08Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -643,7 +643,7 @@
       "author": "theoryshaw",
       "branch": "select-by-representation-type",
       "head": "15c1b70",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Helps with #7853: Select objects by RepresentationType from panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7916"
     },
@@ -760,7 +760,7 @@
       "author": "theoryshaw",
       "branch": "update_schedule_size_on_sheet",
       "head": "f13f182",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "closes #5382: Add update_sheet_schedule_sizes to SheetBuilder",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7971"
     },
@@ -930,7 +930,7 @@
     "8171": {
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
-      "head": "2ae5099",
+      "head": "d678a01",
       "status": "merged",
       "title": "Add per-drawing render overrides (status_render module)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8171"
@@ -947,7 +947,7 @@
       "author": "theoryshaw",
       "branch": "opening-template-on-type",
       "head": "d0e6fcf",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Preserve custom opening geometry via a type-level Reference template",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8200"
     },
@@ -1475,7 +1475,7 @@
       "author": "BIMvoice",
       "branch": "fix-4822-print-graceful",
       "head": "f3b4fc2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fail gracefully when the sheet PDF/DXF conversion command is missing or fails (#4822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8354"
     },
@@ -1871,7 +1871,7 @@
       "author": "BIMvoice",
       "branch": "fix-3950-csv-search-attributes",
       "head": "5adeb83",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: persist CSV attributes when saving a spreadsheet search (#3950)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8447"
     },
@@ -3246,7 +3246,7 @@
       "author": "BIMvoice",
       "branch": "feat-2956-document-revision-history",
       "head": "34bc81b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.util, Bonsai: expose a document's superseded revision history",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8915"
     },
@@ -3847,8 +3847,8 @@
     "9047": {
       "author": "theoryshaw",
       "branch": "select_assigned_annotations_9030",
-      "head": "eee6162",
-      "status": "skipped_conflict",
+      "head": "fe5d40f",
+      "status": "merged",
       "title": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
     },
@@ -4832,7 +4832,7 @@
     "9210": {
       "author": "theoryshaw",
       "branch": "occurrence-representations",
-      "head": "c7830cd",
+      "head": "69d65bc",
       "status": "merged",
       "title": "Bonsai: normalize occurrence-local representations onto the type (Promote to Type)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9210"
@@ -5330,7 +5330,7 @@
     "9370": {
       "author": "theoryshaw",
       "branch": "fix-sheet-presentation-attr-ids",
-      "head": "c2e6cd4",
+      "head": "35c2400",
       "status": "merged",
       "title": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock (#9369)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9370"
@@ -5417,7 +5417,7 @@
       "author": "theoryshaw",
       "branch": "filter_query_comments_9400",
       "head": "b27e500",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: keep commented out facets when editing a filter query",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9401"
     },
@@ -5513,8 +5513,8 @@
     "9439": {
       "author": "theoryshaw",
       "branch": "select_type_isolate_9438",
-      "head": "3c663e1",
-      "status": "skipped_conflict",
+      "head": "f1ae549",
+      "status": "merged",
       "title": "Bonsai: ALT+Click Select Type reveals, frames and isolates the type (#9438)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9439"
     },
@@ -5561,7 +5561,7 @@
     "9469": {
       "author": "theoryshaw",
       "branch": "pr/remove-drawing-stale-data-id",
-      "head": "6e84db2",
+      "head": "da219ed",
       "status": "merged",
       "title": "Bonsai: find a sheet's drawing by path when its data-id is stale",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9469"
@@ -5833,7 +5833,7 @@
       "author": "BIMvoice",
       "branch": "v09/fix-9591-sibling-window-openings",
       "head": "14a5ef8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: stop a window edit deleting or moving sibling openings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9622"
     },
@@ -6322,7 +6322,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8799",
       "head": "258980e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: real multiline entry for text annotations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9686"
     },
@@ -6988,8 +6988,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610042150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610042150"
+    "tag": "v0.9.0-alpha2610050054",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050054"
   },
   "schema": 1
 }
