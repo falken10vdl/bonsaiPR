@@ -829,8 +829,10 @@ def apply_prs_to_branch(branch_name, prs):
                 skipped.append(pr_with_reason)
                 continue
 
-            # Check if PR is in draft status
-            if pr.get("draft", False):
+            # Check if PR is in draft status. Skipped unless the profile says
+            # `exclude: {drafts: false}` - which the loader always parsed and
+            # this check never read, so a curation could not carry a draft.
+            if pr.get("draft", False) and CURATION.exclude_drafts:
                 print(f"⚠️  Skipping PR #{pr_number}: PR is in DRAFT status")
                 pr_with_reason = pr.copy()
                 pr_with_reason["skip_reason"] = "DRAFT status"

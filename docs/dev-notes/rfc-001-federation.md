@@ -127,7 +127,9 @@ both statements, not routine.
   Caught while preparing the first v0.9.0 profile, before it ran. Now
   `resolve_base_branch()` decides for every stage: the profile's branch wins,
   the env var may only agree with it, and the workflow exports what the profile
-  says instead of hardcoding it.
+  says instead of hardcoding it. The same was true of `exclude.drafts`: parsed,
+  never read, every draft skipped regardless; stage 0's draft check now honours
+  it (needed for #8928, a draft the curation carries).
 - **The first v0.9.0 full run (37148950237) published three wrong things,
   green.** (1) #8251 hit `fatal: unable to read tree` while being fetched, was
   never merged, then merged cleanly in the individual re-test and was reported
