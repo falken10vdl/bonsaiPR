@@ -36,12 +36,15 @@ bit us, and what is still open.
 Live instance: `OpeningDesign/bonsaiPR`, profile `openingdesign`. On 2026-10-03
 the profile was retargeted from v0.8.0 (156 PRs, pinned base `644b92263d`; last
 run **128 of 129 merged**, 11 via pinned fallback) to **v0.9.0 at tip**: the
-same branch's 119 still-open PRs, its recorded order except #8228 ahead of
-#7813, and 110 pins, each the head that merged in a full in-order replay at
-`d1d6a6b78d`. Not yet built there; `base_advisor.py --in-stack` predicts 110 of
-119. That day six stack collisions were fixed in the PR branches themselves
-(#8083, #8201, #7940/#8241, #8319, #8242, #8171) and one by order (#8228 over
-#7813, which now drops). Publishes `state.rec.json`, `events.rec.jsonl`,
+same branch's still-open PRs, its recorded order except #8228 ahead of #7813.
+First built as 119 PRs (full run 37148950237: 109 merged; #8251 lost to a
+runner fetch error). Then 22 more, cherry-picked onto the branch in full and
+missed by `distill` until it learned to see them (see below), took it to 141
+PRs with 132 pins, each the head that merged in a full in-order replay at
+`d1d6a6b78d`; `base_advisor.py --in-stack` agrees, 132 of 141. That day seven
+stack collisions were fixed in the PR branches themselves (#8083, #8201,
+#7940/#8241, #8319, #8242, #8171, #9494) and one by order (#8228 over #7813,
+which now drops). Publishes `state.rec.json`, `events.rec.jsonl`,
 `rivals.rec.json`, `pinned.rec.json`, `delta.rec.md`, and a curated Blender feed
 at `profiles/openingdesign/index.json`.
 

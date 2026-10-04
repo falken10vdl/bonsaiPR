@@ -162,8 +162,30 @@
     8351,
     8352,
     8353,
+    8429,
     8393,
-    7669
+    8599,
+    8600,
+    7669,
+    8610,
+    8668,
+    8822,
+    7858,
+    9016,
+    9018,
+    9054,
+    9307,
+    9318,
+    9320,
+    9441,
+    9478,
+    9491,
+    9493,
+    9494,
+    9507,
+    9515,
+    9765,
+    8928
   ],
   "provenance": [
     {
@@ -2187,7 +2209,7 @@
       "kind": "commit",
       "pr": 8429,
       "confidence": "exact",
-      "evidence": "patch-identical to 3a98019aadb5 on PR #8429",
+      "evidence": "patch-identical to e7dfd43a152f on PR #8429",
       "classification": "cherry-picked",
       "title": "Fix horizontal profile editing for sloped LAYER3 slabs",
       "pr_author": "theoryshaw"
@@ -2239,7 +2261,7 @@
       "kind": "commit",
       "pr": 8242,
       "confidence": "exact",
-      "evidence": "patch-identical to 12ecdf2aba69 on PR #8242",
+      "evidence": "patch-identical to 89eb7e055128 on PR #8242",
       "classification": "cherry-picked",
       "title": "Linked file features",
       "pr_author": "theoryshaw"
@@ -2252,7 +2274,7 @@
       "kind": "commit",
       "pr": 8242,
       "confidence": "exact",
-      "evidence": "patch-identical to 328ca6d38794 on PR #8242",
+      "evidence": "patch-identical to 2d1d2a9de10c on PR #8242",
       "classification": "cherry-picked",
       "title": "Linked file features",
       "pr_author": "theoryshaw"
@@ -2265,7 +2287,7 @@
       "kind": "commit",
       "pr": 8242,
       "confidence": "exact",
-      "evidence": "patch-identical to 429cab8b1b91 on PR #8242",
+      "evidence": "patch-identical to 403a5825f2bf on PR #8242",
       "classification": "cherry-picked",
       "title": "Linked file features",
       "pr_author": "theoryshaw"
@@ -2291,7 +2313,7 @@
       "kind": "commit",
       "pr": 8242,
       "confidence": "exact",
-      "evidence": "patch-identical to cd5897d10d95 on PR #8242",
+      "evidence": "patch-identical to 901220ebbd77 on PR #8242",
       "classification": "cherry-picked",
       "title": "Linked file features",
       "pr_author": "theoryshaw"
@@ -2317,7 +2339,7 @@
       "kind": "commit",
       "pr": 8242,
       "confidence": "exact",
-      "evidence": "patch-identical to 9fd119bf957d on PR #8242",
+      "evidence": "patch-identical to c491c7efe6d9 on PR #8242",
       "classification": "cherry-picked",
       "title": "Linked file features",
       "pr_author": "theoryshaw"
@@ -2351,7 +2373,7 @@
       "kind": "commit",
       "pr": 8548,
       "confidence": "exact",
-      "evidence": "patch-identical to 31b6f6c74a8e on PR #8548",
+      "evidence": "patch-identical to 0bc607a8dee6 on PR #8548",
       "classification": "cherry-picked",
       "title": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
       "pr_author": "theoryshaw"
@@ -2411,7 +2433,7 @@
       "kind": "commit",
       "pr": 8599,
       "confidence": "exact",
-      "evidence": "patch-identical to 62f6384b7b8e on PR #8599",
+      "evidence": "patch-identical to e1589b8e2e47 on PR #8599",
       "classification": "cherry-picked",
       "title": "Bonsai: don't crash decoration labels on a zero-length text direction",
       "pr_author": "theoryshaw"
@@ -2424,7 +2446,7 @@
       "kind": "commit",
       "pr": 8600,
       "confidence": "exact",
-      "evidence": "patch-identical to c87e0a9c464f on PR #8600",
+      "evidence": "patch-identical to 086750363fe7 on PR #8600",
       "classification": "cherry-picked",
       "title": "Bonsai: skip drawing decorations when the scene has no active camera",
       "pr_author": "theoryshaw"
@@ -2448,7 +2470,7 @@
       "kind": "commit",
       "pr": 8241,
       "confidence": "exact",
-      "evidence": "patch-identical to 7a7bc75cba9e on PR #8241",
+      "evidence": "patch-identical to f135223980c9 on PR #8241",
       "classification": "cherry-picked",
       "title": "Additional selection and deselection tools",
       "pr_author": "theoryshaw"
@@ -2461,7 +2483,7 @@
       "kind": "commit",
       "pr": 8241,
       "confidence": "exact",
-      "evidence": "patch-identical to 69486b7d1d93 on PR #8241",
+      "evidence": "patch-identical to 681750d45d63 on PR #8241",
       "classification": "cherry-picked",
       "title": "Additional selection and deselection tools",
       "pr_author": "theoryshaw"
@@ -2474,7 +2496,7 @@
       "kind": "commit",
       "pr": 8241,
       "confidence": "exact",
-      "evidence": "patch-identical to e6697d095610 on PR #8241",
+      "evidence": "patch-identical to 8bce765fcb3d on PR #8241",
       "classification": "cherry-picked",
       "title": "Additional selection and deselection tools",
       "pr_author": "theoryshaw"
@@ -2537,7 +2559,7 @@
       "kind": "commit",
       "pr": 8610,
       "confidence": "exact",
-      "evidence": "patch-identical to 684ec6432362 on PR #8610",
+      "evidence": "patch-identical to e8d25868e7a0 on PR #8610",
       "classification": "cherry-picked",
       "title": "ifcpatch: fix MergeDuplicateTypes destroying distinct/cross-class types",
       "pr_author": "theoryshaw"
@@ -2610,7 +2632,7 @@
       "kind": "commit",
       "pr": 8668,
       "confidence": "exact",
-      "evidence": "patch-identical to 084818d4ce36 on PR #8668",
+      "evidence": "patch-identical to f5da3efe6d6e on PR #8668",
       "classification": "cherry-picked",
       "title": "project.append_asset: don't crash on untracked removed element (#8666)",
       "pr_author": "theoryshaw"
@@ -2647,7 +2669,7 @@
       "kind": "commit",
       "pr": 8706,
       "confidence": "exact",
-      "evidence": "patch-identical to 76072703bb61 on PR #8706",
+      "evidence": "patch-identical to 0ab50667e7df on PR #8706",
       "classification": "cherry-picked",
       "title": "ifcpatch: add MergeDuplicateContexts recipe",
       "pr_author": "theoryshaw"
@@ -2660,7 +2682,7 @@
       "kind": "commit",
       "pr": 8706,
       "confidence": "exact",
-      "evidence": "patch-identical to 26f0b3989aca on PR #8706",
+      "evidence": "patch-identical to 673830b5577f on PR #8706",
       "classification": "cherry-picked",
       "title": "ifcpatch: add MergeDuplicateContexts recipe",
       "pr_author": "theoryshaw"
@@ -2673,7 +2695,7 @@
       "kind": "commit",
       "pr": 8706,
       "confidence": "exact",
-      "evidence": "patch-identical to 64215944a455 on PR #8706",
+      "evidence": "patch-identical to 4002360acf2e on PR #8706",
       "classification": "cherry-picked",
       "title": "ifcpatch: add MergeDuplicateContexts recipe",
       "pr_author": "theoryshaw"
@@ -2686,7 +2708,7 @@
       "kind": "commit",
       "pr": 8707,
       "confidence": "exact",
-      "evidence": "patch-identical to f4eb96cf998c on PR #8707",
+      "evidence": "patch-identical to 817621493982 on PR #8707",
       "classification": "cherry-picked",
       "title": "ifcpatch: stop MergeProjects leaving duplicate representation contexts",
       "pr_author": "theoryshaw"
@@ -2699,7 +2721,7 @@
       "kind": "commit",
       "pr": 8707,
       "confidence": "exact",
-      "evidence": "patch-identical to 3a900e9e61dd on PR #8707",
+      "evidence": "patch-identical to df9e89a37f9b on PR #8707",
       "classification": "cherry-picked",
       "title": "ifcpatch: stop MergeProjects leaving duplicate representation contexts",
       "pr_author": "theoryshaw"
@@ -2760,7 +2782,7 @@
       "kind": "commit",
       "pr": 8822,
       "confidence": "exact",
-      "evidence": "patch-identical to fce37811983f on PR #8822",
+      "evidence": "patch-identical to 3c9dfefbd866 on PR #8822",
       "classification": "cherry-picked",
       "title": "Bonsai: harden BBIM_Boolean.Data parsing against non-list payloads",
       "pr_author": "theoryshaw"
@@ -2824,7 +2846,7 @@
       "kind": "commit",
       "pr": 7858,
       "confidence": "exact",
-      "evidence": "patch-identical to f5c22d97e9f4 on PR #7858",
+      "evidence": "patch-identical to f8dee64cfeae on PR #7858",
       "classification": "cherry-picked",
       "title": "Fix #6602: Print IfcSpaces in projection.",
       "pr_author": "theoryshaw"
@@ -2863,7 +2885,7 @@
       "kind": "commit",
       "pr": 9016,
       "confidence": "exact",
-      "evidence": "patch-identical to 488875206986 on PR #9016",
+      "evidence": "patch-identical to afbd179edef6 on PR #9016",
       "classification": "cherry-picked",
       "title": "Bonsai: fix \"Feet - Decimal\" dimension unit breaking annotation decorators (#9015)",
       "pr_author": "theoryshaw"
@@ -2889,7 +2911,7 @@
       "kind": "commit",
       "pr": 9018,
       "confidence": "exact",
-      "evidence": "patch-identical to 1cd63db1ad1e on PR #9018",
+      "evidence": "patch-identical to eb572e299384 on PR #9018",
       "classification": "cherry-picked",
       "title": "Bonsai: allow aggregating IfcAnnotation elements and moving them as a unit",
       "pr_author": "theoryshaw"
@@ -2913,7 +2935,7 @@
       "kind": "commit",
       "pr": 9020,
       "confidence": "probable",
-      "evidence": "subject matches #9020, content adapted",
+      "evidence": "subject matches #9020, #9021, content adapted",
       "classification": "cherry-picked"
     },
     {
@@ -2937,7 +2959,7 @@
       "kind": "commit",
       "pr": 9054,
       "confidence": "exact",
-      "evidence": "patch-identical to d0c5bb9d7f90 on PR #9054",
+      "evidence": "patch-identical to ec0aca9f459c on PR #9054",
       "classification": "cherry-picked",
       "title": "copy_class: don't share the original's annotations with the duplicate (#9049, cause behind #4014)",
       "pr_author": "theoryshaw"
@@ -2958,7 +2980,7 @@
       "kind": "commit",
       "pr": 9021,
       "confidence": "exact",
-      "evidence": "patch-identical to d911f1844921 on PR #9021",
+      "evidence": "patch-identical to 61510d9c9c89 on PR #9021",
       "classification": "cherry-picked",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
       "pr_author": "theoryshaw"
@@ -2971,7 +2993,7 @@
       "kind": "commit",
       "pr": 8658,
       "confidence": "exact",
-      "evidence": "patch-identical to c1515fe2bb96 on PR #8658",
+      "evidence": "patch-identical to 0406aff0ad16 on PR #8658",
       "classification": "cherry-picked",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "pr_author": "theoryshaw"
@@ -2984,7 +3006,7 @@
       "kind": "commit",
       "pr": 8658,
       "confidence": "exact",
-      "evidence": "patch-identical to d41aec733c84 on PR #8658",
+      "evidence": "patch-identical to 53cf44fba2ff on PR #8658",
       "classification": "cherry-picked",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "pr_author": "theoryshaw"
@@ -2997,7 +3019,7 @@
       "kind": "commit",
       "pr": 8658,
       "confidence": "exact",
-      "evidence": "patch-identical to 158a9cb63bf9 on PR #8658",
+      "evidence": "patch-identical to 94a0860b350f on PR #8658",
       "classification": "cherry-picked",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "pr_author": "theoryshaw"
@@ -3010,7 +3032,7 @@
       "kind": "commit",
       "pr": 8658,
       "confidence": "exact",
-      "evidence": "patch-identical to 6ca69d20d9f3 on PR #8658",
+      "evidence": "patch-identical to c5ac39538536 on PR #8658",
       "classification": "cherry-picked",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "pr_author": "theoryshaw"
@@ -3235,7 +3257,7 @@
       "kind": "commit",
       "pr": 8083,
       "confidence": "exact",
-      "evidence": "patch-identical to f63d02b2b40e on PR #8083",
+      "evidence": "patch-identical to e9326cbaca33 on PR #8083",
       "classification": "cherry-picked",
       "title": "Parametric dimensions",
       "pr_author": "theoryshaw"
@@ -3274,7 +3296,7 @@
       "kind": "commit",
       "pr": 8083,
       "confidence": "exact",
-      "evidence": "patch-identical to 12c3dabc3422 on PR #8083",
+      "evidence": "patch-identical to e1d126ad45e7 on PR #8083",
       "classification": "cherry-picked",
       "title": "Parametric dimensions",
       "pr_author": "theoryshaw"
@@ -3287,7 +3309,7 @@
       "kind": "commit",
       "pr": 8083,
       "confidence": "exact",
-      "evidence": "patch-identical to c699c01e91e7 on PR #8083",
+      "evidence": "patch-identical to 105cdfab3bcf on PR #8083",
       "classification": "cherry-picked",
       "title": "Parametric dimensions",
       "pr_author": "theoryshaw"
@@ -3324,7 +3346,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-10T16:31:42-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8083,
+      "confidence": "exact",
+      "evidence": "patch-identical to 43ae960ff986 on PR #8083",
+      "classification": "cherry-picked",
+      "title": "Parametric dimensions",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "27f199c29a91",
@@ -3332,7 +3359,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-10T21:54:56-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8548,
+      "confidence": "probable",
+      "evidence": "subject matches #8548, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "660dee5b7edd",
@@ -3340,7 +3372,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-15T08:59:01-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9307,
+      "confidence": "exact",
+      "evidence": "patch-identical to 364fbbced88d on PR #9307",
+      "classification": "cherry-picked",
+      "title": "Fix #8603: drawing underlay renders the previously active drawing's objects",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "ae4ed8885cb1",
@@ -3348,7 +3385,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-15T08:59:46-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9307,
+      "confidence": "exact",
+      "evidence": "patch-identical to 0d4711507b1b on PR #9307",
+      "classification": "cherry-picked",
+      "title": "Fix #8603: drawing underlay renders the previously active drawing's objects",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "f467f30afd79",
@@ -3356,7 +3398,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-15T09:48:23-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8171,
+      "confidence": "exact",
+      "evidence": "patch-identical to 75ecf7b4cd7b on PR #8171",
+      "classification": "cherry-picked",
+      "title": "Add per-drawing render overrides (status_render module)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "ad44c0a3af6f",
@@ -3364,7 +3411,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-15T11:31:58-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8083,
+      "confidence": "exact",
+      "evidence": "patch-identical to 52aa6fd3e84c on PR #8083",
+      "classification": "cherry-picked",
+      "title": "Parametric dimensions",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "8b8cc058bb33",
@@ -3372,7 +3424,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-15T11:37:57-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8083,
+      "confidence": "probable",
+      "evidence": "subject matches #8083, content adapted",
+      "classification": "cherry-picked",
+      "title": "Parametric dimensions",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "09dd3d98820f",
@@ -3380,7 +3437,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-15T11:55:32-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8083,
+      "confidence": "exact",
+      "evidence": "patch-identical to c0c78da18e5e on PR #8083",
+      "classification": "cherry-picked",
+      "title": "Parametric dimensions",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "d42f2b788c0d",
@@ -3388,7 +3450,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-15T13:10:55-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9311,
+      "confidence": "probable",
+      "evidence": "subject matches #9311, content adapted",
+      "classification": "cherry-picked",
+      "title": "fix(drawing): harden linework generation against bad cache and degene…",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "1212fb91bb1b",
@@ -3396,7 +3463,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-15T13:48:46-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8083,
+      "confidence": "exact",
+      "evidence": "patch-identical to 5b8da9e53440 on PR #8083",
+      "classification": "cherry-picked",
+      "title": "Parametric dimensions",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "21c8bb78091b",
@@ -3404,7 +3476,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-16T15:59:05-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9316,
+      "confidence": "exact",
+      "evidence": "patch-identical to bba9e14d96a3 on PR #9316",
+      "classification": "cherry-picked",
+      "title": "CAD Join: keep the side of the edge you clicked, and remove edges in between",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "87f96baf98b5",
@@ -3412,7 +3489,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-16T16:17:55-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9316,
+      "confidence": "exact",
+      "evidence": "patch-identical to 96a4ba818f52 on PR #9316",
+      "classification": "cherry-picked",
+      "title": "CAD Join: keep the side of the edge you clicked, and remove edges in between",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "a2aee970ad4f",
@@ -3420,7 +3502,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-16T19:14:40-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9318,
+      "confidence": "exact",
+      "evidence": "patch-identical to 906251127f2c on PR #9318",
+      "classification": "cherry-picked",
+      "title": "Fix EPset_Drawing.BringToFront not applying to merged cut geometry",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "bf6b8ed4b189",
@@ -3428,7 +3515,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-16T21:00:58-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9320,
+      "confidence": "exact",
+      "evidence": "patch-identical to cb56f0962513 on PR #9320",
+      "classification": "cherry-picked",
+      "title": "Fix reflected plan drawings rebuilding their camera on every create_drawing",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "72eec4487390",
@@ -3436,7 +3528,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-16T21:01:09-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9320,
+      "confidence": "exact",
+      "evidence": "patch-identical to 1f52598556f3 on PR #9320",
+      "classification": "cherry-picked",
+      "title": "Fix reflected plan drawings rebuilding their camera on every create_drawing",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "8577a0cbbb98",
@@ -3444,7 +3541,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-16T21:00:32-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8171,
+      "confidence": "exact",
+      "evidence": "patch-identical to 8484e1cb2482 on PR #8171",
+      "classification": "cherry-picked",
+      "title": "Add per-drawing render overrides (status_render module)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "cdb06c104ba1",
@@ -3452,7 +3554,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-18T07:47:41-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9327,
+      "confidence": "probable",
+      "evidence": "subject matches #9327, content adapted",
+      "classification": "cherry-picked",
+      "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "7d647bc3fdde",
@@ -3460,7 +3567,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-18T07:59:15-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9327,
+      "confidence": "probable",
+      "evidence": "subject matches #9327, content adapted",
+      "classification": "cherry-picked",
+      "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "12d211b81dff",
@@ -3468,7 +3580,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-20T10:34:49-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9021,
+      "confidence": "exact",
+      "evidence": "patch-identical to e47299419d76 on PR #9021",
+      "classification": "cherry-picked",
+      "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "16881a5e9a22",
@@ -3476,7 +3593,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-20T11:09:44-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9021,
+      "confidence": "exact",
+      "evidence": "patch-identical to 5d69d9c75225 on PR #9021",
+      "classification": "cherry-picked",
+      "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "cc66d801ce7d",
@@ -3484,7 +3606,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-20T11:30:25-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9021,
+      "confidence": "probable",
+      "evidence": "subject matches #9021, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "14477a6ed7dd",
@@ -3492,7 +3619,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-20T11:58:52-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9021,
+      "confidence": "probable",
+      "evidence": "subject matches #9021, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "e6cf754f3b63",
@@ -3500,7 +3632,10 @@
       "author": "Ryan Schultz",
       "date": "2026-08-24T21:55:11-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9357,
+      "confidence": "exact",
+      "evidence": "patch-identical to 8d79caae2467 on PR #9357",
+      "classification": "cherry-picked"
     },
     {
       "sha": "17f74ca8079a",
@@ -3508,10 +3643,12 @@
       "author": "Petru Conduraru",
       "date": "2026-07-10T08:30:32+03:00",
       "kind": "commit",
-      "pr": 8437,
+      "pr": 9370,
       "confidence": "exact",
-      "evidence": "patch-identical to e20098f2a970 on PR #8437",
-      "classification": "cherry-picked"
+      "evidence": "patch-identical to 2aaa6071b9a2 on PR #9370",
+      "classification": "cherry-picked",
+      "title": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock (#9369)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "1a1df465b22b",
@@ -3519,7 +3656,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-27T20:12:20-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9370,
+      "confidence": "probable",
+      "evidence": "subject matches #9370, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock (#9369)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "aaa359778d70",
@@ -3585,7 +3727,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-30T20:38:14-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9401,
+      "confidence": "probable",
+      "evidence": "subject matches #9401, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: keep commented out facets when editing a filter query",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "305af7ba9816",
@@ -3604,7 +3751,12 @@
       "author": "Ryan Schultz",
       "date": "2026-08-31T11:44:45-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8548,
+      "confidence": "exact",
+      "evidence": "patch-identical to eb2ec589a7a5 on PR #8548",
+      "classification": "cherry-picked",
+      "title": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "5d1854f29f20",
@@ -3612,7 +3764,10 @@
       "author": "Ryan Schultz",
       "date": "2026-08-31T16:15:32-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9411,
+      "confidence": "exact",
+      "evidence": "patch-identical to 8dada4a6c003 on PR #9411",
+      "classification": "cherry-picked"
     },
     {
       "sha": "120ee0b6795b",
@@ -3655,7 +3810,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-02T12:18:19-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9439,
+      "confidence": "probable",
+      "evidence": "subject matches #9439, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: ALT+Click Select Type reveals, frames and isolates the type (#9438)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "0493bc8e89f6",
@@ -3663,7 +3823,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-02T17:16:15-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9441,
+      "confidence": "exact",
+      "evidence": "patch-identical to 96c3f04c37f9 on PR #9441",
+      "classification": "cherry-picked",
+      "title": "Bonsai: resolve IFC save path to absolute before writing (fixes relative-path save failure)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "c5b85c73062c",
@@ -3671,7 +3836,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-02T23:06:37-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8171,
+      "confidence": "exact",
+      "evidence": "patch-identical to 103208f454a6 on PR #8171",
+      "classification": "cherry-picked",
+      "title": "Add per-drawing render overrides (status_render module)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "0986754b3b14",
@@ -3679,7 +3849,10 @@
       "author": "Ryan Schultz",
       "date": "2026-09-04T08:39:15-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9448,
+      "confidence": "exact",
+      "evidence": "patch-identical to 02f2b6099866 on PR #9448",
+      "classification": "cherry-picked"
     },
     {
       "sha": "d0936c18d6d7",
@@ -3687,7 +3860,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-05T14:14:39-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9441,
+      "confidence": "exact",
+      "evidence": "patch-identical to e5a7508a5061 on PR #9441",
+      "classification": "cherry-picked",
+      "title": "Bonsai: resolve IFC save path to absolute before writing (fixes relative-path save failure)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "19bccebbc932",
@@ -3695,7 +3873,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-09T17:51:49-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9469,
+      "confidence": "probable",
+      "evidence": "subject matches #9469, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: find a sheet's drawing by path when its data-id is stale",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "75e29a2becef",
@@ -3703,7 +3886,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-11T15:05:30-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9478,
+      "confidence": "exact",
+      "evidence": "patch-identical to 17b5bf734f99 on PR #9478",
+      "classification": "cherry-picked",
+      "title": "Bonsai: reload external styles from .blend in update_current_style",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "928ee270d2bc",
@@ -3719,7 +3907,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-13T08:31:20-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9491,
+      "confidence": "exact",
+      "evidence": "patch-identical to 6c228d122a86 on PR #9491",
+      "classification": "cherry-picked",
+      "title": "Bonsai: set unit scale when a project is loaded from a .blend (#9490)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "f2afb0eae6ec",
@@ -3738,7 +3931,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-13T19:38:08-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9493,
+      "confidence": "exact",
+      "evidence": "patch-identical to 9d6d5701e0e4 on PR #9493",
+      "classification": "cherry-picked",
+      "title": "Bonsai: key cut linework on the material of the cut, not the layer set",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "99bdb4beb8b5",
@@ -3746,7 +3944,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-13T20:36:37-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9494,
+      "confidence": "exact",
+      "evidence": "patch-identical to e1c07836e71b on PR #9494",
+      "classification": "cherry-picked",
+      "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "0f1b184927db",
@@ -3767,7 +3970,12 @@
       "author": "Petru Conduraru",
       "date": "2026-09-14T07:52:18+03:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9044,
+      "confidence": "exact",
+      "evidence": "patch-identical to 25b2b4aa1dcd on PR #9044",
+      "classification": "cherry-picked",
+      "title": "util.selector: resolve mats.Category via the material set item",
+      "pr_author": "BIMvoice"
     },
     {
       "sha": "374fd37ea6f9",
@@ -3775,7 +3983,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-14T08:11:43-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9494,
+      "confidence": "exact",
+      "evidence": "patch-identical to 1f4e5f355e7c on PR #9494",
+      "classification": "cherry-picked",
+      "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "352e95af73ce",
@@ -3791,7 +4004,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-15T13:26:05-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9507,
+      "confidence": "exact",
+      "evidence": "patch-identical to b93fcfac4498 on PR #9507",
+      "classification": "cherry-picked",
+      "title": "Bonsai: retry the .blend save in save_project when the file is briefly locked (#9506)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "e1af96110188",
@@ -3799,7 +4017,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-16T17:33:57-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9515,
+      "confidence": "exact",
+      "evidence": "patch-identical to cc6421456633 on PR #9515",
+      "classification": "cherry-picked",
+      "title": "Bonsai: flatten roof footprint instead of failing, keep path preview, direct_profile_edit support",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "5ac7bd35171a",
@@ -3807,7 +4030,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-16T18:50:32-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9517,
+      "confidence": "probable",
+      "evidence": "subject matches #9517, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: fuse underside clip solids into one UNION tool (#9516)",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "af22b5ebe156",
@@ -3815,7 +4043,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-17T13:42:18-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9555,
+      "confidence": "probable",
+      "evidence": "subject matches #9555, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: a web API for tools that display and edit sheets without building them",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "ce8df5527d00",
@@ -3823,7 +4056,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-17T13:42:33-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9557,
+      "confidence": "probable",
+      "evidence": "subject matches #9557, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: put back sheet files renamed in a session that was not saved",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "0eb1dec03cd7",
@@ -3831,7 +4069,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-17T14:52:45-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9523,
+      "confidence": "probable",
+      "evidence": "subject matches #9523, content adapted",
+      "classification": "cherry-picked",
+      "title": "fix(bonsai): extend walls to cursor from any base level",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "ad657d428cce",
@@ -3868,7 +4111,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-20T16:02:00-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9555,
+      "confidence": "probable",
+      "evidence": "subject matches #9555, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: a web API for tools that display and edit sheets without building them",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "e93513d905d0",
@@ -3876,7 +4124,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-21T18:34:49-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9555,
+      "confidence": "probable",
+      "evidence": "subject matches #9555, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: a web API for tools that display and edit sheets without building them",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "8c9929ceff7a",
@@ -3892,7 +4145,10 @@
       "author": "Ryan Schultz",
       "date": "2026-09-22T20:28:47-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9572,
+      "confidence": "exact",
+      "evidence": "patch-identical to d0e29fd4f139 on PR #9572",
+      "classification": "cherry-picked"
     },
     {
       "sha": "8ffab9d29664",
@@ -3900,7 +4156,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-23T09:44:15-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9555,
+      "confidence": "exact",
+      "evidence": "patch-identical to 7e734f017f88 on PR #9555",
+      "classification": "cherry-picked",
+      "title": "Bonsai: a web API for tools that display and edit sheets without building them",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "666dd9185627",
@@ -3908,7 +4169,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-24T12:19:04-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9589,
+      "confidence": "probable",
+      "evidence": "subject matches #9589, content adapted",
+      "classification": "cherry-picked",
+      "title": "Collect whole aggregates in bim.add_aggregate",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "e177327860d3",
@@ -3916,7 +4182,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-24T12:19:04-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9589,
+      "confidence": "probable",
+      "evidence": "subject matches #9589, content adapted",
+      "classification": "cherry-picked",
+      "title": "Collect whole aggregates in bim.add_aggregate",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "2a75d56b02fc",
@@ -3924,7 +4195,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-26T14:22:07-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9555,
+      "confidence": "probable",
+      "evidence": "subject matches #9555, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: a web API for tools that display and edit sheets without building them",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "1d317e4fb6f5",
@@ -3932,7 +4208,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-26T18:56:12-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9555,
+      "confidence": "exact",
+      "evidence": "patch-identical to 827d64809ae8 on PR #9555",
+      "classification": "cherry-picked",
+      "title": "Bonsai: a web API for tools that display and edit sheets without building them",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "67ba5bdaee28",
@@ -3940,7 +4221,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-26T20:55:06-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9557,
+      "confidence": "probable",
+      "evidence": "subject matches #9557, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: put back sheet files renamed in a session that was not saved",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "de24aca86b25",
@@ -3948,7 +4234,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-27T09:44:22-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 7003,
+      "confidence": "exact",
+      "evidence": "patch-identical to 8a74add11873 on PR #7003",
+      "classification": "cherry-picked",
+      "title": "Add true object mirroring operator",
+      "pr_author": "Rob2309"
     },
     {
       "sha": "b42d3bf815b0",
@@ -3956,7 +4247,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-27T11:32:23-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8200,
+      "confidence": "exact",
+      "evidence": "patch-identical to 10a1bb32c370 on PR #8200",
+      "classification": "cherry-picked",
+      "title": "Preserve custom opening geometry via a type-level Reference template",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "1450db8d99d1",
@@ -3964,7 +4260,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-27T11:37:59-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8200,
+      "confidence": "exact",
+      "evidence": "patch-identical to d0e6fcf761c2 on PR #8200",
+      "classification": "cherry-picked",
+      "title": "Preserve custom opening geometry via a type-level Reference template",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "1edc72f0096e",
@@ -3972,7 +4273,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-28T14:51:38-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9555,
+      "confidence": "probable",
+      "evidence": "subject matches #9555, content adapted",
+      "classification": "cherry-picked",
+      "title": "Bonsai: a web API for tools that display and edit sheets without building them",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "0442baa6d79f",
@@ -3980,7 +4286,12 @@
       "author": "Ryan Schultz",
       "date": "2026-09-28T14:52:03-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9557,
+      "confidence": "exact",
+      "evidence": "patch-identical to aef65718f9b5 on PR #9557",
+      "classification": "cherry-picked",
+      "title": "Bonsai: put back sheet files renamed in a session that was not saved",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "c141d1ca9433",
@@ -3996,7 +4307,12 @@
       "author": "Ryan Schultz",
       "date": "2026-10-01T10:31:52-05:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 9765,
+      "confidence": "exact",
+      "evidence": "patch-identical to c0adc2485cd7 on PR #9765",
+      "classification": "cherry-picked",
+      "title": "Bonsai: strip HTML comments from annotation text",
+      "pr_author": "theoryshaw"
     },
     {
       "sha": "df227eb334ef",
@@ -4017,7 +4333,12 @@
       "author": "Petru Conduraru",
       "date": "2026-09-29T16:50:52+03:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8928,
+      "confidence": "exact",
+      "evidence": "patch-identical to 790be3ec8740 on PR #8928",
+      "classification": "cherry-picked",
+      "title": "Bonsai + ifcopenshell.api: merge/reassign redundant materials into one",
+      "pr_author": "BIMvoice"
     },
     {
       "sha": "989b61f63957",
@@ -4025,7 +4346,12 @@
       "author": "CyrilWaechter",
       "date": "2026-09-29T22:17:53+02:00",
       "kind": "commit",
-      "classification": "residue"
+      "pr": 8242,
+      "confidence": "exact",
+      "evidence": "patch-identical to f4110c7701bd on PR #8242",
+      "classification": "cherry-picked",
+      "title": "Linked file features",
+      "pr_author": "theoryshaw"
     }
   ],
   "clusters": [
@@ -4035,11 +4361,24 @@
       "files": [
         "docs/dev-notes/occurrence-representations.md",
         "src/bonsai/bonsai/bim/module/drawing/gizmos.py",
+        "src/bonsai/bonsai/bim/module/drawing/operator.py",
+        "src/bonsai/bonsai/bim/module/drawing/workspace.py",
         "src/bonsai/bonsai/bim/module/geometry/operator.py",
+        "src/bonsai/bonsai/bim/module/model/__init__.py",
+        "src/bonsai/bonsai/bim/module/model/array.py",
+        "src/bonsai/bonsai/bim/module/model/product.py",
+        "src/bonsai/bonsai/bim/module/model/prop.py",
+        "src/bonsai/bonsai/bim/module/model/ui.py",
         "src/bonsai/bonsai/core/geometry.py",
         "src/bonsai/bonsai/core/tool.py",
+        "src/bonsai/bonsai/tool/array.py",
         "src/bonsai/bonsai/tool/drawing.py",
-        "src/bonsai/bonsai/tool/geometry.py"
+        "src/bonsai/bonsai/tool/geometry.py",
+        "src/bonsai/bonsai/tool/model.py",
+        "src/bonsai/test/bim/feature/array.feature",
+        "src/bonsai/test/bim/module/model/test_array_placement_forward_compat.py",
+        "src/bonsai/test/tool/test_array_child_matrix.py",
+        "src/bonsai/test/tool/test_geometry_batch_host_recut.py"
       ],
       "commits": [
         {
@@ -4065,465 +4404,19 @@
         {
           "sha": "a302b7b0e03a",
           "subject": "Bonsai: promote replaces any existing rep in the slot, not just local"
-        }
-      ]
-    },
-    {
-      "title": "Project parametric dimensions onto annotation drawing plane",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/drawing/operator.py"
-      ],
-      "commits": [
-        {
-          "sha": "b39f8cbb6227",
-          "subject": "Project parametric dimensions onto annotation drawing plane"
-        }
-      ]
-    },
-    {
-      "title": "Bonsai: bulk-edit + select-by-value for Placement panel fields",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/geometry/__init__.py",
-        "src/bonsai/bonsai/bim/module/geometry/operator.py",
-        "src/bonsai/bonsai/bim/module/geometry/prop.py",
-        "src/bonsai/bonsai/bim/module/geometry/ui.py"
-      ],
-      "commits": [
-        {
-          "sha": "27f199c29a91",
-          "subject": "Bonsai: bulk-edit + select-by-value for Placement panel fields"
-        }
-      ]
-    },
-    {
-      "title": "Fix #8603: underlay renders the previously active drawing's objects",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/tool/blender.py"
-      ],
-      "commits": [
-        {
-          "sha": "660dee5b7edd",
-          "subject": "Fix #8603: underlay renders the previously active drawing's objects"
-        }
-      ]
-    },
-    {
-      "title": "Bonsai: restore the underlay cache setting after a batch print",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/drawing/operator.py"
-      ],
-      "commits": [
-        {
-          "sha": "ae4ed8885cb1",
-          "subject": "Bonsai: restore the underlay cache setting after a batch print"
-        }
-      ]
-    },
-    {
-      "title": "Fix render overrides on Blender 5.x (compositor API rewrite)",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/status_render/NOTES.md",
-        "src/bonsai/bonsai/bim/module/status_render/operator.py"
-      ],
-      "commits": [
-        {
-          "sha": "f467f30afd79",
-          "subject": "Fix render overrides on Blender 5.x (compositor API rewrite)"
-        }
-      ]
-    },
-    {
-      "title": "Fix Ctrl+click on first anchor dot creating midpoint instead of prepending",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/drawing/operator.py",
-        "src/bonsai/bonsai/bim/module/drawing/prop.py",
-        "src/bonsai/bonsai/bim/module/drawing/workspace.py",
-        "src/bonsai/bonsai/core/drawing.py",
-        "src/bonsai/bonsai/tool/drawing.py",
-        "src/ifcopenshell-python/ifcopenshell/api/drawing/regenerate_dimension.py"
-      ],
-      "commits": [
-        {
-          "sha": "ad44c0a3af6f",
-          "subject": "Fix Ctrl+click on first anchor dot creating midpoint instead of prepending"
-        },
-        {
-          "sha": "8b8cc058bb33",
-          "subject": "Remove [SECTION] and [ClickDim] debug print statements"
-        },
-        {
-          "sha": "09dd3d98820f",
-          "subject": "Add Force Parallel to Face constraint for parametric dimensions"
-        },
-        {
-          "sha": "d42f2b788c0d",
-          "subject": "fix(drawing): harden linework generation against bad cache and degenerate cells"
-        }
-      ]
-    },
-    {
-      "title": "Fix dimension text rendering upside-down when drawn right-to-left",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/drawing/decoration.py",
-        "src/bonsai/bonsai/bim/module/drawing/svgwriter.py"
-      ],
-      "commits": [
-        {
-          "sha": "1212fb91bb1b",
-          "subject": "Fix dimension text rendering upside-down when drawn right-to-left"
-        }
-      ]
-    },
-    {
-      "title": "CAD Join keeps the side of the edge you clicked",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/cad/__init__.py",
-        "src/bonsai/bonsai/bim/module/cad/operator.py",
-        "src/bonsai/bonsai/bim/module/cad/workspace.py",
-        "src/bonsai/bonsai/bim/module/model/workspace.py",
-        "src/bonsai/bonsai/core/tool.py",
-        "src/bonsai/bonsai/tool/blender.py",
-        "src/bonsai/bonsai/tool/cad.py"
-      ],
-      "commits": [
-        {
-          "sha": "21c8bb78091b",
-          "subject": "CAD Join keeps the side of the edge you clicked"
-        },
-        {
-          "sha": "87f96baf98b5",
-          "subject": "Record CAD Join clicks under Cross Select too"
-        }
-      ]
-    },
-    {
-      "title": "Fix BringToFront not applying to merged cut geometry",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/drawing/operator.py"
-      ],
-      "commits": [
-        {
-          "sha": "a2aee970ad4f",
-          "subject": "Fix BringToFront not applying to merged cut geometry"
-        }
-      ]
-    },
-    {
-      "title": "Fix drawing camera being rebuilt on every create_drawing",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/drawing/prop.py"
-      ],
-      "commits": [
-        {
-          "sha": "bf6b8ed4b189",
-          "subject": "Fix drawing camera being rebuilt on every create_drawing"
-        }
-      ]
-    },
-    {
-      "title": "Don't call transform_apply on cameras in Geometry.clear_scale",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/tool/geometry.py"
-      ],
-      "commits": [
-        {
-          "sha": "72eec4487390",
-          "subject": "Don't call transform_apply on cameras in Geometry.clear_scale"
-        }
-      ]
-    },
-    {
-      "title": "Gate render overrides on the style the render actually uses",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/status_render/ui.py"
-      ],
-      "commits": [
-        {
-          "sha": "8577a0cbbb98",
-          "subject": "Gate render overrides on the style the render actually uses"
-        }
-      ]
-    },
-    {
-      "title": "Adds rectangle mode to the polyline slab tool",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/model/polyline.py",
-        "src/bonsai/bonsai/bim/module/model/profile.py",
-        "src/bonsai/bonsai/bim/module/model/prop.py",
-        "src/bonsai/bonsai/bim/module/model/slab.py",
-        "src/bonsai/bonsai/bim/module/model/wall.py",
-        "src/bonsai/bonsai/tool/polyline.py",
-        "src/bonsai/test/modal/test_modal.py",
-        "src/bonsai/test/tool/test_polyline.py"
-      ],
-      "commits": [
-        {
-          "sha": "cdb06c104ba1",
-          "subject": "Adds rectangle mode to the polyline slab tool"
-        },
-        {
-          "sha": "7d647bc3fdde",
-          "subject": "Extends rectangle mode to the polyline wall and profile tools"
-        }
-      ]
-    },
-    {
-      "title": "Bonsai: add \"Share Annotations\" option to Duplicate Drawing",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/helper.py",
-        "src/bonsai/bonsai/bim/module/drawing/__init__.py",
-        "src/bonsai/bonsai/bim/module/drawing/operator.py",
-        "src/bonsai/bonsai/bim/module/drawing/prop.py",
-        "src/bonsai/bonsai/bim/module/drawing/sheeter.py",
-        "src/bonsai/bonsai/bim/module/drawing/svgwriter.py",
-        "src/bonsai/bonsai/bim/module/drawing/ui.py",
-        "src/bonsai/bonsai/bim/module/geometry/prop.py",
-        "src/bonsai/bonsai/bim/module/model/product.py",
-        "src/bonsai/bonsai/bim/module/project/operator.py",
-        "src/bonsai/bonsai/bim/module/search/operator.py",
-        "src/bonsai/bonsai/bim/module/type/__init__.py",
-        "src/bonsai/bonsai/bim/module/type/operator.py",
-        "src/bonsai/bonsai/bim/prop.py",
-        "src/bonsai/bonsai/core/drawing.py",
-        "src/bonsai/bonsai/tool/search.py",
-        "src/bonsai/test/tool/test_search.py"
-      ],
-      "commits": [
-        {
-          "sha": "12d211b81dff",
-          "subject": "Bonsai: add \"Share Annotations\" option to Duplicate Drawing"
-        },
-        {
-          "sha": "16881a5e9a22",
-          "subject": "Bonsai: duplicate-drawing share toggle only preserves already-shared annotations"
-        },
-        {
-          "sha": "cc66d801ce7d",
-          "subject": "Bonsai: add \"Select Shared Annotations\" operator"
-        },
-        {
-          "sha": "14477a6ed7dd",
-          "subject": "Bonsai: keep shared annotations when removing a drawing"
-        },
-        {
-          "sha": "e6cf754f3b63",
-          "subject": "Bonsai: sort drawing scale dropdown by scale ratio"
-        },
-        {
-          "sha": "1a1df465b22b",
-          "subject": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock"
         },
         {
           "sha": "f08694a1fa3c",
           "subject": "Bonsai: add IfcElementAssembly support to TrueMirrorElements"
         },
         {
-          "sha": "452092e7820b",
-          "subject": "Bonsai: keep commented out facets when editing a filter query"
-        },
-        {
-          "sha": "c5cd3816110f",
-          "subject": "Bonsai: fix Elevation from Storey missing for IfcSpace"
-        },
-        {
-          "sha": "5d1854f29f20",
-          "subject": "Bonsai: fix comma-separated stylesheet paths only loading the last file"
-        },
-        {
-          "sha": "e1ada0d1b21b",
-          "subject": "Bonsai: ALT+Click Select Type reveals, frames and isolates the type"
-        },
-        {
-          "sha": "0493bc8e89f6",
-          "subject": "Bonsai: resolve IFC save path to absolute before writing"
-        }
-      ]
-    },
-    {
-      "title": "Keep render override transparency alive across geometry edits",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/status_render/NOTES.md",
-        "src/bonsai/bonsai/bim/module/status_render/operator.py"
-      ],
-      "commits": [
-        {
-          "sha": "c5b85c73062c",
-          "subject": "Keep render override transparency alive across geometry edits"
-        }
-      ]
-    },
-    {
-      "title": "Guard stale representation item ids in the items panel",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/geometry/operator.py"
-      ],
-      "commits": [
-        {
-          "sha": "0986754b3b14",
-          "subject": "Guard stale representation item ids in the items panel"
-        }
-      ]
-    },
-    {
-      "title": "Bonsai: don't stack autosave reminder dialogs",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/data/pset/EPset_Drawing.ifc",
-        "src/bonsai/bonsai/bim/handler.py",
-        "src/bonsai/bonsai/bim/module/drawing/operator.py",
-        "src/bonsai/bonsai/bim/module/drawing/sheeter.py",
-        "src/bonsai/bonsai/bim/module/model/__init__.py",
-        "src/bonsai/bonsai/bim/module/model/array.py",
-        "src/bonsai/bonsai/bim/module/model/prop.py",
-        "src/bonsai/bonsai/bim/module/model/ui.py",
-        "src/bonsai/bonsai/bim/module/project/operator.py",
-        "src/bonsai/bonsai/bim/module/style/operator.py",
-        "src/bonsai/bonsai/core/tool.py",
-        "src/bonsai/bonsai/tool/array.py",
-        "src/bonsai/bonsai/tool/autosave.py",
-        "src/bonsai/bonsai/tool/model.py",
-        "src/bonsai/test/bim/feature/array.feature",
-        "src/bonsai/test/bim/module/model/test_array_placement_forward_compat.py",
-        "src/bonsai/test/tool/test_array_child_matrix.py",
-        "src/bonsai/test/tool/test_sheeter.py"
-      ],
-      "commits": [
-        {
-          "sha": "d0936c18d6d7",
-          "subject": "Bonsai: don't stack autosave reminder dialogs"
-        },
-        {
-          "sha": "19bccebbc932",
-          "subject": "Bonsai: find a sheet's drawing by path when its data-id is stale"
-        },
-        {
-          "sha": "75e29a2becef",
-          "subject": "Bonsai: reload external styles from .blend in update_current_style"
-        },
-        {
           "sha": "928ee270d2bc",
           "subject": "Bonsai: add radial and helical arrays to bim.add_array"
-        },
-        {
-          "sha": "8e0f364ef113",
-          "subject": "Bonsai: set unit scale when a project is loaded from a .blend"
-        },
-        {
-          "sha": "0b2def5762aa",
-          "subject": "Bonsai: key cut linework on the material of the cut, not the layer set"
-        },
-        {
-          "sha": "99bdb4beb8b5",
-          "subject": "Bonsai: emit one SVG class per metadata value, and per layer where cut"
-        }
-      ]
-    },
-    {
-      "title": "util.selector: fall back to the material Category when the set item has none",
-      "disposition": "private",
-      "files": [
-        "src/ifcopenshell-python/ifcopenshell/util/selector.py",
-        "src/ifcopenshell-python/test/util/test_selector.py"
-      ],
-      "commits": [
-        {
-          "sha": "67ad6eba3d27",
-          "subject": "util.selector: fall back to the material Category when the set item has none"
-        }
-      ]
-    },
-    {
-      "title": "Bonsai: read a cut layer's Category from the layer, then its material",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/data/webui/sioserver.py",
-        "src/bonsai/bonsai/bim/handler.py",
-        "src/bonsai/bonsai/bim/module/drawing/operator.py",
-        "src/bonsai/bonsai/bim/module/drawing/sheeter.py",
-        "src/bonsai/bonsai/bim/module/geometry/operator.py",
-        "src/bonsai/bonsai/bim/module/model/roof.py",
-        "src/bonsai/bonsai/bim/module/project/operator.py",
-        "src/bonsai/bonsai/bim/module/web/__init__.py",
-        "src/bonsai/bonsai/bim/module/web/operator.py",
-        "src/bonsai/bonsai/bim/ui.py",
-        "src/bonsai/bonsai/core/model.py",
-        "src/bonsai/bonsai/core/tool.py",
-        "src/bonsai/bonsai/core/web.py",
-        "src/bonsai/bonsai/tool/drawing.py",
-        "src/bonsai/bonsai/tool/geometry.py",
-        "src/bonsai/bonsai/tool/model.py",
-        "src/bonsai/bonsai/tool/web.py",
-        "src/bonsai/test/tool/test_geometry_batch_host_recut.py",
-        "src/bonsai/test/tool/test_sheeter.py"
-      ],
-      "commits": [
-        {
-          "sha": "374fd37ea6f9",
-          "subject": "Bonsai: read a cut layer's Category from the layer, then its material"
         },
         {
           "sha": "352e95af73ce",
           "subject": "Bonsai: guard batch_host_recut drain against removed objects"
         },
-        {
-          "sha": "a97304a8b91e",
-          "subject": "Bonsai: retry the .blend save in save_project when the file is briefly locked"
-        },
-        {
-          "sha": "e1af96110188",
-          "subject": "Bonsai: flatten roof footprint instead of failing, keep path preview, direct_profile_edit support"
-        },
-        {
-          "sha": "5ac7bd35171a",
-          "subject": "Bonsai: fuse underside clip solids into one UNION tool (#9516)"
-        },
-        {
-          "sha": "af22b5ebe156",
-          "subject": "Bonsai: answer sheet template values over the web, and keep the connection"
-        },
-        {
-          "sha": "ce8df5527d00",
-          "subject": "Bonsai: put back sheet files renamed in a session that was not saved"
-        }
-      ]
-    },
-    {
-      "title": "fix(bonsai): extend walls to cursor from any base level",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/model/workspace.py"
-      ],
-      "commits": [
-        {
-          "sha": "0eb1dec03cd7",
-          "subject": "fix(bonsai): extend walls to cursor from any base level"
-        }
-      ]
-    },
-    {
-      "title": "Bonsai: restore attaching a reference image to an existing annotation",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/drawing/operator.py",
-        "src/bonsai/bonsai/bim/module/drawing/workspace.py"
-      ],
-      "commits": [
         {
           "sha": "01d83f86d9b7",
           "subject": "Bonsai: restore attaching a reference image to an existing annotation"
@@ -4535,28 +4428,13 @@
       ]
     },
     {
-      "title": "feat(drawing): let a tool edit a sheet's template values through Bonsai",
+      "title": "fix(drawing): drop a redundant panel refresh, and keep two tests right on 0.9",
       "disposition": "private",
       "files": [
-        "src/bonsai/bonsai/bim/data/webui/sioserver.py",
-        "src/bonsai/bonsai/bim/module/drawing/__init__.py",
-        "src/bonsai/bonsai/bim/module/drawing/data.py",
-        "src/bonsai/bonsai/bim/module/drawing/operator.py",
-        "src/bonsai/bonsai/bim/module/drawing/sheeter.py",
-        "src/bonsai/bonsai/bim/module/drawing/ui.py",
-        "src/bonsai/bonsai/tool/blender.py",
         "src/bonsai/bonsai/tool/web.py",
         "src/bonsai/test/tool/test_sheeter.py"
       ],
       "commits": [
-        {
-          "sha": "0956e1ad4914",
-          "subject": "feat(drawing): let a tool edit a sheet's template values through Bonsai"
-        },
-        {
-          "sha": "e93513d905d0",
-          "subject": "feat(drawing): give each sheet its site and building, and make web edits undoable"
-        },
         {
           "sha": "8c9929ceff7a",
           "subject": "fix(drawing): drop a redundant panel refresh, and keep two tests right on 0.9"
@@ -4564,133 +4442,11 @@
       ]
     },
     {
-      "title": "Skip hidden columns when building ODS schedule",
+      "title": "Bonsai: port GPU snapping from v0.9.0",
       "disposition": "private",
       "files": [
-        "src/bonsai/bonsai/bim/module/drawing/scheduler.py"
-      ],
-      "commits": [
-        {
-          "sha": "733ed3e43974",
-          "subject": "Skip hidden columns when building ODS schedule"
-        }
-      ]
-    },
-    {
-      "title": "fix(drawing): find a schedule's document by the file the sheet places",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/drawing/sheeter.py"
-      ],
-      "commits": [
-        {
-          "sha": "8ffab9d29664",
-          "subject": "fix(drawing): find a schedule's document by the file the sheet places"
-        }
-      ]
-    },
-    {
-      "title": "Collect whole aggregates in bim.add_aggregate",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/aggregate/operator.py"
-      ],
-      "commits": [
-        {
-          "sha": "666dd9185627",
-          "subject": "Collect whole aggregates in bim.add_aggregate"
-        }
-      ]
-    },
-    {
-      "title": "Keep plain sub-assemblies out of linked groups",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/aggregate/data.py",
-        "src/bonsai/bonsai/bim/module/geometry/operator.py"
-      ],
-      "commits": [
-        {
-          "sha": "e177327860d3",
-          "subject": "Keep plain sub-assemblies out of linked groups"
-        }
-      ]
-    },
-    {
-      "title": "feat(drawing): let a tool take a drawing off a sheet, and put it back",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/drawing/__init__.py",
-        "src/bonsai/bonsai/bim/module/drawing/operator.py",
-        "src/bonsai/bonsai/bim/module/drawing/sheeter.py",
-        "src/bonsai/bonsai/tool/web.py",
-        "src/bonsai/test/tool/test_sheeter.py"
-      ],
-      "commits": [
-        {
-          "sha": "2a75d56b02fc",
-          "subject": "feat(drawing): let a tool take a drawing off a sheet, and put it back"
-        },
-        {
-          "sha": "1d317e4fb6f5",
-          "subject": "fix(drawing): stop a failed removal corrupting a sheet, and place by where things are"
-        }
-      ]
-    },
-    {
-      "title": "fix(drawing): take out layout groups an unsaved session left behind",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/tool/drawing.py",
-        "src/bonsai/test/tool/test_drawing.py"
-      ],
-      "commits": [
-        {
-          "sha": "67ba5bdaee28",
-          "subject": "fix(drawing): take out layout groups an unsaved session left behind"
-        }
-      ]
-    },
-    {
-      "title": "Repoint door is_door calls at tool.Parametric",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/model/door.py"
-      ],
-      "commits": [
-        {
-          "sha": "de24aca86b25",
-          "subject": "Repoint door is_door calls at tool.Parametric"
-        }
-      ]
-    },
-    {
-      "title": "Keep adjusted openings frozen on fill regen",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/model/opening.py",
-        "src/bonsai/bonsai/tool/model.py",
-        "src/bonsai/test/bim/module/model/test_opening_preservation.py"
-      ],
-      "commits": [
-        {
-          "sha": "b42d3bf815b0",
-          "subject": "Keep adjusted openings frozen on fill regen"
-        },
-        {
-          "sha": "1450db8d99d1",
-          "subject": "Correct opening-promotion docstrings"
-        }
-      ]
-    },
-    {
-      "title": "feat(drawing): let a tool put schedules and references on a sheet",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/drawing/decoration.py",
         "src/bonsai/bonsai/bim/module/drawing/handler.py",
         "src/bonsai/bonsai/bim/module/drawing/operator.py",
-        "src/bonsai/bonsai/bim/module/drawing/sheeter.py",
         "src/bonsai/bonsai/bim/module/model/decorator.py",
         "src/bonsai/bonsai/bim/module/model/polyline.py",
         "src/bonsai/bonsai/bim/module/model/product.py",
@@ -4700,59 +4456,13 @@
         "src/bonsai/bonsai/bim/module/project/operator.py",
         "src/bonsai/bonsai/bim/prop.py",
         "src/bonsai/bonsai/bim/ui.py",
-        "src/bonsai/bonsai/tool/drawing.py",
         "src/bonsai/bonsai/tool/raycast.py",
-        "src/bonsai/bonsai/tool/snap.py",
-        "src/bonsai/test/tool/test_drawing.py",
-        "src/bonsai/test/tool/test_sheeter.py"
+        "src/bonsai/bonsai/tool/snap.py"
       ],
       "commits": [
-        {
-          "sha": "1edc72f0096e",
-          "subject": "feat(drawing): let a tool put schedules and references on a sheet"
-        },
-        {
-          "sha": "0442baa6d79f",
-          "subject": "fix(drawing): put back layout groups the reopened model still places"
-        },
         {
           "sha": "c141d1ca9433",
           "subject": "Bonsai: port GPU snapping from v0.9.0"
-        },
-        {
-          "sha": "94c26f7cbfb1",
-          "subject": "Bonsai: strip HTML comments from annotation text"
-        }
-      ]
-    },
-    {
-      "title": "Compare by_type results as tuples in test",
-      "disposition": "private",
-      "files": [
-        "src/ifcopenshell-python/test/api/material/test_merge_materials.py"
-      ],
-      "commits": [
-        {
-          "sha": "e32a559e2ea2",
-          "subject": "Compare by_type results as tuples in test"
-        }
-      ]
-    },
-    {
-      "title": "Allow searching all materials in material editor",
-      "disposition": "private",
-      "files": [
-        "src/bonsai/bonsai/bim/module/material/prop.py",
-        "src/bonsai/bonsai/bim/module/material/ui.py",
-        "src/bonsai/bonsai/tool/material.py",
-        "src/bonsai/test/bim/module/material/__init__.py",
-        "src/bonsai/test/bim/module/material/test_ui.py",
-        "src/bonsai/test/tool/test_material.py"
-      ],
-      "commits": [
-        {
-          "sha": "989b61f63957",
-          "subject": "Allow searching all materials in material editor"
         }
       ]
     }
