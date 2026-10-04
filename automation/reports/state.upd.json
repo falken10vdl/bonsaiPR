@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 120,
-    "merged": 574,
+    "merged": 575,
     "skipped_conflict": 94,
     "skipped_draft": 68,
-    "total": 856
+    "total": 857
   },
-  "generated_at": "2026-10-03T21:17:57Z",
+  "generated_at": "2026-10-04T00:17:09Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -6977,11 +6977,19 @@
       "status": "merged",
       "title": "build(deps): bump pyodide-build from 0.39.0 to 0.39.1",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9803"
+    },
+    "9810": {
+      "author": "brunoperdigao",
+      "branch": "fix-measure-tool",
+      "head": "2a3568e",
+      "status": "merged",
+      "title": "measure tool: fix text not showing when polyline has only two verts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9810"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610032249",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610032249"
+    "tag": "v0.9.0-alpha2610040149",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610040149"
   },
   "schema": 1
 }
