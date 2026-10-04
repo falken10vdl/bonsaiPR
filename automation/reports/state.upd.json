@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 120,
-    "merged": 576,
-    "skipped_conflict": 93,
+    "merged": 577,
+    "skipped_conflict": 92,
     "skipped_draft": 68,
     "total": 857
   },
-  "generated_at": "2026-10-04T03:16:25Z",
+  "generated_at": "2026-10-04T20:22:24Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1179,7 +1179,7 @@
       "author": "BIMvoice",
       "branch": "fix-edit-pset-update-list-value-5195",
       "head": "db50fc6",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "pset.edit_pset: support updating IfcPropertyListValue properties (#5195)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8298"
     },
@@ -2202,7 +2202,7 @@
     "8598": {
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
-      "head": "67b4632",
+      "head": "3480524",
       "status": "merged",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
@@ -6988,8 +6988,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610040448",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610040448"
+    "tag": "v0.9.0-alpha2610042150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610042150"
   },
   "schema": 1
 }
