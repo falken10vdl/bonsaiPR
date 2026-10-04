@@ -125,6 +125,21 @@ both statements, not routine.
   `resolve_base_branch()` decides for every stage: the profile's branch wins,
   the env var may only agree with it, and the workflow exports what the profile
   says instead of hardcoding it.
+- **`distill` only knew the PRs it had been shown, and never promoted a pick.**
+  It found PR heads only under `refs/remotes/pr*`, the refs this pipeline's
+  merges create; a working clone keeps them under `refs/prhead/<n>` (3,187 in
+  the reference checkout). Anything opened after the last pipeline fetch was
+  invisible, so its commits read as the curator's own work: 91 "residue"
+  commits were in fact 78 commits on open PRs and 13 genuinely unshared. And a
+  cherry-picked PR was never selected, even when every commit was on the
+  branch: #9765 was one commit, byte-identical, and missing from the build.
+  Now `refs/prhead/*` and `refs/pull/*/head` are scanned too; a PR whose every
+  own commit (beyond the `v*` release branches) is on the branch by patch-id
+  is selected, at the position of its last picked commit; "all present but
+  some adapted" and "partial" are listed for review, not selected. 22 open PRs
+  came back that way. A PR's commits can also arrive *inside* another merged
+  PR (#8061/#8062/#8064 rode in on #8083): those are not cherry-picks and the
+  host PR already carries them, so a whole-branch comparison overcounts.
 - **A sidecar skipped when empty is a stale sidecar.** `write_pinned()` and
   `write_rivals()` returned early when there was nothing to record, so the
   previous run's file stayed. The first v0.9.0 run pinned nothing and left

@@ -85,8 +85,22 @@ RE_HASH_NUM = re.compile(r"#(\d+)")
 
 # `refs/remotes/pr/8353` (a mirror of refs/pull/*/head) or the pipeline's own
 # `refs/remotes/pr-8353/<branch>`.
-RE_PR_REF = re.compile(r"^refs/remotes/pr[-/](\d+)(?:/|$)")
-PR_REF_GLOBS = ("refs/remotes/pr/*", "refs/remotes/pr-*/*")
+# Where a clone may keep open PRs' heads. The first two are what this pipeline's
+# merges create; refs/prhead/<n> and GitHub's own refs/pull/<n>/head are what a
+# working checkout tends to have. Scanning only the first two once left a PR
+# opened after the last pipeline fetch (#9765) looking like the curator's own
+# unshared work.
+RE_PR_REF = re.compile(
+    r"^refs/(?:remotes/pr[-/](\d+)(?:/|$)|prhead/(\d+)$|pull/(\d+)/head$)"
+)
+PR_REF_GLOBS = (
+    "refs/remotes/pr/*", "refs/remotes/pr-*/*", "refs/prhead/*", "refs/pull/*/head",
+)
+
+
+def _pr_of_ref(ref):
+    m = RE_PR_REF.match(ref)
+    return next((g for g in m.groups() if g), None) if m else None
 
 
 # --------------------------------------------------------------------------- #
@@ -203,10 +217,77 @@ def pr_commit_index(repo, base, globs=PR_REF_GLOBS):
         if len(parts) < 3:
             continue
         sha, ref, subject = parts[0].strip(), parts[1].strip(), parts[2].strip()
-        m = RE_PR_REF.match(ref)
-        if m and subject:
-            index[subject].append((sha, m.group(1)))
+        pr = _pr_of_ref(ref)
+        if pr and subject:
+            index[subject].append((sha, pr))
     return index
+
+
+def pr_refs(repo, globs=PR_REF_GLOBS):
+    """{pr_number: head sha} for every mirrored PR ref (first one found wins)."""
+    out = git(["for-each-ref", "--format=%(objectname) %(refname)"] + list(globs), repo)
+    heads = {}
+    for line in out.splitlines():
+        sha, _, ref = line.partition(" ")
+        pr = _pr_of_ref(ref.strip())
+        if pr and pr not in heads:
+            heads[pr] = sha.strip()
+    return heads
+
+
+def patch_ids_in(repo, rev_args):
+    """{patch-id: commit} for the non-merge commits a rev-list selects, in one pass."""
+    log = subprocess.run(
+        ["git", "log", "--no-merges", "-p", "--format=commit %H"] + rev_args,
+        cwd=repo, capture_output=True,
+    ).stdout
+    if not log.strip():
+        return {}
+    out = subprocess.run(
+        ["git", "patch-id", "--stable"], cwd=repo, input=log, capture_output=True,
+    ).stdout.decode()
+    return {p: c for p, c in (l.split() for l in out.splitlines() if l.strip())}
+
+
+def release_branch_globs(base):
+    """Exclusions that leave a PR's OWN commits: every release branch of the base's remote.
+
+    A PR on v0.9.0 contains all of v0.9.0's history that v0.8.0 lacks, so
+    `--not <base>` alone would ask whether 1,955 upstream commits are on the
+    branch. Only `v*` branches are excluded - a PR's own branch may live in the
+    same upstream repo, and excluding every remote branch would empty it.
+    """
+    remote = base.split("/", 1)[0] if "/" in base else None
+    return [f"--glob=refs/remotes/{remote}/v[0-9]*"] if remote else []
+
+
+def pr_inclusion(repo, base, branch, prs, heads):
+    """How much of each PR is on the branch, by patch-id.
+
+    {pr: {"commits": n, "exact": n, "adapted": n, "head": sha}}; "adapted" counts
+    commits matched only by subject (picked onto a different base, hunks moved).
+    """
+    excl = ["--not", base] + release_branch_globs(base)
+    on_branch = patch_ids_in(repo, [branch] + excl)
+    branch_subjects = set(
+        git(["log", "--no-merges", "--format=%s", branch] + excl, repo).splitlines()
+    )
+    result = {}
+    for pr in prs:
+        head = heads.get(str(pr))
+        if not head:
+            continue
+        mine = patch_ids_in(repo, [head] + excl)
+        if not mine:
+            continue
+        exact = sum(1 for p in mine if p in on_branch)
+        subjects = {
+            c: git(["log", "-1", "--format=%s", c], repo).strip()
+            for p, c in mine.items() if p not in on_branch
+        }
+        adapted = sum(1 for s in subjects.values() if s in branch_subjects)
+        result[int(pr)] = {"commits": len(mine), "exact": exact, "adapted": adapted, "head": head}
+    return result
 
 
 def attribute_cherry_pick(repo, commit, index, cache):
@@ -482,6 +563,7 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
 
     cherry_index = pr_commit_index(repo, base)
     pid_cache = {}
+    cherry_pos = {}          # PR number -> index in order_seq after its last picked commit
 
     for c in commits:
         pr, confidence, evidence = attribute(c, by_owner_branch)
@@ -531,16 +613,55 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
                 if rec:
                     row["title"] = rec.get("title")
                     row["pr_author"] = rec.get("author")
-                # Deliberately NOT added to order_seq or validated. Taking one
-                # commit off a PR is not evidence the curator wanted the whole
-                # PR merged - it is often the opposite, someone lifting a single
-                # fix out of a branch they did not want. Promoting these to
-                # selections would silently widen the profile.
+                # Not added to order_seq here. Taking one commit off a PR is not
+                # evidence the curator wanted the whole PR merged - it is often
+                # the opposite, someone lifting a single fix out of a branch they
+                # did not want. Only a PR whose EVERY commit is on the branch is
+                # selected, below; where it goes in the order is where its last
+                # commit sits in the curator's history.
                 cherry_picked.append(row)
+                # (index in order_seq, position in history) of its last picked
+                # commit; the second breaks ties between PRs picked after the
+                # same merge, which would otherwise come out in reverse.
+                cherry_pos[int(cpr)] = (len(order_seq), len(provenance))
             else:
                 row["classification"] = "residue"
                 residue.append(c)
         provenance.append(row)
+
+    # A PR picked in full is a PR the curator merged by cherry-pick: #9765 was
+    # one commit, on the branch byte for byte, and left out of the profile
+    # because the rule above refused to promote any cherry-pick. Promote exactly
+    # the PRs that are wholly present by patch-id; report those present only by
+    # subject (adapted) or only in part, for a human to decide.
+    heads = pr_refs(repo)
+    inclusion = pr_inclusion(repo, base, branch, sorted(cherry_pos), heads)
+    included = {"full": [], "adapted": [], "partial": []}
+    for pr, inc in sorted(inclusion.items()):
+        if pr in order_seq:
+            continue  # already selected by its merge; picking from it too is not news
+        rec = by_num.get(str(pr))
+        entry = dict(inc, pr=pr, title=(rec or {}).get("title"),
+                     author=(rec or {}).get("author"), open=bool(rec) if pr_index_ok else None)
+        # A local ref older than the PR's current head may have lost or gained
+        # commits since; say so instead of trusting it.
+        cur = (rec or {}).get("head") or ""
+        entry["stale_ref"] = bool(cur) and not inc["head"].startswith(cur[:7])
+        if inc["exact"] == inc["commits"]:
+            included["full"].append(entry)
+        elif inc["exact"] + inc["adapted"] == inc["commits"]:
+            included["adapted"].append(entry)
+        else:
+            included["partial"].append(entry)
+    # Insert later positions first so earlier indices stay valid.
+    # Inserting at the same index puts each one in front of the last, so go
+    # latest-first to come out in history order.
+    for entry in sorted(included["full"], key=lambda e: (-cherry_pos[e["pr"]][0], -cherry_pos[e["pr"]][1])):
+        pr = entry["pr"]
+        if pr in order_seq or entry["open"] is False:
+            continue
+        order_seq.insert(cherry_pos[pr][0], pr)
+        validated[pr] = entry["head"]
 
     clusters = cluster_residue(repo, residue) if residue else []
 
@@ -595,6 +716,7 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
             "prs": len(by_num),
         },
         "cherry_picked": cherry_picked,
+        "cherry_included": included,
         # Whether residue could be checked against open PRs at all. Without the
         # refs, "original work" degrades to "not a merge and not upstream yet",
         # which is what produced the 81 figure.
@@ -762,17 +884,46 @@ def render(result, top=12):
             f"  {exact} patch-identical, {len(r['cherry_picked']) - exact} same subject"
         )
         out.append(
-            "  with adapted content. Already shared — not the curator's unshared work,"
+            "  with adapted content. Already shared — not the curator's unshared work."
         )
         out.append(
-            "  and not added to the profile: lifting one commit off a PR is not a"
+            "  A PR picked in full is selected (below); one picked in part is not:"
         )
-        out.append("  request to merge the whole thing.")
+        out.append("  lifting one commit off a PR is not a request to merge the whole thing.")
         out.append("")
         for row in r["cherry_picked"][:top]:
             out.append(f"  #{row['pr']:<6} {row['sha']}  {row['subject'][:66]}")
         if len(r["cherry_picked"]) > top:
             out.append(f"  … {len(r['cherry_picked']) - top} more")
+        out.append("")
+
+    inc = r.get("cherry_included") or {}
+    for key, heading, note in (
+        ("full", "PRs picked in full — selected",
+         "Every commit on the branch, patch-identical: merged by cherry-pick."),
+        ("adapted", "PRs picked in full, some commits adapted — review",
+         "Every commit present, some only by subject: usually an earlier version of the PR."),
+        ("partial", "PRs picked in part — not selected",
+         "Some commits taken, not all. Select by hand if the whole PR is wanted."),
+    ):
+        rows = inc.get(key) or []
+        if not rows:
+            continue
+        out.append(f"## {heading} ({len(rows)})")
+        out.append("")
+        out.append(f"  {note}")
+        out.append("")
+        for e in rows[:top]:
+            flags = "".join([
+                "  [not open]" if e.get("open") is False else "",
+                "  [local ref older than PR head]" if e.get("stale_ref") else "",
+            ])
+            out.append(
+                f"  #{e['pr']:<6} {e['exact']}+{e['adapted']}/{e['commits']}  "
+                f"{(e.get('title') or '')[:58]}{flags}"
+            )
+        if len(rows) > top:
+            out.append(f"  … {len(rows) - top} more")
         out.append("")
 
     if r["probable"]:
