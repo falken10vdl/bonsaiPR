@@ -110,10 +110,21 @@ def get_reports_path():
 
 
 def get_branch_name():
-    """Generate branch name with timestamp for on-demand builds"""
+    """The build branch stage 0 created, as its report names it.
+
+    It used to be rebuilt from the clock, which only matches stage 0's name if
+    both run in the same minute - they run ~15 minutes apart - and could not
+    know stage 0's prefix. The clock is now only a fallback for a missing report.
+    """
+    report = find_report_file()
+    if report and os.path.exists(report):
+        with open(report, "r", encoding="utf-8") as f:
+            for line in f:
+                if line.startswith("Branch:"):
+                    return line.split(":", 1)[1].strip()
     current_datetime = datetime.now().strftime("%y%m%d%H%M")
     version = SOURCE_BASE_BRANCH.removeprefix("v")
-    return f"build-{version}-alpha{current_datetime}"
+    return f"{ASSET_PREFIX}build-{version}-alpha{current_datetime}"
 
 
 def get_version_info():
@@ -1475,6 +1486,28 @@ def cleanup_old_releases():
         print(f"⚠️ Error during release cleanup: {e}")
 
 
+def stamp_release_in_manifest(order_suffix, tag_name, release_url):
+    """Record the release this run published in the run's manifest (state.<order>.json).
+
+    Stage 0 writes the manifest, before any release exists; stage 2 used to build
+    its own snapshot with the release in it, and stopped once stage 0 took the
+    manifest over. Since then every full run published a release that its own
+    manifest recorded as `"release": {"tag": null}` - and the next run's report
+    and federation peers read that field to link a PR to the build containing it.
+    Called only after the release exists, so the manifest never names one that
+    failed to publish.
+    """
+    path = pr_state.order_state_path(REPORTS_DIR, order_suffix)
+    state = pr_state.load_state(path)
+    if not state:
+        print(f"⚠️  No manifest at {path} to record release {tag_name} in")
+        return False
+    state["release"] = {"tag": tag_name, "url": release_url}
+    pr_state.write_state(state, path)
+    print(f"🧾 Recorded release {tag_name} in {os.path.basename(path)}")
+    return True
+
+
 def upload_to_falken10vdl():
     print("Starting upload to GitHub releases...")
 
@@ -1644,6 +1677,7 @@ def upload_to_falken10vdl():
     release_id = release["id"]
     release_url = release["html_url"]
     print(f"✅ Successfully created release: {release_url}")
+    stamp_release_in_manifest(order_suffix, tag_name, release_url)
 
     # Upload addon files with updated timestamp (YYMMDD -> YYMMDDHHMM from README)
     success_count = 0
@@ -1761,23 +1795,58 @@ def upload_to_falken10vdl():
                 "hash": hashval,
                 "version": version_str,
             }
-        # Update every platform in each entry, matched by (platform, python_version)
+        def entry_pyver(entry):
+            # python_versions (e.g. ["3.11"]) -> pyversion key (e.g. "py311")
+            py_versions = entry.get("python_versions", ["3.11"])
+            return "py" + py_versions[0].replace(".", "") if py_versions else "py311"
+
+        def point_at(entry, key):
+            entry["archive_url"] = (
+                f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/download/{release_tag}/{file_info[key]['filename']}"
+            )
+            entry["archive_size"] = file_info[key]["size"]
+            entry["archive_hash"] = f"sha256:{file_info[key]['hash']}"
+            entry["version"] = file_info[key]["version"]
+
+        # The feed describes THIS release. An entry for a target this release did
+        # not build used to be left pointing at whichever older release last built
+        # it: after v0.9.0 dropped Intel macOS, Intel Mac subscribers were still
+        # offered an August v0.8.6 build of a different curation. Such entries are
+        # now dropped, and a target with no entry yet gets one cloned from a
+        # sibling of the same python version, so a target can also come back.
+        # Nothing is dropped if nothing was uploaded: an empty release says
+        # nothing about which targets exist.
+        covered = set()
+        kept = []
         for entry in index.get("data", []):
             plat_list = entry.get("platforms", [])
             if not plat_list:
+                kept.append(entry)
                 continue
-            # Convert python_versions field (e.g. ["3.11"]) to pyversion key (e.g. "py311")
-            py_versions = entry.get("python_versions", ["3.11"])
-            entry_pyver = "py" + py_versions[0].replace(".", "") if py_versions else "py311"
-            for plat in plat_list:
-                key = (plat, entry_pyver)
-                if key in file_info:
-                    entry["archive_url"] = (
-                        f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/download/{release_tag}/{file_info[key]['filename']}"
-                    )
-                    entry["archive_size"] = file_info[key]["size"]
-                    entry["archive_hash"] = f"sha256:{file_info[key]['hash']}"
-                    entry["version"] = file_info[key]["version"]
+            pyver = entry_pyver(entry)
+            built = [p for p in plat_list if (p, pyver) in file_info]
+            if not built and file_info:
+                print(f"🗑️  Feed: dropping {pyver}/{','.join(plat_list)} (not built by {release_tag}; "
+                      f"was {entry.get('archive_url', '').rsplit('/', 1)[-1] or '?'})")
+                continue
+            if file_info:
+                entry["platforms"] = built
+            if built:
+                point_at(entry, (built[0], pyver))
+                covered.update((p, pyver) for p in built)
+            kept.append(entry)
+        for key in sorted(set(file_info) - covered):
+            plat, pyver = key
+            sibling = next((e for e in kept if e.get("platforms") and entry_pyver(e) == pyver), None)
+            if sibling is None:
+                print(f"⚠️  Feed: no {pyver} entry to model {plat} on; not listed")
+                continue
+            entry = json.loads(json.dumps(sibling))
+            entry["platforms"] = [plat]
+            point_at(entry, key)
+            kept.append(entry)
+            print(f"➕ Feed: added {pyver}/{plat}")
+        index["data"] = kept
         with open(index_path, "w", encoding="utf-8") as f:
             json.dump(index, f, indent=2)
         print(f"index.json updated for release {release_tag}")

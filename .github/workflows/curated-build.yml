@@ -75,7 +75,7 @@ jobs:
       # Where releases and the extension index are published.
       GITHUB_OWNER: ${{ vars.BONSAIPR_OWNER || 'OpeningDesign' }}
       GITHUB_REPO: ${{ vars.BONSAIPR_REPO || 'bonsaiPR' }}
-      # Optional prefix on the published zips, to tell this instance's builds
+      # Optional prefix on the published zips and build branch, to tell this instance's builds
       # from the canonical ones (e.g. "Frankenstein_"). Empty unless the repo
       # variable is set; letters, digits, '.', '_' and '-' only.
       BONSAIPR_ASSET_PREFIX: ${{ vars.BONSAIPR_ASSET_PREFIX || '' }}

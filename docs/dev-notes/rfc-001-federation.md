@@ -128,6 +128,19 @@ both statements, not routine.
   `resolve_base_branch()` decides for every stage: the profile's branch wins,
   the env var may only agree with it, and the workflow exports what the profile
   says instead of hardcoding it.
+- **The first v0.9.0 full run (37148950237) published three wrong things,
+  green.** (1) #8251 hit `fatal: unable to read tree` while being fetched, was
+  never merged, then merged cleanly in the individual re-test and was reported
+  as "conflict with other PRs"; a fetch is now retried once, and a PR that
+  still cannot be fetched is skipped in the re-test (result unknown) and its
+  report row says why. (2) The manifest said `"release": {"tag": null}`: stage
+  2 stopped writing the manifest when stage 0 took it over, and with it the
+  release stamp; stage 2 now stamps the release into stage 0's manifest once
+  the release exists. (3) The feed still offered Intel Mac subscribers an
+  August v0.8.6 build: entries were only ever updated, never dropped, so a
+  target the new base no longer builds kept its old URL. Entries for unbuilt
+  targets are now dropped, and new targets get an entry cloned from a sibling
+  of the same python version, so a target can come back.
 - **`distill` only knew the PRs it had been shown, and never promoted a pick.**
   It found PR heads only under `refs/remotes/pr*`, the refs this pipeline's
   merges create; a working clone keeps them under `refs/prhead/<n>` (3,187 in

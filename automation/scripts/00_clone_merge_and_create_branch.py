@@ -93,13 +93,29 @@ KNOWN_CONFLICT_RESOLUTIONS = {
 
 
 # Generate branch name and report filename with timestamp for on-demand builds
+# The same prefix stage 2 puts on the published zips also names the build branch,
+# so an instance's builds read as its own on the fork too (e.g. "Frankenstein_"
+# gives Frankenstein_build-0.9.0-alpha2610031946). Empty by default.
+BUILD_PREFIX = os.getenv("BONSAIPR_ASSET_PREFIX", "").strip()
+if not re.fullmatch(r"[A-Za-z0-9._-]*", BUILD_PREFIX):
+    raise SystemExit(
+        f"BONSAIPR_ASSET_PREFIX={BUILD_PREFIX!r}: only letters, digits, '.', '_' and '-' "
+        f"are allowed, since it becomes part of a branch name and every download URL"
+    )
+# Build branches this instance creates, with or without the prefix: branches made
+# before the prefix existed still age out of cleanup like the rest.
+BUILD_BRANCH_RE = re.compile(
+    r"^(?:" + re.escape(BUILD_PREFIX) + r")?build-[\d.]+-alpha(\d{10})$"
+)
+
+
 def get_branch_and_report_names():
     # Include hour-minute for multiple builds per day
     current_datetime = datetime.now().strftime("%y%m%d%H%M")
     version = SOURCE_BASE_BRANCH.removeprefix("v")
 
     pyversion = "py311"
-    branch_name = f"build-{version}-alpha{current_datetime}"
+    branch_name = f"{BUILD_PREFIX}build-{version}-alpha{current_datetime}"
     report_name = f"README-bonsaiPR_{pyversion}-{version}-alpha{current_datetime}.txt"
     report_dir = os.getenv("REPORT_PATH", "/home/falken10vdl/bonsaiPRDevel")
     report_path = os.path.join(report_dir, report_name)
@@ -878,15 +894,32 @@ def apply_prs_to_branch(branch_name, prs):
                     ["git", "remote", "add", remote_name, pr_head_repo], check=True
                 )
 
-                # Fetch the PR branch
-                fetch_result = subprocess.run(
-                    ["git", "fetch", remote_name, pr_head_ref],
-                    capture_output=True,
-                    text=True,
-                )
+                # Fetch the PR branch. Retried once: a fetch can fail for reasons
+                # that have nothing to do with the PR (a run lost #8251 to
+                # "fatal: unable to read tree" on a head that fetched fine in the
+                # runs either side of it).
+                for attempt in (1, 2):
+                    fetch_result = subprocess.run(
+                        ["git", "fetch", remote_name, pr_head_ref],
+                        capture_output=True,
+                        text=True,
+                    )
+                    if fetch_result.returncode == 0:
+                        break
+                    if attempt == 1:
+                        last = (fetch_result.stderr.strip().splitlines() or [""])[-1]
+                        print(f"⚠️  Fetch of PR #{pr_number} failed, retrying once: {last}")
+                        time.sleep(5)
 
                 if fetch_result.returncode != 0:
                     print(f"❌ Failed to fetch PR #{pr_number}: {fetch_result.stderr}")
+                    # Marked so it is not re-tested against the base and then
+                    # reported as "conflict with other PRs": it was never merged
+                    # at all, so whether it conflicts is unknown.
+                    pr = dict(pr)
+                    pr["fetch_error"] = (
+                        fetch_result.stderr.strip().splitlines() or ["unknown error"]
+                    )[-1]
                     failed.append(pr)
                     subprocess.run(
                         ["git", "remote", "remove", remote_name], capture_output=True
@@ -1022,6 +1055,12 @@ def test_failed_prs_individually(failed_prs, failure_tracking=None):
             if not pr_head_ref or not pr_head_repo:
                 pr_test_results[pr_number] = None
                 print(f"[SKIP] PR #{pr_number}: Missing head ref/repo for test merge.")
+                continue
+            if pr.get("fetch_error"):
+                # Never merged, so "merges cleanly alone" would wrongly read as
+                # "lost to another PR". Unknown is the honest result.
+                pr_test_results[pr_number] = None
+                print(f"[SKIP] PR #{pr_number}: could not be fetched ({pr['fetch_error']}).")
                 continue
 
             test_branch = f"test-merge-pr-{pr_number}"
@@ -1278,8 +1317,8 @@ def cleanup_old_branches():
         build_branches = []
         for branch in all_branches:
             branch_name = branch["name"]
-            # Match pattern: build-X.X.X-alphaYYMMDDHHMM
-            if re.match(r"^build-[\d.]+-alpha\d{10}$", branch_name):
+            # Match pattern: [prefix]build-X.X.X-alphaYYMMDDHHMM
+            if BUILD_BRANCH_RE.match(branch_name):
                 build_branches.append(branch_name)
 
         if len(build_branches) <= 30:
@@ -1703,7 +1742,9 @@ def generate_report(
                             broken_parts.append(f"`{_cell(bc)}`")
                     broken_by_cell = "<br>".join(broken_parts)
                 conflicting_cell = ""
-                if conflicting_files:
+                if pr.get("fetch_error"):
+                    conflicting_cell = f"⚠️ not merged: could not fetch (`{_cell(pr['fetch_error'])}`)"
+                elif conflicting_files:
                     conflicting_cell = "<br>".join(
                         f"[{_cell(cf)}](https://github.com/{upstream_repo}/blob/{SOURCE_BASE_BRANCH}/{cf})"
                         for cf in conflicting_files
