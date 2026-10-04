@@ -1632,8 +1632,10 @@ def upload_to_falken10vdl():
             print(f"Warning: Could not fetch branch commit hash: {e}")
 
     order_suffix = pr_state.order_meta(merge_order)["suffix"]
+    # The instance prefix also titles the release (e.g. "Frankenstein_BonsaiPR
+    # v0.9.0-alpha261004-7c9cd3f [rec]"), as it names the zips and the branch.
     release_name = (
-        f"BonsaiPR v{version}-alpha{ts_short}-{branch_short_hash} [{order_suffix}]"
+        f"{ASSET_PREFIX}BonsaiPR v{version}-alpha{ts_short}-{branch_short_hash} [{order_suffix}]"
     )
 
     # Build release body with source commit and branch information
