@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 120,
-    "merged": 575,
-    "skipped_conflict": 94,
+    "merged": 576,
+    "skipped_conflict": 93,
     "skipped_draft": 68,
     "total": 857
   },
-  "generated_at": "2026-10-04T00:17:09Z",
+  "generated_at": "2026-10-04T03:16:25Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -5634,14 +5634,14 @@
       "author": "theoryshaw",
       "branch": "join_cut_material_layers",
       "head": "9d6d570",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: key cut linework on the material of the cut, not the layer set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9493"
     },
     "9494": {
       "author": "theoryshaw",
       "branch": "svg_class_per_value",
-      "head": "1f4e5f3",
+      "head": "0a18aca",
       "status": "merged",
       "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9494"
@@ -6988,8 +6988,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610040149",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610040149"
+    "tag": "v0.9.0-alpha2610040448",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610040448"
   },
   "schema": 1
 }

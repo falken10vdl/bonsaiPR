@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 121,
-    "merged": 572,
-    "skipped_conflict": 96,
+    "merged": 573,
+    "skipped_conflict": 95,
     "skipped_draft": 68,
     "total": 857
   },
-  "generated_at": "2026-10-03T23:18:53Z",
+  "generated_at": "2026-10-04T02:18:17Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -5642,8 +5642,8 @@
     "9494": {
       "author": "theoryshaw",
       "branch": "svg_class_per_value",
-      "head": "1f4e5f3",
-      "status": "skipped_conflict",
+      "head": "0a18aca",
+      "status": "merged",
       "title": "Bonsai: emit one SVG class per metadata value, and per layer where cut",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9494"
     },
@@ -6989,8 +6989,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610040050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610040050"
+    "tag": "v0.9.0-alpha2610040350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610040350"
   },
   "schema": 1
 }
