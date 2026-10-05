@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 119,
-    "merged": 581,
-    "skipped_conflict": 89,
+    "merged": 579,
+    "skipped_conflict": 90,
     "skipped_draft": 69,
-    "total": 858
+    "total": 857
   },
-  "generated_at": "2026-10-05T13:19:03Z",
+  "generated_at": "2026-10-05T15:19:51Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -651,7 +651,7 @@
       "author": "brunopostle",
       "branch": "bonsai-drawing-revisions",
       "head": "f105c6f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai, drawing sheets show git tag revision history in titleblocks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7918"
     },
@@ -2003,7 +2003,7 @@
     "8485": {
       "author": "BIMvoice",
       "branch": "bv-3540-tapered-v2",
-      "head": "ef2516a",
+      "head": "562085f",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: implement IfcRevolvedAreaSolidTapered following the revolve arc (#3540)",
@@ -3238,7 +3238,7 @@
       "author": "BIMvoice",
       "branch": "feat-2956-document-revision-history",
       "head": "34bc81b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell.util, Bonsai: expose a document's superseded revision history",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8915"
     },
@@ -5205,7 +5205,7 @@
       "author": "BIMvoice",
       "branch": "fix-9329-load-post-resilience",
       "head": "7ebcee1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Isolate load_post steps from each other's errors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9332"
     },
@@ -5565,14 +5565,6 @@
       "title": "Bonsai: preview drawing SVG in camera viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9472"
     },
-    "9478": {
-      "author": "theoryshaw",
-      "branch": "update_current_style_reload_9477",
-      "head": "17b5bf7",
-      "status": "merged",
-      "title": "Bonsai: reload external styles from .blend in update_current_style",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9478"
-    },
     "9483": {
       "author": "theoryshaw",
       "branch": "radial_arrays",
@@ -5705,8 +5697,8 @@
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
-      "head": "0cd600f",
-      "status": "skipped_conflict",
+      "head": "af6b3f9",
+      "status": "merged",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9555"
     },
@@ -6973,7 +6965,7 @@
       "author": "BIMvoice",
       "branch": "fix/9811-web-costing-sum-keyerror",
       "head": "11e7b8e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix web costing SUM edit KeyError",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9814"
     },
@@ -6995,8 +6987,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610051449",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051449"
+    "tag": "v0.9.0-alpha2610051650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051650"
   },
   "schema": 1
 }

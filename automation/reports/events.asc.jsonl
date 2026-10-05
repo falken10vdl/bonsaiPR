@@ -8189,3 +8189,8 @@
 {"ts": "2026-10-05T10:19:04Z", "order": "ascending", "pr": 9815, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-10-05T10:19:04Z", "order": "ascending", "pr": 9816, "event": "added", "to": "merged"}
 {"ts": "2026-10-05T12:19:17Z", "order": "ascending", "pr": 9500, "event": "updated", "status": "skipped_draft", "from_head": "7eacaa9", "to_head": "2d087c2"}
+{"ts": "2026-10-05T14:19:29Z", "order": "ascending", "pr": 8356, "event": "status", "from": "skipped_conflict", "to": "skipped_draft"}
+{"ts": "2026-10-05T14:19:29Z", "order": "ascending", "pr": 8485, "event": "updated", "status": "failed", "from_head": "ef2516a", "to_head": "562085f"}
+{"ts": "2026-10-05T14:19:29Z", "order": "ascending", "pr": 9478, "event": "removed", "from": "merged"}
+{"ts": "2026-10-05T14:19:29Z", "order": "ascending", "pr": 9555, "event": "updated", "status": "skipped_conflict", "from_head": "0cd600f", "to_head": "af6b3f9"}
+{"ts": "2026-10-05T14:19:29Z", "order": "ascending", "pr": 9761, "event": "removed", "from": "merged"}
