@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 118,
-    "merged": 587,
-    "skipped_conflict": 86,
-    "skipped_draft": 68,
-    "total": 859
+    "merged": 586,
+    "skipped_conflict": 85,
+    "skipped_draft": 69,
+    "total": 858
   },
-  "generated_at": "2026-10-05T10:48:16Z",
+  "generated_at": "2026-10-05T12:48:43Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -1482,8 +1482,8 @@
     "8356": {
       "author": "BIMvoice",
       "branch": "fix-4800-camera-context",
-      "head": "3e6a321",
-      "status": "skipped_conflict",
+      "head": "cef8921",
+      "status": "skipped_draft",
       "title": "Bonsai: store the drawing camera outside the Body context so viewers don't show boxes (#4800)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8356"
     },
@@ -5639,7 +5639,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "7eacaa9",
+      "head": "2d087c2",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -6740,14 +6740,6 @@
       "title": "Expand wildcard attributes in IfcCsv export",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9753"
     },
-    "9761": {
-      "author": "BIMvoice",
-      "branch": "fix/9760-macos-absolute-install-names",
-      "head": "4dbbaa8",
-      "status": "merged",
-      "title": "nix: rewrite absolute macOS install names",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9761"
-    },
     "9765": {
       "author": "theoryshaw",
       "branch": "strip_text_comments",
@@ -7002,8 +6994,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610051220",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051220"
+    "tag": "v0.9.0-alpha2610051420",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051420"
   },
   "schema": 1
 }
