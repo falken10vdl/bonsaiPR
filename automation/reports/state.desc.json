@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 118,
-    "merged": 582,
-    "skipped_conflict": 88,
+    "merged": 585,
+    "skipped_conflict": 85,
     "skipped_draft": 68,
     "total": 856
   },
-  "generated_at": "2026-10-05T02:47:37Z",
+  "generated_at": "2026-10-05T04:45:40Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -365,7 +365,7 @@
       "author": "theoryshaw",
       "branch": "Generalize_ExcludeAnnotation_to_any_IFC_element_2",
       "head": "66a6635",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Generalize ExcludeAnnotation to any IFC element",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7715"
     },
@@ -494,8 +494,8 @@
     "7833": {
       "author": "theoryshaw",
       "branch": "grid_issues",
-      "head": "f3f77be",
-      "status": "skipped_conflict",
+      "head": "582c1a9",
+      "status": "merged",
       "title": "Grid issues",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7833"
     },
@@ -736,7 +736,7 @@
       "author": "theoryshaw",
       "branch": "inset_section_endpoints",
       "head": "8251c95",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
     },
@@ -3735,7 +3735,7 @@
     "9021": {
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
-      "head": "f78170a",
+      "head": "17422a3",
       "status": "merged",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
@@ -6978,8 +6978,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610050419",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050419"
+    "tag": "v0.9.0-alpha2610050618",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050618"
   },
   "schema": 1
 }

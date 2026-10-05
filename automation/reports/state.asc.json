@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 121,
+    "failed": 120,
     "merged": 577,
     "skipped_conflict": 91,
     "skipped_draft": 68,
-    "total": 857
+    "total": 856
   },
-  "generated_at": "2026-10-05T02:18:34Z",
+  "generated_at": "2026-10-05T04:17:24Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -494,7 +494,7 @@
     "7833": {
       "author": "theoryshaw",
       "branch": "grid_issues",
-      "head": "f3f77be",
+      "head": "582c1a9",
       "status": "merged",
       "title": "Grid issues",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7833"
@@ -507,14 +507,6 @@
       "status": "failed",
       "title": "Modified delete_container to delete all things inside it",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7837"
-    },
-    "7839": {
-      "author": "theoryshaw",
-      "branch": "slab_issues",
-      "head": "4ea334e",
-      "status": "merged",
-      "title": "Fix #7838: Fix slab layer direction and thickness offset",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7839"
     },
     "7850": {
       "author": "falken10vdl",
@@ -3743,8 +3735,8 @@
     "9021": {
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
-      "head": "f78170a",
-      "status": "skipped_conflict",
+      "head": "17422a3",
+      "status": "merged",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
     },
@@ -5195,9 +5187,8 @@
     "9327": {
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
-      "head": "fd900ca",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "f377ea4",
+      "status": "merged",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -5792,7 +5783,7 @@
       "author": "RickBrice",
       "branch": "rab_polyline_tool_180_fix",
       "head": "790ad21",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix typed 180 degree polyline angle direction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9593"
     },
@@ -6989,8 +6980,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610050350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050350"
+    "tag": "v0.9.0-alpha2610050550",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050550"
   },
   "schema": 1
 }
