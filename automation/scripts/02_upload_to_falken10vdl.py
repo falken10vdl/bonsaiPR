@@ -1931,6 +1931,13 @@ def upload_to_falken10vdl():
             point_at(entry, key)
             kept.append(entry)
             print(f"➕ Feed: added {pyver}/{plat}")
+        # The instance prefix names the extension in Blender's Get Extensions
+        # list too ("Frankenstein_BonsaiPR"), as it names the zips and release.
+        if ASSET_PREFIX:
+            for entry in kept:
+                name = entry.get("name") or "BonsaiPR"
+                if not name.startswith(ASSET_PREFIX):
+                    entry["name"] = ASSET_PREFIX + name
         index["data"] = kept
         with open(index_path, "w", encoding="utf-8") as f:
             json.dump(index, f, indent=2)
@@ -1958,6 +1965,7 @@ def upload_to_falken10vdl():
             feed = write_profile_feed(
                 index_path, profile_name, owner=GITHUB_OWNER, repo=GITHUB_REPO,
                 maintainer=bonsaipr_profile.load_profile(verbose=False).maintainer,
+                name_prefix=ASSET_PREFIX,
             )
             if feed:
                 to_stage.append(os.path.relpath(feed, repo_dir))

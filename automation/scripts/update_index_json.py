@@ -3,7 +3,7 @@ import json
 import hashlib
 
 def write_profile_feed(index_path, profile_name, out_root=None, description=None,
-                       owner=None, repo=None, maintainer=None):
+                       owner=None, repo=None, maintainer=None, name_prefix=""):
     """Publish a per-curation Blender feed at profiles/<name>/index.json.
 
     RFC-001 s10. The root index.json advertises "BonsaiPR" — whatever this
@@ -34,7 +34,9 @@ def write_profile_feed(index_path, profile_name, out_root=None, description=None
     with open(index_path, "r", encoding="utf-8") as f:
         index = json.load(f)
 
-    label = f"BonsaiPR · {profile_name}"
+    # name_prefix is the instance's asset prefix, so the listing matches the
+    # zips and the release ("Frankenstein_BonsaiPR · openingdesign").
+    label = f"{name_prefix}BonsaiPR · {profile_name}"
     tagline = description or (
         f"Bonsai built from the '{profile_name}' curation of open PRs."
     )

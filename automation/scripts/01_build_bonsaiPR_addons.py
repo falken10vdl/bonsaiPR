@@ -486,6 +486,39 @@ def fix_platform_specific_dependency_downloads():
     except Exception as e:
         log_message(f"Error fixing platform-specific dependency downloads: {e}", "ERROR")
 
+def prefix_extension_name():
+    """Put the instance prefix on the add-on's display name.
+
+    Blender's Add-ons list shows the manifest's `name`, which the bonsai ->
+    bonsaiPR pass leaves as "BonsaiPR" on every instance. With
+    BONSAIPR_ASSET_PREFIX set (e.g. "Frankenstein_") it reads
+    "Frankenstein_BonsaiPR", matching the zips, the release and the feed. Only
+    the display name changes: the `id` and the Python module stay bonsaiPR, so
+    the one-at-a-time rule between builds still holds.
+    """
+    prefix = os.getenv("BONSAIPR_ASSET_PREFIX", "").strip()
+    if not prefix:
+        return
+    manifest = os.path.join(BUILD_BASE_DIR, "src", "bonsaiPR", "bonsaiPR", "blender_manifest.toml")
+    if not os.path.exists(manifest):
+        log_message(f"No manifest at {manifest}; add-on name left unprefixed", "WARNING")
+        return
+    with open(manifest, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    def named(m):
+        name = m.group(1)
+        return f'name = "{name if name.startswith(prefix) else prefix + name}"'
+
+    new_text, n = re.subn(r'^name = "([^"]*)"', named, text, count=1, flags=re.MULTILINE)
+    if not n:
+        log_message("No name line in blender_manifest.toml; add-on name left unprefixed", "WARNING")
+        return
+    with open(manifest, "w", encoding="utf-8") as f:
+        f.write(new_text)
+    log_message(f"Add-on display name: {re.search(r'^name = (.*)$', new_text, re.MULTILINE).group(1)}")
+
+
 def clean_old_bonsai_files():
     """Clean up any leftover 'bonsai_' files from previous builds in the dist directory"""
     dist_dir = os.path.join(BUILD_BASE_DIR, 'src', 'bonsaiPR', 'dist')
@@ -948,6 +981,9 @@ def main():
 
         # Step 2.8: Fix host-platform leakage for non-Linux dependency downloads
         fix_platform_specific_dependency_downloads()
+
+        # Step 2.9: Instance prefix on the add-on's display name
+        prefix_extension_name()
 
         # Step 3: Build addons for specified platforms
         build_ok = build_addons(target_platforms)
