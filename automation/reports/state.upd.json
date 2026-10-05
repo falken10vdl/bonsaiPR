@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 119,
-    "merged": 580,
-    "skipped_conflict": 90,
+    "merged": 582,
+    "skipped_conflict": 88,
     "skipped_draft": 69,
     "total": 858
   },
-  "generated_at": "2026-10-05T17:20:00Z",
+  "generated_at": "2026-10-05T19:19:49Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1442,7 +1442,7 @@
     "8351": {
       "author": "BIMvoice",
       "branch": "fix-4785-drawing-space-filter",
-      "head": "5b35a1e",
+      "head": "3549113",
       "status": "merged",
       "title": "Bonsai: apply the drawing Include filter to IfcSpace elements (#4785)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8351"
@@ -1541,7 +1541,7 @@
       "author": "BIMvoice",
       "branch": "feat-validate-crash-diagnostics",
       "head": "1041b4b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Add ifcopenshell.diagnostics: report the entity most likely behind a crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8378"
     },
@@ -2012,10 +2012,10 @@
     "8488": {
       "author": "BIMvoice",
       "branch": "bv-1541-swept-caps",
-      "head": "955d8c1",
+      "head": "93ba04a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "ifcgeom: produce closed manifold IfcSurfaceCurveSweptAreaSolid sweeps (#1541)",
+      "title": "ifcgeom: drop collinear directrix vertices in sweeps (#1541)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8488"
     },
     "8489": {
@@ -2826,7 +2826,7 @@
     "8764": {
       "author": "BIMvoice",
       "branch": "fix-413-name-template-wgpu",
-      "head": "000fcb4",
+      "head": "a90a0e7",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "IfcConvert: port --name-template to ifcviewer-wgpu, convert coverage to pytest",
@@ -3077,7 +3077,7 @@
     "8879": {
       "author": "BIMvoice",
       "branch": "7472-null-opening-reps",
-      "head": "966920f",
+      "head": "6b8500d",
       "status": "skipped_draft",
       "title": "Bonsai: exclude status-filtered openings from boolean cuts (in-memory)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8879"
@@ -3502,8 +3502,8 @@
     "8964": {
       "author": "BIMvoice",
       "branch": "fix/6118-extract-selected-elements",
-      "head": "d774cf4",
-      "status": "skipped_conflict",
+      "head": "a93c783",
+      "status": "merged",
       "title": "Bonsai: add File menu entry to export selected elements as a new IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8964"
     },
@@ -3776,7 +3776,7 @@
       "author": "BIMvoice",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
       "head": "fa7ca04",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },
@@ -4433,7 +4433,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-missing-project-error",
       "head": "980132a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: fail clearly when IfcProject is missing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9140"
     },
@@ -4673,7 +4673,7 @@
       "author": "BIMvoice",
       "branch": "fix/validate-sqlite-guard",
       "head": "347d10a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "validate: raise cleanly on unsupported sqlite",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9178"
     },
@@ -6121,7 +6121,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8770",
       "head": "5a6625f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "validate.py: flag instantiated measures with no corresponding unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9662"
     },
@@ -6473,7 +6473,7 @@
     "9710": {
       "author": "BIMvoice",
       "branch": "v09/replace-8800",
-      "head": "7e97d80",
+      "head": "1159abc",
       "status": "skipped_draft",
       "title": "Bonsai: per element drawing appearance via assignable CSS classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9710"
@@ -6769,7 +6769,7 @@
     "9775": {
       "author": "BIMvoice",
       "branch": "fix/9770-get-volume-far-from-origin",
-      "head": "54c3192",
+      "head": "fe13ab3",
       "status": "merged",
       "title": "Fix get_volume precision far from the origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9775"
@@ -6995,8 +6995,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610051851",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051851"
+    "tag": "v0.9.0-alpha2610052050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610052050"
   },
   "schema": 1
 }

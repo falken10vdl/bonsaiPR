@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 120,
-    "merged": 578,
-    "skipped_conflict": 91,
+    "merged": 579,
+    "skipped_conflict": 90,
     "skipped_draft": 69,
     "total": 858
   },
-  "generated_at": "2026-10-05T16:20:09Z",
+  "generated_at": "2026-10-05T18:19:15Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -1442,7 +1442,7 @@
     "8351": {
       "author": "BIMvoice",
       "branch": "fix-4785-drawing-space-filter",
-      "head": "5b35a1e",
+      "head": "3549113",
       "status": "merged",
       "title": "Bonsai: apply the drawing Include filter to IfcSpace elements (#4785)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8351"
@@ -2728,7 +2728,7 @@
     "8742": {
       "author": "BIMvoice",
       "branch": "bonsai-7489-units-in-context",
-      "head": "f330b2d",
+      "head": "128c74e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: don't crash the iterator when IfcProject.UnitsInContext is blank on a non-conformant file",
@@ -2826,7 +2826,7 @@
     "8764": {
       "author": "BIMvoice",
       "branch": "fix-413-name-template-wgpu",
-      "head": "000fcb4",
+      "head": "ff15f7d",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "IfcConvert: port --name-template to ifcviewer-wgpu, convert coverage to pytest",
@@ -3077,7 +3077,7 @@
     "8879": {
       "author": "BIMvoice",
       "branch": "7472-null-opening-reps",
-      "head": "966920f",
+      "head": "6b8500d",
       "status": "skipped_draft",
       "title": "Bonsai: exclude status-filtered openings from boolean cuts (in-memory)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8879"
@@ -3502,8 +3502,8 @@
     "8964": {
       "author": "BIMvoice",
       "branch": "fix/6118-extract-selected-elements",
-      "head": "d774cf4",
-      "status": "skipped_conflict",
+      "head": "a93c783",
+      "status": "merged",
       "title": "Bonsai: add File menu entry to export selected elements as a new IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8964"
     },
@@ -6474,7 +6474,7 @@
     "9710": {
       "author": "BIMvoice",
       "branch": "v09/replace-8800",
-      "head": "7e97d80",
+      "head": "1159abc",
       "status": "skipped_draft",
       "title": "Bonsai: per element drawing appearance via assignable CSS classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9710"
@@ -6770,7 +6770,7 @@
     "9775": {
       "author": "BIMvoice",
       "branch": "fix/9770-get-volume-far-from-origin",
-      "head": "54c3192",
+      "head": "fe13ab3",
       "status": "skipped_conflict",
       "title": "Fix get_volume precision far from the origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9775"
@@ -6996,8 +6996,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610051750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051750"
+    "tag": "v0.9.0-alpha2610051950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051950"
   },
   "schema": 1
 }
