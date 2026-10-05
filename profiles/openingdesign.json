@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "openingdesign",
-  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. 22 PRs since merged upstream and 19 closed ones are left out, as are #8971 (overlaps #8200; left out by choice), #9021 (awaiting a design decision) and #9327 (conflicts with v0.9.0). Pins are the heads that merged in a full in-order replay at v0.9.0 d1d6a6b78d (162 of 171), 2026-10-04.",
+  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. 22 PRs since merged upstream and 19 closed ones are left out, as are #8971 (overlaps #8200; left out by choice) and #9021 (awaiting a design decision). Pins are the heads that merged in a full in-order replay at v0.9.0 d1d6a6b78d (163 of 172), 2026-10-04.",
   "maintainer": "OpeningDesign",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
@@ -164,6 +164,7 @@
       9316,
       9318,
       9320,
+      9327,
       9370,
       9401,
       9439,
@@ -339,6 +340,7 @@
     9316,
     9318,
     9320,
+    9327,
     9370,
     8674,
     9401,
@@ -509,6 +511,7 @@
     "9316": "96a4ba818f52d367876ef85eb4131a72c8b9e772",
     "9318": "906251127f2c25d1fdf95ae1de1e800eca7c090e",
     "9320": "1f52598556f3f7381a06f4355912ba63770c292c",
+    "9327": "f377ea4de3f4ab43e116d5543adb9e2f9e14675a",
     "9370": "35c240078bf99963536e12aabf385372aa336b95",
     "9401": "b27e50088014453f64c6dc8fe24111e0a8fd1794",
     "9439": "f1ae549083642bc3b1fb731eb254183f06da4418",
