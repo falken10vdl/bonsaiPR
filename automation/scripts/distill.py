@@ -261,11 +261,19 @@ def release_branch_globs(base):
     return [f"--glob=refs/remotes/{remote}/v[0-9]*"] if remote else []
 
 
+# Paths that are not the change itself. A PR whose code is all on the branch but
+# whose test commit is not (#9044, #9555, #9557: the test came after the pick) is
+# the whole PR in substance, not a part of it.
+NON_CODE = re.compile(r"(^|/)(tests?|docs?)/|(^|/)test_[^/]*\.py$|\.(md|rst|txt)$")
+
+
 def pr_inclusion(repo, base, branch, prs, heads):
     """How much of each PR is on the branch, by patch-id.
 
-    {pr: {"commits": n, "exact": n, "adapted": n, "head": sha}}; "adapted" counts
-    commits matched only by subject (picked onto a different base, hunks moved).
+    {pr: {"commits": n, "exact": n, "adapted": n, "missing_noncode": n, "head": sha}};
+    "adapted" counts commits matched only by subject (picked onto a different
+    base, hunks moved); "missing_noncode" counts commits absent from the branch
+    that touch only tests or docs.
     """
     excl = ["--not", base] + release_branch_globs(base)
     on_branch = patch_ids_in(repo, [branch] + excl)
@@ -286,7 +294,15 @@ def pr_inclusion(repo, base, branch, prs, heads):
             for p, c in mine.items() if p not in on_branch
         }
         adapted = sum(1 for s in subjects.values() if s in branch_subjects)
-        result[int(pr)] = {"commits": len(mine), "exact": exact, "adapted": adapted, "head": head}
+        missing_noncode = 0
+        for c, s in subjects.items():
+            if s in branch_subjects:
+                continue
+            files = files_of_commit(repo, c)
+            if files and all(NON_CODE.search(f) for f in files):
+                missing_noncode += 1
+        result[int(pr)] = {"commits": len(mine), "exact": exact, "adapted": adapted,
+                           "missing_noncode": missing_noncode, "head": head}
     return result
 
 
@@ -633,10 +649,11 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
     # one commit, on the branch byte for byte, and left out of the profile
     # because the rule above refused to promote any cherry-pick. Promote exactly
     # the PRs that are wholly present by patch-id; report those present only by
-    # subject (adapted) or only in part, for a human to decide.
+    # subject (adapted), all but their tests/docs (substance) or only in part,
+    # for a human to decide.
     heads = pr_refs(repo)
     inclusion = pr_inclusion(repo, base, branch, sorted(cherry_pos), heads)
-    included = {"full": [], "adapted": [], "partial": []}
+    included = {"full": [], "adapted": [], "substance": [], "partial": []}
     for pr, inc in sorted(inclusion.items()):
         if pr in order_seq:
             continue  # already selected by its merge; picking from it too is not news
@@ -651,6 +668,8 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
             included["full"].append(entry)
         elif inc["exact"] + inc["adapted"] == inc["commits"]:
             included["adapted"].append(entry)
+        elif inc["exact"] + inc["adapted"] + inc["missing_noncode"] == inc["commits"]:
+            included["substance"].append(entry)
         else:
             included["partial"].append(entry)
     # Insert later positions first so earlier indices stay valid.
@@ -903,6 +922,8 @@ def render(result, top=12):
          "Every commit on the branch, patch-identical: merged by cherry-pick."),
         ("adapted", "PRs picked in full, some commits adapted — review",
          "Every commit present, some only by subject: usually an earlier version of the PR."),
+        ("substance", "PRs picked except their tests/docs — review",
+         "All code present; the missing commits touch only tests or docs, often added after the pick."),
         ("partial", "PRs picked in part — not selected",
          "Some commits taken, not all. Select by hand if the whole PR is wanted."),
     ):
@@ -919,7 +940,8 @@ def render(result, top=12):
                 "  [local ref older than PR head]" if e.get("stale_ref") else "",
             ])
             out.append(
-                f"  #{e['pr']:<6} {e['exact']}+{e['adapted']}/{e['commits']}  "
+                f"  #{e['pr']:<6} {e['exact']}+{e['adapted']}/{e['commits']}"
+                f"{' +' + str(e['missing_noncode']) + ' tests/docs' if e.get('missing_noncode') else ''}  "
                 f"{(e.get('title') or '')[:58]}{flags}"
             )
         if len(rows) > top:

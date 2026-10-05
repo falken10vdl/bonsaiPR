@@ -1,7 +1,7 @@
 # RFC-001 — federated curated builds
 
 **Branch:** `feat/rfc-001-federation` · **PR:** falken10vdl/bonsaiPR#11 (draft)
-**Status as of:** 2026-08-09
+**Status as of:** 2026-10-04
 
 The **engineering log for this subsystem** — permanent, and rewritten as things
 change, rather than a branch note deleted when its PR merges. Federation will
@@ -46,7 +46,12 @@ stack collisions were fixed in the PR branches themselves (#8083, #8201,
 #7940/#8241, #8319, #8242, #8171, #9494) and one by order (#8228 over #7813,
 which now drops). Publishes `state.rec.json`, `events.rec.jsonl`,
 `rivals.rec.json`, `pinned.rec.json`, `delta.rec.md`, and a curated Blender feed
-at `profiles/openingdesign/index.json`.
+at `profiles/openingdesign/index.json`. By 2026-10-04 the profile had grown to
+172 PRs (163 pins). Most of the increase came from a second `distill` pass, plus
+more collisions fixed in PR branches. Full run 37258017497 merged **163**: 8
+failed and need an author rebase, and #7813 drops by design. #8971 is left out on
+purpose because it overlaps #8200 across a whole function. Instance artefacts
+carry the `Frankenstein_` prefix (`BONSAIPR_ASSET_PREFIX`).
 
 **Nothing runs on a timer, and that is deliberate.** An hourly manifest was tried
 and removed: `streak.builds` is an artifact of run frequency rather than a
@@ -154,8 +159,12 @@ both statements, not routine.
   Now `refs/prhead/*` and `refs/pull/*/head` are scanned too; a PR whose every
   own commit (beyond the `v*` release branches) is on the branch by patch-id
   is selected, at the position of its last picked commit; "all present but
-  some adapted" and "partial" are listed for review, not selected. 22 open PRs
-  came back that way. A PR's commits can also arrive *inside* another merged
+  some adapted" (usually an earlier version of the PR) and "partial" are
+  listed for review, not selected. 22 open PRs came back that way. A third
+  review bucket, "substance", separates PRs whose code is all there but whose
+  test or doc commits are not, usually because they were added after the pick
+  (#9044, #9555, #9557). Before, these were "partial" and looked like a partial
+  pick. A PR's commits can also arrive *inside* another merged
   PR (#8061/#8062/#8064 rode in on #8083): those are not cherry-picks and the
   host PR already carries them, so a whole-branch comparison overcounts.
 - **A sidecar skipped when empty is a stale sidecar.** `write_pinned()` and
