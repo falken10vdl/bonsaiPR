@@ -5682,3 +5682,18 @@
 {"ts": "2026-10-05T05:00:35Z", "order": "upd", "pr": 9555, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-10-05T05:14:01Z", "order": "by-updated", "pr": 7833, "event": "updated", "status": "merged", "from_head": "f3f77be", "to_head": "582c1a9"}
 {"ts": "2026-10-05T05:14:01Z", "order": "by-updated", "pr": 9021, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-05T09:04:45Z", "order": "upd", "pr": 8000, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-05T09:04:45Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-05T09:04:45Z", "order": "upd", "pr": 8915, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-05T09:04:45Z", "order": "upd", "pr": 9047, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-05T09:04:45Z", "order": "upd", "pr": 9210, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-05T09:04:45Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-05T09:18:11Z", "order": "by-updated", "pr": 7918, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-05T09:18:11Z", "order": "by-updated", "pr": 8440, "event": "updated", "status": "merged", "from_head": "e8f3a12", "to_head": "ce45fd1"}
+{"ts": "2026-10-05T09:18:11Z", "order": "by-updated", "pr": 8915, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-05T09:18:11Z", "order": "by-updated", "pr": 9062, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-05T09:18:11Z", "order": "by-updated", "pr": 9332, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-05T09:18:11Z", "order": "by-updated", "pr": 9555, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-05T09:18:11Z", "order": "by-updated", "pr": 9814, "event": "added", "to": "merged"}
+{"ts": "2026-10-05T09:18:11Z", "order": "by-updated", "pr": 9815, "event": "added", "to": "merged"}
+{"ts": "2026-10-05T09:18:11Z", "order": "by-updated", "pr": 9816, "event": "added", "to": "merged"}

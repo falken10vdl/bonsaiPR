@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 119,
-    "merged": 580,
-    "skipped_conflict": 89,
+    "merged": 582,
+    "skipped_conflict": 90,
     "skipped_draft": 68,
-    "total": 856
+    "total": 859
   },
-  "generated_at": "2026-10-05T05:14:01Z",
+  "generated_at": "2026-10-05T09:18:11Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -651,7 +651,7 @@
       "author": "brunopostle",
       "branch": "bonsai-drawing-revisions",
       "head": "f105c6f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai, drawing sheets show git tag revision history in titleblocks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7918"
     },
@@ -1814,7 +1814,7 @@
     "8440": {
       "author": "BIMvoice",
       "branch": "fix-6613-camera-body-representation",
-      "head": "e8f3a12",
+      "head": "ce45fd1",
       "status": "merged",
       "title": "Bonsai: fail gracefully when a drawing has no camera geometry (#6613)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8440"
@@ -3238,7 +3238,7 @@
       "author": "BIMvoice",
       "branch": "feat-2956-document-revision-history",
       "head": "34bc81b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.util, Bonsai: expose a document's superseded revision history",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8915"
     },
@@ -3928,7 +3928,7 @@
       "author": "BIMvoice",
       "branch": "fix-6344-gross-weight-profile-mass-openings",
       "head": "fd50dbd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: fix GrossWeight ignoring authored profile mass on voided elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9062"
     },
@@ -5205,7 +5205,7 @@
       "author": "BIMvoice",
       "branch": "fix-9329-load-post-resilience",
       "head": "7ebcee1",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Isolate load_post steps from each other's errors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9332"
     },
@@ -5706,7 +5706,7 @@
       "author": "theoryshaw",
       "branch": "sheet_template_api",
       "head": "0cd600f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9555"
     },
@@ -6976,11 +6976,35 @@
       "status": "merged",
       "title": "measure tool: fix text not showing when polyline has only two verts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9810"
+    },
+    "9814": {
+      "author": "BIMvoice",
+      "branch": "fix/9811-web-costing-sum-keyerror",
+      "head": "11e7b8e",
+      "status": "merged",
+      "title": "Bonsai: fix web costing SUM edit KeyError",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9814"
+    },
+    "9815": {
+      "author": "BIMvoice",
+      "branch": "fix/9808-covering-native-axis",
+      "head": "fd8e2ba",
+      "status": "merged",
+      "title": "Honour native layer direction for coverings",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9815"
+    },
+    "9816": {
+      "author": "BIMvoice",
+      "branch": "fix/9812-web-costing-stale-title",
+      "head": "af631dd",
+      "status": "merged",
+      "title": "Bonsai: refresh web costing title on Load",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9816"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610050646",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050646"
+    "tag": "v0.9.0-alpha2610051049",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051049"
   },
   "schema": 1
 }
