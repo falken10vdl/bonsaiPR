@@ -215,6 +215,12 @@ both statements, not routine.
   (`feat/rfc-001-federation`, for PR #11) and `OpeningDesign/bonsaiPR` (`main`,
   which is what actually runs). The fork also drifts on its own because its own
   workflow commits reports to it — expect to merge `origin/main` before pushing.
+- **A PR that merges upstream quietly leaves the build.** It is no longer open,
+  so stage 0 never sees it, while its pin stays in the profile. #7839 merged into
+  v0.9.0 between two runs: the manifest said 162 merged against 163 pins, and it
+  read like a lost PR. Its code is in the base, so nothing is missing. Remove it
+  from `select.prs`, `order_seq` and `pin` when that happens, and check
+  `gh pr view <n> --json state,mergedAt` before chasing a count that is one low.
 
 ---
 
