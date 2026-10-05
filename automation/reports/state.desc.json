@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 119,
+    "failed": 118,
     "merged": 582,
     "skipped_conflict": 88,
     "skipped_draft": 68,
-    "total": 857
+    "total": 856
   },
-  "generated_at": "2026-10-05T00:51:03Z",
+  "generated_at": "2026-10-05T02:47:37Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -291,7 +291,7 @@
       "author": "theoryshaw",
       "branch": "extend-profiles-and-extrusions",
       "head": "21bfb66",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "closes #3565 - extend profiles and basic extrusions to 3D cursor with…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7648"
     },
@@ -507,14 +507,6 @@
       "status": "failed",
       "title": "Modified delete_container to delete all things inside it",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7837"
-    },
-    "7839": {
-      "author": "theoryshaw",
-      "branch": "slab_issues",
-      "head": "4ea334e",
-      "status": "merged",
-      "title": "Fix #7838: Fix slab layer direction and thickness offset",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7839"
     },
     "7850": {
       "author": "falken10vdl",
@@ -5194,9 +5186,8 @@
     "9327": {
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
-      "head": "fd900ca",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "f377ea4",
+      "status": "skipped_conflict",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -5696,7 +5687,7 @@
     "9523": {
       "author": "theoryshaw",
       "branch": "extend_to_cursor_base_levels_7950",
-      "head": "a5a917c",
+      "head": "1f8a639",
       "status": "merged",
       "title": "fix(bonsai): extend walls to cursor from any base level",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
@@ -5713,7 +5704,7 @@
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
-      "head": "9aa9daf",
+      "head": "0cd600f",
       "status": "skipped_conflict",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9555"
@@ -6987,8 +6978,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610050221",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050221"
+    "tag": "v0.9.0-alpha2610050419",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050419"
   },
   "schema": 1
 }
