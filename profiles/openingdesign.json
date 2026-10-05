@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "openingdesign",
-  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. 22 PRs since merged upstream and 19 closed ones are left out, as are 7 picked PRs that still collide (being fixed). Pins are the heads that merged in a full in-order replay at v0.9.0 d1d6a6b78d (158 of 167), 2026-10-04.",
+  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. 22 PRs since merged upstream and 19 closed ones are left out, as are #8971 (overlaps #8200; left out by choice), #9021 (awaiting a design decision) and #9327 (conflicts with v0.9.0). Pins are the heads that merged in a full in-order replay at v0.9.0 d1d6a6b78d (162 of 171), 2026-10-04.",
   "maintainer": "OpeningDesign",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
@@ -84,6 +84,7 @@
       8253,
       8257,
       8258,
+      8263,
       8264,
       8266,
       8268,
@@ -175,7 +176,10 @@
       9507,
       9515,
       9517,
+      9523,
+      9555,
       9557,
+      9589,
       9765
     ],
     "authors": []
@@ -350,6 +354,10 @@
     9507,
     9515,
     9517,
+    9523,
+    8263,
+    9589,
+    9555,
     9557,
     9765,
     8928,
@@ -375,7 +383,7 @@
     "7769": "2b8d9e923d9bf6643d780d78eb169a87453a2561",
     "7781": "07203332fc6db29cf535c25bb06583885628f428",
     "7795": "f4ba7a01dc9d5c394e1cad9ecab4491fe7595620",
-    "7798": "37982ed088278aebe918848a54ee0b0a5d2d5ab0",
+    "7798": "1cd9f2322ac52c5b729ca97788b047122919d01a",
     "7807": "f2d1b5e58dc325cd412dfb7aae51c640f9a39172",
     "7818": "07814a02f327c7db52725839e34858346381eb96",
     "7833": "f3f77bec5ea82685de2e8dced774b09f5e93dcbe",
@@ -421,6 +429,7 @@
     "8253": "a670faa1f0790756eadd6f036532db1639ef311a",
     "8257": "8b5b2fb387750ae4ff01b98e579494cfbb9e22e2",
     "8258": "6bfe66017a378ba9d68d4f4c2bf790c5a733572f",
+    "8263": "65b08c389f19c29defa628b1f184fdb4f188ca4e",
     "8264": "dd3d4c1dad74daf0d5e0b9a0f336d3078625e36d",
     "8266": "b5a4c5b86d2cb48ef93592b2835ff35bb6dcb50c",
     "8268": "841edcec80d0d44d073287b651ab9195b3539d03",
@@ -512,7 +521,10 @@
     "9507": "b93fcfac4498b4e18c7413fab4deaddf4ccba2ba",
     "9515": "cc64214566338b9496314c39e3e2054b87d3cf9e",
     "9517": "7b55b55990f2398466f7cc6609ffa8df1dc1ca0e",
+    "9523": "1f8a63957f2f1927606bfa2196f478a49fbf7512",
+    "9555": "0cd600f7bcd9d0c7b688b51ecac27d8e70bbcd54",
     "9557": "aef65718f9b53bb2678d254f34f1bfc83c7dbc7e",
+    "9589": "e8ddb25b0ce45aea5f385762c43084a08043f07b",
     "9765": "c0adc2485cd736ddb408819dd62c6153ec8d80d1"
   }
 }
