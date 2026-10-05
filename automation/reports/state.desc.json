@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 118,
-    "merged": 585,
+    "merged": 586,
     "skipped_conflict": 85,
     "skipped_draft": 69,
-    "total": 857
+    "total": 858
   },
-  "generated_at": "2026-10-05T14:49:20Z",
+  "generated_at": "2026-10-05T16:50:04Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -1931,7 +1931,7 @@
     "8471": {
       "author": "BIMvoice",
       "branch": "bv-1231-svg-storey-global-z",
-      "head": "2bfcd89",
+      "head": "dcbfd18",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: SVG cut plane from storey global placement, not Elevation attribute (#1231)",
@@ -6983,11 +6983,19 @@
       "status": "merged",
       "title": "Bonsai: refresh web costing title on Load",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9816"
+    },
+    "9819": {
+      "author": "BIMvoice",
+      "branch": "docs/api-examples-4",
+      "head": "ec06b59",
+      "status": "merged",
+      "title": "docs: fix 23 api docstring examples that fail as written",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9819"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610051620",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051620"
+    "tag": "v0.9.0-alpha2610051821",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051821"
   },
   "schema": 1
 }
