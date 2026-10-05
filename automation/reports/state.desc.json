@@ -7,7 +7,7 @@
     "skipped_draft": 69,
     "total": 858
   },
-  "generated_at": "2026-10-05T18:49:16Z",
+  "generated_at": "2026-10-05T20:50:31Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2012,10 +2012,10 @@
     "8488": {
       "author": "BIMvoice",
       "branch": "bv-1541-swept-caps",
-      "head": "955d8c1",
+      "head": "93ba04a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "ifcgeom: produce closed manifold IfcSurfaceCurveSweptAreaSolid sweeps (#1541)",
+      "title": "ifcgeom: drop collinear directrix vertices in sweeps (#1541)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8488"
     },
     "8489": {
@@ -2826,7 +2826,7 @@
     "8764": {
       "author": "BIMvoice",
       "branch": "fix-413-name-template-wgpu",
-      "head": "ff15f7d",
+      "head": "a90a0e7",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "IfcConvert: port --name-template to ifcviewer-wgpu, convert coverage to pytest",
@@ -6994,8 +6994,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610052020",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610052020"
+    "tag": "v0.9.0-alpha2610052220",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610052220"
   },
   "schema": 1
 }
