@@ -95,6 +95,47 @@ def _reports_publish_branch(repo_dir):
         return "main"
 
 
+def feed_url():
+    """The Blender feed this release is listed in, as a subscriber would paste it.
+
+    The curation's own feed when a profile is set (written beside the root
+    index.json by write_profile_feed), else the root one; on the branch stage 2
+    commits index.json to, which is the one checked out.
+    """
+    repo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    try:
+        branch = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            cwd=repo_dir, capture_output=True, text=True,
+        ).stdout.strip()
+    except Exception:
+        branch = ""
+    if not branch or branch == "HEAD":
+        branch = "main"
+    profile = os.getenv("BONSAIPR_PROFILE", "").strip()
+    path = f"profiles/{profile}/index.json" if profile else "index.json"
+    return f"https://raw.githubusercontent.com/{GITHUB_OWNER}/{GITHUB_REPO}/{branch}/{path}"
+
+
+def install_section():
+    """How to subscribe in Blender, so updates arrive without downloading zips."""
+    return f"""## 🧩 Install in Blender
+
+Add this build's feed as a remote extension repository (Blender 4.2 or later), and Blender offers each new build as an update:
+
+```
+{feed_url()}
+```
+
+1. **Edit → Preferences → Get Extensions**. Allow online access if asked.
+2. Open the **Repositories** dropdown (top right), click **+**, then **Add Remote Repository**.
+3. Paste the URL, tick **Check for Updates on Startup**, and click **Create**.
+4. Search `bonsai` and **Install** BonsaiPR.
+5. In **Add-ons**, enable Bonsai or BonsaiPR, never both, then restart Blender.
+
+"""
+
+
 def get_build_paths():
     """Get the paths for built addons"""
     # Updated to use the actual build directory created by 01_build script
@@ -1253,7 +1294,7 @@ def generate_release_body(
         # Generate markdown description
         release_body = f"""This is an automated build of BonsaiPR with the latest pull requests merged from the IfcOpenShell repository.
 
-{merge_order_banner}{downloads_section}
+{merge_order_banner}{install_section()}{downloads_section}
 ## 📊 Build Statistics
 - **Total PRs Processed**: {total_prs}
 - **Successfully Merged**: {successfully_merged}
@@ -1915,7 +1956,8 @@ def upload_to_falken10vdl():
             except ImportError:
                 from automation.scripts.update_index_json import write_profile_feed
             feed = write_profile_feed(
-                index_path, profile_name, owner=GITHUB_OWNER, repo=GITHUB_REPO
+                index_path, profile_name, owner=GITHUB_OWNER, repo=GITHUB_REPO,
+                maintainer=bonsaipr_profile.load_profile(verbose=False).maintainer,
             )
             if feed:
                 to_stage.append(os.path.relpath(feed, repo_dir))

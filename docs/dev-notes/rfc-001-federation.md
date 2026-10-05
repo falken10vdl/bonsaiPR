@@ -222,6 +222,13 @@ both statements, not routine.
   Stage 2 now rewrites the names in the report before building the release body,
   so the release body, the committed archive and the attached .txt all use the
   published names.
+- **The curated feed credited the canonical publisher.** Feed entries are
+  updated in place, and their `maintainer` was seeded by falken10vdl's
+  index.json, so OpeningDesign's feed told Blender the build was his. The
+  curated feed now takes the profile's `maintainer`. The root feed is unchanged.
+  The 3.11 builds' missing `blender_version_max` is *not* a defect: upstream's
+  own unstable feed declares them the same way (3.11 from Blender 4.2 with no
+  maximum, 3.13 from 5.1).
 - **A PR that merges upstream quietly leaves the build.** It is no longer open,
   so stage 0 never sees it, while its pin stays in the profile. #7839 merged into
   v0.9.0 between two runs: the manifest said 162 merged against 163 pins, and it

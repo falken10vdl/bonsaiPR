@@ -3,7 +3,7 @@ import json
 import hashlib
 
 def write_profile_feed(index_path, profile_name, out_root=None, description=None,
-                       owner=None, repo=None):
+                       owner=None, repo=None, maintainer=None):
     """Publish a per-curation Blender feed at profiles/<name>/index.json.
 
     RFC-001 s10. The root index.json advertises "BonsaiPR" — whatever this
@@ -17,6 +17,11 @@ def write_profile_feed(index_path, profile_name, out_root=None, description=None
     alternatives, not companions — the same one-at-a-time rule that already
     applies between Bonsai and BonsaiPR applies between two curations, because
     they are the same Python module. Distinct ids would imply they can coexist.
+
+    `maintainer` is the curation's (the profile's `maintainer`). Without it the
+    entries keep whatever the root feed carries, which on a second instance is
+    the canonical publisher's name: Blender would credit, and send problem
+    reports to, someone who did not curate the build.
 
     Returns the path written, or None.
     """
@@ -40,6 +45,8 @@ def write_profile_feed(index_path, profile_name, out_root=None, description=None
         entry["name"] = label
         entry["tagline"] = tagline
         entry["website"] = f"https://github.com/{owner}/{repo}/blob/main/profiles/{profile_name}.json"
+        if maintainer:
+            entry["maintainer"] = maintainer
 
     out_root = out_root or os.path.join(os.path.dirname(index_path), "profiles")
     out_dir = os.path.join(out_root, profile_name)
