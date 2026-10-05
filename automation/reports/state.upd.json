@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 120,
-    "merged": 578,
-    "skipped_conflict": 91,
+    "merged": 579,
+    "skipped_conflict": 90,
     "skipped_draft": 68,
     "total": 857
   },
-  "generated_at": "2026-10-04T23:24:08Z",
+  "generated_at": "2026-10-05T01:21:48Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -445,7 +445,7 @@
     "7798": {
       "author": "theoryshaw",
       "branch": "ManualDrawingReference",
-      "head": "37982ed",
+      "head": "1cd9f23",
       "status": "merged",
       "title": "Manual drawing reference",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7798"
@@ -1035,7 +1035,7 @@
       "author": "BIMvoice",
       "branch": "fix/add-reference-image-kwarg-8130",
       "head": "65b08c3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: drop stale kwarg when invoking add_reference_image (#8130)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
     },
@@ -4521,7 +4521,7 @@
       "author": "BIMvoice",
       "branch": "fix/bonsai-optional-attr-read-guards",
       "head": "d30407e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: guard optional attrs in two read paths",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9153"
     },
@@ -5782,8 +5782,8 @@
     "9589": {
       "author": "theoryshaw",
       "branch": "v09/fix-9588-add-aggregate-linked-aggregates",
-      "head": "e03ccbc",
-      "status": "skipped_conflict",
+      "head": "e8ddb25",
+      "status": "merged",
       "title": "Collect whole aggregates in bim.add_aggregate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9589"
     },
@@ -6988,8 +6988,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610050054",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050054"
+    "tag": "v0.9.0-alpha2610050252",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050252"
   },
   "schema": 1
 }

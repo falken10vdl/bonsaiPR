@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 121,
-    "merged": 575,
-    "skipped_conflict": 93,
+    "merged": 576,
+    "skipped_conflict": 92,
     "skipped_draft": 68,
     "total": 857
   },
-  "generated_at": "2026-10-04T22:22:29Z",
+  "generated_at": "2026-10-05T00:20:05Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -445,7 +445,7 @@
     "7798": {
       "author": "theoryshaw",
       "branch": "ManualDrawingReference",
-      "head": "37982ed",
+      "head": "1cd9f23",
       "status": "merged",
       "title": "Manual drawing reference",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7798"
@@ -1035,7 +1035,7 @@
       "author": "BIMvoice",
       "branch": "fix/add-reference-image-kwarg-8130",
       "head": "65b08c3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: drop stale kwarg when invoking add_reference_image (#8130)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
     },
@@ -5331,7 +5331,7 @@
     "9370": {
       "author": "theoryshaw",
       "branch": "fix-sheet-presentation-attr-ids",
-      "head": "c2e6cd4",
+      "head": "35c2400",
       "status": "skipped_conflict",
       "title": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock (#9369)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9370"
@@ -5562,8 +5562,8 @@
     "9469": {
       "author": "theoryshaw",
       "branch": "pr/remove-drawing-stale-data-id",
-      "head": "6e84db2",
-      "status": "skipped_conflict",
+      "head": "da219ed",
+      "status": "merged",
       "title": "Bonsai: find a sheet's drawing by path when its data-id is stale",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9469"
     },
@@ -6339,7 +6339,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8804",
       "head": "ff2b52e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: position drawings on sheets without leaving Blender",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9688"
     },
@@ -6989,8 +6989,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610042350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610042350"
+    "tag": "v0.9.0-alpha2610050150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610050150"
   },
   "schema": 1
 }
