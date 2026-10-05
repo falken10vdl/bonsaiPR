@@ -215,6 +215,13 @@ both statements, not routine.
   (`feat/rfc-001-federation`, for PR #11) and `OpeningDesign/bonsaiPR` (`main`,
   which is what actually runs). The fork also drifts on its own because its own
   workflow commits reports to it — expect to merge `origin/main` before pushing.
+- **The report named zips the release does not have.** Stage 1 lists the files
+  as they sit on disk (`bonsaiPR_py311-0.9.0-alpha261005-…`); stage 2 uploads
+  them renamed, with a 10-digit timestamp and any instance prefix. The canonical
+  build had the short timestamp all along. The prefix just made it visible.
+  Stage 2 now rewrites the names in the report before building the release body,
+  so the release body, the committed archive and the attached .txt all use the
+  published names.
 - **A PR that merges upstream quietly leaves the build.** It is no longer open,
   so stage 0 never sees it, while its pin stays in the profile. #7839 merged into
   v0.9.0 between two runs: the manifest said 162 merged against 163 pins, and it

@@ -458,7 +458,41 @@ def upload_asset_to_release(release_id, file_path, asset_name):
         return False
 
 
-def append_upload_info_to_readme(report_file, release_url, tag_name, addon_files):
+def publish_names_in_report(report_file, addon_files, timestamp_10, target_version):
+    """Rename the zips the report lists to the names they are published under.
+
+    Stage 1 writes the report with the files as they sit on disk
+    (`bonsaiPR_py311-0.9.0-alpha261005-linux-x64.zip`); the release carries them
+    renamed (`Frankenstein_bonsaiPR_py311-0.9.0-alpha2610050308-linux-x64.zip`).
+    Rewritten once, before the release body, the committed archive and the
+    attached .txt are all made from it, so a reader can find each file it names.
+    """
+    if not report_file or not os.path.exists(report_file):
+        return
+    with open(report_file, "r", encoding="utf-8") as f:
+        text = f.read()
+    renamed = text
+    for addon_file in addon_files:
+        disk_name = os.path.basename(addon_file)
+        asset_name = normalize_asset_name(
+            disk_name, timestamp_10=timestamp_10, target_version=target_version
+        )
+        if asset_name == disk_name:
+            continue
+        # Not preceded by a name character: a name already published (with the
+        # prefix in front) is left alone, so a second pass changes nothing.
+        renamed = re.sub(
+            r"(?<![\w.-])" + re.escape(disk_name), lambda _m: asset_name, renamed
+        )
+    if renamed != text:
+        with open(report_file, "w", encoding="utf-8") as f:
+            f.write(renamed)
+        print(f"✅ Report now lists the zips by their published names")
+
+
+def append_upload_info_to_readme(
+    report_file, release_url, tag_name, addon_files, timestamp_10=None
+):
     """Append upload information to the existing README report file"""
     if not report_file or not os.path.exists(report_file):
         print("⚠️ No existing README file found, skipping upload info append")
@@ -479,7 +513,11 @@ def append_upload_info_to_readme(report_file, release_url, tag_name, addon_files
 
         f.write(f"## 📦 Uploaded Assets\n\n")
         for addon_file in sorted(addon_files):
-            filename = os.path.basename(addon_file)
+            filename = normalize_asset_name(
+                os.path.basename(addon_file),
+                timestamp_10=timestamp_10,
+                target_version=parse_version_from_tag(tag_name),
+            )
             size_mb = os.path.getsize(addon_file) / (1024 * 1024)
             f.write(f"- ✅ {filename} ({size_mb:.1f} MB)\n")
 
@@ -1652,6 +1690,10 @@ def upload_to_falken10vdl():
             f"Branch used to create this release: [{branch_name}]({branch_url})\n"
         )
 
+    publish_names_in_report(
+        report_file, addon_files, timestamp_from_readme, parse_version_from_tag(tag_name)
+    )
+
     release_body = (
         release_body_header
         + "\n"
@@ -1708,7 +1750,7 @@ def upload_to_falken10vdl():
 
     # Append upload information to the existing README file
     readme_path = append_upload_info_to_readme(
-        report_file, release_url, tag_name, addon_files
+        report_file, release_url, tag_name, addon_files, timestamp_from_readme
     )
 
     # Upload the complete README as an asset
