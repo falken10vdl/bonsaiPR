@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 859
   },
-  "generated_at": "2026-10-05T09:18:11Z",
+  "generated_at": "2026-10-05T11:18:08Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -5640,7 +5640,7 @@
     "9500": {
       "author": "EstebanDugueperoux2",
       "branch": "feat/UseConanV0.9.0",
-      "head": "7eacaa9",
+      "head": "2d087c2",
       "status": "skipped_draft",
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
@@ -7003,8 +7003,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610051049",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051049"
+    "tag": "v0.9.0-alpha2610051249",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610051249"
   },
   "schema": 1
 }
