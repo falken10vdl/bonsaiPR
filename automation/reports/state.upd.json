@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 119,
-    "merged": 590,
-    "skipped_conflict": 83,
+    "failed": 123,
+    "merged": 586,
+    "skipped_conflict": 87,
     "skipped_draft": 69,
-    "total": 861
+    "total": 865
   },
-  "generated_at": "2026-10-06T12:17:33Z",
+  "generated_at": "2026-10-06T14:21:54Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1123,7 +1123,8 @@
       "author": "BIMvoice",
       "branch": "feat-ifcpatch-cli-entrypoint-6436",
       "head": "aef735b",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcpatch: add console script entry point (#6436)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8281"
     },
@@ -4183,7 +4184,8 @@
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-docstring-argument-mismatches",
       "head": "0f06298",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcpatch: fix wrong docstrings that break copy-pasted examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9098"
     },
@@ -5254,7 +5256,7 @@
       "author": "BIMvoice",
       "branch": "docs-drawing-stylesheet-guide",
       "head": "f2b1c8c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "docs: document drawing stylesheets and the override pattern",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9358"
     },
@@ -5414,7 +5416,7 @@
     "9404": {
       "author": "BIMvoice",
       "branch": "fix-9376-earthworkscut-qto",
-      "head": "ce69566",
+      "head": "d4e2a44",
       "status": "merged",
       "title": "ifc5d: evaluate IfcEarthworksCut quantities against the host, not the subtraction solid (#9376)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9404"
@@ -5423,7 +5425,7 @@
       "author": "BIMvoice",
       "branch": "fix-9352-query-comparison",
       "head": "bf472e3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: keep the comparison operator when a query facet round-trips",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9405"
     },
@@ -5471,7 +5473,7 @@
       "author": "BIMvoice",
       "branch": "fix/schedule-import-path-validation-9409",
       "head": "9f60f4a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: report a clear error when a schedule import path is not a file (#9409)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9425"
     },
@@ -5479,7 +5481,7 @@
       "author": "BIMvoice",
       "branch": "packaging-runtime-plugin-collection",
       "head": "5180940",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "packaging: collect underscore-prefixed runtime plugins in every pipeline",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9427"
     },
@@ -5487,7 +5489,7 @@
       "author": "BIMvoice",
       "branch": "fix-9426-slab-empty-polyline",
       "head": "d2755da",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: drawing a slab with an empty polyline crashes (#9426)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9428"
     },
@@ -6936,22 +6938,6 @@
       "title": "docs: make 26 api docstring examples self-contained",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9800"
     },
-    "9802": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ruff-0.16.9",
-      "head": "e1bb433",
-      "status": "merged",
-      "title": "build(deps): bump ruff from 0.16.8 to 0.16.9",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9802"
-    },
-    "9803": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/pyodide-build-0.39.1",
-      "head": "fb143e9",
-      "status": "merged",
-      "title": "build(deps): bump pyodide-build from 0.39.0 to 0.39.1",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9803"
-    },
     "9810": {
       "author": "brunoperdigao",
       "branch": "fix-measure-tool",
@@ -7016,11 +7002,61 @@
       "status": "merged",
       "title": "Bonsai: load settings before swept disk reload",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9825"
+    },
+    "9828": {
+      "author": "BIMvoice",
+      "branch": "fix/9827-rocksdb-guid-write",
+      "head": "07be61f",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix by_guid for GlobalIds written to RocksDB",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9828"
+    },
+    "9829": {
+      "author": "BIMvoice",
+      "branch": "backport/9822-rocksdb-guid-index",
+      "head": "fdbd5df",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Write GlobalId index when serializing to RocksDB",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9829"
+    },
+    "9834": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/cargo/src/bonsaiviewer-autodesk/rustls-0.23.45",
+      "head": "b64d835",
+      "status": "merged",
+      "title": "build(deps): bump rustls from 0.23.40 to 0.23.45 in /src/bonsaiviewer-autodesk",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9834"
+    },
+    "9835": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/source-map-js-1.2.2",
+      "head": "df987a6",
+      "status": "merged",
+      "title": "build(deps-dev): bump source-map-js from 1.2.1 to 1.2.2 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9835"
+    },
+    "9836": {
+      "author": "Andrej730",
+      "branch": "test-shared-packages",
+      "head": "a099481",
+      "status": "merged",
+      "title": "Test loading of all packaged plugins",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9836"
+    },
+    "9837": {
+      "author": "BIMvoice",
+      "branch": "fix/9831-ifctester-empty-basename",
+      "head": "e09a8e9",
+      "status": "merged",
+      "title": "ifctester: reject empty mandatory facet values",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9837"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610061348",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610061348"
+    "tag": "v0.9.0-alpha2610061551",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610061551"
   },
   "schema": 1
 }
