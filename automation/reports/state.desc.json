@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 118,
-    "merged": 587,
-    "skipped_conflict": 85,
-    "skipped_draft": 69,
-    "total": 859
+    "failed": 119,
+    "merged": 590,
+    "skipped_conflict": 83,
+    "skipped_draft": 68,
+    "total": 860
   },
-  "generated_at": "2026-10-06T05:47:38Z",
+  "generated_at": "2026-10-06T07:47:48Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2429,7 +2429,7 @@
     "8675": {
       "author": "BIMvoice",
       "branch": "fix-8041-watch-reload",
-      "head": "1f01148",
+      "head": "8503cd9",
       "status": "merged",
       "title": "Bonsai: watch the IFC file for external changes and reload in place",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8675"
@@ -2445,7 +2445,7 @@
     "8677": {
       "author": "BIMvoice",
       "branch": "fix-6377-plate-3d-editing",
-      "head": "359ad66",
+      "head": "4b13a03",
       "status": "merged",
       "title": "Bonsai: realign plate placement when a triangular profile is edited in 3D",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
@@ -2493,7 +2493,7 @@
     "8687": {
       "author": "BIMvoice",
       "branch": "fix-3783-track-project-assets",
-      "head": "7c82464",
+      "head": "dbeac26",
       "status": "merged",
       "title": "Bonsai: commit referenced drawing assets alongside the IFC in IfcGit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8687"
@@ -2557,7 +2557,7 @@
     "8699": {
       "author": "BIMvoice",
       "branch": "fix-3754-wall-covering",
-      "head": "2da2d63",
+      "head": "e21248e",
       "status": "merged",
       "title": "Bonsai: automate wall coverings (cladding, insulation) from wall side faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8699"
@@ -2770,8 +2770,8 @@
     "8750": {
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
-      "head": "df35248",
-      "status": "skipped_conflict",
+      "head": "db5e4c7",
+      "status": "merged",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -3277,7 +3277,7 @@
     "8920": {
       "author": "BIMvoice",
       "branch": "feat-4613-builtin-classification-library",
-      "head": "df4ef80",
+      "head": "91a8e31",
       "status": "merged",
       "title": "Bonsai: built-in classification library picker",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8920"
@@ -3333,8 +3333,8 @@
     "8928": {
       "author": "BIMvoice",
       "branch": "feat-4779-material-merge",
-      "head": "790be3e",
-      "status": "skipped_draft",
+      "head": "1b6b125",
+      "status": "merged",
       "title": "Bonsai + ifcopenshell.api: merge/reassign redundant materials into one",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8928"
     },
@@ -3493,8 +3493,8 @@
     "8963": {
       "author": "BIMvoice",
       "branch": "fix/issue-7053-multiprofile",
-      "head": "c04975a",
-      "status": "skipped_conflict",
+      "head": "266202b",
+      "status": "merged",
       "title": "Bonsai: warn when a multi-profile material set has no Composite Profile",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8963"
     },
@@ -6999,11 +6999,20 @@
       "status": "failed",
       "title": "Re-apply sectioned solid cap fix (#7674): caps added twice in 0.9.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9821"
+    },
+    "9823": {
+      "author": "BIMvoice",
+      "branch": "fix/9818-serializer-null-relation",
+      "head": "e709639",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Skip non-matching relations in serializers",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9823"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610060719",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610060719"
+    "tag": "v0.9.0-alpha2610060919",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610060919"
   },
   "schema": 1
 }
