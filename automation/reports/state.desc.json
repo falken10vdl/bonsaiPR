@@ -3,11 +3,11 @@
   "counts": {
     "failed": 118,
     "merged": 587,
-    "skipped_conflict": 84,
+    "skipped_conflict": 85,
     "skipped_draft": 69,
-    "total": 858
+    "total": 859
   },
-  "generated_at": "2026-10-05T20:50:31Z",
+  "generated_at": "2026-10-06T05:47:38Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -1805,7 +1805,7 @@
     "8439": {
       "author": "BIMvoice",
       "branch": "fix-7162-poly-hlr-deflection",
-      "head": "4bf23fb",
+      "head": "4ec29b1",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: use mesher-linear-deflection for polygonal HLR drawings (#7162)",
@@ -3494,8 +3494,7 @@
       "author": "BIMvoice",
       "branch": "fix/issue-7053-multiprofile",
       "head": "c04975a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: warn when a multi-profile material set has no Composite Profile",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8963"
     },
@@ -6991,11 +6990,20 @@
       "status": "merged",
       "title": "docs: fix 23 api docstring examples that fail as written",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9819"
+    },
+    "9821": {
+      "author": "BrandonLewis",
+      "branch": "fix-9820-sectioned-solid-caps",
+      "head": "1302ed0",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Re-apply sectioned solid cap fix (#7674): caps added twice in 0.9.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9821"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610052220",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610052220"
+    "tag": "v0.9.0-alpha2610060719",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610060719"
   },
   "schema": 1
 }

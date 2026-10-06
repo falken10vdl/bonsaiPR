@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 119,
-    "merged": 582,
-    "skipped_conflict": 88,
+    "merged": 585,
+    "skipped_conflict": 86,
     "skipped_draft": 69,
-    "total": 858
+    "total": 859
   },
-  "generated_at": "2026-10-05T21:23:20Z",
+  "generated_at": "2026-10-06T06:16:36Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -651,7 +651,7 @@
       "author": "brunopostle",
       "branch": "bonsai-drawing-revisions",
       "head": "f105c6f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai, drawing sheets show git tag revision history in titleblocks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7918"
     },
@@ -1766,7 +1766,7 @@
       "author": "theoryshaw",
       "branch": "fix-layer3-slab-horizontal-profile-edit",
       "head": "e7dfd43",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix horizontal profile editing for sloped LAYER3 slabs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8429"
     },
@@ -1805,7 +1805,7 @@
     "8439": {
       "author": "BIMvoice",
       "branch": "fix-7162-poly-hlr-deflection",
-      "head": "4bf23fb",
+      "head": "4ec29b1",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: use mesher-linear-deflection for polygonal HLR drawings (#7162)",
@@ -2429,7 +2429,7 @@
     "8675": {
       "author": "BIMvoice",
       "branch": "fix-8041-watch-reload",
-      "head": "1f01148",
+      "head": "8503cd9",
       "status": "merged",
       "title": "Bonsai: watch the IFC file for external changes and reload in place",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8675"
@@ -2446,7 +2446,7 @@
       "author": "BIMvoice",
       "branch": "fix-6377-plate-3d-editing",
       "head": "359ad66",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: realign plate placement when a triangular profile is edited in 3D",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
     },
@@ -2493,7 +2493,7 @@
     "8687": {
       "author": "BIMvoice",
       "branch": "fix-3783-track-project-assets",
-      "head": "7c82464",
+      "head": "2b03fd7",
       "status": "merged",
       "title": "Bonsai: commit referenced drawing assets alongside the IFC in IfcGit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8687"
@@ -2770,8 +2770,8 @@
     "8750": {
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
-      "head": "df35248",
-      "status": "skipped_conflict",
+      "head": "db5e4c7",
+      "status": "merged",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -3238,7 +3238,7 @@
       "author": "BIMvoice",
       "branch": "feat-2956-document-revision-history",
       "head": "34bc81b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcopenshell.util, Bonsai: expose a document's superseded revision history",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8915"
     },
@@ -3493,9 +3493,8 @@
     "8963": {
       "author": "BIMvoice",
       "branch": "fix/issue-7053-multiprofile",
-      "head": "c04975a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "266202b",
+      "status": "merged",
       "title": "Bonsai: warn when a multi-profile material set has no Composite Profile",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8963"
     },
@@ -3543,7 +3542,7 @@
       "author": "BIMvoice",
       "branch": "5760-resource-csv-guid-roundtrip",
       "head": "f23b2eb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc4d: match resources by GUID on CSV reimport instead of duplicating",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8970"
     },
@@ -3824,7 +3823,7 @@
       "author": "BIMvoice",
       "branch": "5760-resource-csv-task-allocation",
       "head": "a8c58ad",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc4d: export and reimport resource-to-task allocation via CSV",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9045"
     },
@@ -5205,7 +5204,7 @@
       "author": "BIMvoice",
       "branch": "fix-9329-load-post-resilience",
       "head": "7ebcee1",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Isolate load_post steps from each other's errors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9332"
     },
@@ -5698,7 +5697,7 @@
       "author": "theoryshaw",
       "branch": "sheet_template_api",
       "head": "af6b3f9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9555"
     },
@@ -6965,7 +6964,7 @@
       "author": "BIMvoice",
       "branch": "fix/9811-web-costing-sum-keyerror",
       "head": "11e7b8e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix web costing SUM edit KeyError",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9814"
     },
@@ -6992,11 +6991,20 @@
       "status": "merged",
       "title": "docs: fix 23 api docstring examples that fail as written",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9819"
+    },
+    "9821": {
+      "author": "BrandonLewis",
+      "branch": "fix-9820-sectioned-solid-caps",
+      "head": "1302ed0",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Re-apply sectioned solid cap fix (#7674): caps added twice in 0.9.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9821"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610052251",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610052251"
+    "tag": "v0.9.0-alpha2610060748",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610060748"
   },
   "schema": 1
 }
