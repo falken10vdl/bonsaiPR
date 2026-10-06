@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 120,
-    "merged": 586,
+    "failed": 119,
+    "merged": 587,
     "skipped_conflict": 86,
-    "skipped_draft": 68,
-    "total": 860
+    "skipped_draft": 69,
+    "total": 861
   },
-  "generated_at": "2026-10-06T08:17:26Z",
+  "generated_at": "2026-10-06T10:17:59Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -2437,7 +2437,7 @@
     "8676": {
       "author": "BIMvoice",
       "branch": "fix-2011-ifc-node-graph",
-      "head": "b5e90a6",
+      "head": "5f5ca79",
       "status": "merged",
       "title": "Bonsai: add IFC Graph node editor to explore entity relationships",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8676"
@@ -2541,7 +2541,7 @@
     "8697": {
       "author": "BIMvoice",
       "branch": "fix-2181-mep-junction",
-      "head": "469a5a1",
+      "head": "7ee619f",
       "status": "merged",
       "title": "Bonsai: add MEP junction fitting operator (tee, wye, cross)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8697"
@@ -2771,7 +2771,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "db5e4c7",
-      "status": "merged",
+      "status": "skipped_draft",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
@@ -5372,7 +5372,7 @@
     "9393": {
       "author": "BIMvoice",
       "branch": "v09r/5880-hybrid-opening-fallback",
-      "head": "e1f2ec0",
+      "head": "b9c31da",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: fall back when convert_openings cleanly fails",
@@ -6992,15 +6992,6 @@
       "title": "docs: fix 23 api docstring examples that fail as written",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9819"
     },
-    "9821": {
-      "author": "BrandonLewis",
-      "branch": "fix-9820-sectioned-solid-caps",
-      "head": "1302ed0",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Re-apply sectioned solid cap fix (#7674): caps added twice in 0.9.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9821"
-    },
     "9823": {
       "author": "BIMvoice",
       "branch": "fix/9818-serializer-null-relation",
@@ -7009,11 +7000,27 @@
       "status": "failed",
       "title": "Skip non-matching relations in serializers",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9823"
+    },
+    "9824": {
+      "author": "BIMvoice",
+      "branch": "fix/sweep-profile-quad",
+      "head": "29996d2",
+      "status": "merged",
+      "title": "Bonsai: accept a quad as an arbitrary profile",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9824"
+    },
+    "9825": {
+      "author": "BIMvoice",
+      "branch": "fix/sweep-fresh-project-loader",
+      "head": "79f954f",
+      "status": "merged",
+      "title": "Bonsai: load settings before swept disk reload",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9825"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610060948",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610060948"
+    "tag": "v0.9.0-alpha2610061149",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610061149"
   },
   "schema": 1
 }
