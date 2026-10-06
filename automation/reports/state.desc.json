@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 118,
-    "merged": 591,
-    "skipped_conflict": 83,
+    "merged": 594,
+    "skipped_conflict": 80,
     "skipped_draft": 69,
     "total": 861
   },
-  "generated_at": "2026-10-06T09:48:24Z",
+  "generated_at": "2026-10-06T11:47:34Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -1315,7 +1315,7 @@
       "author": "BIMvoice",
       "branch": "qto-segment-length-from-geometry",
       "head": "13fa65a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
     },
@@ -1588,7 +1588,7 @@
     "8389": {
       "author": "BIMvoice",
       "branch": "fix-4537-door-window-attribute-qto",
-      "head": "2030851",
+      "head": "08f291a",
       "status": "merged",
       "title": "Quantify doors and windows from IFC attributes on both take-off engines (supersedes #4537)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8389"
@@ -3775,7 +3775,7 @@
       "author": "BIMvoice",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
       "head": "fa7ca04",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcpatch: preserve IFC2X3 georeferencing in ExtractElements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },
@@ -3934,7 +3934,7 @@
     "9063": {
       "author": "BIMvoice",
       "branch": "qto-member-length-from-extrusion",
-      "head": "cda8d08",
+      "head": "261a38f",
       "status": "merged",
       "title": "ifc5d: take Beam/Column/Member Length from the extrusion, not the bounding box",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9063"
@@ -4431,7 +4431,7 @@
     "9140": {
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-missing-project-error",
-      "head": "980132a",
+      "head": "1349acd",
       "status": "merged",
       "title": "ifcpatch: fail clearly when IfcProject is missing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9140"
@@ -6694,8 +6694,8 @@
     "9749": {
       "author": "BIMvoice",
       "branch": "v09/replace-8832",
-      "head": "19c0559",
-      "status": "skipped_conflict",
+      "head": "2993618",
+      "status": "merged",
       "title": "Return nan for non-finite shape elevations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9749"
     },
@@ -6897,10 +6897,10 @@
     "9795": {
       "author": "BIMvoice",
       "branch": "fix/geometry-debug-prints",
-      "head": "6ada039",
+      "head": "d6e3fd6",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Remove leftover debug prints from geometry code",
+      "title": "Remove leftover debug print from mapping",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9795"
     },
     "9796": {
@@ -7018,8 +7018,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610061120",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610061120"
+    "tag": "v0.9.0-alpha2610061319",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610061319"
   },
   "schema": 1
 }
