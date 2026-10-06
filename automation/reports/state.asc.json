@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 124,
-    "merged": 587,
-    "skipped_conflict": 84,
-    "skipped_draft": 69,
-    "total": 864
+    "merged": 589,
+    "skipped_conflict": 83,
+    "skipped_draft": 70,
+    "total": 866
   },
-  "generated_at": "2026-10-06T13:19:45Z",
+  "generated_at": "2026-10-06T15:20:02Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -2083,9 +2083,9 @@
     "8549": {
       "author": "BIMvoice",
       "branch": "ship-7624-directprofile",
-      "head": "04db09f",
+      "head": "257c757",
       "status": "merged",
-      "title": "Bonsai: fix DirectProfileEdit crash when exiting edit mode (#7624)",
+      "title": "Bonsai: fix mode set object run without invoke",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8549"
     },
     "8581": {
@@ -5417,8 +5417,8 @@
     "9404": {
       "author": "BIMvoice",
       "branch": "fix-9376-earthworkscut-qto",
-      "head": "ce69566",
-      "status": "skipped_conflict",
+      "head": "d4e2a44",
+      "status": "merged",
       "title": "ifc5d: evaluate IfcEarthworksCut quantities against the host, not the subtraction solid (#9376)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9404"
     },
@@ -7045,11 +7045,27 @@
       "status": "skipped_conflict",
       "title": "Test loading of all packaged plugins",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9836"
+    },
+    "9837": {
+      "author": "BIMvoice",
+      "branch": "fix/9831-ifctester-empty-basename",
+      "head": "e09a8e9",
+      "status": "merged",
+      "title": "ifctester: reject empty mandatory facet values",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9837"
+    },
+    "9839": {
+      "author": "BIMvoice",
+      "branch": "fix/9830-guid-non-22-char",
+      "head": "3f45a14",
+      "status": "skipped_draft",
+      "title": "Index GlobalIds that are not 22 characters",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9839"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610061450",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610061450"
+    "tag": "v0.9.0-alpha2610061650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610061650"
   },
   "schema": 1
 }

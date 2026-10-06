@@ -4,10 +4,10 @@
     "failed": 122,
     "merged": 589,
     "skipped_conflict": 85,
-    "skipped_draft": 69,
-    "total": 865
+    "skipped_draft": 70,
+    "total": 866
   },
-  "generated_at": "2026-10-06T13:49:48Z",
+  "generated_at": "2026-10-06T15:49:52Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2083,9 +2083,9 @@
     "8549": {
       "author": "BIMvoice",
       "branch": "ship-7624-directprofile",
-      "head": "04db09f",
+      "head": "257c757",
       "status": "merged",
-      "title": "Bonsai: fix DirectProfileEdit crash when exiting edit mode (#7624)",
+      "title": "Bonsai: fix mode set object run without invoke",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8549"
     },
     "8581": {
@@ -7051,11 +7051,19 @@
       "status": "merged",
       "title": "ifctester: reject empty mandatory facet values",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9837"
+    },
+    "9839": {
+      "author": "BIMvoice",
+      "branch": "fix/9830-guid-non-22-char",
+      "head": "3f45a14",
+      "status": "skipped_draft",
+      "title": "Index GlobalIds that are not 22 characters",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9839"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610061520",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610061520"
+    "tag": "v0.9.0-alpha2610061721",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610061721"
   },
   "schema": 1
 }
