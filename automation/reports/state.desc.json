@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 122,
-    "merged": 589,
+    "merged": 590,
     "skipped_conflict": 86,
     "skipped_draft": 70,
-    "total": 867
+    "total": 868
   },
-  "generated_at": "2026-10-07T03:47:35Z",
+  "generated_at": "2026-10-07T05:48:10Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2438,7 +2438,7 @@
     "8676": {
       "author": "BIMvoice",
       "branch": "fix-2011-ifc-node-graph",
-      "head": "5f5ca79",
+      "head": "8639ee3",
       "status": "merged",
       "title": "Bonsai: add IFC Graph node editor to explore entity relationships",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8676"
@@ -2494,7 +2494,7 @@
     "8687": {
       "author": "BIMvoice",
       "branch": "fix-3783-track-project-assets",
-      "head": "dbeac26",
+      "head": "025dcb2",
       "status": "merged",
       "title": "Bonsai: commit referenced drawing assets alongside the IFC in IfcGit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8687"
@@ -2558,7 +2558,7 @@
     "8699": {
       "author": "BIMvoice",
       "branch": "fix-3754-wall-covering",
-      "head": "e21248e",
+      "head": "86e9669",
       "status": "merged",
       "title": "Bonsai: automate wall coverings (cladding, insulation) from wall side faces",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8699"
@@ -2771,7 +2771,7 @@
     "8750": {
       "author": "BIMvoice",
       "branch": "bonsai-3289-sweep-authoring",
-      "head": "db5e4c7",
+      "head": "7b5e629",
       "status": "skipped_draft",
       "title": "Bonsai: add a UI entry point to author IfcSweptDiskSolid elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
@@ -6152,9 +6152,9 @@
     "9667": {
       "author": "BIMvoice",
       "branch": "v09/replace-8671",
-      "head": "1616ea8",
+      "head": "5502ad6",
       "status": "merged",
-      "title": "Bonsai: preserve Z when editing FALL/slope annotation curves",
+      "title": "Bonsai: preserve Z when editing 3D and FALL/slope curve items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9667"
     },
     "9668": {
@@ -7067,11 +7067,19 @@
       "status": "merged",
       "title": "Add Revit-style multi-selection orbit pivot",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9841"
+    },
+    "9842": {
+      "author": "BIMvoice",
+      "branch": "fix/guess-type-geometric-curve-set",
+      "head": "8fad04a",
+      "status": "merged",
+      "title": "Fix guess_type never returning GeometricCurveSet",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9842"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610070519",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070519"
+    "tag": "v0.9.0-alpha2610070719",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070719"
   },
   "schema": 1
 }
