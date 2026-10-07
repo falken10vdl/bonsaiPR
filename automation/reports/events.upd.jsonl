@@ -5905,3 +5905,18 @@
 {"ts": "2026-10-07T08:06:17Z", "order": "upd", "pr": 9555, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-10-07T08:19:49Z", "order": "by-updated", "pr": 8844, "event": "updated", "status": "failed", "from_head": "71c18a9", "to_head": "7681e14"}
 {"ts": "2026-10-07T08:19:49Z", "order": "by-updated", "pr": 8856, "event": "updated", "status": "failed", "from_head": "2c6db3d", "to_head": "afa321b"}
+{"ts": "2026-10-07T10:05:44Z", "order": "upd", "pr": 8000, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-07T10:05:44Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-07T10:05:44Z", "order": "upd", "pr": 9047, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-07T10:05:44Z", "order": "upd", "pr": 9210, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-07T10:05:44Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-07T10:05:44Z", "order": "upd", "pr": 9555, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-07T10:19:22Z", "order": "by-updated", "pr": 9358, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-07T10:19:22Z", "order": "by-updated", "pr": 9405, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-07T10:19:22Z", "order": "by-updated", "pr": 9425, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-07T10:19:22Z", "order": "by-updated", "pr": 9427, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-07T10:19:22Z", "order": "by-updated", "pr": 9428, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-07T10:19:22Z", "order": "by-updated", "pr": 9559, "event": "updated", "status": "failed", "from_head": "b6c1b7d", "to_head": "9825af7"}
+{"ts": "2026-10-07T10:19:22Z", "order": "by-updated", "pr": 9834, "event": "removed", "from": "merged"}
+{"ts": "2026-10-07T10:19:22Z", "order": "by-updated", "pr": 9835, "event": "removed", "from": "merged"}
+{"ts": "2026-10-07T10:19:22Z", "order": "by-updated", "pr": 9836, "event": "status", "from": "merged", "to": "failed"}

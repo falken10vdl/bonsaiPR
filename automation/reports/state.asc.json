@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 123,
-    "merged": 591,
-    "skipped_conflict": 84,
+    "failed": 124,
+    "merged": 589,
+    "skipped_conflict": 83,
     "skipped_draft": 71,
-    "total": 869
+    "total": 867
   },
-  "generated_at": "2026-10-07T07:18:46Z",
+  "generated_at": "2026-10-07T09:19:19Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -2958,7 +2958,7 @@
     "8844": {
       "author": "BIMvoice",
       "branch": "sweep-46-geom-normal-index",
-      "head": "71c18a9",
+      "head": "7681e14",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: independent position/normal index streams for OBJ and Collada (#46)",
@@ -5706,7 +5706,7 @@
     "9559": {
       "author": "aothms",
       "branch": "pr-9325-rebased-v0.9.0",
-      "head": "b6c1b7d",
+      "head": "1ec757c",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "C/TS API binding generation (GSoC 2026) - rebased",
@@ -7013,27 +7013,12 @@
       "title": "Write GlobalId index when serializing to RocksDB",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9829"
     },
-    "9834": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/cargo/src/bonsaiviewer-autodesk/rustls-0.23.45",
-      "head": "b64d835",
-      "status": "merged",
-      "title": "build(deps): bump rustls from 0.23.40 to 0.23.45 in /src/bonsaiviewer-autodesk",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9834"
-    },
-    "9835": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/source-map-js-1.2.2",
-      "head": "df987a6",
-      "status": "merged",
-      "title": "build(deps-dev): bump source-map-js from 1.2.1 to 1.2.2 in /src/ifctester/webapp",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9835"
-    },
     "9836": {
       "author": "Andrej730",
       "branch": "test-shared-packages",
-      "head": "a099481",
-      "status": "skipped_conflict",
+      "head": "ffce36e",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Test loading of all packaged plugins",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9836"
     },
@@ -7087,8 +7072,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610070850",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070850"
+    "tag": "v0.9.0-alpha2610071050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071050"
   },
   "schema": 1
 }
