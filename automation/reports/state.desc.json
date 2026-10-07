@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 122,
-    "merged": 589,
-    "skipped_conflict": 85,
+    "merged": 588,
+    "skipped_conflict": 86,
     "skipped_draft": 70,
     "total": 866
   },
-  "generated_at": "2026-10-06T23:54:19Z",
+  "generated_at": "2026-10-07T01:51:19Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -3439,7 +3439,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-extract-elements-slow-append-asset",
       "head": "a7a1bb2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: defer debug-log listener serialisation to report time",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8953"
     },
@@ -4893,14 +4893,6 @@
       "status": "merged",
       "title": "dev_environment.py: detect Blender's bundled Python from disk",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
-    },
-    "9233": {
-      "author": "BIMvoice",
-      "branch": "fix-9230-void-profile-open-loop",
-      "head": "99ab748",
-      "status": "merged",
-      "title": "Bonsai: void loop that encloses no area crashes (#9230), or is silently lost (#8983)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9233"
     },
     "9234": {
       "author": "BIMvoice",
@@ -7059,11 +7051,19 @@
       "status": "skipped_draft",
       "title": "Index GlobalIds that are not 22 characters",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9839"
+    },
+    "9840": {
+      "author": "theoryshaw",
+      "branch": "dev-environment-system-info",
+      "head": "2c061fa",
+      "status": "merged",
+      "title": "Bonsai: report dev environment symlink state in system info",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9840"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610070122",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070122"
+    "tag": "v0.9.0-alpha2610070321",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070321"
   },
   "schema": 1
 }

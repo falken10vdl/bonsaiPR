@@ -3,11 +3,11 @@
   "counts": {
     "failed": 123,
     "merged": 585,
-    "skipped_conflict": 87,
+    "skipped_conflict": 89,
     "skipped_draft": 70,
-    "total": 865
+    "total": 867
   },
-  "generated_at": "2026-10-07T00:25:06Z",
+  "generated_at": "2026-10-07T02:21:18Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -651,7 +651,7 @@
       "author": "brunopostle",
       "branch": "bonsai-drawing-revisions",
       "head": "f105c6f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai, drawing sheets show git tag revision history in titleblocks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7918"
     },
@@ -3239,7 +3239,7 @@
       "author": "BIMvoice",
       "branch": "feat-2956-document-revision-history",
       "head": "34bc81b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcopenshell.util, Bonsai: expose a document's superseded revision history",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8915"
     },
@@ -3439,7 +3439,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-extract-elements-slow-append-asset",
       "head": "a7a1bb2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: defer debug-log listener serialisation to report time",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8953"
     },
@@ -5198,7 +5198,7 @@
       "author": "BIMvoice",
       "branch": "fix-9329-load-post-resilience",
       "head": "7ebcee1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Isolate load_post steps from each other's errors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9332"
     },
@@ -5690,8 +5690,8 @@
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
-      "head": "af6b3f9",
-      "status": "skipped_conflict",
+      "head": "80c9193",
+      "status": "merged",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9555"
     },
@@ -6942,7 +6942,7 @@
       "author": "BIMvoice",
       "branch": "fix/9811-web-costing-sum-keyerror",
       "head": "11e7b8e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix web costing SUM edit KeyError",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9814"
     },
@@ -7052,11 +7052,27 @@
       "status": "skipped_draft",
       "title": "Index GlobalIds that are not 22 characters",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9839"
+    },
+    "9840": {
+      "author": "theoryshaw",
+      "branch": "dev-environment-system-info",
+      "head": "2c061fa",
+      "status": "merged",
+      "title": "Bonsai: report dev environment symlink state in system info",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9840"
+    },
+    "9841": {
+      "author": "htlcnn",
+      "branch": "feature/revit-multi-selection-orbit",
+      "head": "4e14646",
+      "status": "merged",
+      "title": "Add Revit-style multi-selection orbit pivot",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9841"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610070155",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070155"
+    "tag": "v0.9.0-alpha2610070352",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070352"
   },
   "schema": 1
 }
