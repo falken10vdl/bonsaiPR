@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "openingdesign",
-  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. 23 PRs since merged upstream and 19 closed ones are left out, as is #8971 (overlaps #8200 throughout one function; left out by choice). Pins are the heads that merged in a full in-order replay at v0.9.0 c3508db3fe (163 of 172), 2026-10-05.",
+  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 19 closed ones are left out, as is #8971 (overlaps #8200 throughout one function; left out by choice). Pins are the heads last validated at v0.9.0 (174 PRs, 165 pins), 2026-10-07.",
   "maintainer": "OpeningDesign",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
@@ -134,6 +134,7 @@
       8429,
       8448,
       8548,
+      8585,
       8598,
       8599,
       8600,
@@ -143,6 +144,7 @@
       8668,
       8669,
       8674,
+      8676,
       8706,
       8707,
       8718,
@@ -170,7 +172,6 @@
       9439,
       9441,
       9469,
-      9478,
       9491,
       9493,
       9494,
@@ -181,7 +182,8 @@
       9555,
       9557,
       9589,
-      9765
+      9765,
+      9840
     ],
     "authors": []
   },
@@ -348,7 +350,6 @@
     9439,
     9441,
     9469,
-    9478,
     9491,
     9493,
     9044,
@@ -363,7 +364,10 @@
     9557,
     9765,
     8928,
-    8598
+    8598,
+    9840,
+    8676,
+    8585
   ],
   "pin": {
     "5452": "99958f7c73927fb22e343ab724b21e4199dc2755",
@@ -474,13 +478,14 @@
     "8347": "0ea8200b032185340bede7fcfc8437b6fcf4be37",
     "8348": "4a039865fb661c3fbcbb634a242ae6d9fde8f2fb",
     "8349": "f7aa824a3c5c390724de990fcc5575f9653a6b0d",
-    "8351": "5b35a1e022b3cbd3d23ae8913e51d60f37d14871",
+    "8351": "35491132444d30001d83f1a02a45a5ab1b26fd98",
     "8352": "69c419e54765a8d3e581eb49997e9b1b2f4a64c0",
     "8353": "49191805eb2add29ed58db0cced9e616b7358610",
     "8393": "8d08a155993f9139d5d84971b13ff64cd3705176",
     "8429": "e7dfd43a152f12b0da4dff7e35afd42dd2439604",
     "8448": "4c4750a848b0fe9338562f129d72e241a4920431",
     "8548": "eb2ec589a7a5a9522918f714ab54d53bf273a109",
+    "8585": "07dd3a5b89598311cd552e696eb6f3513a9d117a",
     "8598": "3480524933e646f958a709ab4b864683417e6a81",
     "8599": "e1589b8e2e47004856c434d1b96f6fa414d4a1bc",
     "8600": "086750363fe75a9c5e4a6d4f6303dd5a20d31272",
@@ -490,6 +495,7 @@
     "8668": "f5da3efe6d6ee1a6239f25d8c8acac98852281dc",
     "8669": "adeed6f215e97517391970c61ffa3c4022d91e7d",
     "8674": "2ccb3b31c10b0c9a5effc53b7435a0571a66178f",
+    "8676": "8639ee3fa93517ba658dd5b4152d3b598a87400d",
     "8706": "563a9ebc3ab82165ff6ee9d23d26fc8466edcace",
     "8707": "df9e89a37f9b089078f93bf4f689c7f0dccb17e8",
     "8718": "a14b4b911508cc86b33b52eddd52daa46e8d92d3",
@@ -517,7 +523,6 @@
     "9439": "f1ae549083642bc3b1fb731eb254183f06da4418",
     "9441": "e5a7508a5061ac57f144120401515cfb0e199f52",
     "9469": "da219ed239e566d7dd1f9ae43dd058ac2a3192bf",
-    "9478": "17b5bf734f997657d9a0d3e74af9b3119bb0b0c9",
     "9491": "6c228d122a8682d9ec9a875c11a0a39778b71b35",
     "9493": "9d6d5701e0e45be97ce7808ee4dd6baad4c2a6d1",
     "9494": "0a18aca73569fbb91e20f9261898514641b3d7aa",
@@ -525,9 +530,10 @@
     "9515": "cc64214566338b9496314c39e3e2054b87d3cf9e",
     "9517": "7b55b55990f2398466f7cc6609ffa8df1dc1ca0e",
     "9523": "1f8a63957f2f1927606bfa2196f478a49fbf7512",
-    "9555": "0cd600f7bcd9d0c7b688b51ecac27d8e70bbcd54",
+    "9555": "77ece1c9a5c0a04a70be6a22c6cb17a926cbb4a7",
     "9557": "aef65718f9b53bb2678d254f34f1bfc83c7dbc7e",
     "9589": "e8ddb25b0ce45aea5f385762c43084a08043f07b",
-    "9765": "c0adc2485cd736ddb408819dd62c6153ec8d80d1"
+    "9765": "c0adc2485cd736ddb408819dd62c6153ec8d80d1",
+    "9840": "2c061fac355b11140e5cd477c0f42d9d94034918"
   }
 }
