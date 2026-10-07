@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 122,
-    "merged": 592,
-    "skipped_conflict": 84,
-    "skipped_draft": 71,
-    "total": 869
+    "failed": 124,
+    "merged": 586,
+    "skipped_conflict": 90,
+    "skipped_draft": 70,
+    "total": 870
   },
-  "generated_at": "2026-10-07T12:19:41Z",
+  "generated_at": "2026-10-07T14:23:22Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -979,7 +979,7 @@
       "author": "theoryshaw",
       "branch": "Linked_File_Features",
       "head": "5365819",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Linked file features",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8242"
     },
@@ -1122,9 +1122,8 @@
     "8281": {
       "author": "BIMvoice",
       "branch": "feat-ifcpatch-cli-entrypoint-6436",
-      "head": "aef735b",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "8a03cba",
+      "status": "merged",
       "title": "ifcpatch: add console script entry point (#6436)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8281"
     },
@@ -1532,7 +1531,7 @@
     "8377": {
       "author": "BIMvoice",
       "branch": "fix-8106-taxonomy-sweep-approx",
-      "head": "792ebb2",
+      "head": "6d4e180",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Approximate swept solids in the taxonomy layer so cgal stops dropping IfcSweptDiskSolid (#8106)",
@@ -1654,7 +1653,7 @@
     "8402": {
       "author": "BIMvoice",
       "branch": "fix-7233-work",
-      "head": "f1c574c",
+      "head": "e752298",
       "status": "merged",
       "title": "Bonsai: expose 2-Point Arc resolution in redo panel (#7233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8402"
@@ -1839,7 +1838,7 @@
     "8444": {
       "author": "BIMvoice",
       "branch": "fix-reimport-multiprocessing-toggle",
-      "head": "614d919",
+      "head": "acc2b30",
       "status": "merged",
       "title": "Bonsai: honour the CPU Multiprocessing toggle on representation reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8444"
@@ -2179,7 +2178,7 @@
     "8595": {
       "author": "BIMvoice",
       "branch": "fix-3496-swept-disk-authoring",
-      "head": "f3e0ea7",
+      "head": "3ed9975",
       "status": "merged",
       "title": "Fix IfcSweptDiskSolid directrix round-trip when updating representations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8595"
@@ -2706,7 +2705,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8049-resilient-drawing-print",
       "head": "eb6a17f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: don't let one bad element abort an entire drawing print",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8734"
     },
@@ -2926,7 +2925,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-6287-self-intersecting-profile",
       "head": "e12ed01",
-      "status": "skipped_draft",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: keep separate loops of a self-touching profile",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8810"
     },
@@ -3037,8 +3037,8 @@
     "8872": {
       "author": "BIMvoice",
       "branch": "6382-link-surface-features",
-      "head": "273bcbc",
-      "status": "skipped_conflict",
+      "head": "af224d3",
+      "status": "merged",
       "title": "Bonsai: show IfcSurfaceFeature in linked models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8872"
     },
@@ -3294,7 +3294,7 @@
       "author": "BIMvoice",
       "branch": "fix-4774-shapely-fill-flush-edge",
       "head": "46595ad",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: pool all projections for shapely fill cell formation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8923"
     },
@@ -4183,7 +4183,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-docstring-argument-mismatches",
       "head": "8b27548",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: fix wrong docstrings that break copy-pasted examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9098"
     },
@@ -4231,7 +4231,7 @@
       "author": "BIMvoice",
       "branch": "fix/9029-link-ifc-duplicate-on-repeat-click",
       "head": "dfe9c2e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stop Link IFC duplicating and reloading when a click is repeated",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9104"
     },
@@ -4584,7 +4584,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-costschedule-space-mandatory",
       "head": "c5cd2e5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "api: fix ten IFC2X3 mandatory attributes never set",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9166"
     },
@@ -4616,7 +4616,7 @@
       "author": "BIMvoice",
       "branch": "fix/cascade-schedule-ifc2x3-crash",
       "head": "6be9aa9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "sequence: fix cascade_schedule crash on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9170"
     },
@@ -5246,7 +5246,7 @@
       "author": "BIMvoice",
       "branch": "docs-drawing-stylesheet-guide",
       "head": "f2b1c8c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "docs: document drawing stylesheets and the override pattern",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9358"
     },
@@ -5415,7 +5415,7 @@
       "author": "BIMvoice",
       "branch": "fix-9352-query-comparison",
       "head": "bf472e3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: keep the comparison operator when a query facet round-trips",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9405"
     },
@@ -5463,7 +5463,7 @@
       "author": "BIMvoice",
       "branch": "fix/schedule-import-path-validation-9409",
       "head": "9f60f4a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: report a clear error when a schedule import path is not a file (#9409)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9425"
     },
@@ -5471,7 +5471,8 @@
       "author": "BIMvoice",
       "branch": "packaging-runtime-plugin-collection",
       "head": "5180940",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "packaging: collect underscore-prefixed runtime plugins in every pipeline",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9427"
     },
@@ -5479,7 +5480,7 @@
       "author": "BIMvoice",
       "branch": "fix-9426-slab-empty-polyline",
       "head": "d2755da",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: drawing a slab with an empty polyline crashes (#9426)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9428"
     },
@@ -6151,9 +6152,9 @@
     "9667": {
       "author": "BIMvoice",
       "branch": "v09/replace-8671",
-      "head": "5502ad6",
+      "head": "4a68620",
       "status": "merged",
-      "title": "Bonsai: preserve Z when editing 3D and FALL/slope curve items",
+      "title": "Bonsai: keep Z and placement when editing 3D curve items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9667"
     },
     "9668": {
@@ -6676,14 +6677,6 @@
       "title": "Bonsai: support editing IfcGeometricCurveSet representation items (#6407)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9739"
     },
-    "9745": {
-      "author": "aothms",
-      "branch": "integrate-docs",
-      "head": "877fb63",
-      "status": "merged",
-      "title": "Integrate docs",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9745"
-    },
     "9749": {
       "author": "BIMvoice",
       "branch": "v09/replace-8832",
@@ -7011,15 +7004,6 @@
       "title": "Write GlobalId index when serializing to RocksDB",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9829"
     },
-    "9836": {
-      "author": "Andrej730",
-      "branch": "test-shared-packages",
-      "head": "89df416",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Test loading of all packaged plugins",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9836"
-    },
     "9837": {
       "author": "BIMvoice",
       "branch": "fix/9831-ifctester-empty-basename",
@@ -7055,9 +7039,9 @@
     "9842": {
       "author": "BIMvoice",
       "branch": "fix/guess-type-geometric-curve-set",
-      "head": "8fad04a",
+      "head": "958d0e0",
       "status": "merged",
-      "title": "Fix guess_type never returning GeometricCurveSet",
+      "title": "Fix guess_type never returning two valid types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9842"
     },
     "9843": {
@@ -7083,11 +7067,37 @@
       "status": "merged",
       "title": "Clear calendar cache when work times change",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9845"
+    },
+    "9846": {
+      "author": "BIMvoice",
+      "branch": "fix/9565-calendar-after-dates",
+      "head": "9acfbd4",
+      "status": "merged",
+      "title": "Apply a newly assigned calendar to task dates",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9846"
+    },
+    "9847": {
+      "author": "BIMvoice",
+      "branch": "fix/collada-obj-curve-normals",
+      "head": "10d6229",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix Collada crash and normals with curve items",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9847"
+    },
+    "9848": {
+      "author": "BIMvoice",
+      "branch": "fix/9334-get-info-cycle",
+      "head": "2090391",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Stop get_info crashing on a reference cycle",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9848"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610071350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071350"
+    "tag": "v0.9.0-alpha2610071552",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071552"
   },
   "schema": 1
 }
