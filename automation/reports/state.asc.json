@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 124,
-    "merged": 579,
+    "merged": 580,
     "skipped_conflict": 90,
     "skipped_draft": 70,
-    "total": 863
+    "total": 864
   },
-  "generated_at": "2026-10-07T17:19:08Z",
+  "generated_at": "2026-10-07T19:21:33Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -2016,10 +2016,10 @@
     "8508": {
       "author": "BIMvoice",
       "branch": "fix-7658-curved-loft",
-      "head": "a1d1a2a",
+      "head": "45c7377",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Loft constant curved cross sections instead of crashing (#7658)",
+      "title": "Loft constant curved cross sections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8508"
     },
     "8509": {
@@ -2219,7 +2219,7 @@
     "8612": {
       "author": "BIMvoice",
       "branch": "fix-8611-advanced-import-save-target",
-      "head": "69db9a3",
+      "head": "97df13f",
       "status": "merged",
       "title": "bonsai: don't rebind Save target during Advanced-mode import preview (#8611)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8612"
@@ -3028,7 +3028,7 @@
     "8879": {
       "author": "BIMvoice",
       "branch": "7472-null-opening-reps",
-      "head": "6b8500d",
+      "head": "1b3f4ef",
       "status": "skipped_draft",
       "title": "Bonsai: exclude status-filtered openings from boolean cuts (in-memory)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8879"
@@ -3316,7 +3316,7 @@
     "8935": {
       "author": "BIMvoice",
       "branch": "feat-5373-symbol-viewport-representation",
-      "head": "f0c4adc",
+      "head": "7d53f43",
       "status": "merged",
       "title": "Bonsai: draw real symbol geometry in the viewport instead of an asterisk placeholder",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8935"
@@ -6040,7 +6040,7 @@
     "9660": {
       "author": "BIMvoice",
       "branch": "v09/replace-8529",
-      "head": "6edf36c",
+      "head": "5b0cbb0",
       "status": "merged",
       "title": "Bonsai: support IfcTrimmedCurve arc segments when editing a profile (#6929)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9660"
@@ -7037,11 +7037,19 @@
       "status": "failed",
       "title": "Stop get_info crashing on a reference cycle",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9848"
+    },
+    "9850": {
+      "author": "BIMvoice",
+      "branch": "fix/6249-mep-fitting-offset-tolerance",
+      "head": "f74709c",
+      "status": "merged",
+      "title": "Bonsai: allow float noise in MEP bend offset check",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9850"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610071850",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071850"
+    "tag": "v0.9.0-alpha2610072050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610072050"
   },
   "schema": 1
 }
