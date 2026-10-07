@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 123,
-    "merged": 589,
+    "failed": 122,
+    "merged": 592,
     "skipped_conflict": 84,
     "skipped_draft": 71,
-    "total": 867
+    "total": 869
   },
-  "generated_at": "2026-10-07T10:19:22Z",
+  "generated_at": "2026-10-07T12:19:41Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -2925,9 +2925,9 @@
     "8810": {
       "author": "BIMvoice",
       "branch": "bonsai-6287-self-intersecting-profile",
-      "head": "493a798",
+      "head": "e12ed01",
       "status": "skipped_draft",
-      "title": "ifcgeom: detect and repair collinear self-intersections in profiles",
+      "title": "ifcgeom: keep separate loops of a self-touching profile",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8810"
     },
     "8820": {
@@ -4182,9 +4182,8 @@
     "9098": {
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-docstring-argument-mismatches",
-      "head": "0f06298",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "8b27548",
+      "status": "merged",
       "title": "ifcpatch: fix wrong docstrings that break copy-pasted examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9098"
     },
@@ -7015,7 +7014,7 @@
     "9836": {
       "author": "Andrej730",
       "branch": "test-shared-packages",
-      "head": "0f19754",
+      "head": "89df416",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Test loading of all packaged plugins",
@@ -7068,11 +7067,27 @@
       "status": "merged",
       "title": "Bonsai: outline web costing cell highlight",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9843"
+    },
+    "9844": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-calendar-without-working-days",
+      "head": "ec20306",
+      "status": "merged",
+      "title": "Stop calendars without working days hanging",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9844"
+    },
+    "9845": {
+      "author": "BIMvoice",
+      "branch": "fix/sequence-calendar-cache-invalidation",
+      "head": "541bb48",
+      "status": "merged",
+      "title": "Clear calendar cache when work times change",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9845"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610071150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071150"
+    "tag": "v0.9.0-alpha2610071350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071350"
   },
   "schema": 1
 }

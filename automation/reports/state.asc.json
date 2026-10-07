@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 124,
-    "merged": 589,
+    "failed": 123,
+    "merged": 590,
     "skipped_conflict": 83,
     "skipped_draft": 71,
     "total": 867
   },
-  "generated_at": "2026-10-07T09:19:19Z",
+  "generated_at": "2026-10-07T11:19:13Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -4182,9 +4182,8 @@
     "9098": {
       "author": "BIMvoice",
       "branch": "fix/ifcpatch-docstring-argument-mismatches",
-      "head": "0f06298",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "8b27548",
+      "status": "merged",
       "title": "ifcpatch: fix wrong docstrings that break copy-pasted examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9098"
     },
@@ -5706,7 +5705,7 @@
     "9559": {
       "author": "aothms",
       "branch": "pr-9325-rebased-v0.9.0",
-      "head": "1ec757c",
+      "head": "9825af7",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "C/TS API binding generation (GSoC 2026) - rebased",
@@ -7016,7 +7015,7 @@
     "9836": {
       "author": "Andrej730",
       "branch": "test-shared-packages",
-      "head": "ffce36e",
+      "head": "f2ac112",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Test loading of all packaged plugins",
@@ -7072,8 +7071,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610071050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071050"
+    "tag": "v0.9.0-alpha2610071250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071250"
   },
   "schema": 1
 }
