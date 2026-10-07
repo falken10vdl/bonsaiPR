@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 124,
-    "merged": 590,
+    "failed": 123,
+    "merged": 591,
     "skipped_conflict": 84,
-    "skipped_draft": 70,
-    "total": 868
+    "skipped_draft": 71,
+    "total": 869
   },
-  "generated_at": "2026-10-07T05:18:08Z",
+  "generated_at": "2026-10-07T07:18:46Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -2916,7 +2916,7 @@
     "8808": {
       "author": "BIMvoice",
       "branch": "bonsai-6908-svg-door-arcs",
-      "head": "df365de",
+      "head": "d5b3ce5",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "SvgSerializer: only draw door swing arcs on the storey where the door is cut",
@@ -2926,8 +2926,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-6287-self-intersecting-profile",
       "head": "493a798",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "skipped_draft",
       "title": "ifcgeom: detect and repair collinear self-intersections in profiles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8810"
     },
@@ -2986,7 +2985,7 @@
     "8856": {
       "author": "BIMvoice",
       "branch": "sweep-1308-svg-data-area",
-      "head": "2c6db3d",
+      "head": "afa321b",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "SvgSerializer: emit machine-readable space area attribute; fix double-escaped area label (#1308)",
@@ -7077,11 +7076,19 @@
       "status": "merged",
       "title": "Fix guess_type never returning GeometricCurveSet",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9842"
+    },
+    "9843": {
+      "author": "BIMvoice",
+      "branch": "fix/9813-costing-hover-outline",
+      "head": "75ed439",
+      "status": "merged",
+      "title": "Bonsai: outline web costing cell highlight",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9843"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610070650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070650"
+    "tag": "v0.9.0-alpha2610070850",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070850"
   },
   "schema": 1
 }

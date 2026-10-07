@@ -7,7 +7,7 @@
     "skipped_draft": 71,
     "total": 869
   },
-  "generated_at": "2026-10-07T06:17:14Z",
+  "generated_at": "2026-10-07T08:19:49Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -2958,7 +2958,7 @@
     "8844": {
       "author": "BIMvoice",
       "branch": "sweep-46-geom-normal-index",
-      "head": "71c18a9",
+      "head": "7681e14",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "serializers: independent position/normal index streams for OBJ and Collada (#46)",
@@ -2985,7 +2985,7 @@
     "8856": {
       "author": "BIMvoice",
       "branch": "sweep-1308-svg-data-area",
-      "head": "2c6db3d",
+      "head": "afa321b",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "SvgSerializer: emit machine-readable space area attribute; fix double-escaped area label (#1308)",
@@ -7086,8 +7086,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610070749",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070749"
+    "tag": "v0.9.0-alpha2610070949",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070949"
   },
   "schema": 1
 }
