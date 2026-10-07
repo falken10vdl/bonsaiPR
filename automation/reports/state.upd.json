@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 124,
-    "merged": 586,
-    "skipped_conflict": 90,
+    "merged": 582,
+    "skipped_conflict": 89,
     "skipped_draft": 70,
-    "total": 870
+    "total": 865
   },
-  "generated_at": "2026-10-07T14:23:22Z",
+  "generated_at": "2026-10-07T16:21:02Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1019,7 +1019,7 @@
       "author": "BIMvoice",
       "branch": "fix/reassign-class-latent-8210",
       "head": "6bfe660",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "root.reassign_class: raise a clear error when no class is applicable (#8210)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8258"
     },
@@ -1263,14 +1263,6 @@
       "title": "util.selector: match boolean properties by True/False spelling (#8100)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8323"
     },
-    "8325": {
-      "author": "BIMvoice",
-      "branch": "fix-material-layer-panel-flip-order-8240",
-      "head": "8ae2389",
-      "status": "merged",
-      "title": "bonsai(material): keep the layer panel in stored order so a wall flip does not reorder it (#8240)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8325"
-    },
     "8326": {
       "author": "BIMvoice",
       "branch": "fix-append-asset-duplicate-classification-7150",
@@ -1318,14 +1310,6 @@
       "status": "merged",
       "title": "ifc5d: measure segment length from geometry when it is not a supported extrusion",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
-    },
-    "8333": {
-      "author": "BIMvoice",
-      "branch": "fix-8330-tab-wall-item-mode",
-      "head": "3a2eb24",
-      "status": "merged",
-      "title": "bonsai(model): TAB on a wall enters IFC Item Mode again (#8330)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8333"
     },
     "8334": {
       "author": "BIMvoice",
@@ -1658,14 +1642,6 @@
       "title": "Bonsai: expose 2-Point Arc resolution in redo panel (#7233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8402"
     },
-    "8404": {
-      "author": "BIMvoice",
-      "branch": "fix-7092-work",
-      "head": "d2e61ee",
-      "status": "merged",
-      "title": "Fix #7092: copy independent profile defs when duplicating a material profile set",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8404"
-    },
     "8405": {
       "author": "BIMvoice",
       "branch": "fix-7657-work",
@@ -1749,7 +1725,7 @@
     "8426": {
       "author": "BIMvoice",
       "branch": "fix-6906-mirror-merge-decouple",
-      "head": "75730c2",
+      "head": "65a83cd",
       "status": "merged",
       "title": "Bonsai: decouple the Merge and Mirror buttons so Mirror works on walls (#6906)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8426"
@@ -2114,8 +2090,8 @@
     "8585": {
       "author": "BIMvoice",
       "branch": "fix-7275-drawing-sheet-undo",
-      "head": "07dd3a5",
-      "status": "skipped_conflict",
+      "head": "a4796d9",
+      "status": "merged",
       "title": "Bonsai: restore sheet SVG on undo/redo of drawing removal (#7275)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8585"
     },
@@ -2704,7 +2680,7 @@
     "8734": {
       "author": "BIMvoice",
       "branch": "bonsai-8049-resilient-drawing-print",
-      "head": "eb6a17f",
+      "head": "dc27171",
       "status": "merged",
       "title": "Bonsai: don't let one bad element abort an entire drawing print",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8734"
@@ -2712,7 +2688,7 @@
     "8735": {
       "author": "BIMvoice",
       "branch": "bonsai-7481-wall-toolbar-void-buttons",
-      "head": "de9e296",
+      "head": "446836f",
       "status": "merged",
       "title": "Bonsai: draw the wall tool's void-edit confirm/cancel buttons last",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8735"
@@ -2782,14 +2758,6 @@
       "status": "merged",
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
-    },
-    "8753": {
-      "author": "BIMvoice",
-      "branch": "fix-2831-combined",
-      "head": "8f6cd75",
-      "status": "merged",
-      "title": "ifcopenshell.api: don't cascade a reassigned occurrence's class onto its shared type and siblings",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8753"
     },
     "8755": {
       "author": "BIMvoice",
@@ -3214,7 +3182,7 @@
       "author": "BIMvoice",
       "branch": "feat-4252-ifccsv-split-worksheets",
       "head": "e7f6ab1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcCSV: split export results into multiple worksheets (split_by)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8912"
     },
@@ -3289,14 +3257,6 @@
       "status": "merged",
       "title": "Bonsai: prompt for grid U/V parameters before creating a grid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8922"
-    },
-    "8923": {
-      "author": "BIMvoice",
-      "branch": "fix-4774-shapely-fill-flush-edge",
-      "head": "46595ad",
-      "status": "skipped_conflict",
-      "title": "Bonsai: pool all projections for shapely fill cell formation",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8923"
     },
     "8924": {
       "author": "BIMvoice",
@@ -3645,7 +3605,7 @@
     "8993": {
       "author": "BIMvoice",
       "branch": "bonsai-8031-missing-deps-guidance",
-      "head": "e63328e",
+      "head": "9adefe6",
       "status": "merged",
       "title": "Bonsai: tell the user how to recover missing dependencies (#8031)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8993"
@@ -4278,7 +4238,7 @@
     "9113": {
       "author": "BIMvoice",
       "branch": "ifc5d-wrong-number-audit",
-      "head": "c3e7868",
+      "head": "813e2e9",
       "status": "merged",
       "title": "ifc5d: fix four wrong-number defects in cost export, cost import and weight quantities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
@@ -4783,7 +4743,7 @@
     "9200": {
       "author": "BIMvoice",
       "branch": "fix/ifcfm-cobie-zero-value-properties-dropped",
-      "head": "104aad1",
+      "head": "64beb44",
       "status": "merged",
       "title": "ifcfm: COBie export drops properties valued zero or False",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9200"
@@ -4815,7 +4775,7 @@
     "9205": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-verdict-audit-round2",
-      "head": "67e537b",
+      "head": "eab2891",
       "status": "merged",
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
@@ -5689,7 +5649,7 @@
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
-      "head": "77ece1c",
+      "head": "a677ff2",
       "status": "merged",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9555"
@@ -7024,7 +6984,7 @@
       "author": "theoryshaw",
       "branch": "dev-environment-system-info",
       "head": "2c061fa",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: report dev environment symlink state in system info",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9840"
     },
@@ -7079,10 +7039,10 @@
     "9847": {
       "author": "BIMvoice",
       "branch": "fix/collada-obj-curve-normals",
-      "head": "10d6229",
+      "head": "785fd2a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Fix Collada crash and normals with curve items",
+      "title": "Fix serializer crashes with mixed curve and solid items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9847"
     },
     "9848": {
@@ -7096,8 +7056,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610071552",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071552"
+    "tag": "v0.9.0-alpha2610071751",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071751"
   },
   "schema": 1
 }
