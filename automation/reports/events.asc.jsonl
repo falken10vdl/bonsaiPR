@@ -8299,3 +8299,17 @@
 {"ts": "2026-10-07T15:20:32Z", "order": "ascending", "pr": 9842, "event": "updated", "status": "merged", "from_head": "8fad04a", "to_head": "958d0e0"}
 {"ts": "2026-10-07T15:20:32Z", "order": "ascending", "pr": 9847, "event": "added", "to": "failed"}
 {"ts": "2026-10-07T15:20:32Z", "order": "ascending", "pr": 9848, "event": "added", "to": "failed"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 8323, "event": "removed", "from": "merged"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 8389, "event": "updated", "status": "merged", "from_head": "08f291a", "to_head": "bf264ca"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 8404, "event": "removed", "from": "merged"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 8426, "event": "status", "from": "skipped_draft", "to": "merged"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 8753, "event": "removed", "from": "skipped_conflict"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 8776, "event": "updated", "status": "failed", "from_head": "c9e8bbe", "to_head": "db35597"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 8792, "event": "removed", "from": "failed"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 8981, "event": "updated", "status": "merged", "from_head": "04a61b4", "to_head": "9e4efa8"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 9113, "event": "updated", "status": "merged", "from_head": "c3e7868", "to_head": "813e2e9"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 9116, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 9160, "event": "updated", "status": "merged", "from_head": "33a56f6", "to_head": "1b7207d"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 9205, "event": "updated", "status": "merged", "from_head": "67e537b", "to_head": "eab2891"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 9272, "event": "updated", "status": "merged", "from_head": "cec71fc", "to_head": "263cbb1"}
+{"ts": "2026-10-07T17:19:08Z", "order": "ascending", "pr": 9639, "event": "updated", "status": "skipped_conflict", "from_head": "cf28f4b", "to_head": "c610ca3"}

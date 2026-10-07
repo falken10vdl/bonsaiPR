@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 125,
-    "merged": 581,
+    "failed": 124,
+    "merged": 579,
     "skipped_conflict": 90,
-    "skipped_draft": 71,
-    "total": 867
+    "skipped_draft": 70,
+    "total": 863
   },
-  "generated_at": "2026-10-07T15:20:32Z",
+  "generated_at": "2026-10-07T17:19:08Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -1255,14 +1255,6 @@
       "title": "bonsai(pset): bind schema module directly so pset UI survives add-on reload (#8236)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8322"
     },
-    "8323": {
-      "author": "BIMvoice",
-      "branch": "fix-selector-boolean-property-8100",
-      "head": "245f8e6",
-      "status": "merged",
-      "title": "util.selector: match boolean properties by True/False spelling (#8100)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8323"
-    },
     "8326": {
       "author": "BIMvoice",
       "branch": "fix-append-asset-duplicate-classification-7150",
@@ -1572,7 +1564,7 @@
     "8389": {
       "author": "BIMvoice",
       "branch": "fix-4537-door-window-attribute-qto",
-      "head": "08f291a",
+      "head": "bf264ca",
       "status": "merged",
       "title": "Quantify doors and windows from IFC attributes on both take-off engines (supersedes #4537)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8389"
@@ -1641,14 +1633,6 @@
       "status": "merged",
       "title": "Bonsai: expose 2-Point Arc resolution in redo panel (#7233)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8402"
-    },
-    "8404": {
-      "author": "BIMvoice",
-      "branch": "fix-7092-work",
-      "head": "d2e61ee",
-      "status": "merged",
-      "title": "Fix #7092: copy independent profile defs when duplicating a material profile set",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8404"
     },
     "8405": {
       "author": "BIMvoice",
@@ -1734,7 +1718,7 @@
       "author": "BIMvoice",
       "branch": "fix-6906-mirror-merge-decouple",
       "head": "65a83cd",
-      "status": "skipped_draft",
+      "status": "merged",
       "title": "Bonsai: decouple the Merge and Mirror buttons so Mirror works on walls (#6906)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8426"
     },
@@ -2767,14 +2751,6 @@
       "title": "Bonsai: add one-click Convert to Type for untyped occurrences",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
-    "8753": {
-      "author": "BIMvoice",
-      "branch": "fix-2831-combined",
-      "head": "8f6cd75",
-      "status": "skipped_conflict",
-      "title": "ifcopenshell.api: don't cascade a reassigned occurrence's class onto its shared type and siblings",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8753"
-    },
     "8755": {
       "author": "BIMvoice",
       "branch": "bonsai-3302-mirror-joins",
@@ -2854,10 +2830,10 @@
     "8776": {
       "author": "BIMvoice",
       "branch": "fix-414-ownership-propagation",
-      "head": "c9e8bbe",
+      "head": "db35597",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "IfcParse: propagate file ownership when assigning instance attributes (fixes #414)",
+      "title": "IfcParse: add instances of another file on assignment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8776"
     },
     "8778": {
@@ -2868,15 +2844,6 @@
       "status": "failed",
       "title": "ifcgeom: salvage subtractions when OCCT refuses invalid boolean operands (#2320)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8778"
-    },
-    "8792": {
-      "author": "BIMvoice",
-      "branch": "fix-6409-nan-token",
-      "head": "8c91b44",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "IfcParse: read back non-finite REALs serialized with a trailing dot",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8792"
     },
     "8794": {
       "author": "BIMvoice",
@@ -3573,7 +3540,7 @@
     "8981": {
       "author": "BIMvoice",
       "branch": "7493-stair-terminology",
-      "head": "04a61b4",
+      "head": "9e4efa8",
       "status": "merged",
       "title": "Bonsai: use consistent Length/Width stair terminology",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8981"
@@ -4254,7 +4221,7 @@
     "9113": {
       "author": "BIMvoice",
       "branch": "ifc5d-wrong-number-audit",
-      "head": "c3e7868",
+      "head": "813e2e9",
       "status": "merged",
       "title": "ifc5d: fix four wrong-number defects in cost export, cost import and weight quantities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
@@ -4262,8 +4229,8 @@
     "9116": {
       "author": "BIMvoice",
       "branch": "ifcclash-ifccsv-audit-fixes",
-      "head": "a8dc969",
-      "status": "merged",
+      "head": "1386bd0",
+      "status": "skipped_conflict",
       "title": "ifccsv: fix a wrong summary total and silently ignored Country on reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9116"
     },
@@ -4527,7 +4494,7 @@
     "9160": {
       "author": "BIMvoice",
       "branch": "fix-9xxx-ifc2x3-base-qto-relatingpropertydefinition",
-      "head": "33a56f6",
+      "head": "1b7207d",
       "status": "merged",
       "title": "Bonsai: fix three IFC2X3-only defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9160"
@@ -4791,7 +4758,7 @@
     "9205": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-verdict-audit-round2",
-      "head": "67e537b",
+      "head": "eab2891",
       "status": "merged",
       "title": "ifctester: Attribute optional cardinality and LOGICAL UNKNOWN give wrong verdicts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9205"
@@ -5023,7 +4990,7 @@
     "9272": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-partof-relation-recursion",
-      "head": "cec71fc",
+      "head": "263cbb1",
       "status": "merged",
       "title": "ifctester: PartOf group and containment do not recurse",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9272"
@@ -5912,7 +5879,7 @@
     "9639": {
       "author": "BIMvoice",
       "branch": "v09/fix-8538-keep-material-usage",
-      "head": "cf28f4b",
+      "head": "c610ca3",
       "status": "skipped_conflict",
       "title": "Bonsai: preserve material usage direction across a type change (#6676)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9639"
@@ -7073,8 +7040,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610071650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071650"
+    "tag": "v0.9.0-alpha2610071850",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071850"
   },
   "schema": 1
 }

@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 124,
+    "failed": 123,
     "merged": 582,
     "skipped_conflict": 89,
     "skipped_draft": 70,
-    "total": 865
+    "total": 864
   },
-  "generated_at": "2026-10-07T16:21:02Z",
+  "generated_at": "2026-10-07T18:19:50Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1255,14 +1255,6 @@
       "title": "bonsai(pset): bind schema module directly so pset UI survives add-on reload (#8236)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8322"
     },
-    "8323": {
-      "author": "BIMvoice",
-      "branch": "fix-selector-boolean-property-8100",
-      "head": "245f8e6",
-      "status": "merged",
-      "title": "util.selector: match boolean properties by True/False spelling (#8100)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8323"
-    },
     "8326": {
       "author": "BIMvoice",
       "branch": "fix-append-asset-duplicate-classification-7150",
@@ -1572,7 +1564,7 @@
     "8389": {
       "author": "BIMvoice",
       "branch": "fix-4537-door-window-attribute-qto",
-      "head": "08f291a",
+      "head": "bf264ca",
       "status": "merged",
       "title": "Quantify doors and windows from IFC attributes on both take-off engines (supersedes #4537)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8389"
@@ -1742,7 +1734,7 @@
       "author": "theoryshaw",
       "branch": "fix-layer3-slab-horizontal-profile-edit",
       "head": "e7dfd43",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix horizontal profile editing for sloped LAYER3 slabs",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8429"
     },
@@ -2024,10 +2016,10 @@
     "8508": {
       "author": "BIMvoice",
       "branch": "fix-7658-curved-loft",
-      "head": "a1d1a2a",
+      "head": "45c7377",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Loft constant curved cross sections instead of crashing (#7658)",
+      "title": "Loft constant curved cross sections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8508"
     },
     "8509": {
@@ -2227,7 +2219,7 @@
     "8612": {
       "author": "BIMvoice",
       "branch": "fix-8611-advanced-import-save-target",
-      "head": "69db9a3",
+      "head": "97df13f",
       "status": "merged",
       "title": "bonsai: don't rebind Save target during Advanced-mode import preview (#8611)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8612"
@@ -2340,7 +2332,7 @@
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
       "head": "c5ac395",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
@@ -2422,7 +2414,7 @@
       "author": "BIMvoice",
       "branch": "fix-6377-plate-3d-editing",
       "head": "4b13a03",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: realign plate placement when a triangular profile is edited in 3D",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
     },
@@ -2838,10 +2830,10 @@
     "8776": {
       "author": "BIMvoice",
       "branch": "fix-414-ownership-propagation",
-      "head": "c9e8bbe",
+      "head": "db35597",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "IfcParse: propagate file ownership when assigning instance attributes (fixes #414)",
+      "title": "IfcParse: add instances of another file on assignment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8776"
     },
     "8778": {
@@ -2852,15 +2844,6 @@
       "status": "failed",
       "title": "ifcgeom: salvage subtractions when OCCT refuses invalid boolean operands (#2320)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8778"
-    },
-    "8792": {
-      "author": "BIMvoice",
-      "branch": "fix-6409-nan-token",
-      "head": "8c91b44",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "IfcParse: read back non-finite REALs serialized with a trailing dot",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8792"
     },
     "8794": {
       "author": "BIMvoice",
@@ -3333,7 +3316,7 @@
     "8935": {
       "author": "BIMvoice",
       "branch": "feat-5373-symbol-viewport-representation",
-      "head": "f0c4adc",
+      "head": "7d53f43",
       "status": "merged",
       "title": "Bonsai: draw real symbol geometry in the viewport instead of an asterisk placeholder",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8935"
@@ -3557,7 +3540,7 @@
     "8981": {
       "author": "BIMvoice",
       "branch": "7493-stair-terminology",
-      "head": "04a61b4",
+      "head": "9e4efa8",
       "status": "merged",
       "title": "Bonsai: use consistent Length/Width stair terminology",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8981"
@@ -4246,7 +4229,7 @@
     "9116": {
       "author": "BIMvoice",
       "branch": "ifcclash-ifccsv-audit-fixes",
-      "head": "a8dc969",
+      "head": "1386bd0",
       "status": "merged",
       "title": "ifccsv: fix a wrong summary total and silently ignored Country on reimport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9116"
@@ -4511,7 +4494,7 @@
     "9160": {
       "author": "BIMvoice",
       "branch": "fix-9xxx-ifc2x3-base-qto-relatingpropertydefinition",
-      "head": "33a56f6",
+      "head": "1b7207d",
       "status": "merged",
       "title": "Bonsai: fix three IFC2X3-only defects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9160"
@@ -5007,7 +4990,7 @@
     "9272": {
       "author": "BIMvoice",
       "branch": "fix/ifctester-partof-relation-recursion",
-      "head": "cec71fc",
+      "head": "263cbb1",
       "status": "merged",
       "title": "ifctester: PartOf group and containment do not recurse",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9272"
@@ -5895,8 +5878,8 @@
     "9639": {
       "author": "BIMvoice",
       "branch": "v09/fix-8538-keep-material-usage",
-      "head": "cf28f4b",
-      "status": "skipped_conflict",
+      "head": "c610ca3",
+      "status": "merged",
       "title": "Bonsai: preserve material usage direction across a type change (#6676)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9639"
     },
@@ -6056,7 +6039,7 @@
     "9660": {
       "author": "BIMvoice",
       "branch": "v09/replace-8529",
-      "head": "6edf36c",
+      "head": "5b0cbb0",
       "status": "merged",
       "title": "Bonsai: support IfcTrimmedCurve arc segments when editing a profile (#6929)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9660"
@@ -7053,11 +7036,19 @@
       "status": "failed",
       "title": "Stop get_info crashing on a reference cycle",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9848"
+    },
+    "9850": {
+      "author": "BIMvoice",
+      "branch": "fix/6249-mep-fitting-offset-tolerance",
+      "head": "f74709c",
+      "status": "merged",
+      "title": "Bonsai: allow float noise in MEP bend offset check",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9850"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610071751",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071751"
+    "tag": "v0.9.0-alpha2610071950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610071950"
   },
   "schema": 1
 }
