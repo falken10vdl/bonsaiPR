@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "openingdesign",
-  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9851 added by hand 2026-10-07; #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 21 closed ones are left out (latest #8325 and #8333, withdrawn by their author 2026-10-07), as is #8971 (overlaps #8200 throughout one function; left out by choice). Pins are the heads last validated at v0.9.0 (173 PRs, 164 pins), 2026-10-07.",
+  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9851 added by hand 2026-10-07; #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 22 closed ones are left out (latest #8325, #8333 and #8323, withdrawn by their author 2026-10-07), as is #8971 (overlaps #8200 throughout one function; left out by choice). Pins are the heads last validated at v0.9.0 (172 PRs, 163 pins), 2026-10-07.",
   "maintainer": "OpeningDesign",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
@@ -106,7 +106,6 @@
       8318,
       8319,
       8322,
-      8323,
       8326,
       8327,
       8328,
@@ -285,7 +284,6 @@
     8318,
     8319,
     8322,
-    8323,
     8326,
     8327,
     8328,
@@ -455,7 +453,6 @@
     "8318": "e6b442b0afbf411aeb4b1200d177858e89e04b7b",
     "8319": "489f7aada09502d5bf6d6b0c66c73c34251c6b71",
     "8322": "6e7640d77618d5610f2db0b955a113484fdae40d",
-    "8323": "245f8e6c9f5b8e3d3b3196c5fdc824d74af16a48",
     "8326": "ef4e5835851d464292d6628daeeb33e52c6cfae4",
     "8327": "93f96e9afa3d45a795080d024c44e161ad9ddd83",
     "8328": "f9dd32c20326b0d6d2be208efe3ae0eba1584f07",
@@ -531,6 +528,6 @@
     "9589": "e8ddb25b0ce45aea5f385762c43084a08043f07b",
     "9765": "c0adc2485cd736ddb408819dd62c6153ec8d80d1",
     "9840": "2c061fac355b11140e5cd477c0f42d9d94034918",
-    "9851": "2dba5fc1f08106783e42274c6fc491648b167dc4"
+    "9851": "70c8a9f15b08c3e51cbb8a1117a6def009d75cc0"
   }
 }
