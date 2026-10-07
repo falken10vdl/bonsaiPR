@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 866
   },
-  "generated_at": "2026-10-06T17:18:57Z",
+  "generated_at": "2026-10-06T23:21:25Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -4897,7 +4897,7 @@
     "9233": {
       "author": "BIMvoice",
       "branch": "fix-9230-void-profile-open-loop",
-      "head": "c26da64",
+      "head": "9b5f9dd",
       "status": "merged",
       "title": "Bonsai: void loop that encloses no area crashes (#9230), or is silently lost (#8983)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9233"
@@ -7064,8 +7064,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610061850",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610061850"
+    "tag": "v0.9.0-alpha2610070050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610070050"
   },
   "schema": 1
 }
