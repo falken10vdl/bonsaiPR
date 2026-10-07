@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "openingdesign",
-  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 21 closed ones are left out (latest #8325 and #8333, withdrawn by their author 2026-10-07), as is #8971 (overlaps #8200 throughout one function; left out by choice). Pins are the heads last validated at v0.9.0 (172 PRs, 163 pins), 2026-10-07.",
+  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9851 added by hand 2026-10-07; #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 21 closed ones are left out (latest #8325 and #8333, withdrawn by their author 2026-10-07), as is #8971 (overlaps #8200 throughout one function; left out by choice). Pins are the heads last validated at v0.9.0 (173 PRs, 164 pins), 2026-10-07.",
   "maintainer": "OpeningDesign",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
@@ -181,7 +181,8 @@
       9557,
       9589,
       9765,
-      9840
+      9840,
+      9851
     ],
     "authors": []
   },
@@ -363,7 +364,8 @@
     8598,
     9840,
     8676,
-    8585
+    8585,
+    9851
   ],
   "pin": {
     "5452": "99958f7c73927fb22e343ab724b21e4199dc2755",
@@ -528,6 +530,7 @@
     "9557": "aef65718f9b53bb2678d254f34f1bfc83c7dbc7e",
     "9589": "e8ddb25b0ce45aea5f385762c43084a08043f07b",
     "9765": "c0adc2485cd736ddb408819dd62c6153ec8d80d1",
-    "9840": "2c061fac355b11140e5cd477c0f42d9d94034918"
+    "9840": "2c061fac355b11140e5cd477c0f42d9d94034918",
+    "9851": "2dba5fc1f08106783e42274c6fc491648b167dc4"
   }
 }
