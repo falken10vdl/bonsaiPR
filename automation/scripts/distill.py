@@ -90,12 +90,28 @@ RE_HASH_NUM = re.compile(r"#(\d+)")
 # working checkout tends to have. Scanning only the first two once left a PR
 # opened after the last pipeline fetch (#9765) looking like the curator's own
 # unshared work.
+# refs/distill/pull/<n> is distill's own, written only by --fetch-prs and listed
+# first so a fresh head wins over a working checkout's older copy: a stale
+# refs/prhead/9555 lacked the two commits the curator had just picked from #9555,
+# and they read as the curator's own work.
 RE_PR_REF = re.compile(
-    r"^refs/(?:remotes/pr[-/](\d+)(?:/|$)|prhead/(\d+)$|pull/(\d+)/head$)"
+    r"^refs/(?:remotes/pr[-/](\d+)(?:/|$)|prhead/(\d+)$|pull/(\d+)/head$|distill/pull/(\d+)$)"
 )
 PR_REF_GLOBS = (
+    "refs/distill/pull/*",
     "refs/remotes/pr/*", "refs/remotes/pr-*/*", "refs/prhead/*", "refs/pull/*/head",
 )
+FETCHED_PR_NAMESPACE = "refs/distill/pull"
+
+# Subjects that name no change. Matching on one attributes a commit to whatever
+# PR happens to carry the same boilerplate: a `merge --squash` of #8676 was
+# credited to #1833, closed years ago, because both said "Squashed commit of the
+# following:".
+RE_GENERIC_SUBJECT = re.compile(
+    r"^(squashed commit of the following:?|fixup!.*|squash!.*|wip|update)$", re.IGNORECASE
+)
+# What `git merge --squash` writes into the message, once per squashed commit.
+RE_SQUASHED_SHA = re.compile(r"^commit ([0-9a-f]{40})$", re.MULTILINE)
 
 
 def _pr_of_ref(ref):
@@ -223,6 +239,65 @@ def pr_commit_index(repo, base, globs=PR_REF_GLOBS):
     return index
 
 
+def fetch_pr_heads(repo, remote):
+    """Refresh every PR's current head into refs/distill/pull/<n>.
+
+    A working checkout's PR refs are as old as its last fetch, and distill can
+    only attribute to commits it can see: a PR opened since (#9840), or commits
+    added to a PR since (#9555), otherwise read as the curator's own work.
+    Written to a namespace distill owns, so the checkout's own refs are left as
+    they were. Returns the number of PR refs now present there.
+    """
+    r = subprocess.run(
+        ["git", "fetch", "--quiet", "--no-tags", remote,
+         f"+refs/pull/*/head:{FETCHED_PR_NAMESPACE}/*"],
+        cwd=repo, capture_output=True, text=True, encoding="utf-8", errors="replace",
+    )
+    if r.returncode != 0:
+        raise RuntimeError(f"fetching PR heads from {remote} failed: {r.stderr.strip()}")
+    out = git(["for-each-ref", "--format=%(refname)", FETCHED_PR_NAMESPACE + "/"], repo)
+    return len(out.splitlines())
+
+
+def github_slug(repo, remote):
+    """owner/name of a GitHub remote, or None."""
+    url = git(["remote", "get-url", remote], repo).strip()
+    m = re.search(r"github\.com[:/]([^/]+/[^/]+?)(?:\.git)?/?$", url)
+    return m.group(1) if m else None
+
+
+def github_pr(slug, number):
+    """{state, title, author, head} for one PR from the GitHub API, or None.
+
+    For PRs the committed snapshot does not know: it is as old as its last
+    publish, so a PR opened since (#9840) is missing from it and was reported
+    as not open. Unauthenticated unless GITHUB_TOKEN is set; any failure
+    returns None, which the caller reports as unknown rather than closed.
+    """
+    import urllib.request
+    req = urllib.request.Request(
+        f"https://api.github.com/repos/{slug}/pulls/{number}",
+        headers={"Accept": "application/vnd.github+json"},
+    )
+    token = os.getenv("GITHUB_TOKEN")
+    if token:
+        req.add_header("Authorization", f"Bearer {token}")
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            d = json.load(r)
+    except Exception:
+        return None
+    return {"state": d.get("state"), "title": d.get("title"),
+            "author": (d.get("user") or {}).get("login"),
+            "head": (d.get("head") or {}).get("sha")}
+
+
+def squashed_shas(repo, sha):
+    """The commits a `git merge --squash` commit says it contains, oldest first."""
+    body = git(["log", "-1", "--format=%B", sha], repo)
+    return list(reversed(RE_SQUASHED_SHA.findall(body)))
+
+
 def pr_refs(repo, globs=PR_REF_GLOBS):
     """{pr_number: head sha} for every mirrored PR ref (first one found wins)."""
     out = git(["for-each-ref", "--format=%(objectname) %(refname)"] + list(globs), repo)
@@ -267,7 +342,7 @@ def release_branch_globs(base):
 NON_CODE = re.compile(r"(^|/)(tests?|docs?)/|(^|/)test_[^/]*\.py$|\.(md|rst|txt)$")
 
 
-def pr_inclusion(repo, base, branch, prs, heads):
+def pr_inclusion(repo, base, branch, prs, heads, also_present=()):
     """How much of each PR is on the branch, by patch-id.
 
     {pr: {"commits": n, "exact": n, "adapted": n, "missing_noncode": n, "head": sha}};
@@ -276,10 +351,13 @@ def pr_inclusion(repo, base, branch, prs, heads):
     that touch only tests or docs.
     """
     excl = ["--not", base] + release_branch_globs(base)
-    on_branch = patch_ids_in(repo, [branch] + excl)
-    branch_subjects = set(
-        git(["log", "--no-merges", "--format=%s", branch] + excl, repo).splitlines()
-    )
+    on_branch = set(patch_ids_in(repo, [branch] + excl))
+    # Commits present only inside a squash: on the branch, but not as themselves.
+    on_branch |= set(also_present)
+    branch_subjects = {
+        s for s in git(["log", "--no-merges", "--format=%s", branch] + excl, repo).splitlines()
+        if not RE_GENERIC_SUBJECT.match(s)
+    }
     result = {}
     for pr in prs:
         head = heads.get(str(pr))
@@ -306,7 +384,43 @@ def pr_inclusion(repo, base, branch, prs, heads):
     return result
 
 
-def attribute_cherry_pick(repo, commit, index, cache):
+def attribute_squash(repo, squashed, index, cache, present=None):
+    """Attribute a `merge --squash` commit through the commits it lists.
+
+    The squash itself matches no PR commit, by patch or by subject: it is all of
+    them at once. Its message names each squashed commit, so each is attributed
+    as a cherry-pick would be, and their patch-ids are added to `present` so the
+    PR counts as on the branch. Exact only when every listed commit is
+    patch-identical to one on the same PR.
+    """
+    found = {}  # pr -> [confidence per listed commit]
+    for sha in squashed:
+        subject = git(["log", "-1", "--format=%s", sha], repo).strip()
+        if not subject:
+            continue  # not in this clone: nothing to compare against
+        pr, conf, _ = attribute_cherry_pick(
+            repo, {"sha": sha, "subject": subject}, index, cache, present
+        )
+        if pr:
+            found.setdefault(pr, []).append(conf)
+            if present is not None and conf == EXACT:
+                if sha not in cache:
+                    cache[sha] = patch_id(repo, sha)
+                if cache[sha]:
+                    present.add(cache[sha])
+    if not found:
+        return None, None, None
+    pr = max(found, key=lambda p: len(found[p]))
+    confs = found[pr]
+    conf = EXACT if len(confs) == len(squashed) and all(c == EXACT for c in confs) else PROBABLE
+    others = sorted(set(found) - {pr}, key=int)
+    evidence = f"squash of {len(squashed)} commit(s), {len(confs)} from PR #{pr}"
+    if others:
+        evidence += " (also " + ", ".join("#" + o for o in others) + ")"
+    return pr, conf, evidence
+
+
+def attribute_cherry_pick(repo, commit, index, cache, present=None):
     """Attribute a non-merge commit to the PR it was cherry-picked from.
 
     Nothing above this rung can see these. `attribute()` reads merge subjects,
@@ -321,6 +435,12 @@ def attribute_cherry_pick(repo, commit, index, cache):
     a different base - the hunks get conflict-adjusted - so it is probable rather
     than exact: the same work, adapted.
     """
+    generic = bool(RE_GENERIC_SUBJECT.match(commit["subject"]))
+    if generic:
+        squashed = squashed_shas(repo, commit["sha"])
+        if squashed:
+            return attribute_squash(repo, squashed, index, cache, present)
+
     candidates = index.get(commit["subject"])
     if not candidates:
         return None, None, None
@@ -333,6 +453,9 @@ def attribute_cherry_pick(repo, commit, index, cache):
             if cache[sha] and cache[sha] == mine:
                 return pr, EXACT, f"patch-identical to {sha[:12]} on PR #{pr}"
 
+    if generic:
+        # Same boilerplate, different patch: no evidence of anything.
+        return None, None, None
     prs = sorted({pr for _, pr in candidates}, key=int)
     shown = ", ".join("#" + p for p in prs[:3])
     if len(prs) > 3:
@@ -558,7 +681,10 @@ def cluster_residue(repo, residue, max_gap=3):
 # Distillation
 # --------------------------------------------------------------------------- #
 
-def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
+def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True,
+            github=None):
+    """`github` is the owner/name to ask about PRs the snapshot does not know,
+    set when PR heads were fetched fresh (--fetch-prs)."""
     by_num, by_owner_branch = load_pr_index(pr_index_path)
     # The default path is relative to *this file*, so running distill.py from a
     # download directory resolves it to somewhere that does not exist and every
@@ -579,6 +705,7 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
 
     cherry_index = pr_commit_index(repo, base)
     pid_cache = {}
+    squash_present = set()   # patch-ids of commits present only inside a squash
     cherry_pos = {}          # PR number -> index in order_seq after its last picked commit
 
     for c in commits:
@@ -615,7 +742,9 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
         elif c["sha"] in absorbed:
             row["classification"] = "absorbed-upstream"
         else:
-            cpr, cconf, cev = attribute_cherry_pick(repo, c, cherry_index, pid_cache)
+            cpr, cconf, cev = attribute_cherry_pick(
+                repo, c, cherry_index, pid_cache, squash_present
+            )
             if cpr:
                 row.update(
                     {
@@ -652,18 +781,36 @@ def distill(repo, base, branch, pr_index_path=DEFAULT_PR_INDEX, harvest=True):
     # subject (adapted), all but their tests/docs (substance) or only in part,
     # for a human to decide.
     heads = pr_refs(repo)
-    inclusion = pr_inclusion(repo, base, branch, sorted(cherry_pos), heads)
-    included = {"full": [], "adapted": [], "substance": [], "partial": []}
+    fresh = {int(p) for p in pr_refs(repo, (FETCHED_PR_NAMESPACE + "/*",))}
+    inclusion = pr_inclusion(repo, base, branch, sorted(cherry_pos), heads, squash_present)
+    included = {"full": [], "adapted": [], "substance": [], "partial": [], "topped_up": []}
     for pr, inc in sorted(inclusion.items()):
-        if pr in order_seq:
-            continue  # already selected by its merge; picking from it too is not news
         rec = by_num.get(str(pr))
+        if pr in order_seq:
+            # Merged, then newer commits picked on top (#9555: merged at
+            # af6b3f9a25, then two commits from its later head). The build
+            # carries more of the PR than the merge recorded, so the pin moves
+            # to the PR's head when the whole of it is now on the branch.
+            entry = dict(inc, pr=pr, title=(rec or {}).get("title"),
+                         merged_head=(validated.get(pr) or "")[:12])
+            entry["whole"] = inc["exact"] == inc["commits"]
+            if entry["whole"]:
+                validated[pr] = inc["head"]
+            included["topped_up"].append(entry)
+            continue
+        is_open = bool(rec) if pr_index_ok else None
+        if not rec and github:
+            live = github_pr(github, pr)
+            rec = live
+            is_open = (live["state"] == "open") if live else None
         entry = dict(inc, pr=pr, title=(rec or {}).get("title"),
-                     author=(rec or {}).get("author"), open=bool(rec) if pr_index_ok else None)
+                     author=(rec or {}).get("author"), open=is_open)
         # A local ref older than the PR's current head may have lost or gained
-        # commits since; say so instead of trusting it.
+        # commits since; say so instead of trusting it. A head just fetched is
+        # the current one, whatever an older snapshot recorded.
         cur = (rec or {}).get("head") or ""
-        entry["stale_ref"] = bool(cur) and not inc["head"].startswith(cur[:7])
+        entry["stale_ref"] = (pr not in fresh and bool(cur)
+                              and not inc["head"].startswith(cur[:7]))
         if inc["exact"] == inc["commits"]:
             included["full"].append(entry)
         elif inc["exact"] + inc["adapted"] == inc["commits"]:
@@ -937,6 +1084,7 @@ def render(result, top=12):
         for e in rows[:top]:
             flags = "".join([
                 "  [not open]" if e.get("open") is False else "",
+                "  [open? not in PR snapshot]" if e.get("open") is None else "",
                 "  [local ref older than PR head]" if e.get("stale_ref") else "",
             ])
             out.append(
@@ -946,6 +1094,20 @@ def render(result, top=12):
             )
         if len(rows) > top:
             out.append(f"  … {len(rows) - top} more")
+        out.append("")
+
+    topped = inc.get("topped_up") or []
+    if topped:
+        out.append(f"## Merged PRs with newer commits picked on top ({len(topped)})")
+        out.append("")
+        out.append("  The build carries more of these PRs than their merge did. Where all")
+        out.append("  of the PR is now on the branch, its pin moves to the PR's head.")
+        out.append("")
+        for e in topped[:top]:
+            moved = (f"pin {e['merged_head']} → {e['head'][:12]}" if e["whole"]
+                     else f"pin stays {e['merged_head']}: {e['exact']}+{e['adapted']}/{e['commits']} commits present"
+                          + (" (rest adapted: review)" if e["exact"] + e["adapted"] == e["commits"] else ""))
+            out.append(f"  #{e['pr']:<6} {moved}  {(e.get('title') or '')[:48]}")
         out.append("")
 
     if r["probable"]:
@@ -1060,12 +1222,33 @@ def main(argv=None):
     ap.add_argument("--out", default=None)
     ap.add_argument("--top", type=int, default=12)
     ap.add_argument("--no-harvest", action="store_true")
+    ap.add_argument(
+        "--fetch-prs", metavar="REMOTE", nargs="?", const="origin", default=None,
+        help="first refresh every PR's head from REMOTE (default origin) into "
+             f"{FETCHED_PR_NAMESPACE}/, so PRs opened or updated since the "
+             "checkout's last fetch are seen",
+    )
     args = ap.parse_args(argv)
 
     try:
+        github = None
+        if args.fetch_prs:
+            n = fetch_pr_heads(args.repo, args.fetch_prs)
+            print(f"🔄 {n} PR heads fetched from {args.fetch_prs} into {FETCHED_PR_NAMESPACE}/",
+                  file=sys.stderr)
+            github = github_slug(args.repo, args.fetch_prs)
+        else:
+            kept = git(["for-each-ref", "--format=%(refname)", FETCHED_PR_NAMESPACE + "/"],
+                       args.repo).splitlines()
+            if kept:
+                # They outrank the checkout's own PR refs, so say they are in use:
+                # an old branch read against today's heads reads differently.
+                print(f"ℹ️  Using {len(kept)} PR heads from an earlier --fetch-prs "
+                      f"({FETCHED_PR_NAMESPACE}/); pass --fetch-prs to refresh them",
+                      file=sys.stderr)
         result = distill(
             args.repo, args.base, args.branch,
-            pr_index_path=args.pr_index, harvest=not args.no_harvest,
+            pr_index_path=args.pr_index, harvest=not args.no_harvest, github=github,
         )
     except RuntimeError as e:
         print(f"❌ {e}", file=sys.stderr)

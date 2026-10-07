@@ -164,7 +164,25 @@ both statements, not routine.
   review bucket, "substance", separates PRs whose code is all there but whose
   test or doc commits are not, usually because they were added after the pick
   (#9044, #9555, #9557). Before, these were "partial" and looked like a partial
-  pick. A PR's commits can also arrive *inside* another merged
+  pick.
+- **`distill` trusted whatever PR refs the checkout happened to have.** On a
+  build branch with 8 hand-picked commits, it got 1 of 3 sources right
+  (2026-10-07). It credited a `merge --squash` of #8676 to #1833, closed years
+  ago, because both carried the subject "Squashed commit of the following:".
+  It called a commit from #9840 (opened after the checkout's last fetch), and
+  two newer commits from the already-merged #9555, the curator's own work. It
+  also marked #9840 "not open", because the PR snapshot it reads
+  (`reports/state.asc.json`) predates it. Now `--fetch-prs` refreshes every PR
+  head into `refs/distill/pull/`, which outranks the checkout's refs and
+  persists, and later runs say so. Generic subjects never attribute. A squash
+  is attributed through the `commit <sha>` lines in its message. PRs missing
+  from the snapshot are asked of GitHub, or reported as unknown, not closed.
+  A merged PR with newer commits picked on top gets its own section, and its
+  pin moves to the PR head when all of it is present. With fresh heads, 8 of
+  8 picks attributed. Reading an *old* branch against today's heads moves PRs
+  that have gained commits since (rebases, collision fixes) to "partial". That
+  is accurate, but it answers "how much of today's PR" rather than "what was
+  picked then". A PR's commits can also arrive *inside* another merged
   PR (#8061/#8062/#8064 rode in on #8083): those are not cherry-picks and the
   host PR already carries them, so a whole-branch comparison overcounts.
 - **A sidecar skipped when empty is a stale sidecar.** `write_pinned()` and
