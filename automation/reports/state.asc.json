@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 865
   },
-  "generated_at": "2026-10-08T00:19:19Z",
+  "generated_at": "2026-10-08T05:18:40Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -6959,9 +6959,9 @@
     "9839": {
       "author": "BIMvoice",
       "branch": "fix/9830-guid-non-22-char",
-      "head": "3f45a14",
+      "head": "7c25a14",
       "status": "skipped_draft",
-      "title": "Index GlobalIds that are not 22 characters",
+      "title": "Find GlobalIds shorter than 22 characters with by_guid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9839"
     },
     "9840": {
@@ -7056,8 +7056,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610080150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080150"
+    "tag": "v0.9.0-alpha2610080650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080650"
   },
   "schema": 1
 }

@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 123,
-    "merged": 583,
-    "skipped_conflict": 89,
+    "merged": 587,
+    "skipped_conflict": 86,
     "skipped_draft": 70,
-    "total": 865
+    "total": 866
   },
-  "generated_at": "2026-10-08T01:17:12Z",
+  "generated_at": "2026-10-08T06:16:44Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -643,7 +643,7 @@
       "author": "brunopostle",
       "branch": "bonsai-license",
       "head": "a072c72",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai, add license tagging for IFC elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7917"
     },
@@ -786,7 +786,7 @@
       "author": "theoryshaw",
       "branch": "fix/isolate-objects-select-all-context",
       "head": "09cf3d4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #7999: Fix isolate_objects context for select_all op",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8000"
     },
@@ -890,7 +890,7 @@
       "author": "theoryshaw",
       "branch": "fix/remove-drawing-corrupted",
       "head": "0e7711e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix remove_drawing crash on corrupted drawing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8123"
     },
@@ -923,7 +923,7 @@
       "author": "theoryshaw",
       "branch": "drawing_render_overrides",
       "head": "d678a01",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Add per-drawing render overrides (status_render module)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8171"
     },
@@ -971,7 +971,7 @@
       "author": "theoryshaw",
       "branch": "Additional_Selection_and_Deselection_Tools",
       "head": "fd1e5d2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Additional selection and deselection tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8241"
     },
@@ -1195,7 +1195,7 @@
       "author": "BIMvoice",
       "branch": "fix-remove-drawing-no-document-6518",
       "head": "e08bf06",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: remove_drawing tolerates a drawing with no document (#6518)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8312"
     },
@@ -1443,7 +1443,7 @@
       "author": "BIMvoice",
       "branch": "fix-4822-print-graceful",
       "head": "f3b4fc2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fail gracefully when the sheet PDF/DXF conversion command is missing or fails (#4822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8354"
     },
@@ -1475,7 +1475,7 @@
       "author": "BIMvoice",
       "branch": "fix-5221-schedule-font-scope",
       "head": "0f1fc8f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: scope schedule/document styles on a sheet so they keep their own font (#5221)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8361"
     },
@@ -1726,7 +1726,7 @@
       "author": "BIMvoice",
       "branch": "fix-6666-append-drawing-view",
       "head": "bc48294",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: append a drawing view from a library as a real drawing (#6666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8427"
     },
@@ -1831,7 +1831,7 @@
       "author": "BIMvoice",
       "branch": "fix-3950-csv-search-attributes",
       "head": "5adeb83",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: persist CSV attributes when saving a spreadsheet search (#3950)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8447"
     },
@@ -2187,7 +2187,7 @@
       "author": "theoryshaw",
       "branch": "fix-5493-sheet-drawing-link-perf",
       "head": "a4407bf",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix 5493 sheet drawing link perf",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8601"
     },
@@ -2244,7 +2244,7 @@
       "author": "BIMvoice",
       "branch": "fix-4067-svg-curve-hlr",
       "head": "c17196b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai: add opt-in exact-geometry hidden line removal for smoother SVG curves (#4067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8615"
     },
@@ -2673,7 +2673,7 @@
       "author": "BIMvoice",
       "branch": "bonsai-8049-resilient-drawing-print",
       "head": "dc27171",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: don't let one bad element abort an entire drawing print",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8734"
     },
@@ -2997,7 +2997,7 @@
       "author": "BIMvoice",
       "branch": "7901-filter-from-selection",
       "head": "c5a4fe9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: filter from selection, and export/import search filters and colourschemes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8873"
     },
@@ -3085,7 +3085,7 @@
       "author": "BIMvoice",
       "branch": "8850-relating-type-enum",
       "head": "7dc6d31",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: setting an active type fails silently on a stale enum (#8850, #9238)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
     },
@@ -3309,7 +3309,7 @@
       "author": "BIMvoice",
       "branch": "feat-5729-freestyle-ifc-only",
       "head": "a2bc7db",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add 'IFC Elements Only' preference for Freestyle linework",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8933"
     },
@@ -3638,7 +3638,7 @@
       "author": "BIMvoice",
       "branch": "fix/host-recut-active-representation",
       "head": "0012c96",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: recut a voided host from its active representation, not its context",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9011"
     },
@@ -3782,7 +3782,7 @@
       "author": "theoryshaw",
       "branch": "select_assigned_annotations_9030",
       "head": "fe5d40f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
     },
@@ -3798,7 +3798,7 @@
       "author": "BIMvoice",
       "branch": "feat-9033-drawing-status-classes",
       "head": "b3aea3d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add a Status Classes toggle to drawings (#9033)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9051"
     },
@@ -3886,7 +3886,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifcdiff-class-change-detection",
       "head": "c7d4e8a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcdiff: report an element whose IFC class changed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9064"
     },
@@ -4575,7 +4575,7 @@
       "author": "BIMvoice",
       "branch": "fix/geometry-data-representation-type-none",
       "head": "2c88a1d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: guard optional RepresentationType concat",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9172"
     },
@@ -4767,7 +4767,7 @@
       "author": "theoryshaw",
       "branch": "occurrence-representations",
       "head": "69d65bc",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: normalize occurrence-local representations onto the type (Promote to Type)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9210"
     },
@@ -4838,7 +4838,7 @@
     "9234": {
       "author": "BIMvoice",
       "branch": "fix-9232-grid-axis-dot-truncation",
-      "head": "9591385",
+      "head": "374d980",
       "status": "merged",
       "title": "Bonsai: grid axis label truncation and duplicate axis objects (#9232)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
@@ -4895,7 +4895,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-port-append-proxy",
       "head": "c09e7da",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "append_asset: IFC2X3 MEP ports are silently dropped (#9247)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9255"
     },
@@ -5256,7 +5256,7 @@
       "author": "theoryshaw",
       "branch": "fix-sheet-presentation-attr-ids",
       "head": "35c2400",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock (#9369)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9370"
     },
@@ -5342,7 +5342,7 @@
       "author": "theoryshaw",
       "branch": "filter_query_comments_9400",
       "head": "b27e500",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: keep commented out facets when editing a filter query",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9401"
     },
@@ -5944,7 +5944,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8512",
       "head": "d2f4df1",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: guard drawing with no document reference in get_sheet_references (#8036, #7266)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9648"
     },
@@ -6000,7 +6000,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8530",
       "head": "097199e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: keep 'disable selection' objects visible when activating a drawing (#7681)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9655"
     },
@@ -6088,7 +6088,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8630",
       "head": "cbaaba3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fix Activate Drawing crash for punctuated drawing names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9666"
     },
@@ -6208,7 +6208,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8518",
       "head": "2a13172",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "IfcDiff: optional content-signature matching to track real changes (#8412)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9682"
     },
@@ -6240,7 +6240,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8799",
       "head": "258980e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: real multiline entry for text annotations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9686"
     },
@@ -6248,7 +6248,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8802",
       "head": "0336599",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: draw element Axis reference lines in drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9687"
     },
@@ -6393,7 +6393,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8827",
       "head": "7c1aa5a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: carry annotation status/phase classes onto text labels too",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9708"
     },
@@ -6958,9 +6958,9 @@
     "9839": {
       "author": "BIMvoice",
       "branch": "fix/9830-guid-non-22-char",
-      "head": "3f45a14",
+      "head": "7c25a14",
       "status": "skipped_draft",
-      "title": "Index GlobalIds that are not 22 characters",
+      "title": "Find GlobalIds shorter than 22 characters with by_guid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9839"
     },
     "9840": {
@@ -7052,11 +7052,19 @@
       "status": "merged",
       "title": "Bonsai: generate terrain contour lines as IfcAnnotation CONTOURLINE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9851"
+    },
+    "9853": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-status-filter-ifc2x3",
+      "head": "655d222",
+      "status": "skipped_conflict",
+      "title": "Bonsai: fix Enable Status Filters on IFC2X3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9853"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610080249",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080249"
+    "tag": "v0.9.0-alpha2610080748",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080748"
   },
   "schema": 1
 }

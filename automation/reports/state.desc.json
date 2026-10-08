@@ -3,11 +3,11 @@
   "counts": {
     "failed": 122,
     "merged": 585,
-    "skipped_conflict": 88,
+    "skipped_conflict": 89,
     "skipped_draft": 70,
-    "total": 865
+    "total": 866
   },
-  "generated_at": "2026-10-08T00:48:09Z",
+  "generated_at": "2026-10-08T05:47:16Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2599,7 +2599,7 @@
       "author": "BIMvoice",
       "branch": "fix-6664-status-element-visibility",
       "head": "8e1ba61",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: compose element visibility with the Status filter instead of overwriting it",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8720"
     },
@@ -2779,7 +2779,7 @@
       "author": "sboddy",
       "branch": "perf-status-filters",
       "head": "ae9efee",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Perf: Speed up Status Filters visibility toggle",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8760"
     },
@@ -4487,7 +4487,7 @@
       "author": "BIMvoice",
       "branch": "audit-bonsai-enum-dispatch-a112",
       "head": "fd80bf5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix KeyError in 4D animation colors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9159"
     },
@@ -4838,7 +4838,7 @@
     "9234": {
       "author": "BIMvoice",
       "branch": "fix-9232-grid-axis-dot-truncation",
-      "head": "9591385",
+      "head": "374d980",
       "status": "skipped_conflict",
       "title": "Bonsai: grid axis label truncation and duplicate axis objects (#9232)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
@@ -6957,9 +6957,9 @@
     "9839": {
       "author": "BIMvoice",
       "branch": "fix/9830-guid-non-22-char",
-      "head": "3f45a14",
+      "head": "7c25a14",
       "status": "skipped_draft",
-      "title": "Index GlobalIds that are not 22 characters",
+      "title": "Find GlobalIds shorter than 22 characters with by_guid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9839"
     },
     "9840": {
@@ -7051,11 +7051,19 @@
       "status": "merged",
       "title": "Bonsai: generate terrain contour lines as IfcAnnotation CONTOURLINE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9851"
+    },
+    "9853": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-status-filter-ifc2x3",
+      "head": "655d222",
+      "status": "merged",
+      "title": "Bonsai: fix Enable Status Filters on IFC2X3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9853"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610080220",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080220"
+    "tag": "v0.9.0-alpha2610080719",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080719"
   },
   "schema": 1
 }
