@@ -7,7 +7,7 @@
     "skipped_draft": 71,
     "total": 864
   },
-  "generated_at": "2026-10-08T11:49:06Z",
+  "generated_at": "2026-10-08T13:50:37Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -5620,7 +5620,7 @@
     "9559": {
       "author": "aothms",
       "branch": "pr-9325-rebased-v0.9.0",
-      "head": "9825af7",
+      "head": "98dad67",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "C/TS API binding generation (GSoC 2026) - rebased",
@@ -7042,8 +7042,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610081320",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610081320"
+    "tag": "v0.9.0-alpha2610081520",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610081520"
   },
   "schema": 1
 }
