@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 122,
+    "failed": 119,
     "merged": 585,
-    "skipped_conflict": 89,
+    "skipped_conflict": 90,
     "skipped_draft": 70,
-    "total": 866
+    "total": 864
   },
-  "generated_at": "2026-10-08T05:47:16Z",
+  "generated_at": "2026-10-08T07:48:41Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -1443,7 +1443,7 @@
       "author": "BIMvoice",
       "branch": "fix-4822-print-graceful",
       "head": "f3b4fc2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fail gracefully when the sheet PDF/DXF conversion command is missing or fails (#4822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8354"
     },
@@ -2030,15 +2030,6 @@
       "title": "Door/Opening documentation improvement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8509"
     },
-    "8521": {
-      "author": "BIMvoice",
-      "branch": "fix-620-616-nonmanifold-subtraction",
-      "head": "6ba38bf",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: recover BRepCheck-valid non-manifold subtractions instead of dropping them (#620, #616)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8521"
-    },
     "8548": {
       "author": "theoryshaw",
       "branch": "placement-storey-elevation",
@@ -2244,7 +2235,7 @@
       "author": "BIMvoice",
       "branch": "fix-4067-svg-curve-hlr",
       "head": "c17196b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "bonsai: add opt-in exact-geometry hidden line removal for smoother SVG curves (#4067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8615"
     },
@@ -2836,22 +2827,13 @@
       "title": "IfcParse: add instances of another file on assignment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8776"
     },
-    "8778": {
-      "author": "BIMvoice",
-      "branch": "2320-invalid-operand-fallback",
-      "head": "53881c4",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: salvage subtractions when OCCT refuses invalid boolean operands (#2320)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8778"
-    },
     "8794": {
       "author": "BIMvoice",
       "branch": "2077-centerline-profile",
-      "head": "2e3d448",
+      "head": "2380081",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "IfcCenterLineProfileDef: implement profile mapping (geometry side of #2077)",
+      "title": "Map polyline IfcCenterLineProfileDef to a profile",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8794"
     },
     "8801": {
@@ -3782,7 +3764,7 @@
       "author": "theoryshaw",
       "branch": "select_assigned_annotations_9030",
       "head": "fe5d40f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
     },
@@ -4839,7 +4821,7 @@
       "author": "BIMvoice",
       "branch": "fix-9232-grid-axis-dot-truncation",
       "head": "374d980",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: grid axis label truncation and duplicate axis objects (#9232)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
     },
@@ -5495,7 +5477,7 @@
       "author": "franklincg",
       "branch": "money-agent-6422-svg-overlay",
       "head": "f1c0eaa",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preview drawing SVG in camera viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9472"
     },
@@ -5677,15 +5659,6 @@
       "status": "failed",
       "title": "ifcview ifcconvert serializer",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
-    },
-    "9585": {
-      "author": "Moult",
-      "branch": "perf/ifcparse-bytype-sort-threads",
-      "head": "db15f44",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: sort the type lists on the threads the file open was given",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9585"
     },
     "9587": {
       "author": "Moult",
@@ -6239,7 +6212,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8799",
       "head": "258980e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: real multiline entry for text annotations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9686"
     },
@@ -6663,7 +6636,7 @@
       "author": "theoryshaw",
       "branch": "strip_text_comments",
       "head": "c0adc24",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: strip HTML comments from annotation text",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9765"
     },
@@ -7059,11 +7032,19 @@
       "status": "merged",
       "title": "Bonsai: fix Enable Status Filters on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9853"
+    },
+    "9855": {
+      "author": "makar52nn2016-jpg",
+      "branch": "fix/type-text-in-viewport-6427",
+      "head": "53f65a9",
+      "status": "merged",
+      "title": "Type multiline text annotations in the viewport (fixes #6427)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9855"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610080719",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080719"
+    "tag": "v0.9.0-alpha2610080920",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080920"
   },
   "schema": 1
 }

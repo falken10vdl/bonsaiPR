@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 124,
+    "failed": 121,
     "merged": 581,
-    "skipped_conflict": 90,
+    "skipped_conflict": 92,
     "skipped_draft": 70,
-    "total": 865
+    "total": 864
   },
-  "generated_at": "2026-10-08T05:18:40Z",
+  "generated_at": "2026-10-08T07:19:04Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -2030,15 +2030,6 @@
       "title": "Door/Opening documentation improvement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8509"
     },
-    "8521": {
-      "author": "BIMvoice",
-      "branch": "fix-620-616-nonmanifold-subtraction",
-      "head": "6ba38bf",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: recover BRepCheck-valid non-manifold subtractions instead of dropping them (#620, #616)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8521"
-    },
     "8548": {
       "author": "theoryshaw",
       "branch": "placement-storey-elevation",
@@ -2836,22 +2827,13 @@
       "title": "IfcParse: add instances of another file on assignment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8776"
     },
-    "8778": {
-      "author": "BIMvoice",
-      "branch": "2320-invalid-operand-fallback",
-      "head": "53881c4",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcgeom: salvage subtractions when OCCT refuses invalid boolean operands (#2320)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8778"
-    },
     "8794": {
       "author": "BIMvoice",
       "branch": "2077-centerline-profile",
-      "head": "2e3d448",
+      "head": "2380081",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "IfcCenterLineProfileDef: implement profile mapping (geometry side of #2077)",
+      "title": "Map polyline IfcCenterLineProfileDef to a profile",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8794"
     },
     "8801": {
@@ -4838,7 +4820,7 @@
     "9234": {
       "author": "BIMvoice",
       "branch": "fix-9232-grid-axis-dot-truncation",
-      "head": "9591385",
+      "head": "374d980",
       "status": "skipped_conflict",
       "title": "Bonsai: grid axis label truncation and duplicate axis objects (#9232)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
@@ -5679,15 +5661,6 @@
       "status": "failed",
       "title": "ifcview ifcconvert serializer",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
-    },
-    "9585": {
-      "author": "Moult",
-      "branch": "perf/ifcparse-bytype-sort-threads",
-      "head": "db15f44",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "[AI-generated, unverified] ifcparse: sort the type lists on the threads the file open was given",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9585"
     },
     "9587": {
       "author": "Moult",
@@ -7053,11 +7026,27 @@
       "status": "merged",
       "title": "Bonsai: generate terrain contour lines as IfcAnnotation CONTOURLINE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9851"
+    },
+    "9853": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-status-filter-ifc2x3",
+      "head": "655d222",
+      "status": "skipped_conflict",
+      "title": "Bonsai: fix Enable Status Filters on IFC2X3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9853"
+    },
+    "9855": {
+      "author": "makar52nn2016-jpg",
+      "branch": "fix/type-text-in-viewport-6427",
+      "head": "53f65a9",
+      "status": "skipped_conflict",
+      "title": "Type multiline text annotations in the viewport (fixes #6427)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9855"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610080650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080650"
+    "tag": "v0.9.0-alpha2610080850",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080850"
   },
   "schema": 1
 }
