@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 120,
+    "failed": 121,
     "merged": 585,
     "skipped_conflict": 89,
     "skipped_draft": 70,
-    "total": 864
+    "total": 865
   },
-  "generated_at": "2026-10-08T08:18:29Z",
+  "generated_at": "2026-10-08T10:20:26Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -2900,10 +2900,10 @@
     "8845": {
       "author": "BIMvoice",
       "branch": "issue-143-psr-style-aware-folding",
-      "head": "8665725",
+      "head": "3d22429",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "ifcgeom: style-aware permissive-shape-reuse folding; fix PSR on single-item mapped representations (#143)",
+      "title": "Fix permissive-shape-reuse losing products, styles and materials",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8845"
     },
     "8847": {
@@ -7041,11 +7041,20 @@
       "status": "merged",
       "title": "Type multiline text annotations in the viewport (fixes #6427)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9855"
+    },
+    "9857": {
+      "author": "Bartok9",
+      "branch": "fix/ifctester-bool-case-insensitive",
+      "head": "56fb106",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "fix(ifctester): case-insensitive boolean string casting",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9857"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610080949",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080949"
+    "tag": "v0.9.0-alpha2610081150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610081150"
   },
   "schema": 1
 }

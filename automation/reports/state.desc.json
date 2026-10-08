@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 864
   },
-  "generated_at": "2026-10-08T07:48:41Z",
+  "generated_at": "2026-10-08T09:49:22Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2900,10 +2900,10 @@
     "8845": {
       "author": "BIMvoice",
       "branch": "issue-143-psr-style-aware-folding",
-      "head": "8665725",
+      "head": "3d22429",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "ifcgeom: style-aware permissive-shape-reuse folding; fix PSR on single-item mapped representations (#143)",
+      "title": "Fix permissive-shape-reuse losing products, styles and materials",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8845"
     },
     "8847": {
@@ -5705,7 +5705,7 @@
     "9609": {
       "author": "Moult",
       "branch": "perf/ifcparse-bytype-vector-by-schema-index",
-      "head": "063909e",
+      "head": "cac6513",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[AI-generated, unverified] ifcparse: keep the by-type lists in a vector indexed by the type's index in the schema",
@@ -7043,8 +7043,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610080920",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610080920"
+    "tag": "v0.9.0-alpha2610081120",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610081120"
   },
   "schema": 1
 }
