@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 121,
-    "merged": 581,
-    "skipped_conflict": 92,
-    "skipped_draft": 70,
-    "total": 864
+    "merged": 580,
+    "skipped_conflict": 93,
+    "skipped_draft": 71,
+    "total": 865
   },
-  "generated_at": "2026-10-08T09:19:35Z",
+  "generated_at": "2026-10-08T11:19:26Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -2803,10 +2803,10 @@
     "8771": {
       "author": "BIMvoice",
       "branch": "fix-790-gltf-group-node-names",
-      "head": "df0af3a",
+      "head": "cf0f86e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "GltfSerializer: fix hierarchy group node names, add opt-in --gltf-extras",
+      "title": "Name glTF group nodes after their own element",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8771"
     },
     "8773": {
@@ -2901,8 +2901,7 @@
       "author": "BIMvoice",
       "branch": "issue-143-psr-style-aware-folding",
       "head": "3d22429",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "skipped_draft",
       "title": "Fix permissive-shape-reuse losing products, styles and materials",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8845"
     },
@@ -5117,14 +5116,6 @@
       "title": "Add cross-coplanar and material/style-change edge classification",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9330"
     },
-    "9332": {
-      "author": "BIMvoice",
-      "branch": "fix-9329-load-post-resilience",
-      "head": "7ebcee1",
-      "status": "merged",
-      "title": "Isolate load_post steps from each other's errors",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9332"
-    },
     "9335": {
       "author": "brunopostle",
       "branch": "fix/ifcviewer-system-wgpu-native",
@@ -5616,7 +5607,7 @@
       "author": "theoryshaw",
       "branch": "sheet_template_api",
       "head": "a677ff2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9555"
     },
@@ -6850,7 +6841,7 @@
       "author": "BIMvoice",
       "branch": "fix/9811-web-costing-sum-keyerror",
       "head": "11e7b8e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix web costing SUM edit KeyError",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9814"
     },
@@ -7042,11 +7033,28 @@
       "status": "skipped_conflict",
       "title": "Type multiline text annotations in the viewport (fixes #6427)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9855"
+    },
+    "9858": {
+      "author": "aothms",
+      "branch": "manifold-fix-unconditional-dereference",
+      "head": "71952ff",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Manifold kernel: fix unconditional dereference",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9858"
+    },
+    "9859": {
+      "author": "BIMvoice",
+      "branch": "fix/bonsai-ifcgit-ifc2x3-property-pset",
+      "head": "30ea164",
+      "status": "skipped_conflict",
+      "title": "Bonsai: fix IFC Git change display on IFC2X3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9859"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610081050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610081050"
+    "tag": "v0.9.0-alpha2610081250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610081250"
   },
   "schema": 1
 }
