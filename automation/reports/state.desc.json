@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 117,
-    "merged": 584,
-    "skipped_conflict": 91,
+    "failed": 137,
+    "merged": 572,
+    "skipped_conflict": 89,
     "skipped_draft": 71,
-    "total": 863
+    "total": 869
   },
-  "generated_at": "2026-10-09T10:49:02Z",
+  "generated_at": "2026-10-09T17:51:32Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -324,7 +324,8 @@
       "author": "falken10vdl",
       "branch": "clipboard-module",
       "head": "4bc21f8",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "First version clipboard module. 3 modes available (RENAME, DUPLICATE, DESTINATION)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7669"
     },
@@ -995,7 +996,8 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-empty-numeric-4112",
       "head": "12c81e3",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "pset.edit_pset: treat an empty string for a numeric property as no value (#4112)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
     },
@@ -1171,7 +1173,8 @@
       "author": "BIMvoice",
       "branch": "fix-edit-pset-update-list-value-5195",
       "head": "db50fc6",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "pset.edit_pset: support updating IfcPropertyListValue properties (#5195)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8298"
     },
@@ -1323,7 +1326,8 @@
       "author": "BIMvoice",
       "branch": "fix-2851-extrusion-dedup",
       "head": "2999ddf",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: recover extrusions from OCCT-duplicated verts, tessellate only when truly not an extrusion (#2851)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8336"
     },
@@ -1379,7 +1383,8 @@
       "author": "BIMvoice",
       "branch": "fix-4593-add-repr-loose-edges",
       "head": "7a39f97",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "geometry.add_representation: keep loose edges (curves) when a mesh also has faces (#4593)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8345"
     },
@@ -2154,7 +2159,8 @@
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
       "head": "3480524",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
     },
@@ -2299,7 +2305,8 @@
       "author": "BIMvoice",
       "branch": "fix-6322-perspective-depth-width-height",
       "head": "7fe654e",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcopenshell: don't let camera Depth rescale Width/Height in perspective mode (#6322)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8627"
     },
@@ -2357,7 +2364,7 @@
       "author": "theoryshaw",
       "branch": "fix-8666-saferemoval-untracked-assertion",
       "head": "f5da3ef",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "project.append_asset: don't crash on untracked removed element (#8666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8668"
     },
@@ -2365,7 +2372,8 @@
       "author": "theoryshaw",
       "branch": "fix-8667-guid-collision-type-assign",
       "head": "adeed6f",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "project.append_asset: don't abort batch on GlobalId collision (#8667)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8669"
     },
@@ -2485,7 +2493,8 @@
       "author": "BIMvoice",
       "branch": "fix-3621-window-shapes",
       "head": "67f14e2",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: add Round and Arch shapes to the parametric window",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8695"
     },
@@ -2754,7 +2763,8 @@
       "author": "BIMvoice",
       "branch": "bonsai-8666-8667-append-asset",
       "head": "169dc24",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "project.append_asset: reject GlobalId matches across incompatible classes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8756"
     },
@@ -3554,7 +3564,8 @@
       "author": "BIMvoice",
       "branch": "fix/7997-opening-follows-host",
       "head": "9d179b3",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "geometry.edit_object_placement: move openings that are not placed relative to their host (#7997)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8990"
     },
@@ -4139,7 +4150,7 @@
       "author": "BIMvoice",
       "branch": "fix/data-sibling-none-guards",
       "head": "8dbfc1e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: guard three unnamed-entity crashes where a sibling method already had the fallback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9102"
     },
@@ -4179,7 +4190,8 @@
       "author": "BIMvoice",
       "branch": "api-audit-material-style-cost-2026-07-30",
       "head": "ba52572",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifcopenshell.api: fix three defects that write wrong data into the file",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9108"
     },
@@ -4244,7 +4256,8 @@
       "author": "BIMvoice",
       "branch": "fix/classification-add-reference-cross-classification-collision",
       "head": "c115c7b",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "api: stop classifying elements under the wrong classification system",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9122"
     },
@@ -4260,7 +4273,8 @@
       "author": "BIMvoice",
       "branch": "api-audit-geometry-profile-fixes",
       "head": "7ac91ff",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "api: fix a 1000x placement error on shared matrices, and 2D profiles written as invalid IFC",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9124"
     },
@@ -4268,7 +4282,7 @@
       "author": "BIMvoice",
       "branch": "fix/structural-drawing-api-audit-fixes",
       "head": "bcfb454",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "api: fix an orphaned boundary condition and two crashes on default input",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9125"
     },
@@ -4588,7 +4602,8 @@
       "author": "BIMvoice",
       "branch": "fix/edit-pset-untemplated-list-crash",
       "head": "3d027d9",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "pset.edit_pset: fix untemplated list-value crash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
     },
@@ -4604,7 +4619,8 @@
       "author": "BIMvoice",
       "branch": "perf-append-asset-safe-removal-scan",
       "head": "1fc954f",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "append_asset: fix O(n^2) reuse_identities scan",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9184"
     },
@@ -5362,7 +5378,8 @@
       "author": "BIMvoice",
       "branch": "fix-9419-orphan-placements",
       "head": "027ff62",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "geometry: stop stranding copied placement ancestors on removal (#9419)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9421"
     },
@@ -5370,7 +5387,8 @@
       "author": "PahlawanJoey",
       "branch": "fix/extract-elements-v090",
       "head": "6038632",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Consolidated ExtractElements fixes based on BIMvoice proposals",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9422"
     },
@@ -5882,7 +5900,8 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8505",
       "head": "c73a1e9",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Support appending IfcGroup assets via project.append_asset (#8162)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9646"
     },
@@ -6790,7 +6809,8 @@
       "author": "BIMvoice",
       "branch": "fix/edit-qto-pset-template",
       "head": "33f72f6",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix edit_qto with a user defined template",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9796"
     },
@@ -7030,11 +7050,59 @@
       "status": "merged",
       "title": "Bonsai: fix IFC Git change display on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9859"
+    },
+    "9867": {
+      "author": "theoryshaw",
+      "branch": "units-auto-assign",
+      "head": "7ba21e1",
+      "status": "merged",
+      "title": "Bonsai: assign a newly added unit when its type has none",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9867"
+    },
+    "9868": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/1-fixes",
+      "head": "3be4df8",
+      "status": "merged",
+      "title": "Structural: fix load cases, load groups and activities",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9868"
+    },
+    "9869": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/2-apply-edit",
+      "head": "8c8bbc0",
+      "status": "merged",
+      "title": "Structural: streamline applying and editing loads",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9869"
+    },
+    "9870": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/3-diagrams",
+      "head": "1922eb9",
+      "status": "merged",
+      "title": "Structural: readable point force diagrams in Show Loads",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9870"
+    },
+    "9871": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/4-viewport-editing",
+      "head": "75c69a0",
+      "status": "merged",
+      "title": "Structural: edit loads from the viewport",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9871"
+    },
+    "9872": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/5-item-loads",
+      "head": "f1da948",
+      "status": "merged",
+      "title": "Structural: see and show a structural item's loads",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9872"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610091220",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610091220"
+    "tag": "v0.9.0-alpha2610091922",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610091922"
   },
   "schema": 1
 }
