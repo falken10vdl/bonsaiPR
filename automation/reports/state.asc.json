@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 120,
+    "failed": 119,
     "merged": 580,
     "skipped_conflict": 93,
     "skipped_draft": 71,
-    "total": 864
+    "total": 863
   },
-  "generated_at": "2026-10-08T13:19:33Z",
+  "generated_at": "2026-10-09T10:19:35Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -5622,7 +5622,7 @@
     "9559": {
       "author": "aothms",
       "branch": "pr-9325-rebased-v0.9.0",
-      "head": "98dad67",
+      "head": "49e8628",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "C/TS API binding generation (GSoC 2026) - rebased",
@@ -5643,15 +5643,6 @@
       "status": "merged",
       "title": "Change LDFLAGS for dynamic library linking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9576"
-    },
-    "9580": {
-      "author": "aothms",
-      "branch": "tfk-ifcview-ifcconvert-serializer",
-      "head": "b2efa8c",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "ifcview ifcconvert serializer",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9580"
     },
     "9587": {
       "author": "Moult",
@@ -7044,8 +7035,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610081450",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610081450"
+    "tag": "v0.9.0-alpha2610091150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610091150"
   },
   "schema": 1
 }
