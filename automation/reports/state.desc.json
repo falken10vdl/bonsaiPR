@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 137,
+    "failed": 138,
     "merged": 575,
     "skipped_conflict": 89,
     "skipped_draft": 71,
-    "total": 872
+    "total": 873
   },
-  "generated_at": "2026-10-09T20:53:47Z",
+  "generated_at": "2026-10-09T22:50:33Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7014,7 +7014,7 @@
     "9851": {
       "author": "theoryshaw",
       "branch": "terrain-contours",
-      "head": "70c8a9f",
+      "head": "b1aacba",
       "status": "merged",
       "title": "Bonsai: generate terrain contour lines as IfcAnnotation CONTOURLINE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9851"
@@ -7122,11 +7122,20 @@
       "status": "merged",
       "title": "build(deps-dev): bump vitest from 4.1.10 to 4.1.11 in /src/ts/ifcopenshell-js",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9877"
+    },
+    "9878": {
+      "author": "Moult",
+      "branch": "perf/ifcviewer-geometry-dedup",
+      "head": "2116d55",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
+      "title": "ifcviewer: fold congruent meshes and shrink the .ifcview sidecar (98 MB to 4.3 MB on a rebar model)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9878"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610092221",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610092221"
+    "tag": "v0.9.0-alpha2610100021",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610100021"
   },
   "schema": 1
 }
