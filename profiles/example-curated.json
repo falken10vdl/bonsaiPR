@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "name": "example-curated",
+  "description": "ILLUSTRATIVE ONLY — not a real curation, and not built by anything. Shows every field of the profile format with plausible values. Copy it, rename it, and replace the contents; do not inherit from it.",
+  "maintainer": "example",
+
+  "inherits": "everything",
+
+  "base": {
+    "repo": "IfcOpenShell/IfcOpenShell",
+    "branch": "v0.8.0"
+  },
+
+  "select": {
+    "mode": "everything",
+    "prs": [],
+    "authors": []
+  },
+
+  "exclude": {
+    "prs": {
+      "9999901": {
+        "why": "architecture",
+        "reason": "bypasses the tool/ layer and calls ifcopenshell directly",
+        "since": "0000000"
+      },
+      "9999902": {
+        "why": "regression",
+        "reason": "crashes opening IFC4X3 files with georeferencing",
+        "since": "0000000"
+      },
+      "9999903": "no reason recorded — still a valid exclusion, just a weaker signal"
+    },
+    "authors": [],
+    "drafts": true,
+    "cpp": true
+  },
+
+  "prefer": [[9999904, 9999905]],
+
+  "pin": {
+    "9999906": "0000000"
+  },
+
+  "orders": ["ascending"]
+}
