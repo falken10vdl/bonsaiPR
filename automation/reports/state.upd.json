@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 139,
-    "merged": 571,
-    "skipped_conflict": 87,
+    "failed": 142,
+    "merged": 570,
+    "skipped_conflict": 84,
     "skipped_draft": 71,
-    "total": 868
+    "total": 867
   },
-  "generated_at": "2026-10-10T01:18:22Z",
+  "generated_at": "2026-10-10T03:17:48Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -2119,7 +2119,8 @@
       "author": "BIMvoice",
       "branch": "fix-2477-datetime-format-consistency",
       "head": "23cc31c",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: fix Timeline text date format to match sequence module convention (#2477)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8591"
     },
@@ -2781,7 +2782,8 @@
       "author": "sboddy",
       "branch": "perf-status-filters",
       "head": "ae9efee",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Perf: Speed up Status Filters visibility toggle",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8760"
     },
@@ -4483,7 +4485,8 @@
       "author": "BIMvoice",
       "branch": "audit-bonsai-enum-dispatch-a112",
       "head": "fd80bf5",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: fix KeyError in 4D animation colors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9159"
     },
@@ -7021,14 +7024,6 @@
       "title": "Bonsai: generate terrain contour lines as IfcAnnotation CONTOURLINE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9851"
     },
-    "9853": {
-      "author": "BIMvoice",
-      "branch": "fix/bonsai-status-filter-ifc2x3",
-      "head": "4a3d944",
-      "status": "merged",
-      "title": "Bonsai: fix Enable Status Filters on IFC2X3",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9853"
-    },
     "9855": {
       "author": "makar52nn2016-jpg",
       "branch": "fix/type-text-in-viewport-6427",
@@ -7095,8 +7090,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610100249",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610100249"
+    "tag": "v0.9.0-alpha2610100449",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610100449"
   },
   "schema": 1
 }
