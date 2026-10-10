@@ -6233,3 +6233,18 @@
 {"ts": "2026-10-10T03:17:48Z", "order": "by-updated", "pr": 8760, "event": "status", "from": "skipped_conflict", "to": "failed"}
 {"ts": "2026-10-10T03:17:48Z", "order": "by-updated", "pr": 9159, "event": "status", "from": "skipped_conflict", "to": "failed"}
 {"ts": "2026-10-10T03:17:48Z", "order": "by-updated", "pr": 9853, "event": "removed", "from": "merged"}
+{"ts": "2026-10-10T06:03:09Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-10T06:03:09Z", "order": "upd", "pr": 8427, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-10T06:03:09Z", "order": "upd", "pr": 8872, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-10T06:03:09Z", "order": "upd", "pr": 8873, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-10T06:03:09Z", "order": "upd", "pr": 8933, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-10T06:03:09Z", "order": "upd", "pr": 8993, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-10T06:03:09Z", "order": "upd", "pr": 9404, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-10T06:16:34Z", "order": "by-updated", "pr": 7659, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-10T06:16:34Z", "order": "by-updated", "pr": 8258, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-10T06:16:34Z", "order": "by-updated", "pr": 9634, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-10T06:16:34Z", "order": "by-updated", "pr": 9635, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-10T06:16:34Z", "order": "by-updated", "pr": 9636, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-10T06:16:34Z", "order": "by-updated", "pr": 9637, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-10T06:16:34Z", "order": "by-updated", "pr": 9885, "event": "added", "to": "failed"}
+{"ts": "2026-10-10T06:16:34Z", "order": "by-updated", "pr": 9886, "event": "added", "to": "merged"}

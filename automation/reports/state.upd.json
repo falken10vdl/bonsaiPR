@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 142,
-    "merged": 570,
-    "skipped_conflict": 84,
+    "failed": 143,
+    "merged": 567,
+    "skipped_conflict": 88,
     "skipped_draft": 71,
-    "total": 867
+    "total": 869
   },
-  "generated_at": "2026-10-10T03:17:48Z",
+  "generated_at": "2026-10-10T06:16:34Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -316,7 +316,7 @@
       "author": "jaliste",
       "branch": "fix/decorator-preview",
       "head": "509cb57",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Fix window/door preview alignment regression in ProductDecorator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7659"
     },
@@ -1021,7 +1021,7 @@
       "author": "BIMvoice",
       "branch": "fix/reassign-class-latent-8210",
       "head": "6bfe660",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "root.reassign_class: raise a clear error when no class is applicable (#8210)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8258"
     },
@@ -5808,7 +5808,7 @@
       "author": "BIMvoice",
       "branch": "v09/door-stack/3-filling-host-from-part",
       "head": "6956b81",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: host a door in the wall a part belongs to",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9634"
     },
@@ -5816,7 +5816,7 @@
       "author": "BIMvoice",
       "branch": "v09/door-stack/4-preview-ifc2x3",
       "head": "9527d7e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: align the door preview with the wall",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9635"
     },
@@ -5824,7 +5824,7 @@
       "author": "BIMvoice",
       "branch": "v09/door-stack/5-filling-direction-sense",
       "head": "63e4472",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: face new fillings into a flipped wall",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9636"
     },
@@ -5832,7 +5832,7 @@
       "author": "BIMvoice",
       "branch": "v09/door-stack/6-filling-face-frame",
       "head": "5c0e4ef",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: orient fillings from the clicked face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9637"
     },
@@ -7087,11 +7087,28 @@
       "status": "merged",
       "title": "build(deps): bump ty from 0.0.84 to 0.0.85",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9883"
+    },
+    "9885": {
+      "author": "Moult",
+      "branch": "feat/ifcparse-express-aggregate",
+      "head": "c87388c",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: express::aggregate<T>, a view that reads and edits an aggregate attribute in place",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9885"
+    },
+    "9886": {
+      "author": "Moult",
+      "branch": "fix/type-applicable-entities-9566",
+      "head": "dfbf523",
+      "status": "merged",
+      "title": "Derive type applicability from the schema rules",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9886"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610100449",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610100449"
+    "tag": "v0.9.0-alpha2610100748",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610100748"
   },
   "schema": 1
 }

@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 143,
+    "failed": 144,
     "merged": 562,
     "skipped_conflict": 91,
     "skipped_draft": 71,
-    "total": 867
+    "total": 868
   },
-  "generated_at": "2026-10-10T02:19:49Z",
+  "generated_at": "2026-10-10T05:18:15Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7088,11 +7088,20 @@
       "status": "merged",
       "title": "build(deps): bump ty from 0.0.84 to 0.0.85",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9883"
+    },
+    "9885": {
+      "author": "Moult",
+      "branch": "feat/ifcparse-express-aggregate",
+      "head": "c87388c",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[AI-generated, unverified] ifcparse: express::aggregate<T>, a view that reads and edits an aggregate attribute in place",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9885"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610100350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610100350"
+    "tag": "v0.9.0-alpha2610100650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610100650"
   },
   "schema": 1
 }
