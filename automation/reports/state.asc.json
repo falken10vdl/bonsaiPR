@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 159,
+    "failed": 157,
     "merged": 552,
     "skipped_conflict": 83,
     "skipped_draft": 70,
-    "total": 864
+    "total": 862
   },
-  "generated_at": "2026-10-10T13:21:04Z",
+  "generated_at": "2026-10-10T15:19:07Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -2077,15 +2077,6 @@
       "title": "Bonsai: restore sheet SVG on undo/redo of drawing removal (#7275)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8585"
     },
-    "8586": {
-      "author": "sboddy",
-      "branch": "fix-axis2placement-2d-resize",
-      "head": "75b221f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Fix ValueError in get_axis2placement for 2D RefDirection",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8586"
-    },
     "8587": {
       "author": "sboddy",
       "branch": "fix-slab-wall-generation",
@@ -3904,15 +3895,6 @@
       "status": "skipped_conflict",
       "title": "util.unit: fix 1000x area and 1000000x volume conversion errors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9068"
-    },
-    "9069": {
-      "author": "BIMvoice",
-      "branch": "fix/a2p-orthonormal-axes",
-      "head": "822f8e6",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "util.placement: build an orthonormal basis in a2p",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9069"
     },
     "9073": {
       "author": "BIMvoice",
@@ -7083,8 +7065,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610101450",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610101450"
+    "tag": "v0.9.0-alpha2610101650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610101650"
   },
   "schema": 1
 }
