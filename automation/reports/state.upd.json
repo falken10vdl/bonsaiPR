@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 139,
-    "merged": 576,
+    "merged": 571,
     "skipped_conflict": 87,
     "skipped_draft": 71,
-    "total": 873
+    "total": 868
   },
-  "generated_at": "2026-10-09T23:20:33Z",
+  "generated_at": "2026-10-10T01:18:22Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -2119,7 +2119,7 @@
       "author": "BIMvoice",
       "branch": "fix-2477-datetime-format-consistency",
       "head": "23cc31c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix Timeline text date format to match sequence module convention (#2477)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8591"
     },
@@ -2461,7 +2461,8 @@
       "author": "BIMvoice",
       "branch": "fix-3783-track-project-assets",
       "head": "025dcb2",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: commit referenced drawing assets alongside the IFC in IfcGit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8687"
     },
@@ -4482,7 +4483,7 @@
       "author": "BIMvoice",
       "branch": "audit-bonsai-enum-dispatch-a112",
       "head": "fd80bf5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix KeyError in 4D animation colors",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9159"
     },
@@ -7023,8 +7024,8 @@
     "9853": {
       "author": "BIMvoice",
       "branch": "fix/bonsai-status-filter-ifc2x3",
-      "head": "655d222",
-      "status": "skipped_conflict",
+      "head": "4a3d944",
+      "status": "merged",
       "title": "Bonsai: fix Enable Status Filters on IFC2X3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9853"
     },
@@ -7035,14 +7036,6 @@
       "status": "merged",
       "title": "Type multiline text annotations in the viewport (fixes #6427)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9855"
-    },
-    "9859": {
-      "author": "BIMvoice",
-      "branch": "fix/bonsai-ifcgit-ifc2x3-property-pset",
-      "head": "30ea164",
-      "status": "merged",
-      "title": "Bonsai: fix IFC Git change display on IFC2X3",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9859"
     },
     "9867": {
       "author": "theoryshaw",
@@ -7092,51 +7085,18 @@
       "title": "Structural: see and show a structural item's loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9872"
     },
-    "9874": {
+    "9883": {
       "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ts/ifcopenshell-js/markdown-it-14.3.2",
-      "head": "d3babbd",
+      "branch": "dependabot/pip/ty-0.0.85",
+      "head": "5d7369b",
       "status": "merged",
-      "title": "build(deps): bump markdown-it from 14.3.0 to 14.3.2 in /src/ts/ifcopenshell-js",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9874"
-    },
-    "9875": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ts/ifcopenshell-js/source-map-js-1.2.2",
-      "head": "9d33f3a",
-      "status": "merged",
-      "title": "build(deps-dev): bump source-map-js from 1.2.1 to 1.2.2 in /src/ts/ifcopenshell-js",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9875"
-    },
-    "9876": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ts/ifcopenshell-js/brace-expansion-5.0.12",
-      "head": "049fd65",
-      "status": "merged",
-      "title": "build(deps-dev): bump brace-expansion from 5.0.9 to 5.0.12 in /src/ts/ifcopenshell-js",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9876"
-    },
-    "9877": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ts/ifcopenshell-js/vitest-4.1.11",
-      "head": "b18756a",
-      "status": "merged",
-      "title": "build(deps-dev): bump vitest from 4.1.10 to 4.1.11 in /src/ts/ifcopenshell-js",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9877"
-    },
-    "9878": {
-      "author": "Moult",
-      "branch": "perf/ifcviewer-geometry-dedup",
-      "head": "2116d55",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "ifcviewer: fold congruent meshes and shrink the .ifcview sidecar (98 MB to 4.3 MB on a rebar model)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9878"
+      "title": "build(deps): bump ty from 0.0.84 to 0.0.85",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9883"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610100051",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610100051"
+    "tag": "v0.9.0-alpha2610100249",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610100249"
   },
   "schema": 1
 }
