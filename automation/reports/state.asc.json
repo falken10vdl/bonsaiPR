@@ -3,11 +3,11 @@
   "counts": {
     "failed": 166,
     "merged": 550,
-    "skipped_conflict": 78,
+    "skipped_conflict": 82,
     "skipped_draft": 70,
-    "total": 864
+    "total": 868
   },
-  "generated_at": "2026-10-11T14:18:41Z",
+  "generated_at": "2026-10-11T16:19:16Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7087,11 +7087,43 @@
       "status": "failed",
       "title": "ifcgeom: keep the hybrid kernel fallback flags on cloned kernels",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9899"
+    },
+    "9900": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/6-input-display",
+      "head": "04c99b2",
+      "status": "skipped_conflict",
+      "title": "Enter loads by eighths and refine their display",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9900"
+    },
+    "9901": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/7-knowns-unknowns",
+      "head": "12f1f8f",
+      "status": "skipped_conflict",
+      "title": "Lock known force values and solve the unknowns",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9901"
+    },
+    "9902": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/8-point-axes",
+      "head": "afa6103",
+      "status": "skipped_conflict",
+      "title": "Tilt structural point axes in the X-Z plane",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9902"
+    },
+    "9903": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/9-calculation-reports",
+      "head": "03279dd",
+      "status": "skipped_conflict",
+      "title": "Export structural calculation reports",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9903"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610111550",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610111550"
+    "tag": "v0.9.0-alpha2610111750",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610111750"
   },
   "schema": 1
 }
