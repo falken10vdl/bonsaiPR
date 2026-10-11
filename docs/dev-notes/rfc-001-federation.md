@@ -247,6 +247,23 @@ both statements, not routine.
   The 3.11 builds' missing `blender_version_max` is *not* a defect: upstream's
   own unstable feed declares them the same way (3.11 from Blender 4.2 with no
   maximum, 3.13 from 5.1).
+- **A clean merge can still ship calls to functions upstream removed.** In
+  October 2026 upstream v0.9.0 replaced `util.placement.get_axis2placement` and
+  `get_local_placement` with `get_placement` and deleted the old names. PRs
+  that call them still merged without a conflict, and still compiled, so build
+  `v0.9.0-alpha2610112059` went out with six such calls in six PRs. They
+  failed only when used, as an `AttributeError` reported from structural
+  reports. The check that catches it runs on the replayed build's whole tree,
+  not on the branches someone happened to edit. List every top-level function
+  in `ifcopenshell.util`/`ifcopenshell.geom` that exists at the oldest PR base
+  but not at the new base, and search the merged tree for calls to them. Four
+  were found: `get_axis2placement`, `get_local_placement`,
+  `get_cartesiantransformationoperator3d`, `transform_string`. A fix in a PR
+  whose base predates the removal must merge the new base in first: a plain
+  rename would break the PR on its own base, where `get_placement` does not
+  exist yet. For stacked PRs, merge from the bottom up so each diff shows only
+  its own change. Not yet in the pipeline. It belongs in stage 0's report next
+  to the conflict tables.
 - **Closed PRs were found by arithmetic.** Stage 0 printed one log line for
   selected PRs no longer open, so each one (#9478, #8325, #8333, #8323, #8258)
   was found by noticing a total one lower than the profile's. The report now
