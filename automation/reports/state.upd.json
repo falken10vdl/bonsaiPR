@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 165,
-    "merged": 556,
+    "failed": 164,
+    "merged": 557,
     "skipped_conflict": 72,
     "skipped_draft": 70,
     "total": 863
   },
-  "generated_at": "2026-10-11T04:16:15Z",
+  "generated_at": "2026-10-11T07:16:02Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -646,7 +646,7 @@
       "author": "brunopostle",
       "branch": "bonsai-license",
       "head": "a072c72",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai, add license tagging for IFC elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7917"
     },
@@ -1725,7 +1725,7 @@
       "author": "BIMvoice",
       "branch": "fix-6666-append-drawing-view",
       "head": "bc48294",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: append a drawing view from a library as a real drawing (#6666)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8427"
     },
@@ -4874,9 +4874,8 @@
     "9255": {
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-port-append-proxy",
-      "head": "c09e7da",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "743c295",
+      "status": "merged",
       "title": "append_asset: IFC2X3 MEP ports are silently dropped (#9247)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9255"
     },
@@ -6891,14 +6890,6 @@
       "title": "Write GlobalId index when serializing to RocksDB",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9829"
     },
-    "9837": {
-      "author": "BIMvoice",
-      "branch": "fix/9831-ifctester-empty-basename",
-      "head": "e09a8e9",
-      "status": "merged",
-      "title": "ifctester: reject empty mandatory facet values",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9837"
-    },
     "9839": {
       "author": "BIMvoice",
       "branch": "fix/9830-guid-non-22-char",
@@ -7078,11 +7069,19 @@
       "status": "failed",
       "title": "ifcgeom: add vertex-rebase-distance setting",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9897"
+    },
+    "9898": {
+      "author": "BIMvoice",
+      "branch": "feat/status-filters-user-defined",
+      "head": "5636091",
+      "status": "merged",
+      "title": "Bonsai: list user defined statuses in status filters",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9898"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610110548",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610110548"
+    "tag": "v0.9.0-alpha2610110848",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610110848"
   },
   "schema": 1
 }

@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 166,
-    "merged": 549,
+    "failed": 165,
+    "merged": 550,
     "skipped_conflict": 78,
     "skipped_draft": 70,
     "total": 863
   },
-  "generated_at": "2026-10-11T03:18:24Z",
+  "generated_at": "2026-10-11T06:18:12Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -4875,8 +4875,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-port-append-proxy",
       "head": "c09e7da",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "merged",
       "title": "append_asset: IFC2X3 MEP ports are silently dropped (#9247)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9255"
     },
@@ -6892,14 +6891,6 @@
       "title": "Write GlobalId index when serializing to RocksDB",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9829"
     },
-    "9837": {
-      "author": "BIMvoice",
-      "branch": "fix/9831-ifctester-empty-basename",
-      "head": "e09a8e9",
-      "status": "merged",
-      "title": "ifctester: reject empty mandatory facet values",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9837"
-    },
     "9839": {
       "author": "BIMvoice",
       "branch": "fix/9830-guid-non-22-char",
@@ -7079,11 +7070,19 @@
       "status": "failed",
       "title": "ifcgeom: add vertex-rebase-distance setting",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9897"
+    },
+    "9898": {
+      "author": "BIMvoice",
+      "branch": "feat/status-filters-user-defined",
+      "head": "5636091",
+      "status": "merged",
+      "title": "Bonsai: list user defined statuses in status filters",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9898"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610110450",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610110450"
+    "tag": "v0.9.0-alpha2610110750",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610110750"
   },
   "schema": 1
 }
