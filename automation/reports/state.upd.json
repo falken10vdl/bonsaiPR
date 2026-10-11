@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 156,
+    "failed": 155,
     "merged": 569,
-    "skipped_conflict": 75,
+    "skipped_conflict": 76,
     "skipped_draft": 70,
     "total": 870
   },
-  "generated_at": "2026-10-11T21:21:23Z",
+  "generated_at": "2026-10-11T23:21:28Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -323,9 +323,8 @@
     "7669": {
       "author": "falken10vdl",
       "branch": "clipboard-module",
-      "head": "4bc21f8",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "6e101cd",
+      "status": "merged",
       "title": "First version clipboard module. 3 modes available (RENAME, DUPLICATE, DESTINATION)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7669"
     },
@@ -3370,7 +3369,7 @@
       "author": "BIMvoice",
       "branch": "fix/8945-append-asset-perf",
       "head": "55bff85",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "project.append_asset: propagate assume_asset_uniqueness_by_name to nested type append",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8956"
     },
@@ -7128,8 +7127,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610112250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610112250"
+    "tag": "v0.9.0-alpha2610120051",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610120051"
   },
   "schema": 1
 }
