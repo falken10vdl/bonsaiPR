@@ -3,11 +3,11 @@
   "counts": {
     "failed": 166,
     "merged": 550,
-    "skipped_conflict": 82,
+    "skipped_conflict": 84,
     "skipped_draft": 70,
-    "total": 868
+    "total": 870
   },
-  "generated_at": "2026-10-11T16:19:16Z",
+  "generated_at": "2026-10-11T20:19:28Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7119,11 +7119,27 @@
       "status": "skipped_conflict",
       "title": "Export structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9903"
+    },
+    "9904": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/10-inclines",
+      "head": "2cffa64",
+      "status": "skipped_conflict",
+      "title": "Resolve forces on inclines and from known components",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9904"
+    },
+    "9905": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/11-report-docs",
+      "head": "8146f70",
+      "status": "skipped_conflict",
+      "title": "Document structural calculation reports",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9905"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610111750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610111750"
+    "tag": "v0.9.0-alpha2610112150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610112150"
   },
   "schema": 1
 }
