@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 863
   },
-  "generated_at": "2026-10-11T06:18:12Z",
+  "generated_at": "2026-10-11T08:34:52Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -4874,7 +4874,7 @@
     "9255": {
       "author": "BIMvoice",
       "branch": "fix/ifc2x3-port-append-proxy",
-      "head": "c09e7da",
+      "head": "743c295",
       "status": "merged",
       "title": "append_asset: IFC2X3 MEP ports are silently dropped (#9247)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9255"
@@ -7081,8 +7081,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610110750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610110750"
+    "tag": "v0.9.0-alpha2610110950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610110950"
   },
   "schema": 1
 }

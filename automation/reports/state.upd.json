@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 164,
+    "failed": 165,
     "merged": 557,
     "skipped_conflict": 72,
     "skipped_draft": 70,
-    "total": 863
+    "total": 864
   },
-  "generated_at": "2026-10-11T07:16:02Z",
+  "generated_at": "2026-10-11T09:33:08Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7077,11 +7077,20 @@
       "status": "merged",
       "title": "Bonsai: list user defined statuses in status filters",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9898"
+    },
+    "9899": {
+      "author": "BIMvoice",
+      "branch": "fix/hybrid-kernel-threaded-fallback",
+      "head": "9e6bac5",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "ifcgeom: keep the hybrid kernel fallback flags on cloned kernels",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9899"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610110848",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610110848"
+    "tag": "v0.9.0-alpha2610111104",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610111104"
   },
   "schema": 1
 }
