@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 864
   },
-  "generated_at": "2026-10-11T12:18:19Z",
+  "generated_at": "2026-10-11T14:18:41Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -5633,7 +5633,7 @@
     "9587": {
       "author": "Moult",
       "branch": "perf/ifcparse-parallel-parse",
-      "head": "582df2b",
+      "head": "d78029b",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcparse: parse instances and build the lazy index in parallel",
@@ -7090,8 +7090,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610111350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610111350"
+    "tag": "v0.9.0-alpha2610111550",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610111550"
   },
   "schema": 1
 }
