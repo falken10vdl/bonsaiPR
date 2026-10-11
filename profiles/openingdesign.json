@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "openingdesign",
-  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9851 added by hand 2026-10-07; #9867 and the stacked structural series #9868-#9905 added 2026-10-11, distilled from Frankenstein_build-0.9.0-alpha2610072353 (code picked in full; tests and docs not); #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 23 closed ones are left out (latest #8258, closed 2026-10-10), as is #8971 (overlaps #8200 throughout one function; left out by choice). On 2026-10-11, after upstream's edit_pset/add_representation settings and get_placement refactors, #7833, #8669 and #9517 were rebased and #8298, #8345, #8251, #8598, #8336 and #7003 had v0.9.0 merged in; #7669 (targets v0.8.0) waits on its author. Pins are the heads last validated at v0.9.0 (183 PRs, 174 pins), 2026-10-07.",
+  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9851 added by hand 2026-10-07; #9867 and the stacked structural series #9868-#9905 added 2026-10-11, distilled from Frankenstein_build-0.9.0-alpha2610072353 (code picked in full; tests and docs not); #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 23 closed ones are left out (latest #8258, closed 2026-10-10), as is #8971 (overlaps #8200 throughout one function; left out by choice). On 2026-10-11, after upstream's edit_pset/add_representation settings and get_placement refactors, #7833, #8669 and #9517 were rebased and #8298, #8345, #8251, #8598, #8336 and #7003 had v0.9.0 merged in; #7669 was rebased onto v0.9.0 with its author's agreement. Pins are the heads last validated at v0.9.0 (183 PRs, 174 pins), 2026-10-07.",
   "maintainer": "OpeningDesign",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
@@ -397,7 +397,7 @@
     "7648": "21bfb661c2b80608b334b2f1111e87b9804c9742",
     "7653": "0e3331e393789ff288ff57e053fe779a78aa0e8f",
     "7659": "509cb570792c09c5f6a714b0fc37cba84d37a8c2",
-    "7669": "4bc21f840e95719b8e26c1458801ee20b7639d53",
+    "7669": "6e101cd9ed0a9327be27f73a599ffbe7c46072a8",
     "7670": "10a50eb95ee7b3b0726909b94fb2218bf824105f",
     "7715": "66a66354c74df438db83037c0bf6f0e6d5f42934",
     "7719": "fdca22953fdcd57d2a8c5a485a5c739205b73fb7",
