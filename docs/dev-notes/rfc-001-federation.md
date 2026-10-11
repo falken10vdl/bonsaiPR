@@ -247,6 +247,14 @@ both statements, not routine.
   The 3.11 builds' missing `blender_version_max` is *not* a defect: upstream's
   own unstable feed declares them the same way (3.11 from Blender 4.2 with no
   maximum, 3.13 from 5.1).
+- **Closed PRs were found by arithmetic.** Stage 0 printed one log line for
+  selected PRs no longer open, so each one (#9478, #8325, #8333, #8323, #8258)
+  was found by noticing a total one lower than the profile's. The report now
+  has a "Selected PRs no longer open" section, split into merged upstream and
+  closed unmerged, and the manifest has `selected_not_open`. A lookup that
+  fails says *unknown*. `bonsaipr_profile.py prune <name>` removes them from
+  the profile's own file. The build never edits the profile itself: it is the
+  curator's file.
 - **A PR that merges upstream quietly leaves the build.** It is no longer open,
   so stage 0 never sees it, while its pin stays in the profile. #7839 merged into
   v0.9.0 between two runs: the manifest said 162 merged against 163 pins, and it

@@ -59,6 +59,19 @@ contents. Validate with:
 python bonsaipr_profile.py check <name>
 ```
 
+PRs close over time. Each build's report lists selected PRs that are no longer
+open, split into *merged upstream* (already in the base) and *closed unmerged*
+(the change has left the build). To take them out of the profile:
+
+```bash
+python bonsaipr_profile.py prune <name> --dry-run   # list them
+python bonsaipr_profile.py prune <name>             # remove from select.prs, order_seq and pin
+```
+
+It edits only that profile's own file, not a parent it extends, and leaves the
+description to you. Set `GITHUB_TOKEN` for large profiles: it asks GitHub for
+every open PR, which is several calls unauthenticated.
+
 ---
 
 ## 3. Repository configuration

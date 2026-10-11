@@ -423,6 +423,15 @@ def get_open_prs():
                 f"skipped: {', '.join('#' + str(n) for n in missing[:20])}"
                 + (" …" if len(missing) > 20 else "")
             )
+            SELECTED_NOT_OPEN.clear()
+            SELECTED_NOT_OPEN.update(
+                bonsaipr_profile.closed_pr_details(upstream_repo, missing, GITHUB_TOKEN)
+            )
+            for n, d in sorted(SELECTED_NOT_OPEN.items()):
+                print(f"   #{n}: {d['state']} {d['closed_at']}")
+            print(
+                f"   Remove them with: python bonsaipr_profile.py prune {CURATION.name}"
+            )
     else:
         print(f"Found {len(all_prs)} open pull requests")
     return all_prs
@@ -447,6 +456,11 @@ PR_RIVALS = {}
 # that quietly ships an older commit than the PR points at is the kind of thing
 # nobody can detect from the outside.
 PR_PINNED = {}
+# PR number -> {state, closed_at, title, author} for PRs the curation selects that
+# are no longer open. Was a single log line, so each one was found by noticing a
+# total one lower than the profile's; merged upstream and closed unmerged mean
+# opposite things for the build, and the report now says which.
+SELECTED_NOT_OPEN = {}
 # PR number -> its head sha at build time, so the report can show what was built
 # alongside what the PR now points at.
 _pr_tip_shas = {}
@@ -761,6 +775,12 @@ def write_state_snapshot(
         delta = pr_state.compute_delta(prev_state, new_state, strict_order=True)
         pr_state.append_events(events_path, pr_state.delta_to_events(delta))
         delta_md = pr_state.render_delta_md(delta)
+    # Selected PRs no longer open, by number: consumers can tell "merged
+    # upstream" (nothing lost) from "closed unmerged" (left the build).
+    new_state["selected_not_open"] = {
+        str(n): {"state": d["state"], "closed_at": d["closed_at"]}
+        for n, d in sorted(SELECTED_NOT_OPEN.items())
+    }
     pr_state.write_state(new_state, state_path)
 
     # Handed to stage 2 for the release body. Written even when empty, so its
@@ -1574,6 +1594,14 @@ def generate_report(
             f"- Skipped (conflicts with other PRs): {failed_conflict_with_others}\n"
         )
         f.write(f"- Failed to Merge (unknown): {failed_unknown}\n")
+        if SELECTED_NOT_OPEN:
+            states = [d["state"] for d in SELECTED_NOT_OPEN.values()]
+            f.write(
+                f"- Selected but no longer open: {len(states)} "
+                f"({states.count('merged')} merged upstream, {states.count('closed')} closed unmerged"
+                + (f", {states.count('unknown')} unknown" if "unknown" in states else "")
+                + ") — listed below\n"
+            )
         if total_prs > 0:
             success_rate = round(100 * len(applied_prs) / total_prs, 1)
             f.write(f"- Success Rate: {success_rate}%\n\n")
@@ -1794,6 +1822,23 @@ def generate_report(
                 f.write(
                     f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {last_commit} | "
                     f"{first_detected} | {base_commit_cell} |{merges_under}\n"
+                )
+            f.write("\n")
+        if SELECTED_NOT_OPEN:
+            f.write(f"## 🚪 Selected PRs no longer open ({len(SELECTED_NOT_OPEN)})\n\n")
+            f.write(
+                "Selected by the curation but closed on GitHub, so not in this build. "
+                "Merged upstream: the change is already in the base. Closed unmerged: "
+                "the change has left the build. Remove them from the profile with "
+                f"`python bonsaipr_profile.py prune {CURATION.name}`.\n\n"
+            )
+            f.write("| PR | Title | Author | State | Closed |\n")
+            f.write("|----|-------|--------|-------|--------|\n")
+            labels = {"merged": "merged upstream", "closed": "closed unmerged", "unknown": "unknown"}
+            for n, d in sorted(SELECTED_NOT_OPEN.items()):
+                f.write(
+                    f"| [#{n}](https://github.com/{upstream_repo}/pull/{n}) | {_cell(d['title'])} | "
+                    f"{_cell(d['author'])} | {labels.get(d['state'], d['state'])} | {d['closed_at']} |\n"
                 )
             f.write("\n")
         if skipped_prs:

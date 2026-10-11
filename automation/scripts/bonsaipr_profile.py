@@ -522,6 +522,89 @@ def resolve_base_branch(profile, env=None):
 
 
 # --------------------------------------------------------------------------- #
+# Selected PRs that are no longer open
+# --------------------------------------------------------------------------- #
+
+def _github_get(url, token=None):
+    import urllib.request
+    req = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json"})
+    if token:
+        req.add_header("Authorization", f"Bearer {token}")
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.load(r)
+
+
+def closed_pr_details(repo, numbers, token=None):
+    """{n: {"state": "merged"|"closed"|"unknown", "closed_at", "title", "author"}}.
+
+    For PRs a curation selects but GitHub no longer lists as open. The two
+    cases mean opposite things for a build: merged upstream, the change is in
+    the base and nothing is lost; closed unmerged, the feature has left the
+    build. A lookup that fails is "unknown", never assumed either way.
+    """
+    out = {}
+    for n in sorted(numbers):
+        try:
+            d = _github_get(f"https://api.github.com/repos/{repo}/pulls/{n}", token)
+            out[n] = {
+                "state": "merged" if d.get("merged_at") else (d.get("state") or "unknown"),
+                "closed_at": (d.get("closed_at") or "")[:10],
+                "title": d.get("title") or "",
+                "author": (d.get("user") or {}).get("login") or "",
+            }
+        except Exception:
+            out[n] = {"state": "unknown", "closed_at": "", "title": "", "author": ""}
+    return out
+
+
+def open_pr_numbers(repo, token=None):
+    """Every open PR number in `repo`, a page of 100 at a time."""
+    numbers, page = set(), 1
+    while True:
+        batch = _github_get(
+            f"https://api.github.com/repos/{repo}/pulls?state=open&per_page=100&page={page}", token
+        )
+        numbers.update(pr["number"] for pr in batch)
+        if len(batch) < 100:
+            return numbers
+        page += 1
+
+
+def prune(name, profiles_dir=None, token=None, dry_run=False):
+    """Remove selected PRs that are no longer open from a profile's own file.
+
+    Edits `select.prs`, `order_seq` and `pin` of the named profile only: a
+    parent it extends is left alone, and so is its description, which is the
+    curator's prose. Returns {pr: details} of what was (or would be) removed.
+    """
+    data, path = _read(name, profiles_dir)
+    repo = (data.get("base") or {}).get("repo") or "IfcOpenShell/IfcOpenShell"
+    selected = set(_as_int_set((data.get("select") or {}).get("prs")))
+    gone = selected - open_pr_numbers(repo, token)
+    if not gone:
+        return {}
+    details = closed_pr_details(repo, gone, token)
+    if dry_run:
+        return details
+
+    def kept(v):
+        return _as_int_set([v]).isdisjoint(gone)
+
+    data["select"]["prs"] = [p for p in data["select"]["prs"] if kept(p)]
+    if "order_seq" in data:
+        data["order_seq"] = [p for p in data["order_seq"] if kept(p)]
+    if "pin" in data:
+        data["pin"] = {k: v for k, v in data["pin"].items() if kept(k)}
+
+    with open(path, "r", encoding="utf-8", newline="") as f:
+        crlf = "\r\n" in f.read()
+    text = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        f.write(text.replace("\n", "\r\n") if crlf else text)
+    return details
+
+
+# --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 
@@ -533,10 +616,36 @@ def main(argv=None):
             pass
 
     ap = argparse.ArgumentParser(description="Inspect and validate BonsaiPR profiles")
-    ap.add_argument("command", choices=["show", "check", "base"])
+    ap.add_argument("command", choices=["show", "check", "base", "prune"])
     ap.add_argument("name", nargs="?", default=None)
     ap.add_argument("--profiles", default=None)
+    ap.add_argument("--dry-run", action="store_true", help="prune: list, change nothing")
     args = ap.parse_args(argv)
+
+    if args.command == "prune":
+        if not args.name:
+            print("❌ prune needs a profile name", file=sys.stderr)
+            return 1
+        token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
+        try:
+            gone = prune(args.name, profiles_dir=args.profiles, token=token, dry_run=args.dry_run)
+        except ProfileError as e:
+            print(f"❌ {e}", file=sys.stderr)
+            return 1
+        except Exception as e:
+            print(f"❌ could not ask GitHub which PRs are open: {e}", file=sys.stderr)
+            return 1
+        if not gone:
+            print(f"✅ every PR selected by '{args.name}' is open")
+            return 0
+        verb = "would remove" if args.dry_run else "removed"
+        print(f"{verb} {len(gone)} PR(s) no longer open from '{args.name}':")
+        for n, d in sorted(gone.items()):
+            when = f" {d['closed_at']}" if d["closed_at"] else ""
+            print(f"  #{n:<6} {d['state']:<7}{when}  {d['author']}: {d['title'][:60]}")
+        if not args.dry_run:
+            print("   The description is yours to update; commit the profile as usual.")
+        return 0
 
     try:
         profile = load_profile(args.name, profiles_dir=args.profiles, verbose=False)
