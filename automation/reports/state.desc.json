@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 871
   },
-  "generated_at": "2026-10-12T00:49:10Z",
+  "generated_at": "2026-10-12T05:48:02Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2138,7 +2138,7 @@
     "8598": {
       "author": "BIMvoice",
       "branch": "fix-4047-bounded-property-support",
-      "head": "ad46240",
+      "head": "692974b",
       "status": "merged",
       "title": "Bonsai/ifcopenshell-python: support editing IfcPropertyBoundedValue properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8598"
@@ -7134,8 +7134,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610120220",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610120220"
+    "tag": "v0.9.0-alpha2610120720",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610120720"
   },
   "schema": 1
 }
