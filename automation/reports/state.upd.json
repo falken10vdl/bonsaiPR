@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 871
   },
-  "generated_at": "2026-10-12T06:19:44Z",
+  "generated_at": "2026-10-12T17:22:33Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -6986,14 +6986,6 @@
       "title": "Type multiline text annotations in the viewport (fixes #6427)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9855"
     },
-    "9867": {
-      "author": "theoryshaw",
-      "branch": "units-auto-assign",
-      "head": "7ba21e1",
-      "status": "merged",
-      "title": "Bonsai: assign a newly added unit when its type has none",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9867"
-    },
     "9868": {
       "author": "theoryshaw",
       "branch": "structural-loads/1-fixes",
@@ -7132,11 +7124,19 @@
       "status": "merged",
       "title": "ifcviewer-web: regenerate the embedded fixtures as .ifcview v19",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9906"
+    },
+    "9911": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/12-analysis-notes",
+      "head": "a206b20",
+      "status": "merged",
+      "title": "Fold structural analysis plans into the dev note",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9911"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610120749",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610120749"
+    "tag": "v0.9.0-alpha2610121853",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610121853"
   },
   "schema": 1
 }

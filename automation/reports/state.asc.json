@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 156,
-    "merged": 557,
+    "merged": 556,
     "skipped_conflict": 88,
     "skipped_draft": 70,
-    "total": 871
+    "total": 870
   },
-  "generated_at": "2026-10-12T05:19:01Z",
+  "generated_at": "2026-10-12T16:21:49Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -6987,14 +6987,6 @@
       "title": "Type multiline text annotations in the viewport (fixes #6427)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9855"
     },
-    "9867": {
-      "author": "theoryshaw",
-      "branch": "units-auto-assign",
-      "head": "7ba21e1",
-      "status": "merged",
-      "title": "Bonsai: assign a newly added unit when its type has none",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9867"
-    },
     "9868": {
       "author": "theoryshaw",
       "branch": "structural-loads/1-fixes",
@@ -7136,8 +7128,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610120650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610120650"
+    "tag": "v0.9.0-alpha2610121750",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610121750"
   },
   "schema": 1
 }
