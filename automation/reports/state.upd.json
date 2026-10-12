@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 155,
-    "merged": 569,
+    "merged": 570,
     "skipped_conflict": 76,
     "skipped_draft": 70,
-    "total": 870
+    "total": 871
   },
-  "generated_at": "2026-10-11T23:21:28Z",
+  "generated_at": "2026-10-12T01:18:15Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -290,7 +290,7 @@
     "7648": {
       "author": "theoryshaw",
       "branch": "extend-profiles-and-extrusions",
-      "head": "21bfb66",
+      "head": "63a968d",
       "status": "merged",
       "title": "closes #3565 - extend profiles and basic extrusions to 3D cursor with…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7648"
@@ -445,7 +445,7 @@
     "7798": {
       "author": "theoryshaw",
       "branch": "ManualDrawingReference",
-      "head": "1cd9f23",
+      "head": "20c103f",
       "status": "merged",
       "title": "Manual drawing reference",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7798"
@@ -735,7 +735,7 @@
     "7965": {
       "author": "theoryshaw",
       "branch": "inset_section_endpoints",
-      "head": "8251c95",
+      "head": "1d81958",
       "status": "merged",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
@@ -857,7 +857,7 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "77dc5ca",
+      "head": "2ae4baa",
       "status": "merged",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
@@ -1170,7 +1170,7 @@
     "8304": {
       "author": "BIMvoice",
       "branch": "fix-georef-drawing-camera-offset-8205",
-      "head": "cfb0b43",
+      "head": "2ce4c68",
       "status": "merged",
       "title": "Bonsai: apply georeferencing offset to imported drawing cameras (#8205)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8304"
@@ -2025,7 +2025,7 @@
     "8548": {
       "author": "theoryshaw",
       "branch": "placement-storey-elevation",
-      "head": "eb2ec58",
+      "head": "69899cf",
       "status": "merged",
       "title": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8548"
@@ -5573,7 +5573,7 @@
     "9523": {
       "author": "theoryshaw",
       "branch": "extend_to_cursor_base_levels_7950",
-      "head": "1f8a639",
+      "head": "944c60a",
       "status": "merged",
       "title": "fix(bonsai): extend walls to cursor from any base level",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
@@ -6997,7 +6997,7 @@
     "9868": {
       "author": "theoryshaw",
       "branch": "structural-loads/1-fixes",
-      "head": "3be4df8",
+      "head": "e43fc66",
       "status": "merged",
       "title": "Structural: fix load cases, load groups and activities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9868"
@@ -7005,7 +7005,7 @@
     "9869": {
       "author": "theoryshaw",
       "branch": "structural-loads/2-apply-edit",
-      "head": "8c8bbc0",
+      "head": "6a01cb0",
       "status": "merged",
       "title": "Structural: streamline applying and editing loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9869"
@@ -7013,7 +7013,7 @@
     "9870": {
       "author": "theoryshaw",
       "branch": "structural-loads/3-diagrams",
-      "head": "1922eb9",
+      "head": "0a3fb3a",
       "status": "merged",
       "title": "Structural: readable point force diagrams in Show Loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9870"
@@ -7021,7 +7021,7 @@
     "9871": {
       "author": "theoryshaw",
       "branch": "structural-loads/4-viewport-editing",
-      "head": "75c69a0",
+      "head": "c6e65a7",
       "status": "merged",
       "title": "Structural: edit loads from the viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9871"
@@ -7029,7 +7029,7 @@
     "9872": {
       "author": "theoryshaw",
       "branch": "structural-loads/5-item-loads",
-      "head": "f1da948",
+      "head": "7e72b0e",
       "status": "merged",
       "title": "Structural: see and show a structural item's loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9872"
@@ -7080,7 +7080,7 @@
     "9900": {
       "author": "theoryshaw",
       "branch": "structural-loads/6-input-display",
-      "head": "04c99b2",
+      "head": "dd7817a",
       "status": "merged",
       "title": "Enter loads by eighths and refine their display",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9900"
@@ -7088,7 +7088,7 @@
     "9901": {
       "author": "theoryshaw",
       "branch": "structural-loads/7-knowns-unknowns",
-      "head": "12f1f8f",
+      "head": "2621fa4",
       "status": "merged",
       "title": "Lock known force values and solve the unknowns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9901"
@@ -7096,7 +7096,7 @@
     "9902": {
       "author": "theoryshaw",
       "branch": "structural-loads/8-point-axes",
-      "head": "afa6103",
+      "head": "471a4bc",
       "status": "merged",
       "title": "Tilt structural point axes in the X-Z plane",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9902"
@@ -7104,7 +7104,7 @@
     "9903": {
       "author": "theoryshaw",
       "branch": "structural-loads/9-calculation-reports",
-      "head": "03279dd",
+      "head": "d090e58",
       "status": "merged",
       "title": "Export structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9903"
@@ -7112,7 +7112,7 @@
     "9904": {
       "author": "theoryshaw",
       "branch": "structural-loads/10-inclines",
-      "head": "2cffa64",
+      "head": "b0c3e3d",
       "status": "merged",
       "title": "Resolve forces on inclines and from known components",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9904"
@@ -7120,15 +7120,23 @@
     "9905": {
       "author": "theoryshaw",
       "branch": "structural-loads/11-report-docs",
-      "head": "8146f70",
+      "head": "aed392f",
       "status": "merged",
       "title": "Document structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9905"
+    },
+    "9906": {
+      "author": "Moult",
+      "branch": "fix/ifcviewer-web-v19-fixtures",
+      "head": "aa8b90b",
+      "status": "merged",
+      "title": "ifcviewer-web: regenerate the embedded fixtures as .ifcview v19",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9906"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610120051",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610120051"
+    "tag": "v0.9.0-alpha2610120250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610120250"
   },
   "schema": 1
 }
