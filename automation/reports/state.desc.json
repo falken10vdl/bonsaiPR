@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 154,
-    "merged": 568,
+    "merged": 569,
     "skipped_conflict": 79,
     "skipped_draft": 70,
-    "total": 871
+    "total": 872
   },
-  "generated_at": "2026-10-12T16:51:59Z",
+  "generated_at": "2026-10-12T18:50:02Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7131,11 +7131,19 @@
       "status": "merged",
       "title": "Fold structural analysis plans into the dev note",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9911"
+    },
+    "9912": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/13-resultant-axis",
+      "head": "ee4f098",
+      "status": "merged",
+      "title": "Measure a resultant's angle from any axis",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9912"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610121822",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610121822"
+    "tag": "v0.9.0-alpha2610122020",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610122020"
   },
   "schema": 1
 }
