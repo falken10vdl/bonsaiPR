@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 157,
-    "merged": 574,
+    "failed": 158,
+    "merged": 577,
     "skipped_conflict": 76,
     "skipped_draft": 70,
-    "total": 877
+    "total": 881
   },
-  "generated_at": "2026-10-13T17:23:00Z",
+  "generated_at": "2026-10-13T19:23:15Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7153,7 +7153,7 @@
     "9917": {
       "author": "theoryshaw",
       "branch": "structural-loads/15-point-axes-input",
-      "head": "3e7cc63",
+      "head": "cd028c0",
       "status": "merged",
       "title": "Enter loads against point axes and edit loads by clicking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9917"
@@ -7182,11 +7182,44 @@
       "status": "failed",
       "title": "Taxonomy-level sweeps",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9921"
+    },
+    "9923": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/16-y-axis",
+      "head": "8a9c7a2",
+      "status": "merged",
+      "title": "Draw the +Y axis at loaded points",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9923"
+    },
+    "9924": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/17-equal-magnitudes",
+      "head": "9c0fafb",
+      "status": "merged",
+      "title": "Link load magnitudes, equal or by a ratio",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9924"
+    },
+    "9925": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/18-found-marks",
+      "head": "a53a3ea",
+      "status": "merged",
+      "title": "Mark found slopes and resultants with a padlock",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9925"
+    },
+    "9927": {
+      "author": "RickBrice",
+      "branch": "rab_evaluation_points",
+      "head": "61ae16c",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Sample alignment curves, sweeps and lofts by deflection (#5360)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9927"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610131853",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610131853"
+    "tag": "v0.9.0-alpha2610132052",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610132052"
   },
   "schema": 1
 }

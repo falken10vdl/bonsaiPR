@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 157,
+    "failed": 158,
     "merged": 557,
-    "skipped_conflict": 92,
+    "skipped_conflict": 95,
     "skipped_draft": 70,
-    "total": 876
+    "total": 880
   },
-  "generated_at": "2026-10-13T16:20:32Z",
+  "generated_at": "2026-10-13T18:20:45Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7154,7 +7154,7 @@
     "9917": {
       "author": "theoryshaw",
       "branch": "structural-loads/15-point-axes-input",
-      "head": "3e7cc63",
+      "head": "cd028c0",
       "status": "skipped_conflict",
       "title": "Enter loads against point axes and edit loads by clicking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9917"
@@ -7174,11 +7174,44 @@
       "status": "merged",
       "title": "Load only same-configuration plug-ins on Windows",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9920"
+    },
+    "9921": {
+      "author": "aothms",
+      "branch": "taxonomy-level-sweeps",
+      "head": "db2d6a3",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Taxonomy-level sweeps",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9921"
+    },
+    "9923": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/16-y-axis",
+      "head": "8a9c7a2",
+      "status": "skipped_conflict",
+      "title": "Draw the +Y axis at loaded points",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9923"
+    },
+    "9924": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/17-equal-magnitudes",
+      "head": "9c0fafb",
+      "status": "skipped_conflict",
+      "title": "Link load magnitudes, equal or by a ratio",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9924"
+    },
+    "9925": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/18-found-marks",
+      "head": "a53a3ea",
+      "status": "skipped_conflict",
+      "title": "Mark found slopes and resultants with a padlock",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9925"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610131750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610131750"
+    "tag": "v0.9.0-alpha2610131950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610131950"
   },
   "schema": 1
 }
