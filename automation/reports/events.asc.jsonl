@@ -8502,3 +8502,7 @@
 {"ts": "2026-10-13T18:20:45Z", "order": "ascending", "pr": 9925, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-10-13T20:21:20Z", "order": "ascending", "pr": 9921, "event": "updated", "status": "failed", "from_head": "db2d6a3", "to_head": "91f52a9"}
 {"ts": "2026-10-13T20:21:20Z", "order": "ascending", "pr": 9927, "event": "added", "to": "failed"}
+{"ts": "2026-10-13T22:20:41Z", "order": "ascending", "pr": 9897, "event": "updated", "status": "failed", "from_head": "fa595c7", "to_head": "be3f80c"}
+{"ts": "2026-10-13T22:20:41Z", "order": "ascending", "pr": 9928, "event": "added", "to": "failed"}
+{"ts": "2026-10-13T22:20:41Z", "order": "ascending", "pr": 9929, "event": "added", "to": "merged"}
+{"ts": "2026-10-13T22:20:41Z", "order": "ascending", "pr": 9930, "event": "added", "to": "skipped_conflict"}

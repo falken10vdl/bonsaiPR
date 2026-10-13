@@ -3,11 +3,11 @@
   "counts": {
     "failed": 159,
     "merged": 578,
-    "skipped_conflict": 76,
+    "skipped_conflict": 77,
     "skipped_draft": 70,
-    "total": 883
+    "total": 884
   },
-  "generated_at": "2026-10-13T21:27:35Z",
+  "generated_at": "2026-10-13T23:21:24Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7219,7 +7219,7 @@
     "9928": {
       "author": "RickBrice",
       "branch": "rab_helmert_heading",
-      "head": "3c9d605",
+      "head": "ea633a6",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Return the heading at arc length s from helmert_curve_point",
@@ -7228,15 +7228,23 @@
     "9929": {
       "author": "RickBrice",
       "branch": "rab_degenerate_segments",
-      "head": "61b7433",
-      "status": "merged",
+      "head": "d9cf9d7",
+      "status": "skipped_conflict",
       "title": "Map transitions that don't change as their constant counterparts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9929"
+    },
+    "9930": {
+      "author": "RickBrice",
+      "branch": "rab_cant_cross_slope",
+      "head": "2d0a249",
+      "status": "merged",
+      "title": "Rotate cant transitions by the difference between their rails",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9930"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610132255",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610132255"
+    "tag": "v0.9.0-alpha2610140052",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610140052"
   },
   "schema": 1
 }

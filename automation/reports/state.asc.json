@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 159,
-    "merged": 557,
-    "skipped_conflict": 95,
+    "failed": 160,
+    "merged": 558,
+    "skipped_conflict": 96,
     "skipped_draft": 70,
-    "total": 881
+    "total": 884
   },
-  "generated_at": "2026-10-13T20:21:20Z",
+  "generated_at": "2026-10-13T22:20:41Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7040,7 +7040,7 @@
     "9897": {
       "author": "Moult",
       "branch": "feat/ifcgeom-vertex-rebase",
-      "head": "fa595c7",
+      "head": "be3f80c",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: add vertex-rebase-distance setting",
@@ -7216,11 +7216,36 @@
       "status": "failed",
       "title": "Sample alignment curves, sweeps and lofts by deflection (#5360)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9927"
+    },
+    "9928": {
+      "author": "RickBrice",
+      "branch": "rab_helmert_heading",
+      "head": "ea633a6",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Return the heading at arc length s from helmert_curve_point",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9928"
+    },
+    "9929": {
+      "author": "RickBrice",
+      "branch": "rab_degenerate_segments",
+      "head": "d9cf9d7",
+      "status": "merged",
+      "title": "Map transitions that don't change as their constant counterparts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9929"
+    },
+    "9930": {
+      "author": "RickBrice",
+      "branch": "rab_cant_cross_slope",
+      "head": "2d0a249",
+      "status": "skipped_conflict",
+      "title": "Rotate cant transitions by the difference between their rails",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9930"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610132150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610132150"
+    "tag": "v0.9.0-alpha2610132350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610132350"
   },
   "schema": 1
 }
