@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 154,
-    "merged": 572,
+    "merged": 571,
     "skipped_conflict": 79,
     "skipped_draft": 70,
-    "total": 875
+    "total": 874
   },
-  "generated_at": "2026-10-13T08:50:28Z",
+  "generated_at": "2026-10-13T10:50:19Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7116,14 +7116,6 @@
       "title": "Document structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9905"
     },
-    "9906": {
-      "author": "Moult",
-      "branch": "fix/ifcviewer-web-v19-fixtures",
-      "head": "aa8b90b",
-      "status": "merged",
-      "title": "ifcviewer-web: regenerate the embedded fixtures as .ifcview v19",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9906"
-    },
     "9911": {
       "author": "theoryshaw",
       "branch": "structural-loads/12-analysis-notes",
@@ -7166,8 +7158,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610131021",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610131021"
+    "tag": "v0.9.0-alpha2610131220",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610131220"
   },
   "schema": 1
 }
