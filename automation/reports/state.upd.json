@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 158,
-    "merged": 577,
+    "failed": 159,
+    "merged": 578,
     "skipped_conflict": 76,
     "skipped_draft": 70,
-    "total": 881
+    "total": 883
   },
-  "generated_at": "2026-10-13T19:23:15Z",
+  "generated_at": "2026-10-13T21:27:35Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7039,7 +7039,7 @@
     "9897": {
       "author": "Moult",
       "branch": "feat/ifcgeom-vertex-rebase",
-      "head": "fa595c7",
+      "head": "be3f80c",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: add vertex-rebase-distance setting",
@@ -7177,7 +7177,7 @@
     "9921": {
       "author": "aothms",
       "branch": "taxonomy-level-sweeps",
-      "head": "db2d6a3",
+      "head": "91f52a9",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Taxonomy-level sweeps",
@@ -7210,16 +7210,33 @@
     "9927": {
       "author": "RickBrice",
       "branch": "rab_evaluation_points",
-      "head": "61ae16c",
+      "head": "6dd891a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Sample alignment curves, sweeps and lofts by deflection (#5360)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9927"
+    },
+    "9928": {
+      "author": "RickBrice",
+      "branch": "rab_helmert_heading",
+      "head": "3c9d605",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Return the heading at arc length s from helmert_curve_point",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9928"
+    },
+    "9929": {
+      "author": "RickBrice",
+      "branch": "rab_degenerate_segments",
+      "head": "61b7433",
+      "status": "merged",
+      "title": "Map transitions that don't change as their constant counterparts",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9929"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610132052",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610132052"
+    "tag": "v0.9.0-alpha2610132255",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610132255"
   },
   "schema": 1
 }
