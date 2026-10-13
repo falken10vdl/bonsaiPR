@@ -8490,3 +8490,7 @@
 {"ts": "2026-10-13T04:18:24Z", "order": "ascending", "pr": 9915, "event": "updated", "status": "skipped_conflict", "from_head": "29e3b15", "to_head": "c26914d"}
 {"ts": "2026-10-13T10:19:51Z", "order": "ascending", "pr": 9906, "event": "removed", "from": "merged"}
 {"ts": "2026-10-13T12:20:26Z", "order": "ascending", "pr": 9897, "event": "updated", "status": "failed", "from_head": "a6dde28", "to_head": "fa595c7"}
+{"ts": "2026-10-13T14:23:26Z", "order": "ascending", "pr": 9674, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-10-13T14:23:26Z", "order": "ascending", "pr": 9883, "event": "removed", "from": "merged"}
+{"ts": "2026-10-13T14:23:26Z", "order": "ascending", "pr": 9917, "event": "added", "to": "skipped_conflict"}
+{"ts": "2026-10-13T14:23:26Z", "order": "ascending", "pr": 9919, "event": "added", "to": "merged"}

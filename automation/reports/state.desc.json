@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 154,
+    "failed": 155,
     "merged": 571,
     "skipped_conflict": 79,
     "skipped_draft": 70,
-    "total": 874
+    "total": 875
   },
-  "generated_at": "2026-10-13T12:51:23Z",
+  "generated_at": "2026-10-13T14:54:59Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -6088,7 +6088,8 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8645",
       "head": "67321e5",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: fix BCF viewpoint line markup crash on modern Grease Pencil API",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9674"
     },
@@ -7025,14 +7026,6 @@
       "title": "Structural: see and show a structural item's loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9872"
     },
-    "9883": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ty-0.0.85",
-      "head": "5d7369b",
-      "status": "merged",
-      "title": "build(deps): bump ty from 0.0.84 to 0.0.85",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9883"
-    },
     "9885": {
       "author": "Moult",
       "branch": "feat/ifcparse-express-aggregate",
@@ -7155,11 +7148,27 @@
       "status": "merged",
       "title": "Make structural load diagrams more legible",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9915"
+    },
+    "9917": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/15-point-axes-input",
+      "head": "3e7cc63",
+      "status": "merged",
+      "title": "Enter loads against point axes and edit loads by clicking",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9917"
+    },
+    "9919": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/astral-sh/setup-uv-10.2.0",
+      "head": "823655e",
+      "status": "merged",
+      "title": "build(deps): bump astral-sh/setup-uv from 7.6.0 to 10.2.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9919"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610131421",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610131421"
+    "tag": "v0.9.0-alpha2610131624",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610131624"
   },
   "schema": 1
 }
