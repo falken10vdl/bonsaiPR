@@ -8489,3 +8489,4 @@
 {"ts": "2026-10-13T02:19:20Z", "order": "ascending", "pr": 9915, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-10-13T04:18:24Z", "order": "ascending", "pr": 9915, "event": "updated", "status": "skipped_conflict", "from_head": "29e3b15", "to_head": "c26914d"}
 {"ts": "2026-10-13T10:19:51Z", "order": "ascending", "pr": 9906, "event": "removed", "from": "merged"}
+{"ts": "2026-10-13T12:20:26Z", "order": "ascending", "pr": 9897, "event": "updated", "status": "failed", "from_head": "a6dde28", "to_head": "fa595c7"}
