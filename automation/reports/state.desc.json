@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 154,
-    "merged": 570,
+    "merged": 572,
     "skipped_conflict": 79,
     "skipped_draft": 70,
-    "total": 873
+    "total": 875
   },
-  "generated_at": "2026-10-12T20:50:21Z",
+  "generated_at": "2026-10-13T02:48:31Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7147,11 +7147,27 @@
       "status": "merged",
       "title": "ifcopenshell-js python parity and more examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9913"
+    },
+    "9914": {
+      "author": "shitobu",
+      "branch": "feature/door-handle-configurable-dimensions",
+      "head": "589a434",
+      "status": "merged",
+      "title": "feat(bonsai): make door handle dimensions user-configurable (#8090)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9914"
+    },
+    "9915": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/14-diagram-legibility",
+      "head": "c26914d",
+      "status": "merged",
+      "title": "Make structural load diagrams more legible",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9915"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610122220",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610122220"
+    "tag": "v0.9.0-alpha2610130420",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610130420"
   },
   "schema": 1
 }
