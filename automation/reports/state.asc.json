@@ -3,11 +3,11 @@
   "counts": {
     "failed": 160,
     "merged": 557,
-    "skipped_conflict": 100,
+    "skipped_conflict": 101,
     "skipped_draft": 70,
-    "total": 887
+    "total": 888
   },
-  "generated_at": "2026-10-14T17:20:21Z",
+  "generated_at": "2026-10-14T19:20:27Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7265,11 +7265,19 @@
       "status": "skipped_conflict",
       "title": "Find where the moment centre must be",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9939"
+    },
+    "9940": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/23-signed-moments",
+      "head": "0e5c5be",
+      "status": "skipped_conflict",
+      "title": "Show moments signed, counter-clockwise positive",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9940"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610141850",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610141850"
+    "tag": "v0.9.0-alpha2610142050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610142050"
   },
   "schema": 1
 }
