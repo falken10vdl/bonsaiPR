@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 161,
+    "failed": 160,
     "merged": 557,
-    "skipped_conflict": 99,
+    "skipped_conflict": 100,
     "skipped_draft": 70,
     "total": 887
   },
-  "generated_at": "2026-10-14T15:21:08Z",
+  "generated_at": "2026-10-14T17:20:21Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7158,15 +7158,6 @@
       "title": "build(deps): bump astral-sh/setup-uv from 7.6.0 to 10.2.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9919"
     },
-    "9921": {
-      "author": "aothms",
-      "branch": "taxonomy-level-sweeps",
-      "head": "420f37f",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Taxonomy-level sweeps",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9921"
-    },
     "9923": {
       "author": "theoryshaw",
       "branch": "structural-loads/16-y-axis",
@@ -7266,11 +7257,19 @@
       "status": "skipped_conflict",
       "title": "Set and keep a resultant moment about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9938"
+    },
+    "9939": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/22-position-unknowns",
+      "head": "efcc2f8",
+      "status": "skipped_conflict",
+      "title": "Find where the moment centre must be",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9939"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610141650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610141650"
+    "tag": "v0.9.0-alpha2610141850",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610141850"
   },
   "schema": 1
 }
