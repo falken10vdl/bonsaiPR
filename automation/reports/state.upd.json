@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 886
   },
-  "generated_at": "2026-10-14T06:18:37Z",
+  "generated_at": "2026-10-14T08:20:23Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7244,7 +7244,7 @@
     "9932": {
       "author": "RickBrice",
       "branch": "rab_cant_slope_fix",
-      "head": "e7aab9a",
+      "head": "2fe8f78",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Rab cant slope fix",
@@ -7260,8 +7260,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610140749",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610140749"
+    "tag": "v0.9.0-alpha2610140950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610140950"
   },
   "schema": 1
 }
