@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 161,
-    "merged": 571,
+    "failed": 160,
+    "merged": 575,
     "skipped_conflict": 83,
     "skipped_draft": 70,
-    "total": 885
+    "total": 888
   },
-  "generated_at": "2026-10-14T14:23:22Z",
+  "generated_at": "2026-10-14T16:23:40Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7205,26 +7205,16 @@
       "head": "2c61dac",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Return the heading at arc length s from helmert_curve_point",
+      "title": "Fix the heading returned by helmert_curve_point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9928"
     },
     "9929": {
       "author": "RickBrice",
       "branch": "rab_degenerate_segments",
-      "head": "2b37d31",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Map transitions that don't change as their constant counterparts",
+      "head": "b8318a3",
+      "status": "merged",
+      "title": "Map unchanging transitions as constant geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9929"
-    },
-    "9930": {
-      "author": "RickBrice",
-      "branch": "rab_cant_cross_slope",
-      "head": "2d0a249",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Rotate cant transitions by the difference between their rails",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9930"
     },
     "9933": {
       "author": "theoryshaw",
@@ -7250,11 +7240,44 @@
       "status": "failed",
       "title": "Bonsai and viewer: let the iterator rebase far vertices",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9935"
+    },
+    "9936": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/20-moment-editing",
+      "head": "83f77cf",
+      "status": "merged",
+      "title": "Edit the moment centre from moments drawn",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9936"
+    },
+    "9937": {
+      "author": "RickBrice",
+      "branch": "rab_spiral_quadrature",
+      "head": "0d5fad5",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Integrate spiral positions by Gauss-Kronrod",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9937"
+    },
+    "9938": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/21-resultant-moment",
+      "head": "2624d13",
+      "status": "merged",
+      "title": "Set and keep a resultant moment about a point",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9938"
+    },
+    "9939": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/22-position-unknowns",
+      "head": "efcc2f8",
+      "status": "merged",
+      "title": "Find where the moment centre must be",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9939"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610141553",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610141553"
+    "tag": "v0.9.0-alpha2610141753",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610141753"
   },
   "schema": 1
 }
