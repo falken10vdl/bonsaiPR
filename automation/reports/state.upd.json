@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 160,
-    "merged": 577,
-    "skipped_conflict": 79,
+    "failed": 161,
+    "merged": 576,
+    "skipped_conflict": 78,
     "skipped_draft": 70,
-    "total": 886
+    "total": 885
   },
-  "generated_at": "2026-10-14T08:20:23Z",
+  "generated_at": "2026-10-14T10:22:01Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7177,7 +7177,7 @@
     "9921": {
       "author": "aothms",
       "branch": "taxonomy-level-sweeps",
-      "head": "91f52a9",
+      "head": "a094bd8",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Taxonomy-level sweeps",
@@ -7229,7 +7229,8 @@
       "author": "RickBrice",
       "branch": "rab_degenerate_segments",
       "head": "d9cf9d7",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Map transitions that don't change as their constant counterparts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9929"
     },
@@ -7237,18 +7238,10 @@
       "author": "RickBrice",
       "branch": "rab_cant_cross_slope",
       "head": "2d0a249",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Rotate cant transitions by the difference between their rails",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9930"
-    },
-    "9932": {
-      "author": "RickBrice",
-      "branch": "rab_cant_slope_fix",
-      "head": "2fe8f78",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Rab cant slope fix",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9932"
     },
     "9933": {
       "author": "theoryshaw",
@@ -7260,8 +7253,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610140950",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610140950"
+    "tag": "v0.9.0-alpha2610141152",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610141152"
   },
   "schema": 1
 }
