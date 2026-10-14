@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 160,
-    "merged": 557,
+    "merged": 558,
     "skipped_conflict": 101,
     "skipped_draft": 70,
-    "total": 888
+    "total": 889
   },
-  "generated_at": "2026-10-14T19:20:27Z",
+  "generated_at": "2026-10-14T21:23:56Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7121,7 +7121,7 @@
     "9913": {
       "author": "myoualid",
       "branch": "ifcopenshell-js-api",
-      "head": "c2b3662",
+      "head": "15b3ae4",
       "status": "merged",
       "title": "ifcopenshell-js python parity and more examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9913"
@@ -7273,11 +7273,19 @@
       "status": "skipped_conflict",
       "title": "Show moments signed, counter-clockwise positive",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9940"
+    },
+    "9941": {
+      "author": "shitobu",
+      "branch": "fix/bonsaiviewer-spatial-hierarchy-expand-all",
+      "head": "a25261b",
+      "status": "merged",
+      "title": "bonsaiviewer: preserve spatial hierarchy tree expansion state on visibility toggle (fixes #9910)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9941"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610142050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610142050"
+    "tag": "v0.9.0-alpha2610142250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610142250"
   },
   "schema": 1
 }
