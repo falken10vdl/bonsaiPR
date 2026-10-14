@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 160,
+    "failed": 161,
     "merged": 558,
-    "skipped_conflict": 96,
+    "skipped_conflict": 97,
     "skipped_draft": 70,
-    "total": 884
+    "total": 886
   },
-  "generated_at": "2026-10-14T01:19:10Z",
+  "generated_at": "2026-10-14T03:18:58Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7241,11 +7241,28 @@
       "status": "skipped_conflict",
       "title": "Rotate cant transitions by the difference between their rails",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9930"
+    },
+    "9932": {
+      "author": "RickBrice",
+      "branch": "rab_cant_slope_fix",
+      "head": "e7aab9a",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Rab cant slope fix",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9932"
+    },
+    "9933": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/19-moments",
+      "head": "a5d5222",
+      "status": "skipped_conflict",
+      "title": "Take moments of point forces about a point",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9933"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610140250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610140250"
+    "tag": "v0.9.0-alpha2610140450",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610140450"
   },
   "schema": 1
 }
