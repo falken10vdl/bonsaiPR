@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 885
   },
-  "generated_at": "2026-10-14T09:51:11Z",
+  "generated_at": "2026-10-14T11:50:40Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7038,7 +7038,7 @@
     "9897": {
       "author": "Moult",
       "branch": "feat/ifcgeom-vertex-rebase",
-      "head": "be3f80c",
+      "head": "16bae8b",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: add vertex-rebase-distance setting",
@@ -7218,7 +7218,7 @@
     "9928": {
       "author": "RickBrice",
       "branch": "rab_helmert_heading",
-      "head": "ea633a6",
+      "head": "2c61dac",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Return the heading at arc length s from helmert_curve_point",
@@ -7227,7 +7227,7 @@
     "9929": {
       "author": "RickBrice",
       "branch": "rab_degenerate_segments",
-      "head": "d9cf9d7",
+      "head": "2b37d31",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Map transitions that don't change as their constant counterparts",
@@ -7252,8 +7252,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610141121",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610141121"
+    "tag": "v0.9.0-alpha2610141321",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610141321"
   },
   "schema": 1
 }

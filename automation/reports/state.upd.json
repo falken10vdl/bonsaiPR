@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 161,
-    "merged": 576,
-    "skipped_conflict": 78,
+    "merged": 572,
+    "skipped_conflict": 83,
     "skipped_draft": 70,
-    "total": 885
+    "total": 886
   },
-  "generated_at": "2026-10-14T10:22:01Z",
+  "generated_at": "2026-10-14T12:21:44Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1614,7 +1614,7 @@
       "author": "BIMvoice",
       "branch": "fix-7737-work",
       "head": "f76e2bd",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: baseline half space item placements so item edits keep all cuts (#7737)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8401"
     },
@@ -3441,7 +3441,7 @@
       "author": "BIMvoice",
       "branch": "fix/6301-material-constituent-rename",
       "head": "4678b6d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: keep shape aspect names in sync when renaming a material constituent",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8968"
     },
@@ -5888,7 +5888,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8642",
       "head": "e461d83",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: tolerate an already-removed mesh/curve/camera data-block in delete_data",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9649"
     },
@@ -5913,7 +5913,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8640",
       "head": "50902af",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: guard import_item against a None geometry shape",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9652"
     },
@@ -6859,7 +6859,7 @@
       "author": "BIMvoice",
       "branch": "fix/sweep-fresh-project-loader",
       "head": "79f954f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: load settings before swept disk reload",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9825"
     },
@@ -7039,7 +7039,7 @@
     "9897": {
       "author": "Moult",
       "branch": "feat/ifcgeom-vertex-rebase",
-      "head": "be3f80c",
+      "head": "16bae8b",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: add vertex-rebase-distance setting",
@@ -7219,7 +7219,7 @@
     "9928": {
       "author": "RickBrice",
       "branch": "rab_helmert_heading",
-      "head": "ea633a6",
+      "head": "2c61dac",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Return the heading at arc length s from helmert_curve_point",
@@ -7228,7 +7228,7 @@
     "9929": {
       "author": "RickBrice",
       "branch": "rab_degenerate_segments",
-      "head": "d9cf9d7",
+      "head": "2b37d31",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Map transitions that don't change as their constant counterparts",
@@ -7250,11 +7250,19 @@
       "status": "merged",
       "title": "Take moments of point forces about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9933"
+    },
+    "9934": {
+      "author": "Moult",
+      "branch": "fix/bonsai-cartesian-point-offset",
+      "head": "2e4d2c7",
+      "status": "merged",
+      "title": "Bonsai: fix cartesian point offset handling in item mode and surveyor",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9934"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610141152",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610141152"
+    "tag": "v0.9.0-alpha2610141352",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610141352"
   },
   "schema": 1
 }
