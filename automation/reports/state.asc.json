@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 886
   },
-  "generated_at": "2026-10-14T03:18:58Z",
+  "generated_at": "2026-10-14T05:18:55Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7254,15 +7254,15 @@
     "9933": {
       "author": "theoryshaw",
       "branch": "structural-loads/19-moments",
-      "head": "a5d5222",
+      "head": "e8e322e",
       "status": "skipped_conflict",
       "title": "Take moments of point forces about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9933"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610140450",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610140450"
+    "tag": "v0.9.0-alpha2610140650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610140650"
   },
   "schema": 1
 }
