@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 157,
-    "merged": 575,
-    "skipped_conflict": 83,
+    "failed": 162,
+    "merged": 572,
+    "skipped_conflict": 78,
     "skipped_draft": 70,
-    "total": 885
+    "total": 882
   },
-  "generated_at": "2026-10-15T10:50:46Z",
+  "generated_at": "2026-10-15T12:51:06Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -1359,14 +1359,6 @@
       "title": "Bonsai: auto-create Model/Body context on drawing creation for external IFCs (#3217)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8343"
     },
-    "8344": {
-      "author": "BIMvoice",
-      "branch": "fix-4048-storey-elevation-sync",
-      "head": "c7996cf",
-      "status": "merged",
-      "title": "Bonsai: sync storey placement on Load Spatial Structure + stop re-import resetting elevations to 0 (#4048, #8545)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8344"
-    },
     "8345": {
       "author": "BIMvoice",
       "branch": "fix-4593-add-repr-loose-edges",
@@ -1614,7 +1606,8 @@
       "author": "BIMvoice",
       "branch": "fix-7737-work",
       "head": "f76e2bd",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: baseline half space item placements so item edits keep all cuts (#7737)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8401"
     },
@@ -3441,7 +3434,8 @@
       "author": "BIMvoice",
       "branch": "fix/6301-material-constituent-rename",
       "head": "4678b6d",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: keep shape aspect names in sync when renaming a material constituent",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8968"
     },
@@ -5864,7 +5858,8 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8642",
       "head": "e461d83",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: tolerate an already-removed mesh/curve/camera data-block in delete_data",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9649"
     },
@@ -5889,7 +5884,8 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8640",
       "head": "50902af",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: guard import_item against a None geometry shape",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9652"
     },
@@ -6835,7 +6831,8 @@
       "author": "BIMvoice",
       "branch": "fix/sweep-fresh-project-loader",
       "head": "79f954f",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: load settings before swept disk reload",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9825"
     },
@@ -7093,14 +7090,6 @@
       "title": "Measure a resultant's angle from any axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9912"
     },
-    "9913": {
-      "author": "myoualid",
-      "branch": "ifcopenshell-js-api",
-      "head": "15b3ae4",
-      "status": "merged",
-      "title": "ifcopenshell-js python parity and more examples",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9913"
-    },
     "9914": {
       "author": "shitobu",
       "branch": "feature/door-handle-configurable-dimensions",
@@ -7164,14 +7153,6 @@
       "status": "merged",
       "title": "Take moments of point forces about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9933"
-    },
-    "9934": {
-      "author": "Moult",
-      "branch": "fix/bonsai-cartesian-point-offset",
-      "head": "2e4d2c7",
-      "status": "merged",
-      "title": "Bonsai: fix cartesian point offset handling in item mode and surveyor",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9934"
     },
     "9935": {
       "author": "Moult",
@@ -7238,19 +7219,19 @@
       "title": "Dimension a force's place from A and its arm's slope",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
     },
-    "9946": {
+    "9951": {
       "author": "aothms",
-      "branch": "cgal-corefine",
-      "head": "0bd13b8",
+      "branch": "filter-empty-unit-libraries",
+      "head": "e7abdc1",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Use CGAL corefinement with nef as fallback",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9946"
+      "title": "Filter project libraries without units when determining context list",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9951"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610151221",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610151221"
+    "tag": "v0.9.0-alpha2610151421",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610151421"
   },
   "schema": 1
 }
