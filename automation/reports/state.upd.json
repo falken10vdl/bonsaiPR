@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 157,
+    "failed": 161,
     "merged": 575,
     "skipped_conflict": 82,
     "skipped_draft": 70,
-    "total": 884
+    "total": 888
   },
-  "generated_at": "2026-10-15T04:18:39Z",
+  "generated_at": "2026-10-15T09:22:53Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7238,11 +7238,47 @@
       "status": "merged",
       "title": "Dimension a force's place from A and its arm's slope",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
+    },
+    "9946": {
+      "author": "aothms",
+      "branch": "cgal-corefine",
+      "head": "0bd13b8",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Use CGAL corefinement with nef as fallback",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9946"
+    },
+    "9947": {
+      "author": "aothms",
+      "branch": "manifold-reuse-taxonomy",
+      "head": "c01c2e1",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Use taxonomy primitives for tesselation in manifold kernel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9947"
+    },
+    "9948": {
+      "author": "aothms",
+      "branch": "logger-fixes",
+      "head": "93f5961",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Logger fixes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9948"
+    },
+    "9949": {
+      "author": "aothms",
+      "branch": "taxonomy-conic",
+      "head": "1e8332a",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Taxonomy fixes to full conics",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9949"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610150549",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610150549"
+    "tag": "v0.9.0-alpha2610151052",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610151052"
   },
   "schema": 1
 }

@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 156,
+    "failed": 158,
     "merged": 575,
     "skipped_conflict": 83,
     "skipped_draft": 70,
-    "total": 884
+    "total": 886
   },
-  "generated_at": "2026-10-15T03:48:45Z",
+  "generated_at": "2026-10-15T08:51:08Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7237,11 +7237,29 @@
       "status": "merged",
       "title": "Dimension a force's place from A and its arm's slope",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
+    },
+    "9946": {
+      "author": "aothms",
+      "branch": "cgal-corefine",
+      "head": "0bd13b8",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Use CGAL corefinement with nef as fallback",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9946"
+    },
+    "9947": {
+      "author": "aothms",
+      "branch": "manifold-reuse-taxonomy",
+      "head": "c01c2e1",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Use taxonomy primitives for tesselation in manifold kernel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9947"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610150520",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610150520"
+    "tag": "v0.9.0-alpha2610151021",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610151021"
   },
   "schema": 1
 }
