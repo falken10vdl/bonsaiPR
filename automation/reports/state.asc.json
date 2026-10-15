@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 164,
-    "merged": 547,
+    "failed": 165,
+    "merged": 545,
     "skipped_conflict": 102,
-    "skipped_draft": 70,
-    "total": 883
+    "skipped_draft": 67,
+    "total": 879
   },
-  "generated_at": "2026-10-15T16:20:51Z",
+  "generated_at": "2026-10-15T18:20:37Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -222,14 +222,6 @@
       "title": "Remove object from non-IFC collections after IFC class assignment.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7422"
     },
-    "7443": {
-      "author": "aothms",
-      "branch": "tfk-sectioned-surf",
-      "head": "f09ca65",
-      "status": "skipped_draft",
-      "title": "Initial investigation into lofting open profile with tags",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7443"
-    },
     "7478": {
       "author": "andy-5",
       "branch": "fix-elementy-by-predefined-property-sets-ifc2x3",
@@ -254,14 +246,6 @@
       "status": "failed",
       "title": "Fix: hybrid kernel sigsegv fallback (0.8.0)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7523"
-    },
-    "7534": {
-      "author": "aothms",
-      "branch": "datamodel-v1.0",
-      "head": "df59c88",
-      "status": "skipped_draft",
-      "title": "C++ datamodel v1.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7534"
     },
     "7570": {
       "author": "falken10vdl",
@@ -457,14 +441,6 @@
       "status": "merged",
       "title": "Fix #7799: Fix elements hidden when activating plan drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7807"
-    },
-    "7809": {
-      "author": "aothms",
-      "branch": "rickbrice-simplify-lp-axis",
-      "head": "740f0f8",
-      "status": "skipped_draft",
-      "title": "Simplifies IfxAxis2PlacementLinear, assumes default Axis = (0,0,1)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7809"
     },
     "7813": {
       "author": "paragforwork",
@@ -4403,7 +4379,8 @@
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
       "head": "0f37a4f",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
     },
@@ -5616,14 +5593,6 @@
       "title": "Collect whole aggregates in bim.add_aggregate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9589"
     },
-    "9598": {
-      "author": "aothms",
-      "branch": "fix-cpp-docs",
-      "head": "eb575c0",
-      "status": "merged",
-      "title": "Ignore clash task in docs",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9598"
-    },
     "9602": {
       "author": "Moult",
       "branch": "perf/ifcparse-remove-from-big-lists",
@@ -6420,6 +6389,14 @@
       "title": "Bonsai: join profiles to sloped faces, not bounding boxes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9722"
     },
+    "9723": {
+      "author": "BIMvoice",
+      "branch": "v09/replace-8528",
+      "head": "3384b65",
+      "status": "merged",
+      "title": "express: include referencing SELECT types in typeof() (#3187)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9723"
+    },
     "9724": {
       "author": "BIMvoice",
       "branch": "v09/replace-8543",
@@ -7111,9 +7088,9 @@
     "9919": {
       "author": "dependabot[bot]",
       "branch": "dependabot/github_actions/astral-sh/setup-uv-10.2.0",
-      "head": "823655e",
+      "head": "89a93ed",
       "status": "merged",
-      "title": "build(deps): bump astral-sh/setup-uv from 7.6.0 to 10.2.0",
+      "title": "Bump astral-sh/setup-uv from 7.6.0 to 10.2.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9919"
     },
     "9923": {
@@ -7213,35 +7190,27 @@
       "title": "Dimension a force's place from A and its arm's slope",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
     },
-    "9954": {
-      "author": "RickBrice",
-      "branch": "rab_pi_deflection_wrap",
-      "head": "efdba06",
-      "status": "merged",
-      "title": "Fix PI curves turning across west",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9954"
-    },
-    "9956": {
-      "author": "Andrej730",
-      "branch": "port-0.9.0.post1-release-fixes",
-      "head": "203e4c2",
+    "9958": {
+      "author": "aothms",
+      "branch": "smlib-kernel-impl",
+      "head": "6d3d1ea",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Port `0.9.0.post1` release fixes",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9956"
+      "title": "SMLib geometery kernel support",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9958"
     },
-    "9957": {
-      "author": "RickBrice",
-      "branch": "rab_polyline_stationing",
-      "head": "accd6bd",
+    "9960": {
+      "author": "theoryshaw",
+      "branch": "structural-activity-relationships",
+      "head": "f0e2384",
       "status": "skipped_conflict",
-      "title": "Place stationing referents on polyline curves",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9957"
+      "title": "Don't share or orphan structural activities when copying or removing products",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9960"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610151750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610151750"
+    "tag": "v0.9.0-alpha2610151950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610151950"
   },
   "schema": 1
 }
