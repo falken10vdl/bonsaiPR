@@ -6691,3 +6691,12 @@
 {"ts": "2026-10-15T09:22:53Z", "order": "by-updated", "pr": 9947, "event": "added", "to": "failed"}
 {"ts": "2026-10-15T09:22:53Z", "order": "by-updated", "pr": 9948, "event": "added", "to": "failed"}
 {"ts": "2026-10-15T09:22:53Z", "order": "by-updated", "pr": 9949, "event": "added", "to": "failed"}
+{"ts": "2026-10-15T11:08:00Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-15T11:08:00Z", "order": "upd", "pr": 8873, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-15T11:08:00Z", "order": "upd", "pr": 8933, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-15T11:08:00Z", "order": "upd", "pr": 8993, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-15T11:08:00Z", "order": "upd", "pr": 9404, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-10-15T11:21:22Z", "order": "by-updated", "pr": 9946, "event": "updated", "status": "failed", "from_head": "0bd13b8", "to_head": "3897f75"}
+{"ts": "2026-10-15T11:21:22Z", "order": "by-updated", "pr": 9947, "event": "removed", "from": "failed"}
+{"ts": "2026-10-15T11:21:22Z", "order": "by-updated", "pr": 9948, "event": "removed", "from": "failed"}
+{"ts": "2026-10-15T11:21:22Z", "order": "by-updated", "pr": 9949, "event": "removed", "from": "failed"}
