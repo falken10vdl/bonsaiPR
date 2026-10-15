@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 161,
-    "merged": 573,
+    "failed": 163,
+    "merged": 571,
     "skipped_conflict": 78,
     "skipped_draft": 70,
     "total": 882
   },
-  "generated_at": "2026-10-15T14:52:52Z",
+  "generated_at": "2026-10-15T16:51:53Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -4403,7 +4403,8 @@
       "author": "BIMvoice",
       "branch": "fix-referent-alignment-no-placement",
       "head": "0f37a4f",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "alignment: guard referents w/o ObjectPlacement",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
     },
@@ -4826,7 +4827,7 @@
     "9243": {
       "author": "CyrilWaechter",
       "branch": "space-regeneration-sloped-roof-clipped-extrusion",
-      "head": "0e084f2",
+      "head": "032b3a1",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
@@ -7117,9 +7118,9 @@
     "9919": {
       "author": "dependabot[bot]",
       "branch": "dependabot/github_actions/astral-sh/setup-uv-10.2.0",
-      "head": "823655e",
+      "head": "89a93ed",
       "status": "merged",
-      "title": "build(deps): bump astral-sh/setup-uv from 7.6.0 to 10.2.0",
+      "title": "Bump astral-sh/setup-uv from 7.6.0 to 10.2.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9919"
     },
     "9923": {
@@ -7219,18 +7220,19 @@
       "title": "Dimension a force's place from A and its arm's slope",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
     },
-    "9952": {
-      "author": "CyrilWaechter",
-      "branch": "fix-distance-parser-cache",
-      "head": "9b69040",
-      "status": "merged",
-      "title": "Bonsai: cache Lark parsers for distance strings",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9952"
+    "9958": {
+      "author": "aothms",
+      "branch": "smlib-kernel-impl",
+      "head": "6d3d1ea",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "SMLib geometery kernel support",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9958"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610151622",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610151622"
+    "tag": "v0.9.0-alpha2610151822",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610151822"
   },
   "schema": 1
 }

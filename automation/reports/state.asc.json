@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 163,
+    "failed": 164,
     "merged": 547,
-    "skipped_conflict": 101,
+    "skipped_conflict": 102,
     "skipped_draft": 70,
-    "total": 881
+    "total": 883
   },
-  "generated_at": "2026-10-15T14:21:16Z",
+  "generated_at": "2026-10-15T16:20:51Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -4826,7 +4826,7 @@
     "9243": {
       "author": "CyrilWaechter",
       "branch": "space-regeneration-sloped-roof-clipped-extrusion",
-      "head": "0e084f2",
+      "head": "032b3a1",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
@@ -6420,14 +6420,6 @@
       "title": "Bonsai: join profiles to sloped faces, not bounding boxes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9722"
     },
-    "9723": {
-      "author": "BIMvoice",
-      "branch": "v09/replace-8528",
-      "head": "3384b65",
-      "status": "merged",
-      "title": "express: include referencing SELECT types in typeof() (#3187)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9723"
-    },
     "9724": {
       "author": "BIMvoice",
       "branch": "v09/replace-8543",
@@ -7220,11 +7212,36 @@
       "status": "skipped_conflict",
       "title": "Dimension a force's place from A and its arm's slope",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
+    },
+    "9954": {
+      "author": "RickBrice",
+      "branch": "rab_pi_deflection_wrap",
+      "head": "efdba06",
+      "status": "merged",
+      "title": "Fix PI curves turning across west",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9954"
+    },
+    "9956": {
+      "author": "Andrej730",
+      "branch": "port-0.9.0.post1-release-fixes",
+      "head": "203e4c2",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Port `0.9.0.post1` release fixes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9956"
+    },
+    "9957": {
+      "author": "RickBrice",
+      "branch": "rab_polyline_stationing",
+      "head": "accd6bd",
+      "status": "skipped_conflict",
+      "title": "Place stationing referents on polyline curves",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9957"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610151550",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610151550"
+    "tag": "v0.9.0-alpha2610151750",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610151750"
   },
   "schema": 1
 }
