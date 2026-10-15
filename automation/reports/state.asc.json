@@ -3,11 +3,11 @@
   "counts": {
     "failed": 167,
     "merged": 543,
-    "skipped_conflict": 102,
+    "skipped_conflict": 104,
     "skipped_draft": 67,
-    "total": 879
+    "total": 881
   },
-  "generated_at": "2026-10-15T20:24:47Z",
+  "generated_at": "2026-10-15T22:21:36Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7208,11 +7208,27 @@
       "status": "skipped_conflict",
       "title": "Keep kept moments as structural points move",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9961"
+    },
+    "9963": {
+      "author": "theoryshaw",
+      "branch": "revision_cloud_batting_styles_9962",
+      "head": "f0174e7",
+      "status": "skipped_conflict",
+      "title": "Bonsai: style revision clouds and batting via CSS; add BubbleSize",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9963"
+    },
+    "9964": {
+      "author": "shitobu",
+      "branch": "fix/geometry-library-fallback-resilience",
+      "head": "66b1e56",
+      "status": "skipped_conflict",
+      "title": "fix(bonsai): add opencascade fallback when geometry library fails (#9908)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9964"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610152150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610152150"
+    "tag": "v0.9.0-alpha2610152350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610152350"
   },
   "schema": 1
 }
