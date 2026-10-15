@@ -7,7 +7,7 @@
     "skipped_draft": 70,
     "total": 884
   },
-  "generated_at": "2026-10-15T01:52:41Z",
+  "generated_at": "2026-10-15T03:48:45Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7193,7 +7193,7 @@
     "9938": {
       "author": "theoryshaw",
       "branch": "structural-loads/21-resultant-moment",
-      "head": "cdaf765",
+      "head": "276c193",
       "status": "merged",
       "title": "Set and keep a resultant moment about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9938"
@@ -7201,7 +7201,7 @@
     "9939": {
       "author": "theoryshaw",
       "branch": "structural-loads/22-position-unknowns",
-      "head": "8a1025e",
+      "head": "5db1bc2",
       "status": "merged",
       "title": "Find where the moment centre must be",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9939"
@@ -7209,7 +7209,7 @@
     "9940": {
       "author": "theoryshaw",
       "branch": "structural-loads/23-signed-moments",
-      "head": "44b7aa3",
+      "head": "ffdb467",
       "status": "merged",
       "title": "Show moments signed, counter-clockwise positive",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9940"
@@ -7225,7 +7225,7 @@
     "9943": {
       "author": "theoryshaw",
       "branch": "structural-loads/24-force-position",
-      "head": "d3e2407",
+      "head": "644e802",
       "status": "merged",
       "title": "Find where a force must act for a kept moment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9943"
@@ -7233,15 +7233,15 @@
     "9944": {
       "author": "theoryshaw",
       "branch": "structural-loads/25-moment-dimensions",
-      "head": "a5a0989",
+      "head": "09c9cec",
       "status": "merged",
       "title": "Dimension a force's place from A and its arm's slope",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610150323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610150323"
+    "tag": "v0.9.0-alpha2610150520",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610150520"
   },
   "schema": 1
 }

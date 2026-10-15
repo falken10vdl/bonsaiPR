@@ -3,11 +3,11 @@
   "counts": {
     "failed": 158,
     "merged": 554,
-    "skipped_conflict": 101,
+    "skipped_conflict": 102,
     "skipped_draft": 70,
-    "total": 883
+    "total": 884
   },
-  "generated_at": "2026-10-15T01:22:54Z",
+  "generated_at": "2026-10-15T03:19:05Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7187,7 +7187,7 @@
     "9936": {
       "author": "theoryshaw",
       "branch": "structural-loads/20-moment-editing",
-      "head": "17fc1cc",
+      "head": "13d51e8",
       "status": "skipped_conflict",
       "title": "Edit the moment centre from moments drawn",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9936"
@@ -7195,7 +7195,7 @@
     "9938": {
       "author": "theoryshaw",
       "branch": "structural-loads/21-resultant-moment",
-      "head": "486b546",
+      "head": "276c193",
       "status": "skipped_conflict",
       "title": "Set and keep a resultant moment about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9938"
@@ -7203,7 +7203,7 @@
     "9939": {
       "author": "theoryshaw",
       "branch": "structural-loads/22-position-unknowns",
-      "head": "7a8dcd6",
+      "head": "5db1bc2",
       "status": "skipped_conflict",
       "title": "Find where the moment centre must be",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9939"
@@ -7211,7 +7211,7 @@
     "9940": {
       "author": "theoryshaw",
       "branch": "structural-loads/23-signed-moments",
-      "head": "8e154de",
+      "head": "ffdb467",
       "status": "skipped_conflict",
       "title": "Show moments signed, counter-clockwise positive",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9940"
@@ -7227,15 +7227,23 @@
     "9943": {
       "author": "theoryshaw",
       "branch": "structural-loads/24-force-position",
-      "head": "6b2aa10",
+      "head": "644e802",
       "status": "skipped_conflict",
       "title": "Find where a force must act for a kept moment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9943"
+    },
+    "9944": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/25-moment-dimensions",
+      "head": "09c9cec",
+      "status": "skipped_conflict",
+      "title": "Dimension a force's place from A and its arm's slope",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610150250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610150250"
+    "tag": "v0.9.0-alpha2610150450",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610150450"
   },
   "schema": 1
 }
