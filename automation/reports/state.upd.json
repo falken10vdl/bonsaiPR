@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 157,
-    "merged": 573,
+    "merged": 575,
     "skipped_conflict": 82,
     "skipped_draft": 70,
-    "total": 882
+    "total": 884
   },
-  "generated_at": "2026-10-15T00:19:46Z",
+  "generated_at": "2026-10-15T02:22:17Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7033,7 +7033,7 @@
     "9900": {
       "author": "theoryshaw",
       "branch": "structural-loads/6-input-display",
-      "head": "dd7817a",
+      "head": "e9a34f1",
       "status": "merged",
       "title": "Enter loads by eighths and refine their display",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9900"
@@ -7041,7 +7041,7 @@
     "9901": {
       "author": "theoryshaw",
       "branch": "structural-loads/7-knowns-unknowns",
-      "head": "2621fa4",
+      "head": "ab7b9dd",
       "status": "merged",
       "title": "Lock known force values and solve the unknowns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9901"
@@ -7049,7 +7049,7 @@
     "9902": {
       "author": "theoryshaw",
       "branch": "structural-loads/8-point-axes",
-      "head": "471a4bc",
+      "head": "9a55c51",
       "status": "merged",
       "title": "Tilt structural point axes in the X-Z plane",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9902"
@@ -7057,7 +7057,7 @@
     "9903": {
       "author": "theoryshaw",
       "branch": "structural-loads/9-calculation-reports",
-      "head": "d090e58",
+      "head": "1551ebb",
       "status": "merged",
       "title": "Export structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9903"
@@ -7065,7 +7065,7 @@
     "9904": {
       "author": "theoryshaw",
       "branch": "structural-loads/10-inclines",
-      "head": "b0c3e3d",
+      "head": "d907bff",
       "status": "merged",
       "title": "Resolve forces on inclines and from known components",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9904"
@@ -7073,7 +7073,7 @@
     "9905": {
       "author": "theoryshaw",
       "branch": "structural-loads/11-report-docs",
-      "head": "aed392f",
+      "head": "e332c93",
       "status": "merged",
       "title": "Document structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9905"
@@ -7081,7 +7081,7 @@
     "9911": {
       "author": "theoryshaw",
       "branch": "structural-loads/12-analysis-notes",
-      "head": "a206b20",
+      "head": "c4f928e",
       "status": "merged",
       "title": "Fold structural analysis plans into the dev note",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9911"
@@ -7089,7 +7089,7 @@
     "9912": {
       "author": "theoryshaw",
       "branch": "structural-loads/13-resultant-axis",
-      "head": "ee4f098",
+      "head": "9b2a903",
       "status": "merged",
       "title": "Measure a resultant's angle from any axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9912"
@@ -7113,7 +7113,7 @@
     "9915": {
       "author": "theoryshaw",
       "branch": "structural-loads/14-diagram-legibility",
-      "head": "c26914d",
+      "head": "34e9909",
       "status": "merged",
       "title": "Make structural load diagrams more legible",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9915"
@@ -7121,7 +7121,7 @@
     "9917": {
       "author": "theoryshaw",
       "branch": "structural-loads/15-point-axes-input",
-      "head": "cd028c0",
+      "head": "66e20d8",
       "status": "merged",
       "title": "Enter loads against point axes and edit loads by clicking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9917"
@@ -7137,7 +7137,7 @@
     "9923": {
       "author": "theoryshaw",
       "branch": "structural-loads/16-y-axis",
-      "head": "8a9c7a2",
+      "head": "8b6b4a3",
       "status": "merged",
       "title": "Draw the +Y axis at loaded points",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9923"
@@ -7145,7 +7145,7 @@
     "9924": {
       "author": "theoryshaw",
       "branch": "structural-loads/17-equal-magnitudes",
-      "head": "9c0fafb",
+      "head": "fcc2481",
       "status": "merged",
       "title": "Link load magnitudes, equal or by a ratio",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9924"
@@ -7153,7 +7153,7 @@
     "9925": {
       "author": "theoryshaw",
       "branch": "structural-loads/18-found-marks",
-      "head": "a53a3ea",
+      "head": "f4d3b31",
       "status": "merged",
       "title": "Mark found slopes and resultants with a padlock",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9925"
@@ -7161,7 +7161,7 @@
     "9933": {
       "author": "theoryshaw",
       "branch": "structural-loads/19-moments",
-      "head": "e8e322e",
+      "head": "69c01d0",
       "status": "merged",
       "title": "Take moments of point forces about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9933"
@@ -7186,7 +7186,7 @@
     "9936": {
       "author": "theoryshaw",
       "branch": "structural-loads/20-moment-editing",
-      "head": "83f77cf",
+      "head": "13d51e8",
       "status": "merged",
       "title": "Edit the moment centre from moments drawn",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9936"
@@ -7194,7 +7194,7 @@
     "9938": {
       "author": "theoryshaw",
       "branch": "structural-loads/21-resultant-moment",
-      "head": "2624d13",
+      "head": "cdaf765",
       "status": "merged",
       "title": "Set and keep a resultant moment about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9938"
@@ -7202,7 +7202,7 @@
     "9939": {
       "author": "theoryshaw",
       "branch": "structural-loads/22-position-unknowns",
-      "head": "efcc2f8",
+      "head": "8a1025e",
       "status": "merged",
       "title": "Find where the moment centre must be",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9939"
@@ -7210,7 +7210,7 @@
     "9940": {
       "author": "theoryshaw",
       "branch": "structural-loads/23-signed-moments",
-      "head": "0e5c5be",
+      "head": "44b7aa3",
       "status": "merged",
       "title": "Show moments signed, counter-clockwise positive",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9940"
@@ -7222,11 +7222,27 @@
       "status": "merged",
       "title": "bonsaiviewer: preserve spatial hierarchy tree expansion state on visibility toggle (fixes #9910)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9941"
+    },
+    "9943": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/24-force-position",
+      "head": "d3e2407",
+      "status": "merged",
+      "title": "Find where a force must act for a kept moment",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9943"
+    },
+    "9944": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/25-moment-dimensions",
+      "head": "a5a0989",
+      "status": "merged",
+      "title": "Dimension a force's place from A and its arm's slope",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610150150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610150150"
+    "tag": "v0.9.0-alpha2610150353",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610150353"
   },
   "schema": 1
 }

@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 159,
-    "merged": 556,
+    "failed": 158,
+    "merged": 554,
     "skipped_conflict": 101,
     "skipped_draft": 70,
-    "total": 886
+    "total": 883
   },
-  "generated_at": "2026-10-14T23:19:37Z",
+  "generated_at": "2026-10-15T01:22:54Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -5093,7 +5093,8 @@
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
       "head": "f377ea4",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -5539,14 +5540,6 @@
       "title": "feat: Use conan instead of custom python scripts",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9500"
     },
-    "9505": {
-      "author": "RickBrice",
-      "branch": "rab-infra-project-templates",
-      "head": "f476d0d",
-      "status": "merged",
-      "title": "Adds project templates for IFC4x3 Road and Bridge",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9505"
-    },
     "9507": {
       "author": "theoryshaw",
       "branch": "save_blend_retry_on_lock_9506",
@@ -5628,14 +5621,6 @@
       "status": "skipped_conflict",
       "title": "Collect whole aggregates in bim.add_aggregate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9589"
-    },
-    "9593": {
-      "author": "RickBrice",
-      "branch": "rab_polyline_tool_180_fix",
-      "head": "790ad21",
-      "status": "skipped_conflict",
-      "title": "Fix typed 180 degree polyline angle direction",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9593"
     },
     "9598": {
       "author": "aothms",
@@ -7049,7 +7034,7 @@
     "9900": {
       "author": "theoryshaw",
       "branch": "structural-loads/6-input-display",
-      "head": "dd7817a",
+      "head": "e9a34f1",
       "status": "skipped_conflict",
       "title": "Enter loads by eighths and refine their display",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9900"
@@ -7057,7 +7042,7 @@
     "9901": {
       "author": "theoryshaw",
       "branch": "structural-loads/7-knowns-unknowns",
-      "head": "2621fa4",
+      "head": "ab7b9dd",
       "status": "skipped_conflict",
       "title": "Lock known force values and solve the unknowns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9901"
@@ -7065,7 +7050,7 @@
     "9902": {
       "author": "theoryshaw",
       "branch": "structural-loads/8-point-axes",
-      "head": "471a4bc",
+      "head": "9a55c51",
       "status": "skipped_conflict",
       "title": "Tilt structural point axes in the X-Z plane",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9902"
@@ -7073,7 +7058,7 @@
     "9903": {
       "author": "theoryshaw",
       "branch": "structural-loads/9-calculation-reports",
-      "head": "d090e58",
+      "head": "1551ebb",
       "status": "skipped_conflict",
       "title": "Export structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9903"
@@ -7081,7 +7066,7 @@
     "9904": {
       "author": "theoryshaw",
       "branch": "structural-loads/10-inclines",
-      "head": "b0c3e3d",
+      "head": "d907bff",
       "status": "skipped_conflict",
       "title": "Resolve forces on inclines and from known components",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9904"
@@ -7089,7 +7074,7 @@
     "9905": {
       "author": "theoryshaw",
       "branch": "structural-loads/11-report-docs",
-      "head": "aed392f",
+      "head": "e332c93",
       "status": "skipped_conflict",
       "title": "Document structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9905"
@@ -7097,7 +7082,7 @@
     "9911": {
       "author": "theoryshaw",
       "branch": "structural-loads/12-analysis-notes",
-      "head": "a206b20",
+      "head": "c4f928e",
       "status": "skipped_conflict",
       "title": "Fold structural analysis plans into the dev note",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9911"
@@ -7105,7 +7090,7 @@
     "9912": {
       "author": "theoryshaw",
       "branch": "structural-loads/13-resultant-axis",
-      "head": "ee4f098",
+      "head": "9b2a903",
       "status": "skipped_conflict",
       "title": "Measure a resultant's angle from any axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9912"
@@ -7129,7 +7114,7 @@
     "9915": {
       "author": "theoryshaw",
       "branch": "structural-loads/14-diagram-legibility",
-      "head": "c26914d",
+      "head": "34e9909",
       "status": "skipped_conflict",
       "title": "Make structural load diagrams more legible",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9915"
@@ -7137,7 +7122,7 @@
     "9917": {
       "author": "theoryshaw",
       "branch": "structural-loads/15-point-axes-input",
-      "head": "cd028c0",
+      "head": "66e20d8",
       "status": "skipped_conflict",
       "title": "Enter loads against point axes and edit loads by clicking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9917"
@@ -7153,7 +7138,7 @@
     "9923": {
       "author": "theoryshaw",
       "branch": "structural-loads/16-y-axis",
-      "head": "8a9c7a2",
+      "head": "8b6b4a3",
       "status": "skipped_conflict",
       "title": "Draw the +Y axis at loaded points",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9923"
@@ -7161,7 +7146,7 @@
     "9924": {
       "author": "theoryshaw",
       "branch": "structural-loads/17-equal-magnitudes",
-      "head": "9c0fafb",
+      "head": "fcc2481",
       "status": "skipped_conflict",
       "title": "Link load magnitudes, equal or by a ratio",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9924"
@@ -7169,24 +7154,15 @@
     "9925": {
       "author": "theoryshaw",
       "branch": "structural-loads/18-found-marks",
-      "head": "a53a3ea",
+      "head": "f4d3b31",
       "status": "skipped_conflict",
       "title": "Mark found slopes and resultants with a padlock",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9925"
     },
-    "9927": {
-      "author": "RickBrice",
-      "branch": "rab_evaluation_points",
-      "head": "e782bed",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Sample alignment curves, sweeps and lofts by deflection (#5360)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9927"
-    },
     "9933": {
       "author": "theoryshaw",
       "branch": "structural-loads/19-moments",
-      "head": "e8e322e",
+      "head": "69c01d0",
       "status": "skipped_conflict",
       "title": "Take moments of point forces about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9933"
@@ -7211,24 +7187,15 @@
     "9936": {
       "author": "theoryshaw",
       "branch": "structural-loads/20-moment-editing",
-      "head": "83f77cf",
+      "head": "17fc1cc",
       "status": "skipped_conflict",
       "title": "Edit the moment centre from moments drawn",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9936"
     },
-    "9937": {
-      "author": "RickBrice",
-      "branch": "rab_spiral_quadrature",
-      "head": "057f9d7",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Integrate spiral positions by Gauss-Kronrod",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9937"
-    },
     "9938": {
       "author": "theoryshaw",
       "branch": "structural-loads/21-resultant-moment",
-      "head": "2624d13",
+      "head": "486b546",
       "status": "skipped_conflict",
       "title": "Set and keep a resultant moment about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9938"
@@ -7236,7 +7203,7 @@
     "9939": {
       "author": "theoryshaw",
       "branch": "structural-loads/22-position-unknowns",
-      "head": "efcc2f8",
+      "head": "7a8dcd6",
       "status": "skipped_conflict",
       "title": "Find where the moment centre must be",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9939"
@@ -7244,7 +7211,7 @@
     "9940": {
       "author": "theoryshaw",
       "branch": "structural-loads/23-signed-moments",
-      "head": "0e5c5be",
+      "head": "8e154de",
       "status": "skipped_conflict",
       "title": "Show moments signed, counter-clockwise positive",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9940"
@@ -7256,11 +7223,19 @@
       "status": "merged",
       "title": "bonsaiviewer: preserve spatial hierarchy tree expansion state on visibility toggle (fixes #9910)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9941"
+    },
+    "9943": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/24-force-position",
+      "head": "6b2aa10",
+      "status": "skipped_conflict",
+      "title": "Find where a force must act for a kept moment",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9943"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610150050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610150050"
+    "tag": "v0.9.0-alpha2610150250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610150250"
   },
   "schema": 1
 }
