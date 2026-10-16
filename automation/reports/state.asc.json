@@ -3,11 +3,11 @@
   "counts": {
     "failed": 172,
     "merged": 539,
-    "skipped_conflict": 102,
+    "skipped_conflict": 103,
     "skipped_draft": 67,
-    "total": 880
+    "total": 881
   },
-  "generated_at": "2026-10-16T00:19:32Z",
+  "generated_at": "2026-10-16T05:19:30Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7221,11 +7221,19 @@
       "status": "skipped_conflict",
       "title": "fix(bonsai): add opencascade fallback when geometry library fails (#9908)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9964"
+    },
+    "9965": {
+      "author": "shitobu",
+      "branch": "fix/profile-auto-detect-assertion-resilience",
+      "head": "585c31c",
+      "status": "skipped_conflict",
+      "title": "fix(bonsai): prevent assertion crashes during profile auto-detection (#9922)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9965"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610160150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610160150"
+    "tag": "v0.9.0-alpha2610160650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610160650"
   },
   "schema": 1
 }

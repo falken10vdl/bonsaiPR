@@ -3,11 +3,11 @@
   "counts": {
     "failed": 170,
     "merged": 565,
-    "skipped_conflict": 78,
+    "skipped_conflict": 79,
     "skipped_draft": 67,
-    "total": 880
+    "total": 881
   },
-  "generated_at": "2026-10-16T00:49:43Z",
+  "generated_at": "2026-10-16T05:49:09Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -6799,7 +6799,7 @@
       "author": "BIMvoice",
       "branch": "fix/sweep-profile-quad",
       "head": "29996d2",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: accept a quad as an arbitrary profile",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9824"
     },
@@ -7219,11 +7219,19 @@
       "status": "merged",
       "title": "fix(bonsai): add opencascade fallback when geometry library fails (#9908)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9964"
+    },
+    "9965": {
+      "author": "shitobu",
+      "branch": "fix/profile-auto-detect-assertion-resilience",
+      "head": "585c31c",
+      "status": "merged",
+      "title": "fix(bonsai): prevent assertion crashes during profile auto-detection (#9922)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9965"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610160220",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610160220"
+    "tag": "v0.9.0-alpha2610160720",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610160720"
   },
   "schema": 1
 }
