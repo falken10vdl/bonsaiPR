@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 165,
-    "merged": 566,
-    "skipped_conflict": 83,
+    "failed": 170,
+    "merged": 565,
+    "skipped_conflict": 78,
     "skipped_draft": 67,
-    "total": 881
+    "total": 880
   },
-  "generated_at": "2026-10-15T22:52:41Z",
+  "generated_at": "2026-10-16T00:49:43Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -292,7 +292,8 @@
       "author": "jaliste",
       "branch": "fix/demo-library-materials",
       "head": "0e3331e",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Add material associations to IFC4 Demo Library window/door types",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7653"
     },
@@ -430,7 +431,8 @@
       "author": "theoryshaw",
       "branch": "ManualDrawingReference",
       "head": "20c103f",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Manual drawing reference",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7798"
     },
@@ -712,7 +714,8 @@
       "author": "theoryshaw",
       "branch": "inset_section_endpoints",
       "head": "1d81958",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
     },
@@ -834,7 +837,8 @@
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
       "head": "2ae4baa",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
     },
@@ -3623,7 +3627,8 @@
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
       "head": "17422a3",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
     },
@@ -7207,14 +7212,6 @@
       "title": "Keep kept moments as structural points move",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9961"
     },
-    "9963": {
-      "author": "theoryshaw",
-      "branch": "revision_cloud_batting_styles_9962",
-      "head": "f0174e7",
-      "status": "merged",
-      "title": "Bonsai: style revision clouds and batting via CSS; add BubbleSize",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9963"
-    },
     "9964": {
       "author": "shitobu",
       "branch": "fix/geometry-library-fallback-resilience",
@@ -7225,8 +7222,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610160022",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610160022"
+    "tag": "v0.9.0-alpha2610160220",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610160220"
   },
   "schema": 1
 }
