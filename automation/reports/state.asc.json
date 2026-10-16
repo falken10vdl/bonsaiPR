@@ -3,11 +3,11 @@
   "counts": {
     "failed": 172,
     "merged": 540,
-    "skipped_conflict": 104,
+    "skipped_conflict": 103,
     "skipped_draft": 67,
-    "total": 883
+    "total": 882
   },
-  "generated_at": "2026-10-16T17:21:16Z",
+  "generated_at": "2026-10-16T21:21:06Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -6930,14 +6930,6 @@
       "title": "Bonsai: generate terrain contour lines as IfcAnnotation CONTOURLINE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9851"
     },
-    "9855": {
-      "author": "makar52nn2016-jpg",
-      "branch": "fix/type-text-in-viewport-6427",
-      "head": "53f65a9",
-      "status": "skipped_conflict",
-      "title": "Type multiline text annotations in the viewport (fixes #6427)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9855"
-    },
     "9868": {
       "author": "theoryshaw",
       "branch": "structural-loads/1-fixes",
@@ -7248,8 +7240,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610161850",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610161850"
+    "tag": "v0.9.0-alpha2610162250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610162250"
   },
   "schema": 1
 }

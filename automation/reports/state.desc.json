@@ -3,11 +3,11 @@
   "counts": {
     "failed": 170,
     "merged": 566,
-    "skipped_conflict": 80,
+    "skipped_conflict": 79,
     "skipped_draft": 67,
-    "total": 883
+    "total": 882
   },
-  "generated_at": "2026-10-16T17:52:12Z",
+  "generated_at": "2026-10-16T21:51:47Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -1407,7 +1407,7 @@
       "author": "BIMvoice",
       "branch": "fix-4822-print-graceful",
       "head": "f3b4fc2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fail gracefully when the sheet PDF/DXF conversion command is missing or fails (#4822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8354"
     },
@@ -2194,7 +2194,7 @@
       "author": "BIMvoice",
       "branch": "fix-4067-svg-curve-hlr",
       "head": "c17196b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai: add opt-in exact-geometry hidden line removal for smoother SVG curves (#4067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8615"
     },
@@ -3732,7 +3732,7 @@
       "author": "theoryshaw",
       "branch": "select_assigned_annotations_9030",
       "head": "fe5d40f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
     },
@@ -4787,7 +4787,7 @@
       "author": "BIMvoice",
       "branch": "fix-9232-grid-axis-dot-truncation",
       "head": "374d980",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: grid axis label truncation and duplicate axis objects (#9232)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
     },
@@ -5440,7 +5440,7 @@
       "author": "franklincg",
       "branch": "money-agent-6422-svg-overlay",
       "head": "f1c0eaa",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: preview drawing SVG in camera viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9472"
     },
@@ -6126,7 +6126,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8799",
       "head": "258980e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: real multiline entry for text annotations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9686"
     },
@@ -6552,7 +6552,7 @@
       "author": "theoryshaw",
       "branch": "strip_text_comments",
       "head": "c0adc24",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: strip HTML comments from annotation text",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9765"
     },
@@ -6928,14 +6928,6 @@
       "title": "Bonsai: generate terrain contour lines as IfcAnnotation CONTOURLINE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9851"
     },
-    "9855": {
-      "author": "makar52nn2016-jpg",
-      "branch": "fix/type-text-in-viewport-6427",
-      "head": "53f65a9",
-      "status": "merged",
-      "title": "Type multiline text annotations in the viewport (fixes #6427)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9855"
-    },
     "9868": {
       "author": "theoryshaw",
       "branch": "structural-loads/1-fixes",
@@ -7246,8 +7238,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610161922",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610161922"
+    "tag": "v0.9.0-alpha2610162322",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610162322"
   },
   "schema": 1
 }

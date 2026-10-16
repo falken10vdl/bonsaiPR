@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 171,
-    "merged": 565,
-    "skipped_conflict": 80,
+    "merged": 567,
+    "skipped_conflict": 77,
     "skipped_draft": 67,
-    "total": 883
+    "total": 882
   },
-  "generated_at": "2026-10-16T18:24:24Z",
+  "generated_at": "2026-10-16T22:23:34Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -1407,7 +1407,7 @@
       "author": "BIMvoice",
       "branch": "fix-4822-print-graceful",
       "head": "f3b4fc2",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: fail gracefully when the sheet PDF/DXF conversion command is missing or fails (#4822)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8354"
     },
@@ -3263,7 +3263,7 @@
       "author": "BIMvoice",
       "branch": "feat-5373-symbol-viewport-representation",
       "head": "7d53f43",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: draw real symbol geometry in the viewport instead of an asterisk placeholder",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8935"
     },
@@ -3732,7 +3732,7 @@
       "author": "theoryshaw",
       "branch": "select_assigned_annotations_9030",
       "head": "fe5d40f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add bim.select_assigned_annotations, the inverse of select_assigned_product",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
     },
@@ -6127,7 +6127,7 @@
       "author": "BIMvoice",
       "branch": "v09/replace-8799",
       "head": "258980e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: real multiline entry for text annotations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9686"
     },
@@ -6553,7 +6553,7 @@
       "author": "theoryshaw",
       "branch": "strip_text_comments",
       "head": "c0adc24",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: strip HTML comments from annotation text",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9765"
     },
@@ -6929,14 +6929,6 @@
       "title": "Bonsai: generate terrain contour lines as IfcAnnotation CONTOURLINE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9851"
     },
-    "9855": {
-      "author": "makar52nn2016-jpg",
-      "branch": "fix/type-text-in-viewport-6427",
-      "head": "53f65a9",
-      "status": "merged",
-      "title": "Type multiline text annotations in the viewport (fixes #6427)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9855"
-    },
     "9868": {
       "author": "theoryshaw",
       "branch": "structural-loads/1-fixes",
@@ -7247,8 +7239,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610161953",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610161953"
+    "tag": "v0.9.0-alpha2610162352",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610162352"
   },
   "schema": 1
 }
