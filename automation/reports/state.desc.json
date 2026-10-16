@@ -3,11 +3,11 @@
   "counts": {
     "failed": 170,
     "merged": 565,
-    "skipped_conflict": 79,
+    "skipped_conflict": 80,
     "skipped_draft": 67,
-    "total": 881
+    "total": 882
   },
-  "generated_at": "2026-10-16T05:49:09Z",
+  "generated_at": "2026-10-16T09:51:03Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -5416,7 +5416,7 @@
       "author": "BIMvoice",
       "branch": "docs/9456-fill-empty-ifc-concepts",
       "head": "3a8d1fa",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "docs: write the five empty IFC concept sections (#9456)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9459"
     },
@@ -7227,11 +7227,19 @@
       "status": "merged",
       "title": "fix(bonsai): prevent assertion crashes during profile auto-detection (#9922)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9965"
+    },
+    "9966": {
+      "author": "myoualid",
+      "branch": "ifcopenshell-docs",
+      "head": "fdd14a4",
+      "status": "merged",
+      "title": "Share the IfcOpenShell guides across C++, Python, and JavaScript",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9966"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610160720",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610160720"
+    "tag": "v0.9.0-alpha2610161121",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610161121"
   },
   "schema": 1
 }

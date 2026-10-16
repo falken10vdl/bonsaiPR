@@ -3,11 +3,11 @@
   "counts": {
     "failed": 172,
     "merged": 539,
-    "skipped_conflict": 103,
+    "skipped_conflict": 104,
     "skipped_draft": 67,
-    "total": 881
+    "total": 882
   },
-  "generated_at": "2026-10-16T05:19:30Z",
+  "generated_at": "2026-10-16T09:20:36Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7229,11 +7229,19 @@
       "status": "skipped_conflict",
       "title": "fix(bonsai): prevent assertion crashes during profile auto-detection (#9922)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9965"
+    },
+    "9966": {
+      "author": "myoualid",
+      "branch": "ifcopenshell-docs",
+      "head": "fdd14a4",
+      "status": "skipped_conflict",
+      "title": "Share the IfcOpenShell guides across C++, Python, and JavaScript",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9966"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610160650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610160650"
+    "tag": "v0.9.0-alpha2610161050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610161050"
   },
   "schema": 1
 }
