@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 171,
+    "failed": 170,
     "merged": 566,
     "skipped_conflict": 80,
     "skipped_draft": 67,
-    "total": 884
+    "total": 883
   },
-  "generated_at": "2026-10-16T14:55:14Z",
+  "generated_at": "2026-10-16T17:52:12Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7243,20 +7243,11 @@
       "status": "merged",
       "title": "Transpilation experiments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9968"
-    },
-    "9969": {
-      "author": "aothms",
-      "branch": "pyodide-rtldlocal",
-      "head": "a5e94af",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Update pyodide build for RTLD_LOCAL",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9969"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610161622",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610161622"
+    "tag": "v0.9.0-alpha2610161922",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610161922"
   },
   "schema": 1
 }
