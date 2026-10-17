@@ -7,7 +7,7 @@
     "skipped_draft": 67,
     "total": 885
   },
-  "generated_at": "2026-10-16T23:49:41Z",
+  "generated_at": "2026-10-17T02:48:55Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -6746,14 +6746,6 @@
       "title": "docs: make 26 api docstring examples self-contained",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9800"
     },
-    "9810": {
-      "author": "brunoperdigao",
-      "branch": "fix-measure-tool",
-      "head": "2a3568e",
-      "status": "merged",
-      "title": "measure tool: fix text not showing when polyline has only two verts",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9810"
-    },
     "9814": {
       "author": "BIMvoice",
       "branch": "fix/9811-web-costing-sum-keyerror",
@@ -7259,11 +7251,19 @@
       "status": "merged",
       "title": "Bump astral-sh/setup-uv from 7.6.0 to 10.3.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9973"
+    },
+    "9975": {
+      "author": "shitobu",
+      "branch": "fix/polyline-empty-distance-tab-error",
+      "head": "5b15499",
+      "status": "merged",
+      "title": "fix(bonsai): prevent crash when cycling UI parameter with empty distance (#9974)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9975"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610170120",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610170120"
+    "tag": "v0.9.0-alpha2610170420",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610170420"
   },
   "schema": 1
 }
