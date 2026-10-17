@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 173,
-    "merged": 544,
-    "skipped_conflict": 104,
+    "merged": 546,
+    "skipped_conflict": 111,
     "skipped_draft": 67,
-    "total": 888
+    "total": 897
   },
-  "generated_at": "2026-10-17T17:20:30Z",
+  "generated_at": "2026-10-17T19:20:06Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7286,11 +7286,83 @@
       "status": "failed",
       "title": "Pyodide wasm demo related fixes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9978"
+    },
+    "9980": {
+      "author": "theoryshaw",
+      "branch": "group-ui/1-colourscheme-fix",
+      "head": "20c9356",
+      "status": "merged",
+      "title": "Don't reuse user groups for saved colour schemes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9980"
+    },
+    "9981": {
+      "author": "theoryshaw",
+      "branch": "group-ui/2-relocate-panels",
+      "head": "0febb06",
+      "status": "merged",
+      "title": "Give Groups its own section and move object groups",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9981"
+    },
+    "9982": {
+      "author": "theoryshaw",
+      "branch": "group-ui/3-toolbars",
+      "head": "aff84ed",
+      "status": "skipped_conflict",
+      "title": "Unify the Groups, Systems and Zones toolbars",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9982"
+    },
+    "9983": {
+      "author": "theoryshaw",
+      "branch": "group-ui/4-object-groups-assign",
+      "head": "db32b97",
+      "status": "skipped_conflict",
+      "title": "Assign and create groups from Object Information",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9983"
+    },
+    "9984": {
+      "author": "theoryshaw",
+      "branch": "group-ui/5-spatial-assign",
+      "head": "eaaca77",
+      "status": "skipped_conflict",
+      "title": "Spatial manager unassign and labelled button rows",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9984"
+    },
+    "9985": {
+      "author": "theoryshaw",
+      "branch": "group-ui/6-hide-internal",
+      "head": "b74e7c4",
+      "status": "skipped_conflict",
+      "title": "Hide Bonsai-managed groups by default",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9985"
+    },
+    "9986": {
+      "author": "theoryshaw",
+      "branch": "group-ui/7-object-memberships",
+      "head": "20957d8",
+      "status": "skipped_conflict",
+      "title": "Show systems and zones in object Groups",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9986"
+    },
+    "9987": {
+      "author": "theoryshaw",
+      "branch": "group-ui/8-services-duplicates",
+      "head": "fc52e88",
+      "status": "skipped_conflict",
+      "title": "Replace duplicate Services displays of memberships",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9987"
+    },
+    "9988": {
+      "author": "theoryshaw",
+      "branch": "group-ui/9-split-decorations",
+      "head": "f5f616a",
+      "status": "skipped_conflict",
+      "title": "Split system decorations into system and run",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9988"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610171850",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610171850"
+    "tag": "v0.9.0-alpha2610172050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610172050"
   },
   "schema": 1
 }
