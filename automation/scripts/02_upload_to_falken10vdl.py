@@ -23,7 +23,23 @@ FORK_OWNER = os.getenv("FORK_OWNER", GITHUB_OWNER)
 FORK_REPO = os.getenv("FORK_REPO", "IfcOpenShell")
 SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
 SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
-SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.8.0")
+# Must match stage 0: the profile's base.branch decides (it names the release).
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import bonsaipr_profile
+
+SOURCE_BASE_BRANCH = bonsaipr_profile.resolve_base_branch(bonsaipr_profile.load_profile(verbose=False))
+
+# Optional prefix on the published addon zips, so an instance's builds are told
+# apart from the canonical ones at a glance (e.g. "Frankenstein_" gives
+# Frankenstein_bonsaiPR_py313-0.9.0-alpha2610031945-linux-x64.zip). Applied to
+# the asset name at upload; the files on disk, the README and the extension id
+# are unchanged, and the feed links to the prefixed names. Empty by default.
+ASSET_PREFIX = os.getenv("BONSAIPR_ASSET_PREFIX", "").strip()
+if not re.fullmatch(r"[A-Za-z0-9._-]*", ASSET_PREFIX):
+    raise SystemExit(
+        f"BONSAIPR_ASSET_PREFIX={ASSET_PREFIX!r}: only letters, digits, '.', '_' and '-' "
+        f"are allowed, since it becomes part of every download URL"
+    )
 
 # Use token in URLs for authenticated Git operations
 bonsaiPR_repo_url = (
@@ -43,9 +59,19 @@ import pr_state
 # Committed snapshots/event logs live in automation/reports (this file is in
 # automation/scripts).
 REPORTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "reports")
-# Maps the parsed "Merge Order:" value to the [asc]/[desc]/[upd] tag suffix so
-# each order gets its own diff lineage (never diff ascending vs by-updated).
-_ORDER_SUFFIX = {"ascending": "asc", "descending": "desc", "by-updated": "upd"}
+# Maps the parsed "Merge Order:" value to its tag suffix so each order gets its
+# own diff lineage (never diff ascending vs by-updated). Sourced from pr_state
+# rather than restated here: the two copies had to agree, and a new order
+# (`recorded`, RFC-001 s5.3) is exactly the kind of change that would have been
+# added to one and not the other.
+_ORDER_SUFFIX = pr_state.ORDER_SUFFIX_BY_NAME
+
+
+class _StageZeroOwnsManifest(Exception):
+    """Raised to skip this function's legacy manifest write.
+
+    Not an error: it means stage 0 already wrote state/events/delta for this run,
+    so there is nothing here to recompute."""
 
 
 def _reports_publish_branch(repo_dir):
@@ -69,6 +95,47 @@ def _reports_publish_branch(repo_dir):
         return "main"
 
 
+def feed_url():
+    """The Blender feed this release is listed in, as a subscriber would paste it.
+
+    The curation's own feed when a profile is set (written beside the root
+    index.json by write_profile_feed), else the root one; on the branch stage 2
+    commits index.json to, which is the one checked out.
+    """
+    repo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    try:
+        branch = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            cwd=repo_dir, capture_output=True, text=True,
+        ).stdout.strip()
+    except Exception:
+        branch = ""
+    if not branch or branch == "HEAD":
+        branch = "main"
+    profile = os.getenv("BONSAIPR_PROFILE", "").strip()
+    path = f"profiles/{profile}/index.json" if profile else "index.json"
+    return f"https://raw.githubusercontent.com/{GITHUB_OWNER}/{GITHUB_REPO}/{branch}/{path}"
+
+
+def install_section():
+    """How to subscribe in Blender, so updates arrive without downloading zips."""
+    return f"""## 🧩 Install in Blender
+
+Add this build's feed as a remote extension repository (Blender 4.2 or later), and Blender offers each new build as an update:
+
+```
+{feed_url()}
+```
+
+1. **Edit → Preferences → Get Extensions**. Allow online access if asked.
+2. Open the **Repositories** dropdown (top right), click **+**, then **Add Remote Repository**.
+3. Paste the URL, tick **Check for Updates on Startup**, and click **Create**.
+4. Search `bonsai` and **Install** BonsaiPR.
+5. In **Add-ons**, enable Bonsai or BonsaiPR, never both, then restart Blender.
+
+"""
+
+
 def get_build_paths():
     """Get the paths for built addons"""
     # Updated to use the actual build directory created by 01_build script
@@ -84,10 +151,21 @@ def get_reports_path():
 
 
 def get_branch_name():
-    """Generate branch name with timestamp for on-demand builds"""
+    """The build branch stage 0 created, as its report names it.
+
+    It used to be rebuilt from the clock, which only matches stage 0's name if
+    both run in the same minute - they run ~15 minutes apart - and could not
+    know stage 0's prefix. The clock is now only a fallback for a missing report.
+    """
+    report = find_report_file()
+    if report and os.path.exists(report):
+        with open(report, "r", encoding="utf-8") as f:
+            for line in f:
+                if line.startswith("Branch:"):
+                    return line.split(":", 1)[1].strip()
     current_datetime = datetime.now().strftime("%y%m%d%H%M")
     version = SOURCE_BASE_BRANCH.removeprefix("v")
-    return f"build-{version}-alpha{current_datetime}"
+    return f"{ASSET_PREFIX}build-{version}-alpha{current_datetime}"
 
 
 def get_version_info():
@@ -280,15 +358,22 @@ def parse_version_from_tag(tag_name):
 
 
 def normalize_asset_name(original_filename, timestamp_10=None, target_version=None):
-    """Normalize addon zip naming to bonsaiPR_pyXXX-<version>-alpha<timestamp>-<platform>.zip."""
+    """Normalize addon zip naming to [ASSET_PREFIX]bonsaiPR_pyXXX-<version>-alpha<timestamp>-<platform>.zip.
+
+    Idempotent: a name that already carries the prefix (re-rendering an existing
+    release's notes reads the published, prefixed names back) gets it once, not twice.
+    """
+    name = original_filename
+    if ASSET_PREFIX and name.startswith(ASSET_PREFIX):
+        name = name[len(ASSET_PREFIX):]
     pattern = r"^(bonsaiPR_py\d+-)([\d.]+)(?:-alpha)?(\d{6,10})(-[^.]+\.zip)$"
-    m = re.match(pattern, original_filename)
+    m = re.match(pattern, name)
     if not m:
-        return original_filename
+        return f"{ASSET_PREFIX}{name}"
 
     version = target_version or m.group(2)
     stamp = timestamp_10 or m.group(3)
-    return f"{m.group(1)}{version}-alpha{stamp}{m.group(4)}"
+    return f"{ASSET_PREFIX}{m.group(1)}{version}-alpha{stamp}{m.group(4)}"
 
 
 def find_report_file():
@@ -414,7 +499,41 @@ def upload_asset_to_release(release_id, file_path, asset_name):
         return False
 
 
-def append_upload_info_to_readme(report_file, release_url, tag_name, addon_files):
+def publish_names_in_report(report_file, addon_files, timestamp_10, target_version):
+    """Rename the zips the report lists to the names they are published under.
+
+    Stage 1 writes the report with the files as they sit on disk
+    (`bonsaiPR_py311-0.9.0-alpha261005-linux-x64.zip`); the release carries them
+    renamed (`Frankenstein_bonsaiPR_py311-0.9.0-alpha2610050308-linux-x64.zip`).
+    Rewritten once, before the release body, the committed archive and the
+    attached .txt are all made from it, so a reader can find each file it names.
+    """
+    if not report_file or not os.path.exists(report_file):
+        return
+    with open(report_file, "r", encoding="utf-8") as f:
+        text = f.read()
+    renamed = text
+    for addon_file in addon_files:
+        disk_name = os.path.basename(addon_file)
+        asset_name = normalize_asset_name(
+            disk_name, timestamp_10=timestamp_10, target_version=target_version
+        )
+        if asset_name == disk_name:
+            continue
+        # Not preceded by a name character: a name already published (with the
+        # prefix in front) is left alone, so a second pass changes nothing.
+        renamed = re.sub(
+            r"(?<![\w.-])" + re.escape(disk_name), lambda _m: asset_name, renamed
+        )
+    if renamed != text:
+        with open(report_file, "w", encoding="utf-8") as f:
+            f.write(renamed)
+        print(f"✅ Report now lists the zips by their published names")
+
+
+def append_upload_info_to_readme(
+    report_file, release_url, tag_name, addon_files, timestamp_10=None
+):
     """Append upload information to the existing README report file"""
     if not report_file or not os.path.exists(report_file):
         print("⚠️ No existing README file found, skipping upload info append")
@@ -435,7 +554,11 @@ def append_upload_info_to_readme(report_file, release_url, tag_name, addon_files
 
         f.write(f"## 📦 Uploaded Assets\n\n")
         for addon_file in sorted(addon_files):
-            filename = os.path.basename(addon_file)
+            filename = normalize_asset_name(
+                os.path.basename(addon_file),
+                timestamp_10=timestamp_10,
+                target_version=parse_version_from_tag(tag_name),
+            )
             size_mb = os.path.getsize(addon_file) / (1024 * 1024)
             f.write(f"- ✅ {filename} ({size_mb:.1f} MB)\n")
 
@@ -719,12 +842,20 @@ def generate_release_body(
         merge_order = (
             "ascending"  # default; overridden if report contains "Merge Order:"
         )
+        # The commit the PRs were merged onto. Mandatory in the manifest once a
+        # profile can pin a base (RFC-001 §8.1): "#7798 merged" means different
+        # things at bases a month apart, so an aggregate that cannot see this is
+        # comparing things that are not comparable.
+        base_commit = None
 
         for idx, line in enumerate(lines):
             line = line.strip()
             if line.startswith("Merge Order:"):
                 # e.g. "Merge Order: ascending (lowest → highest PR#)"
                 merge_order = line.split(":", 1)[1].strip().split("(")[0].strip()
+            elif line.startswith("IfcOpenShell source commit:"):
+                value = line.split(":", 1)[1].strip()
+                base_commit = value if value and value != "unknown" else None
             elif line.startswith("- Total PRs processed:"):
                 total_prs = int(line.split(":")[1].strip())
             elif line.startswith("- Successfully merged:"):
@@ -1042,19 +1173,13 @@ def generate_release_body(
 
         success_rate = (successfully_merged / total_prs * 100) if total_prs > 0 else 0
 
-        # Build the merge-order banner
-        if merge_order == "ascending":
-            order_emoji = "⬆️"
-            order_label = "ascending — lowest PR# merged first"
-            companion_order = "descending or by-updated"
-        elif merge_order == "descending":
-            order_emoji = "⬇️"
-            order_label = "descending — highest PR# merged first"
-            companion_order = "ascending or by-updated"
-        else:  # by-updated
-            order_emoji = "🕒"
-            order_label = "by last update — most recently updated PR merged first"
-            companion_order = "ascending or descending"
+        # Build the merge-order banner (metadata lives in pr_state.ORDER_META)
+        _meta = pr_state.order_meta(merge_order)
+        order_emoji = _meta["emoji"]
+        order_label = _meta["label"]
+        companion_order = pr_state.companion_orders(
+            merge_order, ["ascending", "descending", "by-updated"]
+        )
         order_title = merge_order.replace("-", " ").title()
         merge_order_banner = (
             f"## {order_emoji} Merge Order: {order_title}\n\n"
@@ -1078,6 +1203,25 @@ def generate_release_body(
             order_suffix = _ORDER_SUFFIX.get(merge_order, "asc")
             state_path = os.path.join(REPORTS_DIR, f"state.{order_suffix}.json")
             events_path = os.path.join(REPORTS_DIR, f"events.{order_suffix}.jsonl")
+            delta_path = os.path.join(REPORTS_DIR, f"delta.{order_suffix}.md")
+
+            # Stage 0 owns the manifest — it is the only place that knows what was
+            # actually built (which commit per PR, which base, which rivals). It
+            # hands the rendered delta over here rather than this function
+            # reconstructing a second snapshot by parsing its own report, which is
+            # what used to produce two versions of one artefact that disagreed.
+            #
+            # The fallback below is the legacy path, kept for a stage 0 that
+            # predates this: absence of the file means "nobody wrote it", not
+            # "nothing changed" — stage 0 writes it even when the delta is empty.
+            if os.path.exists(delta_path):
+                with open(delta_path, "r", encoding="utf-8") as df:
+                    delta_summary_section = df.read().strip()
+                print(
+                    f"📎 Using the manifest and delta written by stage 0 "
+                    f"({os.path.basename(state_path)})"
+                )
+                raise _StageZeroOwnsManifest
 
             new_state = pr_state.build_state(
                 applied_prs=applied_prs,
@@ -1086,6 +1230,7 @@ def generate_release_body(
                 skipped_draft_prs=skipped_draft_prs,
                 merge_order=merge_order,
                 base=SOURCE_BASE_BRANCH,
+                base_commit=base_commit,
                 total_prs=total_prs,
                 # Stamp the release this snapshot describes, so the NEXT run's
                 # report can link each "Merges under" order at the exact build
@@ -1097,6 +1242,31 @@ def generate_release_body(
                     else None
                 ),
             )
+
+            # Stage 0 knows which PRs were built at a curator-validated commit
+            # rather than at their current tip; the rendered report this function
+            # parses does not carry it per-record, so it arrives by sidecar. Left
+            # unapplied, every pinned PR would be recorded as built at a tip that
+            # the build proved does not merge.
+            pinned_path = os.path.join(REPORTS_DIR, f"pinned.{order_suffix}.json")
+            if os.path.exists(pinned_path):
+                try:
+                    with open(pinned_path, "r", encoding="utf-8") as pf:
+                        pinned_map = (json.load(pf) or {}).get("pinned") or {}
+                    for num, built in pinned_map.items():
+                        rec = new_state["prs"].get(str(num))
+                        if not rec:
+                            continue
+                        rec["tip"] = rec.get("head")
+                        rec["head"] = built[:7]
+                        rec["pinned"] = True
+                    if pinned_map:
+                        print(
+                            f"📌 Manifest marks {len(pinned_map)} PR(s) as built at a "
+                            f"curator-validated commit"
+                        )
+                except (OSError, ValueError) as e:
+                    print(f"⚠️  Could not apply pinned commits to the manifest: {e}")
 
             # Previous run's committed snapshot for THIS order (working-tree copy;
             # git history holds older ones). Absent on the very first run.
@@ -1113,6 +1283,8 @@ def generate_release_body(
             # Overwrite the snapshot; the commit step turns git history into the
             # durable run-to-run diff record.
             pr_state.write_state(new_state, state_path)
+        except _StageZeroOwnsManifest:
+            pass
         except Exception as e:
             import traceback
 
@@ -1122,7 +1294,7 @@ def generate_release_body(
         # Generate markdown description
         release_body = f"""This is an automated build of BonsaiPR with the latest pull requests merged from the IfcOpenShell repository.
 
-{merge_order_banner}{downloads_section}
+{merge_order_banner}{install_section()}{downloads_section}
 ## 📊 Build Statistics
 - **Total PRs Processed**: {total_prs}
 - **Successfully Merged**: {successfully_merged}
@@ -1393,6 +1565,28 @@ def cleanup_old_releases():
         print(f"⚠️ Error during release cleanup: {e}")
 
 
+def stamp_release_in_manifest(order_suffix, tag_name, release_url):
+    """Record the release this run published in the run's manifest (state.<order>.json).
+
+    Stage 0 writes the manifest, before any release exists; stage 2 used to build
+    its own snapshot with the release in it, and stopped once stage 0 took the
+    manifest over. Since then every full run published a release that its own
+    manifest recorded as `"release": {"tag": null}` - and the next run's report
+    and federation peers read that field to link a PR to the build containing it.
+    Called only after the release exists, so the manifest never names one that
+    failed to publish.
+    """
+    path = pr_state.order_state_path(REPORTS_DIR, order_suffix)
+    state = pr_state.load_state(path)
+    if not state:
+        print(f"⚠️  No manifest at {path} to record release {tag_name} in")
+        return False
+    state["release"] = {"tag": tag_name, "url": release_url}
+    pr_state.write_state(state, path)
+    print(f"🧾 Recorded release {tag_name} in {os.path.basename(path)}")
+    return True
+
+
 def upload_to_falken10vdl():
     print("Starting upload to GitHub releases...")
 
@@ -1516,23 +1710,16 @@ def upload_to_falken10vdl():
         except Exception as e:
             print(f"Warning: Could not fetch branch commit hash: {e}")
 
-    if merge_order == "ascending":
-        order_suffix = "asc"
-    elif merge_order == "descending":
-        order_suffix = "desc"
-    else:
-        order_suffix = "upd"
+    order_suffix = pr_state.order_meta(merge_order)["suffix"]
+    # The instance prefix also titles the release (e.g. "Frankenstein_BonsaiPR
+    # v0.9.0-alpha261004-7c9cd3f [rec]"), as it names the zips and the branch.
     release_name = (
-        f"BonsaiPR v{version}-alpha{ts_short}-{branch_short_hash} [{order_suffix}]"
+        f"{ASSET_PREFIX}BonsaiPR v{version}-alpha{ts_short}-{branch_short_hash} [{order_suffix}]"
     )
 
     # Build release body with source commit and branch information
-    if merge_order == "ascending":
-        order_label_header = "ascending (lowest → highest PR#)"
-    elif merge_order == "descending":
-        order_label_header = "descending (highest → lowest PR#)"
-    else:
-        order_label_header = "by-updated (most recently updated PR first)"
+    _hdr = pr_state.order_meta(merge_order)
+    order_label_header = f"{merge_order} ({_hdr['short']})"
     release_body_header = (
         f"IfcOpenShell source commit (before PR merging): {commit_link}\n"
     )
@@ -1543,6 +1730,10 @@ def upload_to_falken10vdl():
         release_body_header += (
             f"Branch used to create this release: [{branch_name}]({branch_url})\n"
         )
+
+    publish_names_in_report(
+        report_file, addon_files, timestamp_from_readme, parse_version_from_tag(tag_name)
+    )
 
     release_body = (
         release_body_header
@@ -1571,6 +1762,7 @@ def upload_to_falken10vdl():
     release_id = release["id"]
     release_url = release["html_url"]
     print(f"✅ Successfully created release: {release_url}")
+    stamp_release_in_manifest(order_suffix, tag_name, release_url)
 
     # Upload addon files with updated timestamp (YYMMDD -> YYMMDDHHMM from README)
     success_count = 0
@@ -1599,7 +1791,7 @@ def upload_to_falken10vdl():
 
     # Append upload information to the existing README file
     readme_path = append_upload_info_to_readme(
-        report_file, release_url, tag_name, addon_files
+        report_file, release_url, tag_name, addon_files, timestamp_from_readme
     )
 
     # Upload the complete README as an asset
@@ -1670,7 +1862,7 @@ def upload_to_falken10vdl():
             with open(local_path, "rb") as f:
                 hashval = hashlib.sha256(f.read()).hexdigest()
             # Extract version from filename: bonsaiPR_pyXXX-0.8.5-alpha260116-platform.zip
-            m = re.match(r"bonsaiPR_py\d+-([\d.]+-alpha\d{6})", asset_name)
+            m = re.search(r"bonsaiPR_py\d+-([\d.]+-alpha\d{6})", asset_name)
             if m:
                 version_str = m.group(1)
             else:
@@ -1679,7 +1871,7 @@ def upload_to_falken10vdl():
                     asset_name.split("-")[1] if "-" in asset_name else "unknown"
                 )
                 # try to include alpha+digits if possible
-                m2 = re.match(r"bonsaiPR_py\d+-([\d.]+-alpha\d+)", asset_name)
+                m2 = re.search(r"bonsaiPR_py\d+-([\d.]+-alpha\d+)", asset_name)
                 if m2:
                     version_str = m2.group(1)
             file_info[(plat, pyver)] = {
@@ -1688,23 +1880,65 @@ def upload_to_falken10vdl():
                 "hash": hashval,
                 "version": version_str,
             }
-        # Update every platform in each entry, matched by (platform, python_version)
+        def entry_pyver(entry):
+            # python_versions (e.g. ["3.11"]) -> pyversion key (e.g. "py311")
+            py_versions = entry.get("python_versions", ["3.11"])
+            return "py" + py_versions[0].replace(".", "") if py_versions else "py311"
+
+        def point_at(entry, key):
+            entry["archive_url"] = (
+                f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/download/{release_tag}/{file_info[key]['filename']}"
+            )
+            entry["archive_size"] = file_info[key]["size"]
+            entry["archive_hash"] = f"sha256:{file_info[key]['hash']}"
+            entry["version"] = file_info[key]["version"]
+
+        # The feed describes THIS release. An entry for a target this release did
+        # not build used to be left pointing at whichever older release last built
+        # it: after v0.9.0 dropped Intel macOS, Intel Mac subscribers were still
+        # offered an August v0.8.6 build of a different curation. Such entries are
+        # now dropped, and a target with no entry yet gets one cloned from a
+        # sibling of the same python version, so a target can also come back.
+        # Nothing is dropped if nothing was uploaded: an empty release says
+        # nothing about which targets exist.
+        covered = set()
+        kept = []
         for entry in index.get("data", []):
             plat_list = entry.get("platforms", [])
             if not plat_list:
+                kept.append(entry)
                 continue
-            # Convert python_versions field (e.g. ["3.11"]) to pyversion key (e.g. "py311")
-            py_versions = entry.get("python_versions", ["3.11"])
-            entry_pyver = "py" + py_versions[0].replace(".", "") if py_versions else "py311"
-            for plat in plat_list:
-                key = (plat, entry_pyver)
-                if key in file_info:
-                    entry["archive_url"] = (
-                        f"https://github.com/{GITHUB_OWNER}/{GITHUB_REPO}/releases/download/{release_tag}/{file_info[key]['filename']}"
-                    )
-                    entry["archive_size"] = file_info[key]["size"]
-                    entry["archive_hash"] = f"sha256:{file_info[key]['hash']}"
-                    entry["version"] = file_info[key]["version"]
+            pyver = entry_pyver(entry)
+            built = [p for p in plat_list if (p, pyver) in file_info]
+            if not built and file_info:
+                print(f"🗑️  Feed: dropping {pyver}/{','.join(plat_list)} (not built by {release_tag}; "
+                      f"was {entry.get('archive_url', '').rsplit('/', 1)[-1] or '?'})")
+                continue
+            if file_info:
+                entry["platforms"] = built
+            if built:
+                point_at(entry, (built[0], pyver))
+                covered.update((p, pyver) for p in built)
+            kept.append(entry)
+        for key in sorted(set(file_info) - covered):
+            plat, pyver = key
+            sibling = next((e for e in kept if e.get("platforms") and entry_pyver(e) == pyver), None)
+            if sibling is None:
+                print(f"⚠️  Feed: no {pyver} entry to model {plat} on; not listed")
+                continue
+            entry = json.loads(json.dumps(sibling))
+            entry["platforms"] = [plat]
+            point_at(entry, key)
+            kept.append(entry)
+            print(f"➕ Feed: added {pyver}/{plat}")
+        # The instance prefix names the extension in Blender's Get Extensions
+        # list too ("Frankenstein_BonsaiPR"), as it names the zips and release.
+        if ASSET_PREFIX:
+            for entry in kept:
+                name = entry.get("name") or "BonsaiPR"
+                if not name.startswith(ASSET_PREFIX):
+                    entry["name"] = ASSET_PREFIX + name
+        index["data"] = kept
         with open(index_path, "w", encoding="utf-8") as f:
             json.dump(index, f, indent=2)
         print(f"index.json updated for release {release_tag}")
@@ -1716,8 +1950,28 @@ def upload_to_falken10vdl():
     try:
         repo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
         index_rel_path = os.path.relpath(index_path, repo_dir)
-        # Stage index.json
-        subprocess.run(["git", "add", index_rel_path], cwd=repo_dir, check=True)
+        to_stage = [index_rel_path]
+
+        # RFC-001 §10: also publish the feed under the curation's own name, so a
+        # subscriber picks a curation rather than picking whoever configured
+        # theirs the way they wanted. The root index.json keeps working and keeps
+        # its URL — existing subscribers are not moved.
+        profile_name = os.getenv("BONSAIPR_PROFILE", "").strip()
+        if profile_name:
+            try:
+                from update_index_json import write_profile_feed
+            except ImportError:
+                from automation.scripts.update_index_json import write_profile_feed
+            feed = write_profile_feed(
+                index_path, profile_name, owner=GITHUB_OWNER, repo=GITHUB_REPO,
+                maintainer=bonsaipr_profile.load_profile(verbose=False).maintainer,
+                name_prefix=ASSET_PREFIX,
+            )
+            if feed:
+                to_stage.append(os.path.relpath(feed, repo_dir))
+
+        # Stage index.json (and the curated feed, when there is one)
+        subprocess.run(["git", "add"] + to_stage, cwd=repo_dir, check=True)
         # Commit with a standard message
         subprocess.run(
             ["git", "commit", "-m", f"Update index.json for release {tag_name}"],

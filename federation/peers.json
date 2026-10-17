@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "_comment": [
+    "Who this instance aggregates. A SUBSCRIPTION, not a registry: there is no",
+    "authority and no global list, so nobody can inject themselves into your",
+    "aggregate. Adding a peer is a statement that you find their curation worth",
+    "counting (RFC-001 s7, s9).",
+    "",
+    "role 'anchor' marks an everything-build. Anchors are fetched but do not vote",
+    "in adoption counts: an anchor including a PR is the absence of a curatorial",
+    "decision, not the presence of one."
+  ],
+  "peers": [
+    {
+      "id": "OpeningDesign",
+      "display_name": "OpeningDesign — architectural production",
+      "reports_base": "https://raw.githubusercontent.com/OpeningDesign/bonsaiPR/main/automation/reports/",
+      "orders": ["rec"],
+      "role": "curator"
+    },
+    {
+      "id": "falken10vdl",
+      "display_name": "BonsaiPR (canonical everything-build)",
+      "reports_base": "https://raw.githubusercontent.com/falken10vdl/bonsaiPR/main/automation/reports/",
+      "orders": ["asc", "desc", "upd"],
+      "role": "anchor"
+    }
+  ]
+}

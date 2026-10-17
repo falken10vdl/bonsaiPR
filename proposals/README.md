@@ -16,7 +16,13 @@ stays valid even after it is accepted, rejected, or superseded.
 
 ## RFC-001 — [Federated Curated Builds](RFC-001-federated-curated-builds.md)
 
-**Status:** Draft
+📄 **Non-technical summary:** [RFC-001 — Plain-Language Version](RFC-001-federated-curated-builds_plain-language.md).
+Same idea without the jargon; the one to hand someone who has ten minutes. Kept
+current alongside the work.
+
+
+**Status:** Draft · **phases 0–3 implemented** — see falken10vdl/bonsaiPR#11 and
+`docs/dev-notes/rfc-001-federation.md`
 
 **What it proposes:** Let people publish their own *curated* BonsaiPR builds instead
 of everyone sharing one build containing every PR, and aggregate those curations into
@@ -29,10 +35,12 @@ aggregate), and a **`distill`** command that reverse-engineers a profile out of 
 hand-maintained build branches powerusers already keep.
 
 **Why it might matter even if the federation idea goes nowhere:** measuring one real
-poweruser branch found ~12 hand-made conflict resolutions against a shared table that
-currently holds one, and 77 commits of feature work upstream has never seen.
+poweruser branch found that 100% of its 160 integration merges are mechanically
+attributable to open PRs, that 75 of its remaining commits were cherry-picked off open
+PRs, and that 6 are the curator's own work upstream has never seen.
 
-**Open questions needing a decision:** profile file format; whether the peer list is
-canonical or per-curator; whether the canonical instance should build a fourth
-"recorded" merge order; and whether IfcOpenShell upstream wants the maintainer digest
-at all.
+**Open questions needing a decision:** whether the peer list is canonical or
+per-curator; whether the canonical instance should build a fourth "recorded" merge
+order; and whether IfcOpenShell upstream wants the maintainer digest at all. (The
+profile format question is settled — JSON, for consistency with `index.json` and
+`state.json`, and no dependency.)
