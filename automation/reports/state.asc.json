@@ -3,11 +3,11 @@
   "counts": {
     "failed": 172,
     "merged": 543,
-    "skipped_conflict": 103,
+    "skipped_conflict": 104,
     "skipped_draft": 67,
-    "total": 885
+    "total": 886
   },
-  "generated_at": "2026-10-17T04:19:06Z",
+  "generated_at": "2026-10-17T12:19:48Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -7261,11 +7261,19 @@
       "status": "merged",
       "title": "fix(bonsai): prevent crash when cycling UI parameter with empty distance (#9974)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9975"
+    },
+    "9976": {
+      "author": "Moult",
+      "branch": "fix/util-element-complex-quantity-verbose",
+      "head": "55f3ff2",
+      "status": "skipped_conflict",
+      "title": "util.element: fix IfcPhysicalComplexQuantity KeyError when verbose=True",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9976"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610170550",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610170550"
+    "tag": "v0.9.0-alpha2610171350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610171350"
   },
   "schema": 1
 }
