@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 170,
-    "merged": 566,
+    "merged": 569,
     "skipped_conflict": 79,
     "skipped_draft": 67,
-    "total": 882
+    "total": 885
   },
-  "generated_at": "2026-10-16T21:51:47Z",
+  "generated_at": "2026-10-16T23:49:41Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -7082,14 +7082,6 @@
       "title": "Enter loads against point axes and edit loads by clicking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9917"
     },
-    "9919": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/astral-sh/setup-uv-10.2.0",
-      "head": "89a93ed",
-      "status": "merged",
-      "title": "Bump astral-sh/setup-uv from 7.6.0 to 10.2.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9919"
-    },
     "9923": {
       "author": "theoryshaw",
       "branch": "structural-loads/16-y-axis",
@@ -7235,11 +7227,43 @@
       "status": "merged",
       "title": "Transpilation experiments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9968"
+    },
+    "9970": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.17.0",
+      "head": "812b3a8",
+      "status": "merged",
+      "title": "Bump ruff from 0.16.10 to 0.17.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9970"
+    },
+    "9971": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/dtolnay/rust-toolchain-683b588c487a69d01f6c6ddf40f036ff682cc2c8",
+      "head": "a6a5b71",
+      "status": "merged",
+      "title": "Bump dtolnay/rust-toolchain from e2a55d2ffb04f378e9626c28d38b36d230d1e12f to 683b588c487a69d01f6c6ddf40f036ff682cc2c8",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9971"
+    },
+    "9972": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/actions/download-artifact-8.0.2",
+      "head": "a75f4a7",
+      "status": "merged",
+      "title": "Bump actions/download-artifact from 8.0.1 to 8.0.2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9972"
+    },
+    "9973": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/astral-sh/setup-uv-10.3.0",
+      "head": "7ba1b0e",
+      "status": "merged",
+      "title": "Bump astral-sh/setup-uv from 7.6.0 to 10.3.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9973"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610162322",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610162322"
+    "tag": "v0.9.0-alpha2610170120",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610170120"
   },
   "schema": 1
 }
