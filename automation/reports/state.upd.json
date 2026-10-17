@@ -7,7 +7,7 @@
     "skipped_draft": 67,
     "total": 897
   },
-  "generated_at": "2026-10-17T20:21:23Z",
+  "generated_at": "2026-10-17T22:27:21Z",
   "merge_order": "by-updated",
   "prs": {
     "2093": {
@@ -7312,7 +7312,7 @@
     "9984": {
       "author": "theoryshaw",
       "branch": "group-ui/5-spatial-assign",
-      "head": "eaaca77",
+      "head": "abc7b06",
       "status": "merged",
       "title": "Spatial manager unassign and labelled button rows",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9984"
@@ -7320,7 +7320,7 @@
     "9985": {
       "author": "theoryshaw",
       "branch": "group-ui/6-hide-internal",
-      "head": "b74e7c4",
+      "head": "c5b188a",
       "status": "merged",
       "title": "Hide Bonsai-managed groups by default",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9985"
@@ -7328,7 +7328,7 @@
     "9986": {
       "author": "theoryshaw",
       "branch": "group-ui/7-object-memberships",
-      "head": "20957d8",
+      "head": "040955f",
       "status": "merged",
       "title": "Show systems and zones in object Groups",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9986"
@@ -7336,7 +7336,7 @@
     "9987": {
       "author": "theoryshaw",
       "branch": "group-ui/8-services-duplicates",
-      "head": "fc52e88",
+      "head": "36971f0",
       "status": "merged",
       "title": "Replace duplicate Services displays of memberships",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9987"
@@ -7344,7 +7344,7 @@
     "9988": {
       "author": "theoryshaw",
       "branch": "group-ui/9-split-decorations",
-      "head": "dc63d37",
+      "head": "285edda",
       "status": "merged",
       "title": "Split system decorations into system and run",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9988"
@@ -7352,15 +7352,15 @@
     "9989": {
       "author": "theoryshaw",
       "branch": "group-ui/10-all-groups",
-      "head": "361ab52",
+      "head": "2399fcf",
       "status": "merged",
       "title": "List and manage every kind of group in Groups",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9989"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610172151",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610172151"
+    "tag": "v0.9.0-alpha2610172352",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610172352"
   },
   "schema": 1
 }
