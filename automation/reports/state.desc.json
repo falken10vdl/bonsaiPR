@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 173,
-    "merged": 580,
+    "failed": 175,
+    "merged": 579,
     "skipped_conflict": 82,
     "skipped_draft": 67,
-    "total": 902
+    "total": 903
   },
-  "generated_at": "2026-10-18T12:50:33Z",
+  "generated_at": "2026-10-18T14:51:33Z",
   "merge_order": "descending",
   "prs": {
     "2093": {
@@ -2990,7 +2990,8 @@
       "author": "BIMvoice",
       "branch": "6400-display-units-length",
       "head": "3e016af",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: add a display length unit preference (#6400)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8881"
     },
@@ -7368,7 +7369,7 @@
     "9992": {
       "author": "aothms",
       "branch": "cpp-linux-sdk-workflow-fix",
-      "head": "65580df",
+      "head": "52933db",
       "status": "merged",
       "title": "C++ linux sdk workflow fix",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9992"
@@ -7398,11 +7399,20 @@
       "status": "merged",
       "title": "Bump test files for the renamed 1030 sample",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9996"
+    },
+    "9997": {
+      "author": "Moult",
+      "branch": "fix/geom-trimmed-curve-degenerate-1005",
+      "head": "10ddb75",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Skip parameter-trimmed segments shorter than precision",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9997"
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610181421",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610181421"
+    "tag": "v0.9.1-alpha2610181621",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610181621"
   },
   "schema": 1
 }
