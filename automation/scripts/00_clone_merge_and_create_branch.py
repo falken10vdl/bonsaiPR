@@ -90,11 +90,28 @@ KNOWN_CONFLICT_RESOLUTIONS = {
 }
 
 
+def get_addon_version():
+    """Read Bonsai's actual version from the upstream VERSION file.
+
+    Upstream bumps this ahead of the next release (e.g. to "0.9.1") right
+    after tagging, while SOURCE_BASE_BRANCH keeps naming the branch "v0.9.0".
+    Call this only after setup_repository() has checked out SOURCE_BASE_BRANCH,
+    so the file reflects the commit we're actually building.
+    """
+    version_path = os.path.join(work_dir, "VERSION")
+    try:
+        with open(version_path) as f:
+            raw = f.read().strip()
+        return re.sub(r'[A-Za-z]+\d+$', '', raw) or SOURCE_BASE_BRANCH.removeprefix("v")
+    except OSError:
+        return SOURCE_BASE_BRANCH.removeprefix("v")
+
+
 # Generate branch name and report filename with timestamp for on-demand builds
 def get_branch_and_report_names():
     # Include hour-minute for multiple builds per day
     current_datetime = datetime.now().strftime("%y%m%d%H%M")
-    version = SOURCE_BASE_BRANCH.removeprefix("v")
+    version = get_addon_version()
 
     pyversion = "py311"
     branch_name = f"build-{version}-alpha{current_datetime}"
@@ -1292,6 +1309,11 @@ def main():
         print("❌ Error: GITHUB_TOKEN not found in environment variables")
         print("Please check your .env file and ensure GITHUB_TOKEN is set")
         return
+    # Checkout/reset SOURCE_BASE_BRANCH BEFORE naming the branch/report, so
+    # get_branch_and_report_names() reads the VERSION file at the actual
+    # commit we're building (it can differ from SOURCE_BASE_BRANCH, e.g.
+    # upstream bumps VERSION to "0.9.1" while staying on branch "v0.9.0").
+    setup_repository()
     branch_name, report_path = get_branch_and_report_names()
     print(f"Branch name: {branch_name}")
     print(f"Report will be saved as: {os.path.basename(report_path)}")
@@ -1318,8 +1340,6 @@ def main():
     else:
         merge_order_str = "ascending"
         print("Merging PRs in ascending order (lowest to highest number)")
-    # Setup repository
-    setup_repository()
     # Get the commit hash of the source repository BEFORE merging any PRs
     try:
         source_commit_hash = (

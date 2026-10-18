@@ -51,10 +51,26 @@ SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.8.0")
 
 # No exclusions - copy all files and directories
 
+def get_addon_version():
+    """Read Bonsai's actual version from the upstream VERSION file.
+
+    Upstream bumps this ahead of the next release (e.g. to "0.9.1") right
+    after tagging, while SOURCE_BASE_BRANCH keeps naming the branch "v0.9.0".
+    src/vars.mk reads this same file to stamp blender_manifest.toml, so using
+    it here keeps our tag/filename/index.json in lockstep with the archive.
+    """
+    version_path = os.path.join(SOURCE_DIR, "VERSION")
+    try:
+        with open(version_path) as f:
+            raw = f.read().strip()
+        return re.sub(r'[A-Za-z]+\d+$', '', raw) or SOURCE_BASE_BRANCH.removeprefix("v")
+    except OSError:
+        return SOURCE_BASE_BRANCH.removeprefix("v")
+
 def get_version_info():
     """Get version information for naming - includes hour+minute for on-demand builds"""
     current_datetime = datetime.now().strftime('%y%m%d%H%M')
-    version = SOURCE_BASE_BRANCH.removeprefix("v")
+    version = get_addon_version()
     pyversion = "py311"
     return version, pyversion, current_datetime
 

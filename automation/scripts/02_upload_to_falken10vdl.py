@@ -24,6 +24,7 @@ FORK_REPO = os.getenv("FORK_REPO", "IfcOpenShell")
 SOURCE_REPO_OWNER = os.getenv("SOURCE_REPO_OWNER", "IfcOpenShell")
 SOURCE_REPO_NAME = os.getenv("SOURCE_REPO_NAME", "IfcOpenShell")
 SOURCE_BASE_BRANCH = os.getenv("SOURCE_BASE_BRANCH", "v0.8.0")
+BASE_CLONE_DIR = os.getenv("BASE_CLONE_DIR", "/home/falken10vdl/bonsaiPRDevel/IfcOpenShell")
 
 # Use token in URLs for authenticated Git operations
 bonsaiPR_repo_url = (
@@ -86,14 +87,31 @@ def get_reports_path():
 def get_branch_name():
     """Generate branch name with timestamp for on-demand builds"""
     current_datetime = datetime.now().strftime("%y%m%d%H%M")
-    version = SOURCE_BASE_BRANCH.removeprefix("v")
+    version = get_addon_version()
     return f"build-{version}-alpha{current_datetime}"
+
+
+def get_addon_version():
+    """Read Bonsai's actual version from the upstream VERSION file.
+
+    Upstream bumps this ahead of the next release (e.g. to "0.9.1") right
+    after tagging, while SOURCE_BASE_BRANCH keeps naming the branch "v0.9.0".
+    Reading the same file src/vars.mk uses keeps our tag/filename/index.json
+    in lockstep with the version actually embedded in the built archive.
+    """
+    version_path = os.path.join(BASE_CLONE_DIR, "VERSION")
+    try:
+        with open(version_path) as f:
+            raw = f.read().strip()
+        return re.sub(r'[A-Za-z]+\d+$', '', raw) or SOURCE_BASE_BRANCH.removeprefix("v")
+    except OSError:
+        return SOURCE_BASE_BRANCH.removeprefix("v")
 
 
 def get_version_info():
     """Get version information for naming - includes hour+minute for on-demand builds"""
     current_datetime = datetime.now().strftime("%y%m%d%H%M")
-    version = SOURCE_BASE_BRANCH.removeprefix("v")
+    version = get_addon_version()
     pyversion = "py311"
     return version, pyversion, current_datetime
 
@@ -266,7 +284,7 @@ def get_release_tag(timestamp=None):
     """Generate release tag with timestamp for on-demand builds"""
     if timestamp is None:
         timestamp = datetime.now().strftime("%y%m%d%H%M")
-    version = SOURCE_BASE_BRANCH.removeprefix("v")
+    version = get_addon_version()
     pyversion = "py311"
     return f"v{version}-alpha{timestamp}"
 
