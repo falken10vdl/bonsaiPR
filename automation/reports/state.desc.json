@@ -2,14 +2,30 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 175,
-    "merged": 579,
+    "merged": 581,
     "skipped_conflict": 82,
     "skipped_draft": 67,
-    "total": 903
+    "total": 905
   },
-  "generated_at": "2026-10-18T14:51:33Z",
+  "generated_at": "2026-10-18T16:51:32Z",
   "merge_order": "descending",
   "prs": {
+    "10001": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/28-load-case-groups",
+      "head": "75799d6",
+      "status": "merged",
+      "title": "Structural Analysis 28: Recognise load groups typed as load cases",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10001"
+    },
+    "10002": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/29-model-axes",
+      "head": "d2f4d4d",
+      "status": "merged",
+      "title": "Structural Analysis 29: Read global loads in the model's axes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10002"
+    },
     "2093": {
       "author": "ilkinkavi",
       "branch": "v0.7.0",
@@ -7411,8 +7427,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610181621",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610181621"
+    "tag": "v0.9.1-alpha2610181821",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610181821"
   },
   "schema": 1
 }
