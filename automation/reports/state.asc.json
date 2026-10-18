@@ -3,11 +3,11 @@
   "counts": {
     "failed": 172,
     "merged": 546,
-    "skipped_conflict": 112,
+    "skipped_conflict": 113,
     "skipped_draft": 67,
-    "total": 897
+    "total": 898
   },
-  "generated_at": "2026-10-17T21:20:38Z",
+  "generated_at": "2026-10-18T02:19:58Z",
   "merge_order": "ascending",
   "prs": {
     "2093": {
@@ -6927,7 +6927,7 @@
       "branch": "structural-loads/1-fixes",
       "head": "5027ff7",
       "status": "skipped_conflict",
-      "title": "Structural: fix load cases, load groups and activities",
+      "title": "Structural Analysis 1: Fix load cases, load groups and activities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9868"
     },
     "9869": {
@@ -6935,7 +6935,7 @@
       "branch": "structural-loads/2-apply-edit",
       "head": "3de8745",
       "status": "skipped_conflict",
-      "title": "Structural: streamline applying and editing loads",
+      "title": "Structural Analysis 2: Streamline applying and editing loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9869"
     },
     "9870": {
@@ -6943,7 +6943,7 @@
       "branch": "structural-loads/3-diagrams",
       "head": "5750ba1",
       "status": "skipped_conflict",
-      "title": "Structural: readable point force diagrams in Show Loads",
+      "title": "Structural Analysis 3: Readable point force diagrams in Show Loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9870"
     },
     "9871": {
@@ -6951,7 +6951,7 @@
       "branch": "structural-loads/4-viewport-editing",
       "head": "8131393",
       "status": "skipped_conflict",
-      "title": "Structural: edit loads from the viewport",
+      "title": "Structural Analysis 4: Edit loads from the viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9871"
     },
     "9872": {
@@ -6959,7 +6959,7 @@
       "branch": "structural-loads/5-item-loads",
       "head": "7b816d8",
       "status": "skipped_conflict",
-      "title": "Structural: see and show a structural item's loads",
+      "title": "Structural Analysis 5: See and show a structural item's loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9872"
     },
     "9885": {
@@ -6993,7 +6993,7 @@
       "branch": "structural-loads/6-input-display",
       "head": "b521d32",
       "status": "skipped_conflict",
-      "title": "Enter loads by eighths and refine their display",
+      "title": "Structural Analysis 6: Enter loads by eighths and refine their display",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9900"
     },
     "9901": {
@@ -7001,7 +7001,7 @@
       "branch": "structural-loads/7-knowns-unknowns",
       "head": "ed5307e",
       "status": "skipped_conflict",
-      "title": "Lock known force values and solve the unknowns",
+      "title": "Structural Analysis 7: Lock known force values and solve the unknowns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9901"
     },
     "9902": {
@@ -7009,7 +7009,7 @@
       "branch": "structural-loads/8-point-axes",
       "head": "5bf3937",
       "status": "skipped_conflict",
-      "title": "Tilt structural point axes in the X-Z plane",
+      "title": "Structural Analysis 8: Tilt structural point axes in the X-Z plane",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9902"
     },
     "9903": {
@@ -7017,7 +7017,7 @@
       "branch": "structural-loads/9-calculation-reports",
       "head": "cae077b",
       "status": "skipped_conflict",
-      "title": "Export structural calculation reports",
+      "title": "Structural Analysis 9: Export structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9903"
     },
     "9904": {
@@ -7025,7 +7025,7 @@
       "branch": "structural-loads/10-inclines",
       "head": "bb330b9",
       "status": "skipped_conflict",
-      "title": "Resolve forces on inclines and from known components",
+      "title": "Structural Analysis 10: Resolve forces on inclines and from known components",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9904"
     },
     "9905": {
@@ -7033,7 +7033,7 @@
       "branch": "structural-loads/11-report-docs",
       "head": "7537a8b",
       "status": "skipped_conflict",
-      "title": "Document structural calculation reports",
+      "title": "Structural Analysis 11: Document structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9905"
     },
     "9911": {
@@ -7041,7 +7041,7 @@
       "branch": "structural-loads/12-analysis-notes",
       "head": "edc4894",
       "status": "skipped_conflict",
-      "title": "Fold structural analysis plans into the dev note",
+      "title": "Structural Analysis 12: Fold structural analysis plans into the dev note",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9911"
     },
     "9912": {
@@ -7049,7 +7049,7 @@
       "branch": "structural-loads/13-resultant-axis",
       "head": "4eac910",
       "status": "skipped_conflict",
-      "title": "Measure a resultant's angle from any axis",
+      "title": "Structural Analysis 13: Measure a resultant's angle from any axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9912"
     },
     "9914": {
@@ -7065,7 +7065,7 @@
       "branch": "structural-loads/14-diagram-legibility",
       "head": "b568f86",
       "status": "skipped_conflict",
-      "title": "Make structural load diagrams more legible",
+      "title": "Structural Analysis 14: Make structural load diagrams more legible",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9915"
     },
     "9917": {
@@ -7073,7 +7073,7 @@
       "branch": "structural-loads/15-point-axes-input",
       "head": "22cd8d8",
       "status": "skipped_conflict",
-      "title": "Enter loads against point axes and edit loads by clicking",
+      "title": "Structural Analysis 15: Enter loads against point axes and edit loads by clicking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9917"
     },
     "9923": {
@@ -7081,7 +7081,7 @@
       "branch": "structural-loads/16-y-axis",
       "head": "10016e8",
       "status": "skipped_conflict",
-      "title": "Draw the +Y axis at loaded points",
+      "title": "Structural Analysis 16: Draw the +Y axis at loaded points",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9923"
     },
     "9924": {
@@ -7089,7 +7089,7 @@
       "branch": "structural-loads/17-equal-magnitudes",
       "head": "5ff2054",
       "status": "skipped_conflict",
-      "title": "Link load magnitudes, equal or by a ratio",
+      "title": "Structural Analysis 17: Link load magnitudes, equal or by a ratio",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9924"
     },
     "9925": {
@@ -7097,7 +7097,7 @@
       "branch": "structural-loads/18-found-marks",
       "head": "10d28ed",
       "status": "skipped_conflict",
-      "title": "Mark found slopes and resultants with a padlock",
+      "title": "Structural Analysis 18: Mark found slopes and resultants with a padlock",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9925"
     },
     "9933": {
@@ -7105,7 +7105,7 @@
       "branch": "structural-loads/19-moments",
       "head": "7404a7f",
       "status": "skipped_conflict",
-      "title": "Take moments of point forces about a point",
+      "title": "Structural Analysis 19: Take moments of point forces about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9933"
     },
     "9935": {
@@ -7122,7 +7122,7 @@
       "branch": "structural-loads/20-moment-editing",
       "head": "160396b",
       "status": "skipped_conflict",
-      "title": "Edit the moment centre from moments drawn",
+      "title": "Structural Analysis 20: Edit the moment centre from moments drawn",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9936"
     },
     "9938": {
@@ -7130,7 +7130,7 @@
       "branch": "structural-loads/21-resultant-moment",
       "head": "3b134e0",
       "status": "skipped_conflict",
-      "title": "Set and keep a resultant moment about a point",
+      "title": "Structural Analysis 21: Set and keep a resultant moment about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9938"
     },
     "9939": {
@@ -7138,7 +7138,7 @@
       "branch": "structural-loads/22-position-unknowns",
       "head": "b810690",
       "status": "skipped_conflict",
-      "title": "Find where the moment centre must be",
+      "title": "Structural Analysis 22: Find where the moment centre must be",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9939"
     },
     "9940": {
@@ -7146,7 +7146,7 @@
       "branch": "structural-loads/23-signed-moments",
       "head": "4771c5a",
       "status": "skipped_conflict",
-      "title": "Show moments signed, counter-clockwise positive",
+      "title": "Structural Analysis 23: Show moments signed, counter-clockwise positive",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9940"
     },
     "9941": {
@@ -7162,7 +7162,7 @@
       "branch": "structural-loads/24-force-position",
       "head": "87d6fbb",
       "status": "skipped_conflict",
-      "title": "Find where a force must act for a kept moment",
+      "title": "Structural Analysis 24: Find where a force must act for a kept moment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9943"
     },
     "9944": {
@@ -7170,7 +7170,7 @@
       "branch": "structural-loads/25-moment-dimensions",
       "head": "725312f",
       "status": "skipped_conflict",
-      "title": "Dimension a force's place from A and its arm's slope",
+      "title": "Structural Analysis 25: Dimension a force's place from A and its arm's slope",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
     },
     "9958": {
@@ -7187,7 +7187,7 @@
       "branch": "structural-loads/26-keep-on-move",
       "head": "df6530d",
       "status": "skipped_conflict",
-      "title": "Keep kept moments as structural points move",
+      "title": "Structural Analysis 26: Keep kept moments as structural points move",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9961"
     },
     "9964": {
@@ -7357,11 +7357,19 @@
       "status": "skipped_conflict",
       "title": "List and manage every kind of group in Groups",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9989"
+    },
+    "9990": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/27-reference-angle-unit",
+      "head": "5260801",
+      "status": "skipped_conflict",
+      "title": "Structural Analysis 27: Label structural topology as Reference; default angle unit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9990"
     }
   },
   "release": {
-    "tag": "v0.9.0-alpha2610172250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610172250"
+    "tag": "v0.9.0-alpha2610180350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.0-alpha2610180350"
   },
   "schema": 1
 }
