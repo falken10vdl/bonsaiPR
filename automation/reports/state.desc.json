@@ -3,11 +3,11 @@
   "counts": {
     "failed": 177,
     "merged": 582,
-    "skipped_conflict": 82,
+    "skipped_conflict": 83,
     "skipped_draft": 68,
-    "total": 909
+    "total": 910
   },
-  "generated_at": "2026-10-19T12:53:01Z",
+  "generated_at": "2026-10-19T14:54:46Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -66,6 +66,14 @@
       "status": "merged",
       "title": "Update pyodide wasm demo and wheels ref",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10010"
+    },
+    "10015": {
+      "author": "JocelinBirling",
+      "branch": "BonsaiViewer_Ribbon_Display_Proposal",
+      "head": "d1427f1",
+      "status": "merged",
+      "title": "Bonsai Viewer : Proposal for a new Display Function Panel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10015"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -6901,7 +6909,7 @@
       "author": "htlcnn",
       "branch": "feature/revit-multi-selection-orbit",
       "head": "4e14646",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Add Revit-style multi-selection orbit pivot",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9841"
     },
@@ -7461,8 +7469,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610191422",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191422"
+    "tag": "v0.9.1-alpha2610191623",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191623"
   },
   "schema": 1
 }
