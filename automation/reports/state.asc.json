@@ -3,11 +3,11 @@
   "counts": {
     "failed": 177,
     "merged": 547,
-    "skipped_conflict": 114,
+    "skipped_conflict": 115,
     "skipped_draft": 67,
-    "total": 905
+    "total": 906
   },
-  "generated_at": "2026-10-18T18:21:27Z",
+  "generated_at": "2026-10-19T01:21:35Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -25,6 +25,14 @@
       "status": "skipped_conflict",
       "title": "Structural Analysis 29: Read global loads in the model's axes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10002"
+    },
+    "10003": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/30-push-direction",
+      "head": "2cb23fb",
+      "status": "skipped_conflict",
+      "title": "Structural Analysis 30: Name pushes by the side they arrive from",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10003"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7429,8 +7437,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610181950",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610181950"
+    "tag": "v0.9.1-alpha2610190250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610190250"
   },
   "schema": 1
 }
