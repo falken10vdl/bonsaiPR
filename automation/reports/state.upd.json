@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 178,
-    "merged": 581,
-    "skipped_conflict": 80,
-    "skipped_draft": 67,
-    "total": 906
+    "merged": 582,
+    "skipped_conflict": 81,
+    "skipped_draft": 68,
+    "total": 909
   },
-  "generated_at": "2026-10-19T09:24:50Z",
+  "generated_at": "2026-10-19T11:26:24Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -42,6 +42,30 @@
       "status": "failed",
       "title": "Fix IfcSweptDiskSolidPolygonal FilletRadius",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10006"
+    },
+    "10007": {
+      "author": "Moult",
+      "branch": "fix/occt-sweep-ring-pcurve",
+      "head": "da96941",
+      "status": "merged",
+      "title": "Patch OCCT swept ring pcurve reversal",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10007"
+    },
+    "10008": {
+      "author": "Moult",
+      "branch": "wip/claude-detect-fixes-837",
+      "head": "8b235c1",
+      "status": "skipped_draft",
+      "title": "[DO NOT MERGE] Integration of open geometry-fix PRs for #837",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10008"
+    },
+    "10010": {
+      "author": "aothms",
+      "branch": "update-pyodide-wasm-demo",
+      "head": "f9bcb1a",
+      "status": "merged",
+      "title": "Update pyodide wasm demo and wheels ref",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10010"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7423,7 +7447,7 @@
       "author": "Moult",
       "branch": "chore/test-input-1030-rename",
       "head": "ef7f55e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bump test files for the renamed 1030 sample",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9996"
     },
@@ -7438,8 +7462,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610191054",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191054"
+    "tag": "v0.9.1-alpha2610191255",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191255"
   },
   "schema": 1
 }
