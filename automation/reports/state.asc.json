@@ -3,11 +3,11 @@
   "counts": {
     "failed": 179,
     "merged": 547,
-    "skipped_conflict": 116,
-    "skipped_draft": 68,
+    "skipped_conflict": 115,
+    "skipped_draft": 69,
     "total": 910
   },
-  "generated_at": "2026-10-19T14:22:34Z",
+  "generated_at": "2026-10-19T16:21:31Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -71,7 +71,7 @@
       "author": "JocelinBirling",
       "branch": "BonsaiViewer_Ribbon_Display_Proposal",
       "head": "d1427f1",
-      "status": "skipped_conflict",
+      "status": "skipped_draft",
       "title": "Bonsai Viewer : Proposal for a new Display Function Panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10015"
     },
@@ -7471,8 +7471,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610191550",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191550"
+    "tag": "v0.9.1-alpha2610191750",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191750"
   },
   "schema": 1
 }

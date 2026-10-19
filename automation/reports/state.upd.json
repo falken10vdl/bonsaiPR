@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 178,
-    "merged": 582,
+    "merged": 583,
     "skipped_conflict": 82,
-    "skipped_draft": 68,
-    "total": 910
+    "skipped_draft": 69,
+    "total": 912
   },
-  "generated_at": "2026-10-19T15:27:46Z",
+  "generated_at": "2026-10-19T17:25:58Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -71,9 +71,25 @@
       "author": "JocelinBirling",
       "branch": "BonsaiViewer_Ribbon_Display_Proposal",
       "head": "d1427f1",
-      "status": "merged",
+      "status": "skipped_draft",
       "title": "Bonsai Viewer : Proposal for a new Display Function Panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10015"
+    },
+    "10016": {
+      "author": "JocelinBirling",
+      "branch": "Display_Control_1",
+      "head": "2584b3f",
+      "status": "merged",
+      "title": "Bonsai Viewer: Display_Control",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10016"
+    },
+    "10017": {
+      "author": "theoryshaw",
+      "branch": "structural-loads/31-axes-named",
+      "head": "b266cd4",
+      "status": "merged",
+      "title": "Structural Analysis 31: Point axes named in names, and their components shown",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10017"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7470,8 +7486,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610191656",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191656"
+    "tag": "v0.9.1-alpha2610191855",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191855"
   },
   "schema": 1
 }
