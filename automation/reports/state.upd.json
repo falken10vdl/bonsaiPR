@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 176,
-    "merged": 583,
-    "skipped_conflict": 81,
+    "failed": 178,
+    "merged": 581,
+    "skipped_conflict": 80,
     "skipped_draft": 67,
-    "total": 907
+    "total": 906
   },
-  "generated_at": "2026-10-19T02:23:21Z",
+  "generated_at": "2026-10-19T07:22:46Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -34,13 +34,14 @@
       "title": "Structural Analysis 30: Name pushes by the side they arrive from",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10003"
     },
-    "10005": {
-      "author": "theoryshaw",
-      "branch": "convert-length-unit-ui",
-      "head": "a2ef104",
-      "status": "merged",
-      "title": "Convert project units from the Units panel",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10005"
+    "10006": {
+      "author": "Moult",
+      "branch": "fix/geom-swept-disk-fillet-435",
+      "head": "74250ea",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix IfcSweptDiskSolidPolygonal FilletRadius",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10006"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -4266,7 +4267,8 @@
       "author": "BIMvoice",
       "branch": "fix/get-quantities-complex-verbose-keyerror",
       "head": "7e1c707",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "util.element: fix KeyError in get_quantities(verbose=True), the twin of a fix already applied to get_properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9126"
     },
@@ -7295,14 +7297,6 @@
       "title": "fix(bonsai): prevent crash when cycling UI parameter with empty distance (#9974)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9975"
     },
-    "9976": {
-      "author": "Moult",
-      "branch": "fix/util-element-complex-quantity-verbose",
-      "head": "55f3ff2",
-      "status": "merged",
-      "title": "util.element: fix IfcPhysicalComplexQuantity KeyError when verbose=True",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9976"
-    },
     "9977": {
       "author": "myoualid",
       "branch": "v0.9.0",
@@ -7444,8 +7438,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610190353",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610190353"
+    "tag": "v0.9.1-alpha2610190852",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610190852"
   },
   "schema": 1
 }
