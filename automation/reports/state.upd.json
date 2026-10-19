@@ -3,11 +3,11 @@
   "counts": {
     "failed": 178,
     "merged": 582,
-    "skipped_conflict": 81,
+    "skipped_conflict": 82,
     "skipped_draft": 68,
-    "total": 909
+    "total": 910
   },
-  "generated_at": "2026-10-19T11:26:24Z",
+  "generated_at": "2026-10-19T13:25:11Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -54,7 +54,7 @@
     "10008": {
       "author": "Moult",
       "branch": "wip/claude-detect-fixes-837",
-      "head": "8b235c1",
+      "head": "6334063",
       "status": "skipped_draft",
       "title": "[DO NOT MERGE] Integration of open geometry-fix PRs for #837",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10008"
@@ -63,9 +63,17 @@
       "author": "aothms",
       "branch": "update-pyodide-wasm-demo",
       "head": "f9bcb1a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Update pyodide wasm demo and wheels ref",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10010"
+    },
+    "10015": {
+      "author": "JocelinBirling",
+      "branch": "BonsaiViewer_Ribbon_Display_Proposal",
+      "head": "d1427f1",
+      "status": "merged",
+      "title": "Bonsai Viewer : Proposal for a new Display Function Panel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10015"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -6902,7 +6910,7 @@
       "author": "htlcnn",
       "branch": "feature/revit-multi-selection-orbit",
       "head": "4e14646",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Add Revit-style multi-selection orbit pivot",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9841"
     },
@@ -7446,9 +7454,9 @@
     "9996": {
       "author": "Moult",
       "branch": "chore/test-input-1030-rename",
-      "head": "ef7f55e",
-      "status": "skipped_conflict",
-      "title": "Bump test files for the renamed 1030 sample",
+      "head": "b4efa05",
+      "status": "merged",
+      "title": "Bump test files to IfcOpenShell/files 9cb840a",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9996"
     },
     "9997": {
@@ -7462,8 +7470,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610191255",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191255"
+    "tag": "v0.9.1-alpha2610191454",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191454"
   },
   "schema": 1
 }

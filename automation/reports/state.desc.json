@@ -3,11 +3,11 @@
   "counts": {
     "failed": 177,
     "merged": 582,
-    "skipped_conflict": 81,
+    "skipped_conflict": 82,
     "skipped_draft": 68,
-    "total": 908
+    "total": 909
   },
-  "generated_at": "2026-10-19T10:54:23Z",
+  "generated_at": "2026-10-19T12:53:01Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -54,10 +54,18 @@
     "10008": {
       "author": "Moult",
       "branch": "wip/claude-detect-fixes-837",
-      "head": "8b235c1",
+      "head": "6334063",
       "status": "skipped_draft",
       "title": "[DO NOT MERGE] Integration of open geometry-fix PRs for #837",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10008"
+    },
+    "10010": {
+      "author": "aothms",
+      "branch": "update-pyodide-wasm-demo",
+      "head": "f9bcb1a",
+      "status": "merged",
+      "title": "Update pyodide wasm demo and wheels ref",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10010"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7437,9 +7445,9 @@
     "9996": {
       "author": "Moult",
       "branch": "chore/test-input-1030-rename",
-      "head": "ef7f55e",
-      "status": "merged",
-      "title": "Bump test files for the renamed 1030 sample",
+      "head": "b4efa05",
+      "status": "skipped_conflict",
+      "title": "Bump test files to IfcOpenShell/files 9cb840a",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9996"
     },
     "9997": {
@@ -7453,8 +7461,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610191223",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191223"
+    "tag": "v0.9.1-alpha2610191422",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191422"
   },
   "schema": 1
 }
