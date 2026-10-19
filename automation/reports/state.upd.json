@@ -4,10 +4,10 @@
     "failed": 178,
     "merged": 583,
     "skipped_conflict": 82,
-    "skipped_draft": 69,
-    "total": 912
+    "skipped_draft": 68,
+    "total": 911
   },
-  "generated_at": "2026-10-19T17:25:58Z",
+  "generated_at": "2026-10-19T19:25:54Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -66,14 +66,6 @@
       "status": "skipped_conflict",
       "title": "Update pyodide wasm demo and wheels ref",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10010"
-    },
-    "10015": {
-      "author": "JocelinBirling",
-      "branch": "BonsaiViewer_Ribbon_Display_Proposal",
-      "head": "d1427f1",
-      "status": "skipped_draft",
-      "title": "Bonsai Viewer : Proposal for a new Display Function Panel",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10015"
     },
     "10016": {
       "author": "JocelinBirling",
@@ -7486,8 +7478,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610191855",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191855"
+    "tag": "v0.9.1-alpha2610192054",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610192054"
   },
   "schema": 1
 }

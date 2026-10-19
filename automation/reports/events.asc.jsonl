@@ -8691,3 +8691,6 @@
 {"ts": "2026-10-19T12:21:21Z", "order": "ascending", "pr": 10010, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-10-19T14:22:34Z", "order": "ascending", "pr": 10015, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-10-19T16:21:31Z", "order": "ascending", "pr": 10015, "event": "status", "from": "skipped_conflict", "to": "skipped_draft"}
+{"ts": "2026-10-19T18:21:55Z", "order": "ascending", "pr": 10015, "event": "removed", "from": "skipped_draft"}
+{"ts": "2026-10-19T18:21:55Z", "order": "ascending", "pr": 10016, "event": "added", "to": "skipped_conflict"}
+{"ts": "2026-10-19T18:21:55Z", "order": "ascending", "pr": 10017, "event": "added", "to": "skipped_conflict"}
