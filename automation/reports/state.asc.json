@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 178,
-    "merged": 547,
-    "skipped_conflict": 115,
+    "failed": 179,
+    "merged": 546,
+    "skipped_conflict": 114,
     "skipped_draft": 67,
-    "total": 907
+    "total": 906
   },
-  "generated_at": "2026-10-19T06:20:41Z",
+  "generated_at": "2026-10-19T08:21:40Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -4267,7 +4267,8 @@
       "author": "BIMvoice",
       "branch": "fix/get-quantities-complex-verbose-keyerror",
       "head": "7e1c707",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "util.element: fix KeyError in get_quantities(verbose=True), the twin of a fix already applied to get_properties",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9126"
     },
@@ -7297,14 +7298,6 @@
       "title": "fix(bonsai): prevent crash when cycling UI parameter with empty distance (#9974)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9975"
     },
-    "9976": {
-      "author": "Moult",
-      "branch": "fix/util-element-complex-quantity-verbose",
-      "head": "55f3ff2",
-      "status": "skipped_conflict",
-      "title": "util.element: fix IfcPhysicalComplexQuantity KeyError when verbose=True",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9976"
-    },
     "9977": {
       "author": "myoualid",
       "branch": "v0.9.0",
@@ -7446,8 +7439,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610190750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610190750"
+    "tag": "v0.9.1-alpha2610190950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610190950"
   },
   "schema": 1
 }
