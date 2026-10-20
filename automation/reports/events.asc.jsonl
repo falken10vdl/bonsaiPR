@@ -8697,3 +8697,6 @@
 {"ts": "2026-10-20T00:21:22Z", "order": "ascending", "pr": 10006, "event": "updated", "status": "failed", "from_head": "74250ea", "to_head": "758dff0"}
 {"ts": "2026-10-20T00:21:22Z", "order": "ascending", "pr": 10008, "event": "updated", "status": "skipped_draft", "from_head": "6334063", "to_head": "fe0a2f3"}
 {"ts": "2026-10-20T00:21:22Z", "order": "ascending", "pr": 10018, "event": "added", "to": "failed"}
+{"ts": "2026-10-20T10:21:03Z", "order": "ascending", "pr": 9996, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-10-20T10:21:03Z", "order": "ascending", "pr": 10010, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-20T10:21:03Z", "order": "ascending", "pr": 10021, "event": "added", "to": "failed"}
