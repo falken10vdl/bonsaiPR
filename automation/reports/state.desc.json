@@ -3,11 +3,11 @@
   "counts": {
     "failed": 180,
     "merged": 583,
-    "skipped_conflict": 82,
+    "skipped_conflict": 83,
     "skipped_draft": 68,
-    "total": 913
+    "total": 914
   },
-  "generated_at": "2026-10-20T10:52:28Z",
+  "generated_at": "2026-10-20T14:56:18Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -100,6 +100,14 @@
       "status": "failed",
       "title": "Skip OCCT's self-intersection fix on faces with holes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10021"
+    },
+    "10023": {
+      "author": "joepaddock-uk",
+      "branch": "ifctester-partof-labels",
+      "head": "2f4d507",
+      "status": "merged",
+      "title": "ifctester: describe a partOf facet that names no relation",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10023"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -4903,7 +4911,7 @@
     "9243": {
       "author": "CyrilWaechter",
       "branch": "space-regeneration-sloped-roof-clipped-extrusion",
-      "head": "032b3a1",
+      "head": "244536e",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
@@ -5033,7 +5041,7 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-partof-relation-recursion",
       "head": "263cbb1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifctester: PartOf group and containment do not recurse",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9272"
     },
@@ -7496,8 +7504,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610201222",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610201222"
+    "tag": "v0.9.1-alpha2610201623",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610201623"
   },
   "schema": 1
 }
