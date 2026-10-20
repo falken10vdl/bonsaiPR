@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 182,
+    "failed": 177,
     "merged": 547,
-    "skipped_conflict": 117,
+    "skipped_conflict": 122,
     "skipped_draft": 68,
     "total": 914
   },
-  "generated_at": "2026-10-20T14:22:40Z",
+  "generated_at": "2026-10-20T17:22:21Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -3678,8 +3678,7 @@
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
       "head": "9b28444",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     },
@@ -4853,8 +4852,7 @@
       "author": "CyrilWaechter",
       "branch": "auto-generate-ifc-based-space-boundaries",
       "head": "243f13d",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Replace blender based space boundary generation with IFC based",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
     },
@@ -4862,8 +4860,7 @@
       "author": "CyrilWaechter",
       "branch": "auto-container-regen",
       "head": "adf01be",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Use space's own container for regeneration instead of requiring default",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9225"
     },
@@ -4871,8 +4868,7 @@
       "author": "CyrilWaechter",
       "branch": "fix-8043-boundary-loop-closing-edge",
       "head": "c34a6dd",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Bonsai: close IfcPolyline loops by appending the closing edge",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9226"
     },
@@ -4911,9 +4907,8 @@
     "9243": {
       "author": "CyrilWaechter",
       "branch": "space-regeneration-sloped-roof-clipped-extrusion",
-      "head": "244536e",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "8c0a870",
+      "status": "skipped_conflict",
       "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9243"
     },
@@ -7506,8 +7501,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610201550",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610201550"
+    "tag": "v0.9.1-alpha2610201850",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610201850"
   },
   "schema": 1
 }

@@ -1,20 +1,20 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 181,
-    "merged": 583,
-    "skipped_conflict": 82,
+    "failed": 176,
+    "merged": 555,
+    "skipped_conflict": 111,
     "skipped_draft": 68,
-    "total": 914
+    "total": 910
   },
-  "generated_at": "2026-10-20T15:30:01Z",
+  "generated_at": "2026-10-20T18:26:39Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
       "author": "theoryshaw",
       "branch": "structural-loads/28-load-case-groups",
       "head": "75799d6",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 28: Recognise load groups typed as load cases",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10001"
     },
@@ -22,7 +22,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/29-model-axes",
       "head": "d2f4d4d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 29: Read global loads in the model's axes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10002"
     },
@@ -30,7 +30,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/30-push-direction",
       "head": "2cb23fb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 30: Name pushes by the side they arrive from",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10003"
     },
@@ -79,7 +79,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/31-axes-named",
       "head": "b266cd4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 31: Point axes named in names, and their components shown",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10017"
     },
@@ -2204,7 +2204,7 @@
       "author": "BIMvoice",
       "branch": "fix-3747-curtain-wall-space-bounding",
       "head": "61edfe7",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: let curtain wall members/plates close space boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8596"
     },
@@ -2252,7 +2252,7 @@
     "8607": {
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
-      "head": "4f0e572",
+      "head": "702e031",
       "status": "merged",
       "title": "Add copy attribute to selection for boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8607"
@@ -3395,7 +3395,7 @@
       "author": "BIMvoice",
       "branch": "fix/8934-spatial-panel-regex-filter",
       "head": "7c33929",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add regex pattern matching to spatial decomposition panel filters",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8944"
     },
@@ -3677,9 +3677,8 @@
     "9005": {
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
-      "head": "9b28444",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "044e8af",
+      "status": "merged",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     },
@@ -4757,7 +4756,7 @@
       "author": "BIMvoice",
       "branch": "silent-noop-core-tool-audit",
       "head": "542d675",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: raise, not no-op, on missing polygon",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9197"
     },
@@ -4849,33 +4848,6 @@
       "title": "Bonsai: a space you just generated is hidden immediately (#9214)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9219"
     },
-    "9221": {
-      "author": "CyrilWaechter",
-      "branch": "auto-generate-ifc-based-space-boundaries",
-      "head": "243f13d",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Replace blender based space boundary generation with IFC based",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
-    },
-    "9225": {
-      "author": "CyrilWaechter",
-      "branch": "auto-container-regen",
-      "head": "adf01be",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Use space's own container for regeneration instead of requiring default",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9225"
-    },
-    "9226": {
-      "author": "CyrilWaechter",
-      "branch": "fix-8043-boundary-loop-closing-edge",
-      "head": "c34a6dd",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bonsai: close IfcPolyline loops by appending the closing edge",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9226"
-    },
     "9228": {
       "author": "theoryshaw",
       "branch": "dev-environment-detect-python",
@@ -4907,15 +4879,6 @@
       "status": "merged",
       "title": "dev_environment.py: survive a locked file while symlinking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
-    },
-    "9243": {
-      "author": "CyrilWaechter",
-      "branch": "space-regeneration-sloped-roof-clipped-extrusion",
-      "head": "244536e",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9243"
     },
     "9248": {
       "author": "BIMvoice",
@@ -7092,7 +7055,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/6-input-display",
       "head": "b521d32",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 6: Enter loads by eighths and refine their display",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9900"
     },
@@ -7100,7 +7063,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/7-knowns-unknowns",
       "head": "ed5307e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 7: Lock known force values and solve the unknowns",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9901"
     },
@@ -7108,7 +7071,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/8-point-axes",
       "head": "5bf3937",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 8: Tilt structural point axes in the X-Z plane",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9902"
     },
@@ -7116,7 +7079,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/9-calculation-reports",
       "head": "cae077b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 9: Export structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9903"
     },
@@ -7124,7 +7087,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/10-inclines",
       "head": "bb330b9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 10: Resolve forces on inclines and from known components",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9904"
     },
@@ -7132,7 +7095,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/11-report-docs",
       "head": "7537a8b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 11: Document structural calculation reports",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9905"
     },
@@ -7140,7 +7103,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/12-analysis-notes",
       "head": "edc4894",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 12: Fold structural analysis plans into the dev note",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9911"
     },
@@ -7148,7 +7111,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/13-resultant-axis",
       "head": "4eac910",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 13: Measure a resultant's angle from any axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9912"
     },
@@ -7164,7 +7127,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/14-diagram-legibility",
       "head": "b568f86",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 14: Make structural load diagrams more legible",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9915"
     },
@@ -7172,7 +7135,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/15-point-axes-input",
       "head": "22cd8d8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 15: Enter loads against point axes and edit loads by clicking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9917"
     },
@@ -7180,7 +7143,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/16-y-axis",
       "head": "10016e8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 16: Draw the +Y axis at loaded points",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9923"
     },
@@ -7188,7 +7151,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/17-equal-magnitudes",
       "head": "5ff2054",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 17: Link load magnitudes, equal or by a ratio",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9924"
     },
@@ -7196,7 +7159,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/18-found-marks",
       "head": "10d28ed",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 18: Mark found slopes and resultants with a padlock",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9925"
     },
@@ -7204,7 +7167,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/19-moments",
       "head": "7404a7f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 19: Take moments of point forces about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9933"
     },
@@ -7221,7 +7184,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/20-moment-editing",
       "head": "160396b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 20: Edit the moment centre from moments drawn",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9936"
     },
@@ -7229,7 +7192,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/21-resultant-moment",
       "head": "3b134e0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 21: Set and keep a resultant moment about a point",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9938"
     },
@@ -7237,7 +7200,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/22-position-unknowns",
       "head": "b810690",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 22: Find where the moment centre must be",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9939"
     },
@@ -7245,7 +7208,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/23-signed-moments",
       "head": "4771c5a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 23: Show moments signed, counter-clockwise positive",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9940"
     },
@@ -7261,7 +7224,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/24-force-position",
       "head": "87d6fbb",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 24: Find where a force must act for a kept moment",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9943"
     },
@@ -7269,7 +7232,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/25-moment-dimensions",
       "head": "725312f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 25: Dimension a force's place from A and its arm's slope",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9944"
     },
@@ -7286,7 +7249,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/26-keep-on-move",
       "head": "df6530d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 26: Keep kept moments as structural points move",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9961"
     },
@@ -7455,7 +7418,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/27-reference-angle-unit",
       "head": "5260801",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 27: Label structural topology as Reference; default angle unit",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9990"
     },
@@ -7505,8 +7468,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610201657",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610201657"
+    "tag": "v0.9.1-alpha2610201955",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610201955"
   },
   "schema": 1
 }

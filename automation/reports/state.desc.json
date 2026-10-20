@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 180,
+    "failed": 175,
     "merged": 583,
-    "skipped_conflict": 83,
+    "skipped_conflict": 84,
     "skipped_draft": 68,
-    "total": 914
+    "total": 910
   },
-  "generated_at": "2026-10-20T14:56:18Z",
+  "generated_at": "2026-10-20T17:54:03Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -2252,7 +2252,7 @@
     "8607": {
       "author": "CyrilWaechter",
       "branch": "add-copy-boundary-attribute-to-selection",
-      "head": "4f0e572",
+      "head": "702e031",
       "status": "merged",
       "title": "Add copy attribute to selection for boundaries",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8607"
@@ -3677,9 +3677,8 @@
     "9005": {
       "author": "CyrilWaechter",
       "branch": "auto-space-height",
-      "head": "9b28444",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "044e8af",
+      "status": "skipped_conflict",
       "title": "Auto-detect space height + IFC-direct space generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9005"
     },
@@ -4849,33 +4848,6 @@
       "title": "Bonsai: a space you just generated is hidden immediately (#9214)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9219"
     },
-    "9221": {
-      "author": "CyrilWaechter",
-      "branch": "auto-generate-ifc-based-space-boundaries",
-      "head": "243f13d",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Replace blender based space boundary generation with IFC based",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9221"
-    },
-    "9225": {
-      "author": "CyrilWaechter",
-      "branch": "auto-container-regen",
-      "head": "adf01be",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Use space's own container for regeneration instead of requiring default",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9225"
-    },
-    "9226": {
-      "author": "CyrilWaechter",
-      "branch": "fix-8043-boundary-loop-closing-edge",
-      "head": "c34a6dd",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bonsai: close IfcPolyline loops by appending the closing edge",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9226"
-    },
     "9228": {
       "author": "theoryshaw",
       "branch": "dev-environment-detect-python",
@@ -4907,15 +4879,6 @@
       "status": "merged",
       "title": "dev_environment.py: survive a locked file while symlinking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
-    },
-    "9243": {
-      "author": "CyrilWaechter",
-      "branch": "space-regeneration-sloped-roof-clipped-extrusion",
-      "head": "244536e",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Support sloped roofs in space regeneration with clipped extrusion/B-rep fallback",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9243"
     },
     "9248": {
       "author": "BIMvoice",
@@ -7504,8 +7467,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610201623",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610201623"
+    "tag": "v0.9.1-alpha2610201923",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610201923"
   },
   "schema": 1
 }
