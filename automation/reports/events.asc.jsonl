@@ -8707,3 +8707,9 @@
 {"ts": "2026-10-20T17:22:21Z", "order": "ascending", "pr": 9225, "event": "status", "from": "failed", "to": "skipped_conflict"}
 {"ts": "2026-10-20T17:22:21Z", "order": "ascending", "pr": 9226, "event": "status", "from": "failed", "to": "skipped_conflict"}
 {"ts": "2026-10-20T17:22:21Z", "order": "ascending", "pr": 9243, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-10-20T19:21:35Z", "order": "ascending", "pr": 8607, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-20T19:21:35Z", "order": "ascending", "pr": 9005, "event": "removed", "from": "skipped_conflict"}
+{"ts": "2026-10-20T19:21:35Z", "order": "ascending", "pr": 9221, "event": "removed", "from": "skipped_conflict"}
+{"ts": "2026-10-20T19:21:35Z", "order": "ascending", "pr": 9225, "event": "removed", "from": "skipped_conflict"}
+{"ts": "2026-10-20T19:21:35Z", "order": "ascending", "pr": 9226, "event": "removed", "from": "skipped_conflict"}
+{"ts": "2026-10-20T19:21:35Z", "order": "ascending", "pr": 9243, "event": "removed", "from": "skipped_conflict"}
