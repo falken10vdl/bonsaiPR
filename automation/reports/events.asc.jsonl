@@ -8694,3 +8694,6 @@
 {"ts": "2026-10-19T18:21:55Z", "order": "ascending", "pr": 10015, "event": "removed", "from": "skipped_draft"}
 {"ts": "2026-10-19T18:21:55Z", "order": "ascending", "pr": 10016, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-10-19T18:21:55Z", "order": "ascending", "pr": 10017, "event": "added", "to": "skipped_conflict"}
+{"ts": "2026-10-20T00:21:22Z", "order": "ascending", "pr": 10006, "event": "updated", "status": "failed", "from_head": "74250ea", "to_head": "758dff0"}
+{"ts": "2026-10-20T00:21:22Z", "order": "ascending", "pr": 10008, "event": "updated", "status": "skipped_draft", "from_head": "6334063", "to_head": "fe0a2f3"}
+{"ts": "2026-10-20T00:21:22Z", "order": "ascending", "pr": 10018, "event": "added", "to": "failed"}

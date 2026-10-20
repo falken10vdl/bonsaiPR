@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 179,
+    "failed": 180,
     "merged": 547,
     "skipped_conflict": 117,
     "skipped_draft": 68,
-    "total": 911
+    "total": 912
   },
-  "generated_at": "2026-10-19T18:21:55Z",
+  "generated_at": "2026-10-20T00:21:22Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -37,7 +37,7 @@
     "10006": {
       "author": "Moult",
       "branch": "fix/geom-swept-disk-fillet-435",
-      "head": "74250ea",
+      "head": "758dff0",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix IfcSweptDiskSolidPolygonal FilletRadius",
@@ -54,7 +54,7 @@
     "10008": {
       "author": "Moult",
       "branch": "wip/claude-detect-fixes-837",
-      "head": "6334063",
+      "head": "fe0a2f3",
       "status": "skipped_draft",
       "title": "[DO NOT MERGE] Integration of open geometry-fix PRs for #837",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10008"
@@ -82,6 +82,15 @@
       "status": "skipped_conflict",
       "title": "Structural Analysis 31: Point axes named in names, and their components shown",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10017"
+    },
+    "10018": {
+      "author": "Moult",
+      "branch": "fix/geom-swept-disk-corner-workarounds-435",
+      "head": "ad67b5e",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Work around OCCT corner trim failures in swept disks",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10018"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7479,8 +7488,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610191950",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610191950"
+    "tag": "v0.9.1-alpha2610200150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610200150"
   },
   "schema": 1
 }
