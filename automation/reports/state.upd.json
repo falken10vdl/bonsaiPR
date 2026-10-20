@@ -3,11 +3,11 @@
   "counts": {
     "failed": 179,
     "merged": 583,
-    "skipped_conflict": 82,
+    "skipped_conflict": 83,
     "skipped_draft": 68,
-    "total": 912
+    "total": 913
   },
-  "generated_at": "2026-10-20T01:23:09Z",
+  "generated_at": "2026-10-20T09:35:49Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -63,7 +63,7 @@
       "author": "aothms",
       "branch": "update-pyodide-wasm-demo",
       "head": "f9bcb1a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Update pyodide wasm demo and wheels ref",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10010"
     },
@@ -91,6 +91,14 @@
       "status": "failed",
       "title": "Work around OCCT corner trim failures in swept disks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10018"
+    },
+    "10019": {
+      "author": "aothms",
+      "branch": "pyodide-auto-paths",
+      "head": "e9012d8",
+      "status": "merged",
+      "title": "Pyodide auto paths",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10019"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -4128,7 +4136,7 @@
       "author": "BIMvoice",
       "branch": "fix/setworldcoordinatesystem-plan-context-2d",
       "head": "7fa062c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcpatch: fix SetWorldCoordinateSystem writing 3D data into IfcAxis2Placement2D",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9096"
     },
@@ -7472,7 +7480,7 @@
       "author": "Moult",
       "branch": "chore/test-input-1030-rename",
       "head": "b4efa05",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bump test files to IfcOpenShell/files 9cb840a",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9996"
     },
@@ -7487,8 +7495,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610200253",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610200253"
+    "tag": "v0.9.1-alpha2610201054",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610201054"
   },
   "schema": 1
 }
