@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 207,
-    "merged": 552,
+    "merged": 553,
     "skipped_conflict": 78,
     "skipped_draft": 68,
-    "total": 905
+    "total": 906
   },
-  "generated_at": "2026-10-21T18:29:13Z",
+  "generated_at": "2026-10-21T20:28:22Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -130,6 +130,14 @@
       "status": "merged",
       "title": "Replay recorded bSDD responses in classification tests",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10031"
+    },
+    "10032": {
+      "author": "shitobu",
+      "branch": "fix/structural-member-connected-to-attribute-error",
+      "head": "05bdea5",
+      "status": "merged",
+      "title": "fix(bonsai): prevent AttributeError on elements without ConnectedTo (#10026)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10032"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7459,8 +7467,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610211955",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610211955"
+    "tag": "v0.9.1-alpha2610212155",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610212155"
   },
   "schema": 1
 }

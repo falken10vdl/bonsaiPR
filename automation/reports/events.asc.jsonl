@@ -8772,3 +8772,5 @@
 {"ts": "2026-10-21T09:22:33Z", "order": "ascending", "pr": 10023, "event": "removed", "from": "skipped_conflict"}
 {"ts": "2026-10-21T09:22:33Z", "order": "ascending", "pr": 10029, "event": "added", "to": "failed"}
 {"ts": "2026-10-21T15:22:20Z", "order": "ascending", "pr": 10031, "event": "added", "to": "merged"}
+{"ts": "2026-10-21T19:22:35Z", "order": "ascending", "pr": 9484, "event": "updated", "status": "merged", "from_head": "caf2957", "to_head": "79f5682"}
+{"ts": "2026-10-21T19:22:35Z", "order": "ascending", "pr": 9487, "event": "updated", "status": "merged", "from_head": "f5de769", "to_head": "2e5079c"}
