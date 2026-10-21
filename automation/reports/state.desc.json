@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 211,
-    "merged": 550,
-    "skipped_conflict": 80,
+    "failed": 204,
+    "merged": 552,
+    "skipped_conflict": 79,
     "skipped_draft": 68,
-    "total": 909
+    "total": 903
   },
-  "generated_at": "2026-10-21T03:51:54Z",
+  "generated_at": "2026-10-21T07:52:17Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -57,7 +57,7 @@
     "10008": {
       "author": "Moult",
       "branch": "wip/claude-detect-fixes-837",
-      "head": "fe0a2f3",
+      "head": "f9b9247",
       "status": "skipped_draft",
       "title": "[DO NOT MERGE] Integration of open geometry-fix PRs for #837",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10008"
@@ -104,14 +104,6 @@
       "status": "failed",
       "title": "Skip OCCT's self-intersection fix on faces with holes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10021"
-    },
-    "10023": {
-      "author": "joepaddock-uk",
-      "branch": "ifctester-partof-labels",
-      "head": "2f4d507",
-      "status": "merged",
-      "title": "ifctester: describe a partOf facet that names no relation",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10023"
     },
     "10027": {
       "author": "Moult",
@@ -270,9 +262,8 @@
     "7219": {
       "author": "brunopostle",
       "branch": "web_running_pid",
-      "head": "219b7d0",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "124f871",
+      "status": "merged",
       "title": "Put Bonsai webui PID file in a writable location",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7219"
     },
@@ -732,7 +723,7 @@
     "7917": {
       "author": "brunopostle",
       "branch": "bonsai-license",
-      "head": "a072c72",
+      "head": "e680f3b",
       "status": "merged",
       "title": "Bonsai, add license tagging for IFC elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7917"
@@ -740,7 +731,7 @@
     "7918": {
       "author": "brunopostle",
       "branch": "bonsai-drawing-revisions",
-      "head": "f105c6f",
+      "head": "d61116d",
       "status": "skipped_conflict",
       "title": "Bonsai, drawing sheets show git tag revision history in titleblocks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7918"
@@ -2393,24 +2384,6 @@
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
-    "8660": {
-      "author": "brunopostle",
-      "branch": "fix/binary-token-uncaught-exception",
-      "head": "1156a55",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "IfcParse: don't let a malformed binary token abort the parser",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8660"
-    },
-    "8661": {
-      "author": "brunopostle",
-      "branch": "fix/unterminated-string-eof-abort",
-      "head": "aa1a893",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "IfcParse: don't abort when a string literal runs off the end of the file",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8661"
-    },
     "8663": {
       "author": "theoryshaw",
       "branch": "append-asset-material-styles",
@@ -2780,15 +2753,6 @@
       "title": "Bonsai: support aligning a hosted window/door to its wall's exterior/centerline/interior face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8744"
     },
-    "8747": {
-      "author": "brunopostle",
-      "branch": "fix/spflexer-header-leak-raii",
-      "head": "0e94c69",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Fix leak of IfcSpfLexer when read_from_stream returns early or throws",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8747"
-    },
     "8749": {
       "author": "BIMvoice",
       "branch": "bonsai-3303-light-reload",
@@ -2995,24 +2959,6 @@
       "status": "failed",
       "title": "SvgSerializer: emit machine-readable space area attribute; fix double-escaped area label (#1308)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8856"
-    },
-    "8857": {
-      "author": "brunopostle",
-      "branch": "fix/entity-leak-mid-parse-exception",
-      "head": "6b39666",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Fix leak of mid-parse entities when an exception escapes the scan loop",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8857"
-    },
-    "8858": {
-      "author": "brunopostle",
-      "branch": "fix/duplicate-id-instance-leak",
-      "head": "f16ba3d",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Fix leak of entities on duplicate #id",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8858"
     },
     "8859": {
       "author": "BIMvoice",
@@ -5010,7 +4956,8 @@
       "author": "BIMvoice",
       "branch": "fix/ifctester-partof-relation-recursion",
       "head": "263cbb1",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "ifctester: PartOf group and containment do not recurse",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9272"
     },
@@ -5157,9 +5104,8 @@
     "9335": {
       "author": "brunopostle",
       "branch": "fix/ifcviewer-system-wgpu-native",
-      "head": "5d0f9bb",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "d2b3c4b",
+      "status": "merged",
       "title": "ifcviewer: support linking system-packaged wgpu-native and zstd",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9335"
     },
@@ -5621,9 +5567,8 @@
     "9544": {
       "author": "brunopostle",
       "branch": "fix/core-lib-underscore-names",
-      "head": "37c8e9c",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "d4f47fe",
+      "status": "merged",
       "title": "cmake: use underscores in the core shared library names (#9328)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9544"
     },
@@ -7495,8 +7440,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610210522",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610210522"
+    "tag": "v0.9.1-alpha2610210922",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610210922"
   },
   "schema": 1
 }

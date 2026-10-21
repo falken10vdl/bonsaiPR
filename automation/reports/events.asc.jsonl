@@ -8751,3 +8751,18 @@
 {"ts": "2026-10-20T21:28:02Z", "order": "ascending", "pr": 10003, "event": "status", "from": "skipped_conflict", "to": "failed"}
 {"ts": "2026-10-20T21:28:02Z", "order": "ascending", "pr": 10017, "event": "status", "from": "skipped_conflict", "to": "failed"}
 {"ts": "2026-10-21T03:21:06Z", "order": "ascending", "pr": 10027, "event": "added", "to": "failed"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 7219, "event": "status", "from": "failed", "to": "merged"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 7917, "event": "updated", "status": "merged", "from_head": "a072c72", "to_head": "e680f3b"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 7918, "event": "updated", "status": "merged", "from_head": "f105c6f", "to_head": "d61116d"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 8660, "event": "removed", "from": "failed"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 8661, "event": "removed", "from": "failed"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 8747, "event": "removed", "from": "failed"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 8857, "event": "removed", "from": "failed"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 8858, "event": "removed", "from": "failed"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 9335, "event": "status", "from": "failed", "to": "merged"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 9544, "event": "status", "from": "failed", "to": "merged"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 9555, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 9814, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 9982, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 9983, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-10-21T07:21:11Z", "order": "ascending", "pr": 10008, "event": "updated", "status": "skipped_draft", "from_head": "fe0a2f3", "to_head": "f9b9247"}
