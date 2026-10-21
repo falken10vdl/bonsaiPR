@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 211,
+    "failed": 212,
     "merged": 550,
     "skipped_conflict": 79,
     "skipped_draft": 68,
-    "total": 908
+    "total": 909
   },
-  "generated_at": "2026-10-20T22:33:22Z",
+  "generated_at": "2026-10-21T04:23:12Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -112,6 +112,15 @@
       "status": "merged",
       "title": "ifctester: describe a partOf facet that names no relation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10023"
+    },
+    "10027": {
+      "author": "Moult",
+      "branch": "fix/geom-wire-cut-cycle-closed-337",
+      "head": "186a363",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Cut every self-crossing of a wire, not only the first",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10027"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7487,8 +7496,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610210001",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610210001"
+    "tag": "v0.9.1-alpha2610210553",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610210553"
   },
   "schema": 1
 }
