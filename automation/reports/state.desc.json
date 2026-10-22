@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 206,
-    "merged": 553,
+    "merged": 554,
     "skipped_conflict": 79,
     "skipped_draft": 68,
-    "total": 906
+    "total": 907
   },
-  "generated_at": "2026-10-21T23:52:11Z",
+  "generated_at": "2026-10-22T03:26:37Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -138,6 +138,14 @@
       "status": "merged",
       "title": "fix(bonsai): prevent AttributeError on elements without ConnectedTo (#10026)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10032"
+    },
+    "10033": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/npm_and_yarn/src/ts/ifcopenshell-js/markdown-it-14.3.3",
+      "head": "676bf1c",
+      "status": "merged",
+      "title": "Bump markdown-it from 14.3.2 to 14.3.3 in /src/ts/ifcopenshell-js",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10033"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7466,8 +7474,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610220122",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610220122"
+    "tag": "v0.9.1-alpha2610220433",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610220433"
   },
   "schema": 1
 }
