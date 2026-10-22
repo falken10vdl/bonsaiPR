@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 207,
-    "merged": 547,
+    "merged": 548,
     "skipped_conflict": 78,
     "skipped_draft": 68,
-    "total": 900
+    "total": 901
   },
-  "generated_at": "2026-10-22T09:34:24Z",
+  "generated_at": "2026-10-22T15:32:55Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -138,6 +138,14 @@
       "status": "merged",
       "title": "fix(bonsai): prevent AttributeError on elements without ConnectedTo (#10026)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10032"
+    },
+    "10037": {
+      "author": "ThomasHuang168",
+      "branch": "feature/add_center_of_volume",
+      "head": "31460be",
+      "status": "merged",
+      "title": "add center of volume or mass computation in ifcopenshell.util.shape",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10037"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7419,8 +7427,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610221102",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610221102"
+    "tag": "v0.9.1-alpha2610221659",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610221659"
   },
   "schema": 1
 }
