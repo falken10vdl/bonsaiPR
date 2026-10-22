@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 207,
+    "failed": 206,
     "merged": 548,
     "skipped_conflict": 78,
     "skipped_draft": 68,
-    "total": 901
+    "total": 900
   },
-  "generated_at": "2026-10-22T15:32:55Z",
+  "generated_at": "2026-10-22T22:31:14Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -95,15 +95,6 @@
       "status": "failed",
       "title": "Work around OCCT corner trim failures in swept disks",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10018"
-    },
-    "10021": {
-      "author": "Moult",
-      "branch": "fix/geom-face-healing-self-intersection-337",
-      "head": "72d3a2d",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Skip OCCT's self-intersection fix on faces with holes",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10021"
     },
     "10027": {
       "author": "Moult",
@@ -7427,8 +7418,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610221659",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610221659"
+    "tag": "v0.9.1-alpha2610222358",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610222358"
   },
   "schema": 1
 }
