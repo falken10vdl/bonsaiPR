@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 207,
-    "merged": 554,
+    "merged": 549,
     "skipped_conflict": 78,
     "skipped_draft": 68,
-    "total": 907
+    "total": 902
   },
-  "generated_at": "2026-10-22T03:58:25Z",
+  "generated_at": "2026-10-22T07:37:54Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -139,13 +139,13 @@
       "title": "fix(bonsai): prevent AttributeError on elements without ConnectedTo (#10026)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10032"
     },
-    "10033": {
+    "10034": {
       "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ts/ifcopenshell-js/markdown-it-14.3.3",
-      "head": "676bf1c",
+      "branch": "dependabot/npm_and_yarn/src/ifctester/webapp/vite-6.4.5",
+      "head": "27c0419",
       "status": "merged",
-      "title": "Bump markdown-it from 14.3.2 to 14.3.3 in /src/ts/ifcopenshell-js",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10033"
+      "title": "Bump vite from 6.4.3 to 6.4.5 in /src/ifctester/webapp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10034"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -2464,14 +2464,6 @@
       "status": "merged",
       "title": "Bonsai: watch the IFC file for external changes and reload in place",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8675"
-    },
-    "8676": {
-      "author": "BIMvoice",
-      "branch": "fix-2011-ifc-node-graph",
-      "head": "8639ee3",
-      "status": "merged",
-      "title": "Bonsai: add IFC Graph node editor to explore entity relationships",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8676"
     },
     "8677": {
       "author": "BIMvoice",
@@ -5503,14 +5495,6 @@
       "title": "Bonsai: add radial and helical arrays to bim.add_array",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9483"
     },
-    "9484": {
-      "author": "brunopostle",
-      "branch": "ifcpatch-general-arrangement-drawings",
-      "head": "79f5682",
-      "status": "merged",
-      "title": "ifcpatch: add GenerateGeneralArrangementDrawings recipe",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9484"
-    },
     "9485": {
       "author": "brunopostle",
       "branch": "bonsai-drawings-active-drawing-guard",
@@ -7300,30 +7284,6 @@
       "title": "Bump ruff from 0.16.10 to 0.17.0",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9970"
     },
-    "9971": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/dtolnay/rust-toolchain-683b588c487a69d01f6c6ddf40f036ff682cc2c8",
-      "head": "a6a5b71",
-      "status": "merged",
-      "title": "Bump dtolnay/rust-toolchain from e2a55d2ffb04f378e9626c28d38b36d230d1e12f to 683b588c487a69d01f6c6ddf40f036ff682cc2c8",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9971"
-    },
-    "9972": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/actions/download-artifact-8.0.2",
-      "head": "a75f4a7",
-      "status": "merged",
-      "title": "Bump actions/download-artifact from 8.0.1 to 8.0.2",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9972"
-    },
-    "9973": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/astral-sh/setup-uv-10.3.0",
-      "head": "7ba1b0e",
-      "status": "merged",
-      "title": "Bump astral-sh/setup-uv from 7.6.0 to 10.3.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9973"
-    },
     "9975": {
       "author": "shitobu",
       "branch": "fix/polyline-empty-distance-tab-error",
@@ -7475,8 +7435,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610220527",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610220527"
+    "tag": "v0.9.1-alpha2610220853",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610220853"
   },
   "schema": 1
 }
