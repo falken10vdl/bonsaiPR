@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 906
   },
-  "generated_at": "2026-10-21T21:54:37Z",
+  "generated_at": "2026-10-21T23:52:11Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -7449,10 +7449,10 @@
     "9996": {
       "author": "Moult",
       "branch": "chore/test-input-1030-rename",
-      "head": "b4efa05",
+      "head": "64984fe",
       "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
-      "title": "Bump test files to IfcOpenShell/files 9cb840a",
+      "title": "Bump test files to IfcOpenShell/files 76d1706",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9996"
     },
     "9997": {
@@ -7466,8 +7466,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610212323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610212323"
+    "tag": "v0.9.1-alpha2610220122",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610220122"
   },
   "schema": 1
 }
