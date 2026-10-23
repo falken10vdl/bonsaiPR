@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 206,
-    "merged": 550,
+    "failed": 207,
+    "merged": 549,
     "skipped_conflict": 78,
     "skipped_draft": 68,
     "total": 902
   },
-  "generated_at": "2026-10-23T05:25:38Z",
+  "generated_at": "2026-10-23T10:33:18Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -153,6 +153,15 @@
       "status": "merged",
       "title": "Add rise/run and rotation options for slab slope",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10041"
+    },
+    "10042": {
+      "author": "Copilot",
+      "branch": "copilot/fix-svg-serializer-space-area",
+      "head": "8a0a6e2",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "[WIP] Fix SVG serializer double-escaping of space area label",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10042"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -5590,14 +5599,6 @@
       "title": "fix(bonsai): extend walls to cursor from any base level",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
     },
-    "9544": {
-      "author": "brunopostle",
-      "branch": "fix/core-lib-underscore-names",
-      "head": "d4f47fe",
-      "status": "merged",
-      "title": "cmake: use underscores in the core shared library names (#9328)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9544"
-    },
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
@@ -7434,8 +7435,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610230654",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610230654"
+    "tag": "v0.9.1-alpha2610231200",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610231200"
   },
   "schema": 1
 }
