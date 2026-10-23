@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 902
   },
-  "generated_at": "2026-10-23T16:30:39Z",
+  "generated_at": "2026-10-23T19:30:00Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -157,7 +157,7 @@
     "10042": {
       "author": "Copilot",
       "branch": "copilot/fix-svg-serializer-space-area",
-      "head": "8a0a6e2",
+      "head": "469b445",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[WIP] Fix SVG serializer double-escaping of space area label",
@@ -7435,8 +7435,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610231758",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610231758"
+    "tag": "v0.9.1-alpha2610232057",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610232057"
   },
   "schema": 1
 }
