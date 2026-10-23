@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 206,
-    "merged": 548,
+    "merged": 549,
     "skipped_conflict": 78,
     "skipped_draft": 68,
-    "total": 900
+    "total": 901
   },
-  "generated_at": "2026-10-22T22:31:14Z",
+  "generated_at": "2026-10-23T03:27:21Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -137,6 +137,14 @@
       "status": "merged",
       "title": "add center of volume or mass computation in ifcopenshell.util.shape",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10037"
+    },
+    "10039": {
+      "author": "theoryshaw",
+      "branch": "underside_steep_roofs_10038",
+      "head": "8f54af1",
+      "status": "merged",
+      "title": "Bonsai: clip walls to steep undersides without notching the eave (#10038)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10039"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7418,8 +7426,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610222358",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610222358"
+    "tag": "v0.9.1-alpha2610230455",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610230455"
   },
   "schema": 1
 }
