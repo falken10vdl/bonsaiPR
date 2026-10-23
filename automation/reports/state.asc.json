@@ -3,11 +3,11 @@
   "counts": {
     "failed": 208,
     "merged": 541,
-    "skipped_conflict": 85,
+    "skipped_conflict": 86,
     "skipped_draft": 68,
-    "total": 902
+    "total": 903
   },
-  "generated_at": "2026-10-23T18:22:50Z",
+  "generated_at": "2026-10-23T20:22:19Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -157,11 +157,19 @@
     "10042": {
       "author": "Copilot",
       "branch": "copilot/fix-svg-serializer-space-area",
-      "head": "469b445",
+      "head": "4399bad",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "[WIP] Fix SVG serializer double-escaping of space area label",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10042"
+    },
+    "10045": {
+      "author": "theoryshaw",
+      "branch": "framing-system",
+      "head": "f4b0bb0",
+      "status": "skipped_conflict",
+      "title": "Add parametric framing systems (railings, curtain walls, storefronts)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10045"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7436,8 +7444,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610231950",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610231950"
+    "tag": "v0.9.1-alpha2610232150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610232150"
   },
   "schema": 1
 }
