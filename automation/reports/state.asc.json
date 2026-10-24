@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 208,
-    "merged": 543,
+    "merged": 544,
     "skipped_conflict": 86,
     "skipped_draft": 68,
-    "total": 905
+    "total": 906
   },
-  "generated_at": "2026-10-23T23:22:22Z",
+  "generated_at": "2026-10-24T01:21:03Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -186,6 +186,14 @@
       "status": "merged",
       "title": "Bump actions/download-artifact from 8.0.1 to 8.0.2",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10047"
+    },
+    "10048": {
+      "author": "glaziermag",
+      "branch": "fix-ifcview-conda-zstd",
+      "head": "50c79aa",
+      "status": "merged",
+      "title": "ifcview: fall back to zstd::libzstd_shared (conda publish red since 10-10)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10048"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7460,8 +7468,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610240050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610240050"
+    "tag": "v0.9.1-alpha2610240250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610240250"
   },
   "schema": 1
 }
