@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 208,
-    "merged": 544,
+    "merged": 545,
     "skipped_conflict": 86,
     "skipped_draft": 68,
-    "total": 906
+    "total": 907
   },
-  "generated_at": "2026-10-24T13:22:00Z",
+  "generated_at": "2026-10-24T15:21:30Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -194,6 +194,14 @@
       "status": "merged",
       "title": "ifcview: fall back to zstd::libzstd_shared (conda publish red since 10-10)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10048"
+    },
+    "10055": {
+      "author": "sligara7",
+      "branch": "ifcmcp/mcp-python-sdk-2-upstream",
+      "head": "ae18f45",
+      "status": "merged",
+      "title": "ifcmcp: build the server on MCP SDK 2.x",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10055"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7468,8 +7476,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610241450",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610241450"
+    "tag": "v0.9.1-alpha2610241650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610241650"
   },
   "schema": 1
 }
