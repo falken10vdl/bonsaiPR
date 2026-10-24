@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 207,
-    "merged": 547,
+    "merged": 550,
     "skipped_conflict": 81,
     "skipped_draft": 68,
-    "total": 903
+    "total": 906
   },
-  "generated_at": "2026-10-23T21:30:14Z",
+  "generated_at": "2026-10-24T00:27:15Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -170,6 +170,30 @@
       "status": "merged",
       "title": "Add parametric framing systems (railings, curtain walls, storefronts)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10045"
+    },
+    "10046": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/zizmor-1.31.1",
+      "head": "7d982c1",
+      "status": "merged",
+      "title": "Bump zizmor from 1.30.1 to 1.31.1",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10046"
+    },
+    "10047": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/actions/download-artifact-8.0.2",
+      "head": "a248a62",
+      "status": "merged",
+      "title": "Bump actions/download-artifact from 8.0.1 to 8.0.2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10047"
+    },
+    "10048": {
+      "author": "glaziermag",
+      "branch": "fix-ifcview-conda-zstd",
+      "head": "50c79aa",
+      "status": "merged",
+      "title": "ifcview: fall back to zstd::libzstd_shared (conda publish red since 10-10)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10048"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7443,8 +7467,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610232257",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610232257"
+    "tag": "v0.9.1-alpha2610240155",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610240155"
   },
   "schema": 1
 }
