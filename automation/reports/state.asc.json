@@ -3,11 +3,11 @@
   "counts": {
     "failed": 208,
     "merged": 545,
-    "skipped_conflict": 86,
+    "skipped_conflict": 87,
     "skipped_draft": 68,
-    "total": 907
+    "total": 908
   },
-  "generated_at": "2026-10-24T15:21:30Z",
+  "generated_at": "2026-10-24T17:22:26Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -202,6 +202,14 @@
       "status": "merged",
       "title": "ifcmcp: build the server on MCP SDK 2.x",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10055"
+    },
+    "10058": {
+      "author": "theoryshaw",
+      "branch": "geometry-library-defaults",
+      "head": "5436202",
+      "status": "skipped_conflict",
+      "title": "Add default geometry library and reload panel",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10058"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7476,8 +7484,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610241650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610241650"
+    "tag": "v0.9.1-alpha2610241850",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610241850"
   },
   "schema": 1
 }
