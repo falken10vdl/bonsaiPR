@@ -8802,3 +8802,5 @@
 {"ts": "2026-10-24T01:21:03Z", "order": "ascending", "pr": 10048, "event": "added", "to": "merged"}
 {"ts": "2026-10-24T15:21:30Z", "order": "ascending", "pr": 10055, "event": "added", "to": "merged"}
 {"ts": "2026-10-24T17:22:26Z", "order": "ascending", "pr": 10058, "event": "added", "to": "skipped_conflict"}
+{"ts": "2026-10-24T19:21:42Z", "order": "ascending", "pr": 10010, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-10-24T19:21:42Z", "order": "ascending", "pr": 10060, "event": "added", "to": "merged"}
