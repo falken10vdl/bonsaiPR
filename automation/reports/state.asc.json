@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 909
   },
-  "generated_at": "2026-10-25T01:21:16Z",
+  "generated_at": "2026-10-25T03:21:00Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -167,7 +167,7 @@
     "10045": {
       "author": "theoryshaw",
       "branch": "framing-system",
-      "head": "f4b0bb0",
+      "head": "804a374",
       "status": "skipped_conflict",
       "title": "Add parametric framing systems (railings, curtain walls, storefronts)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10045"
@@ -781,7 +781,7 @@
     "7892": {
       "author": "dipayansardar73-decode",
       "branch": "fix-7827-wall-joint-regression-v2",
-      "head": "16f379f",
+      "head": "9e585f2",
       "status": "merged",
       "title": "Fix #7827 wall joint regression on ATPATH connectionsFix",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7892"
@@ -7493,8 +7493,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610250250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610250250"
+    "tag": "v0.9.1-alpha2610250350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610250350"
   },
   "schema": 1
 }
