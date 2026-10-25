@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 909
   },
-  "generated_at": "2026-10-24T21:22:18Z",
+  "generated_at": "2026-10-24T23:21:39Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -199,7 +199,7 @@
     "10055": {
       "author": "sligara7",
       "branch": "ifcmcp/mcp-python-sdk-2-upstream",
-      "head": "ae18f45",
+      "head": "b99a712",
       "status": "merged",
       "title": "ifcmcp: build the server on MCP SDK 2.x",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10055"
@@ -7493,8 +7493,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610242250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610242250"
+    "tag": "v0.9.1-alpha2610250050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610250050"
   },
   "schema": 1
 }
