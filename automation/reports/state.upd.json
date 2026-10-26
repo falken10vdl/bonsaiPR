@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 908
   },
-  "generated_at": "2026-10-25T16:28:00Z",
+  "generated_at": "2026-10-26T11:30:58Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -1640,7 +1640,7 @@
       "author": "BIMvoice",
       "branch": "fix-5221-schedule-font-scope",
       "head": "0f1fc8f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: scope schedule/document styles on a sheet so they keep their own font (#5221)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8361"
     },
@@ -5304,7 +5304,7 @@
       "author": "theoryshaw",
       "branch": "fix-sheet-presentation-attr-ids",
       "head": "35c2400",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: namespace url(#id) presentation attributes and the sheet titleblock (#9369)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9370"
     },
@@ -7484,8 +7484,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610251656",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610251656"
+    "tag": "v0.9.1-alpha2610261157",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610261157"
   },
   "schema": 1
 }
