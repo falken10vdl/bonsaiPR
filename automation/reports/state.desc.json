@@ -3,11 +3,11 @@
   "counts": {
     "failed": 209,
     "merged": 552,
-    "skipped_conflict": 83,
+    "skipped_conflict": 85,
     "skipped_draft": 68,
-    "total": 912
+    "total": 914
   },
-  "generated_at": "2026-10-26T20:57:08Z",
+  "generated_at": "2026-10-26T22:57:17Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -254,6 +254,22 @@
       "status": "merged",
       "title": "Merge stale Blender materials when merging styles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10069"
+    },
+    "10070": {
+      "author": "shitobu",
+      "branch": "fix/pset-template-ifc4x3-specification",
+      "head": "5131725",
+      "status": "merged",
+      "title": "fix(bonsai): support IFC4X3 Specification attribute when saving Pset as template (#10056)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10070"
+    },
+    "10071": {
+      "author": "shitobu",
+      "branch": "fix/regenerate-wall-prioritised-layer-replace",
+      "head": "7c7c842",
+      "status": "merged",
+      "title": "fix(api): use namedtuple _replace when overriding PrioritisedLayer priorities (#10054)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10071"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -1789,7 +1805,7 @@
       "author": "BIMvoice",
       "branch": "fix-7112-save-custom-psets",
       "head": "c757379",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix \"Save Pset As Template\" on IFC4X3 custom psets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8391"
     },
@@ -3776,7 +3792,7 @@
       "author": "BIMvoice",
       "branch": "fix/wall-body-context-regenerate",
       "head": "467c186",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "geometry.regenerate_wall_representation: create the Body context when missing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9012"
     },
@@ -7517,8 +7533,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610262124",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610262124"
+    "tag": "v0.9.1-alpha2610262324",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610262324"
   },
   "schema": 1
 }
