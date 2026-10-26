@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 210,
+    "failed": 211,
     "merged": 545,
     "skipped_conflict": 87,
     "skipped_draft": 68,
-    "total": 910
+    "total": 911
   },
-  "generated_at": "2026-10-26T18:23:07Z",
+  "generated_at": "2026-10-26T20:23:11Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -237,6 +237,15 @@
       "status": "merged",
       "title": "ifcquery clash: scope \"storey\" includes elements referenced into the storey",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10066"
+    },
+    "10067": {
+      "author": "aothms",
+      "branch": "fix-587",
+      "head": "4f373f8",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Fix tolerance check for newells normal, filter narrow operands",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10067"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7502,8 +7511,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610261850",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610261850"
+    "tag": "v0.9.1-alpha2610262050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610262050"
   },
   "schema": 1
 }
