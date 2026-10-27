@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 915
   },
-  "generated_at": "2026-10-27T00:23:49Z",
+  "generated_at": "2026-10-27T10:24:13Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -241,7 +241,7 @@
     "10067": {
       "author": "aothms",
       "branch": "fix-587",
-      "head": "4f373f8",
+      "head": "022cf45",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix tolerance check for newells normal, filter narrow operands",
@@ -7543,8 +7543,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610270050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610270050"
+    "tag": "v0.9.1-alpha2610271050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610271050"
   },
   "schema": 1
 }
