@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 211,
-    "merged": 546,
+    "failed": 210,
+    "merged": 545,
     "skipped_conflict": 90,
     "skipped_draft": 68,
-    "total": 915
+    "total": 913
   },
-  "generated_at": "2026-10-27T10:24:13Z",
+  "generated_at": "2026-10-27T12:22:42Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -237,23 +237,6 @@
       "status": "merged",
       "title": "ifcquery clash: scope \"storey\" includes elements referenced into the storey",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10066"
-    },
-    "10067": {
-      "author": "aothms",
-      "branch": "fix-587",
-      "head": "022cf45",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Fix tolerance check for newells normal, filter narrow operands",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10067"
-    },
-    "10069": {
-      "author": "theoryshaw",
-      "branch": "merge_styles_blender_materials_10068",
-      "head": "842a7c6",
-      "status": "merged",
-      "title": "Merge stale Blender materials when merging styles",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10069"
     },
     "10070": {
       "author": "shitobu",
@@ -7543,8 +7526,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610271050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610271050"
+    "tag": "v0.9.1-alpha2610271250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610271250"
   },
   "schema": 1
 }
