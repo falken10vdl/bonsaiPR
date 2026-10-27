@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 913
   },
-  "generated_at": "2026-10-27T12:22:42Z",
+  "generated_at": "2026-10-27T16:31:42Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -386,7 +386,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "72b2816",
+      "head": "ddfb87d",
       "status": "merged",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
@@ -7526,8 +7526,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610271250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610271250"
+    "tag": "v0.9.1-alpha2610271650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610271650"
   },
   "schema": 1
 }
