@@ -3,11 +3,11 @@
   "counts": {
     "failed": 211,
     "merged": 546,
-    "skipped_conflict": 87,
+    "skipped_conflict": 90,
     "skipped_draft": 68,
-    "total": 912
+    "total": 915
   },
-  "generated_at": "2026-10-26T22:23:23Z",
+  "generated_at": "2026-10-27T00:23:49Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -254,6 +254,30 @@
       "status": "merged",
       "title": "Merge stale Blender materials when merging styles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10069"
+    },
+    "10070": {
+      "author": "shitobu",
+      "branch": "fix/pset-template-ifc4x3-specification",
+      "head": "5131725",
+      "status": "skipped_conflict",
+      "title": "fix(bonsai): support IFC4X3 Specification attribute when saving Pset as template (#10056)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10070"
+    },
+    "10071": {
+      "author": "shitobu",
+      "branch": "fix/regenerate-wall-prioritised-layer-replace",
+      "head": "7c7c842",
+      "status": "skipped_conflict",
+      "title": "fix(api): use namedtuple _replace when overriding PrioritisedLayer priorities (#10054)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10071"
+    },
+    "10072": {
+      "author": "shitobu",
+      "branch": "fix/structural-curve-member-preserve-edge-topology",
+      "head": "658ed90",
+      "status": "skipped_conflict",
+      "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7519,8 +7543,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610262250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610262250"
+    "tag": "v0.9.1-alpha2610270050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610270050"
   },
   "schema": 1
 }

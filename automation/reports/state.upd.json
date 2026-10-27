@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 210,
-    "merged": 552,
-    "skipped_conflict": 84,
+    "merged": 551,
+    "skipped_conflict": 86,
     "skipped_draft": 68,
-    "total": 914
+    "total": 915
   },
-  "generated_at": "2026-10-26T23:37:57Z",
+  "generated_at": "2026-10-27T01:29:06Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -270,6 +270,14 @@
       "status": "merged",
       "title": "fix(api): use namedtuple _replace when overriding PrioritisedLayer priorities (#10054)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10071"
+    },
+    "10072": {
+      "author": "shitobu",
+      "branch": "fix/structural-curve-member-preserve-edge-topology",
+      "head": "658ed90",
+      "status": "merged",
+      "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -2537,7 +2545,7 @@
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
       "head": "c5ac395",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
@@ -6612,7 +6620,7 @@
       "author": "BIMvoice",
       "branch": "v09/split-9156-load-decoration-member",
       "head": "8407def",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: guard load decorations on empty members",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9733"
     },
@@ -7534,8 +7542,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610262358",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610262358"
+    "tag": "v0.9.1-alpha2610270157",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610270157"
   },
   "schema": 1
 }
