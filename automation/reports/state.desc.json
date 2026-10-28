@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 209,
+    "failed": 208,
     "merged": 552,
     "skipped_conflict": 89,
     "skipped_draft": 68,
-    "total": 918
+    "total": 917
   },
-  "generated_at": "2026-10-28T15:01:18Z",
+  "generated_at": "2026-10-28T16:59:17Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -286,22 +286,13 @@
       "title": "fix(bonsai): prevent AttributeError on edited_objs when override_mode_set_object is executed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10080"
     },
-    "10081": {
-      "author": "aothms",
-      "branch": "glb-write-settings",
-      "head": "dba084e",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": ".glb write settings (incl applied offset)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10081"
-    },
-    "10083": {
-      "author": "aothms",
-      "branch": "pin-pytest",
-      "head": "cb3d116",
+    "10084": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/cargo/src/bonsaiviewer-autodesk/rustls-0.23.46",
+      "head": "dfde45d",
       "status": "merged",
-      "title": "Pin pytest < 9.2 for bytest bdd",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10083"
+      "title": "Bump rustls from 0.23.45 to 0.23.46 in /src/bonsaiviewer-autodesk",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10084"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7565,8 +7556,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610281526",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610281526"
+    "tag": "v0.9.1-alpha2610281725",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610281725"
   },
   "schema": 1
 }
