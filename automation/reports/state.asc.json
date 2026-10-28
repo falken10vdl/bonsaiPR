@@ -3,11 +3,11 @@
   "counts": {
     "failed": 210,
     "merged": 545,
-    "skipped_conflict": 90,
+    "skipped_conflict": 91,
     "skipped_draft": 68,
-    "total": 913
+    "total": 914
   },
-  "generated_at": "2026-10-27T16:31:42Z",
+  "generated_at": "2026-10-28T02:22:47Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -167,7 +167,7 @@
     "10045": {
       "author": "theoryshaw",
       "branch": "framing-system",
-      "head": "804a374",
+      "head": "1fd791b",
       "status": "skipped_conflict",
       "title": "Add parametric framing systems (railings, curtain walls, storefronts)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10045"
@@ -261,6 +261,14 @@
       "status": "skipped_conflict",
       "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
+    },
+    "10078": {
+      "author": "alteralto",
+      "branch": "regenerate-wall-skip-curved-axis",
+      "head": "c3e18f9",
+      "status": "skipped_conflict",
+      "title": "Keep walls with a curved axis on regeneration",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10078"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7526,8 +7534,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610271650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610271650"
+    "tag": "v0.9.1-alpha2610280250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610280250"
   },
   "schema": 1
 }
