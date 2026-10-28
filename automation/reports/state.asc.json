@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 914
   },
-  "generated_at": "2026-10-28T02:22:47Z",
+  "generated_at": "2026-10-28T04:21:56Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -167,7 +167,7 @@
     "10045": {
       "author": "theoryshaw",
       "branch": "framing-system",
-      "head": "1fd791b",
+      "head": "4b04852",
       "status": "skipped_conflict",
       "title": "Add parametric framing systems (railings, curtain walls, storefronts)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10045"
@@ -7534,8 +7534,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610280250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610280250"
+    "tag": "v0.9.1-alpha2610280450",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610280450"
   },
   "schema": 1
 }
