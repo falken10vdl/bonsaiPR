@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 208,
-    "merged": 551,
+    "failed": 209,
+    "merged": 552,
     "skipped_conflict": 89,
     "skipped_draft": 68,
-    "total": 916
+    "total": 918
   },
-  "generated_at": "2026-10-28T11:57:14Z",
+  "generated_at": "2026-10-28T15:01:18Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -285,6 +285,23 @@
       "status": "merged",
       "title": "fix(bonsai): prevent AttributeError on edited_objs when override_mode_set_object is executed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10080"
+    },
+    "10081": {
+      "author": "aothms",
+      "branch": "glb-write-settings",
+      "head": "dba084e",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": ".glb write settings (incl applied offset)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10081"
+    },
+    "10083": {
+      "author": "aothms",
+      "branch": "pin-pytest",
+      "head": "cb3d116",
+      "status": "merged",
+      "title": "Pin pytest < 9.2 for bytest bdd",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10083"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7548,8 +7565,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610281225",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610281225"
+    "tag": "v0.9.1-alpha2610281526",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610281526"
   },
   "schema": 1
 }
