@@ -8830,3 +8830,5 @@
 {"ts": "2026-10-28T14:25:29Z", "order": "ascending", "pr": 10081, "event": "added", "to": "failed"}
 {"ts": "2026-10-28T16:24:13Z", "order": "ascending", "pr": 10081, "event": "removed", "from": "failed"}
 {"ts": "2026-10-28T16:24:13Z", "order": "ascending", "pr": 10084, "event": "added", "to": "merged"}
+{"ts": "2026-10-28T19:24:11Z", "order": "ascending", "pr": 10045, "event": "updated", "status": "skipped_conflict", "from_head": "4b04852", "to_head": "db113ec"}
+{"ts": "2026-10-28T19:24:11Z", "order": "ascending", "pr": 10087, "event": "added", "to": "merged"}

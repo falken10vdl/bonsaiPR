@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 208,
-    "merged": 552,
+    "merged": 553,
     "skipped_conflict": 89,
     "skipped_draft": 68,
-    "total": 917
+    "total": 918
   },
-  "generated_at": "2026-10-28T16:59:17Z",
+  "generated_at": "2026-10-28T19:58:11Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -167,7 +167,7 @@
     "10045": {
       "author": "theoryshaw",
       "branch": "framing-system",
-      "head": "4b04852",
+      "head": "db113ec",
       "status": "merged",
       "title": "Add parametric framing systems (railings, curtain walls, storefronts)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10045"
@@ -293,6 +293,14 @@
       "status": "merged",
       "title": "Bump rustls from 0.23.45 to 0.23.46 in /src/bonsaiviewer-autodesk",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10084"
+    },
+    "10087": {
+      "author": "aothms",
+      "branch": "adapt-packaging-test-for-underscores",
+      "head": "f87ec86",
+      "status": "merged",
+      "title": "Exclude core shared libraries from package plug-in checks",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10087"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7556,8 +7564,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610281725",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610281725"
+    "tag": "v0.9.1-alpha2610282025",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610282025"
   },
   "schema": 1
 }
