@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 208,
-    "merged": 552,
+    "merged": 553,
     "skipped_conflict": 89,
     "skipped_draft": 68,
-    "total": 917
+    "total": 918
   },
-  "generated_at": "2026-10-28T21:58:23Z",
+  "generated_at": "2026-10-29T11:01:50Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -293,6 +293,14 @@
       "status": "merged",
       "title": "Bump rustls from 0.23.45 to 0.23.46 in /src/bonsaiviewer-autodesk",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10084"
+    },
+    "10088": {
+      "author": "aothms",
+      "branch": "workflows-schema-param",
+      "head": "8f98cf7",
+      "status": "merged",
+      "title": "Option to influence BUILD_ONLY_COMMON_SCHEMAS via env var and workflo…",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10088"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7556,8 +7564,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610282224",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610282224"
+    "tag": "v0.9.1-alpha2610291125",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610291125"
   },
   "schema": 1
 }
