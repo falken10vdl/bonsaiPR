@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 208,
-    "merged": 553,
+    "failed": 210,
+    "merged": 554,
     "skipped_conflict": 89,
     "skipped_draft": 68,
-    "total": 918
+    "total": 921
   },
-  "generated_at": "2026-10-29T11:01:50Z",
+  "generated_at": "2026-10-29T12:57:22Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -301,6 +301,32 @@
       "status": "merged",
       "title": "Option to influence BUILD_ONLY_COMMON_SCHEMAS via env var and workflo…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10088"
+    },
+    "10091": {
+      "author": "brunopostle",
+      "branch": "ci/enable-cpp-tests",
+      "head": "034dd02",
+      "status": "merged",
+      "title": "Run C++ parse and geometry tests in CI",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10091"
+    },
+    "10092": {
+      "author": "brunopostle",
+      "branch": "fix/null-handle-compare",
+      "head": "d30db45",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Allow comparing and hashing null express::base handles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10092"
+    },
+    "10093": {
+      "author": "brunopostle",
+      "branch": "fix/explicit-handle-bool",
+      "head": "4e83c1e",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Make express::base bool conversion explicit",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10093"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -1255,7 +1281,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8242"
     },
     "8248": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/selector-boolean-case-insensitive-6116",
       "head": "190a37a",
       "status": "merged",
@@ -1263,7 +1289,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8248"
     },
     "8251": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/edit-pset-empty-numeric-4112",
       "head": "d6ffa73",
       "status": "merged",
@@ -1271,7 +1297,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8251"
     },
     "8253": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-predefinedtype-restriction-7855",
       "head": "a670faa",
       "status": "merged",
@@ -1279,7 +1305,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8253"
     },
     "8257": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcclash-notrequired-keys-8224",
       "head": "8b5b2fb",
       "status": "merged",
@@ -1287,7 +1313,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8257"
     },
     "8263": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/add-reference-image-kwarg-8130",
       "head": "65b08c3",
       "status": "merged",
@@ -1295,7 +1321,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8263"
     },
     "8264": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/selector-material-filters-6787",
       "head": "dd3d4c1",
       "status": "merged",
@@ -1303,7 +1329,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8264"
     },
     "8266": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat/cost-total-applied-value-5912",
       "head": "b5a4c5b",
       "status": "merged",
@@ -1311,7 +1337,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8266"
     },
     "8268": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/format-length-non-numeric-5297",
       "head": "841edce",
       "status": "merged",
@@ -1319,7 +1345,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8268"
     },
     "8269": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/edit-mode-enum-8066",
       "head": "6ab7cfc",
       "status": "merged",
@@ -1327,7 +1353,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8269"
     },
     "8270": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat/polyline-comma-decimal-8262",
       "head": "9205c17",
       "status": "merged",
@@ -1335,7 +1361,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8270"
     },
     "8271": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/profile-walk-none-8072",
       "head": "3608f87",
       "status": "merged",
@@ -1343,7 +1369,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8271"
     },
     "8274": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/aggregate-error-report-7983",
       "head": "cb9f26f",
       "status": "merged",
@@ -1351,7 +1377,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8274"
     },
     "8275": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/drawing-scale-integer-ratio-7957",
       "head": "21df182",
       "status": "merged",
@@ -1359,7 +1385,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8275"
     },
     "8277": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/quick-favorites-enum-int-7773",
       "head": "6d469c8",
       "status": "merged",
@@ -1367,7 +1393,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8277"
     },
     "8278": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/edit-pset-logical-bool-7475",
       "head": "5f93a7e",
       "status": "merged",
@@ -1375,7 +1401,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8278"
     },
     "8280": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-cascade-milestone-duration-6834",
       "head": "ce92702",
       "status": "merged",
@@ -1383,7 +1409,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8280"
     },
     "8281": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-ifcpatch-cli-entrypoint-6436",
       "head": "8a03cba",
       "status": "skipped_conflict",
@@ -1391,7 +1417,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8281"
     },
     "8286": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-swept-disk-curve-style-8194",
       "head": "3df4ae3",
       "status": "merged",
@@ -1399,7 +1425,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8286"
     },
     "8291": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-assign-container-type-product-8084",
       "head": "468d3e3",
       "status": "merged",
@@ -1407,7 +1433,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8291"
     },
     "8293": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-loader-guess-origin-no-context-7350",
       "head": "cb2647d",
       "status": "merged",
@@ -1415,7 +1441,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8293"
     },
     "8295": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-set-element-value-trailing-index-4687",
       "head": "bc65f5e",
       "status": "merged",
@@ -1423,7 +1449,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8295"
     },
     "8297": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-format-round-non-numeric-6776",
       "head": "881b36f",
       "status": "merged",
@@ -1431,7 +1457,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8297"
     },
     "8298": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-edit-pset-update-list-value-5195",
       "head": "6aac42b",
       "status": "merged",
@@ -1439,7 +1465,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8298"
     },
     "8304": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-georef-drawing-camera-offset-8205",
       "head": "2ce4c68",
       "status": "merged",
@@ -1447,7 +1473,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8304"
     },
     "8308": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-ifcclassdata-partial-load-6398",
       "head": "addf5ee",
       "status": "merged",
@@ -1455,7 +1481,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8308"
     },
     "8312": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-remove-drawing-no-document-6518",
       "head": "e08bf06",
       "status": "merged",
@@ -1463,7 +1489,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8312"
     },
     "8313": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-intraday-scheduling-8245",
       "head": "65db400",
       "status": "merged",
@@ -1471,7 +1497,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8313"
     },
     "8314": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-linework-path-no-d-6876",
       "head": "4e8b486",
       "status": "merged",
@@ -1479,7 +1505,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8314"
     },
     "8315": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-edit-non-extrusion-slab-6283",
       "head": "434f5ca",
       "status": "merged",
@@ -1487,7 +1513,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8315"
     },
     "8317": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-get-part-of-product-none-repmaps-8081",
       "head": "5f62fb1",
       "status": "merged",
@@ -1495,7 +1521,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8317"
     },
     "8318": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-shape-dimensions-empty-geometry-7147",
       "head": "e6b442b",
       "status": "merged",
@@ -1503,7 +1529,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8318"
     },
     "8319": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8233-duplicate-linked-aggregate",
       "head": "489f7aa",
       "status": "merged",
@@ -1511,7 +1537,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8319"
     },
     "8322": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-pset-schema-reload-8236",
       "head": "6e7640d",
       "status": "skipped_conflict",
@@ -1519,7 +1545,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8322"
     },
     "8326": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-append-asset-duplicate-classification-7150",
       "head": "ef4e583",
       "status": "merged",
@@ -1527,7 +1553,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8326"
     },
     "8327": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-manual-classification-reference-no-classification-7506",
       "head": "93f96e9",
       "status": "merged",
@@ -1535,7 +1561,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8327"
     },
     "8328": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-drawing-camera-bounds-on-save-8205",
       "head": "f9dd32c",
       "status": "merged",
@@ -1543,7 +1569,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8328"
     },
     "8329": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-bcf-viewpoint-georef-offset-8205",
       "head": "5c2fb7c",
       "status": "skipped_conflict",
@@ -1551,7 +1577,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8329"
     },
     "8331": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "plan-drawing-spatial-containers",
       "head": "b093da0",
       "status": "merged",
@@ -1559,7 +1585,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8331"
     },
     "8332": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "qto-segment-length-from-geometry",
       "head": "13fa65a",
       "status": "merged",
@@ -1567,7 +1593,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8332"
     },
     "8334": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3091-datetime-guard",
       "head": "5f149af",
       "status": "merged",
@@ -1575,7 +1601,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8334"
     },
     "8335": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3019-nested-mapped-item",
       "head": "aaf3b60",
       "status": "merged",
@@ -1583,7 +1609,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8335"
     },
     "8336": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-2851-extrusion-dedup",
       "head": "3f87bb4",
       "status": "merged",
@@ -1591,7 +1617,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8336"
     },
     "8337": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3129-storey-elevation-precision",
       "head": "3ab7d79",
       "status": "merged",
@@ -1599,7 +1625,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8337"
     },
     "8338": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-drawing-viewport-text-size-3353",
       "head": "538c5f6",
       "status": "merged",
@@ -1607,7 +1633,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8338"
     },
     "8339": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3932-mep-bend-crash",
       "head": "30b210d",
       "status": "merged",
@@ -1615,7 +1641,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8339"
     },
     "8340": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4606-mixed-repr",
       "head": "4ebce6d",
       "status": "merged",
@@ -1623,7 +1649,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8340"
     },
     "8343": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3217-auto-context",
       "head": "1f487a7",
       "status": "merged",
@@ -1631,7 +1657,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8343"
     },
     "8345": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4593-add-repr-loose-edges",
       "head": "88136ab",
       "status": "merged",
@@ -1639,7 +1665,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8345"
     },
     "8346": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4332-door-flip-2d",
       "head": "db96e3c",
       "status": "merged",
@@ -1647,7 +1673,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8346"
     },
     "8347": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4641-clipplane-reload",
       "head": "0ea8200",
       "status": "merged",
@@ -1655,7 +1681,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8347"
     },
     "8348": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4703-dxf-transform",
       "head": "4a03986",
       "status": "merged",
@@ -1663,7 +1689,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8348"
     },
     "8349": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4694-tool-shortcut",
       "head": "f7aa824",
       "status": "merged",
@@ -1671,7 +1697,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8349"
     },
     "8351": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4785-drawing-space-filter",
       "head": "3549113",
       "status": "merged",
@@ -1679,7 +1705,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8351"
     },
     "8352": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4766-cross-schema-append",
       "head": "69c419e",
       "status": "skipped_conflict",
@@ -1687,7 +1713,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8352"
     },
     "8353": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4790-regen-style",
       "head": "4919180",
       "status": "merged",
@@ -1695,7 +1721,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8353"
     },
     "8354": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4822-print-graceful",
       "head": "f3b4fc2",
       "status": "merged",
@@ -1703,7 +1729,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8354"
     },
     "8355": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4813-swept-disk-polygonal",
       "head": "72c2b13",
       "status": "merged",
@@ -1711,7 +1737,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8355"
     },
     "8356": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4800-camera-context",
       "head": "cef8921",
       "status": "skipped_draft",
@@ -1719,7 +1745,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8356"
     },
     "8358": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8262-numpad-decimal",
       "head": "4ce002c",
       "status": "merged",
@@ -1727,7 +1753,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8358"
     },
     "8361": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-5221-schedule-font-scope",
       "head": "0f1fc8f",
       "status": "skipped_conflict",
@@ -1735,7 +1761,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8361"
     },
     "8372": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4128-sklearn-graceful",
       "head": "6d72ca8",
       "status": "merged",
@@ -1743,7 +1769,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8372"
     },
     "8373": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/4014-annotation-multi-product",
       "head": "4f0ebd8",
       "status": "merged",
@@ -1751,7 +1777,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8373"
     },
     "8376": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3971-svg-roof-v2",
       "head": "4de42e8",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -1760,7 +1786,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8376"
     },
     "8377": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8106-taxonomy-sweep-approx",
       "head": "6d4e180",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -1769,7 +1795,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8377"
     },
     "8378": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-validate-crash-diagnostics",
       "head": "1041b4b",
       "status": "skipped_conflict",
@@ -1777,7 +1803,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8378"
     },
     "8380": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8053-slab-qto-depth-width",
       "head": "eebb3b2",
       "status": "merged",
@@ -1785,7 +1811,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8380"
     },
     "8381": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7117-door-custom-width",
       "head": "069d913",
       "status": "merged",
@@ -1793,7 +1819,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8381"
     },
     "8384": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4934-presentation-layer-stale-id",
       "head": "2efb1f1",
       "status": "merged",
@@ -1801,7 +1827,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8384"
     },
     "8385": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7487-type-mapped-duplicate",
       "head": "bed6467",
       "status": "merged",
@@ -1809,7 +1835,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8385"
     },
     "8386": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-5314-ifc4x3-annotation-type",
       "head": "28e2772",
       "status": "merged",
@@ -1817,7 +1843,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8386"
     },
     "8389": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4537-door-window-attribute-qto",
       "head": "bf264ca",
       "status": "merged",
@@ -1825,7 +1851,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8389"
     },
     "8390": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7152-bcf-viewpoint-filenames",
       "head": "99f738a",
       "status": "merged",
@@ -1833,7 +1859,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8390"
     },
     "8391": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7112-save-custom-psets",
       "head": "c757379",
       "status": "skipped_conflict",
@@ -1841,7 +1867,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8391"
     },
     "8393": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6508-geography-element-qto",
       "head": "8d08a15",
       "status": "merged",
@@ -1849,7 +1875,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8393"
     },
     "8394": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-1410-ifcconvert-no-progress",
       "head": "eeb0f1a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -1858,7 +1884,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8394"
     },
     "8395": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7204-add-ifcspacetype",
       "head": "ecf2682",
       "status": "merged",
@@ -1866,7 +1892,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8395"
     },
     "8396": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6153-fastener-removal-save",
       "head": "b3524bc",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -1875,7 +1901,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8396"
     },
     "8401": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7737-work",
       "head": "f76e2bd",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -1884,7 +1910,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8401"
     },
     "8402": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7233-work",
       "head": "e752298",
       "status": "merged",
@@ -1892,7 +1918,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8402"
     },
     "8405": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7657-work",
       "head": "f3e05f8",
       "status": "skipped_draft",
@@ -1900,7 +1926,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8405"
     },
     "8407": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7245-work",
       "head": "c470639",
       "status": "merged",
@@ -1908,7 +1934,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8407"
     },
     "8408": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7125-work",
       "head": "f18bafc",
       "status": "merged",
@@ -1916,7 +1942,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8408"
     },
     "8413": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6479-annotation-context",
       "head": "ac1ce1c",
       "status": "merged",
@@ -1924,7 +1950,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8413"
     },
     "8415": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7640-profile-boolean-tracking",
       "head": "41362b0",
       "status": "merged",
@@ -1932,7 +1958,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8415"
     },
     "8417": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7533-duplicate-boolean-remap",
       "head": "5d56ce0",
       "status": "merged",
@@ -1940,7 +1966,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8417"
     },
     "8421": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7827-wall-notch-order",
       "head": "6d50b87",
       "status": "merged",
@@ -1948,7 +1974,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8421"
     },
     "8422": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7978-metadata-linked-collections",
       "head": "95c3e09",
       "status": "merged",
@@ -1956,7 +1982,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8422"
     },
     "8423": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7975-axis-resize-endpoint",
       "head": "d791be6",
       "status": "merged",
@@ -1964,7 +1990,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8423"
     },
     "8425": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-5881-remove-sheet-confirm",
       "head": "7ae77ac",
       "status": "skipped_conflict",
@@ -1972,7 +1998,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8425"
     },
     "8426": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6906-mirror-merge-decouple",
       "head": "65a83cd",
       "status": "merged",
@@ -1980,7 +2006,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8426"
     },
     "8427": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6666-append-drawing-view",
       "head": "bc48294",
       "status": "skipped_conflict",
@@ -1996,7 +2022,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8429"
     },
     "8432": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7450-section-level-auto",
       "head": "bd694e8",
       "status": "merged",
@@ -2004,7 +2030,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8432"
     },
     "8434": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8034-camera-size-persist",
       "head": "d0b7b80",
       "status": "merged",
@@ -2012,7 +2038,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8434"
     },
     "8435": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8011-foreign-wall-length",
       "head": "4e54490",
       "status": "merged",
@@ -2020,7 +2046,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8435"
     },
     "8438": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7786-open-curve-arc",
       "head": "d00e79f",
       "status": "merged",
@@ -2028,7 +2054,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8438"
     },
     "8439": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7162-poly-hlr-deflection",
       "head": "4ec29b1",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2037,7 +2063,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8439"
     },
     "8440": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6613-camera-body-representation",
       "head": "ce45fd1",
       "status": "merged",
@@ -2045,7 +2071,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8440"
     },
     "8441": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6249-mep-start-port",
       "head": "fd26d38",
       "status": "merged",
@@ -2053,7 +2079,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8441"
     },
     "8443": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6681-material-ui-select-type",
       "head": "fa8b8e7",
       "status": "merged",
@@ -2061,7 +2087,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8443"
     },
     "8444": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-reimport-multiprocessing-toggle",
       "head": "acc2b30",
       "status": "skipped_conflict",
@@ -2069,7 +2095,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8444"
     },
     "8445": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6315-fill-area-voids",
       "head": "a9bc46d",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -2078,7 +2104,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8445"
     },
     "8446": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-5633-rename-undo",
       "head": "bacaddb",
       "status": "merged",
@@ -2086,7 +2112,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8446"
     },
     "8447": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3950-csv-search-attributes",
       "head": "5adeb83",
       "status": "skipped_conflict",
@@ -2094,7 +2120,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8447"
     },
     "8448": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4103-section-marker-direction",
       "head": "4c4750a",
       "status": "merged",
@@ -2102,7 +2128,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8448"
     },
     "8452": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-gltf-zup-optional-deref",
       "head": "ae9354c",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2111,7 +2137,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8452"
     },
     "8454": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6912-zero-span-conic-wire",
       "head": "1307c62",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2120,7 +2146,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8454"
     },
     "8456": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7822-examples-occ-includes",
       "head": "48098ea",
       "status": "merged",
@@ -2128,7 +2154,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8456"
     },
     "8461": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-5999-wire-intersection-broadphase",
       "head": "d47cc47",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2137,7 +2163,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8461"
     },
     "8463": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "harden-4926-serialise-null-handles",
       "head": "f428a09",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2146,7 +2172,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8463"
     },
     "8469": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-806-mirrored-normals",
       "head": "a8e980f",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2155,7 +2181,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8469"
     },
     "8471": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-1231-svg-storey-global-z",
       "head": "dcbfd18",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2164,7 +2190,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8471"
     },
     "8472": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-5067-serialise-indirect-surface",
       "head": "c463e64",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2173,7 +2199,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8472"
     },
     "8474": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-2629-svg-arc-bounds",
       "head": "9e6178a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2182,7 +2208,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8474"
     },
     "8475": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-2638-svg-storey-section-global-z",
       "head": "d3bbcb9",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2191,7 +2217,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8475"
     },
     "8476": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-5485-cgal-polyhedron",
       "head": "bff9f02",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2200,7 +2226,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8476"
     },
     "8477": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-4130-svg-hlr-guard",
       "head": "eb72975",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2209,7 +2235,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8477"
     },
     "8479": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-6997-cgal-vertex-normals",
       "head": "d1f8ab3",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2218,7 +2244,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8479"
     },
     "8480": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-6173-cgal-original-edges",
       "head": "de92655",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2227,7 +2253,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8480"
     },
     "8485": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-3540-tapered-v2",
       "head": "562085f",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2236,7 +2262,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8485"
     },
     "8488": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-1541-swept-caps",
       "head": "93ba04a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2245,7 +2271,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8488"
     },
     "8489": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-619-boolean-coincident",
       "head": "08d50da",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2254,7 +2280,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8489"
     },
     "8492": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-2248-dual-role-representation",
       "head": "3235092",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2263,7 +2289,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8492"
     },
     "8506": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4094-swept-disk-fillet",
       "head": "173ab2a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2272,7 +2298,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8506"
     },
     "8508": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7658-curved-loft",
       "head": "45c7377",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2297,7 +2323,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8548"
     },
     "8549": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "ship-7624-directprofile",
       "head": "257c757",
       "status": "skipped_conflict",
@@ -2305,7 +2331,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8549"
     },
     "8581": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8580-csv-missing-columns",
       "head": "18b67e2",
       "status": "merged",
@@ -2313,7 +2339,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8581"
     },
     "8583": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7156-chmod-permission-error",
       "head": "b509b7a",
       "status": "merged",
@@ -2321,7 +2347,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8583"
     },
     "8584": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6727-swept-solid-set-origin",
       "head": "5744a2a",
       "status": "merged",
@@ -2329,7 +2355,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8584"
     },
     "8585": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7275-drawing-sheet-undo",
       "head": "a4796d9",
       "status": "merged",
@@ -2345,7 +2371,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8587"
     },
     "8588": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-2415-geom-app-select-occt-compat",
       "head": "87ec4e6",
       "status": "merged",
@@ -2353,7 +2379,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8588"
     },
     "8590": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-2621-space-boundary-origin-sync",
       "head": "f8b4c3e",
       "status": "merged",
@@ -2361,7 +2387,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8590"
     },
     "8591": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-2477-datetime-format-consistency",
       "head": "23cc31c",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -2370,7 +2396,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8591"
     },
     "8592": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-2778-save-crash",
       "head": "17ecfda",
       "status": "merged",
@@ -2378,7 +2404,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8592"
     },
     "8593": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3067-structural-axis-default",
       "head": "65d9c78",
       "status": "merged",
@@ -2386,7 +2412,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8593"
     },
     "8595": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3496-swept-disk-authoring",
       "head": "3ed9975",
       "status": "merged",
@@ -2394,7 +2420,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8595"
     },
     "8596": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3747-curtain-wall-space-bounding",
       "head": "61edfe7",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -2403,7 +2429,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8596"
     },
     "8598": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4047-bounded-property-support",
       "head": "692974b",
       "status": "merged",
@@ -2452,7 +2478,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8610"
     },
     "8612": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8611-advanced-import-save-target",
       "head": "97df13f",
       "status": "merged",
@@ -2460,7 +2486,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8612"
     },
     "8613": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4050-material-select-unhide-type",
       "head": "f1643b5",
       "status": "merged",
@@ -2468,7 +2494,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8613"
     },
     "8614": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7525-wall-add-hang-large-curve",
       "head": "cf7e70b",
       "status": "merged",
@@ -2476,7 +2502,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8614"
     },
     "8615": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4067-svg-curve-hlr",
       "head": "c17196b",
       "status": "skipped_conflict",
@@ -2484,7 +2510,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8615"
     },
     "8616": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4122-resource-calendar-hours",
       "head": "ecb0006",
       "status": "merged",
@@ -2492,7 +2518,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8616"
     },
     "8619": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4349-join-context-menu",
       "head": "99aa937",
       "status": "merged",
@@ -2500,7 +2526,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8619"
     },
     "8620": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-5268-leader-multi-arrow-reopen",
       "head": "dc948cc",
       "status": "merged",
@@ -2508,7 +2534,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8620"
     },
     "8621": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-5567-svg-css-comments",
       "head": "105033d",
       "status": "merged",
@@ -2516,7 +2542,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8621"
     },
     "8622": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-5088-resource-cost-value-editor",
       "head": "c4db603",
       "status": "merged",
@@ -2524,7 +2550,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8622"
     },
     "8624": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6353-colour-by-pset-empty",
       "head": "62dfb44",
       "status": "merged",
@@ -2532,7 +2558,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8624"
     },
     "8626": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-mep-bend-shape-stopiteration",
       "head": "5e6b3e4",
       "status": "merged",
@@ -2540,7 +2566,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8626"
     },
     "8627": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6322-perspective-depth-width-height",
       "head": "7fe654e",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -2549,7 +2575,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8627"
     },
     "8628": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7228-arc-tool-error-reporting",
       "head": "29ed604",
       "status": "merged",
@@ -2557,7 +2583,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8628"
     },
     "8629": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8625-cost-value-unit-basis",
       "head": "2569566",
       "status": "merged",
@@ -2597,7 +2623,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8669"
     },
     "8673": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4309-section-plane-tab",
       "head": "876cee0",
       "status": "merged",
@@ -2605,7 +2631,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8673"
     },
     "8674": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4322-material-csv-import",
       "head": "2ccb3b3",
       "status": "merged",
@@ -2613,7 +2639,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8674"
     },
     "8675": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8041-watch-reload",
       "head": "8503cd9",
       "status": "merged",
@@ -2621,7 +2647,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8675"
     },
     "8677": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6377-plate-3d-editing",
       "head": "4b13a03",
       "status": "skipped_conflict",
@@ -2629,7 +2655,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8677"
     },
     "8678": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7237-zone-nesting",
       "head": "370ce48",
       "status": "skipped_conflict",
@@ -2637,7 +2663,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8678"
     },
     "8679": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6410-isolate-show-hide-docs",
       "head": "dfc0026",
       "status": "merged",
@@ -2645,7 +2671,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8679"
     },
     "8680": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7087-linked-hide-ux",
       "head": "9ffb502",
       "status": "merged",
@@ -2653,7 +2679,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8680"
     },
     "8681": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7334-linked-svg-dxf",
       "head": "8cf7408",
       "status": "skipped_draft",
@@ -2661,7 +2687,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8681"
     },
     "8686": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3446-update-space-boundaries",
       "head": "3f7e588",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -2670,7 +2696,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8686"
     },
     "8687": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3783-track-project-assets",
       "head": "025dcb2",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -2679,7 +2705,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8687"
     },
     "8688": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-8232-duplicate-xlink-ns",
       "head": "ba73fbc",
       "status": "merged",
@@ -2687,7 +2713,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8688"
     },
     "8692": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-1646-tooltip-batch",
       "head": "a0147dc",
       "status": "merged",
@@ -2695,7 +2721,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8692"
     },
     "8694": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3748-sloped-space-roof",
       "head": "75f445d",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -2704,7 +2730,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8694"
     },
     "8695": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3621-window-shapes",
       "head": "67f14e2",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -2713,7 +2739,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8695"
     },
     "8696": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3642-overlap-warning",
       "head": "bb7b1fd",
       "status": "merged",
@@ -2721,7 +2747,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8696"
     },
     "8697": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-2181-mep-junction",
       "head": "7ee619f",
       "status": "merged",
@@ -2729,7 +2755,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8697"
     },
     "8698": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3306-typed-ifc4-stubs",
       "head": "b9c3d3e",
       "status": "skipped_draft",
@@ -2737,7 +2763,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8698"
     },
     "8699": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3754-wall-covering",
       "head": "86e9669",
       "status": "merged",
@@ -2745,7 +2771,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8699"
     },
     "8702": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-1428-blendergis-bridge",
       "head": "e3cb98a",
       "status": "merged",
@@ -2753,7 +2779,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8702"
     },
     "8703": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-3995-standalone-window-boundaries",
       "head": "6ce5f2e",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -2778,7 +2804,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8707"
     },
     "8708": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-2438-door-panel-pset-edit",
       "head": "0bd7035",
       "status": "skipped_conflict",
@@ -2786,7 +2812,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8708"
     },
     "8711": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-6643-wall-editing-issues",
       "head": "da56851",
       "status": "merged",
@@ -2794,7 +2820,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8711"
     },
     "8712": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-6623-step-unit-scale",
       "head": "3b3e8f5",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2803,7 +2829,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8712"
     },
     "8718": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-2934-multiselect-parametric",
       "head": "a14b4b9",
       "status": "merged",
@@ -2811,7 +2837,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8718"
     },
     "8720": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6664-status-element-visibility",
       "head": "8e1ba61",
       "status": "merged",
@@ -2819,7 +2845,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8720"
     },
     "8721": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-3157-opening-thickness-sync",
       "head": "14454c1",
       "status": "merged",
@@ -2827,7 +2853,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8721"
     },
     "8722": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bv-6867-mitre-halfspace-cgal-fallback",
       "head": "139e2ed",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2836,7 +2862,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8722"
     },
     "8723": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6770-opening-multi-storey-decomposition",
       "head": "b8c20fb",
       "status": "merged",
@@ -2844,7 +2870,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8723"
     },
     "8725": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7815-occt-noop-cut-cgal-fallback",
       "head": "88536d8",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2853,7 +2879,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8725"
     },
     "8726": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7614-shared-profile-edit-refresh",
       "head": "3813fc5",
       "status": "merged",
@@ -2861,7 +2887,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8726"
     },
     "8727": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7663-item-mode-half-space-selection",
       "head": "56661a6",
       "status": "merged",
@@ -2869,7 +2895,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8727"
     },
     "8728": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7462-bulk-add-pset",
       "head": "d1be7e2",
       "status": "merged",
@@ -2877,7 +2903,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8728"
     },
     "8733": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6278-duct-bend-flow-direction",
       "head": "874e798",
       "status": "merged",
@@ -2885,7 +2911,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8733"
     },
     "8734": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-8049-resilient-drawing-print",
       "head": "dc27171",
       "status": "skipped_conflict",
@@ -2893,7 +2919,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8734"
     },
     "8735": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-7481-wall-toolbar-void-buttons",
       "head": "446836f",
       "status": "merged",
@@ -2901,7 +2927,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8735"
     },
     "8740": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "perf-regression-harness",
       "head": "9e0f19c",
       "status": "merged",
@@ -2909,7 +2935,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8740"
     },
     "8742": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-7489-units-in-context",
       "head": "128c74e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -2918,7 +2944,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8742"
     },
     "8743": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7234-arc-preserve-face",
       "head": "81abe95",
       "status": "skipped_conflict",
@@ -2926,7 +2952,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8743"
     },
     "8744": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7490-fill-alignment",
       "head": "02e1cfb",
       "status": "merged",
@@ -2934,7 +2960,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8744"
     },
     "8749": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-3303-light-reload",
       "head": "e49ed61",
       "status": "merged",
@@ -2942,7 +2968,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8749"
     },
     "8750": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-3289-sweep-authoring",
       "head": "7b5e629",
       "status": "skipped_draft",
@@ -2950,7 +2976,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8750"
     },
     "8752": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-3406-convert-to-type",
       "head": "1a475b2",
       "status": "merged",
@@ -2958,7 +2984,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8752"
     },
     "8755": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-3302-mirror-joins",
       "head": "6cb8ad7",
       "status": "merged",
@@ -2966,7 +2992,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8755"
     },
     "8756": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-8666-8667-append-asset",
       "head": "169dc24",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -2975,7 +3001,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8756"
     },
     "8758": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-3941-mep-split-hotkey",
       "head": "1ec6928",
       "status": "merged",
@@ -2992,7 +3018,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8760"
     },
     "8764": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-413-name-template-wgpu",
       "head": "a90a0e7",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3001,7 +3027,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8764"
     },
     "8766": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "concept-1333-schema-visitor",
       "head": "1233d70",
       "status": "skipped_draft",
@@ -3009,7 +3035,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8766"
     },
     "8768": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-556-xml-classification-v2",
       "head": "ad858ce",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3018,7 +3044,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8768"
     },
     "8771": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-790-gltf-group-node-names",
       "head": "cf0f86e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3027,7 +3053,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8771"
     },
     "8773": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-2639-bbox-substitution",
       "head": "fb7aa40",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3036,7 +3062,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8773"
     },
     "8776": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-414-ownership-propagation",
       "head": "db35597",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3045,7 +3071,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8776"
     },
     "8794": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "2077-centerline-profile",
       "head": "2380081",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3054,7 +3080,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8794"
     },
     "8801": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-6424-hidden-lines",
       "head": "6c8c63e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3063,7 +3089,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8801"
     },
     "8808": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-6908-svg-door-arcs",
       "head": "d5b3ce5",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3072,7 +3098,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8808"
     },
     "8810": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-6287-self-intersecting-profile",
       "head": "e12ed01",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3081,7 +3107,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8810"
     },
     "8820": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-6981-bcf-snapshot",
       "head": "6c8aa1d",
       "status": "merged",
@@ -3097,7 +3123,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8822"
     },
     "8840": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "perf-6712-mapped-items-parser",
       "head": "eca82d1",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3106,7 +3132,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8840"
     },
     "8844": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "sweep-46-geom-normal-index",
       "head": "7681e14",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3115,7 +3141,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8844"
     },
     "8845": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "issue-143-psr-style-aware-folding",
       "head": "3d22429",
       "status": "skipped_draft",
@@ -3132,7 +3158,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8847"
     },
     "8856": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "sweep-1308-svg-data-area",
       "head": "afa321b",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3141,7 +3167,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8856"
     },
     "8859": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "points-vertex-representations-v080",
       "head": "df1abab",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -3150,7 +3176,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8859"
     },
     "8868": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "6305-footing-gross-outer-area",
       "head": "7820ddc",
       "status": "merged",
@@ -3158,7 +3184,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8868"
     },
     "8871": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "cost-quantity-selector-query-5390",
       "head": "ed7ee5c",
       "status": "merged",
@@ -3166,7 +3192,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8871"
     },
     "8872": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "6382-link-surface-features",
       "head": "af224d3",
       "status": "skipped_conflict",
@@ -3174,7 +3200,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8872"
     },
     "8873": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "7901-filter-from-selection",
       "head": "c5a4fe9",
       "status": "skipped_conflict",
@@ -3182,7 +3208,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8873"
     },
     "8874": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat/selector-ref-structure-key-7806",
       "head": "09b57be",
       "status": "merged",
@@ -3190,7 +3216,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8874"
     },
     "8875": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "4748-stacked-csv-export",
       "head": "e635072",
       "status": "merged",
@@ -3198,7 +3224,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8875"
     },
     "8877": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "5157-subcontract-physical-quantities",
       "head": "195b298",
       "status": "skipped_draft",
@@ -3206,7 +3232,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8877"
     },
     "8879": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "7472-null-opening-reps",
       "head": "1b3f4ef",
       "status": "skipped_draft",
@@ -3214,7 +3240,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8879"
     },
     "8880": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "8399-door-flip-ux",
       "head": "66e6993",
       "status": "merged",
@@ -3222,7 +3248,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8880"
     },
     "8881": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "6400-display-units-length",
       "head": "3e016af",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -3231,7 +3257,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8881"
     },
     "8883": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "8570-annotation-boundary",
       "head": "5c6cca1",
       "status": "skipped_draft",
@@ -3239,7 +3265,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8883"
     },
     "8886": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "7030-backwards-fitting",
       "head": "ed4d777",
       "status": "merged",
@@ -3247,7 +3273,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8886"
     },
     "8888": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "4708-annotation-text-literal-decorator",
       "head": "905593b",
       "status": "merged",
@@ -3255,7 +3281,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8888"
     },
     "8889": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "8885-unit-name-guard",
       "head": "35430fe",
       "status": "skipped_conflict",
@@ -3263,7 +3289,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8889"
     },
     "8890": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "8850-relating-type-enum",
       "head": "7dc6d31",
       "status": "merged",
@@ -3271,7 +3297,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
     },
     "8894": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "8848-classify-placement-reset",
       "head": "814bad0",
       "status": "merged",
@@ -3279,7 +3305,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8894"
     },
     "8897": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "8849-linked-space-visibility",
       "head": "5a069af",
       "status": "merged",
@@ -3287,7 +3313,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8897"
     },
     "8898": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "8893-array-missing-child-guard",
       "head": "0071d7e",
       "status": "merged",
@@ -3295,7 +3321,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8898"
     },
     "8899": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "5505-instantiate-aggregated-type",
       "head": "30f3d55",
       "status": "skipped_draft",
@@ -3303,7 +3329,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8899"
     },
     "8902": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "3206-join-invert-side",
       "head": "c0181f3",
       "status": "merged",
@@ -3311,7 +3337,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8902"
     },
     "8903": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "3164-install-dep-headers",
       "head": "178e781",
       "status": "skipped_draft",
@@ -3319,7 +3345,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8903"
     },
     "8906": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "7909-guard-stale-byid",
       "head": "b75d032",
       "status": "merged",
@@ -3327,7 +3353,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8906"
     },
     "8907": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4442-honor-calendar-work-hours",
       "head": "2d298c3",
       "status": "merged",
@@ -3335,7 +3361,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8907"
     },
     "8911": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4448-stream-crlf-offset",
       "head": "8ff3643",
       "status": "merged",
@@ -3343,7 +3369,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8911"
     },
     "8912": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-4252-ifccsv-split-worksheets",
       "head": "e7f6ab1",
       "status": "skipped_conflict",
@@ -3351,7 +3377,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8912"
     },
     "8913": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-4391-measurement-local-ucs",
       "head": "9c1218f",
       "status": "skipped_draft",
@@ -3359,7 +3385,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8913"
     },
     "8914": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6277-mapped-item-coords",
       "head": "633be85",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -3368,7 +3394,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8914"
     },
     "8915": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-2956-document-revision-history",
       "head": "34bc81b",
       "status": "skipped_conflict",
@@ -3376,7 +3402,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8915"
     },
     "8916": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-4467-copyright-automation",
       "head": "1b57ada",
       "status": "skipped_draft",
@@ -3384,7 +3410,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8916"
     },
     "8917": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-4739-underlay-style-add",
       "head": "52b8ed0",
       "status": "merged",
@@ -3392,7 +3418,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8917"
     },
     "8918": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-4732-classification-search-and-ui",
       "head": "8932a82",
       "status": "skipped_draft",
@@ -3400,7 +3426,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8918"
     },
     "8919": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-4653-svg-symbol-class",
       "head": "108787a",
       "status": "merged",
@@ -3408,7 +3434,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8919"
     },
     "8920": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-4613-builtin-classification-library",
       "head": "91a8e31",
       "status": "merged",
@@ -3416,7 +3442,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8920"
     },
     "8922": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-6232-grid-params-prompt",
       "head": "72dc433",
       "status": "merged",
@@ -3424,7 +3450,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8922"
     },
     "8924": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-6239-viewport-list-select-sync",
       "head": "6ac70a3",
       "status": "merged",
@@ -3432,7 +3458,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8924"
     },
     "8925": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-4931-systems-pset-ui",
       "head": "a48492a",
       "status": "merged",
@@ -3440,7 +3466,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8925"
     },
     "8926": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-6241-fillet-unconnected-lines",
       "head": "6a88d37",
       "status": "merged",
@@ -3448,7 +3474,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8926"
     },
     "8927": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-6211-slab-align-tools",
       "head": "c92dbf1",
       "status": "skipped_draft",
@@ -3456,7 +3482,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8927"
     },
     "8928": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-4779-material-merge",
       "head": "1b6b125",
       "status": "merged",
@@ -3464,7 +3490,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8928"
     },
     "8929": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-5550-dxf-annotations",
       "head": "c6bcd4e",
       "status": "merged",
@@ -3472,7 +3498,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8929"
     },
     "8930": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-5611-roof-skylight-cut",
       "head": "575781f",
       "status": "merged",
@@ -3480,7 +3506,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8930"
     },
     "8932": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-5374-cable-segment-default-type",
       "head": "50dad97",
       "status": "merged",
@@ -3488,7 +3514,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8932"
     },
     "8933": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-5729-freestyle-ifc-only",
       "head": "a2bc7db",
       "status": "skipped_conflict",
@@ -3496,7 +3522,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8933"
     },
     "8935": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-5373-symbol-viewport-representation",
       "head": "7d53f43",
       "status": "skipped_conflict",
@@ -3504,7 +3530,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8935"
     },
     "8936": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-5133-annotation-selection-highlight",
       "head": "496611a",
       "status": "merged",
@@ -3512,7 +3538,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8936"
     },
     "8939": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-4738-thickness-on-type-create",
       "head": "9aa8f32",
       "status": "merged",
@@ -3520,7 +3546,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8939"
     },
     "8941": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/4612-classification-file-enum",
       "head": "33d0b37",
       "status": "skipped_draft",
@@ -3528,7 +3554,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8941"
     },
     "8944": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/8934-spatial-panel-regex-filter",
       "head": "7c33929",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -3537,7 +3563,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8944"
     },
     "8946": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/validate-stub-flaky-order-dependence",
       "head": "7feeedd",
       "status": "merged",
@@ -3545,7 +3571,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8946"
     },
     "8949": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/extractelements-docstring-selector-syntax",
       "head": "a447e97",
       "status": "merged",
@@ -3553,7 +3579,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8949"
     },
     "8950": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/8947-asset-browser-null-representation",
       "head": "bd7a94d",
       "status": "merged",
@@ -3561,7 +3587,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8950"
     },
     "8953": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/8945-extract-elements-slow-append-asset",
       "head": "a7a1bb2",
       "status": "skipped_conflict",
@@ -3577,7 +3603,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8954"
     },
     "8956": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/8945-append-asset-perf",
       "head": "55bff85",
       "status": "merged",
@@ -3585,7 +3611,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8956"
     },
     "8958": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/7889-toggle-hide-spaces-missing-obj",
       "head": "80eef3a",
       "status": "merged",
@@ -3593,7 +3619,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8958"
     },
     "8959": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "7702-remove-deprecated-mesh-add-operators",
       "head": "2058ac6",
       "status": "skipped_conflict",
@@ -3601,7 +3627,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8959"
     },
     "8960": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docs/stair-railing-toolbar-7244",
       "head": "67e2daf",
       "status": "merged",
@@ -3609,7 +3635,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8960"
     },
     "8961": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/7048-csv2ifc-delimiter",
       "head": "2544b36",
       "status": "merged",
@@ -3617,7 +3643,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8961"
     },
     "8963": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/issue-7053-multiprofile",
       "head": "266202b",
       "status": "merged",
@@ -3625,7 +3651,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8963"
     },
     "8964": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/6118-extract-selected-elements",
       "head": "a93c783",
       "status": "merged",
@@ -3633,7 +3659,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8964"
     },
     "8966": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/7151-trim-merge-poll",
       "head": "e217c1d",
       "status": "merged",
@@ -3641,7 +3667,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8966"
     },
     "8967": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/7470-outer-surface-area",
       "head": "442af6f",
       "status": "merged",
@@ -3649,7 +3675,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8967"
     },
     "8968": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/6301-material-constituent-rename",
       "head": "4678b6d",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -3658,7 +3684,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8968"
     },
     "8969": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/external-style-identification-crash",
       "head": "83aab99",
       "status": "merged",
@@ -3666,7 +3692,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8969"
     },
     "8970": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "5760-resource-csv-guid-roundtrip",
       "head": "f23b2eb",
       "status": "skipped_conflict",
@@ -3674,7 +3700,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8970"
     },
     "8971": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "5696-batch-reimport-iterator",
       "head": "fdd64b7",
       "status": "skipped_conflict",
@@ -3682,7 +3708,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8971"
     },
     "8972": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "7497-annotation-camera-bounds",
       "head": "d2ff7b8",
       "status": "merged",
@@ -3690,7 +3716,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8972"
     },
     "8976": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/6616-cost-schedule-property-candidates",
       "head": "c23ce3d",
       "status": "merged",
@@ -3698,7 +3724,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8976"
     },
     "8977": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "6724-preserve-mesh-topology-on-assign-class",
       "head": "4194867",
       "status": "merged",
@@ -3706,7 +3732,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8977"
     },
     "8978": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "7105-style-editing-tab-switch-autosave",
       "head": "a4001e2",
       "status": "merged",
@@ -3714,7 +3740,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8978"
     },
     "8980": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "6100-orthogonal-path-routing",
       "head": "9fb31c3",
       "status": "merged",
@@ -3722,7 +3748,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8980"
     },
     "8981": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "7493-stair-terminology",
       "head": "9e4efa8",
       "status": "merged",
@@ -3730,7 +3756,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8981"
     },
     "8982": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "6317-profile-to-fill-area",
       "head": "6cbab1e",
       "status": "merged",
@@ -3738,7 +3764,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8982"
     },
     "8985": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "6964-duration-precision",
       "head": "a49c94e",
       "status": "merged",
@@ -3746,7 +3772,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8985"
     },
     "8987": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "8984-leader-text-gap",
       "head": "b610a82",
       "status": "merged",
@@ -3754,7 +3780,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8987"
     },
     "8990": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/7997-opening-follows-host",
       "head": "9d179b3",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -3763,7 +3789,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8990"
     },
     "8992": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/mergeprojects-duplicate-globalid",
       "head": "2539cee",
       "status": "merged",
@@ -3771,7 +3797,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8992"
     },
     "8993": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-8031-missing-deps-guidance",
       "head": "9adefe6",
       "status": "skipped_conflict",
@@ -3788,7 +3814,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8994"
     },
     "8995": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-door-body-context-missing",
       "head": "1753943",
       "status": "merged",
@@ -3796,7 +3822,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8995"
     },
     "8996": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "webui-vendor-cdn-assets",
       "head": "657e4d8",
       "status": "merged",
@@ -3804,7 +3830,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8996"
     },
     "8997": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-ifc2x3-quick-create-door",
       "head": "207ff62",
       "status": "merged",
@@ -3812,7 +3838,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8997"
     },
     "9011": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/host-recut-active-representation",
       "head": "0012c96",
       "status": "merged",
@@ -3820,7 +3846,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9011"
     },
     "9012": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/wall-body-context-regenerate",
       "head": "467c186",
       "status": "skipped_conflict",
@@ -3828,7 +3854,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9012"
     },
     "9013": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/opening-subtraction-context-ids",
       "head": "a2264c9",
       "status": "merged",
@@ -3861,7 +3887,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
     },
     "9022": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/drawing-activation-selector-cost",
       "head": "71948c9",
       "status": "merged",
@@ -3869,7 +3895,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9022"
     },
     "9028": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9006-door-tool-polyline-crash",
       "head": "e8251f2",
       "status": "merged",
@@ -3877,7 +3903,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9028"
     },
     "9035": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9001-axis1-layer-offset-wrong-axis",
       "head": "3cd656a",
       "status": "merged",
@@ -3885,7 +3911,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9035"
     },
     "9037": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/2481-json-logger-percent-crash",
       "head": "7cd25bb",
       "status": "merged",
@@ -3893,7 +3919,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9037"
     },
     "9038": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/extractelements-ifc2x3-georeferencing",
       "head": "fa7ca04",
       "status": "merged",
@@ -3901,7 +3927,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9038"
     },
     "9039": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/7016-svgfill-multifile-wrong-entity",
       "head": "5354b0a",
       "status": "skipped_draft",
@@ -3909,7 +3935,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9039"
     },
     "9040": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6967-add-from-perimeter-button",
       "head": "e8fe0b6",
       "status": "merged",
@@ -3917,7 +3943,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9040"
     },
     "9041": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/covering-thumbnail-key-mismatch",
       "head": "dba664f",
       "status": "merged",
@@ -3925,7 +3951,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9041"
     },
     "9042": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9034-bsdd-referencecode-keyerror",
       "head": "d42d0d7",
       "status": "merged",
@@ -3933,7 +3959,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9042"
     },
     "9044": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/7000-mats-category-selector",
       "head": "223e263",
       "status": "merged",
@@ -3941,7 +3967,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9044"
     },
     "9045": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "5760-resource-csv-task-allocation",
       "head": "a8c58ad",
       "status": "merged",
@@ -3949,7 +3975,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9045"
     },
     "9046": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/7118-web-export-hide-topcalc",
       "head": "fbfb0ce",
       "status": "merged",
@@ -3965,7 +3991,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9047"
     },
     "9048": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9006-exit-edit-mode-callback-none-obj",
       "head": "fef2ba2",
       "status": "merged",
@@ -3973,7 +3999,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9048"
     },
     "9051": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-9033-drawing-status-classes",
       "head": "b3aea3d",
       "status": "merged",
@@ -3981,7 +4007,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9051"
     },
     "9052": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "stale-bounding-box-decorator-on-load",
       "head": "836b0da",
       "status": "merged",
@@ -3989,7 +4015,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9052"
     },
     "9053": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9032-plan-cut-default-storey",
       "head": "9eac4bf",
       "status": "merged",
@@ -4006,7 +4032,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9054"
     },
     "9057": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "ifcclash-tests-and-perf-fixes",
       "head": "f3c31bf",
       "status": "merged",
@@ -4014,7 +4040,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9057"
     },
     "9059": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-ifc2x3-predefined-pset-crash",
       "head": "073c637",
       "status": "merged",
@@ -4022,7 +4048,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9059"
     },
     "9060": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-ifccsv-xlsx-blank-cell-corruption",
       "head": "edb3e98",
       "status": "merged",
@@ -4030,7 +4056,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9060"
     },
     "9061": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcfm-cobie24legacy-zone-crash",
       "head": "a70d433",
       "status": "merged",
@@ -4038,7 +4064,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9061"
     },
     "9062": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6344-gross-weight-profile-mass-openings",
       "head": "fd50dbd",
       "status": "skipped_conflict",
@@ -4046,7 +4072,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9062"
     },
     "9063": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "qto-member-length-from-extrusion",
       "head": "261a38f",
       "status": "merged",
@@ -4054,7 +4080,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9063"
     },
     "9064": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcdiff-class-change-detection",
       "head": "c7d4e8a",
       "status": "skipped_conflict",
@@ -4062,7 +4088,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9064"
     },
     "9065": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/removerevituniformat-ifc2x3",
       "head": "d4dddb9",
       "status": "merged",
@@ -4070,7 +4096,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9065"
     },
     "9066": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcpatch-optional-attr-guards",
       "head": "66a7794",
       "status": "merged",
@@ -4078,7 +4104,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9066"
     },
     "9067": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcpatch-recipe-output-bugs",
       "head": "c569764",
       "status": "merged",
@@ -4086,7 +4112,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9067"
     },
     "9068": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-unit-convert-area-volume-prefix-scaling",
       "head": "ce46f75",
       "status": "merged",
@@ -4094,7 +4120,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9068"
     },
     "9073": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-nest-unassign-object-wrong-guard-var",
       "head": "1613a4f",
       "status": "merged",
@@ -4102,7 +4128,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9073"
     },
     "9074": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-cogo-survey-point-object-placement",
       "head": "c48cb54",
       "status": "merged",
@@ -4110,7 +4136,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9074"
     },
     "9075": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-ifc2ca-point-load-crash",
       "head": "a30a4b2",
       "status": "merged",
@@ -4118,7 +4144,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9075"
     },
     "9076": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "georef-conversion-loop-test-gap",
       "head": "3426910",
       "status": "merged",
@@ -4126,7 +4152,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9076"
     },
     "9078": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcsverchok-multi-class-overwrite-remaining",
       "head": "7baf584",
       "status": "merged",
@@ -4134,7 +4160,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9078"
     },
     "9079": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcedit-coerce-union-str-shadows-entity",
       "head": "df02d6c",
       "status": "merged",
@@ -4142,7 +4168,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9079"
     },
     "9080": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifccityjson-transform-not-applied",
       "head": "8473acd",
       "status": "merged",
@@ -4150,7 +4176,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9080"
     },
     "9081": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/bsdd-offline-tests-and-property-keyerror",
       "head": "5d88120",
       "status": "merged",
@@ -4158,7 +4184,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9081"
     },
     "9082": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifc4d-export-lag-duration-truncation",
       "head": "75b4e54",
       "status": "merged",
@@ -4166,7 +4192,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9082"
     },
     "9083": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/p6xer2ifc-shared-calendar-exceptions",
       "head": "5d9ab83",
       "status": "merged",
@@ -4174,7 +4200,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9083"
     },
     "9084": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6560-outliner-delete-type",
       "head": "a8afa1d",
       "status": "merged",
@@ -4182,7 +4208,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9084"
     },
     "9085": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/selector-set-value-boolean-no-string",
       "head": "f79fbd8",
       "status": "merged",
@@ -4190,7 +4216,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9085"
     },
     "9086": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6125-nonmanifold-volume-qto-helper",
       "head": "0cdf6f6",
       "status": "merged",
@@ -4198,7 +4224,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9086"
     },
     "9087": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "9031-camera-width-height-zero-crash",
       "head": "b2b8070",
       "status": "merged",
@@ -4206,7 +4232,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9087"
     },
     "9088": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-structural-filtered-boundary-conditions-crash",
       "head": "2dfb8cc",
       "status": "merged",
@@ -4214,7 +4240,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9088"
     },
     "9089": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-library-reference-attrs-ifc2x3",
       "head": "e9c07f1",
       "status": "merged",
@@ -4222,7 +4248,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9089"
     },
     "9090": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/owner-actor-identification-crash",
       "head": "7bcb59c",
       "status": "merged",
@@ -4230,7 +4256,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9090"
     },
     "9091": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/cost-quantity-names-accumulate",
       "head": "b65fbc4",
       "status": "merged",
@@ -4238,7 +4264,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9091"
     },
     "9092": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-structural-point-load-decoration-indexerror",
       "head": "61cf5e4",
       "status": "merged",
@@ -4246,7 +4272,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9092"
     },
     "9093": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-boundary-related-element-none",
       "head": "ef8ac2c",
       "status": "merged",
@@ -4254,7 +4280,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9093"
     },
     "9094": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/classification-change-level-hasreferences-crash",
       "head": "9f2b670",
       "status": "merged",
@@ -4262,7 +4288,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9094"
     },
     "9095": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/type-relating-type-classes-none-enum",
       "head": "44cbf63",
       "status": "merged",
@@ -4270,7 +4296,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9095"
     },
     "9096": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/setworldcoordinatesystem-plan-context-2d",
       "head": "7fa062c",
       "status": "merged",
@@ -4278,7 +4304,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9096"
     },
     "9097": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/archicad-doorswings-ifc2x3",
       "head": "0bfa52a",
       "status": "merged",
@@ -4286,7 +4312,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9097"
     },
     "9098": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcpatch-docstring-argument-mismatches",
       "head": "8b27548",
       "status": "merged",
@@ -4294,7 +4320,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9098"
     },
     "9099": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-document-operator-assign-obj-guard",
       "head": "a4f2516",
       "status": "merged",
@@ -4302,7 +4328,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9099"
     },
     "9100": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/audit-tail-null-guards",
       "head": "addee97",
       "status": "merged",
@@ -4310,7 +4336,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9100"
     },
     "9101": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/fixrevit2025tins-self-file-order",
       "head": "fa27374",
       "status": "merged",
@@ -4318,7 +4344,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9101"
     },
     "9102": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/data-sibling-none-guards",
       "head": "8dbfc1e",
       "status": "skipped_conflict",
@@ -4326,7 +4352,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9102"
     },
     "9103": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/bonsai-none-name-concat-crashes",
       "head": "0c56856",
       "status": "merged",
@@ -4334,7 +4360,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9103"
     },
     "9104": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9029-link-ifc-duplicate-on-repeat-click",
       "head": "dfe9c2e",
       "status": "merged",
@@ -4342,7 +4368,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9104"
     },
     "9105": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/cost-product-quantity-names-intersection",
       "head": "22bd452",
       "status": "merged",
@@ -4350,7 +4376,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9105"
     },
     "9106": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/sequence-work-time-start-ignored",
       "head": "09d5aab",
       "status": "merged",
@@ -4358,7 +4384,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9106"
     },
     "9108": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "api-audit-material-style-cost-2026-07-30",
       "head": "ba52572",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4367,7 +4393,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9108"
     },
     "9109": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcpatch-constituent-fractions-zero-width",
       "head": "c453cfa",
       "status": "merged",
@@ -4375,7 +4401,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9109"
     },
     "9110": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/api-audit-resource-sequence-batch2",
       "head": "654a282",
       "status": "merged",
@@ -4383,7 +4409,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9110"
     },
     "9113": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "ifc5d-wrong-number-audit",
       "head": "813e2e9",
       "status": "merged",
@@ -4391,7 +4417,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9113"
     },
     "9116": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "ifcclash-ifccsv-audit-fixes",
       "head": "1386bd0",
       "status": "merged",
@@ -4399,7 +4425,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9116"
     },
     "9117": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcwrap-setargumentasnull-null-deref",
       "head": "6927c48",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -4408,7 +4434,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9117"
     },
     "9118": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/cost-unitbasis-leak",
       "head": "587f1e8",
       "status": "merged",
@@ -4416,7 +4442,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9118"
     },
     "9120": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/bcf-reference-save-crashes",
       "head": "4336654",
       "status": "merged",
@@ -4424,7 +4450,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9120"
     },
     "9122": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/classification-add-reference-cross-classification-collision",
       "head": "c115c7b",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4433,7 +4459,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9122"
     },
     "9123": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/door-window-overall-dims-min",
       "head": "598c68e",
       "status": "merged",
@@ -4441,7 +4467,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9123"
     },
     "9124": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "api-audit-geometry-profile-fixes",
       "head": "7ac91ff",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4450,7 +4476,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9124"
     },
     "9125": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/structural-drawing-api-audit-fixes",
       "head": "bcfb454",
       "status": "skipped_conflict",
@@ -4458,7 +4484,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9125"
     },
     "9126": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/get-quantities-complex-verbose-keyerror",
       "head": "7e1c707",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4467,7 +4493,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9126"
     },
     "9127": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/attribute-min-max-schema-invalid-measures",
       "head": "255318b",
       "status": "merged",
@@ -4475,7 +4501,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9127"
     },
     "9129": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/cost-zero-quantity-falsy-trap",
       "head": "2d9d31a",
       "status": "merged",
@@ -4483,7 +4509,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9129"
     },
     "9131": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/bonsai-tool-twin-doc-inconsistencies",
       "head": "fb95182",
       "status": "merged",
@@ -4491,7 +4517,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9131"
     },
     "9132": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/lying-tests-drawing-qto-type-2026-07-30",
       "head": "f4b94a1",
       "status": "merged",
@@ -4499,7 +4525,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9132"
     },
     "9133": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/operator-audit-covetool-diff-gis-guards",
       "head": "51e0a08",
       "status": "merged",
@@ -4507,7 +4533,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9133"
     },
     "9135": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docstring-audit-batch-a85b",
       "head": "bb2462c",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4516,7 +4542,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9135"
     },
     "9136": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-fix-create-svg-document",
       "head": "c6fdea9",
       "status": "merged",
@@ -4524,7 +4550,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9136"
     },
     "9137": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docs/api-param-name-mismatches",
       "head": "d38ea1d",
       "status": "merged",
@@ -4540,7 +4566,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9139"
     },
     "9140": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcpatch-missing-project-error",
       "head": "1349acd",
       "status": "merged",
@@ -4548,7 +4574,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9140"
     },
     "9141": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcpatch-splitbystorey-dead-code",
       "head": "4b536f3",
       "status": "merged",
@@ -4556,7 +4582,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9141"
     },
     "9142": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-restriction-total-fraction-digits",
       "head": "60d3736",
       "status": "merged",
@@ -4564,7 +4590,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9142"
     },
     "9143": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcdiff-bsdd-falsy-params",
       "head": "6afccab",
       "status": "skipped_conflict",
@@ -4572,7 +4598,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9143"
     },
     "9144": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/hotkey-s-e-no-representation-crash",
       "head": "681ba8e",
       "status": "merged",
@@ -4580,7 +4606,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9144"
     },
     "9145": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "5428-fine-lineweight-furniture-trees",
       "head": "a1d0b8c",
       "status": "merged",
@@ -4588,7 +4614,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9145"
     },
     "9146": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-6995-cross-platform-font-fallback",
       "head": "5d93d67",
       "status": "skipped_conflict",
@@ -4596,7 +4622,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9146"
     },
     "9148": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/optional-attr-none-crashes-batch1",
       "head": "1af94a4",
       "status": "merged",
@@ -4604,7 +4630,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9148"
     },
     "9149": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "6647-1click-drawing-style-assets",
       "head": "c9705ea",
       "status": "merged",
@@ -4612,7 +4638,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9149"
     },
     "9152": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-referent-alignment-no-placement",
       "head": "0f37a4f",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4621,7 +4647,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9152"
     },
     "9153": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/bonsai-optional-attr-read-guards",
       "head": "d30407e",
       "status": "skipped_conflict",
@@ -4629,7 +4655,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9153"
     },
     "9154": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifc4d-export-crashes-valid-ifc",
       "head": "da55cc9",
       "status": "merged",
@@ -4637,7 +4663,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9154"
     },
     "9155": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifc2ca-optional-boundary-stiffness",
       "head": "54fc04e",
       "status": "merged",
@@ -4645,7 +4671,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9155"
     },
     "9157": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcfm-cobie-crash-guards",
       "head": "b83e984",
       "status": "merged",
@@ -4653,7 +4679,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9157"
     },
     "9159": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "audit-bonsai-enum-dispatch-a112",
       "head": "fd80bf5",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4662,7 +4688,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9159"
     },
     "9160": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9xxx-ifc2x3-base-qto-relatingpropertydefinition",
       "head": "1b7207d",
       "status": "merged",
@@ -4670,7 +4696,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9160"
     },
     "9161": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/api-empty-aggregate-corruption",
       "head": "c8179c0",
       "status": "merged",
@@ -4678,7 +4704,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9161"
     },
     "9162": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docs/api-fix-broken-examples",
       "head": "cb862ec",
       "status": "merged",
@@ -4686,7 +4712,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9162"
     },
     "9164": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/cost-item-quantity-empty-aggregate",
       "head": "c75f7f5",
       "status": "merged",
@@ -4694,7 +4720,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9164"
     },
     "9166": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifc2x3-costschedule-space-mandatory",
       "head": "c5cd2e5",
       "status": "skipped_conflict",
@@ -4702,7 +4728,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9166"
     },
     "9167": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/sequence-add-task-default-name",
       "head": "41a3102",
       "status": "merged",
@@ -4710,7 +4736,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9167"
     },
     "9168": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "audit-core-geometry-similar-openings",
       "head": "df99b9b",
       "status": "merged",
@@ -4718,7 +4744,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9168"
     },
     "9169": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/mep-quickadd-profile-position",
       "head": "de2195a",
       "status": "merged",
@@ -4726,7 +4752,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9169"
     },
     "9170": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/cascade-schedule-ifc2x3-crash",
       "head": "6be9aa9",
       "status": "skipped_conflict",
@@ -4734,7 +4760,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9170"
     },
     "9171": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/bonsai-tool-optional-attr-guards",
       "head": "e74d108",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4743,7 +4769,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9171"
     },
     "9172": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/geometry-data-representation-type-none",
       "head": "2c88a1d",
       "status": "merged",
@@ -4751,7 +4777,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9172"
     },
     "9173": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/util-optional-material-position-crashes",
       "head": "66ecc30",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4760,7 +4786,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9173"
     },
     "9174": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/bonsai-pset-reload-schema-identifier",
       "head": "541d219",
       "status": "merged",
@@ -4768,7 +4794,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9174"
     },
     "9175": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/misc-connected-system-elements-none-guard",
       "head": "56adb99",
       "status": "merged",
@@ -4776,7 +4802,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9175"
     },
     "9176": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/edit-pset-untemplated-list-crash",
       "head": "3d027d9",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4785,7 +4811,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9176"
     },
     "9178": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/validate-sqlite-guard",
       "head": "347d10a",
       "status": "merged",
@@ -4793,7 +4819,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9178"
     },
     "9184": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "perf-append-asset-safe-removal-scan",
       "head": "1fc954f",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4802,7 +4828,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9184"
     },
     "9185": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/bonsai-import-unit-name-none-guard",
       "head": "d20f0b6",
       "status": "merged",
@@ -4810,7 +4836,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9185"
     },
     "9186": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/nest-mode-decorator-none-textcoords",
       "head": "2b927b6",
       "status": "merged",
@@ -4818,7 +4844,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9186"
     },
     "9187": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-material-unset-crash",
       "head": "47098c3",
       "status": "merged",
@@ -4826,7 +4852,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9187"
     },
     "9188": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-property-table-datatype",
       "head": "6ae0f71",
       "status": "merged",
@@ -4834,7 +4860,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9188"
     },
     "9189": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-prohibited-requirement-status",
       "head": "2e526e5",
       "status": "merged",
@@ -4842,7 +4868,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9189"
     },
     "9190": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-verdict-audit",
       "head": "22c8fd6",
       "status": "merged",
@@ -4850,7 +4876,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9190"
     },
     "9192": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/nest-change-nest-no-parent",
       "head": "a25d37d",
       "status": "merged",
@@ -4858,7 +4884,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9192"
     },
     "9193": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcfm-duplicate-key-silent-drop",
       "head": "b336b1f",
       "status": "merged",
@@ -4866,7 +4892,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9193"
     },
     "9195": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/asta-calendar-missing-days",
       "head": "24ad350",
       "status": "merged",
@@ -4874,7 +4900,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9195"
     },
     "9196": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifc4d-csv-equipment-output-swap",
       "head": "2dac492",
       "status": "merged",
@@ -4882,7 +4908,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9196"
     },
     "9197": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "silent-noop-core-tool-audit",
       "head": "542d675",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4891,7 +4917,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9197"
     },
     "9198": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/assignconstituentfractions-ifc2x3",
       "head": "e334d30",
       "status": "merged",
@@ -4899,7 +4925,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9198"
     },
     "9200": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcfm-cobie-zero-value-properties-dropped",
       "head": "64beb44",
       "status": "merged",
@@ -4907,7 +4933,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9200"
     },
     "9201": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-window-body-context-missing",
       "head": "c93fd1c",
       "status": "merged",
@@ -4915,7 +4941,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9201"
     },
     "9202": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/mergeduplicatetypes-tag-attribute-guard",
       "head": "c48bbf6",
       "status": "merged",
@@ -4923,7 +4949,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9202"
     },
     "9204": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "bonsai-body-context-remaining-sites",
       "head": "8a33958",
       "status": "merged",
@@ -4931,7 +4957,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9204"
     },
     "9205": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-verdict-audit-round2",
       "head": "eab2891",
       "status": "merged",
@@ -4947,7 +4973,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9210"
     },
     "9212": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9207-shared-product-representation",
       "head": "bc863f8",
       "status": "merged",
@@ -4955,7 +4981,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9212"
     },
     "9213": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifcos-env-num-build-procs",
       "head": "8303bad",
       "status": "merged",
@@ -4971,7 +4997,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9217"
     },
     "9219": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9214-space-hidden-on-generate",
       "head": "076ae5e",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -4988,7 +5014,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
     },
     "9234": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9232-grid-axis-dot-truncation",
       "head": "374d980",
       "status": "skipped_conflict",
@@ -4996,7 +5022,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9234"
     },
     "9236": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9235-gross-side-area-baked-openings",
       "head": "d05edbd",
       "status": "merged",
@@ -5012,7 +5038,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
     },
     "9248": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9216-tests-for-9217",
       "head": "30d0f1a",
       "status": "merged",
@@ -5020,7 +5046,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9248"
     },
     "9249": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-shapely-geoms-crash-sweep",
       "head": "54c58cf",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -5029,7 +5055,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9249"
     },
     "9250": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ids-371-bounded-property-restriction",
       "head": "0fdb3ed",
       "status": "merged",
@@ -5037,7 +5063,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9250"
     },
     "9255": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifc2x3-port-append-proxy",
       "head": "743c295",
       "status": "merged",
@@ -5045,7 +5071,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9255"
     },
     "9257": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/sequence-assign-product-quadratic-9253",
       "head": "22934d4",
       "status": "merged",
@@ -5053,7 +5079,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9257"
     },
     "9258": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/api-empty-aggregate-ownership",
       "head": "624ff93",
       "status": "merged",
@@ -5061,7 +5087,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9258"
     },
     "9259": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/sequence-recurrence-interval-9134",
       "head": "70d1a50",
       "status": "merged",
@@ -5069,7 +5095,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9259"
     },
     "9260": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "diag-silent-geometry-failure",
       "head": "7287810",
       "status": "skipped_conflict",
@@ -5077,7 +5103,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9260"
     },
     "9261": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-ifc2x3-material-properties",
       "head": "0ca5127",
       "status": "merged",
@@ -5085,7 +5111,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9261"
     },
     "9263": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-tolerance-absolute-component",
       "head": "221294d",
       "status": "merged",
@@ -5093,7 +5119,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9263"
     },
     "9265": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/add-occurrence-relating-type-sync",
       "head": "3d7736a",
       "status": "merged",
@@ -5101,7 +5127,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9265"
     },
     "9266": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-7468-bsdd-pypi-modules",
       "head": "dc7e718",
       "status": "merged",
@@ -5109,7 +5135,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9266"
     },
     "9267": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "9262-item-mode-decoration-preview",
       "head": "8b7c7a1",
       "status": "merged",
@@ -5117,7 +5143,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9267"
     },
     "9269": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-requirements-facet-order",
       "head": "b3898d0",
       "status": "merged",
@@ -5125,7 +5151,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9269"
     },
     "9271": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "ids-339-identifier-roundtrip",
       "head": "7c77969",
       "status": "merged",
@@ -5133,7 +5159,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9271"
     },
     "9272": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-partof-relation-recursion",
       "head": "263cbb1",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -5142,7 +5168,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9272"
     },
     "9273": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-attribute-prohibited-empty",
       "head": "56f7d36",
       "status": "merged",
@@ -5150,7 +5176,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9273"
     },
     "9274": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/ifctester-property-prohibited-empty",
       "head": "c5e2b62",
       "status": "merged",
@@ -5158,7 +5184,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9274"
     },
     "9276": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9270-unsaved-ifc-warning",
       "head": "fb6b98d",
       "status": "merged",
@@ -5175,7 +5201,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9277"
     },
     "9295": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9294-projectlibrary-units",
       "head": "afd56a3",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -5184,7 +5210,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9295"
     },
     "9297": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-diff-panel-relationships",
       "head": "9f0f08b",
       "status": "merged",
@@ -5315,7 +5341,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9351"
     },
     "9354": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat-ifctester-report-redesign",
       "head": "5412fa4",
       "status": "skipped_draft",
@@ -5323,7 +5349,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9354"
     },
     "9358": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docs-drawing-stylesheet-guide",
       "head": "f2b1c8c",
       "status": "skipped_conflict",
@@ -5331,7 +5357,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9358"
     },
     "9360": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-link-ifc-silent-failure",
       "head": "b9d9e88",
       "status": "skipped_conflict",
@@ -5339,7 +5365,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9360"
     },
     "9361": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-material-hatch-classes",
       "head": "0ca427b",
       "status": "skipped_draft",
@@ -5416,7 +5442,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
     },
     "9390": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09r/fix-5357-clash-result-order",
       "head": "c14d034",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -5425,7 +5451,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9390"
     },
     "9391": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09r/bv-7835-examples-build-convert",
       "head": "c29364a",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -5434,7 +5460,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9391"
     },
     "9392": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09r/fix-8013-surfaceoflinearextrusion-depth",
       "head": "b81ff4e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -5443,7 +5469,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9392"
     },
     "9393": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09r/5880-hybrid-opening-fallback",
       "head": "b9c31da",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -5452,7 +5478,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9393"
     },
     "9395": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09r/fix-5109-xml-material-ids",
       "head": "8f1e147",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -5461,7 +5487,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9395"
     },
     "9397": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docker-arm64-readme-v09",
       "head": "3a925fc",
       "status": "merged",
@@ -5485,7 +5511,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9401"
     },
     "9404": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9376-earthworkscut-qto",
       "head": "d4e2a44",
       "status": "skipped_conflict",
@@ -5493,7 +5519,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9404"
     },
     "9405": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9352-query-comparison",
       "head": "bf472e3",
       "status": "skipped_conflict",
@@ -5501,7 +5527,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9405"
     },
     "9414": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "webapp-pattern-playground",
       "head": "c6eef71",
       "status": "skipped_draft",
@@ -5509,7 +5535,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9414"
     },
     "9415": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "webapp-facet-reorder",
       "head": "8cd2fae",
       "status": "skipped_draft",
@@ -5517,7 +5543,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9415"
     },
     "9420": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9419-layer-assigned-items",
       "head": "961a7ad",
       "reason": "Excluded by .env EXCLUDED list",
@@ -5526,7 +5552,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9420"
     },
     "9421": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9419-orphan-placements",
       "head": "027ff62",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -5544,7 +5570,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9422"
     },
     "9425": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/schedule-import-path-validation-9409",
       "head": "9f60f4a",
       "status": "skipped_conflict",
@@ -5552,7 +5578,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9425"
     },
     "9427": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "packaging-runtime-plugin-collection",
       "head": "5180940",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -5561,7 +5587,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9427"
     },
     "9428": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9426-slab-empty-polyline",
       "head": "d2755da",
       "status": "merged",
@@ -5569,7 +5595,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9428"
     },
     "9429": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix-9380-face-info-ownership",
       "head": "c8d7d9e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -5594,7 +5620,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9441"
     },
     "9442": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "packaging-plugin-guard",
       "head": "8e265bb",
       "status": "merged",
@@ -5610,7 +5636,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9458"
     },
     "9459": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docs/9456-fill-empty-ifc-concepts",
       "head": "3a8d1fa",
       "status": "merged",
@@ -5797,7 +5823,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9609"
     },
     "9621": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-9353-window-attrs-own-geometry",
       "head": "d8f4882",
       "status": "merged",
@@ -5805,7 +5831,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9621"
     },
     "9622": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-9591-sibling-window-openings",
       "head": "14a5ef8",
       "status": "merged",
@@ -5813,7 +5839,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9622"
     },
     "9623": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-9373-stale-pset-data",
       "head": "7860037",
       "status": "merged",
@@ -5821,7 +5847,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9623"
     },
     "9624": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-9299-aggregate-delete-segfault-2",
       "head": "48a1920",
       "status": "merged",
@@ -5829,7 +5855,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9624"
     },
     "9625": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-7261-append-empty-tuple-2",
       "head": "b2ea33a",
       "status": "merged",
@@ -5837,7 +5863,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9625"
     },
     "9626": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-7102-kilometre-project-thumbnails",
       "head": "d0e08d2",
       "status": "merged",
@@ -5845,7 +5871,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9626"
     },
     "9627": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix/false-origin-not-under-geometry",
       "head": "849a883",
       "status": "merged",
@@ -5853,7 +5879,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9627"
     },
     "9628": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-6937-dotted-pset-selector",
       "head": "a6e2810",
       "status": "merged",
@@ -5861,7 +5887,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9628"
     },
     "9629": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-8829-clear-occurrence-predefinedtype",
       "head": "05a1853",
       "status": "merged",
@@ -5869,7 +5895,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9629"
     },
     "9630": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-8846-door-arc-ifccircle",
       "head": "337690f",
       "status": "merged",
@@ -5877,7 +5903,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9630"
     },
     "9632": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/door-stack/1-opening-ifc-space",
       "head": "cb69b96",
       "status": "merged",
@@ -5885,7 +5911,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9632"
     },
     "9633": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/door-stack/2-unhostable-filling",
       "head": "39dc459",
       "status": "merged",
@@ -5893,7 +5919,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9633"
     },
     "9634": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/door-stack/3-filling-host-from-part",
       "head": "6956b81",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -5902,7 +5928,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9634"
     },
     "9635": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/door-stack/4-preview-ifc2x3",
       "head": "9527d7e",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -5911,7 +5937,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9635"
     },
     "9636": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/door-stack/5-filling-direction-sense",
       "head": "63e4472",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -5920,7 +5946,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9636"
     },
     "9637": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/door-stack/6-filling-face-frame",
       "head": "5c0e4ef",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -5929,7 +5955,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9637"
     },
     "9638": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/door-stack/7s-reference-view-voids",
       "head": "7b96277",
       "status": "merged",
@@ -5937,7 +5963,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9638"
     },
     "9639": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-8538-keep-material-usage",
       "head": "c610ca3",
       "status": "skipped_conflict",
@@ -5945,7 +5971,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9639"
     },
     "9640": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-8531-type-pset-edit",
       "head": "e4acdad",
       "status": "merged",
@@ -5953,7 +5979,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9640"
     },
     "9641": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-8532-uniquify-drawing-name",
       "head": "d558c6c",
       "status": "merged",
@@ -5961,7 +5987,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9641"
     },
     "9642": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/bool-attr-silent-drop",
       "head": "8bf891e",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -5970,7 +5996,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9642"
     },
     "9644": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8514",
       "head": "8945cf3",
       "status": "merged",
@@ -5978,7 +6004,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9644"
     },
     "9645": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8507",
       "head": "43e6a4b",
       "status": "merged",
@@ -5986,7 +6012,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9645"
     },
     "9646": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8505",
       "head": "c73a1e9",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -5995,7 +6021,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9646"
     },
     "9647": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8515",
       "head": "f06300e",
       "status": "merged",
@@ -6003,7 +6029,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9647"
     },
     "9648": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8512",
       "head": "d2f4df1",
       "status": "merged",
@@ -6011,7 +6037,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9648"
     },
     "9649": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8642",
       "head": "e461d83",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -6020,7 +6046,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9649"
     },
     "9650": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8542",
       "head": "de721c8",
       "status": "merged",
@@ -6028,7 +6054,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9650"
     },
     "9651": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8516",
       "head": "9910853",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -6037,7 +6063,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9651"
     },
     "9652": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8640",
       "head": "50902af",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -6046,7 +6072,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9652"
     },
     "9653": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8797",
       "head": "146e2e6",
       "status": "merged",
@@ -6054,7 +6080,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9653"
     },
     "9654": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8815",
       "head": "3978906",
       "status": "merged",
@@ -6062,7 +6088,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9654"
     },
     "9655": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8530",
       "head": "097199e",
       "status": "merged",
@@ -6070,7 +6096,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9655"
     },
     "9656": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8534",
       "head": "ec4b6ec",
       "status": "merged",
@@ -6078,7 +6104,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9656"
     },
     "9657": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8654",
       "head": "1027fbd",
       "status": "merged",
@@ -6086,7 +6112,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9657"
     },
     "9658": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8501",
       "head": "0b23472",
       "status": "merged",
@@ -6094,7 +6120,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9658"
     },
     "9659": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8544",
       "head": "6674627",
       "status": "merged",
@@ -6102,7 +6128,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9659"
     },
     "9660": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8529",
       "head": "5b0cbb0",
       "status": "merged",
@@ -6110,7 +6136,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9660"
     },
     "9661": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8816",
       "head": "f1e614d",
       "status": "merged",
@@ -6118,7 +6144,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9661"
     },
     "9662": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8770",
       "head": "5a6625f",
       "status": "merged",
@@ -6126,7 +6152,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9662"
     },
     "9663": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8842",
       "head": "ebf1cb9",
       "status": "merged",
@@ -6134,7 +6160,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9663"
     },
     "9664": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8795",
       "head": "fa1998b",
       "status": "merged",
@@ -6142,7 +6168,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9664"
     },
     "9665": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8541",
       "head": "5d7f10a",
       "status": "merged",
@@ -6150,7 +6176,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9665"
     },
     "9666": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8630",
       "head": "cbaaba3",
       "status": "merged",
@@ -6158,7 +6184,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9666"
     },
     "9667": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8671",
       "head": "4a68620",
       "status": "merged",
@@ -6166,7 +6192,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9667"
     },
     "9668": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8652",
       "head": "5140cd9",
       "status": "merged",
@@ -6174,7 +6200,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9668"
     },
     "9669": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8828",
       "head": "adfd40c",
       "status": "merged",
@@ -6182,7 +6208,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9669"
     },
     "9670": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8536",
       "head": "66f52f1",
       "status": "merged",
@@ -6190,7 +6216,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9670"
     },
     "9671": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8636",
       "head": "18d69b3",
       "status": "merged",
@@ -6198,7 +6224,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9671"
     },
     "9672": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8553",
       "head": "91c21f5",
       "status": "merged",
@@ -6206,7 +6232,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9672"
     },
     "9673": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8555",
       "head": "72e8c6e",
       "status": "merged",
@@ -6214,7 +6240,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9673"
     },
     "9674": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8645",
       "head": "67321e5",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -6223,7 +6249,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9674"
     },
     "9675": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8855",
       "head": "c8a9c5f",
       "status": "merged",
@@ -6231,7 +6257,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9675"
     },
     "9677": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8830",
       "head": "b9611b7",
       "status": "merged",
@@ -6239,7 +6265,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9677"
     },
     "9678": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8809",
       "head": "65a7c82",
       "status": "merged",
@@ -6247,7 +6273,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9678"
     },
     "9679": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8835",
       "head": "0e958e9",
       "status": "merged",
@@ -6255,7 +6281,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9679"
     },
     "9680": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8838",
       "head": "0cb2663",
       "status": "merged",
@@ -6263,7 +6289,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9680"
     },
     "9681": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8519",
       "head": "20c1b46",
       "status": "merged",
@@ -6271,7 +6297,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9681"
     },
     "9682": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8518",
       "head": "2a13172",
       "status": "merged",
@@ -6279,7 +6305,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9682"
     },
     "9683": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8841",
       "head": "78d0edc",
       "status": "merged",
@@ -6287,7 +6313,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9683"
     },
     "9684": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8796",
       "head": "baa8c67",
       "status": "skipped_conflict",
@@ -6295,7 +6321,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9684"
     },
     "9685": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8672",
       "head": "52634bb",
       "status": "merged",
@@ -6303,7 +6329,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9685"
     },
     "9686": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8799",
       "head": "258980e",
       "status": "merged",
@@ -6311,7 +6337,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9686"
     },
     "9687": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8802",
       "head": "0336599",
       "status": "merged",
@@ -6319,7 +6345,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9687"
     },
     "9688": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8804",
       "head": "ff2b52e",
       "status": "merged",
@@ -6327,7 +6353,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9688"
     },
     "9689": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8862",
       "head": "1c6a105",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6336,7 +6362,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9689"
     },
     "9690": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8811",
       "head": "ec3101f",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6345,7 +6371,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9690"
     },
     "9691": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8817",
       "head": "c877206",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6354,7 +6380,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9691"
     },
     "9695": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8769",
       "head": "bee448c",
       "status": "merged",
@@ -6362,7 +6388,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9695"
     },
     "9696": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8853",
       "head": "186737b",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6371,7 +6397,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9696"
     },
     "9697": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8450",
       "head": "4d33610",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6380,7 +6406,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9697"
     },
     "9698": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8500",
       "head": "a0a1a69",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6389,7 +6415,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9698"
     },
     "9699": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8805",
       "head": "a32d743",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6398,7 +6424,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9699"
     },
     "9700": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8498",
       "head": "83c3f89",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6407,7 +6433,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9700"
     },
     "9701": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8524",
       "head": "ed10938",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6416,7 +6442,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9701"
     },
     "9703": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8806",
       "head": "0990635",
       "status": "merged",
@@ -6424,7 +6450,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9703"
     },
     "9704": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8644",
       "head": "7655961",
       "status": "merged",
@@ -6432,7 +6458,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9704"
     },
     "9705": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8634",
       "head": "3b1e1c3",
       "status": "merged",
@@ -6440,7 +6466,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9705"
     },
     "9706": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8635",
       "head": "afc33ad",
       "status": "merged",
@@ -6448,7 +6474,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9706"
     },
     "9707": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8637",
       "head": "ea2c0e8",
       "status": "merged",
@@ -6456,7 +6482,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9707"
     },
     "9708": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8827",
       "head": "7c1aa5a",
       "status": "merged",
@@ -6464,7 +6490,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9708"
     },
     "9709": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8632",
       "head": "62a6774",
       "status": "merged",
@@ -6472,7 +6498,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9709"
     },
     "9710": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8800",
       "head": "1159abc",
       "status": "skipped_draft",
@@ -6480,7 +6506,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9710"
     },
     "9711": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8839",
       "head": "99521e1",
       "status": "merged",
@@ -6488,7 +6514,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9711"
     },
     "9712": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8807",
       "head": "c152e4c",
       "status": "merged",
@@ -6496,7 +6522,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9712"
     },
     "9713": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8813",
       "head": "0a17c34",
       "status": "merged",
@@ -6504,7 +6530,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9713"
     },
     "9714": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8491",
       "head": "819e423",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6513,7 +6539,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9714"
     },
     "9715": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8775",
       "head": "b111bf2",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6522,7 +6548,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9715"
     },
     "9716": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8499",
       "head": "6307bbb",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6531,7 +6557,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9716"
     },
     "9717": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8786",
       "head": "d18db6d",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6540,7 +6566,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9717"
     },
     "9718": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8486",
       "head": "4aa6011",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6549,7 +6575,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9718"
     },
     "9719": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8784",
       "head": "a3d504a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6558,7 +6584,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9719"
     },
     "9720": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8852",
       "head": "f57dc94",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6567,7 +6593,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9720"
     },
     "9722": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/fix-4360-profile-face-join",
       "head": "1596b08",
       "status": "merged",
@@ -6575,7 +6601,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9722"
     },
     "9723": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8528",
       "head": "3384b65",
       "status": "merged",
@@ -6583,7 +6609,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9723"
     },
     "9724": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8543",
       "head": "54bc65a",
       "status": "merged",
@@ -6591,7 +6617,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9724"
     },
     "9725": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8787",
       "head": "29debcc",
       "status": "merged",
@@ -6599,7 +6625,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9725"
     },
     "9726": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8276",
       "head": "0b487e0",
       "status": "merged",
@@ -6607,7 +6633,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9726"
     },
     "9729": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/split-8884-port-sizes",
       "head": "4368a89",
       "status": "merged",
@@ -6615,7 +6641,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9729"
     },
     "9730": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/split-8884-connect-ports",
       "head": "e3c6916",
       "status": "skipped_conflict",
@@ -6623,7 +6649,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9730"
     },
     "9731": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/split-9156-pset-template-attrs",
       "head": "0cc5d96",
       "status": "merged",
@@ -6631,7 +6657,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9731"
     },
     "9732": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/split-9156-structural-reaction-group",
       "head": "593b933",
       "status": "merged",
@@ -6639,7 +6665,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9732"
     },
     "9733": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/split-9156-load-decoration-member",
       "head": "8407def",
       "status": "skipped_conflict",
@@ -6647,7 +6673,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9733"
     },
     "9734": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/split-9156-unassign-item-style",
       "head": "44afe17",
       "status": "merged",
@@ -6655,7 +6681,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9734"
     },
     "9736": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/split-9156-add-to-sheet-references",
       "head": "482e6ef",
       "status": "merged",
@@ -6663,7 +6689,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9736"
     },
     "9737": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/split-9156-profile-opening-placement",
       "head": "d0abdfc",
       "status": "merged",
@@ -6671,7 +6697,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9737"
     },
     "9738": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8648",
       "head": "5945426",
       "status": "merged",
@@ -6679,7 +6705,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9738"
     },
     "9739": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8546",
       "head": "1345c3f",
       "status": "merged",
@@ -6687,7 +6713,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9739"
     },
     "9749": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8832",
       "head": "2993618",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -6696,7 +6722,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9749"
     },
     "9750": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8503",
       "head": "51f408b",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -6705,7 +6731,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9750"
     },
     "9751": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8837",
       "head": "9851ab8",
       "status": "skipped_draft",
@@ -6713,7 +6739,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9751"
     },
     "9752": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8552",
       "head": "f58357c",
       "status": "skipped_draft",
@@ -6721,7 +6747,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9752"
     },
     "9753": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "v09/replace-8511",
       "head": "bdf2610",
       "status": "merged",
@@ -6737,7 +6763,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9765"
     },
     "9773": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/8050-forward-port-8370",
       "head": "9100da5",
       "status": "skipped_draft",
@@ -6745,7 +6771,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9773"
     },
     "9774": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9763-space-rounded-walls",
       "head": "6856544",
       "status": "merged",
@@ -6753,7 +6779,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9774"
     },
     "9775": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9770-get-volume-far-from-origin",
       "head": "fe13ab3",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -6762,7 +6788,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9775"
     },
     "9777": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9768-manifold-circle-segments",
       "head": "f4ce3e7",
       "status": "skipped_draft",
@@ -6770,7 +6796,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9777"
     },
     "9778": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat/9377-bind-linked-reference-recipe",
       "head": "c8936d1",
       "status": "merged",
@@ -6778,7 +6804,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9778"
     },
     "9780": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9742-invert-cull-refresh",
       "head": "1fefbfd",
       "status": "skipped_draft",
@@ -6786,7 +6812,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9780"
     },
     "9781": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9741-clear-section-planes",
       "head": "80c3496",
       "status": "skipped_draft",
@@ -6794,7 +6820,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9781"
     },
     "9782": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9610-ifcdiff",
       "head": "122d16f",
       "status": "merged",
@@ -6802,7 +6828,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9782"
     },
     "9784": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/plane-angle-unit-fallback",
       "head": "365b138",
       "status": "skipped_draft",
@@ -6810,7 +6836,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9784"
     },
     "9785": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9283-finish-editing-filling",
       "head": "2f7e286",
       "status": "merged",
@@ -6818,7 +6844,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9785"
     },
     "9786": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9767-manifold-halfspace",
       "head": "f5061d0",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6827,7 +6853,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9786"
     },
     "9789": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/cityjson-numeric-lod",
       "head": "b267517",
       "status": "merged",
@@ -6835,7 +6861,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9789"
     },
     "9790": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "test/9256-swept-disk-opening",
       "head": "be5bb94",
       "status": "merged",
@@ -6843,7 +6869,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9790"
     },
     "9791": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat/8163-drawing-list-selected-only",
       "head": "75021e5",
       "status": "skipped_draft",
@@ -6851,7 +6877,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9791"
     },
     "9792": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/logger-append-stream-destination",
       "head": "93b06d8",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6860,7 +6886,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9792"
     },
     "9793": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9199-activate-model-skip-blender-objects",
       "head": "c572219",
       "status": "skipped_draft",
@@ -6868,7 +6894,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9793"
     },
     "9794": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "perf/bulk-remove-product",
       "head": "1543145",
       "status": "skipped_draft",
@@ -6876,7 +6902,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9794"
     },
     "9795": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/geometry-debug-prints",
       "head": "d6e3fd6",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6885,7 +6911,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9795"
     },
     "9796": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/edit-qto-pset-template",
       "head": "33f72f6",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -6894,7 +6920,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9796"
     },
     "9798": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docs/api-examples-1",
       "head": "85ce020",
       "status": "merged",
@@ -6902,7 +6928,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9798"
     },
     "9799": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docs/api-examples-2",
       "head": "8f4b6e5",
       "status": "merged",
@@ -6910,7 +6936,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9799"
     },
     "9800": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docs/api-examples-3",
       "head": "5cd5e3e",
       "status": "merged",
@@ -6918,7 +6944,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9800"
     },
     "9814": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9811-web-costing-sum-keyerror",
       "head": "11e7b8e",
       "status": "merged",
@@ -6926,7 +6952,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9814"
     },
     "9815": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9808-covering-native-axis",
       "head": "fd8e2ba",
       "status": "merged",
@@ -6934,7 +6960,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9815"
     },
     "9816": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9812-web-costing-stale-title",
       "head": "af631dd",
       "status": "merged",
@@ -6942,7 +6968,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9816"
     },
     "9819": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "docs/api-examples-4",
       "head": "ec06b59",
       "status": "merged",
@@ -6950,7 +6976,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9819"
     },
     "9823": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9818-serializer-null-relation",
       "head": "e709639",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6959,7 +6985,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9823"
     },
     "9824": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/sweep-profile-quad",
       "head": "29996d2",
       "status": "skipped_conflict",
@@ -6967,7 +6993,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9824"
     },
     "9825": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/sweep-fresh-project-loader",
       "head": "79f954f",
       "reason": "Fails to merge against base (problem with PR itself)",
@@ -6976,7 +7002,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9825"
     },
     "9828": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9827-rocksdb-guid-write",
       "head": "07be61f",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6985,7 +7011,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9828"
     },
     "9829": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "backport/9822-rocksdb-guid-index",
       "head": "fdbd5df",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -6994,7 +7020,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9829"
     },
     "9839": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9830-guid-non-22-char",
       "head": "7c25a14",
       "status": "skipped_draft",
@@ -7018,7 +7044,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9841"
     },
     "9842": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/guess-type-geometric-curve-set",
       "head": "958d0e0",
       "status": "merged",
@@ -7026,7 +7052,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9842"
     },
     "9843": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9813-costing-hover-outline",
       "head": "75ed439",
       "status": "merged",
@@ -7034,7 +7060,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9843"
     },
     "9844": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/sequence-calendar-without-working-days",
       "head": "ec20306",
       "status": "merged",
@@ -7042,7 +7068,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9844"
     },
     "9845": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/sequence-calendar-cache-invalidation",
       "head": "541bb48",
       "status": "merged",
@@ -7050,7 +7076,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9845"
     },
     "9846": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9565-calendar-after-dates",
       "head": "9acfbd4",
       "status": "merged",
@@ -7058,7 +7084,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9846"
     },
     "9847": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/collada-obj-curve-normals",
       "head": "785fd2a",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -7067,7 +7093,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9847"
     },
     "9848": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/9334-get-info-cycle",
       "head": "2090391",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -7076,7 +7102,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9848"
     },
     "9850": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/6249-mep-fitting-offset-tolerance",
       "head": "f74709c",
       "status": "merged",
@@ -7141,7 +7167,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9885"
     },
     "9898": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "feat/status-filters-user-defined",
       "head": "5636091",
       "status": "merged",
@@ -7149,7 +7175,7 @@
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9898"
     },
     "9899": {
-      "author": "BIMvoice",
+      "author": "petruconduraru",
       "branch": "fix/hybrid-kernel-threaded-fallback",
       "head": "9e6bac5",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
@@ -7564,8 +7590,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610291125",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610291125"
+    "tag": "v0.9.1-alpha2610291323",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610291323"
   },
   "schema": 1
 }
