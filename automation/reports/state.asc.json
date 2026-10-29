@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 211,
+    "failed": 210,
     "merged": 548,
     "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 919
+    "total": 918
   },
-  "generated_at": "2026-10-29T19:24:15Z",
+  "generated_at": "2026-10-29T21:23:26Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -301,15 +301,6 @@
       "status": "merged",
       "title": "Option to influence BUILD_ONLY_COMMON_SCHEMAS via env var and workflo…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10088"
-    },
-    "10093": {
-      "author": "brunopostle",
-      "branch": "fix/explicit-handle-bool",
-      "head": "2b72a16",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Make express::base bool conversion explicit",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10093"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7575,8 +7566,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610291950",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610291950"
+    "tag": "v0.9.1-alpha2610292150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610292150"
   },
   "schema": 1
 }
