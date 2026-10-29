@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 210,
-    "merged": 554,
+    "failed": 209,
+    "merged": 553,
     "skipped_conflict": 89,
     "skipped_draft": 68,
-    "total": 921
+    "total": 919
   },
-  "generated_at": "2026-10-29T12:57:22Z",
+  "generated_at": "2026-10-29T19:58:45Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -297,32 +297,15 @@
     "10088": {
       "author": "aothms",
       "branch": "workflows-schema-param",
-      "head": "8f98cf7",
+      "head": "9f2efed",
       "status": "merged",
       "title": "Option to influence BUILD_ONLY_COMMON_SCHEMAS via env var and workflo…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10088"
     },
-    "10091": {
-      "author": "brunopostle",
-      "branch": "ci/enable-cpp-tests",
-      "head": "034dd02",
-      "status": "merged",
-      "title": "Run C++ parse and geometry tests in CI",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10091"
-    },
-    "10092": {
-      "author": "brunopostle",
-      "branch": "fix/null-handle-compare",
-      "head": "d30db45",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Allow comparing and hashing null express::base handles",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10092"
-    },
     "10093": {
       "author": "brunopostle",
       "branch": "fix/explicit-handle-bool",
-      "head": "4e83c1e",
+      "head": "2b72a16",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Make express::base bool conversion explicit",
@@ -7590,8 +7573,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610291323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610291323"
+    "tag": "v0.9.1-alpha2610292025",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610292025"
   },
   "schema": 1
 }
