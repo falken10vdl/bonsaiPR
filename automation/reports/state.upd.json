@@ -3,11 +3,11 @@
   "counts": {
     "failed": 209,
     "merged": 554,
-    "skipped_conflict": 89,
+    "skipped_conflict": 90,
     "skipped_draft": 68,
-    "total": 920
+    "total": 921
   },
-  "generated_at": "2026-10-30T16:35:54Z",
+  "generated_at": "2026-10-30T18:33:19Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -317,6 +317,14 @@
       "status": "merged",
       "title": "Bonsai: add a preference for a new drawing's default Metadata",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10098"
+    },
+    "10100": {
+      "author": "theoryshaw",
+      "branch": "fix-reload-stale-type-mesh-10099",
+      "head": "a2fd66d",
+      "status": "merged",
+      "title": "Bonsai: reload past a stale type mesh on Update Representation",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10100"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -3338,7 +3346,7 @@
       "author": "petruconduraru",
       "branch": "7909-guard-stale-byid",
       "head": "b75d032",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: guard stale ifc_definition_id lookups that abort wall split and related flows",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8906"
     },
@@ -7581,8 +7589,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610301701",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610301701"
+    "tag": "v0.9.1-alpha2610301859",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610301859"
   },
   "schema": 1
 }
