@@ -3,11 +3,11 @@
   "counts": {
     "failed": 208,
     "merged": 554,
-    "skipped_conflict": 89,
+    "skipped_conflict": 90,
     "skipped_draft": 68,
-    "total": 919
+    "total": 920
   },
-  "generated_at": "2026-10-30T12:57:56Z",
+  "generated_at": "2026-10-30T16:00:02Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -309,6 +309,14 @@
       "status": "merged",
       "title": "Add opt-in sorted JSON keys to IfcClash",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10096"
+    },
+    "10098": {
+      "author": "theoryshaw",
+      "branch": "default_drawing_metadata_10097",
+      "head": "33fac88",
+      "status": "merged",
+      "title": "Bonsai: add a preference for a new drawing's default Metadata",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10098"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -1682,7 +1690,7 @@
       "author": "petruconduraru",
       "branch": "fix-4785-drawing-space-filter",
       "head": "3549113",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: apply the drawing Include filter to IfcSpace elements (#4785)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8351"
     },
@@ -7572,8 +7580,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610301323",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610301323"
+    "tag": "v0.9.1-alpha2610301626",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610301626"
   },
   "schema": 1
 }
