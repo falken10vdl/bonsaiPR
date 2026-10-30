@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 210,
-    "merged": 548,
+    "merged": 549,
     "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 918
+    "total": 919
   },
-  "generated_at": "2026-10-29T21:23:26Z",
+  "generated_at": "2026-10-29T23:23:29Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -301,6 +301,14 @@
       "status": "merged",
       "title": "Option to influence BUILD_ONLY_COMMON_SCHEMAS via env var and workflo…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10088"
+    },
+    "10095": {
+      "author": "brunopostle",
+      "branch": "build/require-shared-libs",
+      "head": "126eb91",
+      "status": "merged",
+      "title": "Require shared libraries outside WASM builds",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10095"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7566,8 +7574,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610292150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610292150"
+    "tag": "v0.9.1-alpha2610292350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610292350"
   },
   "schema": 1
 }
