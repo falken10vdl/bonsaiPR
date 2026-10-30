@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 209,
-    "merged": 553,
+    "merged": 554,
     "skipped_conflict": 88,
     "skipped_draft": 68,
-    "total": 918
+    "total": 919
   },
-  "generated_at": "2026-10-30T11:31:50Z",
+  "generated_at": "2026-10-30T13:31:56Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -301,6 +301,14 @@
       "status": "merged",
       "title": "Option to influence BUILD_ONLY_COMMON_SCHEMAS via env var and workflo…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10088"
+    },
+    "10096": {
+      "author": "rdmitry0911",
+      "branch": "feat/ifcclash-stable-json-order",
+      "head": "33f76a6",
+      "status": "merged",
+      "title": "Add opt-in sorted JSON keys to IfcClash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10096"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7565,8 +7573,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610301158",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610301158"
+    "tag": "v0.9.1-alpha2610301359",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610301359"
   },
   "schema": 1
 }

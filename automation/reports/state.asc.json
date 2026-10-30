@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 919
   },
-  "generated_at": "2026-10-30T10:23:36Z",
+  "generated_at": "2026-10-30T12:22:47Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -302,13 +302,13 @@
       "title": "Option to influence BUILD_ONLY_COMMON_SCHEMAS via env var and workflo…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10088"
     },
-    "10095": {
-      "author": "brunopostle",
-      "branch": "build/require-shared-libs",
-      "head": "126eb91",
+    "10096": {
+      "author": "rdmitry0911",
+      "branch": "feat/ifcclash-stable-json-order",
+      "head": "33f76a6",
       "status": "merged",
-      "title": "Require shared libraries outside WASM builds",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10095"
+      "title": "Add opt-in sorted JSON keys to IfcClash",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10096"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7574,8 +7574,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610301050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610301050"
+    "tag": "v0.9.1-alpha2610301250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610301250"
   },
   "schema": 1
 }
