@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 208,
-    "merged": 554,
+    "merged": 562,
     "skipped_conflict": 91,
     "skipped_draft": 68,
-    "total": 921
+    "total": 929
   },
-  "generated_at": "2026-10-30T17:58:06Z",
+  "generated_at": "2026-10-30T23:57:17Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -325,6 +325,70 @@
       "status": "merged",
       "title": "Bonsai: reload past a stale type mesh on Update Representation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10100"
+    },
+    "10101": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/astral-sh/setup-uv-10.3.2",
+      "head": "a605e9b",
+      "status": "merged",
+      "title": "Bump astral-sh/setup-uv from 10.3.0 to 10.3.2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10101"
+    },
+    "10102": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ty-0.0.91",
+      "head": "700f20a",
+      "status": "merged",
+      "title": "Bump ty from 0.0.90 to 0.0.91",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10102"
+    },
+    "10103": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/actions/setup-python-7.1.0",
+      "head": "c200126",
+      "status": "merged",
+      "title": "Bump actions/setup-python from 7.0.0 to 7.1.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10103"
+    },
+    "10104": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/sphinx-9.2.0",
+      "head": "2a50823",
+      "status": "merged",
+      "title": "Bump sphinx from 9.1.0 to 9.2.0",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10104"
+    },
+    "10105": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/pyodide-build-0.39.2",
+      "head": "ce94503",
+      "status": "merged",
+      "title": "Bump pyodide-build from 0.39.1 to 0.39.2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10105"
+    },
+    "10106": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/pypa/gh-action-pypi-publish-1.14.3",
+      "head": "c9d692c",
+      "status": "merged",
+      "title": "Bump pypa/gh-action-pypi-publish from 1.14.2 to 1.14.3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10106"
+    },
+    "10107": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/pip/ruff-0.17.2",
+      "head": "79edec4",
+      "status": "merged",
+      "title": "Bump ruff from 0.17.1 to 0.17.2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10107"
+    },
+    "10108": {
+      "author": "dependabot[bot]",
+      "branch": "dependabot/github_actions/Swatinem/rust-cache-2.9.3",
+      "head": "3f78cd9",
+      "status": "merged",
+      "title": "Bump Swatinem/rust-cache from 2.9.2 to 2.9.3",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10108"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7588,8 +7652,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610301824",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610301824"
+    "tag": "v0.9.1-alpha2610310025",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610310025"
   },
   "schema": 1
 }
