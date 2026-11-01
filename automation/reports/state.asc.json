@@ -3,11 +3,11 @@
   "counts": {
     "failed": 210,
     "merged": 557,
-    "skipped_conflict": 94,
+    "skipped_conflict": 95,
     "skipped_draft": 68,
-    "total": 929
+    "total": 930
   },
-  "generated_at": "2026-10-31T19:22:34Z",
+  "generated_at": "2026-11-01T16:25:15Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -389,6 +389,14 @@
       "status": "merged",
       "title": "Bump Swatinem/rust-cache from 2.9.2 to 2.9.3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10108"
+    },
+    "10113": {
+      "author": "tstotzer",
+      "branch": "codex/ifcdiff-empty-geometry",
+      "head": "77c56c0",
+      "status": "skipped_conflict",
+      "title": "Handle empty geometry iterators in IfcDiff",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10113"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7654,8 +7662,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610311950",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610311950"
+    "tag": "v0.9.1-alpha2611011650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611011650"
   },
   "schema": 1
 }

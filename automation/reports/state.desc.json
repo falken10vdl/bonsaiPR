@@ -3,11 +3,11 @@
   "counts": {
     "failed": 208,
     "merged": 562,
-    "skipped_conflict": 91,
+    "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 929
+    "total": 930
   },
-  "generated_at": "2026-10-31T19:56:23Z",
+  "generated_at": "2026-11-01T16:58:58Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -389,6 +389,14 @@
       "status": "merged",
       "title": "Bump Swatinem/rust-cache from 2.9.2 to 2.9.3",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10108"
+    },
+    "10113": {
+      "author": "tstotzer",
+      "branch": "codex/ifcdiff-empty-geometry",
+      "head": "77c56c0",
+      "status": "merged",
+      "title": "Handle empty geometry iterators in IfcDiff",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10113"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -6362,7 +6370,7 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8518",
       "head": "2a13172",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "IfcDiff: optional content-signature matching to track real changes (#8412)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9682"
     },
@@ -7652,8 +7660,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2610312023",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2610312023"
+    "tag": "v0.9.1-alpha2611011726",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611011726"
   },
   "schema": 1
 }
