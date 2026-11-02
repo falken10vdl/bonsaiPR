@@ -3,11 +3,11 @@
   "counts": {
     "failed": 210,
     "merged": 557,
-    "skipped_conflict": 95,
+    "skipped_conflict": 97,
     "skipped_draft": 68,
-    "total": 930
+    "total": 932
   },
-  "generated_at": "2026-11-02T14:25:19Z",
+  "generated_at": "2026-11-02T16:24:45Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -397,6 +397,22 @@
       "status": "skipped_conflict",
       "title": "Handle empty geometry iterators in IfcDiff",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10113"
+    },
+    "10115": {
+      "author": "sligara7",
+      "branch": "fix/ifcdiff-ignore-property-set-ids",
+      "head": "161cd2f",
+      "status": "skipped_conflict",
+      "title": "ifcdiff: ignore property set STEP ids",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10115"
+    },
+    "10116": {
+      "author": "sligara7",
+      "branch": "fix/ifcdiff-skip-deepdiff-for-equal-elements",
+      "head": "426240b",
+      "status": "skipped_conflict",
+      "title": "ifcdiff: skip DeepDiff for equal elements",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10116"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7662,8 +7678,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611021450",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611021450"
+    "tag": "v0.9.1-alpha2611021650",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611021650"
   },
   "schema": 1
 }
