@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 933
   },
-  "generated_at": "2026-11-03T00:24:10Z",
+  "generated_at": "2026-11-03T02:22:41Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -917,7 +917,7 @@
     "7858": {
       "author": "theoryshaw",
       "branch": "print_ifcspaces_in_projection",
-      "head": "f8dee64",
+      "head": "e3745b0",
       "status": "merged",
       "title": "Fix #6602: Print IfcSpaces in projection.",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7858"
@@ -7686,8 +7686,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611030050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611030050"
+    "tag": "v0.9.1-alpha2611030250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611030250"
   },
   "schema": 1
 }
