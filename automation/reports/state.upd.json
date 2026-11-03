@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 209,
-    "merged": 563,
+    "merged": 564,
     "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 932
+    "total": 933
   },
-  "generated_at": "2026-11-02T17:35:53Z",
+  "generated_at": "2026-11-03T01:31:53Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -413,6 +413,14 @@
       "status": "merged",
       "title": "ifcdiff: skip DeepDiff for equal elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10116"
+    },
+    "10118": {
+      "author": "theoryshaw",
+      "branch": "remove_deep2_large_aggregates",
+      "head": "ba540e7",
+      "status": "merged",
+      "title": "Restore #3052 guard for big lists in remove_deep2",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10118"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7677,8 +7685,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611021801",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611021801"
+    "tag": "v0.9.1-alpha2611030158",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611030158"
   },
   "schema": 1
 }
