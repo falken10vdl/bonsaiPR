@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 210,
-    "merged": 558,
+    "failed": 213,
+    "merged": 553,
     "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 928
+    "total": 926
   },
-  "generated_at": "2026-11-04T11:17:17Z",
+  "generated_at": "2026-11-04T13:59:05Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -172,14 +172,6 @@
       "title": "Add parametric framing systems (railings, curtain walls, storefronts)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10045"
     },
-    "10046": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/zizmor-1.31.1",
-      "head": "7d982c1",
-      "status": "merged",
-      "title": "Bump zizmor from 1.30.1 to 1.31.1",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10046"
-    },
     "10048": {
       "author": "glaziermag",
       "branch": "fix-ifcview-conda-zstd",
@@ -310,14 +302,6 @@
       "title": "Bonsai: reload past a stale type mesh on Update Representation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10100"
     },
-    "10102": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/ty-0.0.91",
-      "head": "ed9a51f",
-      "status": "merged",
-      "title": "Bump ty from 0.0.90 to 0.0.93",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10102"
-    },
     "10113": {
       "author": "tstotzer",
       "branch": "codex/ifcdiff-empty-geometry",
@@ -375,13 +359,13 @@
       "title": "Stop classification walks on reference cycles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10124"
     },
-    "10125": {
-      "author": "aothms",
-      "branch": "py-iterator-settings",
-      "head": "f64c999",
+    "10127": {
+      "author": "Amixx",
+      "branch": "feat/grid-axis-coordinates",
+      "head": "03ba32f",
       "status": "merged",
-      "title": "Python iterator settings retrieval",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10125"
+      "title": "Add util.placement.get_grid_axis_coordinates",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10127"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -5064,7 +5048,8 @@
       "author": "theoryshaw",
       "branch": "dev-environment-detect-python",
       "head": "e7c53f1",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "dev_environment.py: detect Blender's bundled Python from disk",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
     },
@@ -5088,7 +5073,8 @@
       "author": "theoryshaw",
       "branch": "dev-environment-locked-file",
       "head": "da98554",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "dev_environment.py: survive a locked file while symlinking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
     },
@@ -7604,7 +7590,8 @@
       "author": "aothms",
       "branch": "cpp-linux-sdk-workflow-fix",
       "head": "52933db",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "C++ linux sdk workflow fix",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9992"
     },
@@ -7646,8 +7633,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611041142",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611041142"
+    "tag": "v0.9.1-alpha2611041425",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611041425"
   },
   "schema": 1
 }
