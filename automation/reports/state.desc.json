@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 210,
-    "merged": 556,
+    "merged": 558,
     "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 926
+    "total": 928
   },
-  "generated_at": "2026-11-04T07:57:34Z",
+  "generated_at": "2026-11-04T11:17:17Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -366,6 +366,22 @@
       "status": "merged",
       "title": "Bump vite from 8.1.4 to 8.3.5 in /src/ts/ifcopenshell-js",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10123"
+    },
+    "10124": {
+      "author": "Amixx",
+      "branch": "fix/classification-cycles",
+      "head": "bfc870b",
+      "status": "merged",
+      "title": "Stop classification walks on reference cycles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10124"
+    },
+    "10125": {
+      "author": "aothms",
+      "branch": "py-iterator-settings",
+      "head": "f64c999",
+      "status": "merged",
+      "title": "Python iterator settings retrieval",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10125"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7630,8 +7646,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611040825",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611040825"
+    "tag": "v0.9.1-alpha2611041142",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611041142"
   },
   "schema": 1
 }
