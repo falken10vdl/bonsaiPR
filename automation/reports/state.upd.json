@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 926
   },
-  "generated_at": "2026-11-04T16:40:00Z",
+  "generated_at": "2026-11-04T18:35:34Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -134,7 +134,7 @@
     "10037": {
       "author": "ThomasHuang168",
       "branch": "feature/add_center_of_volume",
-      "head": "4f1af81",
+      "head": "39cd708",
       "status": "merged",
       "title": "add center of volume or mass computation in ifcopenshell.util.shape",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10037"
@@ -7633,8 +7633,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611041702",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611041702"
+    "tag": "v0.9.1-alpha2611041900",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611041900"
   },
   "schema": 1
 }
