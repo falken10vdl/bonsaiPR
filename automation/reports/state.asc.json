@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 214,
-    "merged": 546,
+    "merged": 545,
     "skipped_conflict": 98,
     "skipped_draft": 68,
-    "total": 926
+    "total": 925
   },
-  "generated_at": "2026-11-05T03:30:16Z",
+  "generated_at": "2026-11-05T12:24:12Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -342,14 +342,6 @@
       "status": "failed",
       "title": "fix(bonsai): prevent datablock leak and freeze during curve snapping",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10122"
-    },
-    "10123": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/npm_and_yarn/src/ts/ifcopenshell-js/vite-8.3.5",
-      "head": "09c0cd6",
-      "status": "merged",
-      "title": "Bump vite from 8.1.4 to 8.3.5 in /src/ts/ifcopenshell-js",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10123"
     },
     "10124": {
       "author": "Amixx",
@@ -7634,8 +7626,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611050350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611050350"
+    "tag": "v0.9.1-alpha2611051250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611051250"
   },
   "schema": 1
 }
