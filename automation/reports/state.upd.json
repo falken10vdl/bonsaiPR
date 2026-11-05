@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 213,
-    "merged": 553,
-    "skipped_conflict": 92,
+    "merged": 552,
+    "skipped_conflict": 93,
     "skipped_draft": 68,
     "total": 926
   },
-  "generated_at": "2026-11-05T00:33:42Z",
+  "generated_at": "2026-11-05T02:30:56Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -491,7 +491,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "7765fe1",
+      "head": "efb6616",
       "status": "merged",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
@@ -6269,7 +6269,7 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8553",
       "head": "91c21f5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve a parametric profile through an edit round trip (#6481)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9672"
     },
@@ -7633,8 +7633,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611050100",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611050100"
+    "tag": "v0.9.1-alpha2611050258",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611050258"
   },
   "schema": 1
 }

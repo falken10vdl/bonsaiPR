@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 214,
-    "merged": 547,
-    "skipped_conflict": 97,
+    "merged": 546,
+    "skipped_conflict": 98,
     "skipped_draft": 68,
     "total": 926
   },
-  "generated_at": "2026-11-04T23:25:18Z",
+  "generated_at": "2026-11-05T01:23:14Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -491,7 +491,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "91a3138",
+      "head": "f6586ee",
       "status": "merged",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
@@ -2633,7 +2633,7 @@
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
       "head": "c5ac395",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
@@ -6009,7 +6009,7 @@
       "author": "petruconduraru",
       "branch": "v09/fix-8538-keep-material-usage",
       "head": "c610ca3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: preserve material usage direction across a type change (#6676)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9639"
     },
@@ -6270,7 +6270,7 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8553",
       "head": "91c21f5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve a parametric profile through an edit round trip (#6481)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9672"
     },
@@ -7634,8 +7634,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611042350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611042350"
+    "tag": "v0.9.1-alpha2611050150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611050150"
   },
   "schema": 1
 }
