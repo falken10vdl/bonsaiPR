@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 213,
-    "merged": 552,
+    "failed": 214,
+    "merged": 553,
     "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 925
+    "total": 927
   },
-  "generated_at": "2026-11-05T19:59:43Z",
+  "generated_at": "2026-11-05T22:07:25Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -358,6 +358,23 @@
       "status": "merged",
       "title": "Add util.placement.get_grid_axis_coordinates",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10127"
+    },
+    "10135": {
+      "author": "aothms",
+      "branch": "cpp-file-size",
+      "head": "376e64f",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "C++ file size fix #10119",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10135"
+    },
+    "10137": {
+      "author": "theoryshaw",
+      "branch": "fix-reimport-empty-material-checksum",
+      "head": "91dc2ef",
+      "status": "merged",
+      "title": "Bonsai: reimport geometry onto an object that has no mesh",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10137"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7625,8 +7642,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611052025",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611052025"
+    "tag": "v0.9.1-alpha2611052226",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611052226"
   },
   "schema": 1
 }
