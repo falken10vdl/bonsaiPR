@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 925
   },
-  "generated_at": "2026-11-05T16:01:12Z",
+  "generated_at": "2026-11-05T17:59:40Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -483,7 +483,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "73934c9",
+      "head": "626c128",
       "status": "skipped_conflict",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
@@ -5361,7 +5361,7 @@
       "author": "sboddy",
       "branch": "fix-9348-single-instance-openings",
       "head": "9094094",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Fix silent geometry loss for sole occurrence of a typed opening",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9349"
@@ -7625,8 +7625,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611051626",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611051626"
+    "tag": "v0.9.1-alpha2611051825",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611051825"
   },
   "schema": 1
 }
