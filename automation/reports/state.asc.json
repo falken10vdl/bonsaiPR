@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 215,
-    "merged": 547,
+    "failed": 216,
+    "merged": 546,
     "skipped_conflict": 99,
     "skipped_draft": 68,
     "total": 929
   },
-  "generated_at": "2026-11-06T02:22:41Z",
+  "generated_at": "2026-11-06T04:22:28Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -384,13 +384,13 @@
       "title": "Defer type preview jobs until the scene settles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10139"
     },
-    "10141": {
+    "10143": {
       "author": "brunoperdigao",
-      "branch": "fix-door-window-preview",
-      "head": "4894eff",
+      "branch": "polyline-rectangle-mode",
+      "head": "fb53693",
       "status": "skipped_conflict",
-      "title": "fix door and window preview location when snapping to a wall.",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10141"
+      "title": "Polyline rectangle mode - alternative proposition",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10143"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -682,7 +682,8 @@
       "author": "jaliste",
       "branch": "fix/decorator-preview",
       "head": "509cb57",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix window/door preview alignment regression in ProductDecorator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7659"
     },
@@ -7659,8 +7660,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611060250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611060250"
+    "tag": "v0.9.1-alpha2611060450",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611060450"
   },
   "schema": 1
 }
