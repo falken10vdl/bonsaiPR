@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 214,
-    "merged": 553,
+    "merged": 554,
     "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 927
+    "total": 928
   },
-  "generated_at": "2026-11-05T22:07:25Z",
+  "generated_at": "2026-11-06T00:56:58Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -375,6 +375,14 @@
       "status": "merged",
       "title": "Bonsai: reimport geometry onto an object that has no mesh",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10137"
+    },
+    "10139": {
+      "author": "theoryshaw",
+      "branch": "defer-type-preview-jobs",
+      "head": "1aba2b0",
+      "status": "merged",
+      "title": "Defer type preview jobs until the scene settles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10139"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7642,8 +7650,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611052226",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611052226"
+    "tag": "v0.9.1-alpha2611060124",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611060124"
   },
   "schema": 1
 }
