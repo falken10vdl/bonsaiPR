@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 217,
-    "merged": 551,
+    "merged": 552,
     "skipped_conflict": 102,
     "skipped_draft": 68,
-    "total": 938
+    "total": 939
   },
-  "generated_at": "2026-11-06T16:25:18Z",
+  "generated_at": "2026-11-06T22:25:31Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -464,6 +464,14 @@
       "status": "failed",
       "title": "Keep the clicked side in wall and profile joins",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10153"
+    },
+    "10154": {
+      "author": "brunopostle",
+      "branch": "fix/structural-load-group-activity-names",
+      "head": "f251285",
+      "status": "merged",
+      "title": "Name the item of a load group activity",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10154"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7733,8 +7741,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611061650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611061650"
+    "tag": "v0.9.1-alpha2611062250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611062250"
   },
   "schema": 1
 }
