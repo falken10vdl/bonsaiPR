@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 215,
-    "merged": 552,
-    "skipped_conflict": 94,
+    "merged": 555,
+    "skipped_conflict": 99,
     "skipped_draft": 68,
-    "total": 929
+    "total": 937
   },
-  "generated_at": "2026-11-06T05:29:44Z",
+  "generated_at": "2026-11-06T10:34:54Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -391,6 +391,70 @@
       "status": "merged",
       "title": "Polyline rectangle mode - alternative proposition",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10143"
+    },
+    "10144": {
+      "author": "brunopostle",
+      "branch": "fix/structural-item-axis-unset",
+      "head": "631dcda",
+      "status": "merged",
+      "title": "Let edit_structural_item_axis set an unset Axis",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10144"
+    },
+    "10145": {
+      "author": "brunopostle",
+      "branch": "fix/structural-connection-condition-removal",
+      "head": "26b1817",
+      "status": "merged",
+      "title": "Keep the support when removing a release",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10145"
+    },
+    "10146": {
+      "author": "brunopostle",
+      "branch": "fix/structural-load-case-without-owner-history",
+      "head": "a49271a",
+      "status": "merged",
+      "title": "Remove load cases that have no OwnerHistory",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10146"
+    },
+    "10147": {
+      "author": "brunopostle",
+      "branch": "fix/structural-load-removal-orphans-activities",
+      "head": "abcf279",
+      "status": "merged",
+      "title": "Remove the activities of a removed load",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10147"
+    },
+    "10148": {
+      "author": "brunopostle",
+      "branch": "fix/remove-product-structural-member-connections",
+      "head": "f744258",
+      "status": "merged",
+      "title": "Remove member connections of removed items",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10148"
+    },
+    "10149": {
+      "author": "brunopostle",
+      "branch": "fix/topology-representation-types",
+      "head": "69c0942",
+      "status": "merged",
+      "title": "Use valid topology RepresentationTypes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10149"
+    },
+    "10150": {
+      "author": "brunopostle",
+      "branch": "fix/structural-condition-cs-at-reference-point",
+      "head": "1ed0004",
+      "status": "merged",
+      "title": "Place a new condition CS at the reference point",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10150"
+    },
+    "10151": {
+      "author": "brunopostle",
+      "branch": "fix/structural-face-surface",
+      "head": "bbc2382",
+      "status": "merged",
+      "title": "Give structural surface items an IfcFaceSurface",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10151"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -2472,7 +2536,7 @@
       "author": "petruconduraru",
       "branch": "fix-3067-structural-axis-default",
       "head": "65d9c78",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: set a default Axis on structural curve member/connection creation (#3067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8593"
     },
@@ -4412,7 +4476,7 @@
       "author": "petruconduraru",
       "branch": "fix/data-sibling-none-guards",
       "head": "8dbfc1e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: guard three unnamed-entity crashes where a sibling method already had the fallback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9102"
     },
@@ -7189,7 +7253,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/1-fixes",
       "head": "5027ff7",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 1: Fix load cases, load groups and activities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9868"
     },
@@ -7197,7 +7261,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/2-apply-edit",
       "head": "3de8745",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 2: Streamline applying and editing loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9869"
     },
@@ -7205,7 +7269,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/3-diagrams",
       "head": "5750ba1",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 3: Readable point force diagrams in Show Loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9870"
     },
@@ -7213,7 +7277,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/4-viewport-editing",
       "head": "8131393",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 4: Edit loads from the viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9871"
     },
@@ -7221,7 +7285,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/5-item-loads",
       "head": "7b816d8",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 5: See and show a structural item's loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9872"
     },
@@ -7659,8 +7723,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611060556",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611060556"
+    "tag": "v0.9.1-alpha2611061100",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611061100"
   },
   "schema": 1
 }

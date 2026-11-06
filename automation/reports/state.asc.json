@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 216,
-    "merged": 546,
-    "skipped_conflict": 99,
+    "merged": 551,
+    "skipped_conflict": 102,
     "skipped_draft": 68,
-    "total": 929
+    "total": 937
   },
-  "generated_at": "2026-11-06T04:22:28Z",
+  "generated_at": "2026-11-06T09:25:04Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -391,6 +391,70 @@
       "status": "skipped_conflict",
       "title": "Polyline rectangle mode - alternative proposition",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10143"
+    },
+    "10144": {
+      "author": "brunopostle",
+      "branch": "fix/structural-item-axis-unset",
+      "head": "631dcda",
+      "status": "skipped_conflict",
+      "title": "Let edit_structural_item_axis set an unset Axis",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10144"
+    },
+    "10145": {
+      "author": "brunopostle",
+      "branch": "fix/structural-connection-condition-removal",
+      "head": "26b1817",
+      "status": "skipped_conflict",
+      "title": "Keep the support when removing a release",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10145"
+    },
+    "10146": {
+      "author": "brunopostle",
+      "branch": "fix/structural-load-case-without-owner-history",
+      "head": "a49271a",
+      "status": "skipped_conflict",
+      "title": "Remove load cases that have no OwnerHistory",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10146"
+    },
+    "10147": {
+      "author": "brunopostle",
+      "branch": "fix/structural-load-removal-orphans-activities",
+      "head": "abcf279",
+      "status": "merged",
+      "title": "Remove the activities of a removed load",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10147"
+    },
+    "10148": {
+      "author": "brunopostle",
+      "branch": "fix/remove-product-structural-member-connections",
+      "head": "f744258",
+      "status": "merged",
+      "title": "Remove member connections of removed items",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10148"
+    },
+    "10149": {
+      "author": "brunopostle",
+      "branch": "fix/topology-representation-types",
+      "head": "69c0942",
+      "status": "merged",
+      "title": "Use valid topology RepresentationTypes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10149"
+    },
+    "10150": {
+      "author": "brunopostle",
+      "branch": "fix/structural-condition-cs-at-reference-point",
+      "head": "1ed0004",
+      "status": "merged",
+      "title": "Place a new condition CS at the reference point",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10150"
+    },
+    "10151": {
+      "author": "brunopostle",
+      "branch": "fix/structural-face-surface",
+      "head": "bbc2382",
+      "status": "merged",
+      "title": "Give structural surface items an IfcFaceSurface",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10151"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7660,8 +7724,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611060450",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611060450"
+    "tag": "v0.9.1-alpha2611060950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611060950"
   },
   "schema": 1
 }
