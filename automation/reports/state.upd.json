@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 214,
-    "merged": 553,
+    "failed": 215,
+    "merged": 552,
     "skipped_conflict": 94,
     "skipped_draft": 68,
     "total": 929
   },
-  "generated_at": "2026-11-06T01:30:42Z",
+  "generated_at": "2026-11-06T03:40:27Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -384,13 +384,13 @@
       "title": "Defer type preview jobs until the scene settles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10139"
     },
-    "10141": {
+    "10143": {
       "author": "brunoperdigao",
-      "branch": "fix-door-window-preview",
-      "head": "4894eff",
+      "branch": "polyline-rectangle-mode",
+      "head": "fb53693",
       "status": "merged",
-      "title": "fix door and window preview location when snapping to a wall.",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10141"
+      "title": "Polyline rectangle mode - alternative proposition",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10143"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -682,7 +682,8 @@
       "author": "jaliste",
       "branch": "fix/decorator-preview",
       "head": "509cb57",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Fix window/door preview alignment regression in ProductDecorator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7659"
     },
@@ -7510,7 +7511,7 @@
       "author": "shitobu",
       "branch": "fix/polyline-empty-distance-tab-error",
       "head": "5b15499",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "fix(bonsai): prevent crash when cycling UI parameter with empty distance (#9974)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9975"
     },
@@ -7658,8 +7659,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611060158",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611060158"
+    "tag": "v0.9.1-alpha2611060357",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611060357"
   },
   "schema": 1
 }

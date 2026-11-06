@@ -3,11 +3,11 @@
   "counts": {
     "failed": 215,
     "merged": 547,
-    "skipped_conflict": 98,
+    "skipped_conflict": 99,
     "skipped_draft": 68,
-    "total": 928
+    "total": 929
   },
-  "generated_at": "2026-11-06T00:23:23Z",
+  "generated_at": "2026-11-06T02:22:41Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -383,6 +383,14 @@
       "status": "merged",
       "title": "Defer type preview jobs until the scene settles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10139"
+    },
+    "10141": {
+      "author": "brunoperdigao",
+      "branch": "fix-door-window-preview",
+      "head": "4894eff",
+      "status": "skipped_conflict",
+      "title": "fix door and window preview location when snapping to a wall.",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10141"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7651,8 +7659,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611060050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611060050"
+    "tag": "v0.9.1-alpha2611060250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611060250"
   },
   "schema": 1
 }
