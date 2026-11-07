@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 217,
-    "merged": 557,
+    "merged": 558,
     "skipped_conflict": 102,
     "skipped_draft": 68,
-    "total": 944
+    "total": 945
   },
-  "generated_at": "2026-11-07T00:23:22Z",
+  "generated_at": "2026-11-07T11:24:37Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -512,6 +512,14 @@
       "status": "merged",
       "title": "Hide elements a drawing won't print on activate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10160"
+    },
+    "10161": {
+      "author": "brunopostle",
+      "branch": "ifcmcp-mcp1-compat",
+      "head": "2f1dda3",
+      "status": "merged",
+      "title": "ifcmcp: support mcp 1.x as well as 2.x",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10161"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7781,8 +7789,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611070050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611070050"
+    "tag": "v0.9.1-alpha2611071150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611071150"
   },
   "schema": 1
 }
