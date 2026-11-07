@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 217,
-    "merged": 558,
-    "skipped_conflict": 102,
+    "merged": 559,
+    "skipped_conflict": 107,
     "skipped_draft": 68,
-    "total": 945
+    "total": 951
   },
-  "generated_at": "2026-11-07T11:24:37Z",
+  "generated_at": "2026-11-07T19:29:17Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -520,6 +520,54 @@
       "status": "merged",
       "title": "ifcmcp: support mcp 1.x as well as 2.x",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10161"
+    },
+    "10162": {
+      "author": "brunopostle",
+      "branch": "ifcmcp-tool-annotations",
+      "head": "908b031",
+      "status": "skipped_conflict",
+      "title": "ifcmcp: annotate tools as read-only or destructive",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10162"
+    },
+    "10163": {
+      "author": "brunopostle",
+      "branch": "ifcmcp-guid-lookup",
+      "head": "c04fe52",
+      "status": "merged",
+      "title": "ifcmcp: look elements up by GlobalId too",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10163"
+    },
+    "10164": {
+      "author": "brunopostle",
+      "branch": "ifcmcp-output-limits",
+      "head": "4db56eb",
+      "status": "skipped_conflict",
+      "title": "ifcmcp: limit tree depth and page select results",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10164"
+    },
+    "10165": {
+      "author": "brunopostle",
+      "branch": "ifcmcp-undo",
+      "head": "643c019",
+      "status": "skipped_conflict",
+      "title": "ifcmcp: add undo and redo",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10165"
+    },
+    "10166": {
+      "author": "brunopostle",
+      "branch": "ifcedit-search",
+      "head": "b256196",
+      "status": "skipped_conflict",
+      "title": "ifcedit, ifcmcp: add keyword search over API functions",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10166"
+    },
+    "10167": {
+      "author": "brunopostle",
+      "branch": "ifcmcp-execute",
+      "head": "6ba9ad9",
+      "status": "skipped_conflict",
+      "title": "ifcmcp: add ifc_execute to run Python on the model",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10167"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7789,8 +7837,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611071150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611071150"
+    "tag": "v0.9.1-alpha2611071950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611071950"
   },
   "schema": 1
 }
