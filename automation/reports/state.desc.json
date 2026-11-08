@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 218,
-    "merged": 565,
-    "skipped_conflict": 103,
+    "failed": 225,
+    "merged": 558,
+    "skipped_conflict": 94,
     "skipped_draft": 68,
-    "total": 954
+    "total": 945
   },
-  "generated_at": "2026-11-08T03:56:56Z",
+  "generated_at": "2026-11-08T09:12:17Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -392,38 +392,6 @@
       "title": "Polyline rectangle mode - alternative proposition",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10143"
     },
-    "10144": {
-      "author": "brunopostle",
-      "branch": "fix/structural-item-axis-unset",
-      "head": "631dcda",
-      "status": "merged",
-      "title": "Let edit_structural_item_axis set an unset Axis",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10144"
-    },
-    "10145": {
-      "author": "brunopostle",
-      "branch": "fix/structural-connection-condition-removal",
-      "head": "26b1817",
-      "status": "merged",
-      "title": "Keep the support when removing a release",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10145"
-    },
-    "10146": {
-      "author": "brunopostle",
-      "branch": "fix/structural-load-case-without-owner-history",
-      "head": "a49271a",
-      "status": "merged",
-      "title": "Remove load cases that have no OwnerHistory",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10146"
-    },
-    "10147": {
-      "author": "brunopostle",
-      "branch": "fix/structural-load-removal-orphans-activities",
-      "head": "abcf279",
-      "status": "merged",
-      "title": "Remove the activities of a removed load",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10147"
-    },
     "10148": {
       "author": "brunopostle",
       "branch": "fix/remove-product-structural-member-connections",
@@ -439,14 +407,6 @@
       "status": "merged",
       "title": "Use valid topology RepresentationTypes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10149"
-    },
-    "10150": {
-      "author": "brunopostle",
-      "branch": "fix/structural-condition-cs-at-reference-point",
-      "head": "1ed0004",
-      "status": "merged",
-      "title": "Place a new condition CS at the reference point",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10150"
     },
     "10151": {
       "author": "brunopostle",
@@ -464,14 +424,6 @@
       "status": "failed",
       "title": "Keep the clicked side in wall and profile joins",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10153"
-    },
-    "10154": {
-      "author": "brunopostle",
-      "branch": "fix/structural-load-group-activity-names",
-      "head": "f251285",
-      "status": "merged",
-      "title": "Name the item of a load group activity",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10154"
     },
     "10155": {
       "author": "dependabot[bot]",
@@ -513,50 +465,10 @@
       "title": "Hide elements a drawing won't print on activate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10160"
     },
-    "10161": {
-      "author": "brunopostle",
-      "branch": "ifcmcp-mcp1-compat",
-      "head": "2f1dda3",
-      "status": "merged",
-      "title": "ifcmcp: support mcp 1.x as well as 2.x",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10161"
-    },
-    "10162": {
-      "author": "brunopostle",
-      "branch": "ifcmcp-tool-annotations",
-      "head": "908b031",
-      "status": "skipped_conflict",
-      "title": "ifcmcp: annotate tools as read-only or destructive",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10162"
-    },
-    "10163": {
-      "author": "brunopostle",
-      "branch": "ifcmcp-guid-lookup",
-      "head": "c04fe52",
-      "status": "skipped_conflict",
-      "title": "ifcmcp: look elements up by GlobalId too",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10163"
-    },
-    "10164": {
-      "author": "brunopostle",
-      "branch": "ifcmcp-output-limits",
-      "head": "4db56eb",
-      "status": "merged",
-      "title": "ifcmcp: limit tree depth and page select results",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10164"
-    },
-    "10165": {
-      "author": "brunopostle",
-      "branch": "ifcmcp-undo",
-      "head": "643c019",
-      "status": "merged",
-      "title": "ifcmcp: add undo and redo",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10165"
-    },
     "10166": {
       "author": "brunopostle",
       "branch": "ifcedit-search",
-      "head": "b256196",
+      "head": "e4a026c",
       "status": "skipped_conflict",
       "title": "ifcedit, ifcmcp: add keyword search over API functions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10166"
@@ -565,7 +477,7 @@
       "author": "brunopostle",
       "branch": "ifcmcp-execute",
       "head": "6ba9ad9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcmcp: add ifc_execute to run Python on the model",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10167"
     },
@@ -594,6 +506,22 @@
       "status": "failed",
       "title": "fix(util): support Model Axis contexts and rectangle/composite profiles in get_reference_line (fixes #10089)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10170"
+    },
+    "10171": {
+      "author": "brunopostle",
+      "branch": "feat/structural-load-combinations",
+      "head": "f0f346e",
+      "status": "merged",
+      "title": "Add load combinations to api.structural",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10171"
+    },
+    "10172": {
+      "author": "brunopostle",
+      "branch": "fix/structural-load-display-factors",
+      "head": "7d612eb",
+      "status": "merged",
+      "title": "Fix load factors shown for load combinations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10172"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -2675,7 +2603,8 @@
       "author": "petruconduraru",
       "branch": "fix-3067-structural-axis-default",
       "head": "65d9c78",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: set a default Axis on structural curve member/connection creation (#3067)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8593"
     },
@@ -4439,7 +4368,7 @@
       "author": "petruconduraru",
       "branch": "fix/ifccityjson-transform-not-applied",
       "head": "8473acd",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifccityjson: apply the CityJSON transform, fixing 1000x geometry",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9080"
     },
@@ -4747,7 +4676,8 @@
       "author": "petruconduraru",
       "branch": "fix/structural-drawing-api-audit-fixes",
       "head": "bcfb454",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "api: fix an orphaned boundary condition and two crashes on default input",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9125"
     },
@@ -7392,7 +7322,8 @@
       "author": "theoryshaw",
       "branch": "structural-loads/1-fixes",
       "head": "5027ff7",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Structural Analysis 1: Fix load cases, load groups and activities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9868"
     },
@@ -7400,7 +7331,8 @@
       "author": "theoryshaw",
       "branch": "structural-loads/2-apply-edit",
       "head": "3de8745",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Structural Analysis 2: Streamline applying and editing loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9869"
     },
@@ -7408,7 +7340,8 @@
       "author": "theoryshaw",
       "branch": "structural-loads/3-diagrams",
       "head": "5750ba1",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Structural Analysis 3: Readable point force diagrams in Show Loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9870"
     },
@@ -7416,7 +7349,8 @@
       "author": "theoryshaw",
       "branch": "structural-loads/4-viewport-editing",
       "head": "8131393",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Structural Analysis 4: Edit loads from the viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9871"
     },
@@ -7424,7 +7358,8 @@
       "author": "theoryshaw",
       "branch": "structural-loads/5-item-loads",
       "head": "7b816d8",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Structural Analysis 5: See and show a structural item's loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9872"
     },
@@ -7862,8 +7797,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611080424",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611080424"
+    "tag": "v0.9.1-alpha2611080925",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611080925"
   },
   "schema": 1
 }
