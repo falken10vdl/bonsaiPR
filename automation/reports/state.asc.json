@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 194,
-    "merged": 544,
+    "merged": 545,
     "skipped_conflict": 125,
     "skipped_draft": 68,
-    "total": 931
+    "total": 932
   },
-  "generated_at": "2026-11-08T17:23:46Z",
+  "generated_at": "2026-11-08T19:24:38Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -445,6 +445,14 @@
       "status": "failed",
       "title": "fix(util): support Model Axis contexts and rectangle/composite profiles in get_reference_line (fixes #10089)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10170"
+    },
+    "10174": {
+      "author": "theoryshaw",
+      "branch": "structural-curve-axis",
+      "head": "4d39bc1",
+      "status": "merged",
+      "title": "Give new structural curve items an Axis",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10174"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7654,8 +7662,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611081750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611081750"
+    "tag": "v0.9.1-alpha2611081950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611081950"
   },
   "schema": 1
 }
