@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 225,
-    "merged": 557,
-    "skipped_conflict": 93,
+    "merged": 546,
+    "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 943
+    "total": 931
   },
-  "generated_at": "2026-11-08T09:57:47Z",
+  "generated_at": "2026-11-08T12:43:41Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -214,14 +214,6 @@
       "title": "Clash: an edge pierces a shape only where it runs inside it",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10065"
     },
-    "10066": {
-      "author": "sligara7",
-      "branch": "fix/ifcquery-clash-storey-scope-includes-referenced",
-      "head": "38d7584",
-      "status": "merged",
-      "title": "ifcquery clash: scope \"storey\" includes elements referenced into the storey",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10066"
-    },
     "10070": {
       "author": "shitobu",
       "branch": "fix/pset-template-ifc4x3-specification",
@@ -241,7 +233,7 @@
     "10072": {
       "author": "shitobu",
       "branch": "fix/structural-curve-member-preserve-edge-topology",
-      "head": "658ed90",
+      "head": "7077772",
       "status": "merged",
       "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
@@ -253,14 +245,6 @@
       "status": "merged",
       "title": "Keep walls with a curved axis on regeneration",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10078"
-    },
-    "10079": {
-      "author": "shitobu",
-      "branch": "fix/boundary-condition-column-widths",
-      "head": "46967da",
-      "status": "merged",
-      "title": "fix(bonsai): balance boundary condition panel column widths for readable measure values",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10079"
     },
     "10080": {
       "author": "shitobu",
@@ -392,30 +376,6 @@
       "title": "Polyline rectangle mode - alternative proposition",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10143"
     },
-    "10148": {
-      "author": "brunopostle",
-      "branch": "fix/remove-product-structural-member-connections",
-      "head": "f744258",
-      "status": "merged",
-      "title": "Remove member connections of removed items",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10148"
-    },
-    "10149": {
-      "author": "brunopostle",
-      "branch": "fix/topology-representation-types",
-      "head": "69c0942",
-      "status": "merged",
-      "title": "Use valid topology RepresentationTypes",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10149"
-    },
-    "10151": {
-      "author": "brunopostle",
-      "branch": "fix/structural-face-surface",
-      "head": "bbc2382",
-      "status": "merged",
-      "title": "Give structural surface items an IfcFaceSurface",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10151"
-    },
     "10153": {
       "author": "theoryshaw",
       "branch": "model_join_clicked_side",
@@ -490,22 +450,6 @@
       "status": "failed",
       "title": "fix(util): support Model Axis contexts and rectangle/composite profiles in get_reference_line (fixes #10089)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10170"
-    },
-    "10171": {
-      "author": "brunopostle",
-      "branch": "feat/structural-load-combinations",
-      "head": "f0f346e",
-      "status": "merged",
-      "title": "Add load combinations to api.structural",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10171"
-    },
-    "10172": {
-      "author": "brunopostle",
-      "branch": "fix/structural-load-display-factors",
-      "head": "7d612eb",
-      "status": "merged",
-      "title": "Fix load factors shown for load combinations",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10172"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -4340,14 +4284,6 @@
       "title": "ifcsverchok: stop batched node inputs overwriting each other",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9078"
     },
-    "9079": {
-      "author": "petruconduraru",
-      "branch": "fix/ifcedit-coerce-union-str-shadows-entity",
-      "head": "df02d6c",
-      "status": "merged",
-      "title": "ifcedit: stop str shadowing more specific Union alternatives",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9079"
-    },
     "9080": {
       "author": "petruconduraru",
       "branch": "fix/ifccityjson-transform-not-applied",
@@ -4412,14 +4348,6 @@
       "title": "Bonsai: stop the drawing camera Width/Height from reaching zero (refs #9031, not the crash)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9087"
     },
-    "9088": {
-      "author": "petruconduraru",
-      "branch": "fix-structural-filtered-boundary-conditions-crash",
-      "head": "2dfb8cc",
-      "status": "merged",
-      "title": "Bonsai: fix the boundary-condition filter crashing on a string subscript",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9088"
-    },
     "9089": {
       "author": "petruconduraru",
       "branch": "fix-library-reference-attrs-ifc2x3",
@@ -4443,14 +4371,6 @@
       "status": "merged",
       "title": "Bonsai: accumulate quantity names across quantity sets instead of overwriting",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9091"
-    },
-    "9092": {
-      "author": "petruconduraru",
-      "branch": "fix-structural-point-load-decoration-indexerror",
-      "head": "61cf5e4",
-      "status": "merged",
-      "title": "Bonsai: fix IndexError showing loads on a member with a point load",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9092"
     },
     "9093": {
       "author": "petruconduraru",
@@ -6841,22 +6761,6 @@
       "title": "Bonsai: guard unset pset template attributes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9731"
     },
-    "9732": {
-      "author": "petruconduraru",
-      "branch": "v09/split-9156-structural-reaction-group",
-      "head": "593b933",
-      "status": "merged",
-      "title": "Bonsai: guard missing structural reaction group",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9732"
-    },
-    "9733": {
-      "author": "petruconduraru",
-      "branch": "v09/split-9156-load-decoration-member",
-      "head": "8407def",
-      "status": "skipped_conflict",
-      "title": "Bonsai: guard load decorations on empty members",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9733"
-    },
     "9734": {
       "author": "petruconduraru",
       "branch": "v09/split-9156-unassign-item-style",
@@ -7781,8 +7685,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611081012",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611081012"
+    "tag": "v0.9.1-alpha2611081310",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611081310"
   },
   "schema": 1
 }
