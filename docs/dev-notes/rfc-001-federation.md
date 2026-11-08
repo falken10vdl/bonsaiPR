@@ -262,8 +262,12 @@ both statements, not routine.
   whose base predates the removal must merge the new base in first: a plain
   rename would break the PR on its own base, where `get_placement` does not
   exist yet. For stacked PRs, merge from the bottom up so each diff shows only
-  its own change. Not yet in the pipeline. It belongs in stage 0's report next
-  to the conflict tables.
+  its own change. Stage 0 now runs this check after the build branch is
+  complete (`find_removed_api_calls`). It reports the calls, each with the
+  first merged PR carrying its line, in a "Calls to functions the base removed"
+  section and in the manifest's `removed_api_calls`; `null` means the check
+  could not run. Run against the build that shipped them, it found exactly the
+  six, in about 30 s.
 - **Closed PRs were found by arithmetic.** Stage 0 printed one log line for
   selected PRs no longer open, so each one (#9478, #8325, #8333, #8323, #8258)
   was found by noticing a total one lower than the profile's. The report now

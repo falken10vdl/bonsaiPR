@@ -461,9 +461,71 @@ PR_PINNED = {}
 # total one lower than the profile's; merged upstream and closed unmerged mean
 # opposite things for the build, and the report now says which.
 SELECTED_NOT_OPEN = {}
+# Calls in the built tree to ifcopenshell functions the base no longer has.
+# None when the check could not run - "unknown", never reported as "none".
+REMOVED_API_CALLS = None
 # PR number -> its head sha at build time, so the report can show what was built
 # alongside what the PR now points at.
 _pr_tip_shas = {}
+
+
+def find_removed_api_calls(repo, branch, base_commit, merged):
+    """Calls in `branch` to ifcopenshell.util/geom functions `base_commit` removed.
+
+    A PR written against an older base still merges cleanly, and still
+    compiles, if it calls a function upstream has since deleted - it fails only
+    when that code runs. Build v0.9.0-alpha2610112059 shipped six such calls
+    (util.placement.get_axis2placement / get_local_placement, replaced by
+    get_placement). Compares the top-level functions at the oldest base any
+    merged PR was written on with those at `base_commit`, then searches the
+    whole built tree for calls to the ones that are gone.
+
+    `merged` is [(pr_number, sha)] in merge order. Returns
+    [{"file", "line", "call", "pr"}]; "pr" is the first merged PR carrying the
+    line's commit, or None.
+    """
+
+    def git(*args):
+        return subprocess.run(
+            ["git", "-C", repo, *args], capture_output=True, text=True,
+            encoding="utf-8", errors="replace",
+        )
+
+    bases = {git("merge-base", base_commit, sha).stdout.strip() for _, sha in merged}
+    bases.discard("")
+    if not bases:
+        return []
+    oldest = min(bases, key=lambda c: int(git("log", "-1", "--format=%ct", c).stdout.strip() or 0))
+
+    def functions(rev):
+        found = set()
+        listing = git("ls-tree", "-r", "--name-only", rev, "--",
+                      "src/ifcopenshell-python/ifcopenshell/util/",
+                      "src/ifcopenshell-python/ifcopenshell/geom/").stdout.split()
+        for path in listing:
+            if path.endswith(".py"):
+                module = os.path.splitext(os.path.basename(path))[0]
+                if module == "__init__":
+                    module = os.path.basename(os.path.dirname(path))
+                for name in re.findall(r"^def ([A-Za-z]\w*)\(", git("show", f"{rev}:{path}").stdout, re.M):
+                    found.add((module, name))
+        return found
+
+    removed = sorted(functions(oldest) - functions(base_commit))
+    calls = []
+    for module, name in removed:
+        hits = git("grep", "-n", "-P", rf"\b{re.escape(module)}\.{re.escape(name)}\(", branch, "--", "src/*.py")
+        for line in hits.stdout.splitlines():
+            _, path, lineno, _ = line.split(":", 3)
+            blame = git("blame", "-L", f"{lineno},{lineno}", "--porcelain", branch, "--", path)
+            commit = blame.stdout[:40]
+            owner = next(
+                (n for n, sha in merged
+                 if commit and git("merge-base", "--is-ancestor", commit, sha).returncode == 0),
+                None,
+            )
+            calls.append({"file": path, "line": int(lineno), "call": f"{module}.{name}", "pr": owner})
+    return calls
 
 
 def _files_changed_by_last_merge():
@@ -777,6 +839,8 @@ def write_state_snapshot(
         delta_md = pr_state.render_delta_md(delta)
     # Selected PRs no longer open, by number: consumers can tell "merged
     # upstream" (nothing lost) from "closed unmerged" (left the build).
+    # None = the check could not run (unknown), [] = it ran and found none.
+    new_state["removed_api_calls"] = REMOVED_API_CALLS
     new_state["selected_not_open"] = {
         str(n): {"state": d["state"], "closed_at": d["closed_at"]}
         for n, d in sorted(SELECTED_NOT_OPEN.items())
@@ -1594,6 +1658,13 @@ def generate_report(
             f"- Skipped (conflicts with other PRs): {failed_conflict_with_others}\n"
         )
         f.write(f"- Failed to Merge (unknown): {failed_unknown}\n")
+        if REMOVED_API_CALLS is None:
+            f.write("- Calls to functions the base removed: unknown (check could not run)\n")
+        elif REMOVED_API_CALLS:
+            f.write(
+                f"- ⚠️ Calls to functions the base removed: {len(REMOVED_API_CALLS)} — "
+                "these fail when used; listed below\n"
+            )
         if SELECTED_NOT_OPEN:
             states = [d["state"] for d in SELECTED_NOT_OPEN.values()]
             f.write(
@@ -1823,6 +1894,20 @@ def generate_report(
                     f"| {pr_link} | {_cell(pr['title'])} | {author} | {branch} | {last_commit} | "
                     f"{first_detected} | {base_commit_cell} |{merges_under}\n"
                 )
+            f.write("\n")
+        if REMOVED_API_CALLS:
+            f.write(f"## 🧨 Calls to functions the base removed ({len(REMOVED_API_CALLS)})\n\n")
+            f.write(
+                "These merged without a conflict, and compile, but call an ifcopenshell "
+                f"function that {SOURCE_BASE_BRANCH} no longer has, so they fail when that "
+                "code runs. The PR needs the new base merged in and the call updated.\n\n"
+            )
+            f.write("| PR | Call | Where |\n")
+            f.write("|----|------|-------|\n")
+            for c in REMOVED_API_CALLS:
+                pr = (f"[#{c['pr']}](https://github.com/{upstream_repo}/pull/{c['pr']})"
+                      if c["pr"] else "unknown")
+                f.write(f"| {pr} | `{c['call']}()` | `{c['file']}:{c['line']}` |\n")
             f.write("\n")
         if SELECTED_NOT_OPEN:
             f.write(f"## 🚪 Selected PRs no longer open ({len(SELECTED_NOT_OPEN)})\n\n")
@@ -2128,6 +2213,26 @@ def main():
     os.chdir(work_dir)
     subprocess.run(["git", "checkout", branch_name], check=True)
     os.chdir(os.path.dirname(__file__))
+    global REMOVED_API_CALLS
+    try:
+        merged = [
+            (p["number"], PR_PINNED.get(p["number"]) or _pr_tip_shas.get(p["number"]))
+            for p in applied
+        ]
+        REMOVED_API_CALLS = find_removed_api_calls(
+            work_dir, branch_name, source_commit_hash,
+            [(n, sha) for n, sha in merged if sha],
+        )
+        if REMOVED_API_CALLS:
+            print(f"🧨 {len(REMOVED_API_CALLS)} call(s) to functions the base no longer has:")
+            for c in REMOVED_API_CALLS:
+                pr = f"#{c['pr']}" if c["pr"] else "?"
+                print(f"   {pr}: {c['call']}() at {c['file']}:{c['line']}")
+        else:
+            print("✅ No calls to functions the base has removed")
+    except Exception as e:
+        REMOVED_API_CALLS = None
+        print(f"⚠️  Could not check for calls to removed functions: {e}")
     # Generate report
     generate_report(
         applied,
