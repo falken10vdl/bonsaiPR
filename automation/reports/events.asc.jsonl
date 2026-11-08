@@ -8930,3 +8930,6 @@
 {"ts": "2026-11-07T19:29:17Z", "order": "ascending", "pr": 10167, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-11-07T23:24:49Z", "order": "ascending", "pr": 10168, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-11-08T01:22:49Z", "order": "ascending", "pr": 10045, "event": "updated", "status": "skipped_conflict", "from_head": "d620ffe", "to_head": "a518d9c"}
+{"ts": "2026-11-08T03:23:15Z", "order": "ascending", "pr": 8663, "event": "updated", "status": "merged", "from_head": "c1186f8", "to_head": "117e844"}
+{"ts": "2026-11-08T03:23:15Z", "order": "ascending", "pr": 10169, "event": "added", "to": "failed"}
+{"ts": "2026-11-08T03:23:15Z", "order": "ascending", "pr": 10170, "event": "added", "to": "failed"}
