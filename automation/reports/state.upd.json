@@ -3,11 +3,11 @@
   "counts": {
     "failed": 216,
     "merged": 565,
-    "skipped_conflict": 102,
+    "skipped_conflict": 103,
     "skipped_draft": 68,
-    "total": 951
+    "total": 952
   },
-  "generated_at": "2026-11-07T20:52:52Z",
+  "generated_at": "2026-11-08T00:32:50Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -568,6 +568,14 @@
       "status": "merged",
       "title": "ifcmcp: add ifc_execute to run Python on the model",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10167"
+    },
+    "10168": {
+      "author": "alteralto",
+      "branch": "fix/10130-ods-formulas",
+      "head": "184dc93",
+      "status": "merged",
+      "title": "ifc5d: write ODS cost formulas in OpenFormula syntax",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10168"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -3961,7 +3969,7 @@
       "author": "petruconduraru",
       "branch": "fix/6616-cost-schedule-property-candidates",
       "head": "c23ce3d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifc5d: allow cost schedule Property column to list candidate quantity names",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8976"
     },
@@ -7836,8 +7844,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611072104",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611072104"
+    "tag": "v0.9.1-alpha2611080059",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611080059"
   },
   "schema": 1
 }
