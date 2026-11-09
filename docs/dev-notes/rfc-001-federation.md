@@ -247,6 +247,19 @@ both statements, not routine.
   The 3.11 builds' missing `blender_version_max` is *not* a defect: upstream's
   own unstable feed declares them the same way (3.11 from Blender 4.2 with no
   maximum, 3.13 from 5.1).
+- **A clean merge that compiled still failed to register.** Release
+  `v0.9.0-alpha2611091347` stopped Bonsai loading with "cannot access submodule
+  'bim' of module 'bonsaiPR' (most likely due to a circular import)". A
+  collision fix had changed #8241's group operators to use
+  `bonsai.bim.helper.RegexSelectMixin` as a base class. That is evaluated while
+  `bonsai.bim` is still being imported, before `bonsai` has it as an attribute.
+  Function bodies are fine because they run later; base classes, decorators,
+  default arguments and class-level statements are not. Use
+  `from bonsai.bim.helper import ...` there instead. Stage 1 now scans the
+  built `bim/` package for such lookups and fails the run if it finds one
+  (`TYPE_CHECKING` blocks excepted). The runners have no Blender, so the check
+  is static: on the broken build it flagged exactly those lines, and the fixed
+  build passed.
 - **A version patch that matched nothing published zips Blender would not
   install.** Stage 1 named everything after the base branch (0.9.0) and made
   the zips agree by rewriting the Makefile's `VERSION:=` lines. Upstream moved

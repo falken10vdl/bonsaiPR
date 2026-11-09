@@ -574,6 +574,82 @@ def check_zip_versions():
     return ok
 
 
+def find_import_time_bim_access(bim_dir):
+    """[(file, line, expression)] for `<pkg>.bim.*` lookups that run while a bim module loads.
+
+    bonsai/bim/__init__.py imports every module under bim/ before
+    `bonsai.bim` exists as an attribute of `bonsai`, so any of those modules
+    reaching `bonsai.bim.something` at import time - a base class, a
+    decorator, a default argument, a class or module-level statement - fails
+    Bonsai's registration ("cannot access submodule 'bim' of module
+    'bonsaiPR' (most likely due to a circular import)"). Release
+    v0.9.0-alpha2611091347 shipped exactly that in group/operator.py; it
+    compiled and merged cleanly. Function bodies run later and are fine, and
+    `if TYPE_CHECKING:` blocks never run.
+    """
+    import ast
+
+    def import_time(body):
+        for st in body:
+            if isinstance(st, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                yield from st.decorator_list
+                yield from [d for d in st.args.defaults + st.args.kw_defaults if d]
+            elif isinstance(st, ast.ClassDef):
+                yield from st.bases
+                yield from st.decorator_list
+                yield from (k.value for k in st.keywords)
+                yield from import_time(st.body)
+            elif isinstance(st, ast.If) and "TYPE_CHECKING" in ast.unparse(st.test):
+                yield from import_time(st.orelse)
+            elif isinstance(st, (ast.If, ast.Try, ast.With, ast.For, ast.While)):
+                for field in ("test", "iter"):
+                    if isinstance(getattr(st, field, None), ast.AST):
+                        yield getattr(st, field)
+                for field in ("body", "orelse", "finalbody"):
+                    yield from import_time(getattr(st, field, []) or [])
+                for handler in getattr(st, "handlers", []):
+                    yield from import_time(handler.body)
+            elif not isinstance(st, (ast.Import, ast.ImportFrom)):
+                yield st
+
+    found = []
+    for root, _, files in os.walk(bim_dir):
+        for name in files:
+            if not name.endswith(".py"):
+                continue
+            path = os.path.join(root, name)
+            try:
+                tree = ast.parse(open(path, encoding="utf-8").read())
+            except (SyntaxError, UnicodeDecodeError):
+                continue
+            for node in import_time(tree.body):
+                for sub in ast.walk(node):
+                    if isinstance(sub, ast.Attribute):
+                        expr = ast.unparse(sub)
+                        if re.match(r"^bonsai(PR)?\.bim\.\w+$", expr):
+                            rel = os.path.relpath(path, bim_dir).replace(os.sep, "/")
+                            found.append((rel, sub.lineno, expr))
+    return sorted(set(found))
+
+
+def check_import_time_bim_access():
+    """True when no bim module reaches bonsaiPR.bim.* while Bonsai is still loading."""
+    bim_dir = os.path.join(BUILD_BASE_DIR, "src", "bonsaiPR", "bonsaiPR", "bim")
+    if not os.path.isdir(bim_dir):
+        log_message(f"No bim package at {bim_dir}; import-time check skipped", "WARNING")
+        return True
+    found = find_import_time_bim_access(bim_dir)
+    for rel, line, expr in found:
+        log_message(
+            f"bim/{rel}:{line} uses {expr} while bonsaiPR.bim is still loading; "
+            "Bonsai would fail to register (import it with 'from ... import' instead)",
+            "ERROR",
+        )
+    if not found:
+        log_message("No bim module reaches bonsaiPR.bim.* at import time")
+    return not found
+
+
 def clean_old_bonsai_files():
     """Clean up any leftover 'bonsai_' files from previous builds in the dist directory"""
     dist_dir = os.path.join(BUILD_BASE_DIR, 'src', 'bonsaiPR', 'dist')
@@ -1045,6 +1121,9 @@ def main():
         build_ok = build_addons(target_platforms)
         if build_ok and not check_zip_versions():
             log_message("Refusing to publish zips whose version the feed would contradict", "ERROR")
+            build_ok = False
+        if build_ok and not check_import_time_bim_access():
+            log_message("Refusing to publish a Bonsai that would fail to register", "ERROR")
             build_ok = False
 
         # Step 4: Create build report
