@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 937
   },
-  "generated_at": "2026-11-09T11:26:25Z",
+  "generated_at": "2026-11-09T13:26:16Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -495,7 +495,7 @@
     "10182": {
       "author": "brunopostle",
       "branch": "feat/bonsai-mcp",
-      "head": "71bfa67",
+      "head": "a548d04",
       "status": "merged",
       "title": "Bonsai: MCP bridge for ifcmcp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10182"
@@ -7692,8 +7692,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611091150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611091150"
+    "tag": "v0.9.1-alpha2611091350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611091350"
   },
   "schema": 1
 }
