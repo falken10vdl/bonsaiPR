@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 184,
-    "merged": 557,
+    "merged": 558,
     "skipped_conflict": 128,
     "skipped_draft": 68,
-    "total": 937
+    "total": 938
   },
-  "generated_at": "2026-11-09T16:27:19Z",
+  "generated_at": "2026-11-09T19:27:32Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -499,6 +499,14 @@
       "status": "merged",
       "title": "Bonsai: MCP bridge for ifcmcp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10182"
+    },
+    "10184": {
+      "author": "theoryshaw",
+      "branch": "append-asset-angle-units",
+      "head": "c6410b9",
+      "status": "merged",
+      "title": "Convert plane angles in append_asset between library and project units",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10184"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7692,8 +7700,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611091650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611091650"
+    "tag": "v0.9.1-alpha2611091950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611091950"
   },
   "schema": 1
 }
