@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 184,
-    "merged": 593,
+    "merged": 594,
     "skipped_conflict": 91,
     "skipped_draft": 68,
-    "total": 936
+    "total": 937
   },
-  "generated_at": "2026-11-09T02:36:01Z",
+  "generated_at": "2026-11-09T04:29:44Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -492,6 +492,14 @@
       "status": "merged",
       "title": "fix(bonsai): set Principled BSDF color on link cache materials",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10179"
+    },
+    "10181": {
+      "author": "theoryshaw",
+      "branch": "format-replace-function",
+      "head": "eb84af7",
+      "status": "merged",
+      "title": "Add replace() to the selector format language",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10181"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7684,8 +7692,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611090304",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611090304"
+    "tag": "v0.9.1-alpha2611090456",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611090456"
   },
   "schema": 1
 }
