@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 185,
-    "merged": 555,
+    "merged": 556,
     "skipped_conflict": 128,
     "skipped_draft": 68,
-    "total": 936
+    "total": 937
   },
-  "generated_at": "2026-11-09T03:22:36Z",
+  "generated_at": "2026-11-09T05:32:39Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -228,7 +228,7 @@
     "10072": {
       "author": "shitobu",
       "branch": "fix/structural-curve-member-preserve-edge-topology",
-      "head": "e4ef1e4",
+      "head": "be71c90",
       "status": "skipped_conflict",
       "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
@@ -492,6 +492,14 @@
       "status": "skipped_conflict",
       "title": "fix(bonsai): set Principled BSDF color on link cache materials",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10179"
+    },
+    "10181": {
+      "author": "theoryshaw",
+      "branch": "format-replace-function",
+      "head": "eb84af7",
+      "status": "merged",
+      "title": "Add replace() to the selector format language",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10181"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7685,8 +7693,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611090350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611090350"
+    "tag": "v0.9.1-alpha2611090550",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611090550"
   },
   "schema": 1
 }

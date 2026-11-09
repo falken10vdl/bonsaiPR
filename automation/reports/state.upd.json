@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 937
   },
-  "generated_at": "2026-11-09T04:29:44Z",
+  "generated_at": "2026-11-09T06:40:46Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -228,8 +228,8 @@
     "10072": {
       "author": "shitobu",
       "branch": "fix/structural-curve-member-preserve-edge-topology",
-      "head": "e4ef1e4",
-      "status": "skipped_conflict",
+      "head": "be71c90",
+      "status": "merged",
       "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
     },
@@ -2766,7 +2766,7 @@
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
       "head": "9aa8498",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
@@ -7692,8 +7692,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611090456",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611090456"
+    "tag": "v0.9.1-alpha2611090708",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611090708"
   },
   "schema": 1
 }
