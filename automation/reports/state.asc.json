@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 933
   },
-  "generated_at": "2026-11-08T21:23:44Z",
+  "generated_at": "2026-11-08T23:24:00Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -228,7 +228,7 @@
     "10072": {
       "author": "shitobu",
       "branch": "fix/structural-curve-member-preserve-edge-topology",
-      "head": "7077772",
+      "head": "e4ef1e4",
       "status": "merged",
       "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
@@ -7670,8 +7670,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611082150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611082150"
+    "tag": "v0.9.1-alpha2611082350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611082350"
   },
   "schema": 1
 }
