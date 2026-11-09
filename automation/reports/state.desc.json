@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 184,
-    "merged": 593,
+    "failed": 183,
+    "merged": 594,
     "skipped_conflict": 92,
     "skipped_draft": 68,
     "total": 937
   },
-  "generated_at": "2026-11-09T06:07:12Z",
+  "generated_at": "2026-11-09T12:03:26Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -338,15 +338,6 @@
       "title": "Add util.placement.get_grid_axis_coordinates",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10127"
     },
-    "10135": {
-      "author": "aothms",
-      "branch": "cpp-file-size",
-      "head": "376e64f",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "C++ file size fix #10119",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10135"
-    },
     "10137": {
       "author": "theoryshaw",
       "branch": "fix-reimport-empty-material-checksum",
@@ -500,6 +491,14 @@
       "status": "merged",
       "title": "Add replace() to the selector format language",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10181"
+    },
+    "10182": {
+      "author": "brunopostle",
+      "branch": "feat/bonsai-mcp",
+      "head": "a548d04",
+      "status": "merged",
+      "title": "Bonsai: MCP bridge for ifcmcp",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10182"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7692,8 +7691,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611090633",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611090633"
+    "tag": "v0.9.1-alpha2611091227",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611091227"
   },
   "schema": 1
 }
