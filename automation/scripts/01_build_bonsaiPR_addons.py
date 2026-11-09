@@ -519,6 +519,61 @@ def prefix_extension_name():
     log_message(f"Add-on display name: {re.search(r'^name = (.*)$', new_text, re.MULTILINE).group(1)}")
 
 
+def set_build_version():
+    """Write the build's version into the build copy's top-level VERSION file.
+
+    The Makefile reads its version from ../../VERSION, and the release, the
+    feed and the asset names use the base branch's (v0.9.0 -> 0.9.0). They
+    used to be reconciled by rewriting the Makefile's VERSION lines, until
+    upstream moved those into src/vars.mk (aabea6ce64): the rewrite then
+    matched nothing, upstream's own 0.9.1 went into every zip, and Blender
+    refused to install them ("Package version mismatch"). Setting the file
+    every layout reads works whatever the Makefile looks like.
+    """
+    build_version, _, _ = get_version_info()
+    path = os.path.join(BUILD_BASE_DIR, "VERSION")
+    old = open(path, encoding="utf-8").read().strip() if os.path.exists(path) else "(none)"
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(build_version + "\n")
+    log_message(f"Build VERSION file: {old} -> {build_version}")
+
+
+def check_zip_versions():
+    """True when every built zip's manifest version is the one stage 2 will advertise.
+
+    The feed lists each archive as <version>-alpha<YYMMDD>; Blender rejects an
+    archive whose manifest says anything else. Reading the zips themselves is
+    the only check that sees what users will actually get.
+    """
+    import zipfile
+
+    build_version, _, _ = get_version_info()
+    dist_dir = os.path.join(BUILD_BASE_DIR, "src", "bonsaiPR", "dist")
+    zips = sorted(glob.glob(os.path.join(dist_dir, "*.zip")))
+    ok = True
+    for path in zips:
+        try:
+            with zipfile.ZipFile(path) as z:
+                manifest = next(n for n in z.namelist() if n.endswith("blender_manifest.toml"))
+                text = z.read(manifest).decode("utf-8")
+        except (OSError, StopIteration, zipfile.BadZipFile) as e:
+            log_message(f"Could not read the manifest of {os.path.basename(path)}: {e}", "ERROR")
+            ok = False
+            continue
+        m = re.search(r'^version\s*=\s*"([^"]+)"', text, re.MULTILINE)
+        found = m.group(1) if m else None
+        if not found or not found.startswith(f"{build_version}-alpha"):
+            log_message(
+                f"{os.path.basename(path)} says version {found!r}, but the release and feed will "
+                f"say {build_version}-alpha...; Blender would refuse to install it",
+                "ERROR",
+            )
+            ok = False
+    if zips and ok:
+        log_message(f"All {len(zips)} zip manifests say {build_version}-alpha...")
+    return ok
+
+
 def clean_old_bonsai_files():
     """Clean up any leftover 'bonsai_' files from previous builds in the dist directory"""
     dist_dir = os.path.join(BUILD_BASE_DIR, 'src', 'bonsaiPR', 'dist')
@@ -986,7 +1041,11 @@ def main():
         prefix_extension_name()
 
         # Step 3: Build addons for specified platforms
+        set_build_version()
         build_ok = build_addons(target_platforms)
+        if build_ok and not check_zip_versions():
+            log_message("Refusing to publish zips whose version the feed would contradict", "ERROR")
+            build_ok = False
 
         # Step 4: Create build report
         create_build_report()

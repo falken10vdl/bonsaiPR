@@ -247,6 +247,17 @@ both statements, not routine.
   The 3.11 builds' missing `blender_version_max` is *not* a defect: upstream's
   own unstable feed declares them the same way (3.11 from Blender 4.2 with no
   maximum, 3.13 from 5.1).
+- **A version patch that matched nothing published zips Blender would not
+  install.** Stage 1 named everything after the base branch (0.9.0) and made
+  the zips agree by rewriting the Makefile's `VERSION:=` lines. Upstream moved
+  those into `src/vars.mk` (`aabea6ce64`, 2026-10-14). The rewrite then matched
+  nothing, the zips took upstream's own `VERSION` (0.9.1), and release
+  `v0.9.0-alpha2611090029` installed nowhere: "Package version mismatch
+  (remote 0.9.0-alpha261109, archive 0.9.1-alpha261109)". The run was green.
+  Stage 1 now writes the build version into the build copy's top-level
+  `VERSION` file, which every Makefile layout reads. After building, it opens
+  each zip and fails the run if a manifest's version is not the one the feed
+  will advertise.
 - **A clean merge can still ship calls to functions upstream removed.** In
   October 2026 upstream v0.9.0 replaced `util.placement.get_axis2placement` and
   `get_local_placement` with `get_placement` and deleted the old names. PRs
