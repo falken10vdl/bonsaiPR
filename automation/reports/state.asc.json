@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 194,
-    "merged": 545,
-    "skipped_conflict": 126,
+    "failed": 185,
+    "merged": 554,
+    "skipped_conflict": 127,
     "skipped_draft": 68,
-    "total": 933
+    "total": 934
   },
-  "generated_at": "2026-11-08T23:24:00Z",
+  "generated_at": "2026-11-09T01:29:47Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -163,7 +163,7 @@
     "10045": {
       "author": "theoryshaw",
       "branch": "framing-system",
-      "head": "58e1363",
+      "head": "8f4320b",
       "status": "skipped_conflict",
       "title": "Add parametric framing systems (railings, curtain walls, storefronts)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10045"
@@ -179,8 +179,8 @@
     "10058": {
       "author": "theoryshaw",
       "branch": "geometry-library-defaults",
-      "head": "5436202",
-      "status": "skipped_conflict",
+      "head": "f2d6754",
+      "status": "merged",
       "title": "Add default geometry library and reload panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10058"
     },
@@ -229,7 +229,7 @@
       "author": "shitobu",
       "branch": "fix/structural-curve-member-preserve-edge-topology",
       "head": "e4ef1e4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
     },
@@ -268,8 +268,8 @@
     "10098": {
       "author": "theoryshaw",
       "branch": "default_drawing_metadata_10097",
-      "head": "33fac88",
-      "status": "skipped_conflict",
+      "head": "d6ac83e",
+      "status": "merged",
       "title": "Bonsai: add a preference for a new drawing's default Metadata",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10098"
     },
@@ -374,9 +374,8 @@
     "10153": {
       "author": "theoryshaw",
       "branch": "model_join_clicked_side",
-      "head": "0df0611",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "6578970",
+      "status": "skipped_conflict",
       "title": "Keep the clicked side in wall and profile joins",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10153"
     },
@@ -457,10 +456,26 @@
     "10175": {
       "author": "theoryshaw",
       "branch": "structural-model-building",
-      "head": "c0593b2",
+      "head": "b70d6d4",
       "status": "skipped_conflict",
       "title": "Assign structural analysis models to buildings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10175"
+    },
+    "10176": {
+      "author": "brunopostle",
+      "branch": "feat/util-structural",
+      "head": "2a78253",
+      "status": "merged",
+      "title": "Add ifcopenshell.util.structural",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10176"
+    },
+    "10177": {
+      "author": "brunopostle",
+      "branch": "feat/ifcquery-structural",
+      "head": "0a20ac8",
+      "status": "merged",
+      "title": "ifcquery: Add a structural subcommand",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10177"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -586,7 +601,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "626c128",
+      "head": "c873e06",
       "status": "merged",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
@@ -725,7 +740,7 @@
     "7648": {
       "author": "theoryshaw",
       "branch": "extend-profiles-and-extrusions",
-      "head": "63a968d",
+      "head": "4c058d0",
       "status": "merged",
       "title": "closes #3565 - extend profiles and basic extrusions to 3D cursor with…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7648"
@@ -858,7 +873,7 @@
     "7781": {
       "author": "theoryshaw",
       "branch": "Unhide_with_alt_click",
-      "head": "0720333",
+      "head": "1defbf0",
       "status": "merged",
       "title": "Closes #7780 - Add ALT+Click to unhide stuff",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7781"
@@ -882,9 +897,8 @@
     "7798": {
       "author": "theoryshaw",
       "branch": "ManualDrawingReference",
-      "head": "20c103f",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "541a726",
+      "status": "merged",
       "title": "Manual drawing reference",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7798"
     },
@@ -1140,7 +1154,7 @@
     "7940": {
       "author": "theoryshaw",
       "branch": "Concatenate_selections",
-      "head": "83c313a",
+      "head": "bfd64ef",
       "status": "merged",
       "title": "Concatenate selections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7940"
@@ -1165,9 +1179,8 @@
     "7965": {
       "author": "theoryshaw",
       "branch": "inset_section_endpoints",
-      "head": "1d81958",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "0ef8b06",
+      "status": "merged",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
     },
@@ -1288,9 +1301,8 @@
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "2ae4baa",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "b392f8e",
+      "status": "skipped_conflict",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
     },
@@ -1338,7 +1350,7 @@
     "8153": {
       "author": "theoryshaw",
       "branch": "cross_select_integration",
-      "head": "f93138a",
+      "head": "4d522e1",
       "status": "merged",
       "title": "Add CAD-style cross selection as the default for Bonsai tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8153"
@@ -1402,7 +1414,7 @@
     "8241": {
       "author": "theoryshaw",
       "branch": "Additional_Selection_and_Deselection_Tools",
-      "head": "fd1e5d2",
+      "head": "b43525b",
       "status": "merged",
       "title": "Additional selection and deselection tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8241"
@@ -2452,7 +2464,7 @@
     "8548": {
       "author": "theoryshaw",
       "branch": "placement-storey-elevation",
-      "head": "69899cf",
+      "head": "347b33b",
       "status": "merged",
       "title": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8548"
@@ -2729,8 +2741,8 @@
     "8658": {
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
-      "head": "c5ac395",
-      "status": "skipped_conflict",
+      "head": "9aa8498",
+      "status": "merged",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
@@ -4016,9 +4028,8 @@
     "9021": {
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
-      "head": "17422a3",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "38f3ca1",
+      "status": "merged",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
     },
@@ -4161,9 +4172,8 @@
     "9054": {
       "author": "theoryshaw",
       "branch": "fix_copy_class_assigns_to_product_9049",
-      "head": "ec0aca9",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "595d5e7",
+      "status": "merged",
       "title": "copy_class: don't share the original's annotations with the duplicate (#9049, cause behind #4014)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9054"
     },
@@ -5118,15 +5128,6 @@
       "title": "Bonsai: a space you just generated is hidden immediately (#9214)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9219"
     },
-    "9228": {
-      "author": "theoryshaw",
-      "branch": "dev-environment-detect-python",
-      "head": "e7c53f1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "dev_environment.py: detect Blender's bundled Python from disk",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
-    },
     "9234": {
       "author": "petruconduraru",
       "branch": "fix-9232-grid-axis-dot-truncation",
@@ -5146,9 +5147,8 @@
     "9240": {
       "author": "theoryshaw",
       "branch": "dev-environment-locked-file",
-      "head": "da98554",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "23d6880",
+      "status": "merged",
       "title": "dev_environment.py: survive a locked file while symlinking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
     },
@@ -5408,9 +5408,8 @@
     "9327": {
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
-      "head": "f377ea4",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "a41da6c",
+      "status": "merged",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -5875,7 +5874,7 @@
     "9523": {
       "author": "theoryshaw",
       "branch": "extend_to_cursor_base_levels_7950",
-      "head": "944c60a",
+      "head": "f4dfe70",
       "status": "merged",
       "title": "fix(bonsai): extend walls to cursor from any base level",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
@@ -5883,7 +5882,7 @@
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
-      "head": "a677ff2",
+      "head": "94c82dd",
       "status": "skipped_conflict",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9555"
@@ -6083,7 +6082,7 @@
       "author": "petruconduraru",
       "branch": "v09/fix-8538-keep-material-usage",
       "head": "c610ca3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve material usage direction across a type change (#6676)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9639"
     },
@@ -7670,8 +7669,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611082350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611082350"
+    "tag": "v0.9.1-alpha2611090150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611090150"
   },
   "schema": 1
 }

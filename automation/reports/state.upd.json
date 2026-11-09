@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 185,
-    "merged": 580,
-    "skipped_conflict": 102,
+    "failed": 184,
+    "merged": 593,
+    "skipped_conflict": 91,
     "skipped_draft": 68,
-    "total": 935
+    "total": 936
   },
-  "generated_at": "2026-11-09T00:32:08Z",
+  "generated_at": "2026-11-09T02:36:01Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -163,7 +163,7 @@
     "10045": {
       "author": "theoryshaw",
       "branch": "framing-system",
-      "head": "58e1363",
+      "head": "8f4320b",
       "status": "merged",
       "title": "Add parametric framing systems (railings, curtain walls, storefronts)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10045"
@@ -179,7 +179,7 @@
     "10058": {
       "author": "theoryshaw",
       "branch": "geometry-library-defaults",
-      "head": "5436202",
+      "head": "f2d6754",
       "status": "merged",
       "title": "Add default geometry library and reload panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10058"
@@ -229,7 +229,7 @@
       "author": "shitobu",
       "branch": "fix/structural-curve-member-preserve-edge-topology",
       "head": "e4ef1e4",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
     },
@@ -268,7 +268,7 @@
     "10098": {
       "author": "theoryshaw",
       "branch": "default_drawing_metadata_10097",
-      "head": "33fac88",
+      "head": "d6ac83e",
       "status": "merged",
       "title": "Bonsai: add a preference for a new drawing's default Metadata",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10098"
@@ -367,15 +367,15 @@
       "author": "brunoperdigao",
       "branch": "polyline-rectangle-mode",
       "head": "fb53693",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Polyline rectangle mode - alternative proposition",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10143"
     },
     "10153": {
       "author": "theoryshaw",
       "branch": "model_join_clicked_side",
-      "head": "0df0611",
-      "status": "skipped_conflict",
+      "head": "6578970",
+      "status": "merged",
       "title": "Keep the clicked side in wall and profile joins",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10153"
     },
@@ -456,8 +456,8 @@
     "10175": {
       "author": "theoryshaw",
       "branch": "structural-model-building",
-      "head": "c0593b2",
-      "status": "skipped_conflict",
+      "head": "b70d6d4",
+      "status": "merged",
       "title": "Assign structural analysis models to buildings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10175"
     },
@@ -476,6 +476,22 @@
       "status": "merged",
       "title": "ifcquery: Add a structural subcommand",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10177"
+    },
+    "10178": {
+      "author": "shitobu",
+      "branch": "fix/template-structure-styles-and-types",
+      "head": "28b85e8",
+      "status": "merged",
+      "title": "fix(bonsai): create materials and objects for merged template styles and types",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10178"
+    },
+    "10179": {
+      "author": "shitobu",
+      "branch": "fix/link-cache-flat-material-color",
+      "head": "3d795f1",
+      "status": "merged",
+      "title": "fix(bonsai): set Principled BSDF color on link cache materials",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10179"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -601,7 +617,7 @@
     "7003": {
       "author": "Rob2309",
       "branch": "general-mirroring",
-      "head": "626c128",
+      "head": "c873e06",
       "status": "merged",
       "title": "Add true object mirroring operator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7003"
@@ -626,7 +642,7 @@
       "author": "brunopostle",
       "branch": "web_running_pid",
       "head": "124f871",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Put Bonsai webui PID file in a writable location",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7219"
     },
@@ -740,7 +756,7 @@
     "7648": {
       "author": "theoryshaw",
       "branch": "extend-profiles-and-extrusions",
-      "head": "63a968d",
+      "head": "4c058d0",
       "status": "merged",
       "title": "closes #3565 - extend profiles and basic extrusions to 3D cursor with…",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7648"
@@ -873,8 +889,8 @@
     "7781": {
       "author": "theoryshaw",
       "branch": "Unhide_with_alt_click",
-      "head": "0720333",
-      "status": "skipped_conflict",
+      "head": "1defbf0",
+      "status": "merged",
       "title": "Closes #7780 - Add ALT+Click to unhide stuff",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7781"
     },
@@ -897,8 +913,8 @@
     "7798": {
       "author": "theoryshaw",
       "branch": "ManualDrawingReference",
-      "head": "20c103f",
-      "status": "skipped_conflict",
+      "head": "541a726",
+      "status": "merged",
       "title": "Manual drawing reference",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7798"
     },
@@ -1154,8 +1170,8 @@
     "7940": {
       "author": "theoryshaw",
       "branch": "Concatenate_selections",
-      "head": "83c313a",
-      "status": "skipped_conflict",
+      "head": "bfd64ef",
+      "status": "merged",
       "title": "Concatenate selections",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7940"
     },
@@ -1179,8 +1195,8 @@
     "7965": {
       "author": "theoryshaw",
       "branch": "inset_section_endpoints",
-      "head": "1d81958",
-      "status": "skipped_conflict",
+      "head": "0ef8b06",
+      "status": "merged",
       "title": "Closes #6321: Auto-snap SECTION endpoints to drawing border",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/7965"
     },
@@ -1294,15 +1310,15 @@
       "author": "theoryshaw",
       "branch": "ordinate_dimensioning",
       "head": "c847759",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Ordinate dimensioning",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8064"
     },
     "8083": {
       "author": "theoryshaw",
       "branch": "parametric_dimensions",
-      "head": "2ae4baa",
-      "status": "skipped_conflict",
+      "head": "b392f8e",
+      "status": "merged",
       "title": "Parametric dimensions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8083"
     },
@@ -1350,7 +1366,7 @@
     "8153": {
       "author": "theoryshaw",
       "branch": "cross_select_integration",
-      "head": "f93138a",
+      "head": "4d522e1",
       "status": "merged",
       "title": "Add CAD-style cross selection as the default for Bonsai tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8153"
@@ -1414,8 +1430,8 @@
     "8241": {
       "author": "theoryshaw",
       "branch": "Additional_Selection_and_Deselection_Tools",
-      "head": "fd1e5d2",
-      "status": "skipped_conflict",
+      "head": "b43525b",
+      "status": "merged",
       "title": "Additional selection and deselection tools",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8241"
     },
@@ -1423,7 +1439,7 @@
       "author": "theoryshaw",
       "branch": "Linked_File_Features",
       "head": "fd122e0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Linked file features",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8242"
     },
@@ -1847,7 +1863,7 @@
       "author": "petruconduraru",
       "branch": "fix-4785-drawing-space-filter",
       "head": "3549113",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: apply the drawing Include filter to IfcSpace elements (#4785)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8351"
     },
@@ -1855,7 +1871,7 @@
       "author": "petruconduraru",
       "branch": "fix-4766-cross-schema-append",
       "head": "69c419e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "project.append_asset: migrate library asset to project schema on cross-schema append (#4766)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8352"
     },
@@ -2262,7 +2278,7 @@
       "author": "petruconduraru",
       "branch": "fix-3950-csv-search-attributes",
       "head": "5adeb83",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: persist CSV attributes when saving a spreadsheet search (#3950)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8447"
     },
@@ -2464,8 +2480,8 @@
     "8548": {
       "author": "theoryshaw",
       "branch": "placement-storey-elevation",
-      "head": "69899cf",
-      "status": "skipped_conflict",
+      "head": "347b33b",
+      "status": "merged",
       "title": "Bonsai: add editable \"Elevation from Storey\" field to Placement panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8548"
     },
@@ -2637,7 +2653,7 @@
       "author": "petruconduraru",
       "branch": "fix-4050-material-select-unhide-type",
       "head": "f1643b5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "bonsai: reveal hidden collections when selecting objects by material (#4050)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8613"
     },
@@ -2741,8 +2757,8 @@
     "8658": {
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
-      "head": "c5ac395",
-      "status": "skipped_conflict",
+      "head": "9aa8498",
+      "status": "merged",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
@@ -3343,7 +3359,7 @@
       "author": "petruconduraru",
       "branch": "6382-link-surface-features",
       "head": "af224d3",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: show IfcSurfaceFeature in linked models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8872"
     },
@@ -3351,7 +3367,7 @@
       "author": "petruconduraru",
       "branch": "7901-filter-from-selection",
       "head": "c5a4fe9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: filter from selection, and export/import search filters and colourschemes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8873"
     },
@@ -3440,7 +3456,7 @@
       "author": "petruconduraru",
       "branch": "8850-relating-type-enum",
       "head": "7dc6d31",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: setting an active type fails silently on a stale enum (#8850, #9238)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8890"
     },
@@ -3480,7 +3496,7 @@
       "author": "petruconduraru",
       "branch": "3206-join-invert-side",
       "head": "c0181f3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: add redo panel toggle to invert wall join/extend trim side",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8902"
     },
@@ -3810,7 +3826,7 @@
       "author": "petruconduraru",
       "branch": "fix/7151-trim-merge-poll",
       "head": "e217c1d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: grey out Trim and Merge when the active-tool selection is invalid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8966"
     },
@@ -4028,8 +4044,8 @@
     "9021": {
       "author": "theoryshaw",
       "branch": "annotation_multi_drawing_7798",
-      "head": "17422a3",
-      "status": "skipped_conflict",
+      "head": "38f3ca1",
+      "status": "merged",
       "title": "Bonsai: allow a single IfcAnnotation to appear on multiple drawings (#9019)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9021"
     },
@@ -4172,8 +4188,8 @@
     "9054": {
       "author": "theoryshaw",
       "branch": "fix_copy_class_assigns_to_product_9049",
-      "head": "ec0aca9",
-      "status": "skipped_conflict",
+      "head": "595d5e7",
+      "status": "merged",
       "title": "copy_class: don't share the original's annotations with the duplicate (#9049, cause behind #4014)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9054"
     },
@@ -4485,7 +4501,7 @@
       "author": "petruconduraru",
       "branch": "fix/9029-link-ifc-duplicate-on-repeat-click",
       "head": "dfe9c2e",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: stop Link IFC duplicating and reloading when a click is repeated",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9104"
     },
@@ -5128,15 +5144,6 @@
       "title": "Bonsai: a space you just generated is hidden immediately (#9214)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9219"
     },
-    "9228": {
-      "author": "theoryshaw",
-      "branch": "dev-environment-detect-python",
-      "head": "e7c53f1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "dev_environment.py: detect Blender's bundled Python from disk",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9228"
-    },
     "9234": {
       "author": "petruconduraru",
       "branch": "fix-9232-grid-axis-dot-truncation",
@@ -5156,8 +5163,8 @@
     "9240": {
       "author": "theoryshaw",
       "branch": "dev-environment-locked-file",
-      "head": "da98554",
-      "status": "skipped_conflict",
+      "head": "23d6880",
+      "status": "merged",
       "title": "dev_environment.py: survive a locked file while symlinking",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9240"
     },
@@ -5417,8 +5424,8 @@
     "9327": {
       "author": "theoryshaw",
       "branch": "polyline_rectangle_mode_9326",
-      "head": "f377ea4",
-      "status": "skipped_conflict",
+      "head": "a41da6c",
+      "status": "merged",
       "title": "Rectangle mode for the polyline slab, wall and profile tools (closes #9326)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9327"
     },
@@ -5630,7 +5637,7 @@
       "author": "theoryshaw",
       "branch": "filter_query_comments_9400",
       "head": "b27e500",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: keep commented out facets when editing a filter query",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9401"
     },
@@ -5867,7 +5874,7 @@
       "author": "theoryshaw",
       "branch": "roof_footprint_flatten_9514",
       "head": "cc64214",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: flatten roof footprint instead of failing, keep path preview, direct_profile_edit support",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9515"
     },
@@ -5882,7 +5889,7 @@
     "9523": {
       "author": "theoryshaw",
       "branch": "extend_to_cursor_base_levels_7950",
-      "head": "944c60a",
+      "head": "f4dfe70",
       "status": "merged",
       "title": "fix(bonsai): extend walls to cursor from any base level",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9523"
@@ -5890,8 +5897,8 @@
     "9555": {
       "author": "theoryshaw",
       "branch": "sheet_template_api",
-      "head": "a677ff2",
-      "status": "skipped_conflict",
+      "head": "94c82dd",
+      "status": "merged",
       "title": "Bonsai: a web API for tools that display and edit sheets without building them",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9555"
     },
@@ -6464,7 +6471,7 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8802",
       "head": "0336599",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: draw element Axis reference lines in drawings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9687"
     },
@@ -7055,7 +7062,7 @@
       "author": "petruconduraru",
       "branch": "fix/9811-web-costing-sum-keyerror",
       "head": "11e7b8e",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: fix web costing SUM edit KeyError",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9814"
     },
@@ -7530,7 +7537,7 @@
       "author": "shitobu",
       "branch": "fix/polyline-empty-distance-tab-error",
       "head": "5b15499",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "fix(bonsai): prevent crash when cycling UI parameter with empty distance (#9974)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9975"
     },
@@ -7677,8 +7684,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611090059",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611090059"
+    "tag": "v0.9.1-alpha2611090304",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611090304"
   },
   "schema": 1
 }
