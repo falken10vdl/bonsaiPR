@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 183,
-    "merged": 598,
+    "merged": 596,
     "skipped_conflict": 90,
     "skipped_draft": 68,
-    "total": 939
+    "total": 937
   },
-  "generated_at": "2026-11-10T03:03:07Z",
+  "generated_at": "2026-11-10T10:05:04Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -443,22 +443,6 @@
       "status": "merged",
       "title": "Assign structural analysis models to buildings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10175"
-    },
-    "10176": {
-      "author": "brunopostle",
-      "branch": "feat/util-structural",
-      "head": "2a78253",
-      "status": "merged",
-      "title": "Add ifcopenshell.util.structural",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10176"
-    },
-    "10177": {
-      "author": "brunopostle",
-      "branch": "feat/ifcquery-structural",
-      "head": "0a20ac8",
-      "status": "merged",
-      "title": "ifcquery: Add a structural subcommand",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10177"
     },
     "10178": {
       "author": "shitobu",
@@ -7707,8 +7691,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611100328",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611100328"
+    "tag": "v0.9.1-alpha2611101028",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611101028"
   },
   "schema": 1
 }
