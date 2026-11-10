@@ -9083,3 +9083,5 @@
 {"ts": "2026-11-10T09:27:36Z", "order": "ascending", "pr": 10176, "event": "removed", "from": "merged"}
 {"ts": "2026-11-10T09:27:36Z", "order": "ascending", "pr": 10177, "event": "removed", "from": "merged"}
 {"ts": "2026-11-10T15:37:41Z", "order": "ascending", "pr": 8712, "event": "status", "from": "failed", "to": "merged"}
+{"ts": "2026-11-10T19:36:27Z", "order": "ascending", "pr": 8712, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-11-10T19:36:27Z", "order": "ascending", "pr": 10184, "event": "updated", "status": "merged", "from_head": "c6410b9", "to_head": "af4eec7"}

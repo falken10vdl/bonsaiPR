@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 182,
-    "merged": 598,
-    "skipped_conflict": 89,
+    "failed": 183,
+    "merged": 595,
+    "skipped_conflict": 91,
     "skipped_draft": 68,
     "total": 937
   },
-  "generated_at": "2026-11-10T17:08:44Z",
+  "generated_at": "2026-11-10T21:08:04Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -164,7 +164,7 @@
       "author": "theoryshaw",
       "branch": "framing-system",
       "head": "8f4320b",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Add parametric framing systems (railings, curtain walls, storefronts)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10045"
     },
@@ -479,7 +479,7 @@
     "10184": {
       "author": "theoryshaw",
       "branch": "append-asset-angle-units",
-      "head": "c6410b9",
+      "head": "af4eec7",
       "status": "merged",
       "title": "Convert plane angles in append_asset between library and project units",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10184"
@@ -3793,7 +3793,7 @@
       "author": "petruconduraru",
       "branch": "7702-remove-deprecated-mesh-add-operators",
       "head": "2058ac6",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: remove deprecated mesh.add_* duplicate operators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8959"
     },
@@ -5342,7 +5342,7 @@
       "author": "petruconduraru",
       "branch": "fix-9294-projectlibrary-units",
       "head": "afd56a3",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: IfcProjectLibrary breaks unit detection (#9294)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9295"
@@ -6104,7 +6104,7 @@
       "author": "petruconduraru",
       "branch": "v09/fix-8538-keep-material-usage",
       "head": "c610ca3",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: preserve material usage direction across a type change (#6676)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9639"
     },
@@ -6454,7 +6454,7 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8796",
       "head": "baa8c67",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: surface + explicitly fix mesh-converted walls whose length is on local Y (#7453)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9684"
     },
@@ -6680,7 +6680,7 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8775",
       "head": "b111bf2",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Cut openings one at a time when a batch cut fails",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9715"
@@ -6689,7 +6689,8 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8499",
       "head": "6307bbb",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Retry a cut that reports success but removes nothing",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9716"
     },
@@ -7001,7 +7002,7 @@
       "author": "petruconduraru",
       "branch": "fix/logger-append-stream-destination",
       "head": "93b06d8",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix logger::append into non-in-memory logger",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9792"
@@ -7690,8 +7691,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611101724",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611101724"
+    "tag": "v0.9.1-alpha2611102122",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611102122"
   },
   "schema": 1
 }

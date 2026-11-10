@@ -8378,3 +8378,18 @@
 {"ts": "2026-11-10T17:08:44Z", "order": "by-updated", "pr": 9716, "event": "status", "from": "failed", "to": "merged"}
 {"ts": "2026-11-10T17:08:44Z", "order": "by-updated", "pr": 10071, "event": "status", "from": "skipped_conflict", "to": "merged"}
 {"ts": "2026-11-10T17:08:44Z", "order": "by-updated", "pr": 10078, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-11-10T20:50:44Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-10T20:50:44Z", "order": "upd", "pr": 8615, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-10T20:50:44Z", "order": "upd", "pr": 8872, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-10T20:50:44Z", "order": "upd", "pr": 8933, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-10T20:50:44Z", "order": "upd", "pr": 8993, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-10T20:50:44Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-10T20:50:44Z", "order": "upd", "pr": 9404, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-10T20:50:44Z", "order": "upd", "pr": 9555, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-10T20:50:44Z", "order": "upd", "pr": 10071, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-10T21:08:04Z", "order": "by-updated", "pr": 8959, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-11-10T21:08:04Z", "order": "by-updated", "pr": 9639, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-11-10T21:08:04Z", "order": "by-updated", "pr": 9684, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-11-10T21:08:04Z", "order": "by-updated", "pr": 9716, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-11-10T21:08:04Z", "order": "by-updated", "pr": 10045, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-11-10T21:08:04Z", "order": "by-updated", "pr": 10184, "event": "updated", "status": "merged", "from_head": "c6410b9", "to_head": "af4eec7"}
