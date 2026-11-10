@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 184,
-    "merged": 557,
+    "failed": 183,
+    "merged": 558,
     "skipped_conflict": 128,
     "skipped_draft": 68,
     "total": 937
   },
-  "generated_at": "2026-11-10T09:27:36Z",
+  "generated_at": "2026-11-10T15:37:41Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -2994,8 +2994,7 @@
       "author": "petruconduraru",
       "branch": "bv-6623-step-unit-scale",
       "head": "3b3e8f5",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "IfcConvert: fix 1000x scale error in STEP export unit handling",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8712"
     },
@@ -7128,7 +7127,7 @@
       "author": "petruconduraru",
       "branch": "fix/9827-rocksdb-guid-write",
       "head": "07be61f",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "reason": "Fails to merge against base (problem with PR itself)",
       "status": "failed",
       "title": "Fix by_guid for GlobalIds written to RocksDB",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9828"
@@ -7692,8 +7691,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611100950",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611100950"
+    "tag": "v0.9.1-alpha2611101550",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611101550"
   },
   "schema": 1
 }
