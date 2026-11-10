@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 184,
-    "merged": 559,
+    "merged": 560,
     "skipped_conflict": 128,
     "skipped_draft": 68,
-    "total": 939
+    "total": 940
   },
-  "generated_at": "2026-11-09T21:28:11Z",
+  "generated_at": "2026-11-09T23:29:29Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -228,7 +228,7 @@
     "10072": {
       "author": "shitobu",
       "branch": "fix/structural-curve-member-preserve-edge-topology",
-      "head": "be71c90",
+      "head": "1bcbc63",
       "status": "skipped_conflict",
       "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
@@ -515,6 +515,14 @@
       "status": "merged",
       "title": "util: add get_safe_property helper for robust property extraction",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10185"
+    },
+    "10188": {
+      "author": "shitobu",
+      "branch": "fix/header-entity-getattr-attributeerror",
+      "head": "e3dc7cf",
+      "status": "merged",
+      "title": "fix(python): raise AttributeError on unknown header and uncompiled schema entity attributes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10188"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7708,8 +7716,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611092150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611092150"
+    "tag": "v0.9.1-alpha2611092350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611092350"
   },
   "schema": 1
 }
