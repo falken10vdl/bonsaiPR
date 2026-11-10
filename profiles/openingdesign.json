@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "openingdesign",
-  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9851 added by hand 2026-10-07; the stacked structural series #9868-#10064, #9867 (since merged upstream) added 2026-10-11, distilled from Frankenstein_build-0.9.0-alpha2610072353 (code picked in full; tests and docs not); #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 23 closed ones are left out (latest #8258, closed 2026-10-10), as is #8971 (overlaps #8200 throughout one function; left out by choice). On 2026-10-11, after upstream's edit_pset/add_representation settings and get_placement refactors, #7833, #8669 and #9517 were rebased and #8298, #8345, #8251, #8598, #8336 and #7003 had v0.9.0 merged in; #7669 was rebased onto v0.9.0 with its author's agreement. Later that day v0.9.0 was also merged into #9868-#9905, #7648/#9523, #8548, #7798/#7965/#8083 and #8304 so their calls to util.placement functions upstream removed use get_placement. On 2026-11-08 a distill of Frankenstein_build-0.9.0-alpha2610112324 added 45 PRs (the structural series to #10064, the group UI stack #9980-#9989, #10174/#10175 and others); #8344, #8676 and #9867 merged upstream and #9228 was closed as superseded, so they are out; 22 PRs were updated for v0.9.0 6a5283ac79 (#7798 chain renumbered after #9963, #7781 follows #9984's container tools, others moved clear of each other). Pins are the heads last validated at v0.9.0 (224 PRs, 215 pins), 2026-11-08.",
+  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9851 added by hand 2026-10-07; the stacked structural series #9868-#10064, #9867 (since merged upstream) added 2026-10-11, distilled from Frankenstein_build-0.9.0-alpha2610072353 (code picked in full; tests and docs not); #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 23 closed ones are left out (latest #8258, closed 2026-10-10), as is #8971 (overlaps #8200 throughout one function; left out by choice). On 2026-10-11, after upstream's edit_pset/add_representation settings and get_placement refactors, #7833, #8669 and #9517 were rebased and #8298, #8345, #8251, #8598, #8336 and #7003 had v0.9.0 merged in; #7669 was rebased onto v0.9.0 with its author's agreement. Later that day v0.9.0 was also merged into #9868-#9905, #7648/#9523, #8548, #7798/#7965/#8083 and #8304 so their calls to util.placement functions upstream removed use get_placement. On 2026-11-08 a distill of Frankenstein_build-0.9.0-alpha2610112324 added 45 PRs (the structural series to #10064, the group UI stack #9980-#9989, #10174/#10175 and others); #8344, #8676 and #9867 merged upstream and #9228 was closed as superseded, so they are out; 22 PRs were updated for v0.9.0 6a5283ac79 (#7798 chain renumbered after #9963, #7781 follows #9984's container tools, others moved clear of each other). On 2026-11-10 a distill of Frankenstein_build-0.9.0-alpha2611091534 added #10181 and #10184 and moved #9555 to its newest head; #10098 merged upstream. Pins are the heads last validated at v0.9.0 (225 PRs, 216 pins), 2026-11-10.",
   "maintainer": "OpeningDesign",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
@@ -225,7 +225,6 @@
       10045,
       10058,
       10064,
-      10098,
       10100,
       10118,
       10137,
@@ -233,7 +232,9 @@
       10153,
       10160,
       10174,
-      10175
+      10175,
+      10181,
+      10184
     ],
     "authors": []
   },
@@ -436,7 +437,6 @@
     10039,
     10041,
     10058,
-    10098,
     10100,
     9483,
     10118,
@@ -467,7 +467,9 @@
     10017,
     10064,
     10174,
-    10175
+    10175,
+    10181,
+    10184
   ],
   "pin": {
     "5452": "99958f7c73927fb22e343ab724b21e4199dc2755",
@@ -624,7 +626,7 @@
     "9515": "cc64214566338b9496314c39e3e2054b87d3cf9e",
     "9517": "7e011dd3e2cece0aa54b908b9a335a45ecd75716",
     "9523": "f4dfe70593398efde449c0f90d7620994234899d",
-    "9555": "94c82ddcc28d61b7422deee13c91db855c70e3d3",
+    "9555": "931af58c96522277a3ddbf62680322bc257d33c8",
     "9557": "aef65718f9b53bb2678d254f34f1bfc83c7dbc7e",
     "9589": "e8ddb25b0ce45aea5f385762c43084a08043f07b",
     "9765": "c0adc2485cd736ddb408819dd62c6153ec8d80d1",
@@ -676,7 +678,6 @@
     "10045": "8f4320bd07a12a535a7b7bc9d9e807e295d127bf",
     "10058": "f2d6754c47a9627e82568a1c9d305fab6afc119f",
     "10064": "88b7d4468dbc9239e7782051cf6613bbbe58fd16",
-    "10098": "d6ac83e69eb9da3294ae26608392ebad0f26c841",
     "10100": "a2fd66d886b8c46b9404b9df8c6550c430dfc0ed",
     "10118": "ba540e742120672ccd8eac318d0272c5e54dae6d",
     "10137": "91dc2ef37326f2cdd158b65f8c00154f972bd06d",
@@ -684,6 +685,8 @@
     "10153": "65789707682ebb3cfe78d82fec09faf0a549c88c",
     "10160": "45394f6fac4cd784a5a75a7e5db3a511e134d8a8",
     "10174": "a000d01cc3a46a4f1e2706ebc403c39a5847d201",
-    "10175": "b70d6d4b55f2e823d50d6409c79954b7d07f957a"
+    "10175": "b70d6d4b55f2e823d50d6409c79954b7d07f957a",
+    "10181": "eb84af7d618174230a2e80d6b27f64afd6fb093e",
+    "10184": "af4eec7a134c96e6ff2aa5548e07ce515c5acfa6"
   }
 }
