@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 940
   },
-  "generated_at": "2026-11-11T11:27:08Z",
+  "generated_at": "2026-11-11T13:27:02Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -503,7 +503,7 @@
     "10194": {
       "author": "shitobu",
       "branch": "fix/structural-analysis-models-authoring",
-      "head": "27567a3",
+      "head": "c2838d9",
       "status": "skipped_conflict",
       "title": "feat(structural): support load case self-weight, default boundary stiffnesses to free, and surface member details (#10189)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10194"
@@ -7717,8 +7717,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611111150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611111150"
+    "tag": "v0.9.1-alpha2611111350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611111350"
   },
   "schema": 1
 }
