@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 183,
-    "merged": 594,
+    "merged": 595,
     "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 937
+    "total": 938
   },
-  "generated_at": "2026-11-10T23:57:24Z",
+  "generated_at": "2026-11-11T02:38:16Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -228,7 +228,7 @@
     "10072": {
       "author": "shitobu",
       "branch": "fix/structural-curve-member-preserve-edge-topology",
-      "head": "9fe04a1",
+      "head": "56839ab",
       "status": "merged",
       "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
@@ -499,6 +499,14 @@
       "status": "merged",
       "title": "ifcmcp: Add an ifc_structural tool on ifcquery structural",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10192"
+    },
+    "10193": {
+      "author": "brunopostle",
+      "branch": "feat/ifcquery-relations-structural",
+      "head": "66f1924",
+      "status": "merged",
+      "title": "ifcquery: Show structural links in relations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10193"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7691,8 +7699,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611110016",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611110016"
+    "tag": "v0.9.1-alpha2611110304",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611110304"
   },
   "schema": 1
 }

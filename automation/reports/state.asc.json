@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 184,
-    "merged": 556,
-    "skipped_conflict": 128,
+    "merged": 557,
+    "skipped_conflict": 129,
     "skipped_draft": 68,
-    "total": 936
+    "total": 938
   },
-  "generated_at": "2026-11-10T22:36:07Z",
+  "generated_at": "2026-11-11T01:30:05Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -228,7 +228,7 @@
     "10072": {
       "author": "shitobu",
       "branch": "fix/structural-curve-member-preserve-edge-topology",
-      "head": "1bcbc63",
+      "head": "56839ab",
       "status": "skipped_conflict",
       "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
@@ -491,6 +491,22 @@
       "status": "merged",
       "title": "fix(python): raise AttributeError on unknown header and uncompiled schema entity attributes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10188"
+    },
+    "10192": {
+      "author": "brunopostle",
+      "branch": "feat/ifcmcp-structural",
+      "head": "bb8d930",
+      "status": "skipped_conflict",
+      "title": "ifcmcp: Add an ifc_structural tool on ifcquery structural",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10192"
+    },
+    "10193": {
+      "author": "brunopostle",
+      "branch": "feat/ifcquery-relations-structural",
+      "head": "66f1924",
+      "status": "merged",
+      "title": "ifcquery: Show structural links in relations",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10193"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7684,8 +7700,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611102250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611102250"
+    "tag": "v0.9.1-alpha2611110150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611110150"
   },
   "schema": 1
 }
