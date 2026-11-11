@@ -3,11 +3,11 @@
   "counts": {
     "failed": 184,
     "merged": 565,
-    "skipped_conflict": 123,
+    "skipped_conflict": 124,
     "skipped_draft": 68,
-    "total": 940
+    "total": 941
   },
-  "generated_at": "2026-11-11T14:40:03Z",
+  "generated_at": "2026-11-11T22:41:50Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -269,7 +269,7 @@
       "author": "tstotzer",
       "branch": "codex/ifcdiff-empty-geometry",
       "head": "77c56c0",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Handle empty geometry iterators in IfcDiff",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10113"
     },
@@ -285,7 +285,7 @@
       "author": "sligara7",
       "branch": "fix/ifcdiff-skip-deepdiff-for-equal-elements",
       "head": "426240b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcdiff: skip DeepDiff for equal elements",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10116"
     },
@@ -523,6 +523,14 @@
       "status": "merged",
       "title": "Render structural analysis items in ifcquery",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10196"
+    },
+    "10198": {
+      "author": "theoryshaw",
+      "branch": "fix-drawing-viewer-launch-error",
+      "head": "5b840aa",
+      "status": "merged",
+      "title": "Don't fail drawing when viewer fails to launch",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10198"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -4277,7 +4285,7 @@
       "author": "petruconduraru",
       "branch": "fix/ifcdiff-class-change-detection",
       "head": "c7d4e8a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "ifcdiff: report an element whose IFC class changed",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9064"
     },
@@ -5962,7 +5970,7 @@
     "9589": {
       "author": "theoryshaw",
       "branch": "v09/fix-9588-add-aggregate-linked-aggregates",
-      "head": "e8ddb25",
+      "head": "fd653b1",
       "status": "merged",
       "title": "Collect whole aggregates in bim.add_aggregate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9589"
@@ -7716,8 +7724,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611111504",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611111504"
+    "tag": "v0.9.1-alpha2611112305",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611112305"
   },
   "schema": 1
 }

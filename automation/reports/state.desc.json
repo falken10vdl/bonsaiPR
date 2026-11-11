@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 184,
-    "merged": 564,
+    "merged": 565,
     "skipped_conflict": 124,
     "skipped_draft": 68,
-    "total": 940
+    "total": 941
   },
-  "generated_at": "2026-11-11T14:03:05Z",
+  "generated_at": "2026-11-11T22:03:54Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -523,6 +523,14 @@
       "status": "merged",
       "title": "Render structural analysis items in ifcquery",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10196"
+    },
+    "10198": {
+      "author": "theoryshaw",
+      "branch": "fix-drawing-viewer-launch-error",
+      "head": "5b840aa",
+      "status": "merged",
+      "title": "Don't fail drawing when viewer fails to launch",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10198"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7716,8 +7724,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611111428",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611111428"
+    "tag": "v0.9.1-alpha2611112229",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611112229"
   },
   "schema": 1
 }
