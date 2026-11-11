@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 183,
+    "failed": 184,
     "merged": 563,
-    "skipped_conflict": 125,
+    "skipped_conflict": 124,
     "skipped_draft": 68,
-    "total": 939
+    "total": 940
   },
-  "generated_at": "2026-11-11T04:00:12Z",
+  "generated_at": "2026-11-11T09:12:52Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -224,14 +224,6 @@
       "status": "skipped_conflict",
       "title": "fix(api): use namedtuple _replace when overriding PrioritisedLayer priorities (#10054)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10071"
-    },
-    "10072": {
-      "author": "shitobu",
-      "branch": "fix/structural-curve-member-preserve-edge-topology",
-      "head": "56839ab",
-      "status": "merged",
-      "title": "Fix #10050: Preserve IfcStructuralCurveMember edge topology when assigning profile sets",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10072"
     },
     "10078": {
       "author": "alteralto",
@@ -515,6 +507,14 @@
       "status": "merged",
       "title": "feat(structural): support load case self-weight, default boundary stiffnesses to free, and surface member details (#10189)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10194"
+    },
+    "10195": {
+      "author": "brunopostle",
+      "branch": "fix/structural-curve-member-axes",
+      "head": "4eb4fae",
+      "status": "merged",
+      "title": "Keep a curve member's local x along its edge",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10195"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -2781,7 +2781,8 @@
       "author": "theoryshaw",
       "branch": "profile-length-per-instance",
       "head": "9aa8498",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: toggle a profile type's length between typed and per-instance",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8658"
     },
@@ -7258,7 +7259,7 @@
     "9868": {
       "author": "theoryshaw",
       "branch": "structural-loads/1-fixes",
-      "head": "492dbb3",
+      "head": "ba998d6",
       "status": "skipped_conflict",
       "title": "Structural Analysis 1: Fix load cases, load groups and activities",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9868"
@@ -7707,8 +7708,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611110426",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611110426"
+    "tag": "v0.9.1-alpha2611110928",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611110928"
   },
   "schema": 1
 }
