@@ -3,11 +3,11 @@
   "counts": {
     "failed": 184,
     "merged": 557,
-    "skipped_conflict": 129,
+    "skipped_conflict": 130,
     "skipped_draft": 68,
-    "total": 938
+    "total": 939
   },
-  "generated_at": "2026-11-11T01:30:05Z",
+  "generated_at": "2026-11-11T03:25:15Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -507,6 +507,14 @@
       "status": "merged",
       "title": "ifcquery: Show structural links in relations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10193"
+    },
+    "10194": {
+      "author": "shitobu",
+      "branch": "fix/structural-analysis-models-authoring",
+      "head": "27567a3",
+      "status": "skipped_conflict",
+      "title": "feat(structural): support load case self-weight, default boundary stiffnesses to free, and surface member details (#10189)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10194"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7700,8 +7708,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611110150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611110150"
+    "tag": "v0.9.1-alpha2611110350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611110350"
   },
   "schema": 1
 }
