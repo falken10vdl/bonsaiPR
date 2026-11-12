@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 218,
-    "merged": 565,
-    "skipped_conflict": 90,
+    "failed": 220,
+    "merged": 563,
+    "skipped_conflict": 89,
     "skipped_draft": 68,
-    "total": 941
+    "total": 940
   },
-  "generated_at": "2026-11-12T09:11:07Z",
+  "generated_at": "2026-11-12T11:13:17Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -437,7 +437,8 @@
       "author": "theoryshaw",
       "branch": "structural-model-building",
       "head": "17881eb",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Assign structural analysis models to buildings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10175"
     },
@@ -4541,7 +4542,8 @@
       "author": "petruconduraru",
       "branch": "fix/data-sibling-none-guards",
       "head": "8dbfc1e",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: guard three unnamed-entity crashes where a sibling method already had the fallback",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9102"
     },
@@ -4845,7 +4847,8 @@
       "author": "petruconduraru",
       "branch": "fix/bonsai-optional-attr-read-guards",
       "head": "d30407e",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: guard optional attrs in two read paths",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9153"
     },
@@ -7288,15 +7291,6 @@
       "title": "Bonsai: generate terrain contour lines as IfcAnnotation CONTOURLINE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9851"
     },
-    "9869": {
-      "author": "theoryshaw",
-      "branch": "structural-loads/2-apply-edit",
-      "head": "78e8f36",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Structural Analysis 2: Streamline applying and editing loads",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9869"
-    },
     "9870": {
       "author": "theoryshaw",
       "branch": "structural-loads/3-diagrams",
@@ -7758,8 +7752,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611120936",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611120936"
+    "tag": "v0.9.1-alpha2611121126",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611121126"
   },
   "schema": 1
 }
