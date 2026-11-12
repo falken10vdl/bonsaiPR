@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 227,
-    "merged": 556,
-    "skipped_conflict": 85,
+    "failed": 225,
+    "merged": 557,
+    "skipped_conflict": 86,
     "skipped_draft": 68,
     "total": 936
   },
-  "generated_at": "2026-11-12T15:50:31Z",
+  "generated_at": "2026-11-12T19:04:13Z",
   "merge_order": "by-updated",
   "prs": {
     "10001": {
@@ -7269,9 +7269,8 @@
     "9870": {
       "author": "theoryshaw",
       "branch": "structural-loads/3-diagrams",
-      "head": "bce54bc",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "ff6e9d0",
+      "status": "merged",
       "title": "Structural Analysis 3: Readable point force diagrams in Show Loads",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9870"
     },
@@ -7279,8 +7278,7 @@
       "author": "theoryshaw",
       "branch": "structural-loads/4-viewport-editing",
       "head": "ef9dc4a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "status": "skipped_conflict",
       "title": "Structural Analysis 4: Edit loads from the viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9871"
     },
@@ -7727,8 +7725,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611121610",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611121610"
+    "tag": "v0.9.1-alpha2611121921",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611121921"
   },
   "schema": 1
 }
