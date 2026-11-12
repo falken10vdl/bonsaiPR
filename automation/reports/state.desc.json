@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 941
   },
-  "generated_at": "2026-11-11T22:03:54Z",
+  "generated_at": "2026-11-12T00:05:09Z",
   "merge_order": "descending",
   "prs": {
     "10001": {
@@ -5970,7 +5970,7 @@
     "9589": {
       "author": "theoryshaw",
       "branch": "v09/fix-9588-add-aggregate-linked-aggregates",
-      "head": "e8ddb25",
+      "head": "fd653b1",
       "status": "merged",
       "title": "Collect whole aggregates in bim.add_aggregate",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9589"
@@ -7724,8 +7724,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611112229",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611112229"
+    "tag": "v0.9.1-alpha2611120030",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611120030"
   },
   "schema": 1
 }
