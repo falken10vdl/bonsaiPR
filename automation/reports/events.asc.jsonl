@@ -9162,3 +9162,6 @@
 {"ts": "2026-11-12T17:39:47Z", "order": "ascending", "pr": 10039, "event": "status", "from": "merged", "to": "failed"}
 {"ts": "2026-11-12T17:39:47Z", "order": "ascending", "pr": 10045, "event": "status", "from": "skipped_conflict", "to": "failed"}
 {"ts": "2026-11-12T17:39:47Z", "order": "ascending", "pr": 10206, "event": "removed", "from": "failed"}
+{"ts": "2026-11-12T20:29:27Z", "order": "ascending", "pr": 9870, "event": "removed", "from": "failed"}
+{"ts": "2026-11-12T20:29:27Z", "order": "ascending", "pr": 9871, "event": "status", "from": "failed", "to": "merged"}
+{"ts": "2026-11-12T20:29:27Z", "order": "ascending", "pr": 10182, "event": "status", "from": "failed", "to": "merged"}

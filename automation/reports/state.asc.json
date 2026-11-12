@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 228,
-    "merged": 548,
+    "failed": 225,
+    "merged": 550,
     "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 936
+    "total": 935
   },
-  "generated_at": "2026-11-12T17:39:47Z",
+  "generated_at": "2026-11-12T20:29:27Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -431,9 +431,8 @@
     "10182": {
       "author": "brunopostle",
       "branch": "feat/bonsai-mcp",
-      "head": "a548d04",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "f82954e",
+      "status": "merged",
       "title": "Bonsai: MCP bridge for ifcmcp",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10182"
     },
@@ -7267,21 +7266,11 @@
       "title": "Bonsai: generate terrain contour lines as IfcAnnotation CONTOURLINE",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9851"
     },
-    "9870": {
-      "author": "theoryshaw",
-      "branch": "structural-loads/3-diagrams",
-      "head": "bce54bc",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Structural Analysis 3: Readable point force diagrams in Show Loads",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9870"
-    },
     "9871": {
       "author": "theoryshaw",
       "branch": "structural-loads/4-viewport-editing",
-      "head": "ef9dc4a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "3acfd04",
+      "status": "merged",
       "title": "Structural Analysis 4: Edit loads from the viewport",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9871"
     },
@@ -7728,8 +7717,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611121750",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611121750"
+    "tag": "v0.9.1-alpha2611122050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611122050"
   },
   "schema": 1
 }
