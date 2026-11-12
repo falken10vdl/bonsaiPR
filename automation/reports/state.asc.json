@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 185,
-    "merged": 561,
+    "merged": 562,
     "skipped_conflict": 130,
     "skipped_draft": 68,
-    "total": 944
+    "total": 945
   },
-  "generated_at": "2026-11-12T01:25:58Z",
+  "generated_at": "2026-11-12T03:25:01Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -349,7 +349,7 @@
     "10153": {
       "author": "theoryshaw",
       "branch": "model_join_clicked_side",
-      "head": "6578970",
+      "head": "e8351c9",
       "status": "skipped_conflict",
       "title": "Keep the clicked side in wall and profile joins",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10153"
@@ -543,7 +543,7 @@
     "10202": {
       "author": "theoryshaw",
       "branch": "wall_butt_join",
-      "head": "24f5097",
+      "head": "b7ac204",
       "status": "skipped_conflict",
       "title": "Add Alt+T butt join for walls",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10202"
@@ -555,6 +555,14 @@
       "status": "merged",
       "title": "Cap gizmo icon size when zooming in",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10204"
+    },
+    "10205": {
+      "author": "3adoshka",
+      "branch": "fix/typo-cleanup",
+      "head": "4f629d4",
+      "status": "merged",
+      "title": "docs: add validation pro tip to ifctester README",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10205"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7749,8 +7757,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611120150",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611120150"
+    "tag": "v0.9.1-alpha2611120350",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611120350"
   },
   "schema": 1
 }

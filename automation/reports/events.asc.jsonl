@@ -9102,3 +9102,6 @@
 {"ts": "2026-11-12T01:25:58Z", "order": "ascending", "pr": 10200, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-11-12T01:25:58Z", "order": "ascending", "pr": 10202, "event": "added", "to": "skipped_conflict"}
 {"ts": "2026-11-12T01:25:58Z", "order": "ascending", "pr": 10204, "event": "added", "to": "merged"}
+{"ts": "2026-11-12T03:25:01Z", "order": "ascending", "pr": 10153, "event": "updated", "status": "skipped_conflict", "from_head": "6578970", "to_head": "e8351c9"}
+{"ts": "2026-11-12T03:25:01Z", "order": "ascending", "pr": 10202, "event": "updated", "status": "skipped_conflict", "from_head": "24f5097", "to_head": "b7ac204"}
+{"ts": "2026-11-12T03:25:01Z", "order": "ascending", "pr": 10205, "event": "added", "to": "merged"}
