@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 194,
-    "merged": 558,
+    "merged": 559,
     "skipped_conflict": 87,
     "skipped_draft": 68,
-    "total": 907
+    "total": 908
   },
-  "generated_at": "2026-11-13T18:06:21Z",
+  "generated_at": "2026-11-13T20:04:07Z",
   "merge_order": "descending",
   "prs": {
     "10006": {
@@ -361,7 +361,7 @@
     "10175": {
       "author": "theoryshaw",
       "branch": "structural-model-building",
-      "head": "17881eb",
+      "head": "8c906c1",
       "status": "skipped_conflict",
       "title": "Assign structural analysis models to buildings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10175"
@@ -467,7 +467,7 @@
     "10209": {
       "author": "brunopostle",
       "branch": "structural-reference-topology",
-      "head": "f4609fe",
+      "head": "b2b2b12",
       "status": "merged",
       "title": "Label structural topology as Reference",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10209"
@@ -487,6 +487,14 @@
       "status": "merged",
       "title": "Read loads from other programs' analysis models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10211"
+    },
+    "10212": {
+      "author": "brunopostle",
+      "branch": "structural-unassign-from-building",
+      "head": "9a67826",
+      "status": "merged",
+      "title": "Add structural.unassign_from_building",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10212"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7462,8 +7470,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611131829",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611131829"
+    "tag": "v0.9.1-alpha2611132027",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611132027"
   },
   "schema": 1
 }
