@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 225,
-    "merged": 550,
+    "merged": 551,
     "skipped_conflict": 92,
     "skipped_draft": 68,
-    "total": 935
+    "total": 936
   },
-  "generated_at": "2026-11-12T23:28:10Z",
+  "generated_at": "2026-11-13T12:27:24Z",
   "merge_order": "ascending",
   "prs": {
     "10001": {
@@ -517,6 +517,14 @@
       "status": "merged",
       "title": "docs: add validation pro tip to ifctester README",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10205"
+    },
+    "10208": {
+      "author": "brunopostle",
+      "branch": "structural-util-activities",
+      "head": "1b6c155",
+      "status": "merged",
+      "title": "Add activity queries to util.structural",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10208"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7717,8 +7725,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611122350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611122350"
+    "tag": "v0.9.1-alpha2611131250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611131250"
   },
   "schema": 1
 }
