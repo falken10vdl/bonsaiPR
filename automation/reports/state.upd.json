@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 909
   },
-  "generated_at": "2026-11-14T00:45:40Z",
+  "generated_at": "2026-11-14T02:35:34Z",
   "merge_order": "by-updated",
   "prs": {
     "10006": {
@@ -469,7 +469,7 @@
     "10211": {
       "author": "brunopostle",
       "branch": "structural-ui-other-programs",
-      "head": "5913d46",
+      "head": "14ea90a",
       "status": "merged",
       "title": "Read loads from other programs' analysis models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10211"
@@ -7480,8 +7480,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611140104",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140104"
+    "tag": "v0.9.1-alpha2611140301",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140301"
   },
   "schema": 1
 }
