@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 194,
+    "failed": 193,
     "merged": 562,
-    "skipped_conflict": 87,
+    "skipped_conflict": 88,
     "skipped_draft": 68,
     "total": 911
   },
-  "generated_at": "2026-11-14T09:34:25Z",
+  "generated_at": "2026-11-14T11:36:16Z",
   "merge_order": "by-updated",
   "prs": {
     "10006": {
@@ -362,9 +362,8 @@
     "10175": {
       "author": "theoryshaw",
       "branch": "structural-model-building",
-      "head": "8c906c1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "85e85c4",
+      "status": "skipped_conflict",
       "title": "Assign structural analysis models to buildings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10175"
     },
@@ -436,8 +435,8 @@
     "10200": {
       "author": "falken10vdl",
       "branch": "structural-model-generation",
-      "head": "1f4b92e",
-      "status": "skipped_conflict",
+      "head": "c59629f",
+      "status": "merged",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
     },
@@ -469,17 +468,9 @@
       "author": "brunopostle",
       "branch": "structural-ui-other-programs",
       "head": "14ea90a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Read loads from other programs' analysis models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10211"
-    },
-    "10212": {
-      "author": "brunopostle",
-      "branch": "structural-unassign-from-building",
-      "head": "9a67826",
-      "status": "merged",
-      "title": "Add structural.unassign_from_building",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10212"
     },
     "10215": {
       "author": "dependabot[bot]",
@@ -505,21 +496,29 @@
       "title": "build(deps): bump ruff from 0.17.3 to 0.17.4",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10217"
     },
-    "10218": {
-      "author": "brunopostle",
-      "branch": "util-radian-symbol",
-      "head": "e08e622",
-      "status": "merged",
-      "title": "util.unit: a symbol for the radian",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10218"
-    },
     "10219": {
       "author": "brunopostle",
       "branch": "structural-units",
-      "head": "b54155d",
-      "status": "merged",
-      "title": "Bonsai: declare structural units in new projects, and show them",
+      "head": "05e8d6c",
+      "status": "skipped_conflict",
+      "title": "Declare structural units in new projects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10219"
+    },
+    "10220": {
+      "author": "falken10vdl",
+      "branch": "fix-shared-extrusion-profile",
+      "head": "bae0a7b",
+      "status": "merged",
+      "title": "Preserve shared unnamed extrusion profiles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10220"
+    },
+    "10221": {
+      "author": "falken10vdl",
+      "branch": "fix-material-type-usages",
+      "head": "7b27377",
+      "status": "merged",
+      "title": "Preserve material usages of other types",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10221"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -6327,7 +6326,7 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8541",
       "head": "5d7f10a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: implement Add Derived Unit in the units UI (#2554)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9665"
     },
@@ -7494,8 +7493,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611141000",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611141000"
+    "tag": "v0.9.1-alpha2611141201",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611141201"
   },
   "schema": 1
 }

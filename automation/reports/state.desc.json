@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 194,
+    "failed": 193,
     "merged": 561,
-    "skipped_conflict": 86,
+    "skipped_conflict": 87,
     "skipped_draft": 68,
     "total": 909
   },
-  "generated_at": "2026-11-14T08:59:04Z",
+  "generated_at": "2026-11-14T11:00:17Z",
   "merge_order": "descending",
   "prs": {
     "10006": {
@@ -362,9 +362,8 @@
     "10175": {
       "author": "theoryshaw",
       "branch": "structural-model-building",
-      "head": "8c906c1",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "85e85c4",
+      "status": "merged",
       "title": "Assign structural analysis models to buildings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10175"
     },
@@ -436,7 +435,7 @@
     "10200": {
       "author": "falken10vdl",
       "branch": "structural-model-generation",
-      "head": "1f4b92e",
+      "head": "d552a42",
       "status": "skipped_conflict",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
@@ -473,14 +472,6 @@
       "title": "Read loads from other programs' analysis models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10211"
     },
-    "10212": {
-      "author": "brunopostle",
-      "branch": "structural-unassign-from-building",
-      "head": "9a67826",
-      "status": "merged",
-      "title": "Add structural.unassign_from_building",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10212"
-    },
     "10215": {
       "author": "dependabot[bot]",
       "branch": "dependabot/pip/sphinx-autoapi-3.9.0",
@@ -504,6 +495,14 @@
       "status": "merged",
       "title": "build(deps): bump ruff from 0.17.3 to 0.17.4",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10217"
+    },
+    "10219": {
+      "author": "brunopostle",
+      "branch": "structural-units",
+      "head": "05e8d6c",
+      "status": "merged",
+      "title": "Declare structural units in new projects",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10219"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -6311,7 +6310,7 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8541",
       "head": "5d7f10a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: implement Add Derived Unit in the units UI (#2554)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9665"
     },
@@ -7478,8 +7477,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611140925",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140925"
+    "tag": "v0.9.1-alpha2611141125",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611141125"
   },
   "schema": 1
 }
