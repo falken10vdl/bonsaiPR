@@ -4,10 +4,10 @@
     "failed": 193,
     "merged": 561,
     "skipped_conflict": 87,
-    "skipped_draft": 68,
-    "total": 909
+    "skipped_draft": 71,
+    "total": 912
   },
-  "generated_at": "2026-11-14T11:00:17Z",
+  "generated_at": "2026-11-14T13:02:44Z",
   "merge_order": "descending",
   "prs": {
     "10006": {
@@ -435,7 +435,7 @@
     "10200": {
       "author": "falken10vdl",
       "branch": "structural-model-generation",
-      "head": "d552a42",
+      "head": "403f32f",
       "status": "skipped_conflict",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
@@ -503,6 +503,30 @@
       "status": "merged",
       "title": "Declare structural units in new projects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10219"
+    },
+    "10220": {
+      "author": "falken10vdl",
+      "branch": "fix-shared-extrusion-profile",
+      "head": "bae0a7b",
+      "status": "skipped_draft",
+      "title": "Preserve shared unnamed extrusion profiles",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10220"
+    },
+    "10221": {
+      "author": "falken10vdl",
+      "branch": "fix-material-type-usages",
+      "head": "7b27377",
+      "status": "skipped_draft",
+      "title": "Preserve material usages of other types",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10221"
+    },
+    "10222": {
+      "author": "falken10vdl",
+      "branch": "structural-generation-ui",
+      "head": "7db2b06",
+      "status": "skipped_draft",
+      "title": "Add structural member inspection UI",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10222"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7477,8 +7501,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611141125",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611141125"
+    "tag": "v0.9.1-alpha2611141327",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611141327"
   },
   "schema": 1
 }
