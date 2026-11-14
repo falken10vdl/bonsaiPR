@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 193,
+    "failed": 192,
     "merged": 561,
-    "skipped_conflict": 87,
+    "skipped_conflict": 88,
     "skipped_draft": 71,
     "total": 912
   },
-  "generated_at": "2026-11-14T17:01:12Z",
+  "generated_at": "2026-11-14T22:02:37Z",
   "merge_order": "descending",
   "prs": {
     "10006": {
@@ -418,9 +418,8 @@
     "10194": {
       "author": "shitobu",
       "branch": "fix/structural-analysis-models-authoring",
-      "head": "5259e81",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "9589d85",
+      "status": "skipped_conflict",
       "title": "feat(structural): support load case self-weight, default boundary stiffnesses to free, and surface member details (#10189)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10194"
     },
@@ -7501,8 +7500,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611141726",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611141726"
+    "tag": "v0.9.1-alpha2611142227",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611142227"
   },
   "schema": 1
 }
