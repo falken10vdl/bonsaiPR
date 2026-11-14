@@ -7,7 +7,7 @@
     "skipped_draft": 71,
     "total": 912
   },
-  "generated_at": "2026-11-14T13:02:44Z",
+  "generated_at": "2026-11-14T15:01:05Z",
   "merge_order": "descending",
   "prs": {
     "10006": {
@@ -435,7 +435,7 @@
     "10200": {
       "author": "falken10vdl",
       "branch": "structural-model-generation",
-      "head": "403f32f",
+      "head": "83e613d",
       "status": "skipped_conflict",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
@@ -507,7 +507,7 @@
     "10220": {
       "author": "falken10vdl",
       "branch": "fix-shared-extrusion-profile",
-      "head": "bae0a7b",
+      "head": "91e4c99",
       "status": "skipped_draft",
       "title": "Preserve shared unnamed extrusion profiles",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10220"
@@ -7501,8 +7501,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611141327",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611141327"
+    "tag": "v0.9.1-alpha2611141526",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611141526"
   },
   "schema": 1
 }

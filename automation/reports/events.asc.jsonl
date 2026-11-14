@@ -9231,3 +9231,5 @@
 {"ts": "2026-11-14T12:26:19Z", "order": "ascending", "pr": 10220, "event": "added", "to": "skipped_draft"}
 {"ts": "2026-11-14T12:26:19Z", "order": "ascending", "pr": 10221, "event": "added", "to": "skipped_draft"}
 {"ts": "2026-11-14T12:26:19Z", "order": "ascending", "pr": 10222, "event": "added", "to": "skipped_draft"}
+{"ts": "2026-11-14T14:25:16Z", "order": "ascending", "pr": 10200, "event": "updated", "status": "skipped_conflict", "from_head": "df5f3ea", "to_head": "5bcbc51"}
+{"ts": "2026-11-14T14:25:16Z", "order": "ascending", "pr": 10220, "event": "updated", "status": "skipped_draft", "from_head": "bae0a7b", "to_head": "91e4c99"}
