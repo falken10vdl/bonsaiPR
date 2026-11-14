@@ -8839,3 +8839,20 @@
 {"ts": "2026-11-13T22:22:42Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-11-13T22:22:42Z", "order": "upd", "pr": 9404, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-11-13T22:22:42Z", "order": "upd", "pr": 9555, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-14T00:29:15Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-14T00:29:15Z", "order": "upd", "pr": 8615, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-14T00:29:15Z", "order": "upd", "pr": 8872, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-14T00:29:15Z", "order": "upd", "pr": 8933, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-14T00:29:15Z", "order": "upd", "pr": 8993, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-14T00:29:15Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-14T00:29:15Z", "order": "upd", "pr": 9404, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-14T00:29:15Z", "order": "upd", "pr": 9555, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-14T00:45:40Z", "order": "by-updated", "pr": 10174, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-11-14T00:45:40Z", "order": "by-updated", "pr": 10175, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-11-14T00:45:40Z", "order": "by-updated", "pr": 10194, "event": "updated", "status": "failed", "from_head": "c2838d9", "to_head": "5259e81"}
+{"ts": "2026-11-14T00:45:40Z", "order": "by-updated", "pr": 10209, "event": "removed", "from": "merged"}
+{"ts": "2026-11-14T00:45:40Z", "order": "by-updated", "pr": 10210, "event": "removed", "from": "skipped_conflict"}
+{"ts": "2026-11-14T00:45:40Z", "order": "by-updated", "pr": 10211, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-11-14T00:45:40Z", "order": "by-updated", "pr": 10215, "event": "added", "to": "merged"}
+{"ts": "2026-11-14T00:45:40Z", "order": "by-updated", "pr": 10216, "event": "added", "to": "merged"}
+{"ts": "2026-11-14T00:45:40Z", "order": "by-updated", "pr": 10217, "event": "added", "to": "merged"}
