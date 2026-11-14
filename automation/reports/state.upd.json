@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 195,
-    "merged": 561,
-    "skipped_conflict": 85,
+    "failed": 194,
+    "merged": 562,
+    "skipped_conflict": 87,
     "skipped_draft": 68,
-    "total": 909
+    "total": 911
   },
-  "generated_at": "2026-11-14T07:34:14Z",
+  "generated_at": "2026-11-14T09:34:25Z",
   "merge_order": "by-updated",
   "prs": {
     "10006": {
@@ -436,9 +436,8 @@
     "10200": {
       "author": "falken10vdl",
       "branch": "structural-model-generation",
-      "head": "55edbbf",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "1f4b92e",
+      "status": "skipped_conflict",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
     },
@@ -505,6 +504,22 @@
       "status": "merged",
       "title": "build(deps): bump ruff from 0.17.3 to 0.17.4",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10217"
+    },
+    "10218": {
+      "author": "brunopostle",
+      "branch": "util-radian-symbol",
+      "head": "e08e622",
+      "status": "merged",
+      "title": "util.unit: a symbol for the radian",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10218"
+    },
+    "10219": {
+      "author": "brunopostle",
+      "branch": "structural-units",
+      "head": "b54155d",
+      "status": "merged",
+      "title": "Bonsai: declare structural units in new projects, and show them",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10219"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -6312,7 +6327,7 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8541",
       "head": "5d7f10a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: implement Add Derived Unit in the units UI (#2554)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9665"
     },
@@ -7479,8 +7494,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611140800",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140800"
+    "tag": "v0.9.1-alpha2611141000",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611141000"
   },
   "schema": 1
 }

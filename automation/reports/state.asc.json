@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 196,
+    "failed": 195,
     "merged": 553,
-    "skipped_conflict": 92,
+    "skipped_conflict": 93,
     "skipped_draft": 68,
     "total": 909
   },
-  "generated_at": "2026-11-14T06:24:06Z",
+  "generated_at": "2026-11-14T08:24:13Z",
   "merge_order": "ascending",
   "prs": {
     "10006": {
@@ -436,9 +436,8 @@
     "10200": {
       "author": "falken10vdl",
       "branch": "structural-model-generation",
-      "head": "55edbbf",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "2b78096",
+      "status": "merged",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
     },
@@ -470,7 +469,7 @@
       "author": "brunopostle",
       "branch": "structural-ui-other-programs",
       "head": "14ea90a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Read loads from other programs' analysis models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10211"
     },
@@ -7480,8 +7479,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611140650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140650"
+    "tag": "v0.9.1-alpha2611140850",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140850"
   },
   "schema": 1
 }
