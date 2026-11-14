@@ -1,19 +1,19 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 196,
-    "merged": 560,
+    "failed": 195,
+    "merged": 561,
     "skipped_conflict": 85,
     "skipped_draft": 68,
     "total": 909
   },
-  "generated_at": "2026-11-14T02:00:06Z",
+  "generated_at": "2026-11-14T04:59:01Z",
   "merge_order": "descending",
   "prs": {
     "10006": {
       "author": "Moult",
       "branch": "fix/geom-swept-disk-fillet-435",
-      "head": "758dff0",
+      "head": "38ff9de",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix IfcSweptDiskSolidPolygonal FilletRadius",
@@ -7463,10 +7463,9 @@
     "9996": {
       "author": "Moult",
       "branch": "chore/test-input-1030-rename",
-      "head": "64984fe",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Bump test files to IfcOpenShell/files 76d1706",
+      "head": "0388ac4",
+      "status": "merged",
+      "title": "Bump test files to IfcOpenShell/files 79f40be",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9996"
     },
     "9997": {
@@ -7480,8 +7479,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611140226",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140226"
+    "tag": "v0.9.1-alpha2611140525",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140525"
   },
   "schema": 1
 }
