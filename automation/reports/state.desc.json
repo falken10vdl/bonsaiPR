@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 909
   },
-  "generated_at": "2026-11-14T04:59:01Z",
+  "generated_at": "2026-11-14T06:58:53Z",
   "merge_order": "descending",
   "prs": {
     "10006": {
@@ -55,16 +55,16 @@
     "10018": {
       "author": "Moult",
       "branch": "fix/geom-swept-disk-corner-workarounds-435",
-      "head": "ad67b5e",
+      "head": "28cad15",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Work around OCCT corner trim failures in swept disks",
+      "title": "Sweep tessellated directrices as polyhedra",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10018"
     },
     "10027": {
       "author": "Moult",
       "branch": "fix/geom-wire-cut-cycle-closed-337",
-      "head": "186a363",
+      "head": "3bc0946",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Cut every self-crossing of a wire, not only the first",
@@ -73,10 +73,10 @@
     "10029": {
       "author": "Moult",
       "branch": "fix/geom-halfspace-drift-fuzz-349",
-      "head": "6596f6a",
+      "head": "81bc0b8",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Raise the boolean fuzziness for a drifting half-space",
+      "title": "Turn a drifting polygonal half-space bound onto the operand face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10029"
     },
     "10031": {
@@ -7479,8 +7479,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611140525",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140525"
+    "tag": "v0.9.1-alpha2611140725",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140725"
   },
   "schema": 1
 }

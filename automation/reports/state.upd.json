@@ -7,7 +7,7 @@
     "skipped_draft": 68,
     "total": 909
   },
-  "generated_at": "2026-11-14T05:34:24Z",
+  "generated_at": "2026-11-14T07:34:14Z",
   "merge_order": "by-updated",
   "prs": {
     "10006": {
@@ -73,10 +73,10 @@
     "10029": {
       "author": "Moult",
       "branch": "fix/geom-halfspace-drift-fuzz-349",
-      "head": "6596f6a",
+      "head": "81bc0b8",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
-      "title": "Raise the boolean fuzziness for a drifting half-space",
+      "title": "Turn a drifting polygonal half-space bound onto the operand face",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10029"
     },
     "10031": {
@@ -7479,8 +7479,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611140600",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140600"
+    "tag": "v0.9.1-alpha2611140800",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611140800"
   },
   "schema": 1
 }
