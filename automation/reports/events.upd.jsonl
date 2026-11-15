@@ -8972,3 +8972,18 @@
 {"ts": "2026-11-15T09:36:44Z", "order": "by-updated", "pr": 10194, "event": "removed", "from": "merged"}
 {"ts": "2026-11-15T09:36:44Z", "order": "by-updated", "pr": 10200, "event": "status", "from": "skipped_conflict", "to": "failed"}
 {"ts": "2026-11-15T09:36:44Z", "order": "by-updated", "pr": 10219, "event": "removed", "from": "skipped_conflict"}
+{"ts": "2026-11-15T11:32:00Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-15T11:32:00Z", "order": "upd", "pr": 8615, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-15T11:32:00Z", "order": "upd", "pr": 8872, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-15T11:32:00Z", "order": "upd", "pr": 8933, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-15T11:32:00Z", "order": "upd", "pr": 8993, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-15T11:32:00Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-15T11:32:00Z", "order": "upd", "pr": 9404, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-15T11:32:00Z", "order": "upd", "pr": 9555, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-15T11:48:14Z", "order": "by-updated", "pr": 10174, "event": "status", "from": "failed", "to": "merged"}
+{"ts": "2026-11-15T11:48:14Z", "order": "by-updated", "pr": 10200, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-11-15T11:48:14Z", "order": "by-updated", "pr": 10211, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-11-15T11:48:14Z", "order": "by-updated", "pr": 10220, "event": "status", "from": "skipped_draft", "to": "merged"}
+{"ts": "2026-11-15T11:48:14Z", "order": "by-updated", "pr": 10221, "event": "status", "from": "skipped_draft", "to": "merged"}
+{"ts": "2026-11-15T11:48:14Z", "order": "by-updated", "pr": 10222, "event": "updated", "status": "skipped_draft", "from_head": "7db2b06", "to_head": "6bce417"}
+{"ts": "2026-11-15T11:48:14Z", "order": "by-updated", "pr": 10225, "event": "added", "to": "merged"}

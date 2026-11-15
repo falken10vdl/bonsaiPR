@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 193,
-    "merged": 554,
-    "skipped_conflict": 94,
+    "merged": 553,
+    "skipped_conflict": 93,
     "skipped_draft": 71,
-    "total": 912
+    "total": 910
   },
-  "generated_at": "2026-11-15T08:25:21Z",
+  "generated_at": "2026-11-15T10:36:32Z",
   "merge_order": "ascending",
   "prs": {
     "10006": {
@@ -353,9 +353,8 @@
     "10174": {
       "author": "theoryshaw",
       "branch": "structural-curve-axis",
-      "head": "a000d01",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "49f2312",
+      "status": "merged",
       "title": "Give new structural curve items an Axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10174"
     },
@@ -415,14 +414,6 @@
       "title": "fix(python): raise AttributeError on unknown header and uncompiled schema entity attributes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10188"
     },
-    "10194": {
-      "author": "shitobu",
-      "branch": "fix/structural-analysis-models-authoring",
-      "head": "9589d85",
-      "status": "merged",
-      "title": "feat(structural): support load case self-weight, default boundary stiffnesses to free, and surface member details (#10189)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10194"
-    },
     "10198": {
       "author": "theoryshaw",
       "branch": "fix-drawing-viewer-launch-error",
@@ -434,7 +425,7 @@
     "10200": {
       "author": "falken10vdl",
       "branch": "structural-model-generation",
-      "head": "83e613d",
+      "head": "f28cfc8",
       "status": "skipped_conflict",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
@@ -495,14 +486,6 @@
       "title": "build(deps): bump ruff from 0.17.3 to 0.17.4",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10217"
     },
-    "10219": {
-      "author": "brunopostle",
-      "branch": "structural-units",
-      "head": "05e8d6c",
-      "status": "skipped_conflict",
-      "title": "Declare structural units in new projects",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10219"
-    },
     "10220": {
       "author": "falken10vdl",
       "branch": "fix-shared-extrusion-profile",
@@ -522,7 +505,7 @@
     "10222": {
       "author": "falken10vdl",
       "branch": "structural-generation-ui",
-      "head": "7db2b06",
+      "head": "6bce417",
       "status": "skipped_draft",
       "title": "Add structural member inspection UI",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10222"
@@ -6334,7 +6317,8 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8541",
       "head": "5d7f10a",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Bonsai: implement Add Derived Unit in the units UI (#2554)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9665"
     },
@@ -7501,8 +7485,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611150850",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611150850"
+    "tag": "v0.9.1-alpha2611151050",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611151050"
   },
   "schema": 1
 }
