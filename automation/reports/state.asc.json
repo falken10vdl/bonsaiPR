@@ -3,11 +3,11 @@
   "counts": {
     "failed": 193,
     "merged": 555,
-    "skipped_conflict": 94,
+    "skipped_conflict": 95,
     "skipped_draft": 69,
-    "total": 911
+    "total": 912
   },
-  "generated_at": "2026-11-15T12:25:42Z",
+  "generated_at": "2026-11-15T15:25:57Z",
   "merge_order": "ascending",
   "prs": {
     "10006": {
@@ -517,6 +517,14 @@
       "status": "skipped_conflict",
       "title": "Edit structural load combinations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10225"
+    },
+    "10227": {
+      "author": "theoryshaw",
+      "branch": "direct_edit_autosave_10226",
+      "head": "1c35aed",
+      "status": "merged",
+      "title": "Bonsai: save plain edit-mode mesh edits on Tab out",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10227"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -2856,7 +2864,7 @@
       "author": "petruconduraru",
       "branch": "fix-6410-isolate-show-hide-docs",
       "head": "dfc0026",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai docs: fix quickstart isolate/hide/show default claim",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8679"
     },
@@ -7493,8 +7501,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611151250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611151250"
+    "tag": "v0.9.1-alpha2611151550",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611151550"
   },
   "schema": 1
 }
