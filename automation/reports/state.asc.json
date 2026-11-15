@@ -7,7 +7,7 @@
     "skipped_draft": 69,
     "total": 912
   },
-  "generated_at": "2026-11-15T19:25:40Z",
+  "generated_at": "2026-11-15T22:27:47Z",
   "merge_order": "ascending",
   "prs": {
     "10006": {
@@ -529,7 +529,7 @@
     "10228": {
       "author": "theoryshaw",
       "branch": "fix-6205-origin-keeps-geometry",
-      "head": "9a4e1cc",
+      "head": "962d235",
       "status": "merged",
       "title": "Bonsai: keep geometry in place on IFC Set Origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10228"
@@ -7501,8 +7501,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611151950",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611151950"
+    "tag": "v0.9.1-alpha2611152250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611152250"
   },
   "schema": 1
 }
