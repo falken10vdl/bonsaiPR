@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 192,
+    "failed": 193,
     "merged": 561,
-    "skipped_conflict": 88,
+    "skipped_conflict": 86,
     "skipped_draft": 71,
-    "total": 912
+    "total": 911
   },
-  "generated_at": "2026-11-14T22:02:37Z",
+  "generated_at": "2026-11-15T09:00:05Z",
   "merge_order": "descending",
   "prs": {
     "10006": {
@@ -415,14 +415,6 @@
       "title": "fix(python): raise AttributeError on unknown header and uncompiled schema entity attributes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10188"
     },
-    "10194": {
-      "author": "shitobu",
-      "branch": "fix/structural-analysis-models-authoring",
-      "head": "9589d85",
-      "status": "skipped_conflict",
-      "title": "feat(structural): support load case self-weight, default boundary stiffnesses to free, and surface member details (#10189)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10194"
-    },
     "10198": {
       "author": "theoryshaw",
       "branch": "fix-drawing-viewer-launch-error",
@@ -435,7 +427,8 @@
       "author": "falken10vdl",
       "branch": "structural-model-generation",
       "head": "83e613d",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
     },
@@ -499,7 +492,7 @@
       "author": "brunopostle",
       "branch": "structural-units",
       "head": "05e8d6c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Declare structural units in new projects",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10219"
     },
@@ -6333,7 +6326,7 @@
       "author": "petruconduraru",
       "branch": "v09/replace-8541",
       "head": "5d7f10a",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: implement Add Derived Unit in the units UI (#2554)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9665"
     },
@@ -7500,8 +7493,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611142227",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611142227"
+    "tag": "v0.9.1-alpha2611150926",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611150926"
   },
   "schema": 1
 }
