@@ -7,7 +7,7 @@
     "skipped_draft": 69,
     "total": 912
   },
-  "generated_at": "2026-11-15T16:46:04Z",
+  "generated_at": "2026-11-15T18:37:57Z",
   "merge_order": "by-updated",
   "prs": {
     "10006": {
@@ -525,6 +525,14 @@
       "status": "merged",
       "title": "Bonsai: save plain edit-mode mesh edits on Tab out",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10227"
+    },
+    "10228": {
+      "author": "theoryshaw",
+      "branch": "fix-6205-origin-keeps-geometry",
+      "head": "9a4e1cc",
+      "status": "merged",
+      "title": "Bonsai: keep geometry in place on IFC Set Origin",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10228"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -2541,14 +2549,6 @@
       "status": "merged",
       "title": "Bonsai: don't crash registration on read-only pyradiance installs (#7156)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8583"
-    },
-    "8584": {
-      "author": "petruconduraru",
-      "branch": "fix-6727-swept-solid-set-origin",
-      "head": "5744a2a",
-      "status": "merged",
-      "title": "Bonsai: fix/report IFC Set Origin no-op on SweptSolid representations (#6727)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8584"
     },
     "8585": {
       "author": "petruconduraru",
@@ -7500,8 +7500,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611151703",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611151703"
+    "tag": "v0.9.1-alpha2611151903",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611151903"
   },
   "schema": 1
 }

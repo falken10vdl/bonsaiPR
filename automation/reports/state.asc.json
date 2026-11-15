@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 193,
-    "merged": 555,
-    "skipped_conflict": 95,
+    "merged": 556,
+    "skipped_conflict": 94,
     "skipped_draft": 69,
     "total": 912
   },
-  "generated_at": "2026-11-15T15:25:57Z",
+  "generated_at": "2026-11-15T17:25:55Z",
   "merge_order": "ascending",
   "prs": {
     "10006": {
@@ -2864,7 +2864,7 @@
       "author": "petruconduraru",
       "branch": "fix-6410-isolate-show-hide-docs",
       "head": "dfc0026",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai docs: fix quickstart isolate/hide/show default claim",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8679"
     },
@@ -7501,8 +7501,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611151550",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611151550"
+    "tag": "v0.9.1-alpha2611151750",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611151750"
   },
   "schema": 1
 }
