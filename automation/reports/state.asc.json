@@ -3,11 +3,11 @@
   "counts": {
     "failed": 194,
     "merged": 555,
-    "skipped_conflict": 92,
+    "skipped_conflict": 93,
     "skipped_draft": 69,
-    "total": 910
+    "total": 911
   },
-  "generated_at": "2026-11-16T18:27:37Z",
+  "generated_at": "2026-11-16T21:31:02Z",
   "merge_order": "ascending",
   "prs": {
     "10006": {
@@ -518,6 +518,14 @@
       "status": "merged",
       "title": "Show where the apply-load button applies a load",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10234"
+    },
+    "10235": {
+      "author": "brunopostle",
+      "branch": "structural-tool-bar",
+      "head": "f24fa48",
+      "status": "skipped_conflict",
+      "title": "Give the Structural Tool bar its operators",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10235"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7486,8 +7494,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611161850",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611161850"
+    "tag": "v0.9.1-alpha2611162150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611162150"
   },
   "schema": 1
 }

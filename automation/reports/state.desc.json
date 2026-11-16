@@ -3,22 +3,13 @@
   "counts": {
     "failed": 193,
     "merged": 563,
-    "skipped_conflict": 85,
+    "skipped_conflict": 86,
     "skipped_draft": 69,
-    "total": 910
+    "total": 911
   },
-  "generated_at": "2026-11-16T19:05:15Z",
+  "generated_at": "2026-11-16T22:14:16Z",
   "merge_order": "descending",
   "prs": {
-    "10006": {
-      "author": "Moult",
-      "branch": "fix/geom-swept-disk-fillet-435",
-      "head": "38ff9de",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
-      "title": "Fix IfcSweptDiskSolidPolygonal FilletRadius",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10006"
-    },
     "10007": {
       "author": "Moult",
       "branch": "fix/occt-sweep-ring-pcurve",
@@ -345,7 +336,7 @@
       "author": "theoryshaw",
       "branch": "structural-curve-axis",
       "head": "3e5e96b",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Give new structural curve items an Axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10174"
     },
@@ -518,6 +509,23 @@
       "status": "merged",
       "title": "Show where the apply-load button applies a load",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10234"
+    },
+    "10235": {
+      "author": "brunopostle",
+      "branch": "structural-tool-bar",
+      "head": "f24fa48",
+      "status": "merged",
+      "title": "Give the Structural Tool bar its operators",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10235"
+    },
+    "10237": {
+      "author": "Amixx",
+      "branch": "fix/parsed-derived-values",
+      "head": "33b28eb",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Preserve parsed values in derived slots",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10237"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7485,8 +7493,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611161928",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611161928"
+    "tag": "v0.9.1-alpha2611162232",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611162232"
   },
   "schema": 1
 }
