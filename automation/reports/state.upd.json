@@ -3,11 +3,11 @@
   "counts": {
     "failed": 192,
     "merged": 565,
-    "skipped_conflict": 87,
+    "skipped_conflict": 88,
     "skipped_draft": 69,
-    "total": 913
+    "total": 914
   },
-  "generated_at": "2026-11-16T01:44:12Z",
+  "generated_at": "2026-11-16T03:36:41Z",
   "merge_order": "by-updated",
   "prs": {
     "10006": {
@@ -312,7 +312,7 @@
       "author": "theoryshaw",
       "branch": "model_join_clicked_side",
       "head": "e8351c9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Keep the clicked side in wall and profile joins",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10153"
     },
@@ -434,7 +434,7 @@
       "author": "theoryshaw",
       "branch": "wall_butt_join",
       "head": "b7ac204",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Add Alt+T butt join for walls",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10202"
     },
@@ -541,6 +541,14 @@
       "status": "merged",
       "title": "Fix greyed Cancel on connection conditions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10230"
+    },
+    "10232": {
+      "author": "shitobu",
+      "branch": "feat/wall-butt-joint-alt-t",
+      "head": "ee2f27b",
+      "status": "merged",
+      "title": "feat(model): add Alt+T butt joint for walls (#10201)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10232"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -3868,7 +3876,7 @@
       "author": "petruconduraru",
       "branch": "fix/7151-trim-merge-poll",
       "head": "e217c1d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: grey out Trim and Merge when the active-tool selection is invalid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8966"
     },
@@ -7508,8 +7516,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611160209",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611160209"
+    "tag": "v0.9.1-alpha2611160401",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611160401"
   },
   "schema": 1
 }

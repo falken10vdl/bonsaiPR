@@ -9253,3 +9253,8 @@
 {"ts": "2026-11-16T00:32:44Z", "order": "ascending", "pr": 9464, "event": "updated", "status": "merged", "from_head": "8e3d424", "to_head": "49d29de"}
 {"ts": "2026-11-16T00:32:44Z", "order": "ascending", "pr": 10230, "event": "added", "to": "merged"}
 {"ts": "2026-11-16T00:32:44Z", "order": "ascending", "pr": 10231, "event": "added", "to": "skipped_conflict"}
+{"ts": "2026-11-16T02:25:05Z", "order": "ascending", "pr": 10174, "event": "updated", "status": "merged", "from_head": "49f2312", "to_head": "3e5e96b"}
+{"ts": "2026-11-16T02:25:05Z", "order": "ascending", "pr": 10175, "event": "updated", "status": "merged", "from_head": "85e85c4", "to_head": "5ecbd8d"}
+{"ts": "2026-11-16T02:25:05Z", "order": "ascending", "pr": 10211, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-11-16T02:25:05Z", "order": "ascending", "pr": 10225, "event": "status", "from": "skipped_conflict", "to": "merged"}
+{"ts": "2026-11-16T02:25:05Z", "order": "ascending", "pr": 10231, "event": "removed", "from": "skipped_conflict"}

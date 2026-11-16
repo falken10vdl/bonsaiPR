@@ -3,11 +3,11 @@
   "counts": {
     "failed": 192,
     "merged": 565,
-    "skipped_conflict": 87,
+    "skipped_conflict": 88,
     "skipped_draft": 69,
-    "total": 913
+    "total": 914
   },
-  "generated_at": "2026-11-16T01:08:49Z",
+  "generated_at": "2026-11-16T03:00:12Z",
   "merge_order": "descending",
   "prs": {
     "10006": {
@@ -183,7 +183,7 @@
       "author": "shitobu",
       "branch": "fix/regenerate-wall-prioritised-layer-replace",
       "head": "7c7c842",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "fix(api): use namedtuple _replace when overriding PrioritisedLayer priorities (#10054)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10071"
     },
@@ -191,7 +191,7 @@
       "author": "alteralto",
       "branch": "regenerate-wall-skip-curved-axis",
       "head": "c3e18f9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Keep walls with a curved axis on regeneration",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10078"
     },
@@ -312,7 +312,7 @@
       "author": "theoryshaw",
       "branch": "model_join_clicked_side",
       "head": "e8351c9",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Keep the clicked side in wall and profile joins",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10153"
     },
@@ -434,7 +434,7 @@
       "author": "theoryshaw",
       "branch": "wall_butt_join",
       "head": "b7ac204",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Add Alt+T butt join for walls",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10202"
     },
@@ -541,6 +541,14 @@
       "status": "merged",
       "title": "Fix greyed Cancel on connection conditions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10230"
+    },
+    "10232": {
+      "author": "shitobu",
+      "branch": "feat/wall-butt-joint-alt-t",
+      "head": "ee2f27b",
+      "status": "merged",
+      "title": "feat(model): add Alt+T butt joint for walls (#10201)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10232"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -3868,7 +3876,7 @@
       "author": "petruconduraru",
       "branch": "fix/7151-trim-merge-poll",
       "head": "e217c1d",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Bonsai: grey out Trim and Merge when the active-tool selection is invalid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8966"
     },
@@ -7508,8 +7516,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611160133",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611160133"
+    "tag": "v0.9.1-alpha2611160326",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611160326"
   },
   "schema": 1
 }

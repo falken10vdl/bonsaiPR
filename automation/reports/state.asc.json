@@ -3,11 +3,11 @@
   "counts": {
     "failed": 193,
     "merged": 557,
-    "skipped_conflict": 95,
+    "skipped_conflict": 94,
     "skipped_draft": 69,
-    "total": 914
+    "total": 913
   },
-  "generated_at": "2026-11-16T00:32:44Z",
+  "generated_at": "2026-11-16T02:25:05Z",
   "merge_order": "ascending",
   "prs": {
     "10006": {
@@ -353,7 +353,7 @@
     "10174": {
       "author": "theoryshaw",
       "branch": "structural-curve-axis",
-      "head": "49f2312",
+      "head": "3e5e96b",
       "status": "merged",
       "title": "Give new structural curve items an Axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10174"
@@ -361,7 +361,7 @@
     "10175": {
       "author": "theoryshaw",
       "branch": "structural-model-building",
-      "head": "85e85c4",
+      "head": "5ecbd8d",
       "status": "merged",
       "title": "Assign structural analysis models to buildings",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10175"
@@ -458,7 +458,7 @@
       "author": "brunopostle",
       "branch": "structural-ui-other-programs",
       "head": "14ea90a",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Read loads from other programs' analysis models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10211"
     },
@@ -514,7 +514,7 @@
       "author": "brunopostle",
       "branch": "structural-load-combinations",
       "head": "1a13911",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Edit structural load combinations",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10225"
     },
@@ -541,14 +541,6 @@
       "status": "merged",
       "title": "Fix greyed Cancel on connection conditions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10230"
-    },
-    "10231": {
-      "author": "brunopostle",
-      "branch": "structural-default-axis",
-      "head": "012e5c4",
-      "status": "skipped_conflict",
-      "title": "Give new structural curve items an Axis",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10231"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7517,8 +7509,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611160050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611160050"
+    "tag": "v0.9.1-alpha2611160250",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611160250"
   },
   "schema": 1
 }
