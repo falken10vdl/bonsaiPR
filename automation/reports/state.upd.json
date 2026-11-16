@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 192,
-    "merged": 565,
-    "skipped_conflict": 88,
+    "failed": 193,
+    "merged": 563,
+    "skipped_conflict": 86,
     "skipped_draft": 69,
-    "total": 914
+    "total": 911
   },
-  "generated_at": "2026-11-16T05:46:43Z",
+  "generated_at": "2026-11-16T09:40:58Z",
   "merge_order": "by-updated",
   "prs": {
     "10006": {
@@ -358,14 +358,6 @@
       "title": "Give new structural curve items an Axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10174"
     },
-    "10175": {
-      "author": "theoryshaw",
-      "branch": "structural-model-building",
-      "head": "5ecbd8d",
-      "status": "merged",
-      "title": "Assign structural analysis models to buildings",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10175"
-    },
     "10178": {
       "author": "shitobu",
       "branch": "fix/template-structure-styles-and-types",
@@ -426,7 +418,8 @@
       "author": "falken10vdl",
       "branch": "structural-model-generation",
       "head": "f28cfc8",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
     },
@@ -458,7 +451,8 @@
       "author": "brunopostle",
       "branch": "structural-ui-other-programs",
       "head": "14ea90a",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Read loads from other programs' analysis models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10211"
     },
@@ -510,14 +504,6 @@
       "title": "Add structural member inspection UI",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10222"
     },
-    "10225": {
-      "author": "brunopostle",
-      "branch": "structural-load-combinations",
-      "head": "1a13911",
-      "status": "merged",
-      "title": "Edit structural load combinations",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10225"
-    },
     "10227": {
       "author": "theoryshaw",
       "branch": "direct_edit_autosave_10226",
@@ -533,14 +519,6 @@
       "status": "merged",
       "title": "Bonsai: keep geometry in place on IFC Set Origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10228"
-    },
-    "10230": {
-      "author": "brunopostle",
-      "branch": "fix-connection-condition-cancel",
-      "head": "ed8d0ac",
-      "status": "merged",
-      "title": "Fix greyed Cancel on connection conditions",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10230"
     },
     "10232": {
       "author": "shitobu",
@@ -2467,8 +2445,7 @@
       "author": "petruconduraru",
       "branch": "bv-6173-cgal-original-edges",
       "head": "de92655",
-      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
-      "status": "failed",
+      "status": "merged",
       "title": "ifcgeom: fix CgalEmitOriginalEdges for placed elements (#6173)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8480"
     },
@@ -7516,8 +7493,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611160612",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611160612"
+    "tag": "v0.9.1-alpha2611161004",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611161004"
   },
   "schema": 1
 }
