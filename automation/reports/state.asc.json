@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 193,
-    "merged": 557,
-    "skipped_conflict": 94,
+    "merged": 556,
+    "skipped_conflict": 96,
     "skipped_draft": 69,
-    "total": 913
+    "total": 914
   },
-  "generated_at": "2026-11-16T02:25:05Z",
+  "generated_at": "2026-11-16T04:35:17Z",
   "merge_order": "ascending",
   "prs": {
     "10006": {
@@ -541,6 +541,14 @@
       "status": "merged",
       "title": "Fix greyed Cancel on connection conditions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10230"
+    },
+    "10232": {
+      "author": "shitobu",
+      "branch": "feat/wall-butt-joint-alt-t",
+      "head": "ee2f27b",
+      "status": "skipped_conflict",
+      "title": "feat(model): add Alt+T butt joint for walls (#10201)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10232"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -2880,7 +2888,7 @@
       "author": "petruconduraru",
       "branch": "fix-7087-linked-hide-ux",
       "head": "9ffb502",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: label the Explore Tool query results in the Links panel",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8680"
     },
@@ -7509,8 +7517,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611160250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611160250"
+    "tag": "v0.9.1-alpha2611160450",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611160450"
   },
   "schema": 1
 }
