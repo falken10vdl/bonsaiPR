@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 194,
-    "merged": 562,
+    "merged": 563,
     "skipped_conflict": 85,
     "skipped_draft": 69,
-    "total": 910
+    "total": 911
   },
-  "generated_at": "2026-11-16T11:04:26Z",
+  "generated_at": "2026-11-16T16:05:08Z",
   "merge_order": "descending",
   "prs": {
     "10006": {
@@ -519,6 +519,14 @@
       "status": "merged",
       "title": "Bonsai: keep geometry in place on IFC Set Origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10228"
+    },
+    "10234": {
+      "author": "theoryshaw",
+      "branch": "apply-load-follows-active",
+      "head": "4dccd29",
+      "status": "merged",
+      "title": "Show where the apply-load button applies a load",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10234"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7486,8 +7494,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611161128",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611161128"
+    "tag": "v0.9.1-alpha2611161628",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611161628"
   },
   "schema": 1
 }

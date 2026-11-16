@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 193,
-    "merged": 556,
+    "failed": 195,
+    "merged": 555,
     "skipped_conflict": 92,
     "skipped_draft": 69,
-    "total": 910
+    "total": 911
   },
-  "generated_at": "2026-11-16T10:27:22Z",
+  "generated_at": "2026-11-16T15:27:43Z",
   "merge_order": "ascending",
   "prs": {
     "10006": {
@@ -519,6 +519,14 @@
       "status": "merged",
       "title": "Bonsai: keep geometry in place on IFC Set Origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10228"
+    },
+    "10234": {
+      "author": "theoryshaw",
+      "branch": "apply-load-follows-active",
+      "head": "4dccd29",
+      "status": "merged",
+      "title": "Show where the apply-load button applies a load",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10234"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -5548,7 +5556,8 @@
       "author": "sboddy",
       "branch": "fix/schema-logger-thread-safety-race",
       "head": "632e3a2",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Fix data races in schema singleton init and logger causing crashes",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9367"
     },
@@ -5582,7 +5591,8 @@
       "author": "P4A-KLFSBK",
       "branch": "svg-fix-section-hlr-double-free-v9",
       "head": "6d6e060",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Fix double free of section HLR state",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9379"
     },
@@ -5617,7 +5627,7 @@
       "author": "petruconduraru",
       "branch": "v09r/5880-hybrid-opening-fallback",
       "head": "b9c31da",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "ifcgeom: fall back when convert_openings cleanly fails",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9393"
@@ -7013,7 +7023,7 @@
       "author": "petruconduraru",
       "branch": "fix/logger-append-stream-destination",
       "head": "93b06d8",
-      "reason": "Fails to merge against base (problem with PR itself)",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Fix logger::append into non-in-memory logger",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9792"
@@ -7485,8 +7495,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611161050",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611161050"
+    "tag": "v0.9.1-alpha2611161550",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611161550"
   },
   "schema": 1
 }

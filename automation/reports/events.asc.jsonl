@@ -9269,3 +9269,6 @@
 {"ts": "2026-11-16T10:27:22Z", "order": "ascending", "pr": 9367, "event": "status", "from": "failed", "to": "merged"}
 {"ts": "2026-11-16T10:27:22Z", "order": "ascending", "pr": 9379, "event": "status", "from": "failed", "to": "merged"}
 {"ts": "2026-11-16T10:27:22Z", "order": "ascending", "pr": 10232, "event": "removed", "from": "skipped_conflict"}
+{"ts": "2026-11-16T15:27:43Z", "order": "ascending", "pr": 9367, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-11-16T15:27:43Z", "order": "ascending", "pr": 9379, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-11-16T15:27:43Z", "order": "ascending", "pr": 10234, "event": "added", "to": "merged"}
