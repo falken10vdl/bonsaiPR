@@ -9250,3 +9250,6 @@
 {"ts": "2026-11-15T19:25:40Z", "order": "ascending", "pr": 8584, "event": "removed", "from": "merged"}
 {"ts": "2026-11-15T19:25:40Z", "order": "ascending", "pr": 10228, "event": "added", "to": "merged"}
 {"ts": "2026-11-15T22:27:47Z", "order": "ascending", "pr": 10228, "event": "updated", "status": "merged", "from_head": "9a4e1cc", "to_head": "962d235"}
+{"ts": "2026-11-16T00:32:44Z", "order": "ascending", "pr": 9464, "event": "updated", "status": "merged", "from_head": "8e3d424", "to_head": "49d29de"}
+{"ts": "2026-11-16T00:32:44Z", "order": "ascending", "pr": 10230, "event": "added", "to": "merged"}
+{"ts": "2026-11-16T00:32:44Z", "order": "ascending", "pr": 10231, "event": "added", "to": "skipped_conflict"}
