@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 193,
-    "merged": 563,
-    "skipped_conflict": 86,
+    "failed": 194,
+    "merged": 562,
+    "skipped_conflict": 85,
     "skipped_draft": 69,
-    "total": 911
+    "total": 910
   },
-  "generated_at": "2026-11-16T09:40:58Z",
+  "generated_at": "2026-11-16T11:42:11Z",
   "merge_order": "by-updated",
   "prs": {
     "10006": {
@@ -312,7 +312,7 @@
       "author": "theoryshaw",
       "branch": "model_join_clicked_side",
       "head": "e8351c9",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Keep the clicked side in wall and profile joins",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10153"
     },
@@ -427,7 +427,7 @@
       "author": "theoryshaw",
       "branch": "wall_butt_join",
       "head": "b7ac204",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Add Alt+T butt join for walls",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10202"
     },
@@ -519,14 +519,6 @@
       "status": "merged",
       "title": "Bonsai: keep geometry in place on IFC Set Origin",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10228"
-    },
-    "10232": {
-      "author": "shitobu",
-      "branch": "feat/wall-butt-joint-alt-t",
-      "head": "ee2f27b",
-      "status": "merged",
-      "title": "feat(model): add Alt+T butt joint for walls (#10201)",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10232"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -2445,7 +2437,8 @@
       "author": "petruconduraru",
       "branch": "bv-6173-cgal-original-edges",
       "head": "de92655",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "ifcgeom: fix CgalEmitOriginalEdges for placed elements (#6173)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8480"
     },
@@ -3853,7 +3846,7 @@
       "author": "petruconduraru",
       "branch": "fix/7151-trim-merge-poll",
       "head": "e217c1d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: grey out Trim and Merge when the active-tool selection is invalid",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/8966"
     },
@@ -7493,8 +7486,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611161004",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611161004"
+    "tag": "v0.9.1-alpha2611161205",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611161205"
   },
   "schema": 1
 }
