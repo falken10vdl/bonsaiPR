@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 194,
-    "merged": 563,
+    "failed": 195,
+    "merged": 562,
     "skipped_conflict": 86,
     "skipped_draft": 69,
     "total": 912
   },
-  "generated_at": "2026-11-17T17:46:06Z",
+  "generated_at": "2026-11-17T19:54:39Z",
   "merge_order": "by-updated",
   "prs": {
     "10007": {
@@ -7238,7 +7238,8 @@
       "author": "petruconduraru",
       "branch": "fix/collada-obj-curve-normals",
       "head": "785fd2a",
-      "status": "merged",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
       "title": "Fix serializer crashes with mixed curve and solid items",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9847"
     },
@@ -7502,8 +7503,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611171809",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611171809"
+    "tag": "v0.9.1-alpha2611172008",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611172008"
   },
   "schema": 1
 }

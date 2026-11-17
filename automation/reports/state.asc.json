@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 193,
-    "merged": 556,
-    "skipped_conflict": 95,
+    "failed": 196,
+    "merged": 554,
+    "skipped_conflict": 93,
     "skipped_draft": 69,
-    "total": 913
+    "total": 912
   },
-  "generated_at": "2026-11-17T16:28:40Z",
+  "generated_at": "2026-11-17T18:28:24Z",
   "merge_order": "ascending",
   "prs": {
     "10007": {
@@ -261,9 +261,10 @@
     "10127": {
       "author": "Amixx",
       "branch": "feat/grid-axis-coordinates",
-      "head": "03ba32f",
-      "status": "merged",
-      "title": "Add util.placement.get_grid_axis_coordinates",
+      "head": "ac8497b",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "Add curve evaluate(derivative, u) and util.placement.get_grid_axis_coordinates",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10127"
     },
     "10137": {
@@ -336,7 +337,8 @@
       "author": "theoryshaw",
       "branch": "structural-curve-axis",
       "head": "3e5e96b",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Give new structural curve items an Axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10174"
     },
@@ -429,14 +431,6 @@
       "title": "docs: add validation pro tip to ifctester README",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10205"
     },
-    "10211": {
-      "author": "brunopostle",
-      "branch": "structural-ui-other-programs",
-      "head": "9350028",
-      "status": "skipped_conflict",
-      "title": "Read loads from other programs' analysis models",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10211"
-    },
     "10215": {
       "author": "dependabot[bot]",
       "branch": "dependabot/pip/sphinx-autoapi-3.9.0",
@@ -513,7 +507,8 @@
       "author": "brunopostle",
       "branch": "structural-tool-bar",
       "head": "f24fa48",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Give the Structural Tool bar its operators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10235"
     },
@@ -7509,8 +7504,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611171650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611171650"
+    "tag": "v0.9.1-alpha2611171850",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611171850"
   },
   "schema": 1
 }
