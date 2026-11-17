@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 195,
-    "merged": 562,
+    "failed": 194,
+    "merged": 563,
     "skipped_conflict": 86,
     "skipped_draft": 69,
     "total": 912
   },
-  "generated_at": "2026-11-17T19:07:36Z",
+  "generated_at": "2026-11-17T22:30:37Z",
   "merge_order": "descending",
   "prs": {
     "10007": {
@@ -506,9 +506,8 @@
     "10235": {
       "author": "brunopostle",
       "branch": "structural-tool-bar",
-      "head": "f24fa48",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "a2990f5",
+      "status": "merged",
       "title": "Give the Structural Tool bar its operators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10235"
     },
@@ -7503,8 +7502,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611171929",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611171929"
+    "tag": "v0.9.1-alpha2611172238",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611172238"
   },
   "schema": 1
 }
