@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 193,
+    "failed": 192,
     "merged": 564,
-    "skipped_conflict": 87,
+    "skipped_conflict": 88,
     "skipped_draft": 69,
     "total": 913
   },
-  "generated_at": "2026-11-17T12:41:09Z",
+  "generated_at": "2026-11-17T15:45:15Z",
   "merge_order": "by-updated",
   "prs": {
     "10007": {
@@ -432,9 +432,8 @@
     "10211": {
       "author": "brunopostle",
       "branch": "structural-ui-other-programs",
-      "head": "14ea90a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
+      "head": "9350028",
+      "status": "merged",
       "title": "Read loads from other programs' analysis models",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10211"
     },
@@ -514,7 +513,7 @@
       "author": "brunopostle",
       "branch": "structural-tool-bar",
       "head": "f24fa48",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Give the Structural Tool bar its operators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10235"
     },
@@ -7509,8 +7508,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611171304",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611171304"
+    "tag": "v0.9.1-alpha2611171607",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611171607"
   },
   "schema": 1
 }
