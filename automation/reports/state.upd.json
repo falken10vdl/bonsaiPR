@@ -3,11 +3,11 @@
   "counts": {
     "failed": 193,
     "merged": 564,
-    "skipped_conflict": 86,
+    "skipped_conflict": 87,
     "skipped_draft": 69,
-    "total": 912
+    "total": 913
   },
-  "generated_at": "2026-11-17T01:40:12Z",
+  "generated_at": "2026-11-17T10:43:09Z",
   "merge_order": "by-updated",
   "prs": {
     "10007": {
@@ -534,6 +534,14 @@
       "status": "merged",
       "title": "Return the geometry log from the JS iterator",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10238"
+    },
+    "10239": {
+      "author": "Amixx",
+      "branch": "feat/js-plugin-modules",
+      "head": "ad2c26c",
+      "status": "merged",
+      "title": "Add selective WASM plugin entry points",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10239"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7355,7 +7363,7 @@
       "author": "aothms",
       "branch": "transpilation-experiments",
       "head": "4fe9235",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Transpilation experiments",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9968"
     },
@@ -7501,8 +7509,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611170204",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611170204"
+    "tag": "v0.9.1-alpha2611171107",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611171107"
   },
   "schema": 1
 }
