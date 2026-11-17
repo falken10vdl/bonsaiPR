@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 193,
-    "merged": 564,
-    "skipped_conflict": 87,
+    "failed": 194,
+    "merged": 563,
+    "skipped_conflict": 86,
     "skipped_draft": 69,
-    "total": 913
+    "total": 912
   },
-  "generated_at": "2026-11-17T15:06:25Z",
+  "generated_at": "2026-11-17T17:07:50Z",
   "merge_order": "descending",
   "prs": {
     "10007": {
@@ -336,7 +336,8 @@
       "author": "theoryshaw",
       "branch": "structural-curve-axis",
       "head": "3e5e96b",
-      "status": "skipped_conflict",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Give new structural curve items an Axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10174"
     },
@@ -429,15 +430,6 @@
       "title": "docs: add validation pro tip to ifctester README",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10205"
     },
-    "10211": {
-      "author": "brunopostle",
-      "branch": "structural-ui-other-programs",
-      "head": "14ea90a",
-      "reason": "Fails to merge against base (problem with PR itself)",
-      "status": "failed",
-      "title": "Read loads from other programs' analysis models",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10211"
-    },
     "10215": {
       "author": "dependabot[bot]",
       "branch": "dependabot/pip/sphinx-autoapi-3.9.0",
@@ -514,7 +506,8 @@
       "author": "brunopostle",
       "branch": "structural-tool-bar",
       "head": "f24fa48",
-      "status": "merged",
+      "reason": "Fails to merge against base (problem with PR itself)",
+      "status": "failed",
       "title": "Give the Structural Tool bar its operators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10235"
     },
@@ -7509,8 +7502,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611171529",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611171529"
+    "tag": "v0.9.1-alpha2611171730",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611171730"
   },
   "schema": 1
 }
