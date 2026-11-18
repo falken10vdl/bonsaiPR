@@ -9264,3 +9264,18 @@
 {"ts": "2026-11-18T13:26:37Z", "order": "upd", "pr": 9555, "event": "rescued", "from_order": "asc"}
 {"ts": "2026-11-18T13:43:00Z", "order": "by-updated", "pr": 10127, "event": "removed", "from": "failed"}
 {"ts": "2026-11-18T13:43:00Z", "order": "by-updated", "pr": 10247, "event": "removed", "from": "failed"}
+{"ts": "2026-11-18T17:58:10Z", "order": "upd", "pr": 8083, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-18T17:58:10Z", "order": "upd", "pr": 8615, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-18T17:58:10Z", "order": "upd", "pr": 8872, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-18T17:58:10Z", "order": "upd", "pr": 8933, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-18T17:58:10Z", "order": "upd", "pr": 8993, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-18T17:58:10Z", "order": "upd", "pr": 9234, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-18T17:58:10Z", "order": "upd", "pr": 9404, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-18T17:58:10Z", "order": "upd", "pr": 9555, "event": "rescued", "from_order": "asc"}
+{"ts": "2026-11-18T18:15:22Z", "order": "by-updated", "pr": 8278, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-11-18T18:15:22Z", "order": "by-updated", "pr": 10174, "event": "status", "from": "failed", "to": "merged"}
+{"ts": "2026-11-18T18:15:22Z", "order": "by-updated", "pr": 10200, "event": "status", "from": "failed", "to": "skipped_conflict"}
+{"ts": "2026-11-18T18:15:22Z", "order": "by-updated", "pr": 10235, "event": "status", "from": "merged", "to": "skipped_conflict"}
+{"ts": "2026-11-18T18:15:22Z", "order": "by-updated", "pr": 10237, "event": "updated", "status": "failed", "from_head": "33b28eb", "to_head": "eebef95"}
+{"ts": "2026-11-18T18:15:22Z", "order": "by-updated", "pr": 10238, "event": "status", "from": "merged", "to": "failed"}
+{"ts": "2026-11-18T18:15:22Z", "order": "by-updated", "pr": 10245, "event": "status", "from": "skipped_conflict", "to": "merged"}
