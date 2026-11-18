@@ -7,7 +7,7 @@
     "skipped_draft": 71,
     "total": 919
   },
-  "generated_at": "2026-11-18T02:25:21Z",
+  "generated_at": "2026-11-18T04:25:19Z",
   "merge_order": "ascending",
   "prs": {
     "10007": {
@@ -588,9 +588,9 @@
     "10248": {
       "author": "Moult",
       "branch": "feat/ifcviewer-web-backface-culling",
-      "head": "6fa6ffb",
+      "head": "31f4c18",
       "status": "skipped_conflict",
-      "title": "Expose backface culling in the web viewer",
+      "title": "Web viewer backface culling and fractional DPR fix",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10248"
     },
     "2093": {
@@ -7560,8 +7560,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611180250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611180250"
+    "tag": "v0.9.1-alpha2611180450",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611180450"
   },
   "schema": 1
 }
