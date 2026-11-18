@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 196,
-    "merged": 557,
+    "merged": 555,
     "skipped_conflict": 95,
     "skipped_draft": 71,
-    "total": 919
+    "total": 917
   },
-  "generated_at": "2026-11-18T04:25:19Z",
+  "generated_at": "2026-11-18T07:25:38Z",
   "merge_order": "ascending",
   "prs": {
     "10007": {
@@ -430,22 +430,6 @@
       "status": "merged",
       "title": "docs: add validation pro tip to ifctester README",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10205"
-    },
-    "10215": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/pip/sphinx-autoapi-3.9.0",
-      "head": "dda6c0f",
-      "status": "merged",
-      "title": "build(deps): bump sphinx-autoapi from 3.8.1 to 3.9.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10215"
-    },
-    "10216": {
-      "author": "dependabot[bot]",
-      "branch": "dependabot/github_actions/docker/login-action-4.8.0",
-      "head": "6c1a857",
-      "status": "merged",
-      "title": "build(deps): bump docker/login-action from 4.7.0 to 4.8.0",
-      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10216"
     },
     "10217": {
       "author": "dependabot[bot]",
@@ -7560,8 +7544,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611180450",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611180450"
+    "tag": "v0.9.1-alpha2611180750",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611180750"
   },
   "schema": 1
 }
