@@ -7,7 +7,7 @@
     "skipped_draft": 71,
     "total": 919
   },
-  "generated_at": "2026-11-18T01:39:47Z",
+  "generated_at": "2026-11-18T03:37:25Z",
   "merge_order": "by-updated",
   "prs": {
     "10007": {
@@ -39,7 +39,7 @@
       "author": "JocelinBirling",
       "branch": "Display_Control_1",
       "head": "2584b3f",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai Viewer: Display_Control",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10016"
     },
@@ -588,9 +588,9 @@
     "10248": {
       "author": "Moult",
       "branch": "feat/ifcviewer-web-backface-culling",
-      "head": "6fa6ffb",
+      "head": "31f4c18",
       "status": "merged",
-      "title": "Expose backface culling in the web viewer",
+      "title": "Web viewer backface culling and fractional DPR fix",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10248"
     },
     "2093": {
@@ -7246,7 +7246,7 @@
       "author": "htlcnn",
       "branch": "feature/revit-multi-selection-orbit",
       "head": "4e14646",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Add Revit-style multi-selection orbit pivot",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9841"
     },
@@ -7559,8 +7559,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611180203",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611180203"
+    "tag": "v0.9.1-alpha2611180402",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611180402"
   },
   "schema": 1
 }
