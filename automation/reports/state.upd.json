@@ -1,13 +1,13 @@
 {
   "base": "v0.9.0",
   "counts": {
-    "failed": 194,
-    "merged": 563,
-    "skipped_conflict": 86,
-    "skipped_draft": 69,
-    "total": 912
+    "failed": 195,
+    "merged": 565,
+    "skipped_conflict": 88,
+    "skipped_draft": 71,
+    "total": 919
   },
-  "generated_at": "2026-11-17T23:15:27Z",
+  "generated_at": "2026-11-18T01:39:47Z",
   "merge_order": "by-updated",
   "prs": {
     "10007": {
@@ -506,7 +506,7 @@
     "10235": {
       "author": "brunopostle",
       "branch": "structural-tool-bar",
-      "head": "a2990f5",
+      "head": "9f5d66f",
       "status": "merged",
       "title": "Give the Structural Tool bar its operators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10235"
@@ -535,6 +535,63 @@
       "status": "merged",
       "title": "Add selective WASM plugin entry points",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10239"
+    },
+    "10242": {
+      "author": "brunopostle",
+      "branch": "structural-load-labels",
+      "head": "6a4bd22",
+      "status": "skipped_draft",
+      "title": "Keep load labels off the arrows",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10242"
+    },
+    "10243": {
+      "author": "brunopostle",
+      "branch": "structural-load-sizes",
+      "head": "1a262ce",
+      "status": "skipped_draft",
+      "title": "Add Arrow Thickness and Label Size to Show Loads",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10243"
+    },
+    "10244": {
+      "author": "brunopostle",
+      "branch": "shape-builder-face-holes",
+      "head": "5455354",
+      "status": "merged",
+      "title": "ShapeBuilder: faces with holes, and keeping a face surface's axes",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10244"
+    },
+    "10245": {
+      "author": "brunopostle",
+      "branch": "structural-face-update",
+      "head": "01eb91d",
+      "status": "skipped_conflict",
+      "title": "Bonsai: keep a structural surface member's face when its mesh is edited",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10245"
+    },
+    "10246": {
+      "author": "shitobu",
+      "branch": "feat/structural-load-temperature-3d-display",
+      "head": "b4e64e0",
+      "status": "merged",
+      "title": "feat(structural): display IfcStructuralLoadTemperature in 3D view (#10236)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10246"
+    },
+    "10247": {
+      "author": "shitobu",
+      "branch": "fix/matrix4-init-underflow",
+      "head": "023b9ee",
+      "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
+      "status": "failed",
+      "title": "fix(ifcgeom): prevent underflow in matrix4::init vector normalization (#10240)",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10247"
+    },
+    "10248": {
+      "author": "Moult",
+      "branch": "feat/ifcviewer-web-backface-culling",
+      "head": "6fa6ffb",
+      "status": "merged",
+      "title": "Expose backface culling in the web viewer",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10248"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7372,7 +7429,7 @@
       "author": "myoualid",
       "branch": "v0.9.0",
       "head": "718531c",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "ifcviewer features: grids, axes, survey point, fog and examples",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/9977"
     },
@@ -7502,8 +7559,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611172331",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611172331"
+    "tag": "v0.9.1-alpha2611180203",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611180203"
   },
   "schema": 1
 }
