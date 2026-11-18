@@ -7,7 +7,7 @@
     "skipped_draft": 71,
     "total": 912
   },
-  "generated_at": "2026-11-18T16:38:35Z",
+  "generated_at": "2026-11-18T19:43:50Z",
   "merge_order": "ascending",
   "prs": {
     "10007": {
@@ -320,7 +320,7 @@
     "10174": {
       "author": "theoryshaw",
       "branch": "structural-curve-axis",
-      "head": "3e5e96b",
+      "head": "21bd3b5",
       "status": "merged",
       "title": "Give new structural curve items an Axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10174"
@@ -472,7 +472,7 @@
     "10237": {
       "author": "Amixx",
       "branch": "fix/parsed-derived-values",
-      "head": "33b28eb",
+      "head": "eebef95",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Preserve parsed values in derived slots",
@@ -481,7 +481,7 @@
     "10238": {
       "author": "Amixx",
       "branch": "fix/js-geometry-log",
-      "head": "8a0ac6d",
+      "head": "ef61d3f",
       "reason": "Requires C++ recompile — not built by BonsaiPR (pinned wheel)",
       "status": "failed",
       "title": "Return the geometry log from the JS iterator",
@@ -7504,8 +7504,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611181650",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611181650"
+    "tag": "v0.9.1-alpha2611181950",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611181950"
   },
   "schema": 1
 }
