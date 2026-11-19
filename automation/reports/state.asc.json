@@ -4,10 +4,10 @@
     "failed": 196,
     "merged": 555,
     "skipped_conflict": 94,
-    "skipped_draft": 71,
-    "total": 916
+    "skipped_draft": 72,
+    "total": 917
   },
-  "generated_at": "2026-11-19T03:25:13Z",
+  "generated_at": "2026-11-19T08:26:49Z",
   "merge_order": "ascending",
   "prs": {
     "10007": {
@@ -376,7 +376,7 @@
     "10200": {
       "author": "falken10vdl",
       "branch": "structural-model-generation",
-      "head": "900b479",
+      "head": "ce9fd23",
       "status": "skipped_conflict",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
@@ -566,6 +566,14 @@
       "status": "merged",
       "title": "Add pinned and fixed structural boundary conditions",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10258"
+    },
+    "10259": {
+      "author": "falken10vdl",
+      "branch": "structural-model-regeneration",
+      "head": "6f1ada2",
+      "status": "skipped_draft",
+      "title": "Bonsai: regenerate structural members in place",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10259"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7536,8 +7544,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611190350",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611190350"
+    "tag": "v0.9.1-alpha2611190850",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611190850"
   },
   "schema": 1
 }
