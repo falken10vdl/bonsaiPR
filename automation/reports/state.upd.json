@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 195,
-    "merged": 559,
-    "skipped_conflict": 87,
+    "merged": 561,
+    "skipped_conflict": 88,
     "skipped_draft": 71,
-    "total": 912
+    "total": 915
   },
-  "generated_at": "2026-11-18T21:20:37Z",
+  "generated_at": "2026-11-19T00:10:56Z",
   "merge_order": "by-updated",
   "prs": {
     "10007": {
@@ -321,7 +321,7 @@
       "author": "theoryshaw",
       "branch": "structural-curve-axis",
       "head": "21bd3b5",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Give new structural curve items an Axis",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10174"
     },
@@ -377,7 +377,7 @@
       "author": "falken10vdl",
       "branch": "structural-model-generation",
       "head": "900b479",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Structural model generation",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10200"
     },
@@ -457,7 +457,7 @@
       "author": "theoryshaw",
       "branch": "apply-load-follows-active",
       "head": "4dccd29",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Show where the apply-load button applies a load",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10234"
     },
@@ -465,7 +465,7 @@
       "author": "brunopostle",
       "branch": "structural-tool-bar",
       "head": "9f5d66f",
-      "status": "skipped_conflict",
+      "status": "merged",
       "title": "Give the Structural Tool bar its operators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10235"
     },
@@ -523,7 +523,7 @@
       "author": "brunopostle",
       "branch": "structural-face-update",
       "head": "01eb91d",
-      "status": "merged",
+      "status": "skipped_conflict",
       "title": "Bonsai: keep a structural surface member's face when its mesh is edited",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10245"
     },
@@ -534,6 +534,30 @@
       "status": "merged",
       "title": "feat(structural): display IfcStructuralLoadTemperature in 3D view (#10236)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10246"
+    },
+    "10255": {
+      "author": "brunopostle",
+      "branch": "structural-combination-groups",
+      "head": "a3dedee",
+      "status": "merged",
+      "title": "Read IFC2X3 load combination groups in util.structural",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10255"
+    },
+    "10256": {
+      "author": "brunopostle",
+      "branch": "structural-combine-typed-cases",
+      "head": "825b496",
+      "status": "merged",
+      "title": "Combine load groups typed LOAD_CASE",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10256"
+    },
+    "10257": {
+      "author": "brunopostle",
+      "branch": "structural-combine-typed-cases-bonsai",
+      "head": "7e8c6a3",
+      "status": "merged",
+      "title": "Bonsai: combine load groups typed LOAD_CASE",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10257"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7503,8 +7527,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611182131",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611182131"
+    "tag": "v0.9.1-alpha2611190031",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611190031"
   },
   "schema": 1
 }
