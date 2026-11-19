@@ -2,12 +2,12 @@
   "base": "v0.9.0",
   "counts": {
     "failed": 196,
-    "merged": 551,
+    "merged": 555,
     "skipped_conflict": 94,
     "skipped_draft": 71,
-    "total": 912
+    "total": 916
   },
-  "generated_at": "2026-11-18T22:40:14Z",
+  "generated_at": "2026-11-19T01:26:36Z",
   "merge_order": "ascending",
   "prs": {
     "10007": {
@@ -464,7 +464,7 @@
     "10235": {
       "author": "brunopostle",
       "branch": "structural-tool-bar",
-      "head": "9f5d66f",
+      "head": "634e9f4",
       "status": "skipped_conflict",
       "title": "Give the Structural Tool bar its operators",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10235"
@@ -534,6 +534,38 @@
       "status": "merged",
       "title": "feat(structural): display IfcStructuralLoadTemperature in 3D view (#10236)",
       "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10246"
+    },
+    "10255": {
+      "author": "brunopostle",
+      "branch": "structural-combination-groups",
+      "head": "a3dedee",
+      "status": "merged",
+      "title": "Read IFC2X3 load combination groups in util.structural",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10255"
+    },
+    "10256": {
+      "author": "brunopostle",
+      "branch": "structural-combine-typed-cases",
+      "head": "825b496",
+      "status": "merged",
+      "title": "Combine load groups typed LOAD_CASE",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10256"
+    },
+    "10257": {
+      "author": "brunopostle",
+      "branch": "structural-combine-typed-cases-bonsai",
+      "head": "7e8c6a3",
+      "status": "merged",
+      "title": "Bonsai: combine load groups typed LOAD_CASE",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10257"
+    },
+    "10258": {
+      "author": "brunopostle",
+      "branch": "structural-support-conditions",
+      "head": "6f0810c",
+      "status": "merged",
+      "title": "Add pinned and fixed structural boundary conditions",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell/pull/10258"
     },
     "2093": {
       "author": "ilkinkavi",
@@ -7504,8 +7536,8 @@
     }
   },
   "release": {
-    "tag": "v0.9.1-alpha2611182250",
-    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611182250"
+    "tag": "v0.9.1-alpha2611190150",
+    "url": "https://github.com/falken10vdl/bonsaiPR/releases/tag/v0.9.1-alpha2611190150"
   },
   "schema": 1
 }
