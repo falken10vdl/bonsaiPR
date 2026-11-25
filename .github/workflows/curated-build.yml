@@ -143,6 +143,17 @@ jobs:
           python3.13 --version
           pip3.13 --version
 
+      - name: Set up uv
+        # Since upstream daf729a935 ("Use `uv.lock` for bonsai dependencies"),
+        # `make dist` fetches the bundled wheels with `uv run --script
+        # scripts/uv-lock-download.py`. Without uv every target fails with
+        # `uv: not found` (Error 127) after ~5 minutes each, and stage 1 finds
+        # no zips — run 45694237549, 2026-11-25.
+        uses: astral-sh/setup-uv@v6
+
+      - name: Verify uv
+        run: uv --version
+
       - name: Set up Node
         # Stage 1 runs `npm install` while packaging the add-on.
         uses: actions/setup-node@v4
