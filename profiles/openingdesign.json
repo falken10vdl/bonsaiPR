@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "openingdesign",
-  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9851 added by hand 2026-10-07; the stacked structural series #9868-#10064, #9867 (since merged upstream) added 2026-10-11, distilled from Frankenstein_build-0.9.0-alpha2610072353 (code picked in full; tests and docs not); #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 23 closed ones are left out (latest #8258, closed 2026-10-10), as is #8971 (overlaps #8200 throughout one function; left out by choice). On 2026-10-11, after upstream's edit_pset/add_representation settings and get_placement refactors, #7833, #8669 and #9517 were rebased and #8298, #8345, #8251, #8598, #8336 and #7003 had v0.9.0 merged in; #7669 was rebased onto v0.9.0 with its author's agreement. Later that day v0.9.0 was also merged into #9868-#9905, #7648/#9523, #8548, #7798/#7965/#8083 and #8304 so their calls to util.placement functions upstream removed use get_placement. On 2026-11-08 a distill of Frankenstein_build-0.9.0-alpha2610112324 added 45 PRs (the structural series to #10064, the group UI stack #9980-#9989, #10174/#10175 and others); #8344, #8676 and #9867 merged upstream and #9228 was closed as superseded, so they are out; 22 PRs were updated for v0.9.0 6a5283ac79 (#7798 chain renumbered after #9963, #7781 follows #9984's container tools, others moved clear of each other). On 2026-11-10 a distill of Frankenstein_build-0.9.0-alpha2611091534 added #10181 and #10184 and moved #9555 to its newest head; #10098 merged upstream. On 2026-11-25 a distill of Frankenstein_build-0.9.0-alpha2611101901 added #10198, #10204, #10202, #10227, #10228, #10349, #10350, #10348 and #10347 (#10347 now stacked on #8200), and moved #9589 and every other pin to its PR's newest head; 36 closed or merged PRs left, among them the structural series #9868-#10064 (closed upstream, so its statics calculator and reports leave the build), #10118, #10174, #10175 and #10181. For v0.9.0 112de6e941, #9047, #9021, #10045, #9517, #10039 and #8658 had v0.9.0 merged in. Pins are the heads last validated at v0.9.0 (198 PRs, 189 pins), 2026-11-25.",
+  "description": "Distilled from branch Ryan_build-0.8.6-alpha2607071335 and retargeted to v0.9.0: its open PRs - those merged on the branch and those cherry-picked onto it in whole or in substance - in the branch's history order, except #8228 moved ahead of #7813 and #8598 (added by hand) last. #8676, #9840 and #8585 added 2026-10-07, distilled from Frankenstein_build-0.9.0-alpha2610051742 (picked in full, #8585 with one commit adapted); #9851 added by hand 2026-10-07; the stacked structural series #9868-#10064, #9867 (since merged upstream) added 2026-10-11, distilled from Frankenstein_build-0.9.0-alpha2610072353 (code picked in full; tests and docs not); #9555 pinned to its newer head, whose two latest commits were picked there. PRs since merged upstream (latest #9478) and 23 closed ones are left out (latest #8258, closed 2026-10-10), as is #8971 (overlaps #8200 throughout one function; left out by choice). On 2026-10-11, after upstream's edit_pset/add_representation settings and get_placement refactors, #7833, #8669 and #9517 were rebased and #8298, #8345, #8251, #8598, #8336 and #7003 had v0.9.0 merged in; #7669 was rebased onto v0.9.0 with its author's agreement. Later that day v0.9.0 was also merged into #9868-#9905, #7648/#9523, #8548, #7798/#7965/#8083 and #8304 so their calls to util.placement functions upstream removed use get_placement. On 2026-11-08 a distill of Frankenstein_build-0.9.0-alpha2610112324 added 45 PRs (the structural series to #10064, the group UI stack #9980-#9989, #10174/#10175 and others); #8344, #8676 and #9867 merged upstream and #9228 was closed as superseded, so they are out; 22 PRs were updated for v0.9.0 6a5283ac79 (#7798 chain renumbered after #9963, #7781 follows #9984's container tools, others moved clear of each other). On 2026-11-10 a distill of Frankenstein_build-0.9.0-alpha2611091534 added #10181 and #10184 and moved #9555 to its newest head; #10098 merged upstream. On 2026-11-25 a distill of Frankenstein_build-0.9.0-alpha2611101901 added #10198, #10204, #10202, #10227, #10228, #10349, #10350, #10348 and #10347 (#10347 now stacked on #8200), and moved #9589 and every other pin to its PR's newest head; 36 closed or merged PRs left, among them the structural series #9868-#10064 (closed upstream, so its statics calculator and reports leave the build), #10118, #10174, #10175 and #10181. For v0.9.0 112de6e941, #9047, #9021, #10045, #9517, #10039 and #8658 had v0.9.0 merged in. On 2026-11-27 a distill of Frankenstein_build-0.9.0-alpha2611252105 added #10368 (stacked on #10348), with its additions moved clear of #8548; #8429 and #9327 were closed, so they are out. Pins are the heads last validated at v0.9.0 9e02d93ad6 (197 PRs, 188 pins), 2026-11-27.",
   "maintainer": "OpeningDesign",
   "base": {
     "repo": "IfcOpenShell/IfcOpenShell",
@@ -126,7 +126,6 @@
       8352,
       8353,
       8393,
-      8429,
       8448,
       8548,
       8585,
@@ -159,7 +158,6 @@
       9316,
       9318,
       9320,
-      9327,
       9370,
       9401,
       9439,
@@ -207,7 +205,8 @@
       10347,
       10348,
       10349,
-      10350
+      10350,
+      10368
     ],
     "authors": []
   },
@@ -329,7 +328,6 @@
     8351,
     8352,
     8353,
-    8429,
     8448,
     8393,
     8599,
@@ -359,7 +357,6 @@
     9316,
     9318,
     9320,
-    9327,
     9021,
     9370,
     8674,
@@ -415,7 +412,8 @@
     10349,
     10350,
     10348,
-    10347
+    10347,
+    10368
   ],
   "pin": {
     "5452": "99958f7c73927fb22e343ab724b21e4199dc2755",
@@ -525,7 +523,6 @@
     "8352": "69c419e54765a8d3e581eb49997e9b1b2f4a64c0",
     "8353": "49191805eb2add29ed58db0cced9e616b7358610",
     "8393": "8d08a155993f9139d5d84971b13ff64cd3705176",
-    "8429": "e7dfd43a152f12b0da4dff7e35afd42dd2439604",
     "8448": "4c4750a848b0fe9338562f129d72e241a4920431",
     "8548": "347b33b8e23a551e5960c83afb5e67f88a57bf6b",
     "8585": "a4796d9036e173432f893d4c09cef1905ee9e9dd",
@@ -558,7 +555,6 @@
     "9316": "96a4ba818f52d367876ef85eb4131a72c8b9e772",
     "9318": "906251127f2c25d1fdf95ae1de1e800eca7c090e",
     "9320": "1f52598556f3f7381a06f4355912ba63770c292c",
-    "9327": "a41da6ce1f06b66ad5a29179ebf391e79c0bd903",
     "9370": "35c240078bf99963536e12aabf385372aa336b95",
     "9401": "b27e50088014453f64c6dc8fe24111e0a8fd1794",
     "9439": "f1ae549083642bc3b1fb731eb254183f06da4418",
@@ -606,6 +602,7 @@
     "10347": "a524bf1c39e6a4d92fec95d6d36a7b123f7d9392",
     "10348": "5db11f791c8c951c3ac14b5c6021e1eb0e8e4b19",
     "10349": "4e8661bbe66770d422868672714a7ee585981880",
-    "10350": "84abab27565e41aa880e4475cdc93541bea3aeca"
+    "10350": "84abab27565e41aa880e4475cdc93541bea3aeca",
+    "10368": "b46aa23c109c36028a994317a7d9e8b82e58312c"
   }
 }
